@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estadísticas · Psicolinks</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --paper: #EEEDE6; --surface: #FFFFFF; --ink: #211F2E; --ink-soft: #625C70;
+    --border: #DDD7CB; --accent: #4A3B78; --stamp: #B5541D;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family: system-ui, -apple-system, sans-serif; }
+  header { padding: 1.75rem 1.5rem 1rem; text-align:center; }
+  h1 { font-size: 1.4rem; margin: 0; }
+  main { max-width: 640px; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+
+  .gate { max-width: 360px; margin: 3rem auto; text-align:center; }
+  .gate input {
+    width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid var(--border);
+    border-radius: 8px; font-size: 1rem; margin-bottom: 0.75rem;
+  }
+  .gate button {
+    padding: 0.6rem 1.1rem; border-radius: 8px; border: none; font-weight: 600;
+    cursor: pointer; font-size: 0.95rem; width: 100%; background: var(--ink); color: white;
+  }
+
+  .resumen { display: flex; gap: 0.9rem; margin-bottom: 1.5rem; }
+  .metrica {
+    flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1rem 1.1rem; text-align: center;
+  }
+  .metrica .num { font-size: 1.7rem; font-weight: 700; color: var(--accent); display: block; }
+  .metrica .label { font-size: 0.78rem; color: var(--ink-soft); }
+
+  .seccion-titulo { font-size: 1rem; font-weight: 700; margin: 1.8rem 0 0.8rem; }
+
+  .tabla-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .fila { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 1.1rem; font-size: 0.9rem; }
+  .fila:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .fila .nombre { color: var(--ink); }
+  .fila .valor { color: var(--stamp); font-weight: 700; white-space: nowrap; }
+
+  .status-msg { text-align:center; color: var(--ink-soft); padding: 2rem 0; }
+</style>
+</head>
+<body>
+<header><h1>Estadísticas de Psicolinks</h1></header>
+<main>
+
+  <div class="gate" id="gate">
+    <p>Introduce tu clave de administración para ver las estadísticas.</p>
+    <input type="password" id="passphrase" placeholder="Clave">
+    <button onclick="cargarEstadisticas()">Entrar</button>
+    <p id="gate-error" style="color:#C0392B; font-size:0.85rem;"></p>
+  </div>
+
+  <div id="stats-content" hidden></div>
+
+</main>
+
+<script>
+  async function cargarEstadisticas() {
+    const pass = document.getElementById('passphrase').value;
+    const errorEl = document.getElementById('gate-error');
+    errorEl.textContent = '';
+
+    try {
+      const res = await fetch('/.netlify/functions/list-stats', {
+        headers: { 'X-Admin-Passphrase': pass }
+      });
+      if (!res.ok) {
+        errorEl.textContent = 'Clave incorrecta o error de conexión.';
+        return;
+      }
+      const data = await res.json();
+      document.getElementById('gate').hidden = true;
+      const content = document.getElementById('stats-content');
+      content.hidden = false;
+
+      const filasPosts = (data.posts || []).length
+        ? data.posts.map((p) => `
+            <div class="fila">
+              <span class="nombre">${p.titulo}</span>
+              <span class="valor">${p.vistas}</span>
+            </div>
+          `).join('')
+        : '<p class="status-msg">Todavía no hay artículos publicados.</p>';
+
+      const filasDias = (data.dias || []).length
+        ? data.dias.map((d) => `
+            <div class="fila">
+              <span class="nombre">${d.fecha}</span>
+              <span class="valor">${d.vistas}</span>
+            </div>
+          `).join('')
+        : '<p class="status-msg">Todavía no hay visitas registradas.</p>';
+
+      const filasClics = (data.clics || []).length
+        ? data.clics.map((c) => `
+            <div class="fila">
+              <span class="nombre">${c.nombre}</span>
+              <span class="valor">${c.total}</span>
+            </div>
+          `).join('')
+        : '<p class="status-msg">Todavía no hay clics registrados.</p>';
+
+      content.innerHTML = `
+        <div class="resumen">
+          <div class="metrica"><span class="num">${data.vistasHome || 0}</span><span class="label">Visitas a portada</span></div>
+          <div class="metrica"><span class="num">${data.totalSuscriptores || 0}</span><span class="label">Suscriptores</span></div>
+        </div>
+
+        <p class="seccion-titulo">Clics en libros, consulta y compartir</p>
+        <div class="tabla-card">${filasClics}</div>
+
+        <p class="seccion-titulo">Artículos más vistos</p>
+        <div class="tabla-card">${filasPosts}</div>
+
+        <p class="seccion-titulo">Visitas por día (últimos 14 días)</p>
+        <div class="tabla-card">${filasDias}</div>
+      `;
+    } catch (e) {
+      errorEl.textContent = 'No se pudo conectar. Inténtalo de nuevo.';
+    }
+  }
+</script>
+</body>
+</html>

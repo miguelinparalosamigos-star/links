@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psicolinks · Psicología basada en estudios reales</title>
+<meta name="description" content="Cada día laborable, un estudio de psicología reciente traducido a un lenguaje claro. Con la fuente original siempre a la vista.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Psicolinks · Psicología basada en estudios reales">
+<meta property="og:description" content="Cada día laborable, un estudio de psicología reciente traducido a un lenguaje claro. Con la fuente original siempre a la vista.">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEEDE6; --surface: #FFFFFF; --ink: #211F2E; --ink-soft: #625C70;
+    --border: #DDD7CB; --accent: #4A3B78; --stamp: #B5541D;
+    --font-display: 'Lora', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+    --font-mono: 'Space Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+  .site-header { border-bottom: 1px solid var(--border); padding: 2.25rem 1.5rem 1.6rem; text-align: center; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.15rem); color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .logo em { color: var(--accent); font-style: normal; }
+  .tagline { margin: 0.6rem 0 0; color: var(--ink-soft); font-size: 0.98rem; max-width: 440px; margin-inline: auto; }
+
+  .newsletter-box {
+    max-width: 440px; margin: 1.3rem auto 0; padding: 0.9rem 1.1rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 12px; display: flex; flex-wrap: wrap;
+    gap: 0.5rem; align-items: center; justify-content: center;
+  }
+  .newsletter-box input[type="email"] {
+    flex: 1; min-width: 160px; padding: 0.5rem 0.7rem; border: 1.5px solid var(--border);
+    border-radius: 8px; font-size: 0.9rem; font-family: var(--font-body);
+  }
+  .newsletter-box button {
+    padding: 0.5rem 0.95rem; border-radius: 8px; border: none; background: var(--accent);
+    color: white; font-weight: 600; font-size: 0.9rem; cursor: pointer; white-space: nowrap;
+  }
+  .newsletter-msg { font-size: 0.78rem; color: var(--ink-soft); margin: 0.4rem 0 0; text-align: center; flex-basis: 100%; }
+
+  main { max-width: 700px; margin: 0 auto; padding: 2.25rem 1.5rem 4rem; }
+
+  .post-card { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 10px; overflow: hidden; margin-bottom: 1.25rem; }
+  .post-body-inner { padding: 1.5rem 1.7rem 1.6rem; }
+  .stamp {
+    display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono);
+    font-size: 0.72rem; color: var(--stamp); border: 1.3px dashed var(--stamp); border-radius: 999px;
+    padding: 0.25rem 0.7rem; transform: rotate(-1.2deg); margin-bottom: 0.9rem;
+  }
+  .post-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; line-height: 1.32; margin: 0 0 0.6rem; }
+  .post-teaser { color: var(--ink-soft); line-height: 1.6; margin: 0 0 1rem; }
+  .read-more { font-weight: 600; color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+  .read-more:hover { text-decoration: underline; }
+
+  .art-1 { border-top-color: var(--accent); }
+  .art-2 { border-top-color: var(--stamp); }
+  .art-3 { border-top-color: #3D5A4C; }
+  .art-4 { border-top-color: #3E5C74; }
+
+  .empty-state { text-align: center; color: var(--ink-soft); padding: 3rem 1rem; }
+  .ver-mas {
+    display: block; text-align: center; color: var(--ink-soft); text-decoration: none;
+    font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; padding: 0.9rem;
+  }
+  .ver-mas:hover { color: var(--accent); text-decoration: underline; }
+  .site-footer { border-top: 1px solid var(--border); padding: 1.75rem 1.5rem 2.5rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; }
+  .site-footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <p class="tagline">Cada día laborable, un estudio de psicología reciente, traducido a un lenguaje claro. Con la fuente original siempre a la vista.</p>
+  <div class="newsletter-box">
+    <input type="email" id="newsletter-email" placeholder="tu@email.com" aria-label="Tu email">
+    <button onclick="suscribir()">Recibir novedades</button>
+    <p class="newsletter-msg" id="newsletter-msg"></p>
+  </div>
+</header>
+
+<main id="posts-container">
+
+  <article class="post-card art-1">
+    <div class="post-body-inner">
+    <h2 class="post-title">Dormir no siempre "resetea" una emoción fuerte: a veces la conserva</h2>
+    <span class="stamp">📎 J. Sleep Research · 2012</span>
+    <p class="post-teaser">Un estudio encontró algo contraintuitivo: pasar la noche durmiendo después de ver algo emocionalmente negativo conserva esa reacción casi intacta, mientras que quedarse despierto el mismo tiempo hace que se atenúe.</p>
+    <a href="post.html?id=ejemplo-1" class="read-more">Leer más →</a>
+    </div>
+  </article>
+
+  <article class="post-card art-2">
+    <div class="post-body-inner">
+    <h2 class="post-title">Escribir sobre lo que te preocupa protege más a quien más le da vueltas</h2>
+    <span class="stamp">📎 J. Research in Personality · 2008</span>
+    <p class="post-teaser">Un estudio con estudiantes encontró que escribir de forma expresiva sobre sus preocupaciones ayudó especialmente a quienes tenían más tendencia a rumiar, con menos síntomas depresivos meses después.</p>
+    <a href="post.html?id=ejemplo-2" class="read-more">Leer más →</a>
+    </div>
+  </article>
+
+  <article class="post-card art-3">
+    <div class="post-body-inner">
+    <h2 class="post-title">Pedimos ayuda pensando que nos dirán que no, y casi nunca pasa</h2>
+    <span class="stamp">📎 J. Personality &amp; Social Psychology · 2008</span>
+    <p class="post-teaser">Varios experimentos con peticiones de ayuda reales mostraron que la gente subestima hasta en un 50% la probabilidad de que alguien acceda a ayudarles si se lo piden directamente.</p>
+    <a href="post.html?id=ejemplo-3" class="read-more">Leer más →</a>
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <p>Cada resumen enlaza al estudio original. Esto es divulgación científica, no sustituye una consulta profesional.</p>
+  <p>© 2026 Psicolinks</p>
+</footer>
+
+<script>
+  // Contador de visitas a la portada (no bloquea nada si falla).
+  fetch('/.netlify/functions/track-view', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pagina: 'home' }),
+  }).catch(() => {});
+
+  async function suscribir() {
+    const input = document.getElementById('newsletter-email');
+    const msg = document.getElementById('newsletter-msg');
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) {
+      msg.textContent = 'Escribe un email válido.';
+      return;
+    }
+    try {
+      const res = await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        msg.textContent = '¡Listo! Ya estás apuntado.';
+        input.value = '';
+        input.disabled = true;
+      } else {
+        msg.textContent = 'No se pudo completar. Revisa el email e inténtalo de nuevo.';
+      }
+    } catch (e) {
+      msg.textContent = 'Error de conexión. Inténtalo de nuevo.';
+    }
+  }
+
+  // Si ya hay posts publicados de verdad, sustituyen a los de ejemplo de arriba.
+  const LIMITE_PORTADA = 12;
+  fetch(`/.netlify/functions/list-posts?limit=${LIMITE_PORTADA}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!data || !data.posts || data.posts.length === 0) return;
+      const container = document.getElementById('posts-container');
+      const arte = ['art-1', 'art-2', 'art-3', 'art-4'];
+      container.innerHTML = data.posts.map((p, i) => `
+        <article class="post-card ${arte[i % arte.length]}">
+          <div class="post-body-inner">
+          <h2 class="post-title">${p.titulo}</h2>
+          <span class="stamp">📎 ${p.fuente}</span>
+          <p class="post-teaser">${p.teaser}</p>
+          <a href="post.html?id=${p.id}" class="read-more">Leer más →</a>
+          </div>
+        </article>
+      `).join('');
+
+      if ((data.total || 0) > LIMITE_PORTADA) {
+        container.insertAdjacentHTML('beforeend', `
+          <a href="archivo.html" class="ver-mas">Ver artículos anteriores →</a>
+        `);
+      }
+    })
+    .catch(() => { /* si falla, se quedan los de ejemplo */ });
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psicolinks</title>
+<meta name="description" id="meta-description" content="Curiosidades de psicología basadas en estudios científicos reales, explicadas en español claro, con la fuente siempre a la vista.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" id="og-title" content="Psicolinks">
+<meta property="og:description" id="og-description" content="Curiosidades de psicología basadas en estudios científicos reales.">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEEDE6; --surface: #FFFFFF; --ink: #211F2E; --ink-soft: #625C70;
+    --border: #DDD7CB; --accent: #4A3B78; --stamp: #B5541D;
+    --font-display: 'Lora', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+    --font-mono: 'Space Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  .site-header { border-bottom: 1px solid var(--border); padding: 2rem 1.5rem 1.5rem; text-align: center; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; color: var(--ink); text-decoration: none; }
+  .logo em { color: var(--accent); font-style: normal; }
+
+  main { max-width: 640px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .back-link { font-size: 0.9rem; color: var(--ink-soft); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; }
+  .back-link:hover { text-decoration: underline; }
+
+  .stamp {
+    display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono);
+    font-size: 0.72rem; color: var(--stamp); border: 1.3px dashed var(--stamp); border-radius: 999px;
+    padding: 0.25rem 0.7rem; transform: rotate(-1.2deg); margin-bottom: 1rem;
+  }
+  .post-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1.28; margin: 0 0 1.2rem; }
+
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none;
+    color: var(--accent); font-weight: 600; font-size: 0.88rem; margin-bottom: 1.4rem;
+    padding: 0.45rem 0.9rem; border: 1.5px solid var(--accent); border-radius: 999px;
+  }
+  .btn-whatsapp:hover { background: var(--accent); color: white; }
+
+  .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); }
+  .post-body p { margin: 0 0 1.1rem; }
+
+  .source-box {
+    margin-top: 2rem; padding: 1.3rem 1.4rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 12px;
+  }
+  .source-box p { margin: 0 0 0.8rem; color: var(--ink-soft); font-size: 0.9rem; }
+  .btn-source {
+    display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none;
+    font-weight: 600; padding: 0.65rem 1.1rem; border-radius: 9px; font-size: 0.92rem;
+  }
+  .btn-source:hover { background: var(--accent); }
+
+  .consulta-box {
+    margin-top: 1.1rem; padding: 1.3rem 1.4rem; background: var(--surface);
+    border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 12px;
+  }
+  .consulta-box p { margin: 0 0 0.8rem; color: var(--ink); font-size: 0.92rem; line-height: 1.5; }
+  .btn-consulta { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .btn-consulta:hover { text-decoration: underline; }
+
+  .libros-box {
+    margin-top: 1.1rem; padding: 1.3rem 1.4rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 12px;
+  }
+  .libros-box p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.9rem; }
+  .libros-lista { display: flex; flex-direction: column; gap: 0.6rem; }
+  .libro-link {
+    display: flex; align-items: center; gap: 0.6rem; text-decoration: none;
+    color: var(--ink); font-weight: 600; font-size: 0.95rem; padding: 0.7rem 0.9rem;
+    border: 1px solid var(--border); border-radius: 9px; transition: border-color 0.15s, background 0.15s;
+  }
+  .libro-link:hover { border-color: var(--accent); background: var(--paper); }
+  .libros-box p.libros-disclosure { font-size: 0.55rem; color: var(--ink-soft); margin: 0.5rem 0 0; opacity: 0.6; }
+
+  .newsletter-box {
+    margin-top: 1.1rem; padding: 1.1rem 1.3rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 12px; text-align: center;
+  }
+  .newsletter-box p { margin: 0 0 0.7rem; color: var(--ink-soft); font-size: 0.88rem; }
+  .newsletter-form { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+  .newsletter-form input[type="email"] {
+    flex: 1; min-width: 160px; padding: 0.5rem 0.7rem; border: 1.5px solid var(--border);
+    border-radius: 8px; font-size: 0.9rem; font-family: var(--font-body);
+  }
+  .newsletter-form button {
+    padding: 0.5rem 0.95rem; border-radius: 8px; border: none; background: var(--accent);
+    color: white; font-weight: 600; font-size: 0.9rem; cursor: pointer; white-space: nowrap;
+  }
+  .newsletter-msg { font-size: 0.78rem; color: var(--ink-soft); margin: 0.5rem 0 0 !important; }
+
+  .status-msg { text-align: center; color: var(--ink-soft); padding: 3rem 1rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+
+<main id="post-container">
+  <p class="status-msg">Cargando…</p>
+</main>
+
+<script>
+  const EJEMPLOS = {
+    'ejemplo-1': {
+      fuente: 'Journal of Sleep Research · 2012',
+      titulo: 'Dormir no siempre "resetea" una emoción fuerte: a veces la conserva',
+      parrafos: [
+        'Investigadores mostraron a un grupo de participantes imágenes emocionalmente negativas y neutras, y midieron su reacción emocional 12 horas después. A un grupo le tocó pasar esas 12 horas despierto, y al otro dormir durante ese tiempo.',
+        'En el grupo que se quedó despierto, la reacción emocional a las imágenes negativas se redujo notablemente con el paso de las horas. En el grupo que durmió, en cambio, esa reacción se mantuvo casi igual de intensa — y cuanto más tiempo pasaban en fase de sueño REM, mejor se conservaba esa reacción.',
+        'Los autores lo interpretan como que dormir ayuda a consolidar el recuerdo emocional de lo vivido, en lugar de simplemente "diluirlo" con el paso del tiempo, como sí ocurre estando despierto.',
+      ],
+      url: 'https://pubmed.ncbi.nlm.nih.gov/22262901/',
+      urlLabel: 'Ver el estudio original en PubMed (en inglés)',
+    },
+    'ejemplo-2': {
+      fuente: 'Journal of Research in Personality · 2008',
+      titulo: 'Escribir sobre lo que te preocupa protege más a quien más le da vueltas',
+      parrafos: [
+        '69 estudiantes de primer curso fueron evaluados por su tendencia a rumiar (darle vueltas de forma repetitiva a pensamientos negativos) y por sus síntomas depresivos, y después asignados al azar a escribir de forma expresiva sobre sus emociones o a una tarea de escritura neutra.',
+        'A los 2, 4 y 6 meses, quienes tenían mayor tendencia a rumiar y habían hecho la escritura expresiva mostraban síntomas depresivos claramente menores que quienes hicieron la escritura neutra. En quienes rumiaban poco de partida, apenas hubo diferencia entre los dos grupos.',
+        'Es decir: el beneficio de esta escritura breve no fue igual para todo el mundo — fue mayor precisamente para quienes más lo necesitaban.',
+      ],
+      url: 'https://pubmed.ncbi.nlm.nih.gov/18410204/',
+      urlLabel: 'Ver el estudio original en PubMed (en inglés)',
+    },
+    'ejemplo-3': {
+      fuente: 'Journal of Personality and Social Psychology · 2008',
+      titulo: 'Pedimos ayuda pensando que nos dirán que no, y casi nunca pasa',
+      parrafos: [
+        'En una serie de seis estudios, con peticiones de ayuda tanto en laboratorio como en situaciones reales (pedir usar un móvil, rellenar una encuesta, acompañar a alguien), los investigadores encontraron un patrón consistente: quienes pedían ayuda predecían que serían rechazados con mucha más frecuencia de la que realmente ocurría.',
+        'En concreto, las personas subestimaron la disposición real de los demás a ayudar hasta en un 50%.',
+        'Según los autores, esto ocurre porque quien pide ayuda se centra en lo incómodo que puede ser para el otro decir que sí, mientras que quien podría ayudar valora más el coste social de decir que no — y ese coste pesa más de lo que el que pide imagina.',
+      ],
+      url: 'https://doi.org/10.1037/0022-3514.95.1.128',
+      urlLabel: 'Ver el estudio original (DOI, en inglés)',
+    },
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const container = document.getElementById('post-container');
+
+  function render(data) {
+    const descripcion = (data.teaser || data.parrafos[0] || '').slice(0, 155);
+    document.title = `${data.titulo} · Psicolinks`;
+    document.getElementById('meta-description').setAttribute('content', descripcion);
+    document.getElementById('og-title').setAttribute('content', data.titulo);
+    document.getElementById('og-description').setAttribute('content', descripcion);
+
+    const textoCompartir = encodeURIComponent(`${data.titulo}\n${window.location.href}`);
+    container.innerHTML = `
+      <a href="/" class="back-link">← Volver a Psicolinks</a>
+      <h1 class="post-title">${data.titulo}</h1>
+      <span class="stamp">📎 ${data.fuente}</span>
+      <a class="btn-whatsapp" href="https://wa.me/?text=${textoCompartir}" target="_blank" rel="noopener" onclick="registrarClic('whatsapp')"><svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink:0"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.25 1 4.27 2.6 5.8L4 22l5.5-1.5C10.3 20.8 11.13 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg> Compartir por WhatsApp</a>
+      <div class="post-body">${data.parrafos.map((p) => `<p>${p}</p>`).join('')}</div>
+      <div class="source-box">
+        <p>Este resumen se basa en un estudio científico real. Si quieres profundizar, el original está aquí:</p>
+        <a class="btn-source" href="${data.url}" target="_blank" rel="noopener">${data.urlLabel} →</a>
+      </div>
+      <div class="consulta-box">
+        <p>¿Este tema conecta con algo que vives tú? En consulta trabajo precisamente esto.</p>
+        <a class="btn-consulta" href="https://concienciaconductual.com" target="_blank" rel="noopener" onclick="registrarClic('consulta')">Conoce mi trabajo en concienciaconductual.com →</a>
+      </div>
+      <div class="libros-box">
+        <p>Si te interesa este tema, estos libros pueden ayudarte a profundizar:</p>
+        <div class="libros-lista">
+          <a class="libro-link" href="https://amzn.to/4pJrNFl" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-superregla')">📖 La superregla →</a>
+          <a class="libro-link" href="https://amzn.to/4fn6hTo" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-esqueyosoyasi')">📖 Es que yo soy así →</a>
+        </div>
+        <p class="libros-disclosure">Enlaces de afiliado — puede generar comisión, sin coste para ti.</p>
+      </div>
+      <div class="newsletter-box">
+        <p>¿Quieres recibir estas curiosidades en tu correo?</p>
+        <div class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="tu@email.com" aria-label="Tu email">
+          <button onclick="suscribir()">Apuntarme</button>
+        </div>
+        <p class="newsletter-msg" id="newsletter-msg"></p>
+      </div>
+    `;
+  }
+
+  function registrarClic(nombre) {
+    fetch('/.netlify/functions/track-view', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ clic: nombre }),
+    }).catch(() => {});
+  }
+
+  async function suscribir() {
+    const input = document.getElementById('newsletter-email');
+    const msg = document.getElementById('newsletter-msg');
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) {
+      msg.textContent = 'Escribe un email válido.';
+      return;
+    }
+    try {
+      const res = await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        msg.textContent = '¡Listo! Ya estás apuntado.';
+        input.value = '';
+        input.disabled = true;
+      } else {
+        msg.textContent = 'No se pudo completar. Revisa el email e inténtalo de nuevo.';
+      }
+    } catch (e) {
+      msg.textContent = 'Error de conexión. Inténtalo de nuevo.';
+    }
+  }
+
+  if (id && EJEMPLOS[id]) {
+    render(EJEMPLOS[id]);
+  } else if (id) {
+    fetch(`/.netlify/functions/get-post?id=${encodeURIComponent(id)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (!data || !data.post) {
+          container.innerHTML = '<p class="status-msg">No se ha encontrado esta publicación.</p>';
+          return;
+        }
+        const p = data.post;
+        render({
+          fuente: p.fuente,
+          titulo: p.titulo,
+          teaser: p.teaser,
+          parrafos: [p.resumen],
+          url: p.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/` : '#',
+          urlLabel: 'Ver el estudio original en PubMed (en inglés)',
+        });
+        fetch('/.netlify/functions/track-view', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pagina: 'post', id }),
+        }).catch(() => {});
+      })
+      .catch(() => {
+        container.innerHTML = '<p class="status-msg">No se ha podido cargar esta publicación.</p>';
+      });
+  } else {
+    container.innerHTML = '<p class="status-msg">Publicación no especificada.</p>';
+  }
+</script>
+</body>
+</html>

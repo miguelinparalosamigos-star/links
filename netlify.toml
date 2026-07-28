@@ -1,0 +1,15 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
+# fetch-studies.js se activa sola cada dia laborable (lunes a viernes) a las
+# 07:00 UTC (ver "schedule" dentro del propio fichero). No hace falta configurar
+# nada aqui para eso.
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/.netlify/functions/sitemap"
+  status = 200

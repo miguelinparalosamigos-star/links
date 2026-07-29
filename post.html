@@ -48,7 +48,7 @@
   .post-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1.28; margin: 0 0 1.2rem; }
 
   .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); }
-  .post-body p { margin: 0 0 1.1rem; }
+  .post-body p { margin: 0 0 1.3rem; }
 
   .source-box {
     margin-top: 2rem; padding: 1.3rem 1.4rem; background: var(--surface);
@@ -152,6 +152,88 @@
     },
   };
 
+  // ---------------------------------------------------------------
+  // Catálogo de libros recomendados (con enlace de afiliado de Amazon)
+  // ---------------------------------------------------------------
+  // Para añadir un libro nuevo: copia uno de estos bloques, cambia el
+  // id, el título, tu enlace de afiliado y las palabras clave. Las
+  // palabras clave son las que, si aparecen en el título o el texto
+  // del artículo, hacen que ESE libro se recomiende para ESE artículo.
+  // Pon varias variantes (singular, plural, sinónimos) para que sea
+  // más fácil que encaje con los artículos que se publican cada día.
+  const CATALOGO_LIBROS = [
+    {
+      id: 'superregla',
+      titulo: 'La superregla',
+      emoji: '📖',
+      url: 'https://amzn.to/4pJrNFl',
+      palabrasClave: [
+        'ansiedad', 'miedo', 'evitación', 'evitar', 'pánico', 'fobia',
+        'estrés', 'preocupación', 'preocupa', 'emoción', 'emociones',
+        'malestar', 'psicofármaco',
+      ],
+    },
+    {
+      id: 'esqueyosoyasi',
+      titulo: 'Es que yo soy así',
+      emoji: '📖',
+      url: 'https://amzn.to/4fn6hTo',
+      palabrasClave: [
+        'personalidad', 'identidad', 'carácter', 'patrón', 'patrones',
+        'hábito', 'hábitos', 'costumbre', 'rutina', 'autoconcepto',
+        'creencia', 'creencias', 'diagnóstico', 'etiqueta',
+      ],
+    },
+
+    // Ejemplo de cómo añadir otro libro (comentado: no se usa todavía).
+    // Descomenta y pon tu propio enlace de afiliado antes de activarlo:
+    // {
+    //   id: 'ejemplo-sueno',
+    //   titulo: 'Nombre del libro',
+    //   emoji: '📖',
+    //   url: 'PON-AQUI-TU-ENLACE-DE-AFILIADO',
+    //   palabrasClave: ['sueño', 'dormir', 'insomnio', 'descanso'],
+    // },
+  ];
+
+  // Convierte el resumen en párrafos de verdad. fetch-studies.js suele
+  // separar los párrafos con una línea en blanco; si no encuentra
+  // ninguna, prueba con saltos de línea simples.
+  function dividirEnParrafos(texto) {
+    if (!texto) return [];
+    let partes = texto.split(/\n\s*\n+/).map((t) => t.trim()).filter(Boolean);
+    if (partes.length <= 1) {
+      partes = texto.split(/\n+/).map((t) => t.trim()).filter(Boolean);
+    }
+    return partes.length > 0 ? partes : [texto.trim()];
+  }
+
+  // Elige los libros del catálogo cuyas palabras clave aparecen en el
+  // título/texto del artículo. Si ninguno encaja, muestra los primeros
+  // del catálogo en vez de dejar el hueco vacío.
+  function elegirLibrosRelevantes(datos, cantidad) {
+    const texto = (
+      (datos.titulo || '') + ' ' +
+      (datos.parrafos || []).join(' ') + ' ' +
+      (datos.fuente || '')
+    ).toLowerCase();
+
+    const puntuados = CATALOGO_LIBROS.map((libro) => {
+      const puntuacion = libro.palabrasClave.reduce(
+        (total, palabra) => total + (texto.includes(palabra.toLowerCase()) ? 1 : 0),
+        0
+      );
+      return { libro, puntuacion };
+    });
+
+    puntuados.sort((a, b) => b.puntuacion - a.puntuacion);
+    const conCoincidencia = puntuados.filter((p) => p.puntuacion > 0).slice(0, cantidad);
+
+    return conCoincidencia.length > 0
+      ? conCoincidencia.map((p) => p.libro)
+      : CATALOGO_LIBROS.slice(0, cantidad);
+  }
+
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
   const container = document.getElementById('post-container');
@@ -182,6 +264,11 @@
     });
     document.head.appendChild(jsonLd);
 
+    const librosElegidos = elegirLibrosRelevantes(data, 2);
+    const librosHtml = librosElegidos.map((libro) => `
+          <a class="libro-link" href="${libro.url}" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-${libro.id}')">${libro.emoji} ${libro.titulo} →</a>`
+    ).join('');
+
     container.innerHTML = `
       <a href="/" class="back-link">← Volver a Psicolinks</a>
       <h1 class="post-title">${data.titulo}</h1>
@@ -193,9 +280,7 @@
       </div>
       <div class="libros-box">
         <p>Si te interesa este tema, estos libros pueden ayudarte a profundizar:</p>
-        <div class="libros-lista">
-          <a class="libro-link" href="https://amzn.to/4pJrNFl" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-superregla')">📖 La superregla →</a>
-          <a class="libro-link" href="https://amzn.to/4fn6hTo" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-esqueyosoyasi')">📖 Es que yo soy así →</a>
+        <div class="libros-lista">${librosHtml}
         </div>
         <p class="libros-disclosure">Enlaces de afiliado — puede generar comisión, sin coste para ti.</p>
       </div>
@@ -225,7 +310,7 @@
           fuente: p.fuente,
           titulo: p.titulo,
           teaser: p.teaser,
-          parrafos: [p.resumen],
+          parrafos: dividirEnParrafos(p.resumen),
           url: p.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/` : '#',
           urlLabel: 'Ver el estudio original en PubMed (en inglés)',
         });

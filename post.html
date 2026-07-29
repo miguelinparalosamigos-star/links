@@ -40,6 +40,11 @@
   .back-link { font-size: 0.9rem; color: var(--ink-soft); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; }
   .back-link:hover { text-decoration: underline; }
 
+  .articulo-card {
+    background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent);
+    border-radius: 12px; padding: 1.8rem 1.8rem 1.6rem; margin-bottom: 1.5rem;
+  }
+
   .stamp {
     display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono);
     font-size: 0.72rem; color: var(--stamp); border: 1.3px dashed var(--stamp); border-radius: 999px;
@@ -50,6 +55,7 @@
 
   .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); overflow-wrap: break-word; }
   .post-body p { margin: 0 0 1.3rem; }
+  .post-body p:last-child { margin-bottom: 0; }
 
   .source-box {
     margin-top: 2rem; padding: 1.3rem 1.4rem; background: var(--surface);
@@ -347,9 +353,11 @@
 
     container.innerHTML = `
       <a href="/" class="back-link">← Volver a Psicolinks</a>
-      <h1 class="post-title">${data.titulo}</h1>
-      <span class="stamp">📎 ${data.fuente}</span>
-      <div class="post-body">${data.parrafos.map((p) => `<p>${p}</p>`).join('')}</div>
+      <div class="articulo-card">
+        <h1 class="post-title">${data.titulo}</h1>
+        <span class="stamp">📎 ${data.fuente}</span>
+        <div class="post-body">${data.parrafos.map((p) => `<p>${p}</p>`).join('')}</div>
+      </div>
       <div class="source-box">
         <p>Este resumen se basa en un estudio científico real. Si quieres profundizar, el original está aquí:</p>
         <a class="btn-source" href="${data.url}" target="_blank" rel="noopener">${data.urlLabel} →</a>

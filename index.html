@@ -9,6 +9,12 @@
 <meta property="og:site_name" content="Psicolinks">
 <meta property="og:title" content="Psicolinks · Psicología basada en estudios reales">
 <meta property="og:description" content="Cada día laborable, un estudio de psicología reciente traducido a un lenguaje claro. Con la fuente original siempre a la vista.">
+<meta property="og:url" content="https://psicolinks.example/">
+<meta property="og:image" content="https://psicolinks.example/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.example/">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,6 +80,18 @@
   .ver-mas:hover { color: var(--accent); text-decoration: underline; }
   .site-footer { border-top: 1px solid var(--border); padding: 1.75rem 1.5rem 2.5rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; }
   .site-footer a { color: var(--ink-soft); }
+  .otras-webs-titulo { font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: 0.07em; margin: 1.6rem 0 0.8rem; }
+  .otras-webs-lista { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-bottom: 1.2rem; }
+  .sitio-amigo {
+    display: flex; align-items: center; gap: 0.6rem; text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 0.65rem 1rem; transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .sitio-amigo:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .sitio-amigo-icono { width: 28px; height: auto; flex-shrink: 0; }
+  .sitio-amigo-texto { display: flex; flex-direction: column; text-align: left; }
+  .sitio-amigo-nombre { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 0.98rem; color: var(--ink); }
+  .sitio-amigo-desc { font-size: 0.72rem; color: var(--ink-soft); }
 </style>
 </head>
 <body>
@@ -121,6 +139,16 @@
 
 <footer class="site-footer">
   <p>Cada resumen enlaza al estudio original. Esto es divulgación científica, no sustituye una consulta profesional.</p>
+  <p class="otras-webs-titulo">Otras webs</p>
+  <div class="otras-webs-lista">
+    <a class="sitio-amigo" href="https://concienciaconductual.com" target="_blank" rel="noopener">
+      <svg class="sitio-amigo-icono" viewBox="0 0 42 22" fill="none" stroke="#8C3B4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1,12 L5,4 L8,19 L12,3 L15,13 C17.5,8 20.5,8 23,12 C24.5,14.5 27,14.5 28.5,12 C30,9.5 32,9.5 34,12 L41,12"/></svg>
+      <span class="sitio-amigo-texto">
+        <span class="sitio-amigo-nombre">Conciencia Conductual</span>
+        <span class="sitio-amigo-desc">Consulta de psicología con Miguel Martínez</span>
+      </span>
+    </a>
+  </div>
   <p>© 2026 Psicolinks</p>
 </footer>
 

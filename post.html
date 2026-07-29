@@ -28,7 +28,7 @@
     --font-mono: 'Space Mono', 'Courier New', monospace;
   }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--paper); color:var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   a { color: inherit; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
@@ -43,11 +43,12 @@
   .stamp {
     display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono);
     font-size: 0.72rem; color: var(--stamp); border: 1.3px dashed var(--stamp); border-radius: 999px;
-    padding: 0.25rem 0.7rem; transform: rotate(-1.2deg); margin-bottom: 1rem;
+    padding: 0.25rem 0.7rem; transform: rotate(-1.2deg); margin-bottom: 1rem; max-width: 100%;
+    overflow-wrap: break-word;
   }
-  .post-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1.28; margin: 0 0 1.2rem; }
+  .post-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1.28; margin: 0 0 1.2rem; overflow-wrap: break-word; }
 
-  .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); }
+  .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); overflow-wrap: break-word; }
   .post-body p { margin: 0 0 1.3rem; }
 
   .source-box {
@@ -217,6 +218,45 @@
       palabrasClave: [
         'pareja', 'relación', 'relaciones', 'apego', 'dependencia emocional',
         'amor', 'vínculo', 'vínculos', 'vinculo', 'vinculos',
+      ],
+    },
+    {
+      id: 'pensar-rapido-despacio',
+      titulo: 'Pensar rápido, pensar despacio',
+      emoji: '📖',
+      url: 'https://www.amazon.es/dp/8483068613?tag=conciencia07-21',
+      palabrasClave: [
+        'decisión', 'decisiones', 'sesgo', 'sesgos', 'intuición', 'intuitivo',
+        'racional', 'elegir', 'elección',
+      ],
+    },
+    {
+      id: 'solucion-procrastinacion',
+      titulo: 'La solución a la procrastinación',
+      emoji: '📖',
+      url: 'https://www.amazon.es/dp/8416720452?tag=conciencia07-21',
+      palabrasClave: [
+        'procrastinación', 'procrastinar', 'posponer', 'aplazar', 'postergar',
+        'fuerza de voluntad', 'productividad',
+      ],
+    },
+    {
+      id: 'aprender-de-la-perdida',
+      titulo: 'Aprender de la pérdida',
+      emoji: '📖',
+      url: 'https://www.amazon.es/dp/8408215051?tag=conciencia07-21',
+      palabrasClave: [
+        'duelo', 'pérdida', 'perdida', 'luto', 'pérdidas', 'perdidas',
+      ],
+    },
+    {
+      id: 'cerebro-y-ejercicio',
+      titulo: 'Cerebro y ejercicio',
+      emoji: '📖',
+      url: 'https://www.amazon.es/dp/841352041X?tag=conciencia07-21',
+      palabrasClave: [
+        'ejercicio', 'actividad física', 'deporte', 'correr', 'entrenamiento',
+        'sedentarismo', 'ejercicio físico', 'deportistas',
       ],
     },
   ];

@@ -155,18 +155,20 @@
   // ---------------------------------------------------------------
   // Catálogo de libros recomendados (con enlace de afiliado de Amazon)
   // ---------------------------------------------------------------
-  // Para añadir un libro nuevo: copia uno de estos bloques, cambia el
-  // id, el título, tu enlace de afiliado y las palabras clave. Las
-  // palabras clave son las que, si aparecen en el título o el texto
-  // del artículo, hacen que ESE libro se recomiende para ESE artículo.
-  // Pon varias variantes (singular, plural, sinónimos) para que sea
-  // más fácil que encaje con los artículos que se publican cada día.
+  // Para añadir un libro nuevo, ya no hace falta que generes tú el enlace
+  // de "compartir" en Amazon: basta con la URL del producto (o el ASIN,
+  // el código que va después de /dp/ en la URL) más "?tag=conciencia07-21"
+  // al final — así es como Amazon sabe que la venta es tuya. Solo dime el
+  // título del libro y de qué trata, y yo te preparo el bloque.
+  // Las "palabrasClave" son las que, si aparecen en el título o el texto
+  // del artículo, hacen que ESE libro se recomiende para ESE artículo —
+  // pon varias variantes (singular, plural, sinónimos).
   const CATALOGO_LIBROS = [
     {
       id: 'superregla',
       titulo: 'La superregla',
       emoji: '📖',
-      url: 'https://amzn.to/4pJrNFl',
+      url: 'https://amzn.to/3TLnBZL',
       palabrasClave: [
         'ansiedad', 'miedo', 'evitación', 'evitar', 'pánico', 'fobia',
         'estrés', 'preocupación', 'preocupa', 'emoción', 'emociones',
@@ -177,7 +179,9 @@
       id: 'esqueyosoyasi',
       titulo: 'Es que yo soy así',
       emoji: '📖',
-      url: 'https://amzn.to/4fn6hTo',
+      // Enlace construido con tu ASIN + tu ID de afiliado (revisa que abra
+      // bien tu libro — si no, dime el enlace correcto y lo cambio).
+      url: 'https://www.amazon.es/dp/B0GSJYQNHD?tag=conciencia07-21',
       palabrasClave: [
         'personalidad', 'identidad', 'carácter', 'patrón', 'patrones',
         'hábito', 'hábitos', 'costumbre', 'rutina', 'autoconcepto',
@@ -185,16 +189,36 @@
         'inseguridad',
       ],
     },
-
-    // Ejemplo de cómo añadir otro libro (comentado: no se usa todavía).
-    // Descomenta y pon tu propio enlace de afiliado antes de activarlo:
-    // {
-    //   id: 'ejemplo-sueno',
-    //   titulo: 'Nombre del libro',
-    //   emoji: '📖',
-    //   url: 'PON-AQUI-TU-ENLACE-DE-AFILIADO',
-    //   palabrasClave: ['sueño', 'dormir', 'insomnio', 'descanso'],
-    // },
+    {
+      id: 'habitos-sueno',
+      titulo: 'Los hábitos del sueño',
+      emoji: '📖',
+      url: 'https://www.amazon.es/dp/8410467216?tag=conciencia07-21',
+      palabrasClave: [
+        'sueño', 'dormir', 'insomnio', 'descanso', 'siesta', 'despertar',
+        'dormido', 'duerme', 'duermen', 'rem',
+      ],
+    },
+    {
+      id: 'ciencia-memoria',
+      titulo: 'La ciencia de la memoria',
+      emoji: '📖',
+      url: 'https://www.amazon.es/dp/8413612276?tag=conciencia07-21',
+      palabrasClave: [
+        'memoria', 'recordar', 'recuerdo', 'recuerdos', 'olvido', 'olvidar',
+        'aprendizaje', 'aprender', 'aprende',
+      ],
+    },
+    {
+      id: 'amar-o-depender',
+      titulo: '¿Amar o depender?',
+      emoji: '📖',
+      url: 'https://www.amazon.es/dp/8408126245?tag=conciencia07-21',
+      palabrasClave: [
+        'pareja', 'relación', 'relaciones', 'apego', 'dependencia emocional',
+        'amor', 'vínculo', 'vínculos', 'vinculo', 'vinculos',
+      ],
+    },
   ];
 
   // Convierte el resumen en párrafos de verdad. fetch-studies.js suele
@@ -210,8 +234,17 @@
   }
 
   // Elige los libros del catálogo cuyas palabras clave aparecen en el
-  // título/texto del artículo. Si ninguno encaja, muestra los primeros
-  // del catálogo en vez de dejar el hueco vacío.
+  // título/texto del artículo. Si ninguno encaja, reparte entre los que hay
+  // (barajados) en vez de mostrar siempre el mismo primero.
+  function barajar(lista) {
+    const copia = lista.slice();
+    for (let i = copia.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+    return copia;
+  }
+
   function elegirLibrosRelevantes(datos, cantidad) {
     const texto = (
       (datos.titulo || '') + ' ' +
@@ -219,7 +252,7 @@
       (datos.fuente || '')
     ).toLowerCase();
 
-    const puntuados = CATALOGO_LIBROS.map((libro) => {
+    const puntuados = barajar(CATALOGO_LIBROS).map((libro) => {
       const puntuacion = libro.palabrasClave.reduce(
         (total, palabra) => total + (texto.includes(palabra.toLowerCase()) ? 1 : 0),
         0
@@ -227,12 +260,14 @@
       return { libro, puntuacion };
     });
 
+    // Barajamos antes de puntuar, así que en caso de empate (incluido el caso
+    // de que nadie encaje, todos a 0) el orden ya viene mezclado en vez de
+    // ser siempre el mismo.
     puntuados.sort((a, b) => b.puntuacion - a.puntuacion);
-    const conCoincidencia = puntuados.filter((p) => p.puntuacion > 0).slice(0, cantidad);
+    const conCoincidencia = puntuados.filter((p) => p.puntuacion > 0);
+    const elegidos = conCoincidencia.length > 0 ? conCoincidencia : puntuados;
 
-    return conCoincidencia.length > 0
-      ? conCoincidencia.map((p) => p.libro)
-      : CATALOGO_LIBROS.slice(0, cantidad);
+    return elegidos.slice(0, cantidad).map((p) => p.libro);
   }
 
   const params = new URLSearchParams(window.location.search);

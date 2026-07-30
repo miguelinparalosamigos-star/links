@@ -55,22 +55,32 @@
 
   .desglose {
     background: var(--paper); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.5rem 1.6rem 0.5rem; margin: 0 0 1.6rem;
+    padding: 1.4rem 1.4rem 1.5rem; margin: 0 0 1.6rem;
   }
   .desglose-titulo {
     font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
-    letter-spacing: 0.12em; color: var(--ink-soft); margin: 0 0 0.3rem;
+    letter-spacing: 0.12em; color: var(--ink-soft); margin: 0 0 1rem;
   }
-  .desglose-fila { padding: 1rem 0; border-top: 1px solid var(--border); }
-  .desglose-fila:first-of-type { border-top: none; padding-top: 0.6rem; }
-  .desglose-etiqueta {
-    display: block; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.09em; color: var(--stamp); margin-bottom: 0.4rem;
+  .flujo { display: flex; flex-direction: column; }
+  .flujo-paso {
+    display: flex; align-items: flex-start; gap: 0.7rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1rem;
   }
-  .desglose-texto {
-    font-family: var(--font-display); font-size: 1.08rem; font-style: italic; color: var(--ink);
-    margin: 0; line-height: 1.5;
+  .flujo-icono { font-size: 1.2rem; line-height: 1; flex-shrink: 0; margin-top: 0.15rem; }
+  .flujo-etiqueta {
+    display: block; font-family: var(--font-mono); font-size: 0.64rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--stamp); margin-bottom: 0.3rem;
   }
+  .flujo-texto {
+    font-family: var(--font-display); font-size: 1rem; font-style: italic; color: var(--ink);
+    margin: 0; line-height: 1.45; overflow-wrap: break-word;
+  }
+  .flujo-flecha {
+    text-align: center; color: var(--accent); font-size: 1.05rem; line-height: 1;
+    padding: 0.3rem 0; font-weight: 700;
+  }
+  .flujo-paso-destacado { border-color: var(--accent); border-width: 1.5px; }
+  .flujo-paso-destacado .flujo-etiqueta { color: var(--accent); }
 
   .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); overflow-wrap: break-word; }
   .post-body p { margin: 0 0 1.3rem; }
@@ -393,22 +403,39 @@
     // no muestran esta caja, sin romper nada.
     const desgloseHtml = !data.desglose ? '' : `
         <div class="desglose">
-          <p class="desglose-titulo">En resumen</p>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">La pregunta</span>
-            <p class="desglose-texto">${data.desglose.pregunta}</p>
-          </div>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">El método</span>
-            <p class="desglose-texto">${data.desglose.metodo}</p>
-          </div>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">El hallazgo</span>
-            <p class="desglose-texto">${data.desglose.hallazgo}</p>
-          </div>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">Por qué pasa</span>
-            <p class="desglose-texto">${data.desglose.porQue}</p>
+          <p class="desglose-titulo">Cómo fue el estudio, de un vistazo</p>
+          <div class="flujo">
+            <div class="flujo-paso">
+              <span class="flujo-icono">❓</span>
+              <div>
+                <span class="flujo-etiqueta">La pregunta</span>
+                <p class="flujo-texto">${data.desglose.pregunta}</p>
+              </div>
+            </div>
+            <div class="flujo-flecha">↓</div>
+            <div class="flujo-paso">
+              <span class="flujo-icono">🧪</span>
+              <div>
+                <span class="flujo-etiqueta">El método</span>
+                <p class="flujo-texto">${data.desglose.metodo}</p>
+              </div>
+            </div>
+            <div class="flujo-flecha">↓</div>
+            <div class="flujo-paso flujo-paso-destacado">
+              <span class="flujo-icono">💡</span>
+              <div>
+                <span class="flujo-etiqueta">El hallazgo</span>
+                <p class="flujo-texto">${data.desglose.hallazgo}</p>
+              </div>
+            </div>
+            <div class="flujo-flecha">↓</div>
+            <div class="flujo-paso">
+              <span class="flujo-icono">🧠</span>
+              <div>
+                <span class="flujo-etiqueta">Por qué pasa</span>
+                <p class="flujo-texto">${data.desglose.porQue}</p>
+              </div>
+            </div>
           </div>
         </div>`;
 

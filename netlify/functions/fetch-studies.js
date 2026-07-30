@@ -104,13 +104,18 @@ Tu tarea, en español, con tono claro y cercano pero riguroso (nunca sensacional
 1. "titulo": un titular tipo "dato curioso" que enganche sin exagerar (máx. 110 caracteres).
 2. "teaser": 1-2 frases para la portada (máx. 200 caracteres).
 3. "resumen": 3 párrafos cortos explicando qué se hizo, qué se encontró y qué significa en la práctica. Fiel al abstract: no inventes datos, tamaños de muestra ni cifras que no estén en el texto original.
+4. Un desglose muy breve del mismo estudio, en cuatro frases cortas (máx. 60 caracteres cada una, sin punto final), fieles al abstract:
+   - "pregunta": la pregunta de investigación, formulada como pregunta (ej. "¿Ayudaría la gente si se lo pedimos?").
+   - "metodo": cómo se hizo el estudio, lo más resumido posible (ej. "Seis estudios, peticiones de ayuda reales").
+   - "hallazgo": el resultado principal, con la cifra si el abstract la da (ej. "Subestiman la ayuda real hasta un 50%").
+   - "porQue": la explicación o interpretación de por qué ocurre, si el abstract la ofrece (ej. "Sobrestiman lo incómodo que resulta pedir").
 
 Estudio (fuente: ${articulo.revista}${articulo.anio ? ', ' + articulo.anio : ''}):
 Título original: ${articulo.tituloOriginal}
 Abstract: ${articulo.abstract}
 
 Responde ÚNICAMENTE con un objeto JSON válido, sin texto antes ni después ni backticks de markdown, con exactamente estas claves:
-{"titulo": "...", "teaser": "...", "resumen": "..."}`;
+{"titulo": "...", "teaser": "...", "resumen": "...", "pregunta": "...", "metodo": "...", "hallazgo": "...", "porQue": "..."}`;
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -140,6 +145,9 @@ Responde ÚNICAMENTE con un objeto JSON válido, sin texto antes ni después ni 
 
   if (!redaccion.titulo || !redaccion.teaser || !redaccion.resumen) {
     throw new Error('Respuesta de Claude incompleta (faltan campos)');
+  }
+  if (!redaccion.pregunta || !redaccion.metodo || !redaccion.hallazgo || !redaccion.porQue) {
+    throw new Error('Respuesta de Claude incompleta (falta el desglose)');
   }
   return redaccion;
 }
@@ -183,6 +191,12 @@ export default async () => {
           titulo: redaccion.titulo,
           teaser: redaccion.teaser,
           resumen: redaccion.resumen,
+          desglose: {
+            pregunta: redaccion.pregunta,
+            metodo: redaccion.metodo,
+            hallazgo: redaccion.hallazgo,
+            porQue: redaccion.porQue,
+          },
           fecha: ahora,
           fechaPublicacion: ahora,
         });

@@ -1,0 +1,102 @@
+import { getStore } from '@netlify/blobs';
+
+// GET /.netlify/functions/list-stats
+// Header requerido: X-Admin-Passphrase (la misma que ya usas)
+// Devuelve: { vistasHome, totalSuscriptores, posts: [{id, titulo, vistas}], dias: [{fecha, vistas}] }
+export default async (req) => {
+  if (req.method !== 'GET') {
+    return new Response('Método no permitido', { status: 405 });
+  }
+
+  const clave = process.env.ADMIN_PASSPHRASE;
+  const recibida = req.headers.get('X-Admin-Passphrase');
+
+  if (!clave) {
+    console.error('list-stats: falta configurar ADMIN_PASSPHRASE en Netlify');
+    return new Response(JSON.stringify({ error: 'Servidor mal configurado' }), {
+      status: 500,
+      headers: { 'content-type': 'application/json' },
+    });
+  }
+  if (!recibida || recibida !== clave) {
+    return new Response(JSON.stringify({ error: 'Clave incorrecta' }), {
+      status: 401,
+      headers: { 'content-type': 'application/json' },
+    });
+  }
+
+  try {
+    const stats = getStore('estadisticas');
+    const posts = getStore('posts');
+    const suscriptores = getStore('suscriptores');
+
+    const { blobs: statsBlobs } = await stats.list();
+    let vistasHome = 0;
+    const vistasPorPost = {};
+    const vistasPorDia = {};
+    const clics = {};
+
+    for (const b of statsBlobs) {
+      const item = await stats.get(b.key, { type: 'json' });
+      if (!item) continue;
+      if (b.key === 'contador:home') {
+        vistasHome = item.total || 0;
+      } else if (b.key.startsWith('contador:post:')) {
+        vistasPorPost[b.key.slice('contador:post:'.length)] = item.total || 0;
+      } else if (b.key.startsWith('dia:')) {
+        vistasPorDia[b.key.slice('dia:'.length)] = item.total || 0;
+      } else if (b.key.startsWith('clic:')) {
+        clics[b.key.slice('clic:'.length)] = item.total || 0;
+      }
+    }
+
+    const { blobs: postBlobs } = await posts.list();
+    const postsConVistas = [];
+    for (const b of postBlobs) {
+      const post = await posts.get(b.key, { type: 'json' });
+      if (post) {
+        postsConVistas.push({
+          id: post.id,
+          titulo: post.titulo,
+          vistas: vistasPorPost[post.id] || 0,
+        });
+      }
+    }
+    postsConVistas.sort((a, b) => b.vistas - a.vistas);
+
+    const { blobs: subBlobs } = await suscriptores.list();
+
+    const dias = Object.keys(vistasPorDia)
+      .sort()
+      .reverse()
+      .slice(0, 14)
+      .map((fecha) => ({ fecha, vistas: vistasPorDia[fecha] }));
+
+    const ETIQUETAS_CLIC = {
+      'libro-superregla': 'Libro: La superregla',
+      'libro-esqueyosoyasi': 'Libro: Es que yo soy así',
+      consulta: 'Enlace a consulta (concienciaconductual.com)',
+      whatsapp: 'Compartir por WhatsApp',
+    };
+    const clicsLista = Object.keys(clics)
+      .map((nombre) => ({ nombre: ETIQUETAS_CLIC[nombre] || nombre, total: clics[nombre] }))
+      .sort((a, b) => b.total - a.total);
+
+    return new Response(
+      JSON.stringify({
+        vistasHome,
+        totalSuscriptores: subBlobs.length,
+        posts: postsConVistas,
+        dias,
+        clics: clicsLista,
+      }),
+      { status: 200, headers: { 'content-type': 'application/json' } }
+    );
+  } catch (err) {
+    console.error('list-stats: error interno:', err);
+    return new Response(JSON.stringify({ error: 'Error interno' }), {
+      status: 500,
+      headers: { 'content-type': 'application/json' },
+    });
+  }
+};

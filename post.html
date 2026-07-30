@@ -53,6 +53,25 @@
   }
   .post-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1.28; margin: 0 0 1.2rem; overflow-wrap: break-word; }
 
+  .desglose {
+    background: var(--paper); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 1.6rem 0.5rem; margin: 0 0 1.6rem;
+  }
+  .desglose-titulo {
+    font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--ink-soft); margin: 0 0 0.3rem;
+  }
+  .desglose-fila { padding: 1rem 0; border-top: 1px solid var(--border); }
+  .desglose-fila:first-of-type { border-top: none; padding-top: 0.6rem; }
+  .desglose-etiqueta {
+    display: block; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.09em; color: var(--stamp); margin-bottom: 0.4rem;
+  }
+  .desglose-texto {
+    font-family: var(--font-display); font-size: 1.08rem; font-style: italic; color: var(--ink);
+    margin: 0; line-height: 1.5;
+  }
+
   .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); overflow-wrap: break-word; }
   .post-body p { margin: 0 0 1.3rem; }
   .post-body p:last-child { margin-bottom: 0; }
@@ -127,6 +146,12 @@
     'ejemplo-1': {
       fuente: 'Journal of Sleep Research · 2012',
       titulo: 'Dormir no siempre "resetea" una emoción fuerte: a veces la conserva',
+      desglose: {
+        pregunta: '¿El sueño diluye una emoción negativa fuerte?',
+        metodo: 'Imágenes negativas, medidas 12 horas después',
+        hallazgo: 'Dormir conserva la reacción casi intacta',
+        porQue: 'El sueño REM consolida el recuerdo emocional',
+      },
       parrafos: [
         'Investigadores mostraron a un grupo de participantes imágenes emocionalmente negativas y neutras, y midieron su reacción emocional 12 horas después. A un grupo le tocó pasar esas 12 horas despierto, y al otro dormir durante ese tiempo.',
         'En el grupo que se quedó despierto, la reacción emocional a las imágenes negativas se redujo notablemente con el paso de las horas. En el grupo que durmió, en cambio, esa reacción se mantuvo casi igual de intensa — y cuanto más tiempo pasaban en fase de sueño REM, mejor se conservaba esa reacción.',
@@ -138,6 +163,12 @@
     'ejemplo-2': {
       fuente: 'Journal of Research in Personality · 2008',
       titulo: 'Escribir sobre lo que te preocupa protege más a quien más le da vueltas',
+      desglose: {
+        pregunta: '¿A quién ayuda más escribir sobre lo que preocupa?',
+        metodo: '69 estudiantes, escritura expresiva frente a neutra',
+        hallazgo: 'Menos síntomas depresivos en quien más rumiaba',
+        porQue: 'El beneficio fue mayor para quien más lo necesitaba',
+      },
       parrafos: [
         '69 estudiantes de primer curso fueron evaluados por su tendencia a rumiar (darle vueltas de forma repetitiva a pensamientos negativos) y por sus síntomas depresivos, y después asignados al azar a escribir de forma expresiva sobre sus emociones o a una tarea de escritura neutra.',
         'A los 2, 4 y 6 meses, quienes tenían mayor tendencia a rumiar y habían hecho la escritura expresiva mostraban síntomas depresivos claramente menores que quienes hicieron la escritura neutra. En quienes rumiaban poco de partida, apenas hubo diferencia entre los dos grupos.',
@@ -149,6 +180,12 @@
     'ejemplo-3': {
       fuente: 'Journal of Personality and Social Psychology · 2008',
       titulo: 'Pedimos ayuda pensando que nos dirán que no, y casi nunca pasa',
+      desglose: {
+        pregunta: '¿Ayudaría la gente si se lo pedimos?',
+        metodo: 'Seis estudios, peticiones de ayuda reales',
+        hallazgo: 'Subestiman la ayuda real hasta un 50%',
+        porQue: 'Sobrestiman lo incómodo que resulta pedir',
+      },
       parrafos: [
         'En una serie de seis estudios, con peticiones de ayuda tanto en laboratorio como en situaciones reales (pedir usar un móvil, rellenar una encuesta, acompañar a alguien), los investigadores encontraron un patrón consistente: quienes pedían ayuda predecían que serían rechazados con mucha más frecuencia de la que realmente ocurría.',
         'En concreto, las personas subestimaron la disposición real de los demás a ayudar hasta en un 50%.',
@@ -351,11 +388,36 @@
           <a class="libro-link" href="${libro.url}" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-${libro.id}')">${libro.emoji} ${libro.titulo} →</a>`
     ).join('');
 
+    // El desglose visual es opcional: los artículos que aún no lo traigan
+    // (los publicados antes de añadir esto a fetch-studies.js) simplemente
+    // no muestran esta caja, sin romper nada.
+    const desgloseHtml = !data.desglose ? '' : `
+        <div class="desglose">
+          <p class="desglose-titulo">En resumen</p>
+          <div class="desglose-fila">
+            <span class="desglose-etiqueta">La pregunta</span>
+            <p class="desglose-texto">${data.desglose.pregunta}</p>
+          </div>
+          <div class="desglose-fila">
+            <span class="desglose-etiqueta">El método</span>
+            <p class="desglose-texto">${data.desglose.metodo}</p>
+          </div>
+          <div class="desglose-fila">
+            <span class="desglose-etiqueta">El hallazgo</span>
+            <p class="desglose-texto">${data.desglose.hallazgo}</p>
+          </div>
+          <div class="desglose-fila">
+            <span class="desglose-etiqueta">Por qué pasa</span>
+            <p class="desglose-texto">${data.desglose.porQue}</p>
+          </div>
+        </div>`;
+
     container.innerHTML = `
       <a href="/" class="back-link">← Volver a Psicolinks</a>
       <div class="articulo-card">
         <h1 class="post-title">${data.titulo}</h1>
         <span class="stamp">📎 ${data.fuente}</span>
+        ${desgloseHtml}
         <div class="post-body">${data.parrafos.map((p) => `<p>${p}</p>`).join('')}</div>
       </div>
       <div class="source-box">
@@ -395,6 +457,7 @@
           titulo: p.titulo,
           teaser: p.teaser,
           parrafos: dividirEnParrafos(p.resumen),
+          desglose: p.desglose,
           url: p.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/` : '#',
           urlLabel: 'Ver el estudio original en PubMed (en inglés)',
         });

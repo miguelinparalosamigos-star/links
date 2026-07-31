@@ -75,8 +75,18 @@ export default async (req) => {
     const ETIQUETAS_CLIC = {
       'libro-superregla': 'Libro: La superregla',
       'libro-esqueyosoyasi': 'Libro: Es que yo soy así',
+      'libro-habitos-sueno': 'Libro: Los hábitos del sueño',
+      'libro-ciencia-memoria': 'Libro: La ciencia de la memoria',
+      'libro-amar-o-depender': 'Libro: ¿Amar o depender?',
+      'libro-pensar-rapido-despacio': 'Libro: Pensar rápido, pensar despacio',
+      'libro-solucion-procrastinacion': 'Libro: La solución a la procrastinación',
+      'libro-aprender-de-la-perdida': 'Libro: Aprender de la pérdida',
+      'libro-cerebro-y-ejercicio': 'Libro: Cerebro y ejercicio',
       consulta: 'Enlace a consulta (concienciaconductual.com)',
-      whatsapp: 'Compartir por WhatsApp',
+      'compartir-whatsapp': 'Compartir por WhatsApp',
+      'compartir-facebook': 'Compartir por Facebook',
+      'compartir-x': 'Compartir por X',
+      'compartir-email': 'Compartir por email',
     };
     const clicsLista = Object.keys(clics)
       .map((nombre) => ({ nombre: ETIQUETAS_CLIC[nombre] || nombre, total: clics[nombre] }))

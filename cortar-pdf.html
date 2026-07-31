@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cortar PDF online gratis: extraer o dividir páginas · MásPDF</title>
+<meta name="description" content="Extrae páginas concretas de un PDF o divídelo en varios archivos, gratis y sin subir nada a ningún servidor. Se procesa en tu propio navegador.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MásPDF">
+<meta property="og:title" content="Cortar PDF online gratis: extraer o dividir páginas · MásPDF">
+<meta property="og:description" content="Extrae páginas o divide un PDF en varios archivos, gratis, sin subir nada.">
+<meta name="theme-color" content="#F7F7F5">
+<link rel="canonical" href="https://maspdf.com/cortar-pdf.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232451E0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2h9l5 5v15H6z'/%3E%3Cpath d='M15 2v5h5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F7F5; --surface: #FFFFFF; --ink: #14171C; --ink-soft: #5B606B;
+    --accent: #2451E0; --accent-dark: #1B3EB0; --accent-soft: #E9EEFD;
+    --line: #E3E3DE; --error: #C0392B;
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  :focus-visible { outline: 2.5px solid var(--accent); outline-offset: 2px; }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  .site-header { padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; }
+  .logo svg { width: 26px; height: 26px; stroke: var(--accent); }
+  .nav-tools { display: flex; gap: 16px; flex-wrap: wrap; }
+  .nav-tools a { font-size: 0.86rem; font-weight: 600; text-decoration: none; color: var(--ink-soft); }
+  .nav-tools a:hover { color: var(--accent); }
+  .nav-tools a.activa { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .nav-tools { display: none; }
+  }
+
+  main { padding: 48px 0 80px; }
+  h1 { font-family: var(--font-display); font-size: clamp(1.6rem, 2.4vw + 1rem, 2.2rem); font-weight: 800; margin: 0 0 10px; text-align: center; }
+  .lead { color: var(--ink-soft); text-align: center; max-width: 480px; margin: 0 auto 40px; }
+
+  .zona-drop {
+    background: var(--surface); border: 2px dashed var(--line); border-radius: 16px;
+    padding: 40px 24px; text-align: center; cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .zona-drop.arrastrando { border-color: var(--accent); background: var(--accent-soft); }
+  .zona-drop svg { width: 40px; height: 40px; stroke: var(--accent); margin: 0 auto 14px; }
+  .zona-drop p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+  .zona-drop strong { color: var(--ink); }
+  input[type="file"] { display: none; }
+
+  .archivo-cargado {
+    display: none; align-items: center; gap: 12px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-top: 20px;
+  }
+  .archivo-cargado.visible { display: flex; }
+  .archivo-cargado svg { width: 22px; height: 22px; stroke: var(--accent); flex-shrink: 0; }
+  .archivo-cargado .nombre { flex: 1; font-size: 0.9rem; }
+  .archivo-cargado .paginas { font-size: 0.82rem; color: var(--ink-soft); white-space: nowrap; }
+
+  .opciones { display: none; margin-top: 28px; }
+  .opciones.visible { display: block; }
+  .modo-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+  .modo-tab {
+    flex: 1; padding: 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface);
+    font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; color: var(--ink-soft); cursor: pointer;
+  }
+  .modo-tab.activo { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+  .modo-panel { display: none; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+  .modo-panel.visible { display: block; }
+  .modo-panel label { display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 8px; }
+  .modo-panel input[type="text"] {
+    width: 100%; padding: 11px 13px; border: 1.5px solid var(--line); border-radius: 8px;
+    font-family: var(--font-body); font-size: 0.95rem; color: var(--ink);
+  }
+  .modo-panel input[type="text"]:focus { outline: none; border-color: var(--accent); }
+  .ayuda-campo { font-size: 0.8rem; color: var(--ink-soft); margin-top: 8px; }
+  .modo-panel p.explicacion { color: var(--ink-soft); font-size: 0.9rem; margin: 0 0 18px; }
+
+  .accion-principal { margin-top: 24px; text-align: center; }
+  .btn-cortar {
+    background: var(--accent); color: white; border: none; border-radius: 10px;
+    padding: 14px 32px; font-family: var(--font-body); font-weight: 600; font-size: 1rem;
+    cursor: pointer; transition: background 0.15s ease;
+  }
+  .btn-cortar:hover { background: var(--accent-dark); }
+  .btn-cortar:disabled { background: var(--line); color: var(--ink-soft); cursor: not-allowed; }
+
+  .mensaje { margin-top: 16px; text-align: center; font-size: 0.9rem; }
+  .mensaje.error { color: var(--error); }
+
+  .resultado { margin-top: 24px; background: var(--accent-soft); border-radius: 14px; padding: 24px; text-align: center; display: none; }
+  .resultado.visible { display: block; }
+  .resultado p { margin: 0 0 14px; font-size: 0.95rem; }
+  .btn-descargar {
+    display: inline-block; background: var(--ink); color: white; text-decoration: none;
+    font-weight: 600; padding: 12px 26px; border-radius: 10px; font-size: 0.95rem;
+  }
+  .btn-descargar:hover { background: var(--accent-dark); }
+
+  .info-seo { margin-top: 64px; color: var(--ink-soft); font-size: 0.92rem; }
+  .info-seo h2 { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink); margin: 0 0 10px; }
+
+  .producto-recomendado { margin-top: 32px; }
+  .producto-etiqueta { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 10px; }
+  .producto-card {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    background: var(--accent-soft); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px;
+  }
+  .producto-info h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin: 0 0 4px; color: var(--ink); }
+  .producto-info p { margin: 0; font-size: 0.87rem; color: var(--ink-soft); }
+  .producto-btn {
+    flex-shrink: 0; background: var(--ink); color: white; text-decoration: none; font-weight: 600;
+    padding: 10px 20px; border-radius: 9px; font-size: 0.88rem; white-space: nowrap;
+  }
+  .producto-btn:hover { background: var(--accent-dark); }
+  .producto-disclosure { margin: 10px 0 0; }
+
+  .site-footer { padding: 32px 0 48px; text-align: center; color: var(--ink-soft); font-size: 0.85rem; }
+  .footer-legal { display: flex; gap: 16px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+  .footer-legal a { color: var(--ink-soft); text-decoration: underline; font-size: 0.8rem; }
+  .footer-legal a:hover { color: var(--accent); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Cortar PDF - MásPDF",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cualquiera (funciona en el navegador)",
+  "description": "Extrae páginas concretas de un PDF o divídelo en varios archivos, gratis y sin subir nada a ningún servidor. Se procesa en tu propio navegador.",
+  "url": "https://maspdf.com/cortar-pdf.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MásPDF"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+      MásPDF
+    </a>
+    <nav class="nav-tools">
+      <a href="unir-pdf.html">Unir</a>
+      <a href="cortar-pdf.html" class="activa">Cortar</a>
+      <a href="reducir-pdf.html">Reducir</a>
+      <a href="jpg-a-pdf.html">JPG a PDF</a>
+      <a href="pdf-a-jpg.html">PDF a JPG</a>
+      <a href="word-a-pdf.html">Word a PDF</a>
+      <a href="pdf-a-word.html">PDF a Word</a>
+      <a href="firmar-pdf.html">Firmar</a>
+      <a href="editar-pdf.html">Editar</a>
+      <a href="rotar-pdf.html">Rotar</a>
+      <a href="eliminar-paginas.html">Eliminar páginas</a>
+      <a href="marca-de-agua.html">Marca de agua</a>
+      <a href="ocr-pdf.html">OCR</a>
+      <a href="proteger-pdf.html">Proteger</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Cortar PDF</h1>
+  <p class="lead">Sube un PDF para extraer las páginas que necesites o dividirlo en varios archivos.</p>
+
+  <div class="zona-drop" id="zona-drop">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+    <p><strong>Arrastra tu PDF aquí</strong> o haz clic para elegirlo</p>
+  </div>
+  <input type="file" id="input-archivo" accept="application/pdf">
+
+  <div class="archivo-cargado" id="archivo-cargado">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+    <span class="nombre" id="archivo-nombre"></span>
+    <span class="paginas" id="archivo-paginas"></span>
+  </div>
+
+  <div class="opciones" id="opciones">
+    <div class="modo-tabs">
+      <button type="button" class="modo-tab activo" data-modo="rango">Extraer un rango</button>
+      <button type="button" class="modo-tab" data-modo="individual">Separar en páginas sueltas</button>
+    </div>
+
+    <div class="modo-panel visible" id="panel-rango">
+      <p class="explicacion">Indica qué páginas quieres guardar en el nuevo PDF.</p>
+      <label for="input-rango">Páginas a extraer</label>
+      <input type="text" id="input-rango" placeholder="Ej: 1-3, 5">
+      <p class="ayuda-campo">Puedes combinar rangos y páginas sueltas separados por comas.</p>
+    </div>
+
+    <div class="modo-panel" id="panel-individual">
+      <p class="explicacion">Se generará un archivo .zip con cada página del PDF como un PDF independiente.</p>
+    </div>
+
+    <div class="accion-principal">
+      <button class="btn-cortar" id="btn-cortar">Cortar PDF</button>
+    </div>
+  </div>
+
+  <div class="mensaje" id="mensaje"></div>
+
+  <div class="resultado" id="resultado">
+    <p id="resultado-texto">Tu archivo ya está listo.</p>
+    <a class="btn-descargar" id="btn-descargar">Descargar →</a>
+  </div>
+
+  <div class="info-seo">
+    <h2>Cómo extraer o dividir páginas de un PDF</h2>
+    <p>Sube tu archivo y elige qué necesitas: si quieres quedarte solo con algunas páginas, escribe el rango (por ejemplo "1-3, 5") y se generará un nuevo PDF solo con esas páginas. Si lo que necesitas es separar el documento entero en archivos de una página cada uno, elige "Separar en páginas sueltas" y descargarás un .zip con todas ellas. Como en el resto de herramientas de MásPDF, el archivo no se sube a ningún servidor: todo ocurre en tu propio navegador.</p>
+  </div>
+
+  <div class="producto-recomendado container">
+    <p class="producto-etiqueta">Quizás te interese</p>
+    <div class="producto-card">
+      <div class="producto-info">
+        <h3>Clasificador de documentos por carpetas</h3>
+        <p>Si separas un PDF para archivar cada parte por su lado, un clasificador de carpetas ayuda a mantener el papeleo tan ordenado como los archivos.</p>
+      </div>
+      <a class="producto-btn" href="https://www.amazon.es/s?k=clasificador+documentos+carpetas&tag=conciencia07-21" target="_blank" rel="noopener sponsored">Ver en Amazon →</a>
+    </div>
+    <p class="producto-disclosure">Enlace de afiliado</p>
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-legal">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+    <p>© 2026 MásPDF</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+  const { PDFDocument } = PDFLib;
+
+  const zonaDrop = document.getElementById('zona-drop');
+  const inputArchivo = document.getElementById('input-archivo');
+  const archivoCargadoEl = document.getElementById('archivo-cargado');
+  const archivoNombreEl = document.getElementById('archivo-nombre');
+  const archivoPaginasEl = document.getElementById('archivo-paginas');
+  const opcionesEl = document.getElementById('opciones');
+  const inputRango = document.getElementById('input-rango');
+  const btnCortar = document.getElementById('btn-cortar');
+  const mensajeEl = document.getElementById('mensaje');
+  const resultadoEl = document.getElementById('resultado');
+  const resultadoTextoEl = document.getElementById('resultado-texto');
+  const btnDescargar = document.getElementById('btn-descargar');
+
+  let archivoActual = null;
+  let totalPaginas = 0;
+  let modoActivo = 'rango';
+
+  function reiniciarResultado() {
+    mensajeEl.textContent = '';
+    mensajeEl.className = 'mensaje';
+    resultadoEl.classList.remove('visible');
+  }
+
+  async function cargarArchivo(file) {
+    if (!file) return;
+    if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+      mensajeEl.textContent = 'Ese archivo no parece un PDF.';
+      mensajeEl.className = 'mensaje error';
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024 && !(window.MP_esPro && window.MP_esPro())) {
+      mensajeEl.innerHTML = 'Este archivo supera los 10 MB del plan gratis. <a href="#" data-abrir-pro style="color:var(--accent); font-weight:600; text-decoration:none;">Hazte Pro para no tener límite →</a>';
+      mensajeEl.className = 'mensaje error';
+      return;
+    }
+    try {
+      const bytes = await file.arrayBuffer();
+      const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
+      totalPaginas = doc.getPageCount();
+      archivoActual = file;
+      archivoNombreEl.textContent = file.name;
+      archivoPaginasEl.textContent = totalPaginas === 1 ? '1 página' : `${totalPaginas} páginas`;
+      archivoCargadoEl.classList.add('visible');
+      opcionesEl.classList.add('visible');
+      reiniciarResultado();
+    } catch (err) {
+      mensajeEl.textContent = 'No se ha podido leer el PDF. ¿Tiene contraseña o está dañado?';
+      mensajeEl.className = 'mensaje error';
+    }
+  }
+
+  zonaDrop.addEventListener('click', () => inputArchivo.click());
+  mensajeEl.addEventListener('click', (e) => {
+    if (e.target.matches('[data-abrir-pro]')) {
+      e.preventDefault();
+      if (window.MP_abrirVentanaPro) window.MP_abrirVentanaPro();
+    }
+  });
+  document.addEventListener('mppro:activada', () => {
+    if (mensajeEl.querySelector('[data-abrir-pro]')) reiniciarResultado();
+  });
+  inputArchivo.addEventListener('change', (e) => cargarArchivo(e.target.files[0]));
+  ['dragenter', 'dragover'].forEach((evt) => {
+    zonaDrop.addEventListener(evt, (e) => { e.preventDefault(); zonaDrop.classList.add('arrastrando'); });
+  });
+  ['dragleave', 'drop'].forEach((evt) => {
+    zonaDrop.addEventListener(evt, (e) => { e.preventDefault(); zonaDrop.classList.remove('arrastrando'); });
+  });
+  zonaDrop.addEventListener('drop', (e) => cargarArchivo(e.dataTransfer.files[0]));
+
+  document.querySelectorAll('.modo-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.modo-tab').forEach((t) => t.classList.remove('activo'));
+      tab.classList.add('activo');
+      modoActivo = tab.dataset.modo;
+      document.getElementById('panel-rango').classList.toggle('visible', modoActivo === 'rango');
+      document.getElementById('panel-individual').classList.toggle('visible', modoActivo === 'individual');
+      reiniciarResultado();
+    });
+  });
+
+  // Convierte "1-3, 5" en índices de página empezando en 0: [0,1,2,4]
+  function parseRangoPaginas(texto, total) {
+    const indices = new Set();
+    const partes = texto.split(',').map((p) => p.trim()).filter(Boolean);
+    for (const parte of partes) {
+      const m = parte.match(/^(\d+)-(\d+)$/);
+      if (m) {
+        let ini = parseInt(m[1], 10);
+        let fin = parseInt(m[2], 10);
+        if (ini > fin) [ini, fin] = [fin, ini];
+        for (let i = ini; i <= fin; i++) {
+          if (i >= 1 && i <= total) indices.add(i - 1);
+        }
+      } else if (/^\d+$/.test(parte)) {
+        const n = parseInt(parte, 10);
+        if (n >= 1 && n <= total) indices.add(n - 1);
+      }
+    }
+    return Array.from(indices).sort((a, b) => a - b);
+  }
+
+  btnCortar.addEventListener('click', async () => {
+    if (!archivoActual) return;
+    reiniciarResultado();
+    btnCortar.disabled = true;
+    btnCortar.textContent = 'Cortando…';
+    try {
+      const bytes = await archivoActual.arrayBuffer();
+      const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
+
+      if (modoActivo === 'rango') {
+        const indices = parseRangoPaginas(inputRango.value, totalPaginas);
+        if (indices.length === 0) {
+          mensajeEl.textContent = `Escribe un rango válido entre 1 y ${totalPaginas}.`;
+          mensajeEl.className = 'mensaje error';
+          return;
+        }
+        const nuevo = await PDFDocument.create();
+        const paginas = await nuevo.copyPages(doc, indices);
+        paginas.forEach((p) => nuevo.addPage(p));
+        const bytesFinal = await nuevo.save();
+        const blob = new Blob([bytesFinal], { type: 'application/pdf' });
+        btnDescargar.href = URL.createObjectURL(blob);
+        btnDescargar.download = 'paginas-extraidas.pdf';
+        resultadoTextoEl.textContent = `Listo: ${indices.length} página${indices.length === 1 ? '' : 's'} extraída${indices.length === 1 ? '' : 's'}.`;
+        resultadoEl.classList.add('visible');
+      } else {
+        const zip = new JSZip();
+        for (let i = 0; i < totalPaginas; i++) {
+          const nuevo = await PDFDocument.create();
+          const [pagina] = await nuevo.copyPages(doc, [i]);
+          nuevo.addPage(pagina);
+          const bytesPagina = await nuevo.save();
+          zip.file(`pagina-${i + 1}.pdf`, bytesPagina);
+        }
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        btnDescargar.href = URL.createObjectURL(zipBlob);
+        btnDescargar.download = 'paginas-separadas.zip';
+        resultadoTextoEl.textContent = `Listo: ${totalPaginas} archivos en un .zip.`;
+        resultadoEl.classList.add('visible');
+      }
+    } catch (err) {
+      mensajeEl.textContent = 'Algo ha fallado al cortar el PDF. Inténtalo de nuevo.';
+      mensajeEl.className = 'mensaje error';
+    } finally {
+      btnCortar.disabled = false;
+      btnCortar.textContent = 'Cortar PDF';
+    }
+  });
+</script>
+<script src="cookies.js" defer></script>
+<script src="mp-pro.js" defer></script>
+</body>
+</html>

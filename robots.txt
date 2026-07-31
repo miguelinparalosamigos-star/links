@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://psicolinks.com/sitemap.xml
+Sitemap: https://maspdf.com/sitemap.xml

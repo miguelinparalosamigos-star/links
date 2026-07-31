@@ -9,12 +9,13 @@
 <meta property="og:site_name" content="Psicolinks">
 <meta property="og:title" id="og-title" content="Psicolinks">
 <meta property="og:description" id="og-description" content="Curiosidades de psicología basadas en estudios científicos reales.">
-<meta property="og:url" id="og-url" content="https://psicolinks.example/post.html">
-<meta property="og:image" content="https://psicolinks.example/og-image.jpg">
+<meta property="og:url" id="og-url" content="https://psicolinks.com/post.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" id="link-canonical" href="https://psicolinks.example/post.html">
+<link rel="canonical" id="link-canonical" href="https://psicolinks.com/post.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +37,7 @@
   .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; color: var(--ink); text-decoration: none; }
   .logo em { color: var(--accent); font-style: normal; }
 
-  main { max-width: 640px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  main { max-width: 640px; margin: 0 auto; padding: 2.5rem 1.5rem 1.5rem; }
   .back-link { font-size: 0.9rem; color: var(--ink-soft); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; }
   .back-link:hover { text-decoration: underline; }
 
@@ -53,34 +54,47 @@
   }
   .post-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1.28; margin: 0 0 1.2rem; overflow-wrap: break-word; }
 
+  .meta-fila { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+  .meta-fila .stamp { margin-bottom: 0; }
+  .tiempo-lectura { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+
   .desglose {
     background: var(--paper); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.5rem 1.6rem 0.5rem; margin: 0 0 1.6rem;
+    padding: 1.4rem 1.4rem 1.5rem; margin: 0 0 1.6rem;
   }
   .desglose-titulo {
     font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
-    letter-spacing: 0.12em; color: var(--ink-soft); margin: 0 0 0.3rem;
+    letter-spacing: 0.12em; color: var(--ink-soft); margin: 0 0 1rem;
   }
-  .desglose-fila { padding: 1rem 0; border-top: 1px solid var(--border); }
-  .desglose-fila:first-of-type { border-top: none; padding-top: 0.6rem; }
-  .desglose-etiqueta {
-    display: block; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.09em; color: var(--stamp); margin-bottom: 0.4rem;
+  .flujo { display: flex; flex-direction: column; }
+  .flujo-paso {
+    display: flex; align-items: flex-start; gap: 0.7rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1rem;
   }
-  .desglose-texto {
-    font-family: var(--font-display); font-size: 1.08rem; font-style: italic; color: var(--ink);
-    margin: 0; line-height: 1.5;
+  .flujo-icono { font-size: 1.2rem; line-height: 1; flex-shrink: 0; margin-top: 0.15rem; }
+  .flujo-etiqueta {
+    display: block; font-family: var(--font-mono); font-size: 0.64rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--stamp); margin-bottom: 0.3rem;
   }
+  .flujo-texto {
+    font-family: var(--font-display); font-size: 1rem; font-style: italic; color: var(--ink);
+    margin: 0; line-height: 1.45; overflow-wrap: break-word;
+  }
+  .flujo-flecha {
+    text-align: center; color: var(--accent); font-size: 1.05rem; line-height: 1;
+    padding: 0.3rem 0; font-weight: 700;
+  }
+  .flujo-paso-destacado { border-color: var(--accent); border-width: 1.5px; }
+  .flujo-paso-destacado .flujo-etiqueta { color: var(--accent); }
 
   .post-body { font-size: 1.05rem; line-height: 1.7; color: var(--ink); overflow-wrap: break-word; }
   .post-body p { margin: 0 0 1.3rem; }
   .post-body p:last-child { margin-bottom: 0; }
 
-  .source-box {
-    margin-top: 2rem; padding: 1.3rem 1.4rem; background: var(--surface);
-    border: 1px solid var(--border); border-radius: 12px;
+  .fuente-original {
+    margin-top: 1.8rem; padding-top: 1.6rem; border-top: 1px dashed var(--border);
   }
-  .source-box p { margin: 0 0 0.8rem; color: var(--ink-soft); font-size: 0.9rem; }
+  .fuente-original p { margin: 0 0 0.8rem; color: var(--ink-soft); font-size: 0.9rem; }
   .btn-source {
     display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none;
     font-weight: 600; padding: 0.65rem 1.1rem; border-radius: 9px; font-size: 0.92rem;
@@ -100,7 +114,48 @@
     border: 1px solid var(--border); border-radius: 9px; transition: border-color 0.15s, background 0.15s;
   }
   .libro-link:hover { border-color: var(--accent); background: var(--paper); }
-  .libros-box p.libros-disclosure { font-size: 0.55rem; color: var(--ink-soft); margin: 0.5rem 0 0; opacity: 0.6; }
+  .libros-box p.libros-disclosure { margin: 0.7rem 0 0; }
+
+  .compartir-box {
+    margin-top: 1.1rem; padding: 1.1rem 1.4rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 12px;
+  }
+  .compartir-box p { margin: 0 0 0.8rem; color: var(--ink-soft); font-size: 0.9rem; }
+  .compartir-lista { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+  .compartir-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 50%; text-decoration: none; color: #fff;
+    box-shadow: 0 1px 2px rgba(33,31,46,0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .compartir-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(33,31,46,0.2); }
+  .compartir-btn svg { width: 20px; height: 20px; }
+  .compartir-btn .compartir-letra {
+    font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 700;
+    font-size: 1.25rem; line-height: 1;
+  }
+  .compartir-btn .compartir-letra-x {
+    font-family: var(--font-body); font-style: normal; font-weight: 700; font-size: 1.1rem;
+  }
+  .compartir-whatsapp { background: #25D366; }
+  .compartir-facebook { background: #1877F2; }
+  .compartir-x { background: #000000; }
+  .compartir-email { background: var(--ink); }
+
+  .relacionados-box { margin-top: 1.1rem; }
+  .relacionados-titulo {
+    font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--ink-soft); margin: 0 0 0.8rem;
+  }
+  .relacionados-lista {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .relacionado-link {
+    display: block; padding: 0.9rem 1.2rem; text-decoration: none; color: var(--ink);
+    font-weight: 600; font-size: 0.92rem;
+  }
+  .relacionado-link:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .relacionado-link:hover { color: var(--accent); text-decoration: underline; }
 
   .status-msg { text-align: center; color: var(--ink-soft); padding: 3rem 1rem; }
 
@@ -353,6 +408,72 @@
     return elegidos.slice(0, cantidad).map((p) => p.libro);
   }
 
+  // Quita acentos y signos para comparar palabras sin que un "está" y un
+  // "esta" cuenten como distintas.
+  function normalizar(texto) {
+    return (texto || '')
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9\s]/g, ' ');
+  }
+
+  // Palabras demasiado genéricas en textos de divulgación científica como
+  // para servir de pista de "de qué trata" un artículo.
+  const PALABRAS_VACIAS_RELACIONADOS = new Set([
+    'para', 'como', 'pero', 'esto', 'esta', 'estos', 'estas', 'entre', 'sobre',
+    'desde', 'hasta', 'donde', 'cuando', 'porque', 'tambien', 'mientras',
+    'despues', 'antes', 'mismo', 'misma', 'mucho', 'mucha', 'muchos', 'muchas',
+    'poco', 'pocos', 'tiene', 'tienen', 'fueron', 'estudio', 'estudios',
+    'investigadores', 'participantes', 'personas', 'resultado', 'resultados',
+  ]);
+
+  function palabrasClaveDe(texto) {
+    return normalizar(texto)
+      .split(/\s+/)
+      .filter((p) => p.length > 4 && !PALABRAS_VACIAS_RELACIONADOS.has(p));
+  }
+
+  // Puntúa cada candidato por cuántas palabras clave comparte con el
+  // artículo actual. Sin diccionario de temas: solo solapamiento de texto.
+  function elegirRelacionados(actual, candidatos, cantidad) {
+    const palabrasActual = new Set(palabrasClaveDe(
+      (actual.titulo || '') + ' ' + (actual.parrafos || []).join(' ')
+    ));
+    const puntuados = candidatos.map((p) => {
+      const palabrasOtro = palabrasClaveDe((p.titulo || '') + ' ' + (p.teaser || ''));
+      let puntuacion = 0;
+      palabrasOtro.forEach((palabra) => { if (palabrasActual.has(palabra)) puntuacion++; });
+      return { p, puntuacion };
+    });
+    // A igual puntuación (incluido 0-0, cuando nada encaja), se conserva el
+    // orden de list-posts, que ya viene del más reciente al más antiguo.
+    puntuados.sort((a, b) => b.puntuacion - a.puntuacion);
+    return puntuados.slice(0, cantidad).map((x) => x.p);
+  }
+
+  // No bloquea el resto de la página: si falla o no hay más artículos, la
+  // sección de relacionados simplemente no aparece.
+  function cargarRelacionados(data, idActual) {
+    fetch('/.netlify/functions/list-posts?limit=30')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((resp) => {
+        const destino = document.getElementById('relacionados-container');
+        if (!destino || !resp || !resp.posts) return;
+        const candidatos = resp.posts.filter((p) => p.id !== idActual);
+        if (candidatos.length === 0) return;
+        const elegidos = elegirRelacionados(data, candidatos, 3);
+        if (elegidos.length === 0) return;
+        destino.innerHTML = `
+          <div class="relacionados-box">
+            <p class="relacionados-titulo">Sigue leyendo</p>
+            <div class="relacionados-lista">
+              ${elegidos.map((p) => `<a class="relacionado-link" href="post.html?id=${encodeURIComponent(p.id)}">${p.titulo} →</a>`).join('')}
+            </div>
+          </div>`;
+      })
+      .catch(() => {});
+  }
+
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
   const container = document.getElementById('post-container');
@@ -374,7 +495,7 @@
       '@type': 'BlogPosting',
       headline: data.titulo,
       description: descripcion,
-      image: 'https://psicolinks.example/og-image.jpg',
+      image: 'https://psicolinks.com/og-image.jpg',
       url: urlActual,
       inLanguage: 'es',
       isAccessibleForFree: true,
@@ -382,6 +503,43 @@
       mainEntityOfPage: { '@type': 'WebPage', '@id': urlActual },
     });
     document.head.appendChild(jsonLd);
+
+    // Breadcrumb: ayuda a que Google entienda dónde encaja este artículo
+    // dentro del sitio (portada > artículo), sin cambiar nada visible.
+    const breadcrumbLd = document.createElement('script');
+    breadcrumbLd.type = 'application/ld+json';
+    breadcrumbLd.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Psicolinks', item: 'https://psicolinks.com/' },
+        { '@type': 'ListItem', position: 2, name: data.titulo, item: urlActual },
+      ],
+    });
+    document.head.appendChild(breadcrumbLd);
+
+    // Tiempo de lectura estimado (≈200 palabras/min en español).
+    const totalPalabras = (data.parrafos || []).join(' ').split(/\s+/).filter(Boolean).length;
+    const minutosLectura = Math.max(1, Math.round(totalPalabras / 200));
+
+    // Iconos reconocibles por color + forma (verde+bocadillo = WhatsApp, azul+"f"
+    // = Facebook, negro+"X" = X, sobre = email) en vez de solo texto — así se
+    // identifica cada red de un vistazo, sin tener que leer las siglas.
+    const ICONOS_COMPARTIR = {
+      whatsapp: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.4-4.2A7.9 7.9 0 1 1 9 19.2z"/><path d="M8.2 9.6c.2-.5.5-.5.8-.5h.6c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.8.1.1.1.3 0 .4-.1.2-.2.3-.3.4-.2.2-.3.3-.5.5-.2.2-.3.3-.1.6.2.4.8 1.2 1.7 1.9 1.1 1 2 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.9.3.1.5.2.5.3 0 .2 0 .9-.4 1.3-.4.5-1.5.9-2.1.9-.6.1-1 .1-2.5-.5-2.1-.9-3.5-2.9-3.6-3.1-.1-.1-.9-1.2-.9-2.3 0-1.1.6-1.6.8-1.8z" fill="#fff" stroke="none"/></svg>',
+      facebook: '<span class="compartir-letra">f</span>',
+      x: '<span class="compartir-letra compartir-letra-x">X</span>',
+      email: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+    };
+    const enlacesCompartir = [
+      { nombre: 'whatsapp', href: `https://wa.me/?text=${encodeURIComponent(data.titulo + ' — ' + urlActual)}`, etiqueta: 'Compartir por WhatsApp' },
+      { nombre: 'facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlActual)}`, etiqueta: 'Compartir en Facebook' },
+      { nombre: 'x', href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(data.titulo)}&url=${encodeURIComponent(urlActual)}`, etiqueta: 'Compartir en X' },
+      { nombre: 'email', href: `mailto:?subject=${encodeURIComponent(data.titulo)}&body=${encodeURIComponent(urlActual)}`, etiqueta: 'Compartir por email' },
+    ];
+    const compartirHtml = enlacesCompartir.map((e) => `
+          <a class="compartir-btn compartir-${e.nombre}" href="${e.href}" target="_blank" rel="noopener" aria-label="${e.etiqueta}" title="${e.etiqueta}" onclick="registrarClic('compartir-${e.nombre}')">${ICONOS_COMPARTIR[e.nombre]}</a>`
+    ).join('');
 
     const librosElegidos = elegirLibrosRelevantes(data, 2);
     const librosHtml = librosElegidos.map((libro) => `
@@ -393,22 +551,39 @@
     // no muestran esta caja, sin romper nada.
     const desgloseHtml = !data.desglose ? '' : `
         <div class="desglose">
-          <p class="desglose-titulo">En resumen</p>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">La pregunta</span>
-            <p class="desglose-texto">${data.desglose.pregunta}</p>
-          </div>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">El método</span>
-            <p class="desglose-texto">${data.desglose.metodo}</p>
-          </div>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">El hallazgo</span>
-            <p class="desglose-texto">${data.desglose.hallazgo}</p>
-          </div>
-          <div class="desglose-fila">
-            <span class="desglose-etiqueta">Por qué pasa</span>
-            <p class="desglose-texto">${data.desglose.porQue}</p>
+          <p class="desglose-titulo">Cómo fue el estudio, de un vistazo</p>
+          <div class="flujo">
+            <div class="flujo-paso">
+              <span class="flujo-icono">❓</span>
+              <div>
+                <span class="flujo-etiqueta">La pregunta</span>
+                <p class="flujo-texto">${data.desglose.pregunta}</p>
+              </div>
+            </div>
+            <div class="flujo-flecha">↓</div>
+            <div class="flujo-paso">
+              <span class="flujo-icono">🧪</span>
+              <div>
+                <span class="flujo-etiqueta">El método</span>
+                <p class="flujo-texto">${data.desglose.metodo}</p>
+              </div>
+            </div>
+            <div class="flujo-flecha">↓</div>
+            <div class="flujo-paso flujo-paso-destacado">
+              <span class="flujo-icono">💡</span>
+              <div>
+                <span class="flujo-etiqueta">El hallazgo</span>
+                <p class="flujo-texto">${data.desglose.hallazgo}</p>
+              </div>
+            </div>
+            <div class="flujo-flecha">↓</div>
+            <div class="flujo-paso">
+              <span class="flujo-icono">🧠</span>
+              <div>
+                <span class="flujo-etiqueta">Por qué pasa</span>
+                <p class="flujo-texto">${data.desglose.porQue}</p>
+              </div>
+            </div>
           </div>
         </div>`;
 
@@ -416,21 +591,31 @@
       <a href="/" class="back-link">← Volver a Psicolinks</a>
       <div class="articulo-card">
         <h1 class="post-title">${data.titulo}</h1>
-        <span class="stamp">📎 ${data.fuente}</span>
+        <div class="meta-fila">
+          <span class="stamp">📎 ${data.fuente}</span>
+          <span class="tiempo-lectura">🕒 ${minutosLectura} min de lectura</span>
+        </div>
         ${desgloseHtml}
         <div class="post-body">${data.parrafos.map((p) => `<p>${p}</p>`).join('')}</div>
+        <div class="fuente-original">
+          <p>Este resumen se basa en un estudio científico real. Si quieres profundizar, el original está aquí:</p>
+          <a class="btn-source" href="${data.url}" target="_blank" rel="noopener">${data.urlLabel} →</a>
+        </div>
       </div>
-      <div class="source-box">
-        <p>Este resumen se basa en un estudio científico real. Si quieres profundizar, el original está aquí:</p>
-        <a class="btn-source" href="${data.url}" target="_blank" rel="noopener">${data.urlLabel} →</a>
+      <div class="compartir-box">
+        <p>Comparte este artículo:</p>
+        <div class="compartir-lista">${compartirHtml}</div>
       </div>
       <div class="libros-box">
         <p>Si te interesa este tema, estos libros pueden ayudarte a profundizar:</p>
         <div class="libros-lista">${librosHtml}
         </div>
-        <p class="libros-disclosure">Enlaces de afiliado — puede generar comisión, sin coste para ti.</p>
+        <p class="libros-disclosure">Enlaces de afiliado</p>
       </div>
+      <div id="relacionados-container"></div>
     `;
+
+    cargarRelacionados(data, id);
   }
 
   function registrarClic(nombre) {
@@ -474,6 +659,6 @@
     container.innerHTML = '<p class="status-msg">Publicación no especificada.</p>';
   }
 </script>
-<script src="js/cookies-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

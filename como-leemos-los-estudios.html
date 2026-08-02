@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo leemos los estudios · Psicolinks</title>
+<meta name="description" content="Qué significa que un estudio sea 'significativo', por qué el tamaño de la muestra importa, y otras claves para leer ciencia con criterio propio.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Cómo leemos los estudios · Psicolinks">
+<meta property="og:description" content="Qué significa que un estudio sea 'significativo', por qué el tamaño de la muestra importa, y otras claves para leer ciencia con criterio propio.">
+<meta property="og:url" content="https://psicolinks.com/como-leemos-los-estudios.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/como-leemos-los-estudios.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Cómo leemos los estudios", "item": "https://psicolinks.com/como-leemos-los-estudios.html" }
+  ]
+}
+</script>
+<style>
+  :root {
+    --paper: #EEEDE6; --surface: #FFFFFF; --ink: #211F2E; --ink-soft: #625C70;
+    --border: #DDD7CB; --accent: #4A3B78; --stamp: #B5541D;
+    --font-display: 'Lora', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  .site-header { border-bottom: 1px solid var(--border); padding: 2rem 1.5rem 1.5rem; text-align: center; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; color: var(--ink); text-decoration: none; }
+  .logo em { color: var(--accent); font-style: normal; }
+
+  main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .back-link { font-size: 0.9rem; color: var(--ink-soft); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; }
+  .back-link:hover { text-decoration: underline; }
+  h1 { font-family: var(--font-display); font-size: 1.9rem; line-height: 1.25; margin: 0 0 10px; }
+  .intro { color: var(--ink-soft); font-size: 1.02rem; line-height: 1.6; margin: 0 0 34px; }
+  h2 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; margin: 0 0 10px; }
+  p, li { font-size: 0.98rem; line-height: 1.7; }
+  ul { padding-left: 22px; margin: 0 0 12px; }
+
+  .punto {
+    background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent);
+    border-radius: 12px; padding: 1.4rem 1.6rem 1.5rem; margin: 0 0 1.25rem;
+  }
+  .punto p:last-child { margin-bottom: 0; }
+  .punto-2 { border-top-color: var(--stamp); }
+  .punto-3 { border-top-color: #3D5A4C; }
+  .punto-4 { border-top-color: #3E5C74; }
+  .punto-5 { border-top-color: var(--accent); }
+
+  .ejemplo {
+    margin-top: 0.8rem; padding: 0.9rem 1.1rem; background: var(--paper);
+    border-radius: 9px; font-size: 0.9rem; font-style: italic; color: var(--ink-soft);
+  }
+
+  .aviso-destacado { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 34px 0 0; font-size: 0.92rem; }
+  .aviso-destacado p { margin: 0; }
+
+  .site-footer { border-top: 1px solid var(--border); padding: 1.75rem 1.5rem 2.5rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; }
+  .otras-webs-titulo { font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: 0.07em; margin: 0 0 0.8rem; }
+  .otras-webs-lista { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-bottom: 1.2rem; }
+  .sitio-amigo {
+    display: flex; align-items: center; gap: 0.6rem; text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 0.65rem 1rem; transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .sitio-amigo:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .sitio-amigo-icono { width: 28px; height: auto; flex-shrink: 0; }
+  .sitio-amigo-texto { display: flex; flex-direction: column; text-align: left; }
+  .sitio-amigo-nombre { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 0.98rem; color: var(--ink); }
+  .sitio-amigo-desc { font-size: 0.72rem; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+
+<main>
+  <a href="/" class="back-link">← Volver a Psicolinks</a>
+  <h1>Cómo leemos los estudios</h1>
+  <p class="intro">Cada artículo de Psicolinks parte de un estudio científico real, con su fuente siempre enlazada. Pero un resumen corto nunca sustituye leer con criterio propio — así que aquí van, en cinco puntos, las claves que usamos nosotros mismos al elegir y traducir cada estudio, para que tú también puedas leerlos con la misma mirada.</p>
+
+  <div class="punto">
+    <h2>1. Un estudio no es la última palabra</h2>
+    <p>Un solo estudio es un dato, no una verdad cerrada. La ciencia avanza cuando varios equipos, con métodos distintos, llegan a resultados parecidos — eso se llama replicación. Que un titular diga "un estudio descubre que..." no significa que el tema esté zanjado; significa que hay una pieza más del puzle, y que conviene ver si otros estudios apuntan en la misma dirección antes de darlo por hecho.</p>
+  </div>
+
+  <div class="punto punto-2">
+    <h2>2. El tamaño de la muestra importa</h2>
+    <p>Cuánta gente participó en el estudio cambia cuánto peso darle al resultado. Un hallazgo con 20 participantes puede ser el punto de partida de algo interesante, pero pesa mucho menos que el mismo hallazgo repetido con 2.000 personas. No lo invalida — muchos estudios pequeños son el primer paso de una investigación más grande — pero conviene tenerlo en cuenta antes de sacar conclusiones grandes de un grupo pequeño.</p>
+    <div class="ejemplo">En Psicolinks intentamos mencionar el tamaño de la muestra en el resumen o en "El método" del desglose, cuando el estudio original lo indica con claridad.</div>
+  </div>
+
+  <div class="punto punto-3">
+    <h2>3. "Significativo" no significa "importante"</h2>
+    <p>En estadística, que un resultado sea "significativo" quiere decir algo muy concreto: que es poco probable que haya salido por puro azar. No quiere decir que el efecto sea grande, ni que vaya a notarse en la vida real. Un estudio puede encontrar una diferencia estadísticamente significativa que, en la práctica, sea tan pequeña que apenas se perciba. Merece la pena distinguir "esto es real" de "esto es relevante" — no siempre van juntas.</p>
+  </div>
+
+  <div class="punto punto-4">
+    <h2>4. Correlación no es causalidad</h2>
+    <p>Que dos cosas aparezcan juntas en un estudio no significa que una provoque la otra. Puede que sí, pero también puede que ambas dependan de un tercer factor, o que la relación vaya en el sentido contrario al que parece intuitivo. Es probablemente el error más común al leer ciencia por encima — y también el que más titulares exagerados produce fuera de Psicolinks.</p>
+    <div class="ejemplo">Ejemplo clásico: la gente que duerme mal tiene más ansiedad. ¿Duerme mal porque está ansiosa, está ansiosa porque duerme mal, o hay algo más de fondo que empeora las dos cosas a la vez? Un solo estudio correlacional no siempre puede responder eso.</div>
+  </div>
+
+  <div class="punto punto-5">
+    <h2>5. Cómo redactamos cada artículo</h2>
+    <p>Buscamos estudios de psicología recién publicados en PubMed (la base de datos científica pública de EE.UU.), y con ayuda de IA traducimos el título y el resumen original —en inglés, y con lenguaje técnico— a un español claro. Le pedimos explícitamente que sea fiel al abstract original: que no invente cifras, tamaños de muestra ni conclusiones que el estudio no respalde, y que evite el sensacionalismo. Aun así, es un resumen, no el estudio completo — por eso cada artículo enlaza siempre a la fuente original, para quien quiera comprobarlo o profundizar por su cuenta.</p>
+  </div>
+
+  <div class="aviso-destacado">
+    <p>Psicolinks es divulgación científica, no asesoramiento profesional. Si algo de lo que lees aquí te resuena y te preocupa, lo sensato es hablarlo con un profesional de la salud mental, no autodiagnosticarte con un resumen de tres párrafos.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p class="otras-webs-titulo">Otras webs</p>
+  <div class="otras-webs-lista">
+    <a class="sitio-amigo" href="https://concienciaconductual.com" target="_blank" rel="noopener">
+      <svg class="sitio-amigo-icono" viewBox="0 0 42 22" fill="none" stroke="#8C3B4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1,12 L5,4 L8,19 L12,3 L15,13 C17.5,8 20.5,8 23,12 C24.5,14.5 27,14.5 28.5,12 C30,9.5 32,9.5 34,12 L41,12"/></svg>
+      <span class="sitio-amigo-texto">
+        <span class="sitio-amigo-nombre">Conciencia Conductual</span>
+        <span class="sitio-amigo-desc">Consulta de psicología con Miguel Martínez</span>
+      </span>
+    </a>
+  </div>
+  <p>© 2026 Psicolinks · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+</footer>
+
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+</body>
+</html>

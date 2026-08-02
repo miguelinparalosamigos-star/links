@@ -99,12 +99,7 @@
 
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
-  <p class="tagline">Cada día laborable, un estudio de psicología reciente, traducido a un lenguaje claro. Con la fuente original siempre a la vista.</p>
-  <div class="newsletter-box">
-    <input type="email" id="newsletter-email" placeholder="tu@email.com" aria-label="Tu email">
-    <button onclick="suscribir()">Recibir novedades</button>
-    <p class="newsletter-msg" id="newsletter-msg"></p>
-  </div>
+  <p class="tagline">Cada día laborable, un estudio de psicología reciente, traducido a un lenguaje claro. Con la fuente original siempre a la vista. <a href="como-leemos-los-estudios.html">¿Cómo leemos los estudios?</a></p>
 </header>
 
 <main id="posts-container">
@@ -160,32 +155,6 @@
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ pagina: 'home' }),
   }).catch(() => {});
-
-  async function suscribir() {
-    const input = document.getElementById('newsletter-email');
-    const msg = document.getElementById('newsletter-msg');
-    const email = input.value.trim();
-    if (!email || !email.includes('@')) {
-      msg.textContent = 'Escribe un email válido.';
-      return;
-    }
-    try {
-      const res = await fetch('/.netlify/functions/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      if (res.ok) {
-        msg.textContent = '¡Listo! Ya estás apuntado.';
-        input.value = '';
-        input.disabled = true;
-      } else {
-        msg.textContent = 'No se pudo completar. Revisa el email e inténtalo de nuevo.';
-      }
-    } catch (e) {
-      msg.textContent = 'Error de conexión. Inténtalo de nuevo.';
-    }
-  }
 
   // Si ya hay posts publicados de verdad, sustituyen a los de ejemplo de arriba.
   const LIMITE_PORTADA = 12;

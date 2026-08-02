@@ -14,6 +14,12 @@ const NCBI_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const ANTHROPIC_MODEL = 'claude-haiku-4-5-20251001'; // rápido y barato, de sobra para resumir
 const MAX_PUBLICACIONES_POR_EJECUCION = 3;
 
+// Remitente del boletín. La dirección tiene que ser de un dominio verificado
+// en Resend (ver README: "Boletín de novedades por email") — si el dominio
+// aún no está verificado, Resend rechaza el envío y solo se ve en los logs,
+// sin romper nada más de esta función.
+const REMITENTE_BOLETIN = 'Psicolinks <novedades@psicolinks.com>';
+
 // Texto libre en título/abstract (no MeSH): los términos MeSH los asigna un indexador
 // humano de PubMed días o semanas después de publicarse, así que exigirlos aquí dejaría
 // fuera casi todo lo verdaderamente reciente. hasabstract/lang sí están disponibles desde
@@ -152,6 +158,103 @@ Responde ÚNICAMENTE con un objeto JSON válido, sin texto antes ni después ni 
   return redaccion;
 }
 
+function escapeHtml(texto) {
+  return String(texto || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Compone el HTML del correo con los artículos recién publicados en esta
+// ejecución, y el enlace de baja personalizado para ESE suscriptor concreto.
+function componerHtmlBoletin(postsNuevos, email, token) {
+  const enlaceBaja = `https://psicolinks.com/.netlify/functions/unsubscribe?email=${encodeURIComponent(email)}&token=${encodeURIComponent(token)}`;
+  const bloquesArticulos = postsNuevos
+    .map((p) => {
+      const enlace = `https://psicolinks.com/post.html?id=${encodeURIComponent(p.id)}`;
+      return `
+        <tr><td style="padding:0 0 20px;">
+          <p style="margin:0 0 6px; font-family:Georgia,serif; font-size:18px; font-weight:700; color:#211F2E;">${escapeHtml(p.titulo)}</p>
+          <p style="margin:0 0 8px; font-size:14px; color:#625C70; line-height:1.5;">${escapeHtml(p.teaser)}</p>
+          <a href="${enlace}" style="font-size:14px; font-weight:600; color:#4A3B78; text-decoration:none;">Leer el artículo completo →</a>
+        </td></tr>`;
+    })
+    .join('<tr><td style="padding:0 0 20px; border-bottom:1px solid #DDD7CB;"></td></tr>');
+
+  return `<!DOCTYPE html>
+<html lang="es"><body style="margin:0; background:#EEEDE6; font-family:'Work Sans',Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:32px 16px;">
+    <table role="presentation" width="100%" style="max-width:520px; background:#FFFFFF; border:1px solid #DDD7CB; border-radius:12px; padding:28px 24px;" cellpadding="0" cellspacing="0">
+      <tr><td style="padding:0 0 20px;">
+        <p style="margin:0; font-family:Georgia,serif; font-size:22px; font-weight:700; color:#211F2E;">psico<em style="color:#4A3B78; font-style:normal;">links</em></p>
+      </td></tr>
+      ${bloquesArticulos}
+      <tr><td style="padding:16px 0 0; border-top:1px solid #DDD7CB;">
+        <p style="margin:0; font-size:12px; color:#625C70; line-height:1.6;">
+          Recibes este correo porque te suscribiste en psicolinks.com.
+          <a href="${enlaceBaja}" style="color:#625C70;">Darme de baja</a>.
+        </p>
+      </td></tr>
+    </table>
+  </td></tr></table>
+</body></html>`;
+}
+
+// Manda el correo del boletín a cada suscriptor guardado en Netlify Blobs,
+// avisando de los artículos recién publicados en esta misma ejecución.
+// No usa el "broadcast" de Resend a propósito: cada envío es individual y
+// lleva SOLO el enlace de baja de ESE suscriptor, así nadie ve el email de
+// los demás ni puede darse de baja en su nombre.
+async function enviarBoletin(postsNuevos) {
+  if (!process.env.RESEND_API_KEY) {
+    console.log('fetch-studies: RESEND_API_KEY no configurada, se omite el boletín (los artículos ya están publicados).');
+    return { ok: false, motivo: 'RESEND_API_KEY no configurada' };
+  }
+
+  const suscriptoresStore = getStore('suscriptores');
+  const { blobs } = await suscriptoresStore.list();
+
+  const asunto = postsNuevos.length === 1
+    ? `Nuevo en Psicolinks: ${postsNuevos[0].titulo}`
+    : `${postsNuevos.length} artículos nuevos en Psicolinks`;
+
+  let enviados = 0;
+  const fallidos = [];
+
+  for (const b of blobs) {
+    const suscriptor = await suscriptoresStore.get(b.key, { type: 'json' }).catch(() => null);
+    if (!suscriptor?.email || !suscriptor?.token) continue;
+
+    try {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: REMITENTE_BOLETIN,
+          to: suscriptor.email,
+          subject: asunto,
+          html: componerHtmlBoletin(postsNuevos, suscriptor.email, suscriptor.token),
+        }),
+      });
+      if (!res.ok) {
+        const detalle = await res.text();
+        throw new Error(`Resend respondió ${res.status}: ${detalle.slice(0, 200)}`);
+      }
+      enviados++;
+    } catch (err) {
+      fallidos.push(suscriptor.email);
+      console.error(`fetch-studies: fallo al enviar boletín a ${suscriptor.email}:`, err.message || err);
+    }
+  }
+
+  console.log(`fetch-studies: boletín enviado a ${enviados}/${blobs.length} suscriptor(es).`);
+  return { ok: true, enviados, total: blobs.length, fallidos };
+}
+
 export default async () => {
   if (!process.env.ANTHROPIC_API_KEY) {
     console.error('fetch-studies: falta configurar ANTHROPIC_API_KEY en Netlify');
@@ -183,8 +286,7 @@ export default async () => {
         const redaccion = await redactarConClaude(articulo);
         const id = `${Date.now()}-${articulo.pmid}`;
         const ahora = new Date().toISOString();
-        // Se escribe directo en "posts": publicación automática, sin paso de revisión.
-        await posts.setJSON(id, {
+        const post = {
           id,
           pmid: articulo.pmid,
           fuente: `${articulo.revista}${articulo.anio ? ' · ' + articulo.anio : ''}`,
@@ -199,12 +301,15 @@ export default async () => {
           },
           fecha: ahora,
           fechaPublicacion: ahora,
-        });
-        return articulo.pmid;
+        };
+        // Se escribe directo en "posts": publicación automática, sin paso de revisión.
+        await posts.setJSON(id, post);
+        return post;
       })
     );
 
-    const publicados = resultados.filter((r) => r.status === 'fulfilled').length;
+    const postsPublicados = resultados.filter((r) => r.status === 'fulfilled').map((r) => r.value);
+    const publicados = postsPublicados.length;
     resultados.forEach((r, i) => {
       if (r.status === 'rejected') {
         console.error(`fetch-studies: fallo con PMID ${articulos[i]?.pmid}:`, r.reason?.message || r.reason);
@@ -215,7 +320,17 @@ export default async () => {
       `fetch-studies: ${publicados} publicación(es) nueva(s) de ${articulos.length} candidato(s) evaluados (${idsRecientes.length} encontrados en PubMed).`
     );
 
-    return new Response(JSON.stringify({ ok: true, publicados, evaluados: articulos.length }), {
+    let boletin = null;
+    if (publicados > 0) {
+      // El fallo del boletín nunca debe hacer que la función entera falle:
+      // los artículos ya están publicados de todas formas.
+      boletin = await enviarBoletin(postsPublicados).catch((err) => {
+        console.error('fetch-studies: fallo al enviar el boletín:', err.message || err);
+        return { ok: false, error: err.message || String(err) };
+      });
+    }
+
+    return new Response(JSON.stringify({ ok: true, publicados, evaluados: articulos.length, boletin }), {
       status: 200,
       headers: { 'content-type': 'application/json' },
     });

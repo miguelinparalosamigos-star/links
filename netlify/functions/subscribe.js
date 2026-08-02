@@ -31,7 +31,13 @@ export default async (req) => {
 
   try {
     const suscriptores = getStore('suscriptores');
-    await suscriptores.setJSON(email, { email, fecha: new Date().toISOString() });
+
+    // Si ya estaba suscrito, mantenemos su token de baja (no generamos uno
+    // nuevo cada vez que alguien reenvía el formulario sin querer).
+    const existente = await suscriptores.get(email, { type: 'json' }).catch(() => null);
+    const token = existente?.token || crypto.randomUUID();
+
+    await suscriptores.setJSON(email, { email, fecha: existente?.fecha || new Date().toISOString(), token });
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,

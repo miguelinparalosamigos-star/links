@@ -6,7 +6,11 @@ import { getStore } from '@netlify/blobs';
 export default async (req) => {
   const url = new URL(req.url);
   const base = `${url.protocol}//${url.host}`;
-  const urls = [{ loc: `${base}/` }, { loc: `${base}/archivo.html` }];
+  const urls = [
+    { loc: `${base}/` },
+    { loc: `${base}/archivo.html` },
+    { loc: `${base}/como-leemos-los-estudios.html` },
+  ];
 
   try {
     const posts = getStore('posts');

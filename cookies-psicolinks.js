@@ -64,7 +64,7 @@
   'use strict';
 
   // ------- Configuración rápida -------
-  var ENLACE_POLITICA_COOKIES = 'politica-cookies.html';
+  var ENLACE_POLITICA_COOKIES = 'cookies.html';
   var CLAVE_ALMACENAMIENTO = 'pl_consentimiento_cookies';
 
   // ------- Leer / guardar la decisión del usuario -------

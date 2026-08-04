@@ -115,13 +115,15 @@ Tu tarea, en español, con tono claro y cercano pero riguroso (nunca sensacional
    - "metodo": cómo se hizo el estudio, lo más resumido posible (ej. "Seis estudios, peticiones de ayuda reales").
    - "hallazgo": el resultado principal, con la cifra si el abstract la da (ej. "Subestiman la ayuda real hasta un 50%").
    - "porQue": la explicación o interpretación de por qué ocurre, si el abstract la ofrece (ej. "Sobrestiman lo incómodo que resulta pedir").
+5. "tema": clasifica el estudio en UNA sola de estas categorías exactas (en minúscula, tal cual). Elige la más central; si dudas o ninguna encaja, pon "general".
+   ansiedad, estado-animo, sueno, memoria, pareja, decisiones, habitos, duelo, ejercicio, personalidad, estres-trauma, atencion, adicciones, bienestar, social, crianza, alimentacion, trabajo, general
 
 Estudio (fuente: ${articulo.revista}${articulo.anio ? ', ' + articulo.anio : ''}):
 Título original: ${articulo.tituloOriginal}
 Abstract: ${articulo.abstract}
 
 Responde ÚNICAMENTE con un objeto JSON válido, sin texto antes ni después ni backticks de markdown, con exactamente estas claves:
-{"titulo": "...", "teaser": "...", "resumen": "...", "pregunta": "...", "metodo": "...", "hallazgo": "...", "porQue": "..."}`;
+{"titulo": "...", "teaser": "...", "resumen": "...", "pregunta": "...", "metodo": "...", "hallazgo": "...", "porQue": "...", "tema": "..."}`;
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -255,6 +257,59 @@ async function enviarBoletin(postsNuevos) {
   return { ok: true, enviados, total: blobs.length, fallidos };
 }
 
+// De entre varios candidatos recientes, elige los MÁS interesantes para
+// público general (no los primeros que lleguen), puntuándolos con Claude.
+// Red de seguridad total: si algo falla, devuelve los primeros — es decir,
+// el comportamiento de siempre, para que nunca deje de publicar.
+async function elegirMasInteresantes(articulos, cuantos) {
+  if (!Array.isArray(articulos) || articulos.length <= cuantos) return articulos;
+  try {
+    const lista = articulos
+      .map((a, i) => `${i}. ${a.tituloOriginal}\n${(a.abstract || '').slice(0, 500)}`)
+      .join('\n\n');
+    const prompt = `Eres el editor de un blog de divulgación de psicología en español para público general (no especialistas). Te paso ${articulos.length} estudios recientes (título y un trozo del abstract), numerados desde 0. Puntúa CADA uno del 0 al 10 según lo interesante y comprensible que sería para una persona normal curiosa por la psicología: 10 = curiosidad sorprendente y cercana a la vida diaria; 0 = muy técnico, de nicho clínico o puramente metodológico, sin gancho para el público general.
+
+Responde ÚNICAMENTE con un JSON válido, sin texto ni backticks: {"puntuaciones":[{"i":0,"p":8},{"i":1,"p":3}, ...]} con una entrada por estudio.
+
+${lista}`;
+
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: ANTHROPIC_MODEL,
+        max_tokens: 512,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    });
+    if (!res.ok) throw new Error(`puntuación falló: ${res.status}`);
+    const data = await res.json();
+    const texto = ((data.content || []).find((b) => b.type === 'text') || {}).text || '';
+    const parsed = JSON.parse(texto.replace(/```json|```/g, '').trim());
+    const puntuaciones = Array.isArray(parsed.puntuaciones) ? parsed.puntuaciones : [];
+
+    const ordenados = puntuaciones
+      .filter((x) => typeof x.i === 'number' && articulos[x.i])
+      .sort((a, b) => (b.p || 0) - (a.p || 0))
+      .map((x) => articulos[x.i]);
+
+    // Por si la IA se dejó alguno sin puntuar, se añaden al final.
+    const incluidos = new Set(ordenados);
+    const resto = articulos.filter((a) => !incluidos.has(a));
+    const finales = [...ordenados, ...resto];
+
+    console.log(`fetch-studies: ${articulos.length} candidatos evaluados por interés, elegidos ${cuantos}.`);
+    return finales.slice(0, cuantos);
+  } catch (err) {
+    console.error('fetch-studies: fallo al puntuar interés, se usan los primeros:', err.message || err);
+    return articulos.slice(0, cuantos);
+  }
+}
+
 export default async () => {
   if (!process.env.ANTHROPIC_API_KEY) {
     console.error('fetch-studies: falta configurar ANTHROPIC_API_KEY en Netlify');
@@ -276,8 +331,12 @@ export default async () => {
     }
 
     const idsRecientes = await buscarPMIDsRecientes();
-    const idsNuevos = idsRecientes.filter((id) => !pmidsExistentes.has(id)).slice(0, MAX_PUBLICACIONES_POR_EJECUCION);
-    const articulos = await obtenerArticulos(idsNuevos);
+    // Cogemos más candidatos de los que vamos a publicar para poder quedarnos
+    // con los MÁS interesantes (no los primeros que salgan).
+    const CANDIDATOS_A_EVALUAR = 6;
+    const idsNuevos = idsRecientes.filter((id) => !pmidsExistentes.has(id)).slice(0, CANDIDATOS_A_EVALUAR);
+    const candidatos = await obtenerArticulos(idsNuevos);
+    const articulos = await elegirMasInteresantes(candidatos, MAX_PUBLICACIONES_POR_EJECUCION);
 
     // Se redactan en paralelo (no en cadena) para no acercarse al límite de 30s
     // que Netlify impone a las funciones programadas.
@@ -293,6 +352,7 @@ export default async () => {
           titulo: redaccion.titulo,
           teaser: redaccion.teaser,
           resumen: redaccion.resumen,
+          tema: (redaccion.tema || 'general').toLowerCase().trim(),
           desglose: {
             pregunta: redaccion.pregunta,
             metodo: redaccion.metodo,

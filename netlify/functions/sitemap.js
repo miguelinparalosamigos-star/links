@@ -1,5 +1,16 @@
 import { getStore } from '@netlify/blobs';
 
+// Mismo slug que usa la función "articulo" y la portada, para que la URL del
+// sitemap coincida con la real del artículo.
+function slugify(s) {
+  return (s || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80) || 'articulo';
+}
+
 // Servida en /sitemap.xml gracias a la redirección en netlify.toml.
 // Genera la lista de páginas (portada + cada post publicado) para que
 // los buscadores las encuentren, sin tener que mantener el fichero a mano.
@@ -19,7 +30,7 @@ export default async (req) => {
       const post = await posts.get(b.key, { type: 'json' });
       if (post?.id) {
         urls.push({
-          loc: `${base}/post.html?id=${encodeURIComponent(post.id)}`,
+          loc: `${base}/articulo/${slugify(post.titulo)}/${encodeURIComponent(post.id)}`,
           lastmod: (post.fechaPublicacion || post.fecha || '').slice(0, 10) || undefined,
         });
       }

@@ -95,6 +95,7 @@
 </footer>
 
 <script>
+  function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }
   fetch('/.netlify/functions/list-posts')
     .then((r) => (r.ok ? r.json() : null))
     .then((data) => {
@@ -106,7 +107,7 @@
       lista.innerHTML = data.posts.map((p) => {
         const fecha = (p.fechaPublicacion || p.fecha || '').slice(0, 10);
         return `
-          <a class="item-archivo" href="post.html?id=${p.id}">
+          <a class="item-archivo" href="/articulo/${slugify(p.titulo)}/${encodeURIComponent(p.id)}">
             <span class="item-titulo">${p.titulo}</span>
             <span class="item-fecha">${fecha}</span>
           </a>

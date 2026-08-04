@@ -13,3 +13,10 @@
   from = "/sitemap.xml"
   to = "/.netlify/functions/sitemap"
   status = 200
+
+# Páginas de artículo con URL limpia y renderizadas en el servidor (para SEO):
+# /articulo/titulo-legible/<id>  ->  función articulo (le pasa la ruta en "ruta").
+[[redirects]]
+  from = "/articulo/*"
+  to = "/.netlify/functions/articulo?ruta=:splat"
+  status = 200

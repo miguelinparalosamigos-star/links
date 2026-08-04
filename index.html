@@ -156,6 +156,10 @@
     body: JSON.stringify({ pagina: 'home' }),
   }).catch(() => {});
 
+  // Mismo slug que la función "articulo" y el sitemap: URLs limpias para SEO.
+  function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }
+  function urlArticulo(p){ return '/articulo/'+slugify(p.titulo)+'/'+encodeURIComponent(p.id); }
+
   // Si ya hay posts publicados de verdad, sustituyen a los de ejemplo de arriba.
   const LIMITE_PORTADA = 12;
   fetch(`/.netlify/functions/list-posts?limit=${LIMITE_PORTADA}`)
@@ -170,7 +174,7 @@
           <h2 class="post-title">${p.titulo}</h2>
           <span class="stamp">📎 ${p.fuente}</span>
           <p class="post-teaser">${p.teaser}</p>
-          <a href="post.html?id=${p.id}" class="read-more">Leer más →</a>
+          <a href="${urlArticulo(p)}" class="read-more">Leer más →</a>
           </div>
         </article>
       `).join('');

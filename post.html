@@ -254,38 +254,51 @@
   // ---------------------------------------------------------------
   // Catálogo de libros recomendados (con enlace de afiliado de Amazon)
   // ---------------------------------------------------------------
-  // Para añadir un libro nuevo, ya no hace falta que generes tú el enlace
-  // de "compartir" en Amazon: basta con la URL del producto (o el ASIN,
-  // el código que va después de /dp/ en la URL) más "?tag=conciencia07-21"
-  // al final — así es como Amazon sabe que la venta es tuya. Solo dime el
-  // título del libro y de qué trata, y yo te preparo el bloque.
-  // Las "palabrasClave" son las que, si aparecen en el título o el texto
-  // del artículo, hacen que ESE libro se recomiende para ESE artículo —
-  // pon varias variantes (singular, plural, sinónimos).
+  // Cada libro tiene:
+  //  - "temas": las categorías fijas del artículo con las que encaja. Es la
+  //    forma FIABLE de emparejar: si el artículo trae "tema" (lo pone el
+  //    generador), se elige el libro por aquí y no por adivinar palabras.
+  //  - "palabrasClave": respaldo por si un artículo antiguo no trae "tema" —
+  //    si alguna aparece en el título/texto, ese libro puntúa.
+  //  - "general: true": libros de fondo (los tuyos) que se muestran cuando
+  //    NINGÚN libro encaja, en vez de sacar uno al azar sin relación.
+  //
+  // Para añadir un libro nuevo: basta la URL de amazon.es del producto (o el
+  // ASIN, lo que va tras /dp/) con "?tag=conciencia07-21" al final. Dime el
+  // título y de qué trata y yo te preparo el bloque con sus temas y palabras.
+  //
+  // TEMAS disponibles (los mismos que pone el generador):
+  //   ansiedad · estado-animo · sueno · memoria · pareja · decisiones ·
+  //   habitos · duelo · ejercicio · personalidad · estres-trauma · atencion ·
+  //   adicciones · bienestar · social · crianza · alimentacion · trabajo
   const CATALOGO_LIBROS = [
     {
       id: 'superregla',
       titulo: 'La superregla',
       emoji: '📖',
       url: 'https://amzn.to/3TLnBZL',
+      general: true, // libro propio: sirve de recomendación de fondo
+      temas: ['ansiedad', 'estres-trauma', 'estado-animo', 'bienestar'],
       palabrasClave: [
-        'ansiedad', 'miedo', 'evitación', 'evitar', 'pánico', 'fobia',
-        'estrés', 'preocupación', 'preocupa', 'emoción', 'emociones',
-        'malestar', 'psicofármaco', 'angustia', 'nervios', 'nerviosismo',
+        'ansiedad', 'ansioso', 'ansiosa', 'miedo', 'miedos', 'evitación', 'evitar',
+        'pánico', 'panico', 'fobia', 'fobias', 'estrés', 'estres', 'preocupación',
+        'preocupa', 'preocupaciones', 'emoción', 'emociones', 'emocional',
+        'malestar', 'psicofármaco', 'angustia', 'nervios', 'nerviosismo', 'rumia',
+        'rumiación', 'obsesión', 'obsesivo', 'trastorno de ansiedad',
       ],
     },
     {
       id: 'esqueyosoyasi',
       titulo: 'Es que yo soy así',
       emoji: '📖',
-      // Enlace construido con tu ASIN + tu ID de afiliado (revisa que abra
-      // bien tu libro — si no, dime el enlace correcto y lo cambio).
       url: 'https://www.amazon.es/dp/B0GSJYQNHD?tag=conciencia07-21',
+      general: true, // libro propio: sirve de recomendación de fondo
+      temas: ['personalidad', 'bienestar'],
       palabrasClave: [
-        'personalidad', 'identidad', 'carácter', 'patrón', 'patrones',
-        'hábito', 'hábitos', 'costumbre', 'rutina', 'autoconcepto',
-        'creencia', 'creencias', 'diagnóstico', 'etiqueta', 'autoestima',
-        'inseguridad',
+        'personalidad', 'identidad', 'carácter', 'caracter', 'patrón', 'patrones',
+        'costumbre', 'rutina', 'autoconcepto', 'creencia', 'creencias',
+        'diagnóstico', 'etiqueta', 'autoestima', 'inseguridad', 'autocrítica',
+        'autocritica', 'autocompasión', 'perfeccionismo', 'vergüenza', 'verguenza',
       ],
     },
     {
@@ -293,9 +306,10 @@
       titulo: 'Los hábitos del sueño',
       emoji: '📖',
       url: 'https://www.amazon.es/dp/8410467216?tag=conciencia07-21',
+      temas: ['sueno'],
       palabrasClave: [
-        'sueño', 'dormir', 'insomnio', 'descanso', 'siesta', 'despertar',
-        'dormido', 'duerme', 'duermen', 'rem',
+        'sueño', 'sueno', 'dormir', 'insomnio', 'descanso', 'siesta', 'despertar',
+        'dormido', 'duerme', 'duermen', 'rem', 'circadiano', 'melatonina', 'pesadilla',
       ],
     },
     {
@@ -303,9 +317,11 @@
       titulo: 'La ciencia de la memoria',
       emoji: '📖',
       url: 'https://www.amazon.es/dp/8413612276?tag=conciencia07-21',
+      temas: ['memoria', 'atencion'],
       palabrasClave: [
         'memoria', 'recordar', 'recuerdo', 'recuerdos', 'olvido', 'olvidar',
-        'aprendizaje', 'aprender', 'aprende',
+        'aprendizaje', 'aprender', 'aprende', 'cognición', 'cognitivo', 'cognitiva',
+        'atención', 'atencion', 'concentración', 'concentracion',
       ],
     },
     {
@@ -313,9 +329,11 @@
       titulo: '¿Amar o depender?',
       emoji: '📖',
       url: 'https://www.amazon.es/dp/8408126245?tag=conciencia07-21',
+      temas: ['pareja', 'social'],
       palabrasClave: [
         'pareja', 'relación', 'relaciones', 'apego', 'dependencia emocional',
-        'amor', 'vínculo', 'vínculos', 'vinculo', 'vinculos',
+        'amor', 'vínculo', 'vínculos', 'vinculo', 'vinculos', 'ruptura', 'celos',
+        'matrimonio', 'divorcio', 'soledad', 'amistad', 'amigos',
       ],
     },
     {
@@ -323,9 +341,10 @@
       titulo: 'Pensar rápido, pensar despacio',
       emoji: '📖',
       url: 'https://www.amazon.es/dp/8483068613?tag=conciencia07-21',
+      temas: ['decisiones'],
       palabrasClave: [
         'decisión', 'decisiones', 'sesgo', 'sesgos', 'intuición', 'intuitivo',
-        'racional', 'elegir', 'elección',
+        'racional', 'elegir', 'elección', 'juicio', 'heurística', 'razonamiento',
       ],
     },
     {
@@ -333,9 +352,11 @@
       titulo: 'La solución a la procrastinación',
       emoji: '📖',
       url: 'https://www.amazon.es/dp/8416720452?tag=conciencia07-21',
+      temas: ['habitos', 'trabajo'],
       palabrasClave: [
         'procrastinación', 'procrastinar', 'posponer', 'aplazar', 'postergar',
-        'fuerza de voluntad', 'productividad',
+        'fuerza de voluntad', 'productividad', 'hábito', 'hábitos', 'habito',
+        'habitos', 'motivación', 'motivacion', 'autocontrol', 'disciplina',
       ],
     },
     {
@@ -343,8 +364,10 @@
       titulo: 'Aprender de la pérdida',
       emoji: '📖',
       url: 'https://www.amazon.es/dp/8408215051?tag=conciencia07-21',
+      temas: ['duelo'],
       palabrasClave: [
-        'duelo', 'pérdida', 'perdida', 'luto', 'pérdidas', 'perdidas',
+        'duelo', 'pérdida', 'perdida', 'luto', 'pérdidas', 'perdidas', 'muerte',
+        'fallecimiento', 'morir', 'suicidio',
       ],
     },
     {
@@ -352,12 +375,18 @@
       titulo: 'Cerebro y ejercicio',
       emoji: '📖',
       url: 'https://www.amazon.es/dp/841352041X?tag=conciencia07-21',
+      temas: ['ejercicio', 'alimentacion'],
       palabrasClave: [
         'ejercicio', 'actividad física', 'deporte', 'correr', 'entrenamiento',
-        'sedentarismo', 'ejercicio físico', 'deportistas',
+        'sedentarismo', 'ejercicio físico', 'deportistas', 'físico', 'alimentación',
+        'alimentacion', 'dieta', 'nutrición', 'nutricion',
       ],
     },
   ];
+
+  // Mismo slug que la función "articulo", el sitemap y la portada: sirve para
+  // apuntar el canonical y los enlaces a la URL limpia /articulo/…
+  function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }
 
   // Convierte el resumen en párrafos de verdad. fetch-studies.js suele
   // separar los párrafos con una línea en blanco; si no encuentra
@@ -384,28 +413,38 @@
   }
 
   function elegirLibrosRelevantes(datos, cantidad) {
+    const tema = (datos.tema || '').toLowerCase().trim();
     const texto = (
       (datos.titulo || '') + ' ' +
       (datos.parrafos || []).join(' ') + ' ' +
       (datos.fuente || '')
     ).toLowerCase();
 
+    // Barajamos antes de puntuar para que los empates no salgan siempre igual.
     const puntuados = barajar(CATALOGO_LIBROS).map((libro) => {
-      const puntuacion = libro.palabrasClave.reduce(
+      let puntuacion = 0;
+      // 1) Coincidencia por TEMA (la vía fiable): pesa mucho.
+      if (tema && Array.isArray(libro.temas) && libro.temas.includes(tema)) {
+        puntuacion += 10;
+      }
+      // 2) Coincidencia por palabras clave (respaldo para posts sin tema).
+      puntuacion += libro.palabrasClave.reduce(
         (total, palabra) => total + (texto.includes(palabra.toLowerCase()) ? 1 : 0),
         0
       );
       return { libro, puntuacion };
     });
-
-    // Barajamos antes de puntuar, así que en caso de empate (incluido el caso
-    // de que nadie encaje, todos a 0) el orden ya viene mezclado en vez de
-    // ser siempre el mismo.
     puntuados.sort((a, b) => b.puntuacion - a.puntuacion);
-    const conCoincidencia = puntuados.filter((p) => p.puntuacion > 0);
-    const elegidos = conCoincidencia.length > 0 ? conCoincidencia : puntuados;
 
-    return elegidos.slice(0, cantidad).map((p) => p.libro);
+    const relevantes = puntuados.filter((p) => p.puntuacion > 0).map((p) => p.libro);
+    if (relevantes.length >= cantidad) return relevantes.slice(0, cantidad);
+
+    // Si no hay libros que encajen de verdad, se completa con los "generales"
+    // (los libros propios), NUNCA con uno al azar sin relación con el tema.
+    const generales = barajar(
+      CATALOGO_LIBROS.filter((l) => l.general && !relevantes.includes(l))
+    );
+    return [...relevantes, ...generales].slice(0, cantidad);
   }
 
   // Quita acentos y signos para comparar palabras sin que un "está" y un
@@ -467,7 +506,7 @@
           <div class="relacionados-box">
             <p class="relacionados-titulo">Sigue leyendo</p>
             <div class="relacionados-lista">
-              ${elegidos.map((p) => `<a class="relacionado-link" href="post.html?id=${encodeURIComponent(p.id)}">${p.titulo} →</a>`).join('')}
+              ${elegidos.map((p) => `<a class="relacionado-link" href="/articulo/${slugify(p.titulo)}/${encodeURIComponent(p.id)}">${p.titulo} →</a>`).join('')}
             </div>
           </div>`;
       })
@@ -480,7 +519,12 @@
 
   function render(data) {
     const descripcion = (data.teaser || data.parrafos[0] || '').slice(0, 155);
-    const urlActual = window.location.href;
+    // Para artículos reales, el canonical (y lo que se comparte) apunta a la
+    // URL limpia /articulo/… — así Google unifica todo en esa dirección.
+    const esReal = id && !EJEMPLOS[id];
+    const urlActual = esReal
+      ? (location.origin + '/articulo/' + slugify(data.titulo) + '/' + encodeURIComponent(id))
+      : window.location.href;
     document.title = `${data.titulo} · Psicolinks`;
     document.getElementById('meta-description').setAttribute('content', descripcion);
     document.getElementById('og-title').setAttribute('content', data.titulo);
@@ -608,7 +652,7 @@
         <div class="compartir-lista">${compartirHtml}</div>
       </div>
       <div class="libros-box">
-        <p>Si te interesa este tema, estos libros pueden ayudarte a profundizar:</p>
+        <p>¿Te ha interesado el tema? Estos libros lo desarrollan y te ayudan a llevarlo a tu vida:</p>
         <div class="libros-lista">${librosHtml}
         </div>
         <p class="libros-disclosure">Enlaces de afiliado</p>
@@ -642,6 +686,7 @@
           fuente: p.fuente,
           titulo: p.titulo,
           teaser: p.teaser,
+          tema: p.tema,
           parrafos: dividirEnParrafos(p.resumen),
           desglose: p.desglose,
           url: p.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/` : '#',

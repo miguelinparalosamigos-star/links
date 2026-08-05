@@ -242,7 +242,6 @@ function paginaHtml({ base, urlCanonica, post }) {
     <div class="fuente-original">
       <p>Este resumen se basa en un estudio científico real. Si quieres profundizar, el original está aquí:</p>
       <a class="btn-source" href="${urlEstudio}" target="_blank" rel="noopener">Ver el estudio original en PubMed (en inglés) →</a>
-      <p style="margin-top:0.9rem; font-size:0.85rem;"><a href="/como-leemos-los-estudios.html">¿Qué significa que un estudio sea "significativo"? Cómo leemos los estudios →</a></p>
     </div>
   </div>
   <div class="compartir-box">

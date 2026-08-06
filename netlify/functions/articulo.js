@@ -242,6 +242,7 @@ function paginaHtml({ base, urlCanonica, post }) {
     <div class="fuente-original">
       <p>Este resumen se basa en un estudio científico real. Si quieres profundizar, el original está aquí:</p>
       <a class="btn-source" href="${urlEstudio}" target="_blank" rel="noopener">Ver el estudio original en PubMed (en inglés) →</a>
+      <p style="margin-top:0.9rem; font-size:0.85rem;"><a href="/como-leemos-los-estudios.html">¿Qué significa que un estudio sea "significativo"? Cómo leemos los estudios →</a></p>
     </div>
   </div>
   <div class="compartir-box">
@@ -251,7 +252,7 @@ function paginaHtml({ base, urlCanonica, post }) {
   <div class="libros-box">
     <p>¿Te ha interesado el tema? Estos libros lo desarrollan y te ayudan a llevarlo a tu vida:</p>
     <div class="libros-lista">${librosHtml}</div>
-    <p class="libros-disclosure">Enlaces de afiliado</p>
+    <p class="libros-disclosure">Enlaces de afiliado. En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplan los requisitos aplicables.</p>
   </div>
   <div id="relacionados-container"></div>
 </main>

@@ -125,9 +125,8 @@ const ESTILO = `
   .libros-box { margin-top:1.1rem; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
   .libros-box p { margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.9rem; }
   .libros-lista { display:flex; flex-direction:column; gap:0.6rem; }
-  .libro-link { display:flex; flex-wrap:wrap; align-items:center; gap:0.2rem 0.6rem; text-decoration:none; color:var(--ink); font-weight:600; font-size:0.95rem; padding:0.7rem 0.9rem; border:1px solid var(--border); border-radius:9px; transition:border-color 0.15s, background 0.15s; }
+  .libro-link { display:flex; align-items:center; gap:0.6rem; text-decoration:none; color:var(--ink); font-weight:600; font-size:0.95rem; padding:0.7rem 0.9rem; border:1px solid var(--border); border-radius:9px; transition:border-color 0.15s, background 0.15s; }
   .libro-link:hover { border-color:var(--accent); background:var(--paper); }
-  .libro-link .afiliado-tag { flex-basis:100%; font-size:0.72rem; line-height:1.4; color:var(--ink-soft); font-weight:400; }
   .libros-box p.libros-disclosure { margin:0.7rem 0 0; }
   .compartir-box { margin-top:1.1rem; padding:1.1rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
   .compartir-box p { margin:0 0 0.8rem; color:var(--ink-soft); font-size:0.9rem; }
@@ -179,7 +178,7 @@ function paginaHtml({ base, urlCanonica, post }) {
 
   const libros = elegirLibrosRelevantes({ titulo: post.titulo, parrafos, fuente: post.fuente, tema: post.tema }, 2);
   const librosHtml = libros
-    .map((l) => `<a class="libro-link" href="${l.url}" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-${l.id}')">${l.emoji} ${escapeHtml(l.titulo)} →<span class="afiliado-tag">Publicidad. En calidad de Afiliado de Amazon.</span></a>`)
+    .map((l) => `<a class="libro-link" href="${l.url}" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-${l.id}')">${l.emoji} ${escapeHtml(l.titulo)} →</a>`)
     .join('');
 
   const compartir = [
@@ -253,7 +252,7 @@ function paginaHtml({ base, urlCanonica, post }) {
   <div class="libros-box">
     <p>¿Te ha interesado el tema? Estos libros lo desarrollan y te ayudan a llevarlo a tu vida:</p>
     <div class="libros-lista">${librosHtml}</div>
-    <p class="libros-disclosure">Enlaces de afiliado</p>
+    <p class="libros-disclosure">Publicidad. En calidad de Afiliado de Amazon.</p>
   </div>
   <div id="relacionados-container"></div>
 </main>

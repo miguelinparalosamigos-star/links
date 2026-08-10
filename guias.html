@@ -82,7 +82,7 @@
     <span class="tag">📎 Guía gratuita en PDF</span>
     <h2>Calma en 5 minutos</h2>
     <p class="lede">Cuatro técnicas de respiración y relajación para bajar el ritmo cuando la cabeza va demasiado rápido. Sencillas, sin material, en cualquier sitio.</p>
-    <form class="form-descarga" id="form-descarga" novalidate>
+    <form class="form-descarga" id="form-descarga" data-pdf="/descargas/calma-en-5-minutos.pdf" novalidate>
       <input type="email" id="email-descarga" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico">
       <button type="submit">Descargar gratis</button>
     </form>
@@ -90,6 +90,23 @@
     <p class="form-msg" id="form-msg" role="status"></p>
     <div class="descarga-ok" id="descarga-ok">
       <a class="btn-descargar" href="/descargas/calma-en-5-minutos.pdf" download>⬇ Descargar la guía (PDF)</a>
+      <p>¡Gracias! Si no empieza la descarga, pulsa el botón de arriba.</p>
+    </div>
+  </div>
+
+  <!-- Lead magnet 2: PDF gratuito con captura de email -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>Dormir mejor en 7 pasos</h2>
+    <p class="lede">Los hábitos que de verdad mejoran el sueño, ordenados por impacto y en lenguaje claro. Sin trucos milagro y sin pastillas: qué hacer y por qué.</p>
+    <form class="form-descarga" data-pdf="/descargas/dormir-mejor-en-7-pasos.pdf" novalidate>
+      <input type="email" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico">
+      <button type="submit">Descargar gratis</button>
+    </form>
+    <p class="form-nota">Te la mando y, de paso, te apuntas a los avisos de Psicolinks (nuevas guías y estudios). Puedes darte de baja cuando quieras. Consulta la <a href="privacidad.html">política de privacidad</a>.</p>
+    <p class="form-msg" role="status"></p>
+    <div class="descarga-ok">
+      <a class="btn-descargar" href="/descargas/dormir-mejor-en-7-pasos.pdf" download>⬇ Descargar la guía (PDF)</a>
       <p>¡Gracias! Si no empieza la descarga, pulsa el botón de arriba.</p>
     </div>
   </div>
@@ -110,33 +127,38 @@
 
 <script>
   (function(){
-    var form = document.getElementById('form-descarga');
-    var input = document.getElementById('email-descarga');
-    var msg = document.getElementById('form-msg');
-    var ok = document.getElementById('descarga-ok');
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-      var email = (input.value || '').trim();
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-        msg.className='form-msg err'; msg.textContent='Escribe un correo válido.'; return;
-      }
-      msg.className='form-msg'; msg.textContent='Un momento…';
-      try{
-        var r = await fetch('/.netlify/functions/subscribe', {
-          method:'POST', headers:{'content-type':'application/json'},
-          body: JSON.stringify({ email: email })
-        });
-        var data = await r.json().catch(function(){ return {}; });
-        if(r.ok && data.ok){
-          form.style.display='none'; msg.textContent='';
-          ok.classList.add('visible');
-          try{ window.location.href='/descargas/calma-en-5-minutos.pdf'; }catch(e){}
-        } else {
-          msg.className='form-msg err'; msg.textContent = (data && data.error) ? data.error : 'No se ha podido. Inténtalo de nuevo.';
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var forms = document.querySelectorAll('form.form-descarga');
+    Array.prototype.forEach.call(forms, function(form){
+      var card = form.closest('.card') || document;
+      var input = form.querySelector('input[type="email"]');
+      var msg = card.querySelector('.form-msg');
+      var ok = card.querySelector('.descarga-ok');
+      var pdf = form.getAttribute('data-pdf');
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        var email = (input.value || '').trim();
+        if(!EMAIL_RE.test(email)){
+          msg.className='form-msg err'; msg.textContent='Escribe un correo válido.'; return;
         }
-      }catch(err){
-        msg.className='form-msg err'; msg.textContent='Problema de conexión. Inténtalo de nuevo.';
-      }
+        msg.className='form-msg'; msg.textContent='Un momento…';
+        try{
+          var r = await fetch('/.netlify/functions/subscribe', {
+            method:'POST', headers:{'content-type':'application/json'},
+            body: JSON.stringify({ email: email })
+          });
+          var data = await r.json().catch(function(){ return {}; });
+          if(r.ok && data.ok){
+            form.style.display='none'; msg.textContent='';
+            if(ok){ ok.classList.add('visible'); }
+            if(pdf){ try{ window.location.href=pdf; }catch(e){} }
+          } else {
+            msg.className='form-msg err'; msg.textContent = (data && data.error) ? data.error : 'No se ha podido. Inténtalo de nuevo.';
+          }
+        }catch(err){
+          msg.className='form-msg err'; msg.textContent='Problema de conexión. Inténtalo de nuevo.';
+        }
+      });
     });
   })();
 </script>

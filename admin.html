@@ -45,6 +45,14 @@
   .fila .valor { color: var(--stamp); font-weight: 700; white-space: nowrap; }
 
   .status-msg { text-align:center; color: var(--ink-soft); padding: 2rem 0; }
+
+  .btn-export {
+    padding: 0.5rem 0.9rem; border-radius: 8px; border: 1px solid var(--accent);
+    background: var(--surface); color: var(--accent); font-weight: 600; font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .btn-export:hover { background: var(--accent); color: #fff; }
+  .btn-export:disabled { opacity: 0.6; cursor: default; }
 </style>
 </head>
 <body>
@@ -63,10 +71,13 @@
 </main>
 
 <script>
+  var ADMIN_PASS = '';
+
   async function cargarEstadisticas() {
     const pass = document.getElementById('passphrase').value;
     const errorEl = document.getElementById('gate-error');
     errorEl.textContent = '';
+    ADMIN_PASS = pass;
 
     try {
       const res = await fetch('/.netlify/functions/list-stats', {
@@ -113,6 +124,10 @@
           <div class="metrica"><span class="num">${data.vistasHome || 0}</span><span class="label">Visitas a portada</span></div>
           <div class="metrica"><span class="num">${data.totalSuscriptores || 0}</span><span class="label">Suscriptores</span></div>
         </div>
+        <div style="margin:-0.7rem 0 1.5rem; text-align:right;">
+          <button class="btn-export" onclick="descargarSuscriptores()">⬇ Descargar suscriptores (CSV)</button>
+          <span id="export-msg" style="font-size:0.8rem; color:var(--ink-soft);"></span>
+        </div>
 
         <p class="seccion-titulo">Clics en libros, consulta y compartir</p>
         <div class="tabla-card">${filasClics}</div>
@@ -125,6 +140,36 @@
       `;
     } catch (e) {
       errorEl.textContent = 'No se pudo conectar. Inténtalo de nuevo.';
+    }
+  }
+
+  async function descargarSuscriptores() {
+    const btn = document.querySelector('.btn-export');
+    const msg = document.getElementById('export-msg');
+    msg.textContent = ' Generando…';
+    if (btn) btn.disabled = true;
+    try {
+      const res = await fetch('/.netlify/functions/export-suscriptores', {
+        headers: { 'X-Admin-Passphrase': ADMIN_PASS }
+      });
+      if (!res.ok) {
+        msg.textContent = ' No se pudo generar el CSV.';
+        return;
+      }
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'suscriptores-psicolinks.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      msg.textContent = ' ✔ Descargado.';
+    } catch (e) {
+      msg.textContent = ' Error de conexión.';
+    } finally {
+      if (btn) btn.disabled = false;
     }
   }
 </script>

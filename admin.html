@@ -34,6 +34,7 @@
   .metrica .num { font-size: 1.7rem; font-weight: 700; color: var(--accent); display: block; }
   .metrica .label { font-size: 0.78rem; color: var(--ink-soft); }
 
+  .nota-top { font-size: 0.78rem; color: var(--ink-soft); margin: 0 0 1rem; text-align:center; }
   .seccion-titulo { font-size: 1rem; font-weight: 700; margin: 1.8rem 0 0.8rem; }
 
   .tabla-card {
@@ -44,15 +45,7 @@
   .fila .nombre { color: var(--ink); }
   .fila .valor { color: var(--stamp); font-weight: 700; white-space: nowrap; }
 
-  .status-msg { text-align:center; color: var(--ink-soft); padding: 2rem 0; }
-
-  .btn-export {
-    padding: 0.5rem 0.9rem; border-radius: 8px; border: 1px solid var(--accent);
-    background: var(--surface); color: var(--accent); font-weight: 600; font-size: 0.85rem;
-    cursor: pointer;
-  }
-  .btn-export:hover { background: var(--accent); color: #fff; }
-  .btn-export:disabled { opacity: 0.6; cursor: default; }
+  .status-msg { text-align:center; color: var(--ink-soft); padding: 1.4rem 0; font-size: 0.88rem; }
 </style>
 </head>
 <body>
@@ -71,105 +64,61 @@
 </main>
 
 <script>
-  var ADMIN_PASS = '';
+  // Cuántas filas como máximo por sección (para que el scroll no se dispare).
+  var TOP = 8;
 
   async function cargarEstadisticas() {
-    const pass = document.getElementById('passphrase').value;
-    const errorEl = document.getElementById('gate-error');
+    var pass = document.getElementById('passphrase').value;
+    var errorEl = document.getElementById('gate-error');
     errorEl.textContent = '';
-    ADMIN_PASS = pass;
 
     try {
-      const res = await fetch('/.netlify/functions/list-stats', {
+      var res = await fetch('/.netlify/functions/list-stats', {
         headers: { 'X-Admin-Passphrase': pass }
       });
       if (!res.ok) {
         errorEl.textContent = 'Clave incorrecta o error de conexión.';
         return;
       }
-      const data = await res.json();
+      var data = await res.json();
       document.getElementById('gate').hidden = true;
-      const content = document.getElementById('stats-content');
+      var content = document.getElementById('stats-content');
       content.hidden = false;
 
-      const filasPosts = (data.posts || []).length
-        ? data.posts.map((p) => `
-            <div class="fila">
-              <span class="nombre">${p.titulo}</span>
-              <span class="valor">${p.vistas}</span>
-            </div>
-          `).join('')
-        : '<p class="status-msg">Todavía no hay artículos publicados.</p>';
+      function fila(nombre, valor) {
+        return '<div class="fila"><span class="nombre">' + nombre + '</span><span class="valor">' + valor + '</span></div>';
+      }
+      function vacio(txt) { return '<p class="status-msg">' + txt + '</p>'; }
+      function tabla(items, mapFn, txtVacio) {
+        return items.length ? items.map(mapFn).join('') : vacio(txtVacio);
+      }
 
-      const filasDias = (data.dias || []).length
-        ? data.dias.map((d) => `
-            <div class="fila">
-              <span class="nombre">${d.fecha}</span>
-              <span class="valor">${d.vistas}</span>
-            </div>
-          `).join('')
-        : '<p class="status-msg">Todavía no hay visitas registradas.</p>';
+      var clics = data.clics || [];
+      var compartidos = clics.filter(function(c){ return c.tipo === 'compartir'; }).slice(0, TOP);
+      var otrosClics = clics.filter(function(c){ return c.tipo !== 'compartir'; }).slice(0, TOP);
+      var posts = (data.posts || []).slice(0, TOP);
+      var dias = data.dias || [];
 
-      const filasClics = (data.clics || []).length
-        ? data.clics.map((c) => `
-            <div class="fila">
-              <span class="nombre">${c.nombre}</span>
-              <span class="valor">${c.total}</span>
-            </div>
-          `).join('')
-        : '<p class="status-msg">Todavía no hay clics registrados.</p>';
+      content.innerHTML =
+        '<div class="resumen">' +
+          '<div class="metrica"><span class="num">' + (data.vistasHome || 0) + '</span><span class="label">Visitas a portada</span></div>' +
+          '<div class="metrica"><span class="num">' + (data.totalPosts || 0) + '</span><span class="label">Artículos publicados</span></div>' +
+        '</div>' +
+        '<p class="nota-top">Se actualiza en tiempo real · se muestra el top ' + TOP + ' de cada apartado</p>' +
 
-      content.innerHTML = `
-        <div class="resumen">
-          <div class="metrica"><span class="num">${data.vistasHome || 0}</span><span class="label">Visitas a portada</span></div>
-          <div class="metrica"><span class="num">${data.totalSuscriptores || 0}</span><span class="label">Suscriptores</span></div>
-        </div>
-        <div style="margin:-0.7rem 0 1.5rem; text-align:right;">
-          <button class="btn-export" onclick="descargarSuscriptores()">⬇ Descargar suscriptores (CSV)</button>
-          <span id="export-msg" style="font-size:0.8rem; color:var(--ink-soft);"></span>
-        </div>
+        '<p class="seccion-titulo">Top compartidos</p>' +
+        '<div class="tabla-card">' + tabla(compartidos, function(c){ return fila(c.nombre, c.total); }, 'Todavía no se ha compartido nada.') + '</div>' +
 
-        <p class="seccion-titulo">Clics en libros, consulta y compartir</p>
-        <div class="tabla-card">${filasClics}</div>
+        '<p class="seccion-titulo">Top artículos más leídos</p>' +
+        '<div class="tabla-card">' + tabla(posts, function(p){ return fila(p.titulo, p.vistas); }, 'Todavía no hay artículos con visitas.') + '</div>' +
 
-        <p class="seccion-titulo">Artículos más vistos</p>
-        <div class="tabla-card">${filasPosts}</div>
+        '<p class="seccion-titulo">Top clics (libros, guías y enlaces)</p>' +
+        '<div class="tabla-card">' + tabla(otrosClics, function(c){ return fila(c.nombre, c.total); }, 'Todavía no hay clics registrados.') + '</div>' +
 
-        <p class="seccion-titulo">Visitas por día (últimos 14 días)</p>
-        <div class="tabla-card">${filasDias}</div>
-      `;
+        '<p class="seccion-titulo">Visitas por día (últimos 14 días)</p>' +
+        '<div class="tabla-card">' + tabla(dias, function(d){ return fila(d.fecha, d.vistas); }, 'Todavía no hay visitas registradas.') + '</div>';
     } catch (e) {
       errorEl.textContent = 'No se pudo conectar. Inténtalo de nuevo.';
-    }
-  }
-
-  async function descargarSuscriptores() {
-    const btn = document.querySelector('.btn-export');
-    const msg = document.getElementById('export-msg');
-    msg.textContent = ' Generando…';
-    if (btn) btn.disabled = true;
-    try {
-      const res = await fetch('/.netlify/functions/export-suscriptores', {
-        headers: { 'X-Admin-Passphrase': ADMIN_PASS }
-      });
-      if (!res.ok) {
-        msg.textContent = ' No se pudo generar el CSV.';
-        return;
-      }
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'suscriptores-psicolinks.csv';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      msg.textContent = ' ✔ Descargado.';
-    } catch (e) {
-      msg.textContent = ' Error de conexión.';
-    } finally {
-      if (btn) btn.disabled = false;
     }
   }
 </script>

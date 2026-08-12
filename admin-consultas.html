@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultorio · Administración · Psicolinks</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --stamp:#B5541D; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:system-ui,-apple-system,sans-serif; }
+  header{ padding:1.75rem 1.5rem 1rem; text-align:center; }
+  h1{ font-size:1.4rem; margin:0; }
+  main{ max-width:720px; margin:0 auto; padding:1rem 1.5rem 4rem; }
+
+  .gate{ max-width:360px; margin:3rem auto; text-align:center; }
+  .gate input{ width:100%; padding:0.6rem 0.8rem; border:1.5px solid var(--border); border-radius:8px; font-size:1rem; margin-bottom:0.75rem; }
+  .gate button{ padding:0.6rem 1.1rem; border-radius:8px; border:none; font-weight:600; cursor:pointer; font-size:0.95rem; width:100%; background:var(--ink); color:#fff; }
+
+  .contador{ font-size:0.9rem; color:var(--ink-soft); margin:0 0 1.2rem; }
+  .consulta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.3rem; margin:0 0 1.3rem; }
+  .meta{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 0.5rem; }
+  .meta strong{ color:var(--ink); }
+  .pregunta-orig{ font-size:0.95rem; line-height:1.55; background:var(--paper); border:1px solid var(--border); border-radius:8px; padding:0.7rem 0.9rem; margin:0 0 1rem; white-space:pre-wrap; }
+  label{ display:block; font-size:0.8rem; font-weight:600; margin:0 0 0.3rem; }
+  input[type="text"], textarea{ width:100%; padding:0.55rem 0.75rem; border:1.5px solid var(--border); border-radius:8px; font-size:0.92rem; font-family:inherit; margin-bottom:0.9rem; background:#fff; }
+  textarea{ min-height:120px; resize:vertical; }
+  .acciones{ display:flex; gap:0.6rem; flex-wrap:wrap; align-items:center; }
+  .btn-pub{ padding:0.55rem 1.1rem; border:none; border-radius:8px; background:var(--accent); color:#fff; font-weight:600; cursor:pointer; font-size:0.9rem; }
+  .btn-pub:hover{ background:#3a2e63; }
+  .btn-desc{ padding:0.55rem 1.1rem; border:1px solid var(--stamp); border-radius:8px; background:#fff; color:var(--stamp); font-weight:600; cursor:pointer; font-size:0.9rem; }
+  .btn-desc:hover{ background:#fbeee7; }
+  .row-msg{ font-size:0.82rem; color:var(--ink-soft); }
+  .status-msg{ text-align:center; color:var(--ink-soft); padding:2rem 0; }
+</style>
+</head>
+<body>
+<header><h1>Consultorio · pendientes</h1></header>
+<main>
+
+  <div class="gate" id="gate">
+    <p>Introduce tu clave de administración para ver las consultas pendientes.</p>
+    <input type="password" id="passphrase" placeholder="Clave">
+    <button onclick="cargar()">Entrar</button>
+    <p id="gate-error" style="color:#C0392B; font-size:0.85rem;"></p>
+  </div>
+
+  <div id="content" hidden>
+    <p class="contador" id="contador"></p>
+    <div id="lista"></div>
+  </div>
+
+</main>
+
+<script>
+  var ADMIN_PASS = '';
+
+  function esc(s){ return (s||'').replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  async function cargar(){
+    var pass = document.getElementById('passphrase').value;
+    var err = document.getElementById('gate-error');
+    err.textContent = '';
+    ADMIN_PASS = pass;
+    try{
+      var res = await fetch('/.netlify/functions/list-consultas', { headers:{ 'X-Admin-Passphrase': pass } });
+      if(!res.ok){ err.textContent = 'Clave incorrecta o error de conexión.'; return; }
+      var data = await res.json();
+      document.getElementById('gate').hidden = true;
+      document.getElementById('content').hidden = false;
+      pintar(data.consultas || []);
+    }catch(e){ err.textContent = 'No se pudo conectar. Inténtalo de nuevo.'; }
+  }
+
+  function pintar(consultas){
+    var cont = document.getElementById('contador');
+    var lista = document.getElementById('lista');
+    cont.textContent = consultas.length ? (consultas.length + ' consulta(s) pendiente(s)') : '';
+    if(!consultas.length){ lista.innerHTML = '<p class="status-msg">No hay consultas pendientes. ✔</p>'; return; }
+    lista.innerHTML = consultas.map(function(c){
+      var fecha = (c.fecha || '').slice(0,10);
+      var email = c.email ? esc(c.email) : '—';
+      return '<div class="consulta" data-id="'+esc(c.id)+'">'
+        + '<p class="meta"><strong>'+esc(c.nombre || 'Anónimo')+'</strong>'+(c.contexto?(' · '+esc(c.contexto)):'')+' · '+fecha+' · correo: '+email+'</p>'
+        + '<div class="pregunta-orig">'+esc(c.pregunta)+'</div>'
+        + '<label>Nombre que se mostrará</label>'
+        + '<input type="text" class="f-nombre" value="'+esc(c.nombre || 'Anónimo')+'">'
+        + '<label>Pregunta que se publicará (edítala para quitar datos personales)</label>'
+        + '<textarea class="f-pregunta" style="min-height:70px;">'+esc(c.pregunta)+'</textarea>'
+        + '<label>Tu respuesta</label>'
+        + '<textarea class="f-respuesta" placeholder="Escribe aquí tu respuesta como psicólogo…"></textarea>'
+        + '<div class="acciones">'
+        + '<button class="btn-pub" onclick="accion(this,\''+esc(c.id)+'\',\'publicar\')">Publicar respuesta</button>'
+        + '<button class="btn-desc" onclick="accion(this,\''+esc(c.id)+'\',\'descartar\')">Descartar</button>'
+        + '<span class="row-msg"></span>'
+        + '</div>'
+        + '</div>';
+    }).join('');
+  }
+
+  async function accion(btn, id, tipo){
+    var card = btn.closest('.consulta');
+    var rowMsg = card.querySelector('.row-msg');
+    var body = { id:id, accion:tipo };
+    if(tipo === 'publicar'){
+      var respuesta = card.querySelector('.f-respuesta').value.trim();
+      if(respuesta.length < 5){ rowMsg.textContent = ' Escribe una respuesta antes de publicar.'; return; }
+      body.respuesta = respuesta;
+      body.preguntaPublica = card.querySelector('.f-pregunta').value.trim();
+      body.nombrePublico = card.querySelector('.f-nombre').value.trim();
+    } else {
+      if(!confirm('¿Descartar esta consulta sin publicarla?')) return;
+    }
+    rowMsg.textContent = ' Guardando…';
+    try{
+      var res = await fetch('/.netlify/functions/responder-consulta', {
+        method:'POST', headers:{ 'content-type':'application/json', 'X-Admin-Passphrase': ADMIN_PASS },
+        body: JSON.stringify(body)
+      });
+      var data = await res.json().catch(function(){ return {}; });
+      if(res.ok && data.ok){
+        card.style.transition='opacity .3s'; card.style.opacity='0.4';
+        rowMsg.textContent = tipo==='publicar' ? ' ✔ Publicada.' : ' ✔ Descartada.';
+        setTimeout(function(){ card.remove(); }, 400);
+      } else {
+        rowMsg.textContent = ' ' + ((data && data.error) ? data.error : 'No se pudo.');
+      }
+    }catch(e){ rowMsg.textContent = ' Error de conexión.'; }
+  }
+</script>
+</body>
+</html>

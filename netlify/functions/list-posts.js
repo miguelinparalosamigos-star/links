@@ -32,7 +32,13 @@ export default async (req) => {
 
     return new Response(JSON.stringify({ posts: resultado, total: posts.length }), {
       status: 200,
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        'content-type': 'application/json',
+        // Caché corta en el CDN: la portada y el archivo dejan de ejecutar la función
+        // en cada visita. 10 min es de sobra (solo publicas 3 artículos al día).
+        'cache-control': 'public, max-age=300',
+        'netlify-cdn-cache-control': 'public, durable, s-maxage=600, stale-while-revalidate=3600',
+      },
     });
   } catch (err) {
     console.error('list-posts: error interno:', err);

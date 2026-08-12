@@ -325,7 +325,8 @@ function paginaHtml({ base, urlCanonica, post }) {
   function registrarClic(nombre) {
     fetch('/.netlify/functions/track-view', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ clic: nombre }) }).catch(function(){});
   }
-  fetch('/.netlify/functions/track-view', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ pagina:'articulo', id: POST_ID }) }).catch(function(){});
+  // Las visitas al artículo se miden con Google Analytics; ya no escribimos en la
+  // base de datos en cada visita (era el mayor gasto de Netlify).
 
   function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }
   function palabrasClaveDe(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9\\s]/g,' ').split(/\\s+/).filter(function(p){return p.length>4;}); }
@@ -377,6 +378,15 @@ export default async (req) => {
   const id = partes.length ? decodeURIComponent(partes[partes.length - 1]) : '';
 
   const htmlHeaders = { 'content-type': 'text/html; charset=utf-8' };
+  // Caché en el CDN de Netlify para los artículos que SÍ existen: se sirven desde
+  // la caché del edge y la función NO se vuelve a ejecutar en cada visita (esto es
+  // lo que más ahorra). El contenido es estable tras publicar; si editas un artículo,
+  // tarda como mucho ~1 día en refrescarse en caché.
+  const htmlHeadersOk = {
+    'content-type': 'text/html; charset=utf-8',
+    'cache-control': 'public, max-age=600',
+    'netlify-cdn-cache-control': 'public, durable, s-maxage=86400, stale-while-revalidate=604800',
+  };
 
   if (!id) {
     return new Response(paginaError(base, 'Publicación no especificada.'), { status: 404, headers: htmlHeaders });
@@ -389,7 +399,7 @@ export default async (req) => {
       return new Response(paginaError(base, 'No se ha encontrado esta publicación.'), { status: 404, headers: htmlHeaders });
     }
     const urlCanonica = `${base}/articulo/${slugify(post.titulo)}/${encodeURIComponent(post.id)}`;
-    return new Response(paginaHtml({ base, urlCanonica, post }), { status: 200, headers: htmlHeaders });
+    return new Response(paginaHtml({ base, urlCanonica, post }), { status: 200, headers: htmlHeadersOk });
   } catch (err) {
     console.error('articulo: error interno:', err);
     return new Response(paginaError(base, 'No se ha podido cargar esta publicación.'), { status: 500, headers: htmlHeaders });

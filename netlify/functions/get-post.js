@@ -30,7 +30,11 @@ export default async (req) => {
 
     return new Response(JSON.stringify({ post }), {
       status: 200,
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        'content-type': 'application/json',
+        'cache-control': 'public, max-age=600',
+        'netlify-cdn-cache-control': 'public, durable, s-maxage=86400, stale-while-revalidate=604800',
+      },
     });
   } catch (err) {
     console.error('get-post: error interno:', err);

@@ -58,6 +58,10 @@ ${urls
 
   return new Response(xml, {
     status: 200,
-    headers: { 'content-type': 'application/xml; charset=utf-8' },
+    headers: {
+      'content-type': 'application/xml; charset=utf-8',
+      'cache-control': 'public, max-age=3600',
+      'netlify-cdn-cache-control': 'public, durable, s-maxage=3600, stale-while-revalidate=86400',
+    },
   });
 };

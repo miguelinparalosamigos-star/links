@@ -19,7 +19,6 @@ export default async (req) => {
   const base = `${url.protocol}//${url.host}`;
   const urls = [
     { loc: `${base}/` },
-    { loc: `${base}/temas.html` },
     { loc: `${base}/guias.html` },
     { loc: `${base}/guia-mantas-de-peso.html` },
     { loc: `${base}/cosas-para-dormir-mejor.html` },

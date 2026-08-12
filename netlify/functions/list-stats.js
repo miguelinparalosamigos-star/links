@@ -28,7 +28,6 @@ export default async (req) => {
   try {
     const stats = getStore('estadisticas');
     const posts = getStore('posts');
-    const suscriptores = getStore('suscriptores');
 
     const { blobs: statsBlobs } = await stats.list();
     let vistasHome = 0;
@@ -63,8 +62,8 @@ export default async (req) => {
       }
     }
     postsConVistas.sort((a, b) => b.vistas - a.vistas);
-
-    const { blobs: subBlobs } = await suscriptores.list();
+    const totalPosts = postsConVistas.length;
+    const postsTop = postsConVistas.slice(0, 30);
 
     const dias = Object.keys(vistasPorDia)
       .sort()
@@ -92,20 +91,26 @@ export default async (req) => {
       'libro-cinco-lenguajes-amor': 'Libro: Los cinco lenguajes del amor',
       'libro-centrate-deep-work': 'Libro: Céntrate (Deep Work)',
       consulta: 'Enlace a consulta (concienciaconductual.com)',
+      'guia-rel': 'Guía de compra (en artículo)',
       'compartir-whatsapp': 'Compartir por WhatsApp',
       'compartir-facebook': 'Compartir por Facebook',
       'compartir-x': 'Compartir por X',
       'compartir-email': 'Compartir por email',
     };
+    const tipoDeClic = (raw) =>
+      raw.startsWith('compartir') ? 'compartir'
+      : raw.startsWith('libro') ? 'libro'
+      : raw === 'consulta' ? 'consulta'
+      : 'otro';
     const clicsLista = Object.keys(clics)
-      .map((nombre) => ({ nombre: ETIQUETAS_CLIC[nombre] || nombre, total: clics[nombre] }))
+      .map((nombre) => ({ nombre: ETIQUETAS_CLIC[nombre] || nombre, tipo: tipoDeClic(nombre), total: clics[nombre] }))
       .sort((a, b) => b.total - a.total);
 
     return new Response(
       JSON.stringify({
         vistasHome,
-        totalSuscriptores: subBlobs.length,
-        posts: postsConVistas,
+        totalPosts,
+        posts: postsTop,
         dias,
         clics: clicsLista,
       }),

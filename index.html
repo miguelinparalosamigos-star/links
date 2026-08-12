@@ -76,6 +76,17 @@
   .sitio-amigo-texto { display: flex; flex-direction: column; text-align: left; }
   .sitio-amigo-nombre { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 0.98rem; color: var(--ink); }
   .sitio-amigo-desc { font-size: 0.72rem; color: var(--ink-soft); }
+
+  .suscribe { max-width: 700px; margin: 0 auto 2rem; padding: 0 1.5rem; }
+  .suscribe-inner { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 12px; padding: 1.5rem 1.6rem; text-align: center; }
+  .suscribe-titulo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin: 0 0 0.4rem; }
+  .suscribe-texto { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; margin: 0 0 1rem; }
+  .suscribe-form { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+  .suscribe-form input[type="email"] { flex: 1; min-width: 200px; padding: 0.6rem 0.8rem; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.92rem; font-family: var(--font-body); }
+  .suscribe-form button { padding: 0.6rem 1.2rem; border-radius: 8px; border: none; background: var(--accent); color: #fff; font-weight: 600; font-size: 0.92rem; cursor: pointer; font-family: var(--font-body); }
+  .suscribe-form button:hover { background: #3a2e63; }
+  .suscribe-msg { font-size: 0.82rem; color: var(--ink-soft); margin: 0.7rem 0 0; min-height: 1.1em; }
+  .suscribe-msg.err { color: var(--stamp); }
 </style>
 </head>
 <body>
@@ -117,6 +128,18 @@
 
 </main>
 
+<section class="suscribe">
+  <div class="suscribe-inner">
+    <p class="suscribe-titulo">¿Te gusta lo que lees?</p>
+    <p class="suscribe-texto">Recibe los nuevos estudios y guías de Psicolinks en tu correo. Sin spam, y te das de baja cuando quieras.</p>
+    <form class="suscribe-form" id="suscribe-form" novalidate>
+      <input type="email" id="suscribe-email" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico">
+      <button type="submit">Apuntarme</button>
+    </form>
+    <p class="suscribe-msg" id="suscribe-msg" role="status"></p>
+  </div>
+</section>
+
 <footer class="site-footer">
   <p>Cada resumen enlaza al estudio original. Esto es divulgación científica, no sustituye una consulta profesional.</p>
   <p class="otras-webs-titulo">Otras webs</p>
@@ -139,6 +162,28 @@
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ pagina: 'home' }),
   }).catch(() => {});
+
+  // Suscripción opcional. No bloquea nada: las guías siguen siendo descarga
+  // directa; esto solo permite a quien quiera apuntarse a los avisos.
+  (function(){
+    var form = document.getElementById('suscribe-form');
+    if(!form) return;
+    var input = document.getElementById('suscribe-email');
+    var msg = document.getElementById('suscribe-msg');
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var email = (input.value||'').trim();
+      if(!EMAIL_RE.test(email)){ msg.className='suscribe-msg err'; msg.textContent='Escribe un correo válido.'; return; }
+      msg.className='suscribe-msg'; msg.textContent='Un momento…';
+      try{
+        var r = await fetch('/.netlify/functions/subscribe', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ email: email }) });
+        var data = await r.json().catch(function(){ return {}; });
+        if(r.ok && data.ok){ form.style.display='none'; msg.className='suscribe-msg'; msg.textContent='¡Listo! Te has apuntado. Gracias.'; }
+        else { msg.className='suscribe-msg err'; msg.textContent = (data && data.error) ? data.error : 'No se ha podido. Inténtalo de nuevo.'; }
+      }catch(err){ msg.className='suscribe-msg err'; msg.textContent='Problema de conexión. Inténtalo de nuevo.'; }
+    });
+  })();
 
   // Mismo slug que la función "articulo" y el sitemap: URLs limpias para SEO.
   function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }

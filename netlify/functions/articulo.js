@@ -151,6 +151,12 @@ const ESTILO = `
   .compartir-btn .compartir-letra { font-family:Georgia,'Times New Roman',serif; font-style:italic; font-weight:700; font-size:1.25rem; line-height:1; }
   .compartir-btn .compartir-letra-x { font-family:var(--font-body); font-style:normal; font-weight:700; font-size:1.1rem; }
   .compartir-whatsapp { background:#25D366; } .compartir-facebook { background:#1877F2; } .compartir-x { background:#000; } .compartir-email { background:var(--ink); }
+  .guia-rel { margin-top:1.1rem; padding:1.3rem 1.4rem; background:#ECE8F5; border:1px solid #d8d0ec; border-radius:12px; }
+  .guia-rel-tag { font-family:var(--font-mono); font-size:0.66rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 0.4rem; }
+  .guia-rel h3 { font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.4rem; color:var(--ink); }
+  .guia-rel p { margin:0 0 0.9rem; color:#3d3357; font-size:0.94rem; line-height:1.6; }
+  .guia-rel a.btn-guia-rel { display:inline-block; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.6rem 1.1rem; border-radius:9px; background:var(--accent); color:#fff; }
+  .guia-rel a.btn-guia-rel:hover { background:#3a2e63; }
   .relacionados-box { margin-top:1.1rem; }
   .relacionados-titulo { font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-soft); margin:0 0 0.8rem; }
   .relacionados-lista { background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
@@ -194,6 +200,29 @@ function paginaHtml({ base, urlCanonica, post }) {
   const librosHtml = libros
     .map((l) => `<a class="libro-link" href="${l.url}" target="_blank" rel="noopener sponsored" onclick="registrarClic('libro-${l.id}')">${l.emoji} ${escapeHtml(l.titulo)} →</a>`)
     .join('');
+
+  // Guía de compra relacionada con el tema del artículo. Solo se muestra cuando
+  // el tema encaja CLARAMENTE con una guía (así no mandamos a la gente a cosas
+  // que no tienen que ver). Si el tema no está en el mapa, no aparece nada.
+  const GUIA_DORMIR = { url: '/cosas-para-dormir-mejor.html', tag: 'Guía práctica · Sueño', titulo: 'Cosas que ayudan a dormir mejor', desc: 'Despertador de luz, antifaz, tapones, ruido blanco, manta de peso: qué ayuda de verdad y qué no vale la pena.' };
+  const GUIA_CONCENTRA = { url: '/rincon-para-concentrarte.html', tag: 'Guía práctica · Concentración', titulo: 'Montar un rincón para concentrarte', desc: 'Auriculares con cancelación, temporizador, flexo, ergonomía: lo que ayuda de verdad a concentrarte en tu mesa, sin humo.' };
+  const GUIA_CALMA = { url: '/guia-mantas-de-peso.html', tag: 'Guía práctica · Calma', titulo: 'Mantas de peso: cuál elegir', desc: 'Cómo acertar con el peso, el tamaño y el material de una manta ponderada para relajarte, y a quién no le conviene.' };
+  const GUIAS_POR_TEMA = {
+    sueno: GUIA_DORMIR,
+    atencion: GUIA_CONCENTRA,
+    trabajo: GUIA_CONCENTRA,
+    habitos: GUIA_CONCENTRA,
+    ansiedad: GUIA_CALMA,
+    'estres-trauma': GUIA_CALMA,
+  };
+  const guiaRel = GUIAS_POR_TEMA[(post.tema || '').toLowerCase().trim()];
+  const guiaRelHtml = !guiaRel ? '' : `
+  <div class="guia-rel">
+    <p class="guia-rel-tag">${guiaRel.tag}</p>
+    <h3>${guiaRel.titulo}</h3>
+    <p>${guiaRel.desc}</p>
+    <a class="btn-guia-rel" href="${guiaRel.url}" onclick="registrarClic('guia-rel')">Leer la guía →</a>
+  </div>`;
 
   const compartir = [
     { n: 'whatsapp', href: `https://wa.me/?text=${encodeURIComponent(post.titulo + ' — ' + urlCanonica)}`, ico: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.4-4.2A7.9 7.9 0 1 1 9 19.2z"/><path d="M8.2 9.6c.2-.5.5-.5.8-.5h.6c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.8.1.1.1.3 0 .4-.1.2-.2.3-.3.4-.2.2-.3.3-.5.5-.2.2-.3.3-.1.6.2.4.8 1.2 1.7 1.9 1.1 1 2 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.9.3.1.5.2.5.3 0 .2 0 .9-.4 1.3-.4.5-1.5.9-2.1.9-.6.1-1 .1-2.5-.5-2.1-.9-3.5-2.9-3.6-3.1-.1-.1-.9-1.2-.9-2.3 0-1.1.6-1.6.8-1.8z" fill="#fff" stroke="none"/></svg>', et: 'Compartir por WhatsApp' },
@@ -268,6 +297,7 @@ function paginaHtml({ base, urlCanonica, post }) {
     <div class="libros-lista">${librosHtml}</div>
     <p class="libros-disclosure">Publicidad. En calidad de Afiliado de Amazon</p>
   </div>
+  ${guiaRelHtml}
   <div class="guia-cta">
     <p class="guia-cta-titulo">📎 Guías gratis para tu día a día</p>
     <p>Descarga mis guías prácticas en PDF —dormir mejor, calmar la ansiedad, concentrarte— escritas por un psicólogo. Gratis, en lenguaje claro.</p>

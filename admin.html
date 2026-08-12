@@ -101,22 +101,15 @@
 
       content.innerHTML =
         '<div class="resumen">' +
-          '<div class="metrica"><span class="num">' + (data.vistasHome || 0) + '</span><span class="label">Visitas a portada</span></div>' +
           '<div class="metrica"><span class="num">' + (data.totalPosts || 0) + '</span><span class="label">Artículos publicados</span></div>' +
         '</div>' +
-        '<p class="nota-top">Se actualiza en tiempo real · se muestra el top ' + TOP + ' de cada apartado</p>' +
+        '<p class="nota-top">Clics registrados en tiempo real (top ' + TOP + '). Las visitas (portada, artículos, por día) están en Google Analytics.</p>' +
 
         '<p class="seccion-titulo">Top compartidos</p>' +
         '<div class="tabla-card">' + tabla(compartidos, function(c){ return fila(c.nombre, c.total); }, 'Todavía no se ha compartido nada.') + '</div>' +
 
-        '<p class="seccion-titulo">Top artículos más leídos</p>' +
-        '<div class="tabla-card">' + tabla(posts, function(p){ return fila(p.titulo, p.vistas); }, 'Todavía no hay artículos con visitas.') + '</div>' +
-
         '<p class="seccion-titulo">Top clics (libros, guías y enlaces)</p>' +
-        '<div class="tabla-card">' + tabla(otrosClics, function(c){ return fila(c.nombre, c.total); }, 'Todavía no hay clics registrados.') + '</div>' +
-
-        '<p class="seccion-titulo">Visitas por día (últimos 14 días)</p>' +
-        '<div class="tabla-card">' + tabla(dias, function(d){ return fila(d.fecha, d.vistas); }, 'Todavía no hay visitas registradas.') + '</div>';
+        '<div class="tabla-card">' + tabla(otrosClics, function(c){ return fila(c.nombre, c.total); }, 'Todavía no hay clics registrados.') + '</div>';
     } catch (e) {
       errorEl.textContent = 'No se pudo conectar. Inténtalo de nuevo.';
     }

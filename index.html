@@ -133,12 +133,8 @@
 </footer>
 
 <script>
-  // Contador de visitas a la portada (no bloquea nada si falla).
-  fetch('/.netlify/functions/track-view', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ pagina: 'home' }),
-  }).catch(() => {});
+  // Las visitas se miden con Google Analytics (no gastamos función/base de datos
+  // por cada visita, que era lo que disparaba el consumo en Netlify).
 
   // Mismo slug que la función "articulo" y el sitemap: URLs limpias para SEO.
   function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }

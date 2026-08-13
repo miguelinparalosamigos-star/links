@@ -53,6 +53,12 @@
 
   .status-msg { text-align: center; color: var(--ink-soft); padding: 3rem 1rem; }
 
+  .paginacion { display: flex; justify-content: center; align-items: center; gap: 0.9rem; margin-top: 1.4rem; flex-wrap: wrap; }
+  .paginacion button { padding: 0.55rem 1rem; border: 1px solid var(--border); background: var(--surface); color: var(--accent); border-radius: 9px; font-weight: 600; font-size: 0.9rem; cursor: pointer; font-family: inherit; }
+  .paginacion button:hover:not(:disabled) { border-color: var(--accent); }
+  .paginacion button:disabled { opacity: 0.4; cursor: default; }
+  .paginacion .pag-info { font-size: 0.85rem; color: var(--ink-soft); }
+
   .site-footer { border-top: 1px solid var(--border); padding: 1.75rem 1.5rem 2.5rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; }
   .otras-webs-titulo { font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: 0.07em; margin: 0 0 0.8rem; }
   .otras-webs-lista { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-bottom: 1.2rem; }
@@ -78,6 +84,7 @@
   <div id="lista" class="lista-archivo">
     <p class="status-msg">Cargando…</p>
   </div>
+  <div id="paginacion" class="paginacion"></div>
 </main>
 
 <footer class="site-footer">
@@ -96,26 +103,45 @@
 
 <script>
   function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }
+  // Cuántos artículos por página en el archivo (súbelo o bájalo aquí si quieres).
+  var PAGE_SIZE = 20;
+  var posts = [], pagina = 1;
+  var lista = document.getElementById('lista');
+  var pag = document.getElementById('paginacion');
+
+  function render(){
+    var paginas = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+    if (pagina > paginas) pagina = paginas;
+    var ini = (pagina - 1) * PAGE_SIZE;
+    lista.innerHTML = posts.slice(ini, ini + PAGE_SIZE).map(function(p){
+      var fecha = (p.fechaPublicacion || p.fecha || '').slice(0, 10);
+      return '<a class="item-archivo" href="/articulo/' + slugify(p.titulo) + '/' + encodeURIComponent(p.id) + '">'
+        + '<span class="item-titulo">' + p.titulo + '</span>'
+        + '<span class="item-fecha">' + fecha + '</span></a>';
+    }).join('');
+
+    if (paginas <= 1) { pag.innerHTML = ''; return; }
+    pag.innerHTML = '<button id="prev"' + (pagina === 1 ? ' disabled' : '') + '>← Más recientes</button>'
+      + '<span class="pag-info">Página ' + pagina + ' de ' + paginas + '</span>'
+      + '<button id="next"' + (pagina === paginas ? ' disabled' : '') + '>Más antiguos →</button>';
+    var prev = document.getElementById('prev'), next = document.getElementById('next');
+    if (prev) prev.onclick = function(){ if (pagina > 1){ pagina--; render(); subir(); } };
+    if (next) next.onclick = function(){ if (pagina < paginas){ pagina++; render(); subir(); } };
+  }
+  function subir(){ try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e){ window.scrollTo(0, 0); } }
+
   fetch('/.netlify/functions/list-posts')
-    .then((r) => (r.ok ? r.json() : null))
-    .then((data) => {
-      const lista = document.getElementById('lista');
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(data){
       if (!data || !data.posts || data.posts.length === 0) {
         lista.innerHTML = '<p class="status-msg">Todavía no hay artículos publicados.</p>';
         return;
       }
-      lista.innerHTML = data.posts.map((p) => {
-        const fecha = (p.fechaPublicacion || p.fecha || '').slice(0, 10);
-        return `
-          <a class="item-archivo" href="/articulo/${slugify(p.titulo)}/${encodeURIComponent(p.id)}">
-            <span class="item-titulo">${p.titulo}</span>
-            <span class="item-fecha">${fecha}</span>
-          </a>
-        `;
-      }).join('');
+      posts = data.posts;
+      render();
     })
-    .catch(() => {
-      document.getElementById('lista').innerHTML = '<p class="status-msg">No se ha podido cargar el archivo.</p>';
+    .catch(function(){
+      lista.innerHTML = '<p class="status-msg">No se ha podido cargar el archivo.</p>';
     });
 </script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>

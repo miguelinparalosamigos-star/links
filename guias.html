@@ -53,6 +53,12 @@
 
   .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
   .site-footer a{ color:var(--ink-soft); }
+
+  .paginacion { display:flex; justify-content:center; align-items:center; gap:0.9rem; margin:0.4rem 0 1.6rem; flex-wrap:wrap; }
+  .paginacion button { padding:0.55rem 1rem; border:1px solid var(--border); background:var(--surface); color:var(--accent); border-radius:9px; font-weight:600; font-size:0.9rem; cursor:pointer; font-family:inherit; }
+  .paginacion button:hover:not(:disabled){ border-color:var(--accent); }
+  .paginacion button:disabled{ opacity:0.4; cursor:default; }
+  .paginacion .pag-info{ font-size:0.85rem; color:var(--ink-soft); }
 </style>
 </head>
 <body>
@@ -146,6 +152,72 @@
     <a class="btn-descargar" href="/descargas/menos-movil-mas-cabeza.pdf" download>⬇ Descargar la guía (PDF)</a>
   </div>
 
+  <!-- Lead magnet 11: PDF gratuito · descarga directa -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>Superar una ruptura</h2>
+    <p class="lede">Seis herramientas para atravesar el final de una relación sin quedarte enganchado y volver a estar bien contigo. Con criterio, sin frases hechas.</p>
+    <a class="btn-descargar" href="/descargas/superar-una-ruptura.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <!-- Lead magnet 12: PDF gratuito · descarga directa -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>Cuando pierdes a alguien</h2>
+    <p class="lede">Seis claves para atravesar el duelo por la muerte de un ser querido, a tu ritmo y sin sentir que lo haces mal. Con cariño y con respaldo.</p>
+    <a class="btn-descargar" href="/descargas/cuando-pierdes-a-alguien.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <!-- Lead magnet 13: PDF gratuito · descarga directa -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>El estrés que no para</h2>
+    <p class="lede">Seis herramientas para bajar el estrés cuando vas saturado y todo se acumula, antes de llegar al agotamiento. Prácticas y sin postureo.</p>
+    <a class="btn-descargar" href="/descargas/el-estres-que-no-para.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <!-- Lead magnet 14 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>Controlar el enfado</h2>
+    <p class="lede">Seis herramientas para que el enfado no te domine ni acabe haciendo daño, y aprender a expresarlo bien. Práctico y sin culpa.</p>
+    <a class="btn-descargar" href="/descargas/controlar-el-enfado.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <!-- Lead magnet 15 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>Menos perfeccionismo</h2>
+    <p class="lede">Seis herramientas para soltar la autoexigencia que te bloquea y te agota, y hacer las cosas sin sufrir de más. Sin postureo.</p>
+    <a class="btn-descargar" href="/descargas/menos-perfeccionismo.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <!-- Lead magnet 16 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>La dependencia emocional</h2>
+    <p class="lede">Seis herramientas para dejar de necesitar a alguien para estar bien y querer desde la libertad. Sin culpa y sin tópicos.</p>
+    <a class="btn-descargar" href="/descargas/la-dependencia-emocional.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <!-- Lead magnet 17 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>Vencer la timidez</h2>
+    <p class="lede">Seis herramientas para soltarte con la gente, hablar sin bloquearte y que la vergüenza deje de decidir por ti. Paso a paso.</p>
+    <a class="btn-descargar" href="/descargas/vencer-la-timidez.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <!-- Lead magnet 18 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita en PDF</span>
+    <h2>Los celos</h2>
+    <p class="lede">Seis herramientas para que los celos no te dominen ni dañen tu relación, y confiar con más calma. Sin dramas y sin control.</p>
+    <a class="btn-descargar" href="/descargas/los-celos.pdf" download>⬇ Descargar la guía (PDF)</a>
+  </div>
+
+  <div id="pag-guias" class="paginacion"></div>
+
   <!-- Guía de compra -->
   <div class="card">
     <span class="tag">Guía de compra · Calma</span>
@@ -169,12 +241,55 @@
     <p>Auriculares con cancelación, temporizador pomodoro, flexo, ergonomía: lo que ayuda de verdad a concentrarte en tu mesa, sin humo.</p>
     <a class="btn-guia" href="rincon-para-concentrarte.html">Leer la guía →</a>
   </div>
+
+  <!-- Guía de compra · Calma -->
+  <div class="card">
+    <span class="tag">Guía de compra · Calma</span>
+    <h2>Un rincón de calma en casa</h2>
+    <p>Difusor de aromas, luz cálida, cojín de meditación y un cuaderno: lo que ayuda a montar un sitio para relajarte y desconectar, sin humo.</p>
+    <a class="btn-guia" href="un-rincon-de-calma.html">Leer la guía →</a>
+  </div>
+
+  <!-- Guía de compra · Ánimo -->
+  <div class="card">
+    <span class="tag">Guía de compra · Ánimo</span>
+    <h2>Moverte en casa (y subir el ánimo)</h2>
+    <p>Esterilla, bandas elásticas, mancuernas y comba: lo básico para moverte sin salir de casa. El ejercicio es de lo que más ayuda al ánimo.</p>
+    <a class="btn-guia" href="moverte-en-casa.html">Leer la guía →</a>
+  </div>
 </main>
 
 <footer class="site-footer">
   <p>Guías de psicoeducación y consumo. No sustituyen una consulta profesional.</p>
   <p>© 2026 Psicolinks · <a href="/">Portada</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
 </footer>
+
+<script>
+  (function(){
+    var PAGE_SIZE = 8, pagina = 1;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('main .card')).filter(function(c){
+      var t = c.querySelector('.tag');
+      return t && t.textContent.indexOf('Guía gratuita') !== -1;
+    });
+    var pagBox = document.getElementById('pag-guias');
+    if (!cards.length || !pagBox) return;
+    function subir(){ try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){ window.scrollTo(0,0); } }
+    function render(){
+      var paginas = Math.max(1, Math.ceil(cards.length / PAGE_SIZE));
+      if (pagina > paginas) pagina = paginas;
+      var ini = (pagina - 1) * PAGE_SIZE;
+      cards.forEach(function(c, i){ c.style.display = (i >= ini && i < ini + PAGE_SIZE) ? '' : 'none'; });
+      if (paginas <= 1) { pagBox.innerHTML = ''; return; }
+      pagBox.innerHTML = '<button id="gp"' + (pagina === 1 ? ' disabled' : '') + '>← Guías recientes</button>'
+        + '<span class="pag-info">Página ' + pagina + ' de ' + paginas + '</span>'
+        + '<button id="gn"' + (pagina === paginas ? ' disabled' : '') + '>Ver guías anteriores →</button>';
+      var pv = document.getElementById('gp'), nx = document.getElementById('gn');
+      if (pv) pv.onclick = function(){ if (pagina > 1){ pagina--; render(); subir(); } };
+      if (nx) nx.onclick = function(){ if (pagina < paginas){ pagina++; render(); subir(); } };
+    }
+    render();
+  })();
+</script>
 
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">

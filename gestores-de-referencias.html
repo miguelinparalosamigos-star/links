@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zotero: organiza tus referencias sin volverte loco · Psicolinks</title>
+<meta name="description" content="Qué es un gestor de referencias y cómo usar Zotero (gratis) para guardar fuentes, organizarlas y generar la bibliografía automática en APA. Guía para TFG y tesis.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Zotero: organiza tus referencias sin volverte loco · Psicolinks">
+<meta property="og:description" content="Qué es un gestor de referencias y cómo usar Zotero (gratis) para guardar fuentes, organizarlas y generar la bibliografía automática en APA. Guía para TFG y tesis.">
+<meta property="og:url" content="https://psicolinks.com/gestores-de-referencias.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/gestores-de-referencias.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem, 4vw, 2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  h1{ font-family:var(--font-display); font-size:1.95rem; line-height:1.22; margin:0 0 10px; }
+  .intro{ color:var(--ink-soft); font-size:1.04rem; line-height:1.65; margin:0 0 30px; }
+  h2{ font-family:var(--font-display); font-size:1.25rem; font-weight:600; margin:0 0 10px; }
+  p, li{ font-size:0.98rem; line-height:1.7; }
+  ul{ padding-left:22px; margin:0 0 12px; }
+  .punto{ background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--accent); border-radius:12px; padding:1.4rem 1.6rem 1.5rem; margin:0 0 1.25rem; }
+  .punto p:last-child{ margin-bottom:0; }
+  .punto-2{ border-top-color:var(--stamp); } .punto-3{ border-top-color:#3D5A4C; } .punto-4{ border-top-color:#3E5C74; } .punto-5{ border-top-color:var(--accent); } .punto-6{ border-top-color:#8C3B4A; }
+  .tarjeta{ display:block; background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1rem; text-decoration:none; color:var(--ink); transition:border-color .15s, transform .15s; }
+  .tarjeta:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  .tarjeta h2{ font-size:1.18rem; margin:0 0 0.3rem; color:var(--ink); }
+  .tarjeta p{ margin:0; color:var(--ink-soft); font-size:0.92rem; line-height:1.5; }
+  .ejemplo{ margin-top:0.8rem; padding:0.9rem 1.1rem; background:var(--paper); border-radius:9px; font-size:0.9rem; color:var(--ink-soft); }
+  .ejemplo code{ font-family:var(--font-mono); font-size:0.82rem; color:var(--ink); }
+  .aviso-destacado{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 20px; margin:30px 0 0; font-size:0.92rem; }
+  .aviso-destacado p{ margin:0; }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+</style>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+
+  <a href="/para-estudiantes.html" class="back-link">← Para estudiantes</a>
+  <h1>Organizar tus referencias con Zotero</h1>
+  <p class="intro">Copiar las citas a mano al final del trabajo es una tortura y una fuente de errores. Un gestor de referencias lo hace por ti: guarda cada fuente, la ordena y genera la bibliografía en el formato que pidas. El más recomendable y gratuito es Zotero.</p>
+
+  <div class="punto">
+    <h2>1. Qué es (y por qué no hacerlo a mano)</h2>
+    <p>Un gestor de referencias es una base de datos de tus fuentes. Guardas cada artículo o libro una vez, con todos sus datos, y luego el programa te inserta las citas en el texto y te monta la lista de referencias sola, en APA o el estilo que sea. Te ahorra horas y evita el error típico de una cita mal puesta.</p>
+  </div>
+
+  <div class="punto punto-2">
+    <h2>2. Instala Zotero y su conector</h2>
+    <p>Descarga Zotero (zotero.org) en el ordenador; es gratis y de código abierto. Instala también el <strong>conector de Zotero</strong> para tu navegador (Chrome, Firefox…): es lo que te deja guardar referencias de internet con un clic.</p>
+  </div>
+
+  <div class="punto punto-3">
+    <h2>3. Guarda con un clic y ordena</h2>
+    <p>Cuando estés en una página de un artículo (por ejemplo en PubMed), pulsa el icono del conector y Zotero se guarda el título, los autores, la revista, el año… y muchas veces el PDF. Organiza tus fuentes en <strong>carpetas</strong> por capítulos o temas y con <strong>etiquetas</strong> para encontrarlas después.</p>
+  </div>
+
+  <div class="punto punto-4">
+    <h2>4. Adjunta PDFs y notas</h2>
+    <p>Puedes guardar el PDF junto a cada referencia y añadir notas con tu resumen o las frases que quieras citar. Así tienes la fuente, el documento y tu lectura en el mismo sitio, sin carpetas sueltas por el escritorio.</p>
+  </div>
+
+  <div class="punto punto-5">
+    <h2>5. Lo mejor: citar automáticamente en Word o Docs</h2>
+    <p>Zotero instala un complemento en Word, LibreOffice y Google Docs. Mientras escribes, pulsas "Insertar cita", eliges la fuente y él pone la cita bien formateada; al final, "Insertar bibliografía" te genera la lista completa. Si cambias de estilo (APA, Vancouver…), se actualiza todo de golpe.</p>
+  </div>
+
+  <div class="punto punto-6">
+    <h2>6. Sincroniza y haz copia</h2>
+    <p>Crea una cuenta gratis para sincronizar tu biblioteca entre dispositivos y no perderla si le pasa algo al ordenador. (Mendeley es una alternativa parecida, pero para empezar Zotero va de sobra y es más libre.)</p>
+  </div>
+
+</main>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación científica, no sustituye una consulta profesional.</p>
+  <p>© 2026 Psicolinks · <a href="/sobre-mi.html">Sobre mí</a> · <a href="/guias.html">Guías</a> · <a href="/para-estudiantes.html">Para estudiantes</a> · <a href="/consultorio.html">Consultorio</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+</footer>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+</body>
+</html>

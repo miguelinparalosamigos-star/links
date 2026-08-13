@@ -27,6 +27,12 @@ export default async (req) => {
     { loc: `${base}/rincon-para-concentrarte.html` },
     { loc: `${base}/archivo.html` },
     { loc: `${base}/como-leemos-los-estudios.html` },
+    { loc: `${base}/sobre-mi.html` },
+    { loc: `${base}/para-estudiantes.html` },
+    { loc: `${base}/buscar-bibliografia-cientifica.html` },
+    { loc: `${base}/leer-un-paper.html` },
+    { loc: `${base}/gestores-de-referencias.html` },
+    { loc: `${base}/citar-en-apa.html` },
   ];
 
   try {

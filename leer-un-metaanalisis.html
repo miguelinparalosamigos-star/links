@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer un metaanálisis y una revisión sistemática · Psicolinks</title>
+<meta name="description" content="Qué es un metaanálisis y una revisión sistemática, cómo leerlos con criterio, qué es el tamaño del efecto y la heterogeneidad, y la jerarquía de la evidencia. Para profesionales y estudiantes.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Leer un metaanálisis y una revisión sistemática · Psicolinks">
+<meta property="og:description" content="Cómo leer con criterio una revisión sistemática y un metaanálisis: tamaño del efecto, heterogeneidad, sesgos y jerarquía de la evidencia. Por un psicólogo.">
+<meta property="og:url" content="https://psicolinks.com/leer-un-metaanalisis.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/leer-un-metaanalisis.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem, 4vw, 2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  h1{ font-family:var(--font-display); font-size:1.95rem; line-height:1.22; margin:0 0 10px; }
+  .intro{ color:var(--ink-soft); font-size:1.04rem; line-height:1.65; margin:0 0 30px; }
+  h2{ font-family:var(--font-display); font-size:1.25rem; font-weight:600; margin:0 0 10px; }
+  p, li{ font-size:0.98rem; line-height:1.7; }
+  ul{ padding-left:22px; margin:0 0 12px; }
+  .punto{ background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--accent); border-radius:12px; padding:1.4rem 1.6rem 1.5rem; margin:0 0 1.25rem; }
+  .punto p:last-child{ margin-bottom:0; }
+  .punto-2{ border-top-color:var(--stamp); } .punto-3{ border-top-color:#3D5A4C; } .punto-4{ border-top-color:#3E5C74; } .punto-5{ border-top-color:var(--accent); } .punto-6{ border-top-color:#8C3B4A; }
+  .ejemplo{ margin-top:0.8rem; padding:0.9rem 1.1rem; background:var(--paper); border-radius:9px; font-size:0.9rem; color:var(--ink-soft); }
+  .ejemplo code{ font-family:var(--font-mono); font-size:0.82rem; color:var(--ink); }
+  .aviso-destacado{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 20px; margin:30px 0 0; font-size:0.92rem; line-height:1.6; }
+  .aviso-destacado p{ margin:0; }
+  .aviso-destacado strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+</style>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+
+  <a href="/para-estudiantes.html" class="back-link">← Para estudiantes</a>
+  <h1>Leer un metaanálisis y una revisión</h1>
+  <p class="intro">Cuando quieres saber "¿esto funciona de verdad?", un solo estudio no basta: puede haber salido así por azar, por una muestra rara o por cómo se hizo. Las revisiones sistemáticas y los metaanálisis juntan muchos estudios para dar una respuesta más sólida. Son de lo más útil que puedes leer, pero también hay que mirarlos con criterio. Aquí va cómo.</p>
+
+  <div class="punto">
+    <h2>1. Revisión sistemática vs. metaanálisis</h2>
+    <p>No son lo mismo. Una <strong>revisión sistemática</strong> busca de forma exhaustiva y con un método explícito todos los estudios sobre una pregunta, los evalúa y los resume. Un <strong>metaanálisis</strong> va un paso más: además de reunirlos, combina estadísticamente sus resultados en una única estimación. Todo metaanálisis serio parte de una revisión sistemática; no toda revisión termina en metaanálisis (a veces los estudios son demasiado distintos para juntarlos).</p>
+  </div>
+
+  <div class="punto punto-2">
+    <h2>2. Mira primero cómo se hizo la búsqueda</h2>
+    <p>La calidad de una revisión depende de que no se haya dejado estudios fuera. Comprueba que declaran <strong>qué bases de datos</strong> buscaron, <strong>con qué criterios</strong> incluyeron y excluyeron estudios, y que lo hicieron <strong>dos revisores</strong> por separado. Si además sigue la guía <strong>PRISMA</strong> y estaba <strong>preregistrada</strong> (por ejemplo en PROSPERO), es buena señal: reduce que hayan elegido a dedo lo que les convenía.</p>
+  </div>
+
+  <div class="punto punto-3">
+    <h2>3. El tamaño del efecto: ¿cuánto, no solo si?</h2>
+    <p>El resultado central de un metaanálisis no es "sí o no", es <strong>cuánto</strong>: el tamaño del efecto combinado. Verás medidas como <strong>d de Cohen</strong> o <strong>g de Hedges</strong> (para diferencias entre grupos) u <strong>odds ratio / riesgo relativo</strong> (para probabilidades). Como orientación, una d en torno a 0,2 es un efecto pequeño, 0,5 mediano y 0,8 grande. Fíjate en el <strong>intervalo de confianza</strong>: si es muy ancho o cruza el "no efecto", la conclusión es frágil.</p>
+    <div class="ejemplo">Ejemplo: <code>d = 0,45 [IC 95%: 0,30–0,60]</code> — efecto moderado y bastante preciso. <code>d = 0,45 [IC 95%: −0,05–0,95]</code> — mismo valor, pero el intervalo cruza el cero: no puedes descartar que no haya efecto.</div>
+  </div>
+
+  <div class="punto punto-4">
+    <h2>4. La heterogeneidad: ¿comparan peras con manzanas?</h2>
+    <p>Un metaanálisis junta estudios distintos, y conviene saber cuánto varían entre sí. Ese dato es la <strong>heterogeneidad</strong>, que se suele resumir con el estadístico <strong>I²</strong>: cuanto más alto (por encima del 50–75%), más dispares son los resultados y con más cuidado hay que tomarse el número combinado. Una heterogeneidad alta no invalida la revisión, pero obliga a preguntarse <em>en quién y en qué condiciones</em> funciona, no solo "si funciona".</p>
+  </div>
+
+  <div class="punto punto-5">
+    <h2>5. El sesgo de publicación</h2>
+    <p>Los estudios con resultados llamativos se publican más que los que "no encuentran nada". Eso puede inflar el efecto de un metaanálisis. Los buenos lo revisan: busca menciones al <strong>funnel plot</strong> (gráfico en embudo) o a pruebas como la de <strong>Egger</strong>. Si detectan sesgo de publicación, el efecto real probablemente sea más pequeño de lo que sale.</p>
+  </div>
+
+  <div class="punto punto-6">
+    <h2>6. La jerarquía de la evidencia (con matices)</h2>
+    <p>No toda evidencia pesa igual. De forma orientativa, de menos a más fuerza: opinión de expertos y casos aislados &lt; estudios observacionales &lt; ensayos controlados aleatorizados (ECA) &lt; revisiones sistemáticas y metaanálisis de ECA. Por eso una revisión Cochrane bien hecha vale más que un estudio suelto. El matiz: una revisión de estudios malos sigue siendo débil ("basura entra, basura sale"), así que la jerarquía orienta, pero no sustituye a mirar la calidad.</p>
+  </div>
+
+  <div class="aviso-destacado">
+    <p><strong>En resumen.</strong> Ante una revisión o metaanálisis, pregúntate: ¿buscaron bien y sin sesgar la selección? ¿cómo de grande es el efecto y cómo de preciso? ¿los estudios eran comparables (heterogeneidad)? ¿hay sesgo de publicación? Con esas cuatro preguntas ya lees con criterio profesional. Para lo previo, tienes <a href="/leer-un-paper.html">«Leer un paper sin perderte»</a> y <a href="/como-leemos-los-estudios.html">«Interpretar la estadística»</a>; y dónde encontrarlos, en <a href="/recursos-gratuitos-psicologia.html">«Recursos gratuitos de psicología»</a>.</p>
+  </div>
+
+</main>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación científica, no sustituye una consulta profesional.</p>
+  <p>© 2026 Psicolinks · <a href="/sobre-mi.html">Sobre mí</a> · <a href="/guias.html">Guías</a> · <a href="/para-estudiantes.html">Para estudiantes</a> · <a href="/consultorio.html">Consultorio</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+</footer>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+</body>
+</html>

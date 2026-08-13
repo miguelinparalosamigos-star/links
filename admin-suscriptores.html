@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suscriptores · Administración · Psicolinks</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --stamp:#B5541D; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:system-ui,-apple-system,sans-serif; }
+  header{ padding:1.75rem 1.5rem 1rem; text-align:center; }
+  h1{ font-size:1.4rem; margin:0; }
+  main{ max-width:720px; margin:0 auto; padding:1rem 1.5rem 4rem; }
+  .gate{ max-width:360px; margin:3rem auto; text-align:center; }
+  .gate input{ width:100%; padding:0.6rem 0.8rem; border:1.5px solid var(--border); border-radius:8px; font-size:1rem; margin-bottom:0.75rem; }
+  .gate button{ padding:0.6rem 1.1rem; border-radius:8px; border:none; font-weight:600; cursor:pointer; font-size:0.95rem; width:100%; background:var(--ink); color:#fff; }
+  .contador{ font-size:0.95rem; color:var(--ink); margin:0 0 1rem; font-weight:600; }
+  .acciones{ display:flex; gap:0.6rem; flex-wrap:wrap; margin:0 0 1.2rem; }
+  .btn{ padding:0.55rem 1.1rem; border:1px solid var(--accent); border-radius:8px; background:#fff; color:var(--accent); font-weight:600; cursor:pointer; font-size:0.9rem; }
+  .btn:hover{ background:#ece8f5; }
+  table{ width:100%; border-collapse:collapse; background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; font-size:0.9rem; }
+  th,td{ text-align:left; padding:0.55rem 0.8rem; border-bottom:1px solid var(--border); }
+  th{ background:var(--paper); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); }
+  tr:last-child td{ border-bottom:none; }
+  .status-msg{ text-align:center; color:var(--ink-soft); padding:2rem 0; }
+  .row-msg{ font-size:0.82rem; color:var(--ink-soft); margin-left:0.4rem; }
+</style>
+</head>
+<body>
+<header><h1>Newsletter · suscriptores</h1></header>
+<main>
+  <div class="gate" id="gate">
+    <p>Introduce tu clave de administración para ver los suscriptores.</p>
+    <input type="password" id="passphrase" placeholder="Clave">
+    <button onclick="cargar()">Entrar</button>
+    <p id="gate-error" style="color:#C0392B; font-size:0.85rem;"></p>
+  </div>
+
+  <div id="content" hidden>
+    <p class="contador" id="contador"></p>
+    <div class="acciones">
+      <button class="btn" onclick="copiar()">Copiar todos los emails</button>
+      <button class="btn" onclick="descargarCsv()">Descargar CSV</button>
+      <span class="row-msg" id="msg"></span>
+    </div>
+    <div id="tabla"></div>
+  </div>
+</main>
+
+<script>
+  var SUS = [];
+  function esc(s){ return (s||'').replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  async function cargar(){
+    var pass = document.getElementById('passphrase').value;
+    var err = document.getElementById('gate-error');
+    err.textContent = '';
+    try{
+      var res = await fetch('/.netlify/functions/list-suscriptores', { headers:{ 'X-Admin-Passphrase': pass } });
+      if(!res.ok){ err.textContent = 'Clave incorrecta o error de conexión.'; return; }
+      var data = await res.json();
+      SUS = data.suscriptores || [];
+      document.getElementById('gate').hidden = true;
+      document.getElementById('content').hidden = false;
+      pintar();
+    }catch(e){ err.textContent = 'No se pudo conectar. Inténtalo de nuevo.'; }
+  }
+
+  function pintar(){
+    document.getElementById('contador').textContent = SUS.length + ' suscriptor(es)';
+    var t = document.getElementById('tabla');
+    if(!SUS.length){ t.innerHTML = '<p class="status-msg">Aún no hay suscriptores.</p>'; return; }
+    t.innerHTML = '<table><thead><tr><th>Email</th><th>Fecha</th><th>Origen</th></tr></thead><tbody>'
+      + SUS.map(function(s){
+          return '<tr><td>'+esc(s.email)+'</td><td>'+esc((s.fecha||'').slice(0,10))+'</td><td>'+esc(s.origen||'—')+'</td></tr>';
+        }).join('')
+      + '</tbody></table>';
+  }
+
+  function copiar(){
+    var txt = SUS.map(function(s){ return s.email; }).join('\n');
+    navigator.clipboard.writeText(txt).then(function(){
+      document.getElementById('msg').textContent = '✔ Copiados ' + SUS.length + ' emails al portapapeles.';
+    }, function(){
+      document.getElementById('msg').textContent = 'No se pudo copiar automáticamente.';
+    });
+  }
+
+  function descargarCsv(){
+    var filas = [['email','fecha','origen']].concat(SUS.map(function(s){
+      return [s.email, (s.fecha||''), (s.origen||'')];
+    }));
+    var csv = filas.map(function(f){
+      return f.map(function(c){ return '"' + String(c).replace(/"/g,'""') + '"'; }).join(',');
+    }).join('\n');
+    var blob = new Blob([csv], { type:'text/csv;charset=utf-8;' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'suscriptores-psicolinks.csv';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    document.getElementById('msg').textContent = '✔ CSV descargado.';
+  }
+</script>
+</body>
+</html>

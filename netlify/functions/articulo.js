@@ -72,6 +72,10 @@ const CATALOGO_LIBROS = [
   { id: 'ganar-amigos', titulo: 'Cómo ganar amigos e influir sobre las personas', emoji: '📖', url: 'https://www.amazon.es/dp/8412299728?tag=conciencia07-21', temas: ['social', 'trabajo'], palabrasClave: ['social', 'relaciones', 'amistad', 'amigos', 'comunicación', 'comunicacion', 'habilidades sociales', 'trato', 'empatía', 'empatia', 'persuasión', 'persuasion', 'influencia', 'conflicto', 'timidez'] },
   { id: 'poder-habitos', titulo: 'El poder de los hábitos', emoji: '📖', url: 'https://www.amazon.es/dp/8417664130?tag=conciencia07-21', temas: ['habitos', 'trabajo'], palabrasClave: ['hábito', 'hábitos', 'habito', 'habitos', 'rutina', 'rutinas', 'cambio', 'cambiar', 'motivación', 'motivacion', 'conducta', 'comportamiento', 'productividad', 'adicción', 'adiccion'] },
   { id: 'tus-zonas-erroneas', titulo: 'Tus zonas erróneas', emoji: '📖', url: 'https://www.amazon.es/dp/8425352835?tag=conciencia07-21', general: true, temas: ['bienestar', 'personalidad', 'estado-animo'], palabrasClave: ['autoestima', 'culpa', 'preocupación', 'preocupacion', 'autoexigencia', 'inseguridad', 'felicidad', 'aprobación', 'aprobacion', 'dependencia', 'infelicidad', 'pensamiento negativo'] },
+  { id: 'trampa-felicidad', titulo: 'La trampa de la felicidad', emoji: '📖', url: 'https://www.amazon.es/dp/8408261908?tag=conciencia07-21', general: true, temas: ['ansiedad', 'bienestar', 'estres-trauma'], palabrasClave: ['ansiedad', 'ansioso', 'ansiosa', 'aceptación', 'aceptacion', 'aceptar', 'evitación', 'evitacion', 'evitar', 'malestar', 'emociones', 'emocional', 'pensamientos', 'preocupación', 'preocupacion', 'mindfulness', 'atención plena', 'valores', 'sufrimiento', 'incertidumbre'] },
+  { id: 'fin-ansiedad', titulo: 'El fin de la ansiedad', emoji: '📖', url: 'https://www.amazon.es/dp/8417664335?tag=conciencia07-21', temas: ['ansiedad', 'estres-trauma'], palabrasClave: ['ansiedad', 'ansioso', 'ansiosa', 'angustia', 'pánico', 'panico', 'ataque de pánico', 'miedo', 'miedos', 'fobia', 'fobias', 'nervios', 'nerviosismo', 'preocupación', 'preocupacion', 'hipocondría', 'hipocondria'] },
+  { id: 'persona-vitamina', titulo: 'Encuentra tu persona vitamina', emoji: '📖', url: 'https://www.amazon.es/dp/846706269X?tag=conciencia07-21', temas: ['pareja', 'social', 'bienestar'], palabrasClave: ['pareja', 'relación', 'relaciones', 'vínculo', 'vínculos', 'vinculo', 'vinculos', 'apego', 'amor', 'amistad', 'amigos', 'familia', 'social', 'confianza', 'dependencia', 'oxitocina', 'cortisol'] },
+  { id: 'comunicacion-no-violenta', titulo: 'Comunicación no violenta', emoji: '📖', url: 'https://www.amazon.es/dp/8415053665?tag=conciencia07-21', temas: ['social', 'pareja', 'trabajo'], palabrasClave: ['comunicación', 'comunicacion', 'conflicto', 'conflictos', 'discusión', 'discusiones', 'discutir', 'pareja', 'relaciones', 'límites', 'limites', 'asertividad', 'empatía', 'empatia', 'escucha', 'diálogo', 'dialogo', 'necesidades'] },
 ];
 
 function barajar(lista) {
@@ -309,6 +313,7 @@ function paginaHtml({ base, urlCanonica, post }) {
     <a class="guia-cta-btn" href="/guias.html">Ver las guías gratuitas →</a>
   </div>
   <div id="relacionados-container"></div>
+  <div class="pl-newsletter" data-variant="digest" data-origen="articulo"></div>
 </main>
 <footer class="site-footer">
   <p class="otras-webs-titulo">Otras webs</p>
@@ -360,6 +365,7 @@ function paginaHtml({ base, urlCanonica, post }) {
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="/cookies-psicolinks.js" defer></script>
+<script src="/newsletter-psicolinks.js" defer></script>
 </body>
 </html>`;
 }

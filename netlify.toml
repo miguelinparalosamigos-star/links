@@ -14,6 +14,12 @@
   to = "/.netlify/functions/sitemap"
   status = 200
 
+# Feed RSS de los articulos diarios, para lectores tipo Feedly y agregadores.
+[[redirects]]
+  from = "/feed.xml"
+  to = "/.netlify/functions/feed"
+  status = 200
+
 # Páginas de artículo con URL limpia y renderizadas en el servidor (para SEO):
 # /articulo/titulo-legible/<id>  ->  función articulo (le pasa la ruta en "ruta").
 [[redirects]]

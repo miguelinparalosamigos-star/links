@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Imagen para redes · Psicolinks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); }
+  a{ color:var(--accent); }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:1.7rem; color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:860px; margin:0 auto; padding:2.2rem 1.5rem 4rem; }
+  h1{ font-family:var(--font-display); font-size:1.9rem; margin:0 0 0.4rem; }
+  .lead{ color:var(--ink-soft); line-height:1.6; margin:0 0 1.6rem; }
+  .aviso{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.2rem; font-size:0.93rem; line-height:1.6; color:#3d3357; margin:0 0 1.8rem; }
+  label{ display:block; font-size:0.82rem; font-weight:600; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.04em; margin:1.1rem 0 0.35rem; }
+  select, textarea, input[type="text"]{ width:100%; border:1.5px solid var(--border); border-radius:9px; padding:0.7rem 0.9rem; font-family:inherit; font-size:0.95rem; color:var(--ink); background:#fdfdfb; }
+  textarea{ resize:vertical; line-height:1.5; }
+  .fila{ display:flex; gap:0.8rem; flex-wrap:wrap; align-items:center; margin-top:1.3rem; }
+  .btn{ border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:0.95rem; padding:0.7rem 1.3rem; cursor:pointer; }
+  .btn:hover{ background:#3a2e63; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); }
+  .previa{ margin-top:1.8rem; }
+  canvas{ width:100%; height:auto; border:1px solid var(--border); border-radius:12px; display:block; background:#fff; }
+  .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0.6rem 0 0; line-height:1.5; }
+  .site-footer{ border-top:1px solid var(--border); padding:1.6rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+</style>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <h1>Imagen para redes</h1>
+  <p class="lead">Genera la imagen de 1200×630 para acompañar el post, con el estilo de Psicolinks. Elige un artículo, retoca el texto si quieres y descárgala.</p>
+
+  <div class="aviso">
+    <strong>Para qué sirve.</strong> Un post con imagen se ve mucho más que uno con solo texto, y una imagen con el titular hace que la gente entienda de qué va antes de decidir si pincha. Esta la puedes subir a Facebook, LinkedIn, Instagram o Threads junto al texto que te da <a href="/redes.html">la página de posts</a>. Esta página no la indexa Google.
+  </div>
+
+  <label for="sel">Artículo</label>
+  <select id="sel"><option>Cargando artículos…</option></select>
+
+  <label for="tit">Titular (edítalo si es muy largo)</label>
+  <textarea id="tit" rows="3"></textarea>
+
+  <label for="pie">Línea de abajo</label>
+  <input type="text" id="pie" value="psicolinks.com · psicología con el estudio delante">
+
+  <div class="fila">
+    <button class="btn" id="gen">Actualizar imagen</button>
+    <button class="btn sec" id="desc">Descargar PNG</button>
+  </div>
+
+  <div class="previa">
+    <canvas id="lienzo" width="1200" height="630"></canvas>
+    <p class="pista">Se descarga en 1200×630, la medida que usan Facebook y LinkedIn para la imagen de un enlace. En Instagram funciona igual, aunque ahí se ve recortada por los lados.</p>
+  </div>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/redes.html">← Ir a los textos para redes</a> · <a href="/">Portada</a></p>
+</main>
+<footer class="site-footer"><p>© 2026 Psicolinks · Página interna</p></footer>
+
+<script>
+  const C = { paper:'#EEEDE6', surface:'#FFFFFF', ink:'#211F2E', inkSoft:'#625C70', border:'#DDD7CB', accent:'#4A3B78', stamp:'#B5541D' };
+  const lienzo = document.getElementById('lienzo');
+  const ctx = lienzo.getContext('2d');
+
+  function lineas(texto, maxAncho, fuente){
+    ctx.font = fuente;
+    const palabras = texto.split(/\s+/);
+    const res = []; let actual = '';
+    palabras.forEach(function(p){
+      const prueba = actual ? actual + ' ' + p : p;
+      if (ctx.measureText(prueba).width > maxAncho && actual) { res.push(actual); actual = p; }
+      else { actual = prueba; }
+    });
+    if (actual) res.push(actual);
+    return res;
+  }
+
+  function dibuja(){
+    const titulo = document.getElementById('tit').value.trim() || 'Psicolinks';
+    const pie = document.getElementById('pie').value.trim();
+    const W = 1200, H = 630, M = 80;
+
+    ctx.fillStyle = C.paper; ctx.fillRect(0,0,W,H);
+    // banda de acento a la izquierda
+    ctx.fillStyle = C.accent; ctx.fillRect(0,0,14,H);
+    // tarjeta
+    ctx.fillStyle = C.surface;
+    ctx.strokeStyle = C.border; ctx.lineWidth = 2;
+    const x = M-24, y = M-24, w = W-2*(M-24), h = H-2*(M-24), r = 22;
+    ctx.beginPath();
+    ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+    ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+    ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
+    ctx.fill(); ctx.stroke();
+    // franja superior de la tarjeta
+    ctx.fillStyle = C.accent; ctx.fillRect(x+2, y+2, w-4, 8);
+
+    // sello
+    ctx.font = '700 22px "Space Mono", monospace';
+    ctx.fillStyle = C.stamp;
+    ctx.fillText('ESTUDIO DEL DÍA', M+12, M+52);
+
+    // titular: ajusta el cuerpo hasta que quepa en 5 líneas
+    let cuerpo = 62, ls;
+    do {
+      ls = lineas(titulo, w - 96, '700 ' + cuerpo + 'px Lora, Georgia, serif');
+      if (ls.length <= 5) break;
+      cuerpo -= 3;
+    } while (cuerpo > 30);
+
+    ctx.fillStyle = C.ink;
+    ctx.font = '700 ' + cuerpo + 'px Lora, Georgia, serif';
+    // bloque de titular centrado verticalmente entre el sello y el pie
+    const arriba = M + 100, abajo = H - M - 70;
+    const alto = ls.length * cuerpo * 1.22;
+    let yy = arriba + (abajo - arriba - alto) / 2 + cuerpo;
+    ls.forEach(function(l){ ctx.fillText(l, M+12, yy); yy += cuerpo * 1.22; });
+
+    // pie
+    ctx.font = '500 26px "Work Sans", system-ui, sans-serif';
+    ctx.fillStyle = C.inkSoft;
+    ctx.fillText(pie, M+12, H - M - 18);
+
+    // logo
+    ctx.font = '700 34px Lora, Georgia, serif';
+    const t1 = 'psico', t2 = 'links';
+    const anchoTotal = ctx.measureText(t1 + t2).width;
+    ctx.fillStyle = C.ink; ctx.fillText(t1, W - M - anchoTotal - 12, M + 52);
+    ctx.fillStyle = C.accent; ctx.fillText(t2, W - M - anchoTotal - 12 + ctx.measureText(t1).width, M + 52);
+  }
+
+  document.getElementById('gen').addEventListener('click', dibuja);
+  document.getElementById('tit').addEventListener('input', dibuja);
+  document.getElementById('pie').addEventListener('input', dibuja);
+
+  document.getElementById('desc').addEventListener('click', function(){
+    const a = document.createElement('a');
+    a.download = 'psicolinks-redes.png';
+    a.href = lienzo.toDataURL('image/png');
+    a.click();
+  });
+
+  const sel = document.getElementById('sel');
+  sel.addEventListener('change', function(){
+    document.getElementById('tit').value = sel.value;
+    dibuja();
+  });
+
+  function arranca(){
+    document.getElementById('tit').value = document.getElementById('tit').value || 'Psicolinks';
+    dibuja();
+  }
+
+  fetch('/.netlify/functions/list-posts?limit=10')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(data){
+      if (!data || !data.posts || !data.posts.length) { sel.innerHTML = '<option>No hay artículos todavía</option>'; return arranca(); }
+      sel.innerHTML = data.posts.map(function(p){
+        return '<option value="' + p.titulo.replace(/"/g,'&quot;') + '">' + p.titulo + '</option>';
+      }).join('');
+      document.getElementById('tit').value = data.posts[0].titulo;
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(dibuja); }
+      dibuja();
+    })
+    .catch(function(){ sel.innerHTML = '<option>No se han podido cargar</option>'; arranca(); });
+</script>
+</body>
+</html>

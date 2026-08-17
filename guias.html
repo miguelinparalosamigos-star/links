@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Psicolinks" href="https://psicolinks.com/feed.xml">
 <link rel="canonical" href="https://psicolinks.com/guias.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +55,12 @@
   .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
   .site-footer a{ color:var(--ink-soft); }
 
+  .aviso-ayuda{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:0.85rem 1.1rem; font-size:0.93rem; line-height:1.55; color:#3d3357; margin:0 0 1.4rem; }
+  .buscador{ margin:0 0 1.6rem; }
+  .buscador input[type="search"]{ width:100%; padding:0.8rem 1rem; border:1.5px solid var(--border); border-radius:10px; font-family:inherit; font-size:1rem; color:var(--ink); background:var(--surface); }
+  .buscador input[type="search"]:focus{ border-color:var(--accent); outline:none; }
+  .buscador-info{ font-size:0.85rem; color:var(--ink-soft); margin:0.5rem 0 0; min-height:1.2em; }
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
   .paginacion { display:flex; justify-content:center; align-items:center; gap:0.9rem; margin:0.4rem 0 1.6rem; flex-wrap:wrap; }
   .paginacion button { padding:0.55rem 1rem; border:1px solid var(--border); background:var(--surface); color:var(--accent); border-radius:9px; font-weight:600; font-size:0.9rem; cursor:pointer; font-family:inherit; }
   .paginacion button:hover:not(:disabled){ border-color:var(--accent); }
@@ -71,6 +78,14 @@
   <a href="/" class="back-link">← Volver a la portada</a>
   <h1>Guías y recomendaciones</h1>
   <p class="intro">Además del estudio del día, aquí reúno guías prácticas para llevar la psicología a tu vida diaria: relajación, sueño, calma. Escritas por mí, en lenguaje claro y con criterio profesional.</p>
+
+  <p class="aviso-ayuda">¿Necesitas ayuda ahora y no sabes a quién acudir? Tienes los teléfonos y servicios de España en <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a>.</p>
+
+  <div class="buscador">
+    <label for="buscar" class="sr-only">Buscar una guía</label>
+    <input type="search" id="buscar" placeholder="Buscar una guía: sueño, ansiedad, pareja, trabajo…" autocomplete="off">
+    <p class="buscador-info" id="buscador-info" role="status"></p>
+  </div>
 
   <!-- Lead magnet: PDF gratuito · descarga directa -->
   <div class="card">
@@ -376,6 +391,134 @@
     <a class="btn-guia" href="/ansiedad-ante-los-examenes.html">Leer la guía →</a>
   </div>
 
+  <!-- Lead magnet 39 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Insomnio: qué hacer cuando no consigues dormir</h2>
+    <p class="lede">Seis herramientas para cuando llevas meses durmiendo mal y los consejos de siempre ya no sirven. Lo que de verdad rompe el círculo.</p>
+    <a class="btn-guia" href="/insomnio.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 40 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Síndrome del impostor</h2>
+    <p class="lede">Seis herramientas para cuando sientes que has llegado por suerte y que un día alguien se dará cuenta de que no vales.</p>
+    <a class="btn-guia" href="/sindrome-del-impostor.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 41 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Cómo elegir psicólogo</h2>
+    <p class="lede">Qué titulación hace falta de verdad, qué preguntar antes de la primera sesión y las señales que deberían hacerte salir por la puerta.</p>
+    <a class="btn-guia" href="/elegir-psicologo.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 42 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Tu hijo adolescente lo está pasando mal</h2>
+    <p class="lede">Seis herramientas para acompañar a un adolescente con ansiedad o con el ánimo bajo, y qué señales sí son de alarma.</p>
+    <a class="btn-guia" href="/ayudar-a-un-hijo-adolescente.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 43 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Cómo superar una fobia</h2>
+    <p class="lede">Volar, conducir, los ascensores, las agujas. Cómo funciona la exposición gradual paso a paso y por qué evitar lo empeora.</p>
+    <a class="btn-guia" href="/superar-una-fobia.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 44 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Comer por ansiedad</h2>
+    <p class="lede">Seis herramientas para cuando comes sin hambre y luego te machacas. Ni dietas ni fuerza de voluntad.</p>
+    <a class="btn-guia" href="/comer-por-ansiedad.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 45 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Cuidar a alguien sin agotarte</h2>
+    <p class="lede">Para quien lleva meses o años cuidando casi solo: repartir, usar la ayuda que existe y reconocer cuándo ya no puedes.</p>
+    <a class="btn-guia" href="/sobrecarga-del-cuidador.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 46 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Dejar de fumar: qué ayuda de verdad</h2>
+    <p class="lede">Poner fecha, identificar tus señales, surfear las ganas y contar con el primer mes. La parte psicológica del proceso.</p>
+    <a class="btn-guia" href="/dejar-de-fumar.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 47 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Duelo por una mascota</h2>
+    <p class="lede">Perder a un animal es un duelo de verdad, aunque de fuera te digan que no. La culpa, las rutinas rotas y cuándo volver a adoptar.</p>
+    <a class="btn-guia" href="/duelo-por-una-mascota.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 48 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Preparar una oposición sin quemarte</h2>
+    <p class="lede">Un ritmo que puedas sostener meses, estudiar de la forma que sí fija el temario y qué hacer con la incertidumbre.</p>
+    <a class="btn-guia" href="/oposiciones-sin-quemarte.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 49 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Posparto: cuando no te sientes bien</h2>
+    <p class="lede">Qué es normal en las primeras semanas, cuándo la tristeza o la ansiedad piden ayuda y qué alivia mientras tanto.</p>
+    <a class="btn-guia" href="/depresion-posparto.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 50 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>El sueño de los niños</h2>
+    <p class="lede">Qué es esperable a cada edad, cómo montar una rutina que funcione y cómo sostenerla sin que los adultos acaben agotados.</p>
+    <a class="btn-guia" href="/sueno-de-los-ninos.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 51 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>TDAH en adultos</h2>
+    <p class="lede">Qué es y qué no, por qué no conviene autodiagnosticarse por internet y qué estrategias ayudan en el día a día.</p>
+    <a class="btn-guia" href="/tdah-en-adultos.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 52 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Dolor crónico: qué puede hacer la psicología</h2>
+    <p class="lede">Salir del ciclo de parón y sobreesfuerzo, el miedo al movimiento y por qué el sueño cambia tanto el dolor.</p>
+    <a class="btn-guia" href="/dolor-cronico.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 53 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Ansiedad por el dinero</h2>
+    <p class="lede">Cuando las cuentas quitan el sueño: mirar los números, pedir la ayuda que existe y evitar el alivio que sale caro.</p>
+    <a class="btn-guia" href="/ansiedad-por-dinero.html">Leer la guía →</a>
+  </div>
+
+  <!-- Lead magnet 54 -->
+  <div class="card">
+    <span class="tag">📎 Guía gratuita</span>
+    <h2>Acoso laboral: qué hacer</h2>
+    <p class="lede">Distinguir acoso de un mal jefe, documentar desde hoy, qué vías existen en España y cómo protegerte mientras decides.</p>
+    <a class="btn-guia" href="/acoso-laboral.html">Leer la guía →</a>
+  </div>
+
   <div id="pag-guias" class="paginacion"></div>
 
   <!-- Guía de compra -->
@@ -443,15 +586,41 @@
 
 <script>
   (function(){
-    var PAGE_SIZE = 8, pagina = 1;
-    var cards = Array.prototype.slice.call(document.querySelectorAll('main .card')).filter(function(c){
+    var PAGE_SIZE = 8, pagina = 1, filtro = '';
+    var todas = Array.prototype.slice.call(document.querySelectorAll('main .card'));
+    var cards = todas.filter(function(c){
       var t = c.querySelector('.tag');
       return t && t.textContent.indexOf('Guía gratuita') !== -1;
     });
     var pagBox = document.getElementById('pag-guias');
+    var input = document.getElementById('buscar');
+    var info = document.getElementById('buscador-info');
     if (!cards.length || !pagBox) return;
+
+    function normaliza(t){
+      return (t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
     function subir(){ try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){ window.scrollTo(0,0); } }
+
     function render(){
+      // Con búsqueda activa se muestran todos los resultados y se oculta la paginación.
+      if (filtro) {
+        var encontradas = 0;
+        todas.forEach(function(c){ c.style.display = 'none'; });
+        cards.forEach(function(c){
+          if (normaliza(c.textContent).indexOf(filtro) !== -1) { c.style.display = ''; encontradas++; }
+        });
+        pagBox.innerHTML = '';
+        if (info) {
+          info.textContent = encontradas
+            ? encontradas + (encontradas === 1 ? ' guía encontrada' : ' guías encontradas')
+            : 'Ninguna guía coincide con esa búsqueda.';
+        }
+        return;
+      }
+
+      if (info) info.textContent = '';
+      todas.forEach(function(c){ c.style.display = ''; });
       var paginas = Math.max(1, Math.ceil(cards.length / PAGE_SIZE));
       if (pagina > paginas) pagina = paginas;
       var ini = (pagina - 1) * PAGE_SIZE;
@@ -463,6 +632,14 @@
       var pv = document.getElementById('gp'), nx = document.getElementById('gn');
       if (pv) pv.onclick = function(){ if (pagina > 1){ pagina--; render(); subir(); } };
       if (nx) nx.onclick = function(){ if (pagina < paginas){ pagina++; render(); subir(); } };
+    }
+
+    if (input) {
+      input.addEventListener('input', function(){
+        filtro = normaliza(input.value.trim());
+        pagina = 1;
+        render();
+      });
     }
     render();
   })();

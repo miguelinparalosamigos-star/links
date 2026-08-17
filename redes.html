@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Posts para redes · Psicolinks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); }
+  a{ color:var(--accent); }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:1.7rem; color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:760px; margin:0 auto; padding:2.2rem 1.5rem 4rem; }
+  h1{ font-family:var(--font-display); font-size:1.9rem; margin:0 0 0.4rem; }
+  .lead{ color:var(--ink-soft); line-height:1.6; margin:0 0 1.6rem; }
+  .aviso{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.2rem; font-size:0.93rem; line-height:1.6; color:#3d3357; margin:0 0 2rem; }
+  .post{ background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--accent); border-radius:12px; padding:1.2rem 1.4rem 1.4rem; margin:0 0 1.4rem; }
+  .post h2{ font-family:var(--font-display); font-size:1.15rem; margin:0 0 0.2rem; }
+  .fecha{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); text-transform:uppercase; letter-spacing:0.06em; }
+  .variante{ margin:1.1rem 0 0; }
+  .variante-tit{ display:flex; align-items:center; justify-content:space-between; gap:0.8rem; margin:0 0 0.4rem; }
+  .variante-tit span{ font-size:0.82rem; font-weight:600; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.04em; }
+  textarea{ width:100%; border:1.5px solid var(--border); border-radius:9px; padding:0.8rem 0.9rem; font-family:inherit; font-size:0.93rem; line-height:1.6; color:var(--ink); background:#fdfdfb; resize:vertical; }
+  .btn{ border:none; border-radius:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:0.82rem; padding:0.45rem 0.9rem; cursor:pointer; white-space:nowrap; }
+  .btn:hover{ background:#3a2e63; }
+  .btn.ok{ background:#128a4e; }
+  .cargando{ color:var(--ink-soft); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.6rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+</style>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <h1>Posts para redes</h1>
+  <p class="lead">Los artículos publicados hoy, ya convertidos en texto para publicar. Copia, pega y publica. No hace falta escribir nada.</p>
+
+  <div class="aviso">
+    <strong>Cómo usar esto.</strong> Cada artículo trae dos versiones: una larga para <strong>LinkedIn</strong> y una corta para <strong>Threads, X o Bluesky</strong>. Pulsa «Copiar», pega en la red y publica. Puedes retocar el texto antes de copiarlo: lo que edites aquí se copia tal cual. Esta página no la indexa Google.
+  </div>
+
+  <div id="lista"><p class="cargando">Cargando los artículos de hoy…</p></div>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/">← Volver a la portada</a></p>
+</main>
+<footer class="site-footer"><p>© 2026 Psicolinks · Página interna</p></footer>
+
+<script>
+  const BASE = 'https://psicolinks.com';
+  function slugify(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80) || 'articulo'; }
+  function urlArticulo(p){ return BASE + '/articulo/' + slugify(p.titulo) + '/' + encodeURIComponent(p.id); }
+
+  function textoLargo(p){
+    return p.titulo + '\n\n'
+      + (p.teaser || p.resumen || '').trim() + '\n\n'
+      + 'Lo he resumido en Psicolinks, con el estudio original enlazado:\n'
+      + urlArticulo(p) + '\n\n'
+      + '#psicología #divulgación #saludmental';
+  }
+  function textoCorto(p){
+    const t = (p.teaser || p.resumen || '').trim();
+    const corto = t.length > 180 ? t.slice(0, 177).replace(/\s+\S*$/, '') + '…' : t;
+    return p.titulo + '\n\n' + corto + '\n\n' + urlArticulo(p);
+  }
+
+  function bloque(p){
+    const id = Math.random().toString(36).slice(2, 9);
+    return '<div class="post">'
+      + '<p class="fecha">' + ((p.fechaPublicacion || p.fecha || '').slice(0,10)) + (p.fuente ? ' · ' + p.fuente : '') + '</p>'
+      + '<h2>' + p.titulo + '</h2>'
+      + '<div class="variante">'
+      +   '<div class="variante-tit"><span>Para LinkedIn</span><button class="btn" data-copia="l' + id + '">Copiar</button></div>'
+      +   '<textarea id="l' + id + '" rows="9"></textarea>'
+      + '</div>'
+      + '<div class="variante">'
+      +   '<div class="variante-tit"><span>Para Threads, X o Bluesky</span><button class="btn" data-copia="c' + id + '">Copiar</button></div>'
+      +   '<textarea id="c' + id + '" rows="6"></textarea>'
+      + '</div>'
+      + '</div>';
+  }
+
+  fetch('/.netlify/functions/list-posts?limit=6')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(data){
+      const cont = document.getElementById('lista');
+      if (!data || !data.posts || !data.posts.length) {
+        cont.innerHTML = '<p class="cargando">Todavía no hay artículos publicados.</p>';
+        return;
+      }
+      cont.innerHTML = data.posts.map(bloque).join('');
+      const areas = cont.querySelectorAll('textarea');
+      data.posts.forEach(function(p, i){
+        areas[i*2].value = textoLargo(p);
+        areas[i*2+1].value = textoCorto(p);
+      });
+      cont.querySelectorAll('[data-copia]').forEach(function(b){
+        b.addEventListener('click', function(){
+          const ta = document.getElementById(b.getAttribute('data-copia'));
+          ta.select();
+          navigator.clipboard.writeText(ta.value).then(function(){
+            b.textContent = '¡Copiado!'; b.classList.add('ok');
+            setTimeout(function(){ b.textContent = 'Copiar'; b.classList.remove('ok'); }, 1800);
+          });
+        });
+      });
+    })
+    .catch(function(){
+      document.getElementById('lista').innerHTML = '<p class="cargando">No se han podido cargar los artículos.</p>';
+    });
+</script>
+</body>
+</html>

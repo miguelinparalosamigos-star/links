@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de ansiedad GAD-7 · Psicolinks</title>
+<meta name="description" content="Cuestionario GAD-7 de ansiedad, gratis y sin registro. Siete preguntas, resultado orientativo al momento y guía de qué hacer con él. Por un psicólogo colegiado.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Test de ansiedad GAD-7, gratis y sin registro">
+<meta property="og:description" content="Siete preguntas, resultado orientativo al momento y qué hacer con él. Tus respuestas no salen de tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/test-de-ansiedad.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/test-de-ansiedad.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+</style>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"Article","headline":"Test de ansiedad GAD-7","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/test-de-ansiedad.html","inLanguage":"es-ES"}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/guias.html" class="back-link">← Todas las guías</a>
+  <div class="stamp">📎 Cuestionario · Ansiedad</div>
+  <h1>Test de ansiedad (GAD-7)</h1>
+  <p class="autor">Comentado por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Siete preguntas sobre cómo te has sentido en las <strong>últimas dos semanas</strong>. Tarda menos de dos minutos, no pide registro y el resultado sale al momento, con una explicación de qué significa y qué puedes hacer con él.</p>
+
+  <div class="idea"><strong>Por qué este test y no uno de revista.</strong> Los tests de internet que te dicen «qué tipo de ansiedad eres» se los inventa alguien una tarde: no miden nada. El GAD-7 es distinto. Se construyó con criterios clínicos, se validó con miles de pacientes y está <strong>baremado</strong>: se sabe qué puntuación corresponde a cada nivel porque se comparó con valoraciones diagnósticas hechas por profesionales. Por eso a partir de 10 puntos recomienda una valoración, y no porque a alguien le pareciera un número bonito. Se usa en atención primaria y en investigación en todo el mundo, y está traducido y validado en español.</div>
+
+  <div class="idea"><strong>Y sirve para algo más: para medirte dos veces.</strong> Una puntuación suelta dice poco. Lo que de verdad informa es la comparación: hacerlo hoy, ponerte a trabajar en ello unas semanas y volver a hacerlo. Si bajas tres o cuatro puntos, no es una impresión tuya, es un cambio medido. Esta página guarda tus resultados en tu propio navegador para que puedas verlo, y puedes borrarlos cuando quieras.</div>
+
+  <div class="idea"><strong>Qué es esto y qué no es.</strong> El GAD-7 es un cuestionario de cribado muy usado en atención primaria y en investigación: sirve para orientar, no para diagnosticar. Una puntuación alta no significa que tengas un trastorno, y una baja no descarta que lo estés pasando mal. Un diagnóstico solo lo puede hacer un profesional valorando tu caso completo. Úsalo como un termómetro: te dice que hay fiebre, no de qué.</div>
+
+  <div class="barra-progreso">
+    <p class="pista" id="pista">Respondidas 0 de 7</p>
+    <div class="barra"><i id="relleno"></i></div>
+  </div>
+
+  <form id="test">
+    <h2 class="bloque-tit">Durante las últimas dos semanas, ¿con qué frecuencia te han molestado los siguientes problemas?</h2>
+    <div id="preguntas"></div>
+    <p style="margin:1.4rem 0 0;"><button type="submit" class="btn" id="calcular" disabled>Ver mi resultado</button></p>
+  </form>
+
+  <section class="resultado" id="resultado" aria-live="polite">
+    <h2 class="bloque-tit">Tu resultado</h2>
+    <div class="marcador">
+      <p class="cifra" id="cifra">0</p>
+      <p class="de">de 21 puntos</p>
+      <p class="nivel" id="nivel"></p>
+      <div class="escala" id="escala"></div>
+      <div class="escala-leyenda"><span>0</span><span>MÍNIMA</span><span>LEVE</span><span>MODERADA</span><span>GRAVE</span><span>21</span></div>
+    </div>
+
+    <div class="interpreta" id="interpreta"></div>
+    <div class="interpreta" id="comparacion" style="display:none"></div>
+    <div class="aviso-crisis" id="crisis" style="display:none"></div>
+
+    <div class="sugerencias">
+      <h3>Por dónde puedes seguir</h3>
+      <ul id="sugerencias"></ul>
+    </div>
+
+    <p><button type="button" class="btn sec" id="repetir">Volver a hacer el test</button></p>
+  </section>
+
+  <section class="historial" id="historial" style="display:none">
+    <h3>Tus resultados anteriores</h3>
+    <p class="nota">Guardados solo en este navegador y en este dispositivo. Sirven para ver si la cosa mejora o empeora con el tiempo, que dice mucho más que una medición suelta. Lo suyo es repetirlo cada dos o tres semanas, no cada día.</p>
+    <table>
+      <thead><tr><th>Fecha</th><th>Puntuación</th><th>Nivel</th></tr></thead>
+      <tbody id="filas"></tbody>
+    </table>
+    <p style="margin:1rem 0 0;"><button type="button" class="btn sec" id="borrar">Borrar mi historial</button></p>
+  </section>
+
+  <div class="sugerencias" id="plan">
+      <h3>Un plan de tres semanas</h3>
+      <ol style="margin:0;padding-left:20px;">
+        <li style="font-size:0.97rem;line-height:1.7;">Elige <strong>una sola</strong> de las guías de arriba y aplícala. Una, no cuatro: lo que falla casi siempre es intentarlo todo a la vez.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Dale dos o tres semanas seguidas. La ansiedad no baja en dos días, y juzgarlo antes de tiempo es lo que hace que la gente lo deje.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Vuelve a esta página y repite el test. Compara con el resultado de hoy: lo verás en la tabla de abajo.</li>
+      </ol>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin:0.9rem 0 0;line-height:1.55;">Si baja, sabes que lo que estás haciendo funciona y conviene seguir. Si se mantiene o sube, no es que no tengas arreglo: es la señal de que este nivel pide ayuda profesional en vez de más autoayuda.</p>
+    </div>
+
+    <div class="cierre"><strong>Si el resultado te ha preocupado.</strong> Lo más útil que puedes hacer con él es enseñárselo a un profesional: a tu médico de familia, que es la puerta de entrada a la salud mental pública, o a un psicólogo sanitario. La ansiedad es de los problemas que mejor responden al tratamiento, y cuanto antes se coge, menos cuesta. Si quieres, puedes escribirme en <strong>Conciencia Conductual</strong> (concienciaconductual.com), online o presencial.</div>
+
+  <p class="privacidad">
+    <strong>Privacidad.</strong> Tus respuestas y tus resultados <strong>no se envían a ningún sitio</strong>: se calculan en tu propio navegador y, si tienes activado el guardado, se quedan almacenados solo en este dispositivo. Ni yo ni nadie podemos verlos. Puedes borrarlos con el botón de arriba en cualquier momento.<br><br>
+    <strong>Sobre el cuestionario.</strong> GAD-7 (Generalized Anxiety Disorder-7), desarrollado por los doctores Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke y colaboradores, con una subvención educativa de Pfizer Inc. Su reproducción, traducción, presentación y distribución son libres y no requieren permiso.
+  </p>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/guias.html">← Ver todas las guías</a> · <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a></p>
+</main>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p>© 2026 Psicolinks · <a href="/">Portada</a> · <a href="/guias.html">Guías</a> · <a href="/consultorio.html">Consultorio</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+</footer>
+
+<script>
+(function(){
+  var PREGUNTAS = [
+    'Sentirte nervioso, intranquilo o con los nervios de punta',
+    'No poder dejar de preocuparte o no poder controlar la preocupación',
+    'Preocuparte demasiado por diferentes cosas',
+    'Dificultad para relajarte',
+    'Estar tan inquieto que te cuesta quedarte quieto',
+    'Molestarte o irritarte con facilidad',
+    'Sentir miedo como si fuera a pasar algo terrible'
+  ];
+  var OPCIONES = [
+    ['Ningún día', 0],
+    ['Varios días', 1],
+    ['Más de la mitad de los días', 2],
+    ['Casi todos los días', 3]
+  ];
+  var CLAVE = 'pl_gad7_historial';
+
+  var cont = document.getElementById('preguntas');
+  cont.innerHTML = PREGUNTAS.map(function(p, i){
+    return '<div class="pregunta" id="p' + i + '">'
+      + '<span class="num">PREGUNTA ' + (i+1) + ' DE 7</span>'
+      + '<p>' + p + '</p>'
+      + '<div class="ops">' + OPCIONES.map(function(o, j){
+          return '<label class="op"><input type="radio" name="q' + i + '" value="' + o[1] + '"><span>' + o[0] + '</span></label>';
+        }).join('') + '</div>'
+      + '</div>';
+  }).join('');
+
+  var form = document.getElementById('test');
+  var boton = document.getElementById('calcular');
+  var pista = document.getElementById('pista');
+  var relleno = document.getElementById('relleno');
+
+  function respondidas(){
+    var n = 0;
+    for (var i = 0; i < PREGUNTAS.length; i++) {
+      if (form.querySelector('input[name="q' + i + '"]:checked')) n++;
+    }
+    return n;
+  }
+  function actualiza(){
+    var n = respondidas();
+    pista.textContent = 'Respondidas ' + n + ' de 7';
+    relleno.style.width = (n / PREGUNTAS.length * 100) + '%';
+    boton.disabled = n < PREGUNTAS.length;
+  }
+  form.addEventListener('change', function(){
+    actualiza();
+    for (var i = 0; i < PREGUNTAS.length; i++) {
+      document.getElementById('p' + i).classList.remove('sin-responder');
+    }
+  });
+
+  function nivelDe(p){
+    if (p <= 4) return { nombre:'Ansiedad mínima', banda:0 };
+    if (p <= 9) return { nombre:'Ansiedad leve', banda:1 };
+    if (p <= 14) return { nombre:'Ansiedad moderada', banda:2 };
+    return { nombre:'Ansiedad grave', banda:3 };
+  }
+
+  var TEXTOS = [
+    'Tu puntuación está en el rango de <strong>ansiedad mínima</strong>. Por lo que has respondido, en estas dos semanas la ansiedad no te ha estado dando mucha guerra. Si aun así hay algo que te preocupa, un cuestionario de siete preguntas no lo capta todo: fíate también de lo que notas tú.',
+    'Tu puntuación está en el rango de <strong>ansiedad leve</strong>. Es el nivel más frecuente y no suele indicar un trastorno, pero sí que hay algo activado. Suele ser buen momento para trabajar hábitos —sueño, cafeína, actividad— y para mirar qué situaciones estás empezando a evitar, que es por donde la ansiedad crece.',
+    'Tu puntuación está en el rango de <strong>ansiedad moderada</strong>. A partir de 10 puntos, el GAD-7 recomienda una valoración profesional: no porque sea grave, sino porque a este nivel la ansiedad ya suele estar afectando al día a día y responde muy bien al tratamiento. Coméntalo con tu médico o con un psicólogo.',
+    'Tu puntuación está en el rango de <strong>ansiedad grave</strong>. Es un nivel alto y lo más sensato es no gestionarlo en solitario. Pide cita con tu médico de familia o con un psicólogo sanitario y enséñale este resultado. Que la puntuación sea alta no significa que sea difícil de tratar: significa que ahora mismo estás cargando con mucho.'
+  ];
+
+  function enlaces(banda){
+    var base = [
+      ['Calmar la ansiedad', '/calmar-la-ansiedad.html'],
+      ['Calma en 5 minutos: cuatro técnicas de respiración', '/calma-en-5-minutos.html'],
+      ['Deja de darle vueltas', '/deja-de-darle-vueltas.html']
+    ];
+    if (banda >= 1) base.push(['Dormir mejor en 7 pasos', '/dormir-mejor-en-7-pasos.html']);
+    if (banda >= 2) base.push(['Cómo elegir psicólogo', '/elegir-psicologo.html']);
+    if (banda >= 2) base.push(['Dónde pedir ayuda en España', '/donde-pedir-ayuda.html']);
+    return base;
+  }
+
+  function guarda(p, nivel){
+    try {
+      var h = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+      h.unshift({ f: new Date().toISOString().slice(0,10), p: p, n: nivel });
+      localStorage.setItem(CLAVE, JSON.stringify(h.slice(0, 12)));
+    } catch(e) { /* navegador sin almacenamiento o en privado: no pasa nada */ }
+  }
+
+  function pintaHistorial(){
+    var h = [];
+    try { h = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { h = []; }
+    var caja = document.getElementById('historial');
+    if (!h.length) { caja.style.display = 'none'; return; }
+    document.getElementById('filas').innerHTML = h.map(function(r){
+      return '<tr><td>' + r.f + '</td><td>' + r.p + ' / 21</td><td>' + r.n + '</td></tr>';
+    }).join('');
+    caja.style.display = '';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (respondidas() < PREGUNTAS.length) {
+      for (var i = 0; i < PREGUNTAS.length; i++) {
+        if (!form.querySelector('input[name="q' + i + '"]:checked')) {
+          document.getElementById('p' + i).classList.add('sin-responder');
+        }
+      }
+      return;
+    }
+    var total = 0;
+    for (var i = 0; i < PREGUNTAS.length; i++) {
+      total += parseInt(form.querySelector('input[name="q' + i + '"]:checked').value, 10);
+    }
+    var nivel = nivelDe(total);
+
+    document.getElementById('cifra').textContent = total;
+    document.getElementById('nivel').textContent = nivel.nombre;
+    document.getElementById('interpreta').innerHTML = TEXTOS[nivel.banda];
+    document.getElementById('escala').innerHTML = [0,1,2,3].map(function(b){
+      return '<div class="' + (b <= nivel.banda ? 'on' : '') + '"></div>';
+    }).join('');
+    document.getElementById('sugerencias').innerHTML = enlaces(nivel.banda).map(function(l){
+      return '<li><a href="' + l[1] + '">' + l[0] + '</a></li>';
+    }).join('');
+
+    var crisis = document.getElementById('crisis');
+    if (nivel.banda >= 2) {
+      crisis.innerHTML = '<strong>Y si en algún momento lo estás pasando muy mal.</strong> No hace falta llegar a una situación extrema para pedir ayuda. En España tienes el <strong>024</strong>, la línea de atención a la conducta suicida, gratuita y disponible a cualquier hora, y el <strong>112</strong> para emergencias.';
+      crisis.style.display = '';
+    } else {
+      crisis.style.display = 'none';
+    }
+
+    // Comparación con la medición anterior, si la hay
+    var previos = [];
+    try { previos = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { previos = []; }
+    var cmp = document.getElementById('comparacion');
+    if (previos.length) {
+      var antes = previos[0];
+      var dif = total - antes.p;
+      var txt;
+      if (dif < 0) txt = '<strong>Has bajado ' + Math.abs(dif) + ' punto' + (Math.abs(dif) === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + antes.f + ', que fue de ' + antes.p + '. Sea lo que sea que estés haciendo, va en la buena dirección: sigue con ello.';
+      else if (dif > 0) txt = '<strong>Has subido ' + dif + ' punto' + (dif === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + antes.f + ', que fue de ' + antes.p + '. Puede ser una mala racha puntual, pero si se mantiene en la siguiente, es momento de consultarlo con un profesional.';
+      else txt = 'Has sacado <strong>la misma puntuación</strong> que en tu medición del ' + antes.f + '. Si llevas semanas intentándolo por tu cuenta y no se mueve, suele ser el momento de pedir ayuda.';
+      cmp.innerHTML = txt;
+      cmp.style.display = '';
+    } else {
+      cmp.style.display = 'none';
+    }
+
+    guarda(total, nivel.nombre);
+    pintaHistorial();
+
+    var caja = document.getElementById('resultado');
+    caja.classList.add('visible');
+    caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('repetir').addEventListener('click', function(){
+    form.reset();
+    actualiza();
+    document.getElementById('resultado').classList.remove('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    try { localStorage.removeItem(CLAVE); } catch(e) {}
+    pintaHistorial();
+  });
+
+  actualiza();
+  pintaHistorial();
+})();
+</script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+</body>
+</html>

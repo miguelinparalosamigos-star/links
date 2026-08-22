@@ -1,6 +1,6 @@
 # Cambios sobre el repositorio `links` — 14 de agosto de 2026
 
-55 ficheros: 34 modificados y 22 nuevos. Ninguno toca el diseño ni el
+75 ficheros: 35 modificados y 40 nuevos. Ninguno toca el diseño ni el
 contenido visible de las guías existentes, salvo la portada (ver punto 2).
 
 ## 1. El sitemap solo publicaba 5 páginas de 68
@@ -72,8 +72,24 @@ todavía —si los generas, el bloque de descarga se añade en una línea.
 | `dolor-cronico.html` | Dolor persistente | Fibromialgia, lumbalgia, migrañas. Deja claro que el dolor es real y que lo psicológico suma al tratamiento médico, no lo sustituye. |
 | `ansiedad-por-dinero.html` | Presión económica | Problema real, no distorsión: separa reducir el desgaste de resolver la situación. |
 | `acoso-laboral.html` | Mobbing | Con las vías reales en España: protocolo, sindicato, Inspección de Trabajo. |
+| `miedo-a-conducir.html` | Amaxofobia | Búsqueda concreta y frecuente; la guía general de fobias no la cubría con detalle. |
+| `juego-y-apuestas.html` | Juego online | Problema creciente. Incluye la autoprohibición del RGIAJ, que casi nadie sabe que existe y es gratis. |
+| `duelo-por-suicidio.html` | Supervivientes | Muy desatendido. Sin detalles de método, centrado en la culpa, el estigma y dónde hay grupos específicos. |
+| `menopausia-y-animo.html` | Menopausia | La parte psicológica, que casi no se trata, con derivación clara a la médica para lo suyo. |
+| `miedo-a-volar.html` | Aerofobia | Separa el miedo al accidente del miedo a las propias sensaciones, que es lo que hace que leer estadísticas no sirva de nada. |
+| `despues-de-un-accidente.html` | Tras un suceso grave | Qué es esperable las primeras semanas y cuándo deja de serlo. Sin dramatizar y con derivación clara. |
+| `volver-al-trabajo-tras-una-baja.html` | Reincorporación | Nadie prepara esto y es donde se producen las segundas bajas. |
+| `alcohol-y-ansiedad.html` | Alcohol como ansiolítico | Con el aviso médico sobre dejarlo de golpe en consumo diario alto. |
+| `separacion-con-hijos.html` | Separación | Lo que daña a los hijos no es la separación, es el conflicto. Muy buscado en el momento exacto en que se busca. |
+| `agotamiento-de-padres.html` | Burnout parental | Está descrito y estudiado, y casi nadie lo nombra. Público amplio y con mucha culpa encima. |
+| `alta-sensibilidad.html` | Alta sensibilidad | Etiqueta popularísima y llena de humo. Aquí se explica qué se sabe y, sobre todo, qué puede estar tapando. |
+| `pareja-con-depresion.html` | Acompañar una depresión | Para quien convive con ella. Incluye qué frases hacen daño y qué señales son urgencia. |
+| `no-quiere-ir-al-colegio.html` | Rechazo escolar | Muy buscado y muy estacional: septiembre. Con el criterio incómodo pero claro de volver cuanto antes. |
+| `gritar-menos-a-los-hijos.html` | Gritos en casa | Enorme volumen de búsqueda y mucha culpa detrás. Ataca las horas punta, no la fuerza de voluntad. |
+| `compras-compulsivas.html` | Compra impulsiva | Mismo mecanismo que el juego pero socialmente aceptado, así que casi nadie lo trata. |
+| `vivir-lejos-de-casa.html` | Emigración y mudanzas | Duelo sin permiso social. Público que busca terapia online, que es lo que tú puedes ofrecer. |
 
-Las dieciséis están dadas de alta en `guias.html` y en el sitemap.
+Las treinta y dos están dadas de alta en `guias.html` y en el sitemap.
 
 ## Dos páginas internas nuevas (no son contenido, son herramientas)
 
@@ -86,6 +102,63 @@ Las dieciséis están dadas de alta en `guias.html` y en el sitemap.
 
 Las dos llevan `noindex, nofollow` y no están enlazadas desde ninguna parte de
 la web: solo existen si escribes la dirección. Tampoco están en el sitemap.
+
+## Test de ansiedad: `test-de-ansiedad.html`
+
+Cuestionario **GAD-7** interactivo: siete preguntas, barra de progreso, cálculo
+al momento, interpretación por franjas (mínima, leve, moderada, grave), enlaces
+a las guías que correspondan según el resultado y aviso con el 024 y el 112 en
+las franjas altas.
+
+**Por qué el GAD-7 y no otro.** Es el cuestionario de cribado de ansiedad más
+usado en atención primaria y su uso es libre: sus autores y Pfizer lo liberaron
+expresamente, «no se requiere permiso para reproducir, traducir, presentar o
+distribuir». El STAI o el BAI, en cambio, son de pago y con licencia, así que
+publicarlos en una web sería una infracción. La atribución completa va al pie
+de la página.
+
+**Dónde se guardan los resultados, y por qué así.** En el navegador del propio
+usuario (`localStorage`), no en tu servidor. La página muestra un historial con
+sus últimas doce mediciones para que pueda ver si mejora, y un botón para
+borrarlo.
+
+Esto es deliberado y te conviene: **una puntuación de ansiedad asociada a una
+persona es un dato de salud**, categoría especial en el RGPD. Guardarla en tu
+servidor te obligaría a base legal, consentimiento explícito, información
+específica, plazos de conservación y a responder de una brecha si la hubiera —
+para un dato que, sin identificar a nadie, no te sirve de nada. Tal como está,
+el usuario conserva su historial, tú no asumes ningún riesgo legal y la página
+lo dice claro. Si en algún momento quieres estadísticas, se puede añadir un
+contador anónimo y agregado, sin respuestas individuales.
+
+**Ampliado tras la primera versión.** Ahora la página explica por qué este
+cuestionario y no uno de revista: que está construido con criterios clínicos,
+validado con miles de pacientes y **baremado** —se sabe qué puntuación
+corresponde a cada nivel porque se comparó con valoraciones diagnósticas
+reales—, frente a los tests de internet que no miden nada.
+
+Y se apoya en lo que de verdad le saca partido: **medirse dos veces**. El
+resultado incluye un plan de tres semanas (elegir una sola guía, sostenerla,
+volver a medirse) y, al repetir el test, la página compara automáticamente con
+la medición anterior y dice si has bajado, subido o te mantienes, con qué
+significa cada caso. Si no baja después de semanas intentándolo, el propio
+texto recomienda dejar la autoayuda y consultar.
+
+Probado en navegador: cálculo correcto en los extremos (0 y 21), aviso de
+crisis solo en las franjas moderada y grave, comparación entre mediciones
+correcta, historial que guarda, se pinta y se borra, y ningún error de
+JavaScript.
+
+## Página nueva: `libros-recomendados.html`
+
+Ocho libros con una reseña honesta de cada uno, incluyendo lo discutible: el de
+Van der Kolk y el de Kahneman llevan su matiz, porque recomendarlos sin más
+sería vender humo. Todos los enlaces llevan tu tag de afiliado
+(`conciencia07-21`) y apuntan a búsquedas por título y autor, no a fichas
+concretas, para que no se rompan cuando cambie la edición.
+
+Es además una página con intención de compra clara: quien busca «libros de
+psicología recomendados» está a un paso de comprar.
 
 ## Página nueva: `donde-pedir-ayuda.html`
 

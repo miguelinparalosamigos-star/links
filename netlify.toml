@@ -26,3 +26,31 @@
   from = "/articulo/*"
   to = "/.netlify/functions/articulo?ruta=:splat"
   status = 200
+
+# ---------------------------------------------------------------------------
+# Cache de los ficheros que nunca cambian. Sin esto, cada visitante que vuelve
+# se vuelve a descargar los PDF y las imagenes enteros, y eso es ancho de banda
+# de Netlify que se gasta para nada. Con esto, el navegador los guarda y la
+# segunda vez no pide nada. El HTML NO se cachea aqui a proposito: si lo hiciera
+# la portada tardaria en actualizarse tras cada despliegue.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/descargas/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

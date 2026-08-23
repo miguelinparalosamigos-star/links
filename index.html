@@ -39,6 +39,16 @@
   .site-header { border-bottom: 1px solid var(--border); padding: 2.25rem 1.5rem 1.6rem; text-align: center; }
   .logo { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.15rem); color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
   .logo em { color: var(--accent); font-style: normal; }
+  .bloque-test { max-width: 700px; margin: 2rem auto 0; padding: 0 1.5rem; }
+  .bloque-test-inner { background: var(--surface); border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 12px; padding: 1.4rem 1.6rem 1.5rem; }
+  .bt-kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--stamp); margin: 0 0 0.4rem; }
+  .bt-tit { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .bt-txt { font-size: 0.97rem; line-height: 1.65; color: var(--ink-soft); margin: 0 0 1rem; }
+  .bt-btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.7rem 1.3rem; border-radius: 9px; }
+  .bt-btn:hover { background: #3a2e63; }
+  .menu-cabecera { margin: 0.9rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; justify-content: center; }
+  .menu-cabecera a { font-family: 'Lora', Georgia, serif; font-weight: 600; color: #4A3B78; text-decoration: none; font-size: 0.98rem; }
+  .menu-cabecera a:hover { text-decoration: underline; }
   .tagline-h1 { font-family: var(--font-body); font-weight: 400; font-size: 0.98rem; }
   .tagline-sub { margin-top: 0.35rem !important; }
   .tagline { margin: 0.6rem 0 0; color: var(--ink-soft); font-size: 0.98rem; max-width: 440px; margin-inline: auto; }
@@ -103,8 +113,26 @@
   <a href="/" class="logo">psico<em>links</em></a>
   <h1 class="tagline tagline-h1">Cada día laborable, tres estudios de psicología recientes, traducidos a un lenguaje claro.</h1>
   <p class="tagline tagline-sub">Con la fuente original siempre a la vista. <a href="como-leemos-los-estudios.html">¿Cómo leemos los estudios?</a></p>
-  <p style="margin:0.7rem 0 0;"><a href="guias.html" style="font-family:'Lora',Georgia,serif; font-weight:600; color:#4A3B78; text-decoration:none; font-size:0.98rem;">📎 Guías y recomendaciones →</a></p>
+  <nav class="menu-cabecera" aria-label="Secciones principales">
+    <a href="guias.html">📎 Guías y recomendaciones</a>
+    <a href="temas.html">Explora por temas</a>
+    <a href="guiones-conversaciones-dificiles.html">🗒️ Guiones</a>
+    <a href="test-de-ansiedad.html">🧪 Test de ansiedad</a>
+    <a href="test-de-depresion.html">🧪 Test de depresión</a>
+    <a href="donde-pedir-ayuda.html">Dónde pedir ayuda</a>
+    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+    <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Mi consulta</a>
+  </nav>
 </header>
+
+<section class="bloque-test" aria-label="Test de ansiedad">
+  <div class="bloque-test-inner">
+    <p class="bt-kicker">🧪 Cuestionario gratuito · 2 minutos</p>
+    <h2 class="bt-tit">¿Cuánta ansiedad tienes ahora mismo?</h2>
+    <p class="bt-txt">Haz el <strong>GAD-7</strong>, el cuestionario de cribado que se usa en atención primaria. Siete preguntas, resultado al momento y qué hacer con él. Sin registro, y tus respuestas no salen de tu navegador. También tienes el <a href="test-de-depresion.html">test de depresión (PHQ-9)</a>.</p>
+    <a class="bt-btn" href="test-de-ansiedad.html">Hacer el test →</a>
+  </div>
+</section>
 
 <main id="posts-container">
 
@@ -135,6 +163,7 @@
     </div>
   </article>
 
+  <section id="pl-continuar" class="pl-continuar" hidden aria-label="Sigue donde lo dejaste"></section>
 </main>
 
 <footer class="site-footer">
@@ -150,6 +179,7 @@
     </a>
   </div>
   <p>© 2026 Psicolinks · <a href="guias.html">Guías</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+  <p class="pie-consulta" style="margin:0.6rem 0 0;"><a href="/test-de-ansiedad.html">🧪 Test de ansiedad</a> · <a href="/test-de-depresion.html">Test de depresión</a> · Consulta de psicología: <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></p>
 </footer>
 
 <script>
@@ -199,5 +229,6 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
 </body>
 </html>

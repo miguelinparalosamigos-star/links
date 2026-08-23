@@ -125,14 +125,47 @@ const ESTILO = `
   .tiempo-lectura { font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); }
   .desglose { background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:1.4rem 1.4rem 1.5rem; margin:0 0 1.6rem; }
   .desglose-titulo { font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-soft); margin:0 0 1rem; }
-  .flujo { display:flex; flex-direction:column; }
-  .flujo-paso { display:flex; align-items:flex-start; gap:0.7rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.8rem 1rem; }
-  .flujo-icono { font-size:1.2rem; line-height:1; flex-shrink:0; margin-top:0.15rem; }
-  .flujo-etiqueta { display:block; font-family:var(--font-mono); font-size:0.64rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--stamp); margin-bottom:0.3rem; }
+  /* --- Ficha del estudio: chips + medidor de fuerza del diseño --------- */
+  .ficha { background:var(--surface); border:1px solid var(--border); border-radius:11px; padding:1rem 1.1rem 1.05rem; margin:0 0 1rem; }
+  .ficha-chips { display:flex; flex-wrap:wrap; gap:0.45rem; margin:0 0 0.85rem; }
+  .ficha-chip { display:inline-flex; align-items:baseline; gap:0.4rem; background:var(--paper); border:1px solid var(--border); border-radius:999px; padding:0.3rem 0.8rem; font-size:0.87rem; color:var(--ink); }
+  .ficha-chip b { font-family:var(--font-mono); font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); }
+  .medidor { display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; }
+  .medidor-et { font-family:var(--font-mono); font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); }
+  .medidor-barra { display:flex; gap:2px; }
+  .medidor-barra i { display:block; width:24px; height:8px; border-radius:4px; background:#DDD7CB; }
+  .medidor-barra i.on { background:var(--accent); }
+  .medidor-valor { font-family:var(--font-mono); font-size:0.74rem; font-weight:700; color:var(--accent); }
+  .ficha-lectura { margin:0.75rem 0 0; font-size:0.89rem; line-height:1.6; color:var(--ink-soft); }
+
+  /* --- Cadena: los pasos del estudio, numerados y encadenados ---------- */
+  .cadena { position:relative; margin:0; padding:0 0 0 2.5rem; }
+  .cadena::before { content:''; position:absolute; left:0.87rem; top:1.1rem; bottom:1.1rem; width:2px; background:var(--accent); opacity:0.35; }
+  .cadena-paso { position:relative; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.8rem 1rem; margin:0 0 0.7rem; }
+  .cadena-paso:last-child { margin-bottom:0; }
+  .cadena-num { position:absolute; left:-2.5rem; top:0.7rem; width:1.75rem; height:1.75rem; border-radius:50%; background:var(--accent); color:#fff; font-family:var(--font-mono); font-size:0.78rem; font-weight:700; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 3px var(--paper); }
+  .cadena-paso-clave { border-color:var(--accent); border-width:1.5px; box-shadow:0 1px 3px rgba(74,59,120,0.12); }
+  .cadena-paso-aviso { border-style:dashed; border-color:var(--stamp); background:transparent; }
+  .cadena-paso-aviso .cadena-num { background:var(--stamp); font-size:1rem; }
+  .cadena-paso-aviso .flujo-etiqueta { color:var(--stamp); }
+  .cadena-paso-aviso .flujo-texto { font-style:normal; font-family:var(--font-body); font-size:0.93rem; color:var(--ink-soft); }
+  .flujo-etiqueta { display:block; font-family:var(--font-mono); font-size:0.63rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--stamp); margin-bottom:0.3rem; }
   .flujo-texto { font-family:var(--font-display); font-size:1rem; font-style:italic; color:var(--ink); margin:0; line-height:1.45; overflow-wrap:break-word; }
-  .flujo-flecha { text-align:center; color:var(--accent); font-size:1.05rem; line-height:1; padding:0.3rem 0; font-weight:700; }
-  .flujo-paso-destacado { border-color:var(--accent); border-width:1.5px; }
-  .flujo-paso-destacado .flujo-etiqueta { color:var(--accent); }
+  .cadena-paso-clave .flujo-etiqueta { color:var(--accent); }
+  @media (max-width:480px) {
+    .cadena { padding-left:2.1rem; }
+    .cadena-num { left:-2.1rem; width:1.5rem; height:1.5rem; font-size:0.7rem; }
+    .cadena::before { left:0.74rem; }
+  }
+
+  /* --- Bloque de consulta al final del artículo ------------------------ */
+  .consulta-cta { margin-top:1.1rem; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3 { font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p { margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn { display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover { background:#75303d; }
+  .consulta-cta .consulta-otros { margin:0.9rem 0 0; font-size:0.87rem; }
+  .consulta-cta .consulta-nota { margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
   .post-body { font-size:1.05rem; line-height:1.7; color:var(--ink); overflow-wrap:break-word; }
   .post-body p { margin:0 0 1.3rem; }
   .post-body p:last-child { margin-bottom:0; }
@@ -184,6 +217,58 @@ const ESTILO = `
   .status-msg { text-align:center; color:var(--ink-soft); padding:3rem 1rem; }
 `;
 
+// ---------------------------------------------------------------------
+// Ficha visual del estudio
+// ---------------------------------------------------------------------
+// A partir del texto del propio artículo deducimos qué tipo de diseño usó el
+// estudio. No es una clasificación experta: es una orientación honesta para
+// que el lector sepa cuánto peso darle. Por eso el nivel más alto que damos
+// nunca dice "esto es verdad", sino "esto pesa más que un estudio suelto".
+const TIPOS_ESTUDIO = [
+  { patron: /meta-?an[áa]lisis|metaan[áa]lisis|revisi[óo]n sistem[áa]tica/i,
+    etiqueta: 'Metaanálisis o revisión', nivel: 5,
+    lectura: 'Reúne y compara muchos estudios a la vez, así que pesa bastante más que cualquiera de ellos por separado. Sigue dependiendo de la calidad de lo que reunió.',
+    cautela: 'Aun así, un metaanálisis vale lo que valgan los estudios que reunió: si esos eran flojos, el resultado también.' },
+  { patron: /aleatoriz|al azar|ensayo cl[íi]nico|grupo (de )?control|doble ciego|placebo/i,
+    etiqueta: 'Ensayo con grupo de control', nivel: 4,
+    lectura: 'Reparte a los participantes entre grupos al azar. Es de los pocos diseños que permite hablar de causa y no solo de coincidencia.',
+    cautela: 'Aun así, funcionó en las condiciones del estudio y con esas personas concretas; no garantiza el mismo efecto en tu caso.' },
+  { patron: /longitudinal|cohorte|seguimiento|a lo largo de \d|durante \d+\s*(años|anios|meses|semanas)/i,
+    etiqueta: 'Seguimiento en el tiempo', nivel: 3,
+    lectura: 'Sigue a las mismas personas durante un tiempo. Ve el orden en que pasan las cosas, pero no descarta que influya algo que no se midió.',
+    cautela: 'Que una cosa venga antes que otra no demuestra que la cause: puede haber algo que no se midió tirando de las dos.' },
+  { patron: /experimento|laboratorio|manipul|condici[óo]n experimental|asignad/i,
+    etiqueta: 'Experimento', nivel: 3,
+    lectura: 'Provoca la situación en condiciones controladas. Gana precisión y pierde algo de parecido con la vida real.',
+    cautela: 'En el laboratorio se controla mucho, y justo por eso se parece menos a la vida de fuera.' },
+  { patron: /encuesta|cuestionario|autoinforme|transversal|correlaci|asociaci[óo]n/i,
+    etiqueta: 'Encuesta o correlación', nivel: 2,
+    lectura: 'Mide cosas que van juntas. Que dos cosas vayan juntas no significa que una cause la otra: puede haber una tercera detrás.',
+    cautela: 'Es la confusión más habitual: dos cosas que van juntas se cuentan como si una causara la otra, y no es lo mismo.' },
+];
+
+const TIPO_POR_DEFECTO = {
+  etiqueta: 'Estudio observacional', nivel: 2,
+  lectura: 'Observa lo que ocurre sin intervenir. Sirve para detectar pistas, no para demostrar causas.',
+  cautela: 'Sirve para detectar pistas y plantear hipótesis, no para dar nada por demostrado.',
+};
+
+function tipoDeEstudio(texto) {
+  for (const t of TIPOS_ESTUDIO) {
+    if (t.patron.test(texto)) return t;
+  }
+  return TIPO_POR_DEFECTO;
+}
+
+// Busca el número de participantes en el texto ("1.240 personas", "n = 87").
+function participantesDe(texto) {
+  const m1 = texto.match(/\b(\d[\d.,]{0,9})\s*(?:participantes|personas|adultos|adolescentes|ni[ñn][oa]s|estudiantes|voluntari[oa]s|sujetos|pacientes|mujeres|hombres|beb[ée]s|parejas)/i);
+  if (m1) return m1[1].replace(/[.,]$/, '');
+  const m2 = texto.match(/\bn\s*=\s*([\d.,]+)/i);
+  if (m2) return m2[1].replace(/[.,]$/, '');
+  return null;
+}
+
 function paginaHtml({ base, urlCanonica, post }) {
   const parrafos = dividirEnParrafos(post.resumen);
   const descripcion = (post.teaser || parrafos[0] || '').slice(0, 155);
@@ -191,17 +276,45 @@ function paginaHtml({ base, urlCanonica, post }) {
   const minutos = Math.max(1, Math.round(totalPalabras / 200));
   const urlEstudio = post.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${post.pmid}/` : '#';
 
-  const desgloseHtml = !post.desglose ? '' : `
+  // --- Ficha + cadena visual del estudio -------------------------------
+  const textoAnalizable = [post.desglose && post.desglose.metodo, post.titulo, post.resumen]
+    .filter(Boolean).join(' ');
+  const tipo = tipoDeEstudio(textoAnalizable);
+  const nParticipantes = participantesDe(textoAnalizable);
+  const anio = String(post.fechaPublicacion || post.fecha || '').slice(0, 4);
+
+  const segmentos = Array.from({ length: 5 }, (_, i) =>
+    `<i class="${i < tipo.nivel ? 'on' : ''}"></i>`).join('');
+
+  const chips = [
+    `<span class="ficha-chip"><b>Tipo</b> ${escapeHtml(tipo.etiqueta)}</span>`,
+    nParticipantes ? `<span class="ficha-chip"><b>Participantes</b> ${escapeHtml(nParticipantes)}</span>` : '',
+    post.fuente ? `<span class="ficha-chip"><b>Publicado en</b> ${escapeHtml(post.fuente)}</span>` : '',
+    `<span class="ficha-chip"><b>Lectura</b> ${minutos} min</span>`,
+  ].filter(Boolean).join('');
+
+  const fichaHtml = `
+    <div class="ficha">
+      <p class="desglose-titulo">La ficha del estudio</p>
+      <div class="ficha-chips">${chips}</div>
+      <div class="medidor">
+        <span class="medidor-et">Fuerza del diseño</span>
+        <span class="medidor-barra" role="img" aria-label="Fuerza del diseño: ${tipo.nivel} de 5">${segmentos}</span>
+        <span class="medidor-valor">${tipo.nivel} / 5</span>
+      </div>
+      <p class="ficha-lectura">${escapeHtml(tipo.lectura)}</p>
+    </div>`;
+
+  const desgloseHtml = !post.desglose ? fichaHtml : `
+    ${fichaHtml}
     <div class="desglose">
-      <p class="desglose-titulo">Cómo fue el estudio, de un vistazo</p>
-      <div class="flujo">
-        <div class="flujo-paso"><span class="flujo-icono">❓</span><div><span class="flujo-etiqueta">La pregunta</span><p class="flujo-texto">${escapeHtml(post.desglose.pregunta)}</p></div></div>
-        <div class="flujo-flecha">↓</div>
-        <div class="flujo-paso"><span class="flujo-icono">🧪</span><div><span class="flujo-etiqueta">El método</span><p class="flujo-texto">${escapeHtml(post.desglose.metodo)}</p></div></div>
-        <div class="flujo-flecha">↓</div>
-        <div class="flujo-paso flujo-paso-destacado"><span class="flujo-icono">💡</span><div><span class="flujo-etiqueta">El hallazgo</span><p class="flujo-texto">${escapeHtml(post.desglose.hallazgo)}</p></div></div>
-        <div class="flujo-flecha">↓</div>
-        <div class="flujo-paso"><span class="flujo-icono">🧠</span><div><span class="flujo-etiqueta">Por qué pasa</span><p class="flujo-texto">${escapeHtml(post.desglose.porQue)}</p></div></div>
+      <p class="desglose-titulo">El estudio, paso a paso</p>
+      <div class="cadena">
+        <div class="cadena-paso"><span class="cadena-num">1</span><span class="flujo-etiqueta">❓ La pregunta</span><p class="flujo-texto">${escapeHtml(post.desglose.pregunta)}</p></div>
+        <div class="cadena-paso"><span class="cadena-num">2</span><span class="flujo-etiqueta">🧪 El método</span><p class="flujo-texto">${escapeHtml(post.desglose.metodo)}</p></div>
+        <div class="cadena-paso cadena-paso-clave"><span class="cadena-num">3</span><span class="flujo-etiqueta">💡 El hallazgo</span><p class="flujo-texto">${escapeHtml(post.desglose.hallazgo)}</p></div>
+        <div class="cadena-paso"><span class="cadena-num">4</span><span class="flujo-etiqueta">🧠 Por qué pasa</span><p class="flujo-texto">${escapeHtml(post.desglose.porQue)}</p></div>
+        <div class="cadena-paso cadena-paso-aviso"><span class="cadena-num">!</span><span class="flujo-etiqueta">⚖️ Cómo leerlo</span><p class="flujo-texto">${escapeHtml(tipo.cautela)} Un estudio suelto es una pieza, no una conclusión: <a href="/como-leemos-los-estudios.html">así leemos los estudios aquí</a>.</p></div>
       </div>
     </div>`;
 
@@ -312,7 +425,24 @@ function paginaHtml({ base, urlCanonica, post }) {
     <p>Descarga mis guías prácticas en PDF —dormir mejor, calmar la ansiedad, concentrarte— escritas por un psicólogo. Gratis, en lenguaje claro.</p>
     <a class="guia-cta-btn" href="/guias.html">Ver las guías gratuitas →</a>
   </div>
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual, online y presencial.</p>
+    <a class="consulta-btn" href="https://concienciaconductual.com" target="_blank" rel="noopener" onclick="registrarClic('consulta-articulo')">Ver mi consulta →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a> ·
+    <a href="/elegir-psicologo.html">cómo elegir psicólogo</a> ·
+    <a href="/preguntas-frecuentes.html">preguntas frecuentes</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
   <div id="relacionados-container"></div>
+  <p class="mas-guias" style="text-align:center;margin:2.2rem 0 0;font-size:0.95rem;line-height:1.7;">
+    ¿Buscas algo práctico? Echa un vistazo a las <a href="/guias.html">guías de Psicolinks</a>:
+    sueño, ansiedad, hábitos, pareja y estudio.<br>
+    O haz el <a href="/test-de-ansiedad.html">test de ansiedad</a>, que son dos minutos.
+  </p>
   <div class="pl-newsletter" data-variant="digest" data-origen="articulo"></div>
 </main>
 <footer class="site-footer">

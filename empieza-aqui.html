@@ -43,7 +43,7 @@
   .bloque h2{ font-family:var(--font-display); font-size:1.28rem; font-weight:600; margin:0 0 0.4rem; }
   .bloque p{ font-size:0.96rem; line-height:1.6; color:var(--ink-soft); margin:0 0 1rem; }
   .acciones{ display:flex; flex-wrap:wrap; gap:0.6rem; }
-  .btn-pdf{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.9rem; padding:0.6rem 1.05rem; border-radius:9px; background:#128a4e; color:#fff; }
+  .btn-pdf{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.9rem; padding:0.6rem 1.05rem; border-radius:9px; background:var(--accent); color:#fff; }
   .btn-pdf:hover{ background:#0f7442; }
   .btn-compra{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.9rem; padding:0.6rem 1.05rem; border-radius:9px; background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); }
   .btn-compra:hover{ background:var(--accent-soft); }
@@ -53,6 +53,20 @@
 
   .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; margin-top:2.5rem; }
   .site-footer a{ color:var(--ink-soft); }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .bloque h2 .b-emoji{ margin-right:0.5rem; font-size:1.1em; }
+  .otra-cosa{ margin:1.8rem 0 0; font-size:0.95rem; color:var(--ink-soft); }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Empieza aquí", "item": "https://psicolinks.com/empieza-aqui.html"}]}
@@ -67,337 +81,91 @@
 <main>
   <a href="/" class="back-link">← Volver a la portada</a>
   <h1>Empieza aquí</h1>
-  <p class="intro">¿Qué te ronda ahora mismo? Elige por dónde entrar y te llevo directo a lo que puede ayudarte, sin rodeos. Todas las guías son gratis y están escritas por mí, en lenguaje claro y con criterio profesional.</p>
+  <p class="intro">Ocho motivos por los que la gente entra aquí. Elige el tuyo y te llevo directo a la guía, sin rodeos. Todas son gratis y las escribo yo.</p>
 
   <div class="bloque">
-    <h2>Duermo mal o me cuesta descansar</h2>
-    <p>Los hábitos que de verdad mejoran el sueño, y qué objetos ayudan (y cuáles no valen la pena).</p>
+    <h2><span class="b-emoji" aria-hidden="true">😴</span>Duermo mal</h2>
+    <p>Los hábitos que de verdad cambian el sueño, en orden y sin milongas.</p>
     <div class="acciones">
       <a class="btn-pdf" href="/dormir-mejor-en-7-pasos.html">Dormir mejor en 7 pasos →</a>
-      <a class="btn-compra" href="cosas-para-dormir-mejor.html">Cosas para dormir mejor →</a>
     </div>
   </div>
 
   <div class="bloque">
-    <h2>Tengo ansiedad o voy acelerado</h2>
-    <p>Herramientas para bajar el ritmo cuando la cabeza se dispara y el cuerpo se pone en alerta.</p>
+    <h2><span class="b-emoji" aria-hidden="true">🧠</span>Tengo ansiedad, voy acelerado</h2>
+    <p>Qué hacer cuando el cuerpo se pone en alerta y la cabeza no baja.</p>
     <div class="acciones">
       <a class="btn-pdf" href="/calmar-la-ansiedad.html">Calmar la ansiedad →</a>
-      <a class="btn-pdf" href="/calma-en-5-minutos.html">Calma en 5 minutos →</a>
     </div>
   </div>
 
   <div class="bloque">
-    <h2>Voy saturado, con mucho estrés</h2>
-    <p>Para bajar el estrés cuando todo se acumula y vas con la lengua fuera, antes de llegar al agotamiento.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/el-estres-que-no-para.html">El estrés que no para →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Salto a la mínima, me enfado mucho</h2>
-    <p>Para que el enfado no te domine ni acabe haciendo daño, y aprender a expresarlo bien.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/controlar-el-enfado.html">Controlar el enfado →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>No paro de darle vueltas a todo</h2>
-    <p>Seis herramientas para salir del bucle cuando la cabeza se engancha en el mismo pensamiento.</p>
+    <h2><span class="b-emoji" aria-hidden="true">🌀</span>No paro de darle vueltas</h2>
+    <p>Por qué rumiar no resuelve nada y qué hacer en su lugar.</p>
     <div class="acciones">
       <a class="btn-pdf" href="/deja-de-darle-vueltas.html">Deja de darle vueltas →</a>
     </div>
   </div>
 
   <div class="bloque">
-    <h2>Me cuesta concentrarme o arrancar</h2>
-    <p>Cómo empezar lo que te cuesta y sostener la atención, y cómo montar un sitio que juegue a tu favor.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/concentrarte-y-dejar-de-procrastinar.html">Concentrarte y dejar de procrastinar →</a>
-      <a class="btn-compra" href="rincon-para-concentrarte.html">Rincón para concentrarte →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Soy muy duro conmigo mismo</h2>
-    <p>Para dejar de ser tu peor crítico y aprender a tratarte como tratarías a alguien a quien quieres.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/hablarte-mejor.html">Hablarte mejor →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me exijo demasiado (perfeccionismo)</h2>
-    <p>Para soltar la autoexigencia que te bloquea y te agota, y hacer las cosas sin sufrir de más.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/menos-perfeccionismo.html">Menos perfeccionismo →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me cuesta decir que no</h2>
-    <p>Para marcar tus límites y decir que no sin sentirte culpable ni acabar cargando con todo.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/poner-limites.html">Poner límites →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>No tengo ganas de nada</h2>
-    <p>Para volver a arrancar cuando el ánimo está bajo, con pasos pequeños que sí puedes dar.</p>
+    <h2><span class="b-emoji" aria-hidden="true">😔</span>No tengo ganas de nada</h2>
+    <p>Cuando esperar a tener ganas es justo lo que lo mantiene.</p>
     <div class="acciones">
       <a class="btn-pdf" href="/cuando-no-tienes-ganas-de-nada.html">Cuando no tienes ganas de nada →</a>
-      <a class="btn-compra" href="moverte-en-casa.html">Moverte en casa →</a>
     </div>
   </div>
 
   <div class="bloque">
-    <h2>Discuto mucho con mi pareja</h2>
-    <p>Para que las discusiones no se conviertan en guerra y os sirvan para entenderos mejor.</p>
+    <h2><span class="b-emoji" aria-hidden="true">🔥</span>El trabajo me está quemando</h2>
+    <p>Qué es el burnout de verdad y por dónde se empieza a salir.</p>
+    <div class="acciones">
+      <a class="btn-pdf" href="/el-burnout.html">El burnout →</a>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <h2><span class="b-emoji" aria-hidden="true">❤️</span>Discuto mucho con mi pareja</h2>
+    <p>Discutir no es el problema; cómo se discute, sí.</p>
     <div class="acciones">
       <a class="btn-pdf" href="/discutir-mejor-en-pareja.html">Discutir mejor en pareja →</a>
     </div>
   </div>
 
   <div class="bloque">
-    <h2>Estoy pasando una ruptura</h2>
-    <p>Para atravesar el final de una relación sin quedarte enganchado y volver a estar bien contigo.</p>
+    <h2><span class="b-emoji" aria-hidden="true">🧩</span>Soy muy duro conmigo mismo</h2>
+    <p>Cómo te hablas cuando algo sale mal, y cómo cambiarlo.</p>
     <div class="acciones">
-      <a class="btn-pdf" href="/superar-una-ruptura.html">Superar una ruptura →</a>
+      <a class="btn-pdf" href="/hablarte-mejor.html">Hablarte mejor →</a>
     </div>
   </div>
 
   <div class="bloque">
-    <h2>Dependo demasiado de mi pareja</h2>
-    <p>Para dejar de necesitar a alguien para estar bien y aprender a quererte y quererle desde la libertad.</p>
+    <h2><span class="b-emoji" aria-hidden="true">🤝</span>Alguien que quiero lo está pasando mal</h2>
+    <p>Qué ayuda, qué no, y qué decir cuando no sabes qué decir.</p>
     <div class="acciones">
-      <a class="btn-pdf" href="/la-dependencia-emocional.html">La dependencia emocional →</a>
+      <a class="btn-pdf" href="/ayudar-a-alguien-que-sufre.html">Ayudar a alguien que sufre →</a>
     </div>
   </div>
 
-  <div class="bloque">
-    <h2>Tengo celos y me hacen sufrir</h2>
-    <p>Para que los celos no te dominen ni dañen tu relación, y aprender a confiar con más calma.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/los-celos.html">Los celos →</a>
-    </div>
+  <p class="otra-cosa">¿No es ninguna de estas? Están todas ordenadas por tema, con buscador: <a href="/temas.html">ver todos los temas →</a></p>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
   </div>
 
-  <div class="bloque">
-    <h2>He perdido a un ser querido</h2>
-    <p>Para atravesar el duelo a tu ritmo, sin sentir que lo haces mal, con claves y con cariño.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/cuando-pierdes-a-alguien.html">Cuando pierdes a alguien →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Vivo enganchado al móvil</h2>
-    <p>Para recuperar tu atención, tu descanso y tu tiempo, sin tirar el móvil ni depender de la fuerza de voluntad.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/menos-movil-mas-cabeza.html">Menos móvil, más cabeza →</a>
-      <a class="btn-compra" href="menos-movil-cosas.html">Cosas que ayudan a soltarlo →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Soy muy tímido, me cuesta la gente</h2>
-    <p>Para soltarte con los demás, hablar sin bloquearte y que la vergüenza deje de decidir por ti.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/vencer-la-timidez.html">Vencer la timidez →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Solo quiero calma y desconectar</h2>
-    <p>Técnicas rápidas de relajación para cualquier momento, y una ayuda física para soltar tensión.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/calma-en-5-minutos.html">Calma en 5 minutos →</a>
-      <a class="btn-compra" href="un-rincon-de-calma.html">Un rincón de calma →</a>
-      <a class="btn-compra" href="guia-mantas-de-peso.html">Mantas de peso →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me siento culpable por todo</h2>
-    <p>Para distinguir la culpa que ayuda de la que solo castiga, y dejar de cargar con lo que no te toca.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/la-culpa.html">La culpa que no te suelta →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me comparo con todo el mundo</h2>
-    <p>Para que la comparación constante deje de robarte la calma y la autoestima, sobre todo con las redes de por medio.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/deja-de-compararte.html">Deja de compararte →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me agobia lo que no puedo cambiar</h2>
-    <p>Para dejar de pelearte con lo que no depende de ti y poner tu energía donde sí puede cambiar algo.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/aceptar-lo-que-no-puedes-cambiar.html">Aceptar lo que no puedes cambiar →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me dan ataques de pánico</h2>
-    <p>Para entender qué te pasa cuando llega el pánico, atravesarlo sin que te arrastre y que dé menos miedo el próximo.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/cuando-te-da-un-ataque-de-panico.html">Cuando te da un ataque de pánico →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Digo que sí a todo y no puedo con todo</h2>
-    <p>Para dejar de complacer por miedo, quitarte la culpa de decepcionar y poner también tus necesidades en la lista.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/dejar-de-complacer-a-todos.html">Dejar de complacer a todo el mundo →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me siento solo</h2>
-    <p>Para atravesar la soledad, entender lo que te está diciendo y volver a conectar sin forzarte.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/cuando-te-sientes-solo.html">Cuando te sientes solo →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Empiezo cosas y siempre las dejo</h2>
-    <p>Para que eso que quieres hacer no se quede en la primera semana, con lo que de verdad hace que un hábito dure.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/crear-habitos-que-duren.html">Crear hábitos que duren →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Alguien que quiero lo está pasando mal</h2>
-    <p>Para acompañarle sin agobiarte ni equivocarte con las palabras: estar, escuchar y ayudar de verdad.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/ayudar-a-alguien-que-sufre.html">Cómo ayudar a alguien que lo está pasando mal →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Tengo miedo a estar enfermo</h2>
-    <p>Para cortar la rueda de síntomas, búsquedas y consultas, y dejar de vivir vigilando tu cuerpo.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/ansiedad-por-la-salud.html">La ansiedad por la salud →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Necesito ordenar lo que tengo en la cabeza</h2>
-    <p>Para sacar fuera lo que te preocupa y verlo con más calma. Escribir baja la ansiedad y aclara decisiones.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/deja-de-darle-vueltas.html">Deja de darle vueltas →</a>
-      <a class="btn-compra" href="escribir-para-aclararte.html">Escribir para aclararte →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me aterra hablar en público</h2>
-    <p>Para presentar, exponer o hablar ante gente con menos nervios y más control, aunque al principio te tiemble la voz.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/hablar-en-publico.html">Hablar en público sin morirte de nervios →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>El trabajo me está quemando</h2>
-    <p>Para reconocer el desgaste laboral a tiempo, poner freno y recuperarte antes de tocar fondo.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/el-burnout.html">El burnout: cuando el trabajo te quema →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me preocupo por todo</h2>
-    <p>Para bajar la preocupación constante, dejar de anticipar catástrofes y quitarle horas de tu día al "¿y si...?".</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/cuando-te-preocupas-por-todo.html">Cuando te preocupas por todo →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me cuesta volver a la rutina</h2>
-    <p>Para retomar el trabajo, los estudios o el día a día tras un parón sin que se te haga un mundo.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/volver-a-la-rutina.html">Volver a la rutina sin agobio →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Se ha roto la confianza en mi pareja</h2>
-    <p>Para volver a confiar después de una crisis, un engaño o una decepción, cuando queréis seguir pero cuesta.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/reconstruir-la-confianza-en-pareja.html">Reconstruir la confianza en la pareja →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>No consigo tomar una decisión</h2>
-    <p>Para dejar de bloquearte ante las decisiones, elegir con más calma y vivir mejor con lo que eliges.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/tomar-decisiones-dificiles.html">Tomar decisiones difíciles →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Tengo la autoestima por los suelos</h2>
-    <p>Para dejar de ser tu peor juez, reconocer lo que vales y tratarte con más respeto.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/mejorar-tu-autoestima.html">Mejorar tu autoestima →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Mis emociones me desbordan</h2>
-    <p>Para que las emociones dejen de asustarte o arrastrarte, entender para qué sirven y llevarlas mejor.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/gestionar-tus-emociones.html">Entender y gestionar tus emociones →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me preocupa demasiado el qué dirán</h2>
-    <p>Para dejar de vivir pendiente de la opinión de los demás y decidir más desde ti.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/el-miedo-al-que-diran.html">El miedo al qué dirán →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Tengo pensamientos que me asustan</h2>
-    <p>Para llevar mejor esos pensamientos desagradables o absurdos y que dejen de engancharte.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/pensamientos-que-no-quieres-tener.html">Pensamientos que no quieres tener →</a>
-    </div>
-  </div>
-
-  <div class="bloque">
-    <h2>Me bloqueo en los exámenes</h2>
-    <p>Para que los nervios no te jueguen en contra al estudiar y al examinarte, y rendir lo que sabes.</p>
-    <div class="acciones">
-      <a class="btn-pdf" href="/ansiedad-ante-los-examenes.html">La ansiedad ante los exámenes →</a>
-    </div>
-  </div>
-
-  <p class="cierre">¿Prefieres empezar con una medida? Haz el <a href="/test-de-ansiedad.html">test de ansiedad GAD-7</a>: dos minutos, resultado al momento y te orienta sobre por dónde seguir.</p>
-  <p class="cierre">¿Buscabas los estudios del día? Cada día laborable publico tres estudios de psicología en la <a href="/">portada</a>. Y tienes todas las guías juntas en <a href="guias.html">Guías y recomendaciones</a>.</p>
-  <div class="pl-newsletter" data-variant="digest" data-origen="empieza-aqui"></div>
 </main>
 
 <footer class="site-footer">
-  <p>Guías de psicoeducación. No sustituyen una consulta profesional.</p>
-  <p>© 2026 Psicolinks · <a href="/">Portada</a> · <a href="guias.html">Guías</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
-  <p class="pie-consulta" style="margin:0.6rem 0 0;"><a href="/test-de-ansiedad.html">🧪 Test de ansiedad</a> · <a href="/test-de-depresion.html">Test de depresión</a> · Consulta de psicología: <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></p>
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -408,6 +176,5 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
-<script src="/newsletter-psicolinks.js" defer></script>
 </body>
 </html>

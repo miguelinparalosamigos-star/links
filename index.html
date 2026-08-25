@@ -46,6 +46,14 @@
   .bt-txt { font-size: 0.97rem; line-height: 1.65; color: var(--ink-soft); margin: 0 0 1rem; }
   .bt-btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.7rem 1.3rem; border-radius: 9px; }
   .bt-btn:hover { background: #3a2e63; }
+  .bloque-registro { max-width: 700px; margin: 1.1rem auto 0; padding: 0 1.5rem; }
+  .bloque-registro-inner { background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; padding: 1.4rem 1.6rem 1.5rem; }
+  .br-kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: #8C3B4A; margin: 0 0 0.4rem; }
+  .br-tit { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .br-txt { font-size: 0.97rem; line-height: 1.65; color: var(--ink-soft); margin: 0 0 0.8rem; }
+  .br-nota { font-size: 0.88rem; margin-bottom: 1rem; }
+  .br-btn { display: inline-block; background: #8C3B4A; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.7rem 1.3rem; border-radius: 9px; }
+  .br-btn:hover { background: #75303d; }
   .menu-cabecera { margin: 0.9rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; justify-content: center; }
   .menu-cabecera a { font-family: 'Lora', Georgia, serif; font-weight: 600; color: #4A3B78; text-decoration: none; font-size: 0.98rem; }
   .menu-cabecera a:hover { text-decoration: underline; }
@@ -105,7 +113,64 @@
   .sitio-amigo-texto { display: flex; flex-direction: column; text-align: left; }
   .sitio-amigo-nombre { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 0.98rem; color: var(--ink); }
   .sitio-amigo-desc { font-size: 0.72rem; color: var(--ink-soft); }
+  .bloque-pack{ padding:0 1.5rem; }
+  .bloque-pack-inner{ max-width:680px; margin:0 auto; }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .bloque-util{ max-width:44rem; margin:1.6rem auto 0; padding:1.2rem 1.4rem 1.3rem; background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; }
+  .bloque-util .bu-kicker{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .bloque-util .bu-tit{ font-family:var(--font-display); font-size:1.2rem; font-weight:600; margin:0 0 0.6rem; }
+  .bloque-util .bu-txt{ font-size:0.94rem; line-height:1.6; color:var(--ink-soft); margin:0 0 1rem; }
+  .bloque-util .bu-acciones{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:0; }
+  .bloque-util .bu-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.6rem 1.05rem; border-radius:9px; background:var(--accent); color:#fff; }
+  .bloque-util .bu-btn-2{ background:transparent; color:var(--ink); border:1.5px solid var(--border); }
+  .bloque-util .bu-btn:hover{ opacity:0.9; }
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://psicolinks.com/#web",
+   "name": "Psicolinks",
+   "url": "https://psicolinks.com/",
+   "inLanguage": "es-ES",
+   "publisher": {
+    "@id": "https://psicolinks.com/#miguel"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://psicolinks.com/#miguel",
+   "name": "Miguel Martínez",
+   "jobTitle": "Psicólogo",
+   "identifier": "Colegiado nº CV17649",
+   "url": "https://psicolinks.com/sobre-mi.html",
+   "description": "Psicólogo colegiado nº CV17649. Escribe Psicolinks y pasa consulta en Conciencia Conductual, online para toda España y presencial en Valencia.",
+   "knowsAbout": [
+    "Psicología clínica",
+    "Terapia cognitivo-conductual",
+    "Análisis de la conducta",
+    "Ansiedad",
+    "Insomnio",
+    "Estado de ánimo"
+   ],
+   "sameAs": [
+    "https://concienciaconductual.com"
+   ],
+   "worksFor": {
+    "@type": "Organization",
+    "name": "Conciencia Conductual",
+    "url": "https://concienciaconductual.com",
+    "areaServed": "ES"
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -114,24 +179,23 @@
   <h1 class="tagline tagline-h1">Cada día laborable, tres estudios de psicología recientes, traducidos a un lenguaje claro.</h1>
   <p class="tagline tagline-sub">Con la fuente original siempre a la vista. <a href="como-leemos-los-estudios.html">¿Cómo leemos los estudios?</a></p>
   <nav class="menu-cabecera" aria-label="Secciones principales">
-    <a href="guias.html">📎 Guías y recomendaciones</a>
-    <a href="temas.html">Explora por temas</a>
-    <a href="guiones-conversaciones-dificiles.html">🗒️ Guiones</a>
-    <a href="test-de-ansiedad.html">🧪 Test de ansiedad</a>
-    <a href="test-de-depresion.html">🧪 Test de depresión</a>
-    <a href="donde-pedir-ayuda.html">Dónde pedir ayuda</a>
-    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-    <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Mi consulta</a>
+    <a href="/empieza-aqui.html">🧭 Empieza aquí</a>
+    <a href="/temas.html">📎 Las guías</a>
+    <a href="/terapia-online.html">🩺 Mi consulta</a>
   </nav>
 </header>
 
-<section class="bloque-test" aria-label="Test de ansiedad">
-  <div class="bloque-test-inner">
-    <p class="bt-kicker">🧪 Cuestionario gratuito · 2 minutos</p>
-    <h2 class="bt-tit">¿Cuánta ansiedad tienes ahora mismo?</h2>
-    <p class="bt-txt">Haz el <strong>GAD-7</strong>, el cuestionario de cribado que se usa en atención primaria. Siete preguntas, resultado al momento y qué hacer con él. Sin registro, y tus respuestas no salen de tu navegador. También tienes el <a href="test-de-depresion.html">test de depresión (PHQ-9)</a>.</p>
-    <a class="bt-btn" href="test-de-ansiedad.html">Hacer el test →</a>
-  </div>
+<section class="bloque-util" aria-label="Herramientas gratuitas">
+  <p class="bu-kicker">🧪 Gratis · 2 minutos · no salen de tu navegador</p>
+  <h2 class="bu-tit">¿Quieres ponerle un número a cómo estás?</h2>
+  <p class="bu-txt">El <strong>GAD-7</strong> es el cuestionario de ansiedad que se usa en atención
+  primaria: siete preguntas y un resultado con qué hacer a partir de ahí. Y el <strong>registro
+  A-B-C</strong> es con lo que empieza casi cualquier terapia conductual: apuntas qué pasa antes, qué
+  haces y qué pasa después, y en tres o cuatro anotaciones se ve el patrón.</p>
+  <p class="bu-acciones">
+    <a class="bu-btn" href="/test-de-ansiedad.html">Hacer el test →</a>
+    <a class="bu-btn bu-btn-2" href="/registro-abc.html">Abrir mi registro →</a>
+  </p>
 </section>
 
 <main id="posts-container">
@@ -141,7 +205,7 @@
     <h2 class="post-title">Dormir no siempre "resetea" una emoción fuerte: a veces la conserva</h2>
     <span class="stamp">📎 J. Sleep Research · 2012</span>
     <p class="post-teaser">Un estudio encontró algo contraintuitivo: pasar la noche durmiendo después de ver algo emocionalmente negativo conserva esa reacción casi intacta, mientras que quedarse despierto el mismo tiempo hace que se atenúe.</p>
-    <a href="post.html?id=ejemplo-1" class="read-more">Leer más →</a>
+    <a href="/archivo.html" class="read-more">Leer más →</a>
     </div>
   </article>
 
@@ -150,7 +214,7 @@
     <h2 class="post-title">Escribir sobre lo que te preocupa protege más a quien más le da vueltas</h2>
     <span class="stamp">📎 J. Research in Personality · 2008</span>
     <p class="post-teaser">Un estudio con estudiantes encontró que escribir de forma expresiva sobre sus preocupaciones ayudó especialmente a quienes tenían más tendencia a rumiar, con menos síntomas depresivos meses después.</p>
-    <a href="post.html?id=ejemplo-2" class="read-more">Leer más →</a>
+    <a href="/archivo.html" class="read-more">Leer más →</a>
     </div>
   </article>
 
@@ -159,27 +223,23 @@
     <h2 class="post-title">Pedimos ayuda pensando que nos dirán que no, y casi nunca pasa</h2>
     <span class="stamp">📎 J. Personality &amp; Social Psychology · 2008</span>
     <p class="post-teaser">Varios experimentos con peticiones de ayuda reales mostraron que la gente subestima hasta en un 50% la probabilidad de que alguien acceda a ayudarles si se lo piden directamente.</p>
-    <a href="post.html?id=ejemplo-3" class="read-more">Leer más →</a>
+    <a href="/archivo.html" class="read-more">Leer más →</a>
     </div>
   </article>
 
   <section id="pl-continuar" class="pl-continuar" hidden aria-label="Sigue donde lo dejaste"></section>
 </main>
 
-<footer class="site-footer">
-  <p>Cada resumen enlaza al estudio original. Esto es divulgación científica, no sustituye una consulta profesional.</p>
-  <p class="otras-webs-titulo">Otras webs</p>
-  <div class="otras-webs-lista">
-    <a class="sitio-amigo" href="https://concienciaconductual.com" target="_blank" rel="noopener">
-      <svg class="sitio-amigo-icono" viewBox="0 0 42 22" fill="none" stroke="#8C3B4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1,12 L5,4 L8,19 L12,3 L15,13 C17.5,8 20.5,8 23,12 C24.5,14.5 27,14.5 28.5,12 C30,9.5 32,9.5 34,12 L41,12"/></svg>
-      <span class="sitio-amigo-texto">
-        <span class="sitio-amigo-nombre">Conciencia Conductual</span>
-        <span class="sitio-amigo-desc">Consulta de psicología con Miguel Martínez</span>
-      </span>
-    </a>
+<section class="bloque-pack" aria-label="Pack de guías gratuito">
+  <div class="bloque-pack-inner">
+    <div class="pl-newsletter" data-origen="portada-pack"></div>
   </div>
-  <p>© 2026 Psicolinks · <a href="guias.html">Guías</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
-  <p class="pie-consulta" style="margin:0.6rem 0 0;"><a href="/test-de-ansiedad.html">🧪 Test de ansiedad</a> · <a href="/test-de-depresion.html">Test de depresión</a> · Consulta de psicología: <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></p>
+</section>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script>
@@ -230,5 +290,6 @@
 </script>
 <script src="cookies-psicolinks.js" defer></script>
 <script src="/progreso-psicolinks.js" defer></script>
+<script src="/newsletter-psicolinks.js" defer></script>
 </body>
 </html>

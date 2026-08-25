@@ -125,6 +125,11 @@ const ESTILO = `
   .tiempo-lectura { font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); }
   .desglose { background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:1.4rem 1.4rem 1.5rem; margin:0 0 1.6rem; }
   .desglose-titulo { font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-soft); margin:0 0 1rem; }
+  /* --- Mapa del artículo: organigrama de un vistazo -------------------- */
+  .mapa { margin: 0 0 1rem; }
+  .mapa svg { display: block; width: 100%; height: auto; }
+  .mapa-tit { font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-soft); margin:0 0 0.7rem; }
+
   /* --- Ficha del estudio: chips + medidor de fuerza del diseño --------- */
   .ficha { background:var(--surface); border:1px solid var(--border); border-radius:11px; padding:1rem 1.1rem 1.05rem; margin:0 0 1rem; }
   .ficha-chips { display:flex; flex-wrap:wrap; gap:0.45rem; margin:0 0 0.85rem; }
@@ -236,7 +241,7 @@ const TIPOS_ESTUDIO = [
   { patron: /longitudinal|cohorte|seguimiento|a lo largo de \d|durante \d+\s*(años|anios|meses|semanas)/i,
     etiqueta: 'Seguimiento en el tiempo', nivel: 3,
     lectura: 'Sigue a las mismas personas durante un tiempo. Ve el orden en que pasan las cosas, pero no descarta que influya algo que no se midió.',
-    cautela: 'Que una cosa venga antes que otra no demuestra que la cause: puede haber algo que no se midió tirando de las dos.' },
+    cautela: 'Que una cosa venga antes que otra no significa que sea su causa: puede haber algo que no se midió tirando de las dos.' },
   { patron: /experimento|laboratorio|manipul|condici[óo]n experimental|asignad/i,
     etiqueta: 'Experimento', nivel: 3,
     lectura: 'Provoca la situación en condiciones controladas. Gana precisión y pierde algo de parecido con la vida real.',
@@ -293,7 +298,43 @@ function paginaHtml({ base, urlCanonica, post }) {
     `<span class="ficha-chip"><b>Lectura</b> ${minutos} min</span>`,
   ].filter(Boolean).join('');
 
+  // Organigrama de un vistazo: cuatro nodos unidos, el hallazgo destacado.
+  // Es un dibujo (SVG), no texto: se ve entero de una ojeada y escala solo.
+  const NODOS = [
+    { x: 60,  et: 'PREGUNTA', ico: '?' },
+    { x: 180, et: 'MÉTODO',   ico: '🧪' },
+    { x: 300, et: 'HALLAZGO', ico: '💡' },
+    { x: 420, et: 'POR QUÉ',  ico: '🧠' },
+  ];
+  const nodosSvg = NODOS.map((n, i) => {
+    const clave = i === 2;
+    const relleno = clave ? '#4A3B78' : '#FFFFFF';
+    const borde = clave ? '#4A3B78' : '#DDD7CB';
+    const tinta = clave ? '#FFFFFF' : '#211F2E';
+    return `
+      <g>
+        <circle cx="${n.x}" cy="42" r="26" fill="${relleno}" stroke="${borde}" stroke-width="${clave ? 2.5 : 1.5}"/>
+        <text x="${n.x}" y="49" text-anchor="middle" font-size="19" fill="${tinta}">${n.ico}</text>
+        <text x="${n.x}" y="88" text-anchor="middle" font-family="'Space Mono',monospace" font-size="11"
+              letter-spacing="0.5" font-weight="700" fill="${clave ? '#4A3B78' : '#625C70'}">${n.et}</text>
+      </g>`;
+  }).join('');
+  const flechasSvg = [0, 1, 2].map((i) => {
+    const x1 = NODOS[i].x + 28, x2 = NODOS[i + 1].x - 28;
+    return `<line x1="${x1}" y1="42" x2="${x2 - 7}" y2="42" stroke="#C9C2B4" stroke-width="2"/>
+            <polygon points="${x2},42 ${x2 - 8},38 ${x2 - 8},46" fill="#C9C2B4"/>`;
+  }).join('');
+  const mapaHtml = `
+    <div class="mapa">
+      <p class="mapa-tit">El artículo de un vistazo</p>
+      <svg viewBox="0 0 480 104" role="img" aria-label="Esquema del artículo: pregunta, método, hallazgo y por qué pasa">
+        ${flechasSvg}
+        ${nodosSvg}
+      </svg>
+    </div>`;
+
   const fichaHtml = `
+    ${post.desglose ? mapaHtml : ''}
     <div class="ficha">
       <p class="desglose-titulo">La ficha del estudio</p>
       <div class="ficha-chips">${chips}</div>
@@ -326,18 +367,29 @@ function paginaHtml({ base, urlCanonica, post }) {
   // Guía de compra relacionada con el tema del artículo. Solo se muestra cuando
   // el tema encaja CLARAMENTE con una guía (así no mandamos a la gente a cosas
   // que no tienen que ver). Si el tema no está en el mapa, no aparece nada.
-  const GUIA_DORMIR = { url: '/cosas-para-dormir-mejor.html', tag: 'Guía práctica · Sueño', titulo: 'Cosas que ayudan a dormir mejor', desc: 'Despertador de luz, antifaz, tapones, ruido blanco, manta de peso: qué ayuda de verdad y qué no vale la pena.' };
-  const GUIA_CONCENTRA = { url: '/rincon-para-concentrarte.html', tag: 'Guía práctica · Concentración', titulo: 'Montar un rincón para concentrarte', desc: 'Auriculares con cancelación, temporizador, flexo, ergonomía: lo que ayuda de verdad a concentrarte en tu mesa, sin humo.' };
-  const GUIA_CALMA = { url: '/guia-mantas-de-peso.html', tag: 'Guía práctica · Calma', titulo: 'Mantas de peso: cuál elegir', desc: 'Cómo acertar con el peso, el tamaño y el material de una manta ponderada para relajarte, y a quién no le conviene.' };
+  // Guía relacionada con el tema del artículo. Hay una para cada tema de los que
+  // asigna fetch-studies, y una por defecto para cuando el tema viene vacío o no
+  // reconocido: así ningún artículo se queda sin enlazar a una guía.
   const GUIAS_POR_TEMA = {
-    sueno: GUIA_DORMIR,
-    atencion: GUIA_CONCENTRA,
-    trabajo: GUIA_CONCENTRA,
-    habitos: GUIA_CONCENTRA,
-    ansiedad: GUIA_CALMA,
-    'estres-trauma': GUIA_CALMA,
+    sueno: { url: "/dormir-mejor-en-7-pasos.html", tag: "Guía gratuita · Sueño", titulo: "Dormir mejor en 7 pasos", desc: "Los siete cambios que más se notan, en orden de importancia y sin pastillas." },
+    ansiedad: { url: "/calmar-la-ansiedad.html", tag: "Guía gratuita · Ansiedad", titulo: "Calmar la ansiedad", desc: "Qué hacer cuando el cuerpo se dispara, y por qué evitar la mantiene." },
+    'estres-trauma': { url: "/el-estres-que-no-para.html", tag: "Guía gratuita · Estrés", titulo: "El estrés que no para", desc: "Cuando el cuerpo lleva meses en alerta: qué quitar y qué proteger." },
+    'estado-animo': { url: "/cuando-no-tienes-ganas-de-nada.html", tag: "Guía gratuita · Ánimo", titulo: "Cuando no tienes ganas de nada", desc: "Por qué la motivación llega después de actuar y no antes." },
+    atencion: { url: "/concentrarte-y-dejar-de-procrastinar.html", tag: "Guía gratuita · Concentración", titulo: "Concentrarte y dejar de procrastinar", desc: "Empezar lo que cuesta, y por qué el problema casi nunca es la fuerza de voluntad." },
+    trabajo: { url: "/el-burnout.html", tag: "Guía gratuita · Trabajo", titulo: "El burnout", desc: "En qué se diferencia de estar cansado, y por qué las vacaciones son la prueba." },
+    habitos: { url: "/crear-habitos-que-duren.html", tag: "Guía gratuita · Hábitos", titulo: "Crear hábitos que duren", desc: "Por qué fallan los propósitos y qué hace que un hábito se sostenga." },
+    pareja: { url: "/discutir-mejor-en-pareja.html", tag: "Guía gratuita · Pareja", titulo: "Discutir mejor en pareja", desc: "Cómo empieza una discusión y cómo se para antes de que se estropee." },
+    social: { url: "/hacer-amigos-de-adulto.html", tag: "Guía gratuita · Relaciones", titulo: "Hacer amigos de adulto", desc: "Por qué de adulto la amistad ya no aparece sola, y qué hay que poner." },
+    duelo: { url: "/cuando-pierdes-a-alguien.html", tag: "Guía gratuita · Duelo", titulo: "Cuando pierdes a alguien", desc: "Qué es normal, qué no lo es y por qué el duelo no va en fases ordenadas." },
+    memoria: { url: "/se-me-olvida-todo.html", tag: "Guía gratuita · Memoria", titulo: "«Se me olvida todo»", desc: "Casi todos los despistes son de atención, no de memoria." },
+    decisiones: { url: "/tomar-decisiones-dificiles.html", tag: "Guía gratuita · Decisiones", titulo: "Tomar decisiones difíciles", desc: "Cuando llevas meses dándole vueltas y no acabas de decidirte." },
+    personalidad: { url: "/mejorar-tu-autoestima.html", tag: "Guía gratuita · Autoestima", titulo: "Mejorar tu autoestima", desc: "Qué la construye de verdad, y por qué repetirse frases bonitas no basta." },
+    ejercicio: { url: "/moverte-en-casa.html", tag: "Guía gratuita · Movimiento", titulo: "Moverte en casa (y subir el ánimo)", desc: "Lo poco que hace falta para notarlo, sin gimnasio y sin equipación." },
+    alimentacion: { url: "/comer-por-ansiedad.html", tag: "Guía gratuita · Alimentación", titulo: "Comer por ansiedad", desc: "Cuando la comida hace de calmante: qué la enciende y qué hacer con el hueco." },
+    bienestar: { url: "/gestionar-tus-emociones.html", tag: "Guía gratuita · Bienestar", titulo: "Gestionar tus emociones", desc: "Qué significa de verdad, más allá de la frase, y por dónde se empieza." },
   };
-  const guiaRel = GUIAS_POR_TEMA[(post.tema || '').toLowerCase().trim()];
+  const GUIA_POR_DEFECTO = { url: "/temas.html", tag: "Guía gratuita · Psicolinks", titulo: "Las guías de Psicolinks", desc: "211 guías prácticas y gratuitas: sueño, ansiedad, pareja, trabajo, familia y hábitos." };
+  const guiaRel = GUIAS_POR_TEMA[(post.tema || '').toLowerCase().trim()] || GUIA_POR_DEFECTO;
   const guiaRelHtml = !guiaRel ? '' : `
   <div class="guia-rel">
     <p class="guia-rel-tag">${guiaRel.tag}</p>
@@ -356,8 +408,25 @@ function paginaHtml({ base, urlCanonica, post }) {
   const jsonLd = JSON.stringify({
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.titulo,
     description: descripcion, image: `${base}/og-image.jpg`, url: urlCanonica, inLanguage: 'es',
-    isAccessibleForFree: true, datePublished: post.fechaPublicacion || post.fecha,
-    publisher: { '@type': 'Organization', name: 'Psicolinks' }, mainEntityOfPage: { '@type': 'WebPage', '@id': urlCanonica },
+    isAccessibleForFree: true,
+    datePublished: post.fechaPublicacion || post.fecha,
+    dateModified: post.fechaPublicacion || post.fecha,
+    author: {
+      '@type': 'Person',
+      name: 'Miguel Martínez',
+      jobTitle: 'Psicólogo',
+      identifier: 'Colegiado nº CV17649',
+      url: 'https://psicolinks.com/sobre-mi.html',
+      sameAs: ['https://concienciaconductual.com'],
+    },
+    publisher: { '@type': 'Organization', name: 'Psicolinks', url: 'https://psicolinks.com/' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': urlCanonica },
+    // El estudio del que habla el artículo. No ponemos ScholarlyArticle en la
+    // página —un resumen no es un artículo científico— pero sí decimos a qué
+    // trabajo se refiere, que es lo que de verdad describe esta página.
+    ...(post.fuente ? { citation: { '@type': 'ScholarlyArticle', url: post.fuente,
+        ...(post.pmid ? { identifier: 'PMID:' + post.pmid } : {}) },
+      isBasedOn: post.fuente } : {}),
   });
   const breadcrumbLd = JSON.stringify({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -395,7 +464,7 @@ function paginaHtml({ base, urlCanonica, post }) {
 <body>
 <header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
 <main>
-  <a href="/" class="back-link">← Volver a Psicolinks</a>
+  <a href="/archivo.html" class="back-link">← Todos los estudios</a>
   <div class="articulo-card">
     <h1 class="post-title">${escapeHtml(post.titulo)}</h1>
     <div class="meta-fila">
@@ -414,39 +483,38 @@ function paginaHtml({ base, urlCanonica, post }) {
     <p>Comparte este artículo:</p>
     <div class="compartir-lista">${compartir}</div>
   </div>
-  <div class="libros-box">
-    <p>¿Te ha interesado el tema? Estos libros lo desarrollan y te ayudan a llevarlo a tu vida:</p>
-    <div class="libros-lista">${librosHtml}</div>
-    <p class="libros-disclosure">Publicidad. En calidad de Afiliado de Amazon</p>
-  </div>
   ${guiaRelHtml}
   <div class="guia-cta">
     <p class="guia-cta-titulo">📎 Guías gratis para tu día a día</p>
     <p>Descarga mis guías prácticas en PDF —dormir mejor, calmar la ansiedad, concentrarte— escritas por un psicólogo. Gratis, en lenguaje claro.</p>
-    <a class="guia-cta-btn" href="/guias.html">Ver las guías gratuitas →</a>
+    <a class="guia-cta-btn" href="/temas.html">Ver las guías gratuitas →</a>
   </div>
   <div class="consulta-cta">
     <h3>¿Y si esto te está pasando a ti?</h3>
     <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
     Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
-    Paso consulta en Conciencia Conductual, online y presencial.</p>
-    <a class="consulta-btn" href="https://concienciaconductual.com" target="_blank" rel="noopener" onclick="registrarClic('consulta-articulo')">Ver mi consulta →</a>
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html" onclick="registrarClic('consulta-articulo')">Cómo trabajo y cómo pedir cita →</a>
     <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a> ·
     <a href="/elegir-psicologo.html">cómo elegir psicólogo</a> ·
     <a href="/preguntas-frecuentes.html">preguntas frecuentes</a></p>
     <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
     las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
   </div>
+  <div class="libros-box">
+    <p>Y si quieres leer más sobre el tema por tu cuenta, estos dos libros lo desarrollan:</p>
+    <div class="libros-lista">${librosHtml}</div>
+    <p class="libros-disclosure">Publicidad. En calidad de Afiliado de Amazon</p>
+  </div>
   <div id="relacionados-container"></div>
   <p class="mas-guias" style="text-align:center;margin:2.2rem 0 0;font-size:0.95rem;line-height:1.7;">
-    ¿Buscas algo práctico? Echa un vistazo a las <a href="/guias.html">guías de Psicolinks</a>:
+    ¿Buscas algo práctico? Echa un vistazo a las <a href="/temas.html">guías de Psicolinks</a>:
     sueño, ansiedad, hábitos, pareja y estudio.<br>
     O haz el <a href="/test-de-ansiedad.html">test de ansiedad</a>, que son dos minutos.
   </p>
-  <div class="pl-newsletter" data-variant="digest" data-origen="articulo"></div>
 </main>
 <footer class="site-footer">
-  <p class="otras-webs-titulo">Otras webs</p>
+  <p class="otras-webs-titulo">Consulta de psicología</p>
   <div class="otras-webs-lista">
     <a class="sitio-amigo" href="https://concienciaconductual.com" target="_blank" rel="noopener" onclick="registrarClic('concienciaconductual')">
       <svg class="sitio-amigo-icono" viewBox="0 0 42 22" fill="none" stroke="#8C3B4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1,12 L5,4 L8,19 L12,3 L15,13 C17.5,8 20.5,8 23,12 C24.5,14.5 27,14.5 28.5,12 C30,9.5 32,9.5 34,12 L41,12"/></svg>
@@ -456,7 +524,8 @@ function paginaHtml({ base, urlCanonica, post }) {
       </span>
     </a>
   </div>
-  <p>© 2026 Psicolinks · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+  <p>© 2026 Psicolinks · <a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p><a href="/tests.html">🧪 Tests</a> · <a href="/registro-abc.html">🗒️ Tu registro</a> · <a href="/terapia-online.html">Pedir cita</a></p>
 </footer>
 <script>
   var POST_ID = ${JSON.stringify(post.id)};
@@ -495,7 +564,6 @@ function paginaHtml({ base, urlCanonica, post }) {
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="/cookies-psicolinks.js" defer></script>
-<script src="/newsletter-psicolinks.js" defer></script>
 </body>
 </html>`;
 }

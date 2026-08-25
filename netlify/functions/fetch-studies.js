@@ -185,7 +185,9 @@ function componerHtmlBoletin(postsNuevos, email, token) {
     .join('<tr><td style="padding:0 0 20px; border-bottom:1px solid #DDD7CB;"></td></tr>');
 
   return `<!DOCTYPE html>
-<html lang="es"><body style="margin:0; background:#EEEDE6; font-family:'Work Sans',Arial,sans-serif;">
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body style="margin:0; background:#EEEDE6; font-family:'Work Sans',Arial,sans-serif;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:32px 16px;">
     <table role="presentation" width="100%" style="max-width:520px; background:#FFFFFF; border:1px solid #DDD7CB; border-radius:12px; padding:28px 24px;" cellpadding="0" cellspacing="0">
       <tr><td style="padding:0 0 20px;">
@@ -380,15 +382,17 @@ export default async () => {
       `fetch-studies: ${publicados} publicación(es) nueva(s) de ${articulos.length} candidato(s) evaluados (${idsRecientes.length} encontrados en PubMed).`
     );
 
-    let boletin = null;
-    if (publicados > 0) {
-      // El fallo del boletín nunca debe hacer que la función entera falle:
-      // los artículos ya están publicados de todas formas.
-      boletin = await enviarBoletin(postsPublicados).catch((err) => {
-        console.error('fetch-studies: fallo al enviar el boletín:', err.message || err);
-        return { ok: false, error: err.message || String(err) };
-      });
-    }
+    // ------------------------------------------------------------------
+    // EL BOLETÍN YA NO SE MANDA DESDE AQUÍ (24 de agosto de 2026).
+    // Antes salía un correo cada día de publicación, de lunes a viernes.
+    // Miguel lo quiere semanal y en domingo, así que el envío se ha movido
+    // a `boletin-semanal.js`, que se dispara solo los domingos y reúne los
+    // artículos de los últimos siete días en un único correo.
+    // La función `enviarBoletin` y su plantilla se quedan aquí sin usar por
+    // si algún día quisieras volver al aviso diario: bastaría con volver a
+    // llamarla y desactivar el horario del boletín semanal.
+    // ------------------------------------------------------------------
+    const boletin = { ok: false, motivo: 'el boletín se envía los domingos desde boletin-semanal.js' };
 
     return new Response(JSON.stringify({ ok: true, publicados, evaluados: articulos.length, boletin }), {
       status: 200,

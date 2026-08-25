@@ -297,6 +297,1228 @@ ofrece salidas: las guías con su buscador, «empieza aquí», la portada, el
 archivo y el consultorio. Y arriba del todo, un aviso con el 112 y el 024 por
 si quien ha llegado ahí estaba buscando ayuda.
 
+## Paquete nuevo: «Tus resultados», dos guías de compra y cinco guías
+
+### Esta vez no hay test nuevo, y te explico por qué
+
+He llegado al final de los cuestionarios que se pueden reproducir legalmente sin
+pedir permiso. Este paquete iba a llevar uno más y he descartado los tres
+candidatos, cada uno con su motivo:
+
+- **PSC-17** (síntomas en niños) — el formulario lleva «© 1998, M. Jellinek &
+  J.M. Murphy, Massachusetts General Hospital» y ninguna cesión escrita.
+- **Escala de Insomnio de Atenas** — habría sido perfecta para tu tema más
+  fuerte, pero se distribuye a través de Mapi Research Trust, el mismo
+  organismo que gatea el PSS-10 que ya descartamos.
+- **ASRS de TDAH** y **EPDS de posparto**, descartados en el paquete anterior
+  por lo mismo.
+
+Los nueve que tienes cubren las cuatro familias que sí son libres: la de Pfizer
+(PHQ-9, GAD-7, PHQ-15, PHQ-4 y el módulo de pánico), la de la OMS (AUDIT y
+AUDIT-C), la del gobierno de EE. UU. (PC-PTSD-5) y el Fagerström, que el NIDA
+autoriza expresamente. **Prefiero decirte esto a colarte un décimo test con la
+licencia en duda después de haber rechazado cinco por ese mismo motivo.**
+
+### Lo que he hecho en su lugar, que rinde más
+
+**`mis-resultados.html`** — una página que junta **todos los tests que la
+persona haya hecho**, con su evolución. Porque un test suelto dice poco y la
+comparación contigo mismo dice bastante, y hasta ahora esa comparación había que
+buscarla test por test.
+
+Muestra, por cada uno: la última puntuación con su nivel, cuántas veces lo ha
+hecho, un gráfico de las últimas diez mediciones y una frase que dice si ha
+subido o bajado respecto a la anterior y qué significa eso *en ese test*
+concreto (en el de alcohol subir es «más consumo»; en el de ansiedad, «más
+ansiedad»). Debajo, los tests que todavía no ha hecho, para que sepa cuáles le
+faltan sin tener que ir a buscarlos.
+
+Y hace algo por ti que ningún test hace: **es una razón para volver**. Quien se
+mide cada dos semanas vuelve cada dos semanas.
+
+Todo se lee de `localStorage`, igual que ya hacían los tests: **no hay servidor,
+no hay cuenta y no sale nada del dispositivo**. La página lo dice con todas las
+letras, porque es justo lo que hace que alguien se atreva a hacer un test de
+depresión en una web.
+
+Probado con historiales simulados, incluido **un dato corrupto a propósito**
+(texto que no es JSON en una de las claves): la página lo ignora y sigue
+funcionando. Y el botón de borrar pide confirmación en dos pasos y respeta el
+registro A-B-C, que se borra desde su propia página.
+
+### Dos guías de compra
+
+| Guía | De qué va |
+|---|---|
+| `cosas-para-el-tdah-en-adultos.html` | La regla que ordena todo: lo que se guarda en un cajón deja de existir. Y por qué la aplicación de tareas número catorce no es la respuesta —cualquier sistema que haya que *abrir* compite con el olvido—. |
+| `cosas-para-el-dolor-cronico.html` | El calor y el cojín lumbar sí. El colchón de mil euros, las pulseras magnéticas y el colágeno, no. Y una advertencia sobre los TENS comprados sin preguntar, que tienen contraindicaciones reales. |
+
+En la de TDAH hay un apartado que no verás en ninguna guía de compras: el aviso
+sobre la **compra impulsiva de madrugada**, que es de las consecuencias más caras
+del TDAH y que casi nadie conecta con él. Recomendar quitar las tarjetas
+guardadas del navegador, en una página con enlaces de afiliado, es lo correcto
+aunque juegue en contra.
+
+### Cinco guías más
+
+| Guía | De qué va |
+|---|---|
+| `dejar-el-movil-por-la-noche.html` | No es fuerza de voluntad: es que está a treinta centímetros. Y por qué el modo noche no arregla lo importante, que es el contenido y no la luz azul. |
+| `cuando-tu-hijo-se-va-de-casa.html` | No echas de menos solo a tu hijo: también a quien eras cuando estaba. |
+| `cuando-te-comparan-con-otros.html` | La comparación dice más de quien la hace. Qué contestar sin bronca, y cuándo la voz que compara ya es la tuya. |
+| `volver-a-salir-despues-de-mucho-tiempo.html` | La confianza llega después de salir, no antes. Y la amistad de adulto llega por repetición, no por química. |
+| `no-me-toman-en-serio.html` | Los preámbulos que le quitan peso a lo que dices antes de decirlo, por qué las pausas dan más autoridad que las razones, y cuándo el problema no es tuyo. |
+
+### Perfilando
+
+- Un **salto de encabezado** (h1 → h3) en la página nueva, que detectó la
+  auditoría y está corregido.
+- Las tres páginas nuevas, incorporadas al mapa de temas de `guias.html`, así que
+  los doce filtros siguen cuadrando exactamente: 21 y 21, 35 y 35, 29 y 29.
+- Las cifras del sitio, resincronizadas: **200 guías y 9 tests**.
+
+### Comprobado antes de entregar
+
+245 páginas sin un solo problema de validación ni de auditoría. **233 enlaces
+internos distintos comprobados pidiéndolos de verdad: cero rotos.** Los doce
+filtros pulsados uno a uno. Y ni un enlace de Amazon sin tu etiqueta, de 135.
+
+## Paquete nuevo: los filtros de las guías arreglados, dos tests, dos guías de compra y cinco guías
+
+### Perfilando: tres desajustes que se habían ido acumulando
+
+**1. Las cifras que la web dice de sí misma estaban desfasadas.** `terapia-online.html`
+—la página que vende tu consulta— decía «las 142 guías» cuando ya eran casi
+doscientas, y la plantilla de artículo decía «ciento cuarenta y ocho». Una cifra
+que no cuadra en la página donde pides cita es de lo primero que un lector
+comprueba. Además, `temas.html` decía «213 guías» cuando 213 era el número de
+enlaces (una guía puede estar en dos temas).
+
+Arreglado, y con un guión nuevo (`sincronizar_cifras.py`) que cuenta lo que hay
+y reescribe esas frases después de cada tanda. **Y usa exactamente la misma
+regla de conteo que el índice A-Z**, para que los dos números no puedan volver a
+discrepar.
+
+*Nota honesta: la primera versión de ese guión era demasiado bruta y me cambió
+«mira también los otros dos tests» por «los otros siete tests» en una página.
+Lo vi al revisar el diff, lo restauré y acoté el patrón. Está comentado en el
+propio guión.*
+
+**2. Los filtros de `guias.html` no cuadraban con nada.** Las tarjetas se habían
+ido etiquetando a mano tanda tras tanda y había **quince etiquetas distintas
+para trece temas**, con duplicados reales —«miedo» y «miedos», «familia» e
+«hijo»— que partían en dos las guías de esos temas. Arriba solo había **ocho
+botones**, así que temas enteros del sitio no tenían filtro. Y **56 tarjetas no
+tenían etiqueta ninguna**: no respondían a ningún filtro.
+
+Ahora la categoría de cada tarjeta sale del mismo mapa que usa el barrido y el
+reparto de enlaces internos, hay **doce filtros** con icono, y cada uno lleva su
+número.
+
+**3. Y el filtro contaba mal.** Los botones metían su palabra en el buscador, que
+busca en el texto entero de la tarjeta. Resultado: «Tests y herramientas» decía
+9 y encontraba **48** —cualquier guía cuya descripción llevara la palabra
+«herramientas»—. Ahora el filtro por tema es una coincidencia exacta, y el número
+del botón **se cuenta al cargar la página** en vez de venir escrito, así que el
+botón y el resultado no pueden discrepar nunca. Los doce comprobados uno a uno:
+21 y 21, 33 y 33, 28 y 28, y así.
+
+### Dos tests más, los dos limpios
+
+| Test | Por qué es libre |
+|---|---|
+| **Módulo de pánico del PHQ** · `test-de-ataques-de-panico.html` | Mismo pie que el resto de la familia: «No permission required to reproduce, translate, display or distribute». |
+| **AUDIT-C** · `test-rapido-alcohol.html` | Son los tres primeros ítems del AUDIT de la OMS, que ya está en la web y es de dominio público. |
+
+El de pánico hace una distinción que no hacía ninguna página del sitio: **tener
+un ataque de pánico y tener un trastorno de pánico no son lo mismo**. Empieza con
+una pregunta previa —si no has tenido ataques, no se te hacen las demás— y dice
+antes que nada que un ataque es horrible y no es peligroso.
+
+*Una nota sobre los ítems: de este módulo circulan dos versiones, una con once
+síntomas y otra con cuatro preguntas y una de síntomas. He reproducido
+exactamente la que pude verificar palabra por palabra en dos formularios
+publicados. Inventar los once ítems de memoria en un instrumento clínico no era
+una opción.*
+
+### Dos guías de compra
+
+| Guía | De qué va |
+|---|---|
+| `cosas-primeras-semanas-con-un-bebe.html` | Los turnos de noche por escrito protegen más que cualquier compra. Y por qué los monitores de respiración **no** están recomendados por las sociedades pediátricas. |
+| `cosas-para-tus-padres-mayores.html` | Las caídas se previenen con cuarenta euros de luz y asideros. Y una llamada al ayuntamiento que ahorra más dinero que toda la página: mucha gente paga por su cuenta la teleasistencia a la que tiene derecho. |
+
+### Cinco guías más
+
+| Guía | De qué va |
+|---|---|
+| `miedo-al-miedo.html` | Después de dos o tres ataques, el problema pasa a ser esperarlos. Cómo se desmonta esa espera. |
+| `volver-a-confiar-en-tu-cuerpo.html` | Tras un infarto, un cáncer o una operación. Por qué más pruebas no cierran la duda y qué acordar con tu médico. |
+| `decir-que-no-en-el-trabajo.html` | La frase para ganar veinte minutos, y por qué enseñar la lista funciona mejor que decir que vas agobiado. |
+| `mudarse-a-otro-pais.html` | La cuesta no llega el primer mes: llega al tercero. Y qué hace que un sitio deje de ser ajeno. |
+| `no-me-gusta-mi-trabajo-y-no-puedo-dejarlo.html` | Lo que hunde no es el trabajo malo: es creer que es para siempre. |
+
+Y **seis desambiguaciones nuevas** para las parejas de guías que empezaban a
+solaparse: buscar síntomas ↔ volver a confiar en tu cuerpo, no soporto mi trabajo
+↔ no puedo dejarlo, y el ataque de pánico ↔ el miedo al miedo.
+
+### Comprobado antes de entregar
+
+237 páginas sin un solo problema de validación ni de auditoría. Los dos tests
+nuevos probados con todos los tramos, incluida la pregunta previa del de pánico
+contestada que sí y que no, y el umbral exacto del AUDIT-C. Los doce filtros de
+guias.html pulsados uno a uno comprobando que el número del botón coincide con el
+resultado. **225 enlaces internos distintos comprobados pidiéndolos de verdad:
+cero rotos.** Y ni un enlace de Amazon sin tu etiqueta.
+
+## Paquete nuevo: la newsletter arreglada (había dos fallos gordos), dos tests, dos guías de compra y cuatro de ayuda
+
+### Me pediste que comprobara la newsletter, y menos mal
+
+Encontré **dos fallos que la dejaban inservible**. No eran cosméticos: significaban
+que **cualquiera que se hubiera apuntado en la portada no habría recibido nunca
+nada, y encima no habría podido darse de baja**.
+
+**Fallo 1: el alta se guardaba con una clave que la baja no sabía buscar.**
+`suscribir.js` guardaba cada registro bajo el hash SHA-256 del correo.
+`unsubscribe.js` busca por el correo tal cual. Nunca se habrían encontrado: el
+enlace de «darme de baja» habría fallado siempre. Eso, además de un fallo, es un
+problema de RGPD.
+
+**Fallo 2: no se guardaba el token de baja, y el envío salta a quien no lo tiene.**
+La rutina de envío tiene esta línea: `if (!suscriptor?.email || !suscriptor?.token) continue;`.
+Como `suscribir.js` no generaba token, **todos los suscriptores de la portada se
+habrían saltado, uno por uno, en silencio**. Habrías tenido correos guardados y
+cero envíos, sin ningún error en ningún sitio.
+
+Los dos están corregidos: la clave es ahora el correo y se genera token en el alta.
+Y los registros antiguos que se guardaron mal **se reparan solos**: el boletín
+semanal los detecta, les pone token, los reescribe con la clave buena y borra el
+registro viejo.
+
+### El boletín de los domingos, que no existía
+
+No había ningún envío semanal. El boletín salía desde `fetch-studies` **de lunes
+a viernes**, un correo por cada día de publicación. Tú lo querías semanal y en
+domingo, así que:
+
+- Nueva función **`netlify/functions/boletin-semanal.js`**, con horario
+  `0 8 * * 0`: **domingos a las 08:00 UTC** (las 10 en España en verano, las 9 en
+  invierno). Recoge los artículos de los últimos siete días y manda **un solo
+  correo** con todos.
+- El envío diario de `fetch-studies` **desactivado**, para que no lleguen
+  correos duplicados. El código se queda ahí, comentado, por si algún día
+  quisieras volver al aviso diario.
+- Cada correo lleva **solo el enlace de baja de esa persona**: nadie puede darse
+  de baja en nombre de otro ni ve el correo de los demás.
+- Los enlaces del boletín iban a `post.html`, que lleva `noindex` y se pinta con
+  JavaScript. Ahora van a la URL limpia del artículo.
+- Las plantillas de correo no declaraban la codificación, así que los acentos
+  podían llegar rotos («cÃ³mo» en vez de «cómo»). Arreglado en las tres.
+
+**Para probarlo sin esperar al domingo**, con tu clave de administración:
+
+    /.netlify/functions/boletin-semanal?clave=TU_ADMIN_PASSPHRASE&prueba=1
+
+Con `prueba=1` calcula todo y **no envía**: te dice a cuántos habría escrito y con
+qué asunto. Quitando `prueba=1`, envía de verdad.
+
+### El regalo al registrarse: ahora por partida doble
+
+Ya funcionaba en la página (los cinco PDF aparecen al instante, sin depender de
+ningún correo). Ahora, **además**, se manda un correo de bienvenida con esos
+mismos cinco enlaces, para que los tenga guardados. Si el envío falla o no está
+configurado, **el alta funciona igual y el pack se entrega igual**: el correo es
+un extra, nunca un requisito.
+
+### Lo único que falta, y depende de ti
+
+Para que salga un solo correo hacen falta dos cosas en Netlify, y ninguna la
+puedo hacer yo:
+
+1. **`RESEND_API_KEY`** en Site configuration → Environment variables, con una
+   clave de resend.com.
+2. **El dominio psicolinks.com verificado dentro de Resend**, para poder enviar
+   desde `novedades@psicolinks.com`.
+
+Sin la primera, todo se ejecuta, deja escrito en el log lo que habría hecho y no
+manda nada. No falla ni rompe nada.
+
+### Comprobado con una simulación completa: 42 verificaciones, todas en verde
+
+Monté un almacén de Netlify y una API de Resend falsos y pasé el circuito entero:
+alta correcta, correo inválido, sin consentimiento, honeypot con un bot, alta
+duplicada, generación y conservación del token, correo de bienvenida con los
+cinco PDF (comprobando que los cinco ficheros existen de verdad), Resend
+devolviendo error, registros antiguos rotos reparándose, el boletín del domingo
+dejando fuera un artículo de hace un mes, tokens distintos por suscriptor, sin
+`RESEND_API_KEY`, semana sin artículos, baja con token inventado, baja correcta,
+y comprobar que quien se ha dado de baja ya no recibe el siguiente.
+
+### Dos tests más, los dos limpios
+
+| Test | Por qué es libre |
+|---|---|
+| **Fagerström** · `test-de-dependencia-del-tabaco.html` | El repositorio oficial del NIDA (EE. UU.) dice: «copyrighted by Taylor and Francis Ltd., **but may be reproduced without permission**». |
+| **PHQ-4** · `test-rapido-ansiedad-depresion.html` | Los cuatro ítems son del GAD-7 y el PHQ-9, con el mismo pie de Pfizer: «No permission required». |
+
+El PHQ-4 son treinta segundos y hace algo que no hacía ningún otro: **te dice por
+cuál de los tests largos empezar**, calculando por separado el bloque de ansiedad
+y el de ánimo.
+
+**Descartados**, y esta vez dolió: el **ASRS v1.1** de TDAH en adultos habría sido
+el de más tráfico de todos, pero pone «COPYRIGHT © 2003 World Health
+Organization. All rights reserved» y hace falta permiso. Y la **EPDS** de
+depresión posparto, porque las copias que circulan dicen «Reproduced with
+permission», que es permiso para esa copia, no una licencia abierta.
+
+### Dos guías de compra y cuatro de ayuda
+
+| Página | De qué va |
+|---|---|
+| `cosas-para-dejar-de-fumar.html` | Los sustitutivos van en la farmacia y **no los enlazo a propósito**: la dosis la ajusta el farmacéutico. Qué sí comprar para las manos, la boca y los tres primeros días. |
+| `cosas-para-que-estudie-mejor.html` | La lámpara, el reposapiés y un despertador de diez euros para sacar el móvil de la mesa. Y por qué el escritorio regulable caro es lo que menos cambia. |
+| `acompanar-a-alguien-en-terapia.html` | Por qué no preguntar qué ha contado, por qué al principio se está peor y en qué ayudar para que no la abandone. |
+| `hablar-con-alguien-que-bebe-demasiado.html` | Hechos con fecha en vez de etiquetas, y por qué dejar de tapar las consecuencias es lo más difícil y lo más importante. |
+| `que-decir-a-alguien-en-duelo.html` | Nombra al que ha muerto. Las frases que consuelan solo a quien las dice, y volver al mes y a los seis. |
+| `ayudar-a-alguien-que-no-quiere-ayuda.html` | Insistir crea resistencia. Preguntar en vez de convencer, y la diferencia entre un límite y un ultimátum. |
+
+### Comprobado antes de entregar
+
+228 páginas sin un solo problema de validación ni de auditoría. Los dos tests
+nuevos probados en navegador con todos los tramos de puntuación, incluidas las
+subescalas del PHQ-4 en sus cuatro combinaciones. **Los 198 enlaces del índice
+comprobados uno a uno pidiéndolos de verdad: cero rotos.** Los ocho botones de la
+página de Tests, los ocho a 200. Y ningún enlace de Amazon sin tu etiqueta.
+
+## Paquete nuevo: dos tests más, dos guías de compra y cuatro guías
+
+### Dos tests nuevos, los dos limpios de derechos
+
+| Test | Qué mide | Por qué es libre |
+|---|---|---|
+| **PHQ-15** · `test-de-sintomas-fisicos.html` | Dolores, mareos, palpitaciones, digestiones y cansancio: cuánto te están molestando. | El formulario original lleva impreso «Copyright Pfizer Inc. **No permission required** to reproduce, translate, display, or distribute». Misma familia y misma licencia que el PHQ-9 y el GAD-7 que ya tienes. |
+| **PC-PTSD-5** · `test-de-estres-postraumatico.html` | Cribado de estrés postraumático: cinco preguntas de sí o no, corte en 3. | Lo desarrolló el National Center for PTSD, del Departamento de Veteranos de EE. UU. Las obras de agencias federales estadounidenses son de dominio público por ley y el organismo lo distribuye libremente. |
+
+**Y lo que he descartado, que también importa:**
+
+- **PSS-10** (estrés percibido, de Cohen) — habría sido el más goloso, porque «test de estrés» se busca muchísimo. Pero lleva «All rights reserved» y los permisos se piden a Mapi Research Trust. No es libre.
+- **WHO-5** (bienestar, de la OMS) — licencia Creative Commons **BY-NC-SA**: prohíbe el uso comercial y obliga a licenciar igual lo derivado. Con una web que lleva enlaces de afiliado eso es zona gris, y aquí no queremos zona gris.
+- **CBI** (burnout, de Copenhague) — «test de burnout» es otro término con mucho tráfico, y muchas fuentes secundarias dicen que es de dominio público, pero no he encontrado la declaración original de los autores. Mismo criterio con el que se descartó la escala de Rosenberg en su día. Si quieres este, la vía es comprobar tú la licencia y me lo dices.
+
+**Detalles del PC-PTSD-5, que es delicado.** Empieza con una **pregunta previa**: si la persona dice que no ha vivido ningún suceso de ese tipo, las cinco preguntas ni se le enseñan. Lleva el aviso del **024** y el **112** antes de empezar, no al final. Y el texto del resultado positivo dice lo que hay que decir: que un cribado no es un diagnóstico y que el estrés postraumático es de los problemas que mejor responden al tratamiento.
+
+**Detalles del PHQ-15.** Lo primero que se lee es que un resultado alto **no** significa que los síntomas sean imaginarios, y que el orden correcto es médico primero. Las dos preguntas que no aplican a todo el mundo —la de la regla y la de las relaciones sexuales— llevan opción «no me aplica» que puntúa cero, con la nota de que en la versión original el máximo para hombres es 28.
+
+La página de Tests gana un apartado nuevo, **«Cuerpo y sucesos duros»**, así que siguen estando todos en un solo sitio.
+
+### Dos guías de compra más
+
+| Guía | De qué va |
+|---|---|
+| `que-regalar-a-alguien-que-lo-pasa-mal.html` | Comida hecha, algo para las noches, algo que ocupe las manos. Y los cuatro regalos con buena intención que sientan mal, empezando por cualquier cosa con una frase motivadora impresa. |
+| `trabajar-en-casa-sin-reventar.html` | La pantalla a la altura de los ojos por quince euros, el apoyo lumbar, el temporizador para levantarte. Y por qué la mesa regulable de cientos de euros no es lo primero. |
+
+Mismo criterio que las anteriores: enlaces de búsqueda con tu etiqueta `conciencia07-21`, `rel="sponsored"`, aviso de afiliación, y un apartado largo de lo que **no** comprar. En la de regalos, ese apartado empieza diciendo que lo que más se agradece es gratis.
+
+### Cuatro guías más (ya van 169)
+
+| Guía | De qué va |
+|---|---|
+| `no-puedo-llorar.html` | No llorar no mide cuánto te importa algo. De dónde viene el bloqueo, por qué perseguirlo lo impide y cómo distinguirlo de un apagón general. |
+| `compararte-en-redes-sociales.html` | Comparas tu detrás con el escaparate de otro. El problema no es el tiempo de pantalla: son cinco cuentas concretas. |
+| `problemas-con-mis-hermanos.html` | Por qué seguís en los papeles de hace treinta años, qué hay debajo de las discusiones y la distancia media entre aguantar y cortar. |
+| `no-tengo-tiempo-para-nada.html` | Casi nunca es organizarse mal: es haber dicho que sí a más de lo que cabe. Y cuándo no es falta de tiempo sino falta de energía. |
+
+### Comprobado antes de entregar
+
+220 páginas sin un solo problema de validación ni de auditoría. Ortografía repasada: las 71 palabras fuera del diccionario son todas legítimas (los términos ingleses de las citas de copyright, y palabras como «teletrabajas», «tragaperras» o «táper»).
+
+Los dos tests, probados en un navegador de verdad con todos los casos: puntuación mínima, máxima, el corte exacto en 3 del PC-PTSD-5, la pregunta previa contestada que sí y que no, el historial guardándose y el aviso saliendo solo cuando toca. Comprobado también que en toda la web no queda **ni un enlace de Amazon sin tu etiqueta ni ninguno roto** — son 133 en total.
+
+## Paquete nuevo: dos guías de compra, la captación de correos y cuatro guías más
+
+### Lo del Schema: te lo habían vendido más caro de lo que es
+
+Me preguntaste si marcar el contenido como `ScholarlyArticle` o
+`MedicalWebPage` ayuda a ganar autoridad de dominio más rápido. La respuesta
+honesta es que **no**, y conviene que quede escrito:
+
+- Google dice en su propia documentación que los datos estructurados sirven
+  para **cómo apareces** en los resultados, no para **dónde** apareces. No son
+  un factor de posicionamiento.
+- «Autoridad de dominio» no es una métrica de Google: es de Moz.
+- Y en la lista oficial de tipos que Google admite para resultados
+  enriquecidos, `ScholarlyArticle`, `MedicalWebPage` y `MedicalEntity` **no
+  están**. No van a producir ningún adorno visible en los resultados.
+
+Aun así lo he puesto, porque es barato y porque **es verdad**: describe lo que
+son esas páginas. `MedicalWebPage` va en las **128 páginas que de verdad son
+contenido de salud** —ansiedad, miedos, ánimo, sueño, estrés, hábitos, duelo,
+los tests y las dos guías de compra— con la condición de la que tratan, el
+público (pacientes), la fecha de revisión y tu firma como revisor colegiado.
+No lo he puesto en las guías de pareja ni de familia: una guía sobre discutir
+mejor no es una página médica, y llenar la web de etiquetas que no describen
+nada es justo lo que hace que las etiquetas dejen de valer.
+
+En los artículos diarios **no** he puesto `ScholarlyArticle`: un resumen de un
+estudio no es un artículo científico, y decir que lo es sería falso. Lo que sí
+he añadido es `citation` con el enlace y el PMID del estudio original, que es
+lo que describe de verdad esa página.
+
+### Dos guías de compra nuevas
+
+| Guía | De qué va |
+|---|---|
+| `cosas-que-ayudan-con-la-ansiedad.html` | La libreta para el rato de preocupación, el despertador que saca el móvil de la habitación, el temporizador y lo que hace falta para moverse. |
+| `cosas-que-ayudan-cuando-estas-bajo.html` | La lámpara de 10.000 lux, el despertador de luz, la agenda de papel para la activación conductual y el pastillero. |
+
+Las dos empiezan diciendo con todas las letras que **ningún objeto trata la
+ansiedad ni la depresión**, y las dos tienen un apartado de **«lo que no te
+recomiendo comprar»** que es la mitad de la página. Ahí van, entre otros:
+
+- **Pulsioxímetros y relojes que miden pulsaciones**, en la de ansiedad: cada
+  medición es una comprobación, y comprobar es exactamente lo que la mantiene.
+- **La hierba de San Juan (hipérico)**, en la de ánimo, con el aviso de que
+  interacciona con antidepresivos, anticonceptivos y anticoagulantes. Eso es
+  información de seguridad real y casi ninguna guía de compras la da.
+
+Ese apartado es lo que hace que una guía de compras se lea como un consejo y
+no como un anuncio — y es, en la práctica, lo que hace que la gente se fíe lo
+bastante como para pinchar en lo que sí recomiendas.
+
+**Sobre los enlaces:** todos son de búsqueda (`amazon.es/s?k=...`), no de
+producto concreto. No me he inventado ni un código de artículo: un enlace
+directo que lleva a otra cosa o a nada hace más daño que bien en una web que
+se sostiene sobre la credibilidad. Si un día quieres fijar un modelo que hayas
+comprobado tú, se cambia el enlace y ya está. Todos llevan tu etiqueta
+`conciencia07-21`, `rel="sponsored"` y el aviso obligatorio.
+
+### La captación de correos, solo en la portada y funcionando de verdad
+
+**Dónde está.** El cajetín se ha quitado de las 168 páginas donde estaba y se
+ha puesto **solo en la portada**, debajo de los artículos. Esas 168 páginas,
+además, dejan de pedir un fichero JavaScript que ya no iban a usar. Y por si
+acaso, el propio script se borra solo si aparece fuera de la portada.
+
+**Qué se regala.** El *pack de inicio*: cinco guías en PDF (calmar la ansiedad,
+dormir mejor en 7 pasos, cuando no tienes ganas de nada, deja de darle vueltas
+y crear hábitos que duren).
+
+**Y esto es lo importante: el pack se entrega EN EL ACTO.** En cuanto la
+persona deja el correo, los cinco enlaces aparecen ahí mismo, en la misma
+página. No depende de que salga ningún correo. Por eso esto **sí funciona
+desde el primer día**, que era justo lo que te fallaba antes.
+
+Probado de punta a punta contra una función simulada: correo inválido, casilla
+sin marcar, alta correcta, los cinco PDF descargándose de verdad (200 y su
+tamaño), y el cajetín ausente en las guías.
+
+**Lo único que sigue sin funcionar, y te lo digo claro:** el correo periódico.
+Para que salga hace falta la variable `RESEND_API_KEY` en Netlify
+(Site configuration → Environment variables). Sin ella, `fetch-studies.js` te
+deja un aviso en el log y no manda nada. Los correos se guardan igual y los ves
+en `admin-suscriptores.html`. Por eso el texto del cajetín promete el pack —que
+sí se cumple— y solo dice «te aviso cuando publique algo», sin prometer
+periodicidad.
+
+**Un detalle honesto:** las cinco guías del pack están también en abierto en el
+sitio, y el propio cajetín lo dice. El pack es comodidad, no exclusividad.
+Prefiero eso a que alguien se sienta engañado.
+
+### Cuatro guías más (ya van 165)
+
+| Guía | De qué va |
+|---|---|
+| `cafeina-y-ansiedad.html` | La cafeína produce los mismos síntomas que la ansiedad. El total real del día, la hora de corte y el círculo café-mal sueño-más café. |
+| `duermo-demasiado.html` | Dormir de más es señal, no causa. Qué descartar con el médico y por qué se recorta el tiempo en la cama, no se alarga. |
+| `me-cuesta-pedir-ayuda.html` | Damos por hecho que nos dirán que no, y está medido que nos equivocamos. Pedir concreto, pequeño y sin disculparse. |
+| `si-alguien-te-dice-que-quiere-morir.html` | Preguntar directamente no da la idea. Qué decir, por qué no prometer secreto y a quién llamar hoy. |
+
+La última es delicada y está escrita con cuidado: el **024** y el **112**
+aparecen en el primer 8% de la página, antes que ninguna otra cosa.
+
+### Comprobado antes de entregar
+
+212 páginas sin un solo problema de validación ni de auditoría. Ortografía
+repasada: 54 palabras fuera del diccionario, todas legítimas (hipérico,
+inmunosupresores, neuroestimulación, parafarmacia y demás). Comprobado además,
+en todo el sitio, que **no queda ni un enlace de Amazon sin tu etiqueta ni
+ninguno roto** — de hecho el corrector pilló tres enlaces de búsqueda vacíos
+que se habían colado en los bloques de «no compres esto», y están arreglados.
+
+## Paquete nuevo: «Explora por temas» con cara, y siete guías más
+
+### La rejilla de temas
+
+Al entrar en «Explora por temas» lo primero que se ve ahora es una rejilla de
+tarjetas: un icono grande, el nombre del tema y cuántas guías tiene cada uno.
+De un vistazo se ve qué hay y cuánto hay. Antes había una fila de enlaces de
+texto que no decía nada.
+
+| | Tema | |
+|---|---|---|
+| 🧠 | Ansiedad | 🧩 Autoestima |
+| 😔 | Depresión y ánimo | 😴 Sueño |
+| ❤️ | Pareja | 🔥 Estrés y burnout |
+| 👨‍👩‍👧 | Familia | 😰 Miedos |
+| 🎯 | Concentración | 🧘 Calma |
+| 🕊️ | Duelo | 📚 Memoria y estudio |
+| 🏃 | Cuerpo | 🧪 Tests |
+
+Cada sección lleva además su icono junto al título. Y dos secciones se han
+renombrado para que digan las palabras que la gente busca de verdad:
+«Ánimo y emociones» pasa a **«Ánimo, depresión y emociones»**, y «Trabajo» pasa
+a **«Trabajo, estrés y burnout»**.
+
+Los recuentos de cada tarjeta se calculan solos al generar la página, así que no
+se van a quedar desfasados como estaba el «124 enlaces» de la entradilla —que
+ahora dice el número correcto, 191.
+
+### Siete guías nuevas (ya van 161)
+
+| Guía | De qué va |
+|---|---|
+| `no-puedo-parar-de-pensar-por-la-noche.html` | No piensas más de noche: es que por primera vez no hay nada que tape el ruido. El rato de preocupación a otra hora, y qué hacer a las tres de la mañana. |
+| `no-se-que-hacer-con-mi-vida.html` | La pregunta está mal hecha. La vocación no se encuentra pensando: se construye probando. Y cuándo esto es en realidad un bajón. |
+| `no-me-gusta-mi-cuerpo.html` | Comprobar y comparar son los dos hábitos que empeoran la imagen corporal. Cómo cortarlos y qué objetivo poner en su lugar. |
+| `buscar-sintomas-en-internet.html` | Cada búsqueda calma unos minutos y deja dos miedos nuevos. Por qué pedir tranquilidad a otros es la misma conducta. |
+| `mi-hijo-me-contesta-mal.html` | No entrar al trapo, volver después en frío, tener pocas normas, y cómo distinguir la edad de que algo va mal de verdad. |
+| `volver-al-trabajo-en-septiembre.html` | El bajón de la vuelta no es un síndrome: es un contraste. Qué hacer los días de antes y por qué no decidir nada la primera semana. |
+| `perdonarse-a-uno-mismo.html` | Perdonarse no es quitarle importancia. Culpa frente a vergüenza, qué reparar, y por qué repasar no repara. |
+
+Todas registradas en `guias.html`, `temas.html`, el índice A-Z y `sitemap.js`.
+
+### Cinco parejas más desambiguadas
+
+La auditoría encontró tres parejas nuevas que se solapaban por encima del 30%:
+`no-siento-nada` ↔ `me-siento-vacio`, `dejar-de-complacer-a-todos` ↔
+`poner-limites` y `porno-y-habito-compulsivo` ↔ `compras-compulsivas`. Cada una
+lleva ya su línea de «si lo tuyo es esto otro, la guía que buscas es…».
+
+### Una falta de ortografía, encontrada y corregida
+
+`comprobes` en lugar de `compruebes`, en la guía de buscar síntomas. Es
+exactamente el tipo de cosa que te preocupaba: el corrector la pilló antes de
+que llegara a la web.
+
+### Comprobado antes de entregar
+
+206 páginas sin un solo problema de validación ni de auditoría: ningún título
+largo, ninguna descripción larga, ningún `h1` duplicado, ningún enlace interno
+roto, ningún JSON-LD inválido. 0 guías fuera de los listados. Las siete guías
+nuevas probadas en Chromium a 390 px: un `h1`, seis herramientas, cuatro enlaces
+relacionados, tu autoría con el colegiado, el pie nuevo y la llamada a tu
+consulta, sin desbordes y sin errores de JavaScript. La rejilla de temas, con
+las catorce anclas comprobadas una a una.
+
+## Paquete nuevo: una página de Tests con apartados
+
+### El problema, tal y como lo dijiste
+
+Los tests iban sueltos: uno al lado de otro en el pie de las 192 páginas, tres
+seguidos en el menú de la portada, y otra vez en el índice y en «temas». Con
+tres ya iba justo. Con seis no cabe en ninguno de esos sitios.
+
+### La solución: un solo enlace fuera, apartados dentro
+
+Nueva página **`tests.html`**. Fuera hay un solo enlace —**Tests**— y por dentro
+los tests se organizan en apartados:
+
+| Apartado | Qué hay |
+|---|---|
+| Ánimo y ansiedad | Test de ansiedad (GAD-7) · Test de depresión (PHQ-9) |
+| Alcohol y consumo | Test de consumo de alcohol (AUDIT) |
+| Para llevar el seguimiento | Registro de siete días (A-B-C) |
+
+Cada test tiene su ficha: qué mide, cuántas preguntas, cuánto tarda, en qué
+escala puntúa, para quién es, y de dónde sale (autores, año y por qué se puede
+usar libremente). Arriba hay atajos a cada apartado.
+
+**Cuando quieras añadir un test nuevo**, se toca esta página y ya está. No hay
+que volver a pasar por los 192 pies, ni por el menú, ni por el índice.
+
+### Qué ha cambiado en el resto de la web
+
+- **El pie de las 192 páginas** pasa de cuatro enlaces a dos:
+  `🧪 Tests · 🗒️ Tu registro · Consulta de psicología: Conciencia Conductual`.
+- **El menú de la portada** pierde tres líneas y gana una: `🧪 Tests`.
+- **El bloque «Sigue por aquí»** de las 164 guías ya no nombra dos tests: manda
+  a la página de tests, que los lleva todos.
+- **La plantilla de artículo** (`articulo.js`) y `post.html`, lo mismo.
+- **Desde cada test** hay ahora un enlace de vuelta: «¿Buscas otro? Todos los
+  tests y herramientas →».
+- Registrada en `guias.html`, `temas.html`, el índice A-Z y `sitemap.js`.
+
+También he actualizado los guiones de mantenimiento (`sweep_guias.py`,
+`reequilibrar_enlaces.py`, `build_indice.py`) para que los próximos paquetes
+sigan poniendo el enlace nuevo y no vuelvan a escribir la lista antigua.
+
+### De paso, para posicionar
+
+La página lleva seis preguntas frecuentes con datos estructurados `FAQPage`
+(«¿dan un diagnóstico?», «¿se guardan mis respuestas?», «¿cada cuánto puedo
+repetirlos?»...), datos estructurados `CollectionPage` + `ItemList` con los
+cuatro tests, migas de pan, tu autoría con el número de colegiado, y el aviso
+del 024 y el 112 arriba del todo por si alguien llega ahí estando mal.
+
+### Comprobado antes de entregar
+
+199 páginas sin un solo problema de validación ni de auditoría. La página nueva
+probada en Chromium a 390 px: un `h1`, tres apartados, cuatro fichas, los cuatro
+botones apuntando a donde deben, los atajos de apartado funcionando, los tres
+bloques de datos estructurados válidos y sin desbordes laterales. Verificado
+también que no queda ni un resto de la lista antigua de tests en ninguna página
+ni en las funciones.
+
+## Paquete nuevo: el archivo, que Google no veía; seis guías más; y guías que competían entre sí
+
+### El hallazgo de esta revisión: cientos de artículos sin un solo enlace rastreable
+
+`archivo.html` pintaba la lista de artículos con JavaScript. Eso significa que en
+el HTML que se sirve —el que ve un rastreador antes de ejecutar nada— **no había
+ni un solo enlace a ningún artículo**. Los cientos de artículos diarios dependían
+únicamente del sitemap para ser descubiertos, y no recibían ningún enlace interno.
+Aparecer en un sitemap y recibir enlaces internos no es lo mismo: lo primero dice
+«existo», lo segundo dice «esto importa».
+
+Ahora hay una función nueva, `netlify/functions/archivo.js`, que genera esa misma
+página **en el servidor**: los enlaces van dentro del HTML, de 30 en 30, con
+«← Más recientes» y «Más antiguos →» que también son enlaces reales, numeración
+de páginas, `rel="prev"` / `rel="next"`, canonical propio en cada página y datos
+estructurados `CollectionPage` + `ItemList`.
+
+Se sirve en la misma dirección de siempre (`/archivo.html`) mediante una
+redirección con `force` en `netlify.toml`. El fichero estático se queda en el
+repositorio como respaldo: si algún día se quita esa regla, vuelve a servirse él
+y la página sigue funcionando.
+
+**No sube el gasto de Netlify.** La respuesta se guarda en la caché del CDN
+(`durable`, 12 horas, con `stale-while-revalidate` de una semana), así que la
+función apenas llega a ejecutarse aunque la página reciba visitas.
+
+### El índice y el archivo, ahora en el pie de las 198 páginas
+
+El índice A-Z (154 guías) lo enlazaban dos páginas. El archivo, dos. Estaban
+haciendo de embudo hacia todo el sitio y casi nadie —ni lector ni buscador—
+pasaba por ellos.
+
+Ahora el pie de **todas** las páginas lleva: Portada · Guías · Índice · Estudios ·
+Consultorio. Y eso incluye la plantilla de artículo (`articulo.js`) y `post.html`,
+que además ganan una segunda línea con los dos tests y «Pedir cita». Es decir: los
+cientos de artículos diarios pasan a enlazar a las guías, al índice y a tu
+consulta, cosa que antes no hacían.
+
+Quedan fuera a propósito los paneles de administración, las páginas legales,
+`cortar-pdf.html` (es de maspdf.com) y las dos páginas internas de imágenes.
+
+### Doce guías que competían entre sí en Google
+
+La segunda auditoría encontró seis parejas de guías con más de un 30% de
+vocabulario en común. Cuando dos páginas tuyas hablan de lo mismo, Google no sabe
+cuál enseñar y muchas veces no enseña ninguna.
+
+No he borrado ninguna, porque cada una responde a una búsqueda distinta. Lo que
+he hecho es decirlo en la propia página: una línea debajo de la entradilla que
+aclara para quién es esta y manda a la otra a quien busque lo otro.
+
+| Pareja | Qué las separa ahora |
+|---|---|
+| dependencia emocional ↔ los celos | necesitar a la otra persona / sospechar de ella |
+| miedo a salir de casa ↔ sitios cerrados | la calle en general / un sitio concreto |
+| insomnio ↔ no puedo dormir esta noche | semanas / esta noche |
+| la culpa ↔ menos perfeccionismo | haber hecho algo / no llegar al nivel |
+| revisar el móvil ↔ miedo al abandono | desconfianza / pánico a que te dejen |
+| sentirse estancado ↔ me siento vacío | llevar años igual / que nada te importe |
+
+### Seis guías nuevas (ya van 154)
+
+| Guía | De qué va |
+|---|---|
+| `me-siento-vacio.html` | El vacío no es tristeza: en la tristeza duele algo, en el vacío no duele nada. Vivir en automático, actuar antes de sentir, y cómo distinguirlo de una depresión. |
+| `miedo-a-salir-de-casa.html` | Agorafobia: cada día que no sales, mañana cuesta más. La escalera de salidas, quitar las muletas y sostener la sensación. |
+| `celos-y-revisar-el-movil.html` | Mirar el móvil calma diez minutos y deja la duda intacta. Por qué comprobar alimenta lo que quiere apagar. |
+| `primera-sesion-psicologo.html` | Qué se pregunta, qué no hay que preparar, y qué hacer si no encajas con quien te atiende. |
+| `no-me-acuesto-aunque-tengo-sueno.html` | Cuando la noche es lo único tuyo del día, irte a la cama es renunciar a ella. Dónde está el rato propio de verdad. |
+| `volver-a-empezar.html` | Qué se reconstruye primero cuando se te ha caído todo, y por qué el orden importa. |
+
+Registradas en `guias.html`, en `temas.html`, en el índice A-Z y en
+`PAGINAS_FIJAS` de `sitemap.js`. Con el reparto rotatorio de enlaces internos,
+las seis reciben enlaces desde otras guías desde el primer día.
+
+### La plantilla de artículo, firmada y con guía para cada tema
+
+Dos huecos reales en `articulo.js`, que es la plantilla de la mayor parte del
+sitio:
+
+1. Los datos estructurados de los artículos **no tenían autor**. Las guías sí lo
+   llevaban desde el paquete anterior, pero los artículos —que son cientos— iban
+   sin firmar. En contenido de salud, quién firma pesa. Ahora llevan tu nombre,
+   «Psicólogo», el número de colegiado, el enlace a «sobre mí» y a
+   concienciaconductual.com, más `dateModified`.
+2. El bloque de «guía relacionada» solo cubría **6 de los 16 temas** posibles, y
+   las tres que había eran las guías de compras con enlaces de afiliado, no las
+   psicoeducativas. Ahora hay una guía para cada tema y una por defecto, así que
+   ningún artículo se queda sin enlazar a una guía.
+
+### Comprobado antes de entregar
+
+198 páginas: ningún título largo, ninguna descripción larga, ningún `h1`
+duplicado, ningún enlace interno roto, ningún JSON-LD inválido, ningún aviso en
+la auditoría de accesibilidad y estructura. 0 guías fuera de `guias.html`,
+`temas.html` o el índice. La ortografía repasada con hunspell: 48 palabras fuera
+del diccionario, todas legítimas (superlativos, tecnicismos y dominios).
+
+La función del archivo, ejecutada en local contra una base de artículos simulada
+de 67 entradas: las tres páginas devuelven 200, los enlaces salen en el HTML, la
+paginación se recorta sola si pides una página que no existe, el texto de los
+artículos va escapado y los dos bloques de datos estructurados son JSON válido.
+La plantilla de artículo, renderizada en local: autor correcto, organigrama,
+cadena de cinco pasos, ficha del estudio, guía relacionada por tema y el pie
+nuevo. Las seis guías nuevas y las doce desambiguadas, probadas en Chromium a
+390 px: un solo `h1`, sin desbordes laterales, sin errores de JavaScript, y el
+buscador de `guias.html` las encuentra.
+
+### Lo que sigue faltando y no se arregla con código
+
+El enlace desde **concienciaconductual.com hacia psicolinks.com**. Es gratis, se
+hace en dos minutos y sigue siendo lo que más te falta.
+
+## Paquete nuevo: 91 guías estaban aisladas por dentro, y seis guías más
+
+### El hallazgo de esta revisión: la mitad de la web no recibía enlaces
+
+Hice una auditoría distinta a las anteriores —contar los enlaces internos que
+recibe cada página— y salió esto: **91 de las 142 guías no recibían ni un solo
+enlace desde otra guía**. A la vez, un puñado acumulaba veinte o treinta cada
+una.
+
+La causa era el bloque «Sigue por aquí»: cogía siempre **las tres primeras guías
+de su categoría**. Así que dentro de cada tema, las tres primeras por orden
+alfabético se llevaban todos los enlaces y el resto no aparecía nunca.
+
+Importa por dos motivos. Para Google, una página a la que nadie enlaza dentro de
+la propia web se lee como poco importante y se rastrea menos. Y para el lector,
+que veía las mismas tres sugerencias en todas las guías del mismo tema.
+
+**Arreglado:** dentro de cada categoría, la guía número i enlaza ahora a las i+1,
+i+2 e i+3, dando la vuelta al final de la lista. Cada guía enlaza a tres y recibe
+exactamente tres.
+
+| | Antes | Ahora |
+|---|---|---|
+| Guías sin ningún enlace desde otra guía | **91** | **0** |
+| Enlaces internos entrantes (mediana) | 3 | **6** |
+
+Y no hay que mantenerlo: el script se vuelve a pasar cada vez que se añaden
+guías, y reparte solo.
+
+### Guías que se pisaban entre sí
+
+La misma auditoría midió el solapamiento de vocabulario entre guías, para
+detectar pares que compitan por las mismas búsquedas. Salieron tres por encima
+del 30%, y ninguno es grave, pero se han enlazado entre sí con una nota que
+explica cuál es cuál: dependencia emocional ↔ celos, culpa ↔ perfeccionismo, y
+porno ↔ compras compulsivas. Después se añadió una cuarta pareja con la guía
+nueva: insomnio ↔ «no puedo dormir esta noche», con una nota en cada una
+diciendo cuál toca según el caso.
+
+### Seis guías nuevas (148 en total)
+
+| Guía | Por qué esta |
+|---|---|
+| `no-puedo-dormir-esta-noche.html` | Se busca de madrugada y con urgencia. Complementa a «Insomnio», que es para lo crónico. |
+| `sintomas-de-estres.html` | «Síntomas de estrés» es de las búsquedas más frecuentes del tema. |
+| `ataques-de-ira.html` | Con la línea bien marcada: si hay golpes o miedo en casa, eso ya no es manejo del enfado. |
+| `hablar-con-tu-medico-salud-mental.html` | Muy práctica: el médico de cabecera es la puerta a la salud mental pública. |
+| `volver-a-confiar-en-alguien.html` | Con la distinción clave: transparencia no es vigilancia. |
+| `redes-sociales-y-animo.html` | Por qué no es falta de voluntad y qué hacer sin dejar de seguir a nadie. |
+
+### Comprobado
+
+192 páginas, ningún problema y ningún aviso. Reequilibrio verificado: cero guías
+aisladas, y comprobado en el navegador que las guías antiguas siguen enteras con
+sus nuevos vecinos. Los 161 enlaces de `guias.html`, los 176 de `temas.html` y
+los 162 del índice, uno a uno: ninguno roto. Corrector sobre las 192 páginas:
+ningún error real. Sin errores de JavaScript.
+
+## Paquete nuevo: índice A-Z, seis guías más y una corrección de mis números
+
+### Corrección: la web tiene 142 guías, no 98
+
+Al generar el índice alfabético conté los ficheros de verdad y salieron **142
+guías**, no las 98 que yo venía diciendo. Mi cuenta era mala: llevaba la suma de
+las guías que iba escribiendo yo, sobre una base de partida equivocada, sin
+volver a contar nunca los ficheros reales.
+
+Corregido en `terapia-online.html`, que decía «92 guías» en dos sitios, y el
+índice se genera solo contando el repositorio, así que a partir de ahora la
+cifra no puede volver a desviarse.
+
+### Página nueva: `indice.html`, la A a la Z
+
+Faltaba lo más simple y lo que más se usa cuando ya sabes qué buscas: **todo en
+una sola página, por orden alfabético**. `guias.html` tiene buscador y
+paginación, `temas.html` agrupa por tema; esto es la lista completa.
+
+152 entradas —las 142 guías más los tres tests, el registro, los guiones, las
+preguntas, «dónde pedir ayuda», los libros y la página de terapia online—, con
+navegación por letras arriba. Ordena ignorando tildes y saltándose los arranques
+tipo «Cuando…» o «Cómo…», que si no se amontonarían todas en la C.
+
+**Se genera sola leyendo el repositorio.** No hay que mantenerla a mano: cada vez
+que se añade una guía, se vuelve a ejecutar y ya está. Enlazada desde la portada,
+`guias.html` y `temas.html`.
+
+### Seis guías nuevas (148 páginas de contenido en total)
+
+Otra vez elegidas por búsqueda, no por hueco temático:
+
+| Guía | Por qué esta |
+|---|---|
+| `dejar-de-pensar-en-alguien.html` | «Cómo dejar de pensar en alguien» es de las búsquedas más frecuentes que existen. |
+| `por-que-lloro-por-todo.html` | Se teclea tal cual, y la respuesta útil (cansancio, tiroides, hormonas) casi nadie la da. |
+| `miedo-al-fracaso.html` | Con los disfraces de la evitación, que es lo que nadie ve. |
+| `estres-postraumatico.html` | Término muy buscado; aquí con el mensaje central: tiene tratamiento y funciona. |
+| `miedo-al-abandono.html` | La mecánica de que lo que haces para evitarlo es lo que lo provoca. |
+| `aceptar-las-criticas.html` | La distancia entre lo que te dicen y lo que oyes. |
+
+### Comprobado
+
+186 páginas, ningún problema y ningún aviso. Los 156 enlaces del índice
+comprobados uno a uno por código de respuesta: ninguno roto, y las anclas de
+letra funcionan. Corrector ortográfico sobre las 186 páginas: ningún error real
+(las dos palabras nuevas que no reconoce son «perimenopausia» y «Wegner», el
+autor de los experimentos del oso blanco). Probado en escritorio y a 390 px, sin
+errores de JavaScript.
+
+## Paquete nuevo: seis guías más y el trabajo de autoría para posicionar
+
+### Lo más importante de este paquete: quién firma
+
+Google trata la psicología como contenido «YMYL» —de los que pueden afectar a la
+salud o al dinero de alguien— y para esos temas pesa mucho **quién firma y si se
+puede comprobar**. En Psicolinks el autor era solo una cadena de texto suelta.
+Ahora, en las **140 páginas**:
+
+- El autor de los datos estructurados es una ficha completa de persona: nombre,
+  profesión, **número de colegiado**, enlace a «sobre mí», temas sobre los que
+  escribes y enlace a Conciencia Conductual como `sameAs`.
+- Cada artículo lleva **fecha de publicación y de modificación**. Sin ellas,
+  Google no distingue si esto es de este mes o de hace cinco años.
+- La firma de cada guía —«Por Miguel Martínez, psicólogo · Colegiado nº
+  CV17649»— **ahora enlaza a `sobre-mi.html`**, que es donde se comprueba quién
+  eres. Además son 140 enlaces internos nuevos hacia esa página.
+- La portada lleva una ficha `Person` + `WebSite` enlazada a tu consulta.
+
+Esto no da visitas mañana. Es de las cosas que pesan a medio plazo en temas de
+salud, y estaba sin hacer.
+
+### Seis títulos que no coincidían con lo que se busca
+
+Encontré guías cuyo título está bien escrito pero no contiene las palabras que la
+gente teclea. Con el tráfico actual no hay nada que perder al cambiarlos:
+
+| Antes | Ahora |
+|---|---|
+| Cuando no puedes parar de trabajar | **Adicción al trabajo**: cuando no puedes parar |
+| Posparto: cuando no te sientes bien | **Depresión posparto**: qué hacer |
+| Cuidar a alguien sin agotarte | **Sobrecarga del cuidador**: cuidar sin agotarte |
+| El bajón de los domingos por la tarde | **Ansiedad los domingos** por la tarde |
+| Después de perder un embarazo | **Aborto espontáneo**: el duelo después |
+| Llevarte con la familia de tu pareja | **Problemas con la familia de tu pareja** |
+
+Aviso honesto: esto sale de mi criterio sobre cómo busca la gente, no de una
+herramienta de palabras clave. No tengo acceso a datos reales de búsqueda.
+
+### Seis guías nuevas (ya van 98), elegidas por búsqueda
+
+No por hueco temático, sino porque son cosas que se teclean tal cual en Google:
+
+| Guía | Por qué esta |
+|---|---|
+| `como-saber-si-tengo-ansiedad.html` | «cómo saber si tengo ansiedad» es de las búsquedas más frecuentes del tema. |
+| `ataque-de-ansiedad-por-la-noche.html` | Muy buscado y casi no cubierto en español con criterio. |
+| `no-siento-nada.html` | El embotamiento emocional: mucha gente lo busca y casi nadie lo nombra. |
+| `mi-pareja-no-me-habla.html` | El círculo de perseguir y alejarse, que es el patrón de pareja más común. |
+| `autoestima-en-los-ninos.html` | Con el matiz que casi nadie da: los elogios no la construyen. |
+| `ayudar-a-alguien-con-ansiedad.html` | Con la acomodación familiar explicada, que es lo que casi nadie sabe. |
+
+### Comprobado
+
+179 páginas, ningún problema y ningún aviso. Todos los datos estructurados
+válidos después de tocarlos en 140 ficheros. Los 148 enlaces de `guias.html`, los
+163 de `temas.html` y los de portada y «sobre mí», uno a uno: ninguno roto.
+Corrector sobre las 179 páginas: ningún error real. Sin errores de JavaScript.
+
+## Paquete nuevo: girar hacia la consulta, y hacia el online
+
+### Página nueva: `terapia-online.html`
+
+Es la pieza que faltaba entre Psicolinks y la consulta. Hasta ahora, quien
+quería dar el paso se encontraba con un botón que le sacaba de golpe a otra web.
+Ahora hay una parada en medio que resuelve las dudas que frenan a alguien antes
+de escribir.
+
+Contiene: quién eres, con el número de colegiado a la vista; con qué motivos se
+suele venir; **cómo funciona en cinco pasos** (escribir, primera sesión,
+objetivos comprobables, trabajo entre sesiones, revisar con datos); y **ocho
+preguntas** de las que de verdad frenan —si el online funciona igual, qué hace
+falta para conectarse, si es confidencial, cuántas sesiones, desde qué enfoque,
+qué pasa si no conectáis, desde dónde se puede uno conectar, y si se puede
+presencial—. Con datos estructurados `FAQPage`.
+
+Y dos cosas que la hacen honesta en vez de un anuncio: avisa de que **no es el
+recurso para una urgencia** (112 y 024, y la vía pública en «dónde pedir ayuda»),
+y cierra diciendo que **si todavía no es el momento, no pasa nada**, con las
+guías y los tests gratis.
+
+El clic al botón se cuenta como `consulta-terapia-online` con la función
+`track-view` que ya existía, así que podrás ver en el panel cuántos llegan.
+
+### La consulta, por delante de los afiliados
+
+- En los artículos, el bloque de libros de Amazon estaba **antes** que el de la
+  consulta. Ahora va después, y con un tono más discreto («y si quieres leer más
+  por tu cuenta») en lugar de la llamada anterior. No se ha quitado nada: los
+  enlaces de afiliado siguen intactos, solo cambia el orden y el peso.
+- El botón de consulta de las **156 páginas** ya no sale disparado a
+  concienciaconductual.com: pasa por la página puente, que explica y luego manda.
+  Y su texto cambia de «Ver mi consulta» a «Cómo trabajo y cómo pedir cita», que
+  es lo que la gente quiere saber antes de escribir a un psicólogo.
+- El menú de la portada hace lo mismo, y ahora pone «🩺 Mi consulta».
+- En todos los bloques: «online para **toda España** y presencial en Valencia»,
+  en lugar del «online y presencial» de antes.
+- Tarjeta propia en `guias.html`, justo después del registro, y enlace en
+  `temas.html`.
+
+### Una nota sobre la evidencia
+
+En la página se dice que, para los motivos de consulta más habituales, las
+revisiones que comparan psicoterapia por videollamada con presencial no
+encuentran diferencias relevantes. Se ha dejado en ese nivel de generalidad **a
+propósito**: intenté verificar un metaanálisis concreto para citarlo con su
+número y no pude —PubMed y las editoriales bloquearon las consultas—, y no voy a
+poner una cifra que no he comprobado en tu web. Si quieres añadir la cita
+concreta, hazlo tú, que además la conoces.
+
+### Comprobado
+
+173 páginas, ningún problema y ningún aviso. Los 142 enlaces de `guias.html`, los
+11 de la página nueva y los de portada, uno a uno: ninguno roto. Artículo
+renderizado en local: la consulta va antes que los libros y el botón apunta a la
+página puente. Corrector ortográfico sobre las 173 páginas: ningún error real.
+Probado en escritorio y a 390 px, sin errores de JavaScript.
+
+## Paquete nuevo: el registro, ya visible; seis guías más; y un fallo en mi propio corrector
+
+### El registro, en primera fila
+
+Estaba en la web pero solo se llegaba por el menú. Ahora:
+
+- **Bloque destacado en la portada**, justo debajo del de los tests, con borde
+  granate para diferenciarlo: «Descubre qué está manteniendo lo que te pasa».
+  Explica en dos párrafos qué es, que se guarda solo en el navegador y que hay
+  un botón para copiarlo y llevárselo al psicólogo.
+- **Primera tarjeta de `guias.html`**, por delante de las 144 restantes.
+- El bloque de los tests de la portada menciona ahora también el de alcohol.
+
+### Seis guías nuevas (ya van 92)
+
+| Guía | De qué va |
+|---|---|
+| `decir-lo-que-piensas.html` | Callarse aplaza el conflicto. Hecho, efecto y petición, en tres frases. |
+| `mudarse-de-casa.html` | Un rincón terminado el primer día y las rutinas antes que los muebles. |
+| `mi-hijo-no-estudia.html` | Descartar lo que no se ve y pelear por el hábito, no por la nota. |
+| `ansiedad-en-sitios-cerrados.html` | El súper, el metro, el cine: las muletas son lo que mantiene el miedo. |
+| `acompanar-en-una-enfermedad-grave.html` | Qué decir y qué no; por qué «dime si necesitas algo» no se usa nunca. |
+| `rabietas-y-enfados-de-los-ninos.html` | No es manipulación: primero calmar, después hablar, y el límite intacto. |
+
+Tres de ellas enlazan al registro A-B-C como paso siguiente, que es donde
+encaja de forma natural.
+
+### Un fallo en el corrector ortográfico, y por qué importa
+
+Al revisar esta tanda aparecieron dos «errores» rarísimos en `guias.html`:
+*parej* y *réis*. Ninguna de las dos está en el fichero. Investigándolo resultó
+que **hunspell trunca las líneas muy largas**, y como el texto de una página se
+le pasaba en una sola línea gigante, partía palabras por la mitad e inventaba
+errores.
+
+Lo malo no son los falsos positivos: es que **por el mismo motivo podía dejar
+palabras reales sin comprobar**. Es decir, las revisiones ortográficas de los
+paquetes anteriores no eran del todo de fiar.
+
+Arreglado: el corrector ahora trocea el texto a 200 caracteres antes de
+pasarlo, y además distingue solo las formas verbales con pronombre (*trátalo*,
+*léete*, *nómbrala*), que son correctas y llenaban la lista de ruido.
+
+**Repasada la web entera con el corrector arreglado**: de 163 palabras fuera del
+diccionario, 120 son formas verbales o palabras con prefijo, y las 43 restantes
+—revisadas una a una— son todas correctas: superlativos (*clarísimo*,
+*normalísimo*, *frecuentísimo*), tecnicismos, anglicismos puestos a propósito y
+nombres de dominio. **Ningún error real en las 172 páginas.**
+
+### Comprobado
+
+172 páginas, ningún problema y ningún aviso en las dos revisiones automáticas.
+Los 141 enlaces de `guias.html` comprobados uno a uno por código de respuesta:
+ninguno roto. Bloque de la portada revisado en escritorio y a 390 px, sin
+desbordar. Sin errores de JavaScript.
+
+## Paquete nuevo: el registro A-B-C y siete guías más
+
+### Lo nuevo de verdad: `registro-abc.html`
+
+Es la herramienta con la que empieza casi cualquier terapia conductual, y no
+existe gratis y bien hecha en español en ningún sitio. El visitante apunta,
+durante una semana:
+
+- **A · Antecedente** — qué había justo antes: hora, sitio, con quién, cómo estaba.
+- **B · Conducta** — qué hizo exactamente, contado como lo grabaría una cámara.
+- **C · Consecuencia** — qué consiguió o de qué se libró justo después, y qué costó luego.
+- Y el **malestar de 0 a 10** en ese momento.
+
+Con eso la página le devuelve: número de anotaciones, días distintos, malestar
+medio, un gráfico de barras con la evolución de las últimas catorce, y la lista
+completa. Más dos botones: **copiar todo** —para llevárselo al psicólogo, en
+texto plano listo para pegar o imprimir— y **borrar**, entero o anotación a
+anotación.
+
+Por qué esto y no un diario al uso: un diario cuenta cómo te sentiste; un
+registro A-B-C cuenta qué lo enciende y qué lo mantiene. La casilla C es la que
+explica por qué una conducta se repite aunque esté costando la vida, y es
+exactamente el ángulo conductual que distingue a Psicolinks.
+
+Y para la web tiene un efecto que ninguna guía consigue: **obliga a volver cada
+día**. Es lo que le faltaba.
+
+Todo se guarda en `localStorage` y **nada sale del navegador**. Es la
+información más personal que puede haber en la web —lo que alguien escribe sobre
+su vida— así que no hay ninguna copia en ningún servidor. `privacidad.html` lo
+explica en un apartado propio.
+
+Probado a fondo en el navegador: guardar, contar, calcular la media, dibujar las
+barras, copiar al portapapeles con alternativa si el navegador lo bloquea,
+borrar una anotación, borrar todo, persistir al recargar, no desbordar en móvil
+y **escapar el HTML** de lo que se escribe (probado con una etiqueta maliciosa:
+se muestra como texto, no se ejecuta).
+
+### Siete guías nuevas (ya van 86)
+
+| Guía | De qué va |
+|---|---|
+| `miedo-al-dentista.html` | El miedo no es al dolor, es a no poder parar. Pactar una señal. |
+| `perdida-gestacional.html` | Un duelo que casi nadie reconoce, y la culpa que casi siempre sobra. |
+| `ansiedad-por-la-salud-de-los-hijos.html` | Cuándo la preocupación se vuelve vigilancia, y qué aprende el niño mirándote. |
+| `cuando-desaparecen-sin-explicacion.html` | Cerrar sin respuesta, y no rellenar el hueco con conclusiones sobre ti. |
+| `vivir-solo-por-primera-vez.html` | Anclas en el día, y distinguir estar solo de sentirse solo. |
+| `miedo-a-envejecer.html` | Separar el miedo abstracto de lo concreto; qué parte sí depende de ti. |
+| `cuando-se-acaba-una-amistad.html` | Un duelo sin permiso social: roto o apagado, y por qué no siempre hay culpable. |
+
+### Registrado en toda la web
+
+`guias.html` (139 tarjetas), `temas.html`, el menú de la portada, el sitemap y el
+pie de las **146 páginas**, que ahora lleva enlace al registro además de a los
+tres tests.
+
+### Comprobado
+
+166 páginas, ningún problema y ningún aviso en las dos revisiones. Los 143
+enlaces de `guias.html`, los 151 de `temas.html` y los de portada y privacidad,
+comprobados uno a uno por código de respuesta: ninguno roto. Corrector
+ortográfico pasado sobre las nueve páginas nuevas: 19 palabras que el diccionario
+no conoce y **las 19 correctas** (tecnicismos como endodoncia, sedación,
+perinatal, gestacional, e imperativos con pronombre). Ningún error real esta vez.
+Sin errores de JavaScript.
+
+## Paquete nuevo: siete guías más (ya van 79)
+
+| Guía | De qué va |
+|---|---|
+| `no-soporto-mi-trabajo.html` | Concretar qué parte es la que no aguantas y ponerle fecha al plan de salida. |
+| `hermanos-y-cuidar-a-los-padres.html` | El reparto siempre es desigual: pedir encargos con nombre y fecha, no implicación. |
+| `diagnostico-de-un-hijo.html` | Los primeros días tras un diagnóstico, dónde informarse y cómo pedir apoyos al colegio. |
+| `hablar-de-la-muerte-con-ninos.html` | Por qué los eufemismos hacen daño y qué señales sí conviene consultar. |
+| `dormir-en-pareja.html` | Ronquidos, horarios distintos y guerras de manta. Cuándo es cosa del médico. |
+| `sentirse-estancado.html` | En qué se diferencia de la depresión y por qué la claridad llega probando. |
+| `volver-a-estudiar-de-adulto.html` | El problema es el tiempo, no la capacidad. Franjas fijas y práctica de recuerdo. |
+
+Todas con el bloque «Sigue por aquí», el bloque de consulta, migas de pan y el
+pie completo. Registradas en `guias.html` (131 tarjetas), `temas.html` y el
+sitemap.
+
+Dos de ellas apuntan al test cuando toca: «Sentirse estancado» enlaza al test de
+depresión para distinguir el estancamiento del apagón real, y «No soporto mi
+trabajo» remite a la guía del burnout con el criterio de las vacaciones.
+
+### Ortografía
+
+Corrector pasado también sobre las catorce páginas nuevas de hoy. De 38 palabras
+que el diccionario no reconoce, 37 son correctas (imperativos con pronombre,
+tecnicismos, siglas). **Un error real corregido:** «inganable», que no existe,
+en `familia-politica.html`.
+
+### Comprobado
+
+158 páginas, ningún problema y ningún aviso. Los 127 enlaces de `guias.html` y
+los 142 de `temas.html` comprobados uno a uno por código de respuesta: ninguno
+roto. Las siete guías nuevas revisadas en el navegador, sin errores de
+JavaScript y sin rastro del cajetín de correo.
+
+## Paquete nuevo: tercer test (AUDIT) y seis guías más
+
+### Test nuevo: `test-de-alcohol.html` — el AUDIT de la OMS
+
+Elegido justamente por lo que pediste: es el más limpio que hay en cuanto a
+derechos. La web oficial del cuestionario dice literalmente que **no hace falta
+permiso para usarlo con fines no comerciales** y que «como instrumento aprobado
+por la OMS, el AUDIT es de dominio público». Nada que ver con el STAI, el BAI o
+la escala de Epworth, que sí tienen licencia y no se pueden poner.
+
+Diez preguntas, puntuación de 0 a 40, cuatro niveles con los cortes de la OMS:
+0-7 bajo riesgo · 8-15 consumo de riesgo · 16-19 consumo perjudicial · 20-40
+posible dependencia. Mismo diseño y mismas garantías que los otros dos: resultado
+al momento, historial guardado **solo en tu navegador**, comparación con la
+medición anterior, plan de tres semanas y botón de borrar.
+
+Tres cosas que se han cuidado especialmente:
+
+- **Explicación de qué es una consumición.** Sin eso la pregunta 2 no se puede
+  contestar bien. Se explica la unidad de bebida estándar española: una caña o un
+  vino cuentan como una; una copa o un combinado, como dos.
+- **Aviso de retirada.** Si alguien marca que bebe a diario, aparece
+  inmediatamente —antes incluso de ver el resultado— un aviso de que **no debe
+  dejarlo de golpe por su cuenta**, porque la retirada brusca de alcohol puede ser
+  peligrosa, y de que eso se hace con supervisión médica. Es la advertencia más
+  importante de toda la página.
+- **El punto de corte matizado.** Se explica que el umbral clásico son 8 puntos
+  pero que en mujeres y en mayores de 65 suele bajarse a 6.
+
+Probado en el navegador con tres casos: todo al mínimo da 0 (bajo riesgo), todo
+al máximo da 40 (posible dependencia) y una combinación de 8 puntos cae
+exactamente en «consumo de riesgo».
+
+### Seis guías nuevas (ya van 72)
+
+| Guía | De qué va |
+|---|---|
+| `beber-menos-sin-dejarlo.html` | Días secos fijos, tope decidido antes de salir, registro. Enlaza con el test nuevo. |
+| `mi-pareja-bebe-demasiado.html` | Hablar de hechos y no de etiquetas, y dejar de tapar las consecuencias. |
+| `la-envidia.html` | Por qué es información y no un defecto; envidia frente a resentimiento. |
+| `ansiedad-al-telefono.html` | Por qué aplazar la llamada la hace más difícil; entrenarlo por escalones. |
+| `familia-politica.html` | El conflicto real está entre vosotros dos. Cada uno habla con los suyos. |
+| `dinero-en-pareja.html` | El dinero casi nunca es el tema: seguridad, libertad, justicia o control. |
+
+Las tres relacionadas con el alcohol se enlazan entre sí y con el test, de modo
+que quien llega por cualquiera de ellas encuentra el resto.
+
+### Registrado en toda la web
+
+`guias.html` (124 tarjetas), `temas.html`, el menú de la portada, el sitemap y el
+pie de las **144 páginas**, que ahora lleva también el enlace al test de alcohol.
+`privacidad.html` menciona el tercer test en el punto de almacenamiento local.
+
+### Comprobado
+
+151 páginas, ningún problema y ningún aviso en las dos revisiones. Los 120
+enlaces de `guias.html` y los 135 de `temas.html` comprobados uno a uno por
+código de respuesta: ninguno roto. Sin errores de JavaScript.
+
+## Cajetín de newsletter, quitado
+
+A petición de Miguel, el cuadro de «Apuntarme a la newsletter» ya no aparece en
+ninguna página. Se ha hecho de la forma menos destructiva posible: un bloque de
+apagado al principio de `newsletter-psicolinks.js` que borra los cajetines al
+cargar la página y no ejecuta nada más.
+
+**No se ha borrado nada más.** El resto del fichero sigue intacto, igual que la
+función `suscribir`, la función `unsubscribe`, la página `admin-suscriptores.html`
+y los suscriptores que ya estuvieran guardados en Netlify Blobs.
+
+**Para volver a activarlo** basta con borrar ese bloque del principio del fichero
+(está marcado con un comentario que dice dónde empieza y dónde acaba). Nada más.
+
+Comprobado en el navegador: ni el cajetín ni la palabra «newsletter» ni el botón
+«Apuntarme» aparecen ya en las guías, en las páginas nuevas ni en la portada, y
+no queda hueco en blanco donde estaban. Sin errores de JavaScript.
+
+## Paquete nuevo: tu consulta en todas las páginas, revisión de ortografía y organigrama
+
+### Tu consulta al final de TODAS las páginas
+
+Antes solo salía en los artículos. Ahora el bloque «¿Y si esto te está pasando a
+ti?» —con tu nombre, tu número de colegiado y el botón a Conciencia Conductual—
+está al final de **128 páginas**: todas las guías, los dos tests, temas, las
+preguntas, los guiones. Va justo antes del formulario de correo.
+
+Se ha dejado fuera de lo que no toca: avisos legales, privacidad, cookies, las
+páginas internas de administración, `cortar-pdf.html` (que es de maspdf.com) y
+«dónde pedir ayuda», donde ya tienes tu bloque propio y donde meter publicidad
+de la propia consulta encima de los teléfonos de crisis quedaría feo.
+
+### «Otras webs» pasa a llamarse «Consulta de psicología»
+
+En el pie de la portada y de los artículos. Antes decía «Otras webs», que no
+dice nada; ahora el lector sabe adónde le lleva ese enlace.
+
+### Revisión ortográfica de todo el sitio
+
+Se ha pasado un corrector de verdad (hunspell con diccionario español) sobre el
+texto visible de las 144 páginas. De 378 palabras que el diccionario no reconoce,
+casi todas son correctas: imperativos con pronombre (`trátalo`, `escríbelo`,
+`sepáralas`), apellidos (Öst, Marlatt, Azrin, Kahneman), términos técnicos y
+nombres de dominio.
+
+**Errores reales encontrados y corregidos: seis.**
+
+| Estaba | Ahora | Dónde |
+|---|---|---|
+| cognitivoconductual | cognitivo-conductual | `dormir-mejor-en-7-pasos.html` |
+| la tardenoche | la tarde-noche | `dormir-mejor-en-7-pasos.html` |
+| repónla | reponla | `juego-y-apuestas.html` |
+| preregistrada | prerregistrada | `leer-un-metaanalisis.html` |
+| menos querible | menos digno de cariño | `cuando-te-sientes-solo.html` |
+| las tranquilizaciones | las búsquedas de tranquilidad | `miedo-a-la-muerte.html` |
+
+Un aviso honesto: un corrector detecta palabras mal escritas, **no** frases mal
+construidas ni concordancias. Para eso hace falta leer, y eso no lo cubre esta
+revisión.
+
+Sobre «no demuestra que la cause»: esa construcción **es correcta** —el
+subjuntivo es obligatorio detrás de un verbo de prueba en negativo—, pero si
+hace tropezar al lector, molesta igual. Se ha reescrito como «no significa que
+sea su causa», que es igual de correcto y se entiende a la primera.
+
+### El correo de la newsletter decía algo que no se cumplía
+
+El formulario prometía «cada domingo te mando un correo corto con los mejores
+estudios de la semana». El código no hace eso: `fetch-studies.js` manda un aviso
+**cada día laborable en que publica**, de lunes a viernes, y solo si
+`RESEND_API_KEY` está configurada en Netlify. No hay ningún envío semanal de
+domingo en ninguna parte.
+
+Como eso es una promesa a quien deja su correo, se ha corregido el texto para
+que diga la verdad: «te aviso por correo cuando publico estudios nuevos y guías
+nuevas». También el mensaje de confirmación, que decía «nos leemos el domingo».
+
+Si prefieres el resumen semanal de verdad, hay que programarlo aparte: dilo y se
+hace.
+
+### Organigrama de un vistazo en cada artículo
+
+Encima de la ficha del estudio hay ahora un **dibujo** —un SVG, no texto—: cuatro
+nodos redondos unidos por flechas, PREGUNTA → MÉTODO → HALLAZGO → POR QUÉ, con
+el hallazgo en morado relleno. Se lee entero de una ojeada, escala solo con el
+ancho de la pantalla y no desborda en móvil.
+
+### Comprobado
+
+144 páginas, ningún problema y ningún aviso en las dos revisiones automáticas.
+El bloque de consulta comprobado en guías, tests, temas y páginas nuevas, sin
+errores de JavaScript. Artículo renderizado en local con datos simulados: mapa,
+ficha, cadena, consulta y pie nuevo, en escritorio y a 390 px.
+
 ## Paquete nuevo: la cadena visual del estudio, dos páginas y tu consulta en cada artículo
 
 ### Los artículos científicos ahora se ven, no solo se leen
@@ -579,3 +1801,422 @@ descripción. La función `sitemap.js` ejecutada en local devuelve 65 URLs.
    nuevas.
 3. Lo que de verdad falta y no se arregla con código: **enlaces desde fuera**.
    El primero, el más fácil y el más natural: uno desde concienciaconductual.com.
+
+
+---
+
+# Tanda del 24 de agosto — el scroll y el muro de botones
+
+Dos cosas que señalaste con capturas: que en «Guías y recomendaciones» el
+scroll era interminable, y que en «Explora por temas» los botones azules ya no
+se podían mirar, y que con cien guías sería peor.
+
+## 1. El scroll de guias.html: era un fallo, no solo diseño
+
+La paginación solo metía en la cuenta las tarjetas etiquetadas «Guía
+gratuita». Las otras 34 —las guías de compra, los tests y las herramientas— no
+entraban en el paginado, así que se mostraban **en todas las páginas a la
+vez**. Por eso se veían 42 tarjetas en lugar de 8 y la página medía 15.365
+píxeles: dieciocho pantallas de móvil.
+
+Arreglado: se paginan todas las tarjetas y caben 12 por página. Además el
+buscador y los filtros suben por encima del bloque del test (antes había 1.356
+píxeles de entradilla y avisos antes de la primera tarjeta) y el bloque del
+test baja al final convertido en una línea.
+
+**18,2 pantallas → 6,9.** 42 tarjetas visibles → 12. Hasta la primera tarjeta:
+1.356 px → 852.
+
+## 2. temas.html: de un muro a un menú
+
+Dos cambios encadenados.
+
+**Subgrupos dentro de cada tema.** Los 230 enlaces estaban en una lista plana
+por tema: dentro de «Ansiedad» había 24 botones seguidos sin ningún orden
+visible. Ahora cada tema se parte en apartados con su encabezado —en Ansiedad:
+«Por dónde empezar», «Cuando aprieta ahora mismo», «La cabeza que no para»,
+«Cuando el miedo va sobre tu salud», «En situaciones concretas», «Cosas que
+ayudan»—. 209 enlaces repartidos en subgrupos; los tres que no encajaban en
+ninguno van a «Y también», así que no desaparece ninguno.
+
+**Los temas se pliegan.** Cada tema es ahora un desplegable: al llegar ves
+catorce cabeceras con su icono y cuántas guías tiene, abres la que te interesa
+y solo esa se despliega. Está hecho con `<details>`, que es HTML nativo:
+funciona con teclado, con lector de pantalla y sin JavaScript. Se comporta como
+acordeón —solo uno abierto a la vez—, así que **la página no vuelve a crecer
+por muchas guías que añadamos**. Que era justo lo que preocupaba.
+
+Se quitó la rejilla de tarjetas de arriba, que desde el plegado era el mismo
+menú repetido dos veces, y los temas se recolocaron por lo que más se busca:
+ansiedad, ánimo, pareja, autoestima, sueño, trabajo, familia...
+
+El único JavaScript que hay abre el tema si llegas con `#ansiedad` en la URL
+—desde otra página, desde el buscador de Google o desde un enlace tuyo—. Sin
+él, el enlace te deja en la cabecera cerrada y la abres tú.
+
+**25,1 pantallas de móvil → 2,7.** En escritorio, 2,0. Los catorce anclajes
+(`temas.html#ansiedad` y compañía) siguen funcionando igual que antes.
+
+## Comprobado antes de entregar
+
+245 páginas HTML, ningún problema en el validador. Auditoría: ningún aviso —se
+corrigió un salto de encabezado h1→h3 que apareció en temas.html al convertir
+los `<h2>` de cada tema en cabecera del desplegable—. 233 enlaces internos
+distintos comprobados en un navegador de verdad, **ninguno roto**, ningún error
+de JavaScript. Los trece filtros de guias.html cuentan exactamente lo que
+muestran. Ortografía: 269 palabras fuera del diccionario, todas legítimas
+(tecnicismos, dominios y anglicismos como *burnout* o *mindfulness*).
+
+Una cosa que corregí de mí mismo: al recortar la entradilla de temas.html
+escribí «230 guías gratuitas», y 230 es el número de *enlaces* de esa página,
+de los cuales 12 son tests y 11 guías de compra. Cambiado por una frase sin
+cifra, que es lo que hay.
+
+## Sigue pendiente, y no lo arregla el código
+
+1. **El enlace desde concienciaconductual.com a psicolinks.com.** Gratis, cinco
+   minutos, y es lo que más mueve la aguja de todo lo que queda.
+2. Para que la newsletter envíe de verdad: `RESEND_API_KEY` en Netlify y
+   psicolinks.com verificado en Resend.
+
+
+---
+
+# Reorganización: menos puertas
+
+Miguel lo dijo así: «una cosa lleva a otra y otra lleva a otra, es demasiado
+lío... no se puede agobiar tanto a la persona que entre, si no dará más
+ansiedad». Tenía razón, y el dato que lo resume es este:
+
+**Tres páginas eran la misma lista.** Guías (214 enlaces), Temas (229) e Índice
+A-Z (221) listaban las mismas doscientas guías, solo que ordenadas distinto. Y
+las tres se enlazaban entre sí. Más `empieza-aqui` con 53 enlaces. Cuatro
+puertas a la misma habitación, y cada una ofrecía las otras tres.
+
+**El pie de página tenía nueve enlaces y salía en 245 páginas.** Y había
+DIECIOCHO pies distintos, copiados y retocados tanda a tanda hasta no coincidir
+entre sí: cuatro enlazaban `guias.html` sin la barra inicial, tres no llevaban
+ni la portada.
+
+No es que la web estuviera mal hecha. Es que se le fueron añadiendo puertas cada
+semana y no se quitó ninguna.
+
+## Lo que se ha hecho
+
+**1. Una sola lista.** Se queda `temas.html`, que es la que se pliega y no crece
+al añadir guías, y se le ha metido dentro el buscador que tenía `guias.html`.
+Busca en el título y en la dirección del enlace, sin acentos, y abre los temas
+que tengan resultados. `guias.html` e `indice.html` redirigen ahí con un **301**
+—definitivo, así Google le pasa a `temas.html` las posiciones que tuvieran— y
+los ficheros se quedan en el repositorio por si hay que dar marcha atrás.
+
+**2. Un solo pie, con tres enlaces.** Portada · Guías · Consulta de psicología.
+Lo legal (aviso, privacidad, cookies) en letra pequeña, que no es una elección.
+Salen del pie Estudios, Índice, Tests, Consultorio y Tu registro: Estudios no se
+pierde porque la portada **es** la página de los estudios diarios, y los tests
+están dentro de Guías, en su apartado.
+
+**3. El final de cada guía: una sola cosa.** Antes había tres guías
+relacionadas, un enlace a los tests, el botón de la consulta, otros tres enlaces
+«por si prefieres otras opciones» y un «ver todas las guías». Ahora hay **un
+siguiente paso** —la guía más relacionada, que era ya la primera de las tres— y
+el bloque de la consulta, que se queda porque es otra cosa: «seguir leyendo» y
+«pedir ayuda» son las dos únicas respuestas posibles a «he terminado esto».
+
+De los tres enlaces de «otras opciones» se queda **dónde pedir ayuda**. Ese no
+es relleno: es el que sostiene la frase de que aquí no soy neutral porque
+recomiendo mi propia consulta. Quitarlo sería quedarse la parte comercial y
+tirar la honesta.
+
+**4. La portada.** El menú tenía nueve enlaces y tres llevaban al mismo sitio
+con nombres distintos. Ahora son tres: Empieza aquí · Las guías · Mi consulta. Y
+los dos bloques grandes seguidos (el del test y el del registro, con sus dos
+títulos y sus seis párrafos) se han juntado en uno corto con los dos botones.
+
+**5. «Empieza aquí» era la página menos fácil del sitio.** Treinta y nueve
+apartados y cincuenta y tres enlaces, en una página que se llama «Empieza aquí».
+Ahora son ocho, uno por cada motivo real por el que la gente entra a una web de
+psicología, con un solo enlace cada uno, y una única salida para quien no se vea
+en ninguno. Las treinta y una guías que salen de ahí siguen en su tema y en el
+buscador.
+
+## Los números
+
+| | antes | ahora |
+|---|---|---|
+| Enlaces en una página, mediana | 22 | 14 |
+| Enlaces del sitio, total | 6.249 | 4.322 |
+| Enlaces en el pie | 9 (y 18 pies distintos) | 3 + legal (uno solo) |
+| Portada: hasta el primer estudio | 1.416 px | 756 px |
+| Portada: menú | 9 enlaces | 3 |
+| «Empieza aquí» | 39 apartados | 8 |
+| Listas de todas las guías | 3 | 1 |
+
+## Comprobado antes de entregar
+
+245 páginas, validador sin problemas, auditoría sin avisos. 250 enlaces internos
+distintos comprobados en navegador real: los 13 rotos que aparecen son de
+`cortar-pdf.html` y **ya estaban rotos antes** (ver más abajo). Los 22 ficheros
+de funciones y los 3 de JavaScript, sin errores de sintaxis. El buscador, el
+acordeón y las anclas de `temas.html`, probados en Chromium: sin un solo error
+de JavaScript. Ninguna guía se ha quedado fuera de `temas.html`.
+
+Se han actualizado los tres scripts de comprobación (`validar.py`,
+`auditoria.py`, `auditoria2.py`) para que cuenten las estructuras nuevas. Si no,
+seguirían buscando el bloque «Sigue por aquí» y el pie viejo, darían cero y
+parecería normal. `validar.py` además avisa ahora si alguien vuelve a enlazar a
+`guias.html` o `indice.html`.
+
+## Dos cosas que encontré de paso y no he tocado
+
+1. **`cortar-pdf.html`** es una página de otro proyecto (MásPDF) que está en tu
+   sitio, tiene su propio pie, **enlaza a 13 páginas que no existen** y está en
+   el sitemap. No la enlaza nadie desde Psicolinks. No la borro porque es tuya y
+   igual la tienes pensada para algo, pero ahora mismo son 13 enlaces rotos que
+   Google ve.
+2. **`tests.html` mide 10 pantallas de móvil**, y ya es la página más larga.
+   Para once tests con su ficha completa es razonable, así que la he dejado;
+   pero si añades tres o cuatro más, toca plegarla como los temas.
+
+## Sigue pendiente, y no lo arregla el código
+
+1. **El enlace desde concienciaconductual.com a psicolinks.com.**
+2. Para que la newsletter envíe: `RESEND_API_KEY` en Netlify y psicolinks.com
+   verificado en Resend.
+
+
+---
+
+# Tanda del 24 de agosto (tarde): septiembre, personalidad y una regresión mía
+
+## Lo primero: por qué baja Analytics
+
+No puedo ver tu Analytics, así que lo que sigue es lo que sí he podido
+comprobar en el código y en la web publicada.
+
+**Google Analytics solo cuenta a quien pulsa «Aceptar todo».** El script está
+puesto como `type="text/plain"` hasta que hay consentimiento, que es lo correcto
+legalmente y lo que exige la AEPD. Pero significa que **quien entra, lee y se va
+sin tocar el banner no aparece en Analytics**. Y esa proporción cambia de una
+semana a otra sin que cambie nada de tu tráfico real.
+
+Conclusión práctica: **Analytics no es el sitio donde mirar si Google te manda
+gente.** El sitio es **Search Console**, que cuenta desde el lado de Google,
+no necesita consentimiento y no le afecta el banner. Si en Search Console las
+impresiones y los clics están estables, no ha pasado nada.
+
+Lo demás que he mirado:
+
+- **La web está bien.** `robots.txt` correcto, sitemap servido con 217 URLs,
+  ningún `noindex` donde no toca, ningún canonical mal puesto.
+- **Hubo movimiento en Google del 1 al 3 de agosto**, no confirmado como
+  actualización. Cae dos semanas antes de lo que dices, así que probablemente
+  no es eso.
+- **Es la última semana de agosto en España.** Es el suelo del año para
+  cualquier web en español. Que baje esta semana concreta es lo esperable.
+
+## Un fallo de SEO que causé yo ayer, y ya está arreglado
+
+Al dejar el pie en tres enlaces, `archivo.html` pasó de **209 enlaces entrantes
+a 2**. Es el archivo de los estudios diarios, y es la página por la que Google
+llega a los cientos de artículos. Además, cada artículo diario era un callejón
+sin salida: no enlazaba de vuelta al archivo.
+
+Arreglado sin romper el pie de tres: **cada artículo diario enlaza ahora al
+archivo** («← Todos los estudios»), que es donde ese enlace tiene sentido. Son
+cientos de enlaces entrantes, y contextuales en vez de decorativos.
+
+Y otro que venía de antes: los tres artículos de relleno de la portada —los que
+el JavaScript sustituye por los de verdad— enlazaban a `post.html?id=ejemplo-1`,
+una página marcada `noindex` con un id que no existe. Quien no ejecute
+JavaScript veía en la página más importante del sitio tres enlaces a ninguna
+parte. Ahora van al archivo.
+
+## Y una regresión que me pillé a mitad de faena
+
+Ejecuté `sweep_guias.py` sin haberlo actualizado, y **volvió a poner las dos
+estructuras que quitamos ayer**: la línea de tres enlaces al final del pie (en
+246 páginas) y el bloque «Sigue por aquí» con tres guías (en 207). Durante un
+rato el sitio tuvo seis enlaces en el pie y cuatro guías ofrecidas al final.
+
+Está limpio y, más importante, **los dos scripts que lo causaron están
+corregidos**: `sweep_guias.py` ya no toca el pie y mantiene el siguiente paso de
+uno; `reequilibrar_enlaces.py` reparte ahora un solo enlace en anillo —cada guía
+enlaza a la siguiente de su categoría y recibe exactamente uno—, que es lo que
+evita que reducir a uno deje guías sin ningún enlace entrante. Los dos son
+idempotentes: ejecutarlos dos veces seguidas ya no cambia nada.
+
+La lección queda escrita dentro del propio script: cuando se cambia una
+estructura del sitio hay que cambiar a la vez lo que la mantiene, o el siguiente
+barrido la resucita.
+
+## Tres guías de compra, y son de temporada a propósito
+
+Google tarda semanas en posicionar una página nueva, así que una guía de vuelta
+al cole publicada en octubre no sirve de nada.
+
+- **Volver a la rutina en septiembre** — el horario se descoloca en tres días y
+  se recoloca en dos semanas.
+- **Vuelta al cole cuando al niño le cuesta** — lloros en la puerta y dolor de
+  tripa los domingos.
+- **Ruido y concentración** — la confusión de siempre: la cancelación de ruido
+  va bien con el ruido grave y mal con las voces, que es lo que desconcentra.
+
+## Tres guías gratuitas que faltaban
+
+Al escribir la de la vuelta al cole enlacé tres guías que daba por hechas y
+**ninguna existía**. En vez de repuntar los enlaces a otra cosa, se han escrito:
+**ansiedad de separación**, **miedos nocturnos en niños** y **premios y
+castigos**. Las tres se buscan mucho en septiembre.
+
+## Test de personalidad (Big Five)
+
+El instrumento número trece que miro esta semana, y el primero con una licencia
+verdaderamente limpia. El **International Personality Item Pool** dice en su
+propia web que sus ítems son de dominio público y que se pueden «copiar, editar,
+traducir y usar para cualquier fin sin pedir permiso y sin pagar». Sin cláusula
+de «no comercial» —que es justo lo que me hizo descartar el WHO-5 en una web con
+enlaces de afiliado— y con la traducción permitida expresamente.
+
+Son 20 ítems (Mini-IPIP, Donnellan y cols., 2006). Tres decisiones que conviene
+que sepas:
+
+1. **El cuarto factor se presenta como «estabilidad emocional», no como
+   neuroticismo.** Es como lo llama el propio IPIP, y devolverle «neuroticismo:
+   alto» a alguien que llega preocupado es una etiqueta que se pega.
+2. **No hay percentiles.** No existen baremos españoles de esta versión corta,
+   así que dar un percentil sería inventarse una precisión que no se tiene. Se
+   dan los puntos directos y tres tramos, dichos como orientativos.
+3. **Se avisa arriba de que no es un test clínico.** Mide rasgos, no síntomas, y
+   quien busque saber si necesita ayuda va al chequeo rápido, no a este.
+
+Comprobado en navegador con dos perfiles opuestos: la puntuación inversa de los
+ítems funciona en las dos direcciones. Sale también en «Tus resultados», en un
+bloque propio y **sin gráfico de evolución a propósito**: los rasgos no se mueven
+de un mes a otro y un gráfico invitaría a leer como mejoría lo que es el día que
+tenías al contestar.
+
+## Sobre MásPDF: me equivoqué ayer
+
+Ayer te dije que `cortar-pdf.html` estaba en el sitemap y que eran «13 enlaces
+rotos que Google ve». **Las dos cosas eran falsas** y lo siento: lo que había en
+el sitemap era un comentario diciendo que se excluye a propósito, y yo conté el
+comentario.
+
+Lo que hay de verdad: la página está marcada `noindex`, su canonical apunta a
+`maspdf.com` y no está en el sitemap ni la enlaza nadie. **Para el SEO de
+Psicolinks no supone ningún problema.** Lo único cierto es que sus 14 enlaces de
+menú van a páginas que no existen en este dominio, cosa que solo ve quien
+aterrice ahí con un enlace directo. Como no sé si `maspdf.com` es un proyecto
+tuyo en marcha, no he tocado la página: dime qué quieres hacer con ella.
+
+## Comprobado antes de entregar
+
+252 páginas, validador sin problemas, auditoría sin avisos. Los 25 ficheros de
+JavaScript, sin errores de sintaxis. Las siete páginas nuevas, una a una en
+Chromium: un solo `h1`, título y descripción dentro de longitud, canonical
+correcto, ningún enlace de Amazon sin `sponsored` ni con la búsqueda vacía, pie
+de seis y sin desbordes horizontales. Cero errores de JavaScript. Enlaces por
+página: mediana 14, pie máximo 6 en todas — es decir, la simplificación de ayer
+sigue en pie después de la regresión.
+
+Ortografía: 298 palabras fuera del diccionario, todas legítimas; las nuevas son
+el inglés de la cita del Mini-IPIP y «SNR», que es lo que pone en los paquetes
+de tapones.
+
+## Lo de siempre, que sigue pendiente
+
+1. **El enlace desde concienciaconductual.com a psicolinks.com.**
+2. `RESEND_API_KEY` en Netlify para que la newsletter envíe.
+3. **Mira Search Console, no Analytics**, para saber si Google te manda gente.
+
+
+---
+
+# Tanda del 24 de agosto (noche): estrés, y dos fallos míos más
+
+Esta es la que subes ahora. Seis páginas nuevas y tres correcciones que
+encontré al revisarlo todo antes de entregar.
+
+## Tres guías de gestión del estrés
+
+- **Respirar para bajar la activación.** Se recomienda en todas partes y casi
+  nunca se explica bien: lo que baja el pulso es que **soltar el aire dure más
+  que cogerlo**, no «respirar hondo». Mucha gente hiperventila creyendo que se
+  relaja. Lleva dentro un aviso que casi ninguna guía da: en quien tiene ataques
+  de pánico, centrarse mucho en la respiración puede volverse en contra.
+- **Relajación muscular progresiva.** La técnica de Jacobson de 1938. Se explica
+  mal en casi todos lados y por eso mucha gente cree que no le funciona: **no es
+  relajar los músculos, es tensarlos y soltarlos de golpe**, y el efecto viene
+  del contraste.
+- **Desconectar del trabajo al llegar a casa.** Lo que mejor predice acabar
+  agotado no son las horas trabajadas, sino cuántas sigues con el trabajo en la
+  cabeza. Ritual de cierre, qué hacer con lo pendiente y por qué el sofá con el
+  móvil no descansa.
+
+## Dos guías de compra
+
+- **Cosas para el estrés del día a día.** Con el «no» más importante que he
+  escrito en estas guías: las pulseras y anillos que dicen medir el estrés. No
+  lo miden —miden variabilidad del pulso y le ponen etiqueta— y en alguien que
+  ya va tenso, tener un número que mirar acaba en comprobar, comprobar y
+  comprobar, que es el mecanismo por el que la ansiedad crece.
+- **Moverte para subir el ánimo.** Corta en la parte de comprar y larga en la de
+  no comprar, porque el ejercicio es de lo poco no clínico con respaldo serio
+  para el ánimo y el sector vive de venderle máquinas a gente que necesita salir
+  a andar.
+
+## Un test más: procrastinación
+
+Los diez ítems de la escala de **autodisciplina del IPIP** (alfa .85), la misma
+fuente de dominio público que el Big Five. Sin percentiles, por lo de siempre.
+
+**Y algo que descarté por el camino, que es la parte que importa.** Mi primera
+idea era un test de asertividad, que encajaba con tus guías de poner límites.
+Fui a mirar los ítems de la escala de asertividad del IPIP y son «tomo el
+mando», «intento dirigir a otros», «convenzo a la gente»: eso mide **dominancia
+social**, no la asertividad de la que hablan esas guías. Alguien a quien le
+cuesta decir que no puede sacar una puntuación normal ahí. Publicarlo como
+«test de asertividad» habría sido ponerle a un instrumento una etiqueta que no
+le corresponde, así que no lo hice.
+
+También volví a mirar el **Copenhagen Burnout Inventory**, que habría encajado
+perfecto con las guías de estrés. Sigo sin encontrar la declaración original de
+dominio público, solo fuentes secundarias que lo dan por hecho. Mismo criterio
+que las otras doce veces: fuera.
+
+## Tres fallos míos, encontrados y arreglados
+
+1. **El barrido no ponía el siguiente paso en las guías nuevas.** Comprobaba si
+   la cadena `siguiente-paso` estaba en la página, y esa cadena también aparece
+   en las reglas CSS que trae la plantilla. Así que siempre creía que el bloque
+   ya estaba. Ahora comprueba el marcado (`class="siguiente-paso"`), no la
+   cadena suelta.
+2. **El barrido generaba migas de pan apuntando a `guias.html`**, que desde ayer
+   redirige. Había metido tres así. Corregido en el script y en las 6 páginas.
+3. **En «Tus resultados», subir la puntuación se leía siempre como malo.** En
+   los cuestionarios de síntomas lo es, pero en el de constancia subir es bueno,
+   y a quien mejorara le habría salido «puede ser una mala racha puntual;
+   coméntalo con un profesional». Ahora cada test declara en qué dirección está
+   la mejora.
+
+## Comprobado antes de entregar
+
+258 páginas, validador sin problemas, auditoría sin avisos. Los 25 ficheros de
+JavaScript sin errores de sintaxis. Las seis páginas nuevas verificadas una a
+una en Chromium: h1 único, título y descripción dentro de longitud, canonical
+correcto, ningún enlace de Amazon sin `sponsored`, pie de seis y sin desbordes.
+El test de procrastinación probado con cuatro perfiles: 50, 10, 40 y 20 puntos,
+exacto en las dos direcciones. `sweep_guias.py` y `reequilibrar_enlaces.py`
+ejecutados dos veces seguidas: la segunda no cambia nada.
+
+**Y la comprobación que importa para lo del rastreo: de las 244 páginas del
+sitemap, 244 tienen al menos un enlace interno. Cero huérfanas.** Eso es lo que
+debería mover las 84 «Descubierta: actualmente sin indexar».
+
+## Después de subir
+
+1. Search Console → Inspección de URLs → **Solicitar indexación** de
+   `temas.html` y de `archivo.html`. Solo esas dos.
+2. **El enlace en concienciaconductual.com.** Te mandé el bloque hecho.
+3. Vuelve a mirar la indexación en dos semanas.

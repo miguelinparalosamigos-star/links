@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tests de psicología gratuitos y validados · Psicolinks</title>
+<meta name="description" content="Tests de ansiedad, depresión y consumo de alcohol: los mismos cuestionarios que se usan en consulta. Gratis, sin registro y sin salir de tu navegador.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Tests de psicología gratuitos">
+<meta property="og:description" content="Tests de ansiedad, depresión y consumo de alcohol: los mismos cuestionarios que se usan en consulta. Gratis, sin registro y sin salir de tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/tests.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/tests.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --consulta:#8C3B4A;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.4rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.4rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.6rem; }
+  .idea strong{ color:var(--accent); }
+
+  .saltos{ display:flex; flex-wrap:wrap; gap:0.45rem; margin:0 0 2rem; }
+  .saltos a{ font-size:0.86rem; font-weight:600; text-decoration:none; color:var(--accent); background:var(--surface); border:1.5px solid var(--border); border-radius:999px; padding:0.4rem 0.9rem; }
+  .saltos a:hover{ border-color:var(--accent); }
+
+  h2.apartado{ font-family:var(--font-display); font-size:1.45rem; font-weight:600; margin:2.4rem 0 0.5rem; scroll-margin-top:1rem; }
+  .apartado-intro{ color:var(--ink-soft); font-size:0.96rem; line-height:1.6; margin:0 0 1.1rem; }
+
+  .test-card{ background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--accent); border-radius:12px; padding:1.3rem 1.4rem 1.4rem; margin:0 0 1rem; }
+  .test-card h3{ font-family:var(--font-display); font-size:1.25rem; font-weight:600; margin:0 0 0.15rem; }
+  .test-card h3 a{ text-decoration:none; color:var(--ink); }
+  .test-card h3 a:hover{ color:var(--accent); text-decoration:underline; }
+  .test-sigla{ font-family:var(--font-mono); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.7rem; }
+  .test-que{ font-size:0.96rem; line-height:1.6; margin:0 0 0.9rem; }
+  .test-chips{ display:flex; flex-wrap:wrap; gap:0.4rem; margin:0 0 0.9rem; }
+  .test-chips span{ font-size:0.8rem; color:var(--ink-soft); background:var(--paper); border:1px solid var(--border); border-radius:999px; padding:0.25rem 0.7rem; }
+  .test-cuando{ font-size:0.9rem; line-height:1.55; color:var(--ink-soft); background:var(--accent-soft); border-radius:9px; padding:0.6rem 0.85rem; margin:0 0 1rem; }
+  .test-cuando b{ color:var(--accent); }
+  .test-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.95rem; padding:0.7rem 1.25rem; border-radius:9px; background:var(--accent); color:#fff; }
+  .test-btn:hover{ background:#3a2e63; }
+  .test-origen{ font-size:0.8rem; color:var(--ink-soft); margin:0.9rem 0 0; padding-top:0.8rem; border-top:1px dashed var(--border); }
+
+  .aviso{ background:#FFF6EC; border:1px solid #F0D9BE; border-left:4px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.95rem; line-height:1.6; margin:2.4rem 0 0; }
+  .aviso strong{ color:var(--stamp); }
+
+  .faq{ margin:2.4rem 0 0; }
+  .faq h2{ font-family:var(--font-display); font-size:1.45rem; font-weight:600; margin:0 0 1rem; }
+  .faq details{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.9rem 1.2rem; margin:0 0 0.6rem; }
+  .faq summary{ font-weight:600; font-size:1rem; cursor:pointer; line-height:1.45; }
+  .faq summary::marker{ color:var(--accent); }
+  .faq details p{ margin:0.8rem 0 0; font-size:0.95rem; line-height:1.65; color:var(--ink-soft); }
+
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.4rem 1.5rem; background:#FBF4F5; border:1px solid #E7D3D6; border-radius:12px; text-align:center; }
+  .consulta-cta .consulta-tit{ font-family:var(--font-display); font-weight:600; font-size:1.15rem; margin:0 0 0.5rem; }
+  .consulta-cta p{ color:var(--ink-soft); font-size:0.93rem; line-height:1.6; margin:0 0 1rem; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.95rem; padding:0.7rem 1.25rem; border-radius:9px; background:var(--consulta); color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+
+  .relacionadas{ margin:2.2rem 0 0; padding:1.2rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; font-weight:600; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:1.1rem; }
+  .relacionadas li{ margin:0 0 0.4rem; font-size:0.95rem; line-height:1.5; }
+
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer p{ margin:0 0 0.5rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  @media (max-width:520px){ h1{ font-size:1.6rem; } main{ padding:2rem 1.1rem 3rem; } }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a class="back-link" href="/">← Volver a la portada</a>
+  <span class="stamp">🧪 Gratis · sin registro</span>
+  <h1>Tests de psicología gratuitos</h1>
+  <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Los mismos cuestionarios que se usan en consulta y en investigación. Se contestan en dos
+  o tres minutos, dan el resultado al momento y te dicen qué hacer con él.</p>
+
+  <div class="idea"><strong>Lo primero.</strong> Ninguno de estos tests diagnostica nada, y quien te diga
+  lo contrario te está vendiendo algo. Lo que hacen es poner un número a lo que sientes, para que puedas
+  compararlo con lo esperable y volver a medirlo dentro de unas semanas. Eso es útil de verdad: la
+  sensación de «estoy igual que siempre» casi nunca coincide con lo que dicen los números.</div>
+
+  <nav class="saltos" aria-label="Apartados">
+    <a href="#rapido">Si no sabes por dónde empezar</a>
+    <a href="#animo">Ánimo y ansiedad</a>
+    <a href="#consumo">Alcohol y tabaco</a>
+    <a href="#cuerpo">Cuerpo y sucesos duros</a>
+    <a href="#personalidad">Cómo eres, no cómo estás</a>
+    <a href="#seguimiento">Para llevar el seguimiento</a>
+  </nav>
+
+  <h2 class="apartado" id="rapido">Si no sabes por dónde empezar</h2>
+  <p class="apartado-intro">Treinta segundos para saber cuál de los tests largos te toca. No sustituye a ninguno: te dice por cuál empezar.</p>
+    <div class="test-card">
+      <h3><a href="/test-rapido-ansiedad-depresion.html">Chequeo rápido</a></h3>
+      <p class="test-sigla">PHQ-4</p>
+      <p class="test-que">Cuatro preguntas: las dos primeras del test de ansiedad y las dos primeras del de depresión. Te dice cuál de los dos bloques está pesando más.</p>
+      <div class="test-chips"><span>4 preguntas</span><span>30 segundos</span><span>0 a 12 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si sabes que algo no va bien pero no sabrías ponerle nombre.</p>
+      <a class="test-btn" href="/test-rapido-ansiedad-depresion.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Kroenke, Spitzer, Williams y Löwe (2009). Licencia libre de Pfizer.</p>
+    </div>
+    <div class="test-card">
+      <h3><a href="/test-rapido-alcohol.html">Chequeo rápido de alcohol</a></h3>
+      <p class="test-sigla">AUDIT-C</p>
+      <p class="test-que">Las tres primeras preguntas del cuestionario de la OMS: cuánto bebes y con qué frecuencia. Te dice si merece la pena hacer el largo.</p>
+      <div class="test-chips"><span>3 preguntas</span><span>30 segundos</span><span>umbral en 4 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si alguna vez te has preguntado si bebes más de la cuenta.</p>
+      <a class="test-btn" href="/test-rapido-alcohol.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Organización Mundial de la Salud. De dominio público para uso no comercial.</p>
+    </div>
+
+  <h2 class="apartado" id="animo">Ánimo y ansiedad</h2>
+  <p class="apartado-intro">Los dos cuestionarios de cribado más usados en atención primaria en todo el mundo. Miden intensidad de síntomas en las dos últimas semanas.</p>
+    <div class="test-card">
+      <h3><a href="/test-de-ansiedad.html">Test de ansiedad</a></h3>
+      <p class="test-sigla">GAD-7</p>
+      <p class="test-que">Cuánta ansiedad generalizada tienes ahora mismo: preocupación difícil de parar, tensión, irritabilidad, problemas para relajarte.</p>
+      <div class="test-chips"><span>7 preguntas</span><span>2 minutos</span><span>0 a 21 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si llevas semanas con el cuerpo en tensión o dándole vueltas a todo.</p>
+      <a class="test-btn" href="/test-de-ansiedad.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Spitzer y cols. (2006). De uso libre, sin permiso ni licencia.</p>
+    </div>
+    <div class="test-card">
+      <h3><a href="/test-de-ataques-de-panico.html">Test de ataques de pánico</a></h3>
+      <p class="test-sigla">Módulo PHQ</p>
+      <p class="test-que">Si lo que te pasa encaja con el patrón del trastorno de pánico. Tener un ataque y tener un trastorno de pánico no son lo mismo, y aquí se distingue.</p>
+      <div class="test-chips"><span>5 preguntas</span><span>1 minuto</span><span>positivo con 4 de 4</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si has tenido ataques de pánico y ahora vives pendiente del siguiente.</p>
+      <a class="test-btn" href="/test-de-ataques-de-panico.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Spitzer, Williams, Kroenke y cols. Licencia libre de Pfizer.</p>
+    </div>
+    <div class="test-card">
+      <h3><a href="/test-de-depresion.html">Test de depresión</a></h3>
+      <p class="test-sigla">PHQ-9</p>
+      <p class="test-que">Síntomas de depresión: ánimo bajo, pérdida de interés, sueño, energía, apetito, concentración y culpa.</p>
+      <div class="test-chips"><span>9 preguntas</span><span>2 minutos</span><span>0 a 27 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si nada te apetece, si te cuesta funcionar o si llevas tiempo apagado.</p>
+      <a class="test-btn" href="/test-de-depresion.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Kroenke, Spitzer y Williams (2001). Liberado por Pfizer para uso libre.</p>
+    </div>
+
+  <h2 class="apartado" id="consumo">Alcohol y tabaco</h2>
+  <p class="apartado-intro">Dos cuestionarios que no preguntan si eres adicto: preguntan cuánto, con qué frecuencia y qué consecuencias tiene. Son los que se usan en las consultas de deshabituación.</p>
+    <div class="test-card">
+      <h3><a href="/test-de-dependencia-del-tabaco.html">Test de dependencia del tabaco</a></h3>
+      <p class="test-sigla">Fagerström</p>
+      <p class="test-que">Cuánta nicotina necesita tu cuerpo, que no es lo mismo que cuánto quieres dejarlo. Sirve para decidir si te compensa dejarlo a pelo o con ayuda.</p>
+      <div class="test-chips"><span>6 preguntas</span><span>1 minuto</span><span>0 a 10 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si te estás planteando dejarlo y quieres saber a qué te enfrentas.</p>
+      <a class="test-btn" href="/test-de-dependencia-del-tabaco.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Heatherton y cols. (1991). El NIDA indica que puede reproducirse sin permiso.</p>
+    </div>
+    <div class="test-card">
+      <h3><a href="/test-de-alcohol.html">Test de consumo de alcohol</a></h3>
+      <p class="test-sigla">AUDIT</p>
+      <p class="test-que">Cuánto bebes, cada cuánto, y si ya está teniendo consecuencias: olvidos, remordimiento, avisos de otros.</p>
+      <div class="test-chips"><span>10 preguntas</span><span>3 minutos</span><span>0 a 40 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si te has preguntado alguna vez si bebes más de la cuenta.</p>
+      <a class="test-btn" href="/test-de-alcohol.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Organización Mundial de la Salud (1989, 2001). De dominio público para uso no comercial.</p>
+    </div>
+
+  <h2 class="apartado" id="cuerpo">Cuerpo y sucesos duros</h2>
+  <p class="apartado-intro">Dos cribados que se usan en atención primaria y que casi nadie conoce: uno para las molestias físicas que no acaban de tener explicación, y otro para las secuelas de algo muy duro.</p>
+    <div class="test-card">
+      <h3><a href="/test-de-sintomas-fisicos.html">Test de síntomas físicos</a></h3>
+      <p class="test-sigla">PHQ-15</p>
+      <p class="test-que">Cuánto te están molestando los dolores, los mareos, las digestiones, las palpitaciones y el cansancio. No dice que sean imaginarios: mide cuánta guerra te dan.</p>
+      <div class="test-chips"><span>15 preguntas</span><span>2 minutos</span><span>0 a 30 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si el cuerpo lleva meses dando la lata y las pruebas no acaban de explicar nada.</p>
+      <a class="test-btn" href="/test-de-sintomas-fisicos.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Kroenke, Spitzer y Williams. Misma familia y misma licencia libre que el PHQ-9.</p>
+    </div>
+    <div class="test-card">
+      <h3><a href="/test-de-estres-postraumatico.html">Test de estrés postraumático</a></h3>
+      <p class="test-sigla">PC-PTSD-5</p>
+      <p class="test-que">Cinco preguntas de sí o no sobre las secuelas de un suceso duro: pesadillas, evitación, estar en guardia, sentirse desconectado y culpa.</p>
+      <div class="test-chips"><span>5 preguntas</span><span>1 minuto</span><span>corte en 3 respuestas</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si viviste algo muy duro —hace meses o hace años— y sigue apareciendo sin que lo llames.</p>
+      <a class="test-btn" href="/test-de-estres-postraumatico.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: National Center for PTSD (Dept. de Veteranos de EE. UU.). Obra pública, de uso libre.</p>
+    </div>
+
+  <h2 class="apartado" id="personalidad">Cómo eres, no cómo estás</h2>
+  <p class="apartado-intro">Los demás cuestionarios de esta página miden síntomas: cuánto estás sufriendo ahora. Este mide rasgos: cómo eres habitualmente. No hay puntuaciones buenas ni malas y no orienta sobre si necesitas ayuda.</p>
+    <div class="test-card">
+      <h3><a href="/test-de-personalidad.html">Test de personalidad</a></h3>
+      <p class="test-sigla">Big Five · Mini-IPIP</p>
+      <p class="test-que">Los cinco grandes rasgos: extraversión, amabilidad, responsabilidad, estabilidad emocional y apertura. Es el modelo de personalidad con más respaldo de los que existen.</p>
+      <div class="test-chips"><span>20 frases</span><span>3 minutos</span><span>4 a 20 por rasgo</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si te pica la curiosidad y quieres uno que no sea de revista.</p>
+      <a class="test-btn" href="/test-de-personalidad.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: International Personality Item Pool, de dominio público. Versión corta de Donnellan y cols. (2006).</p>
+    </div>
+
+    <div class="test-card">
+      <h3><a href="/test-de-procrastinacion.html">Test de procrastinación</a></h3>
+      <p class="test-sigla">IPIP · Autodisciplina</p>
+      <p class="test-que">Cuánto te cuesta arrancar y cuánto terminas de lo que empiezas. Es la faceta de la personalidad que más se deja entrenar, así que una puntuación baja no es una sentencia.</p>
+      <div class="test-chips"><span>10 frases</span><span>2 minutos</span><span>10 a 50 puntos</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Si llevas tiempo diciéndote que eres un desastre y quieres un dato.</p>
+      <a class="test-btn" href="/test-de-procrastinacion.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: escala Self-Discipline del International Personality Item Pool, de dominio público.</p>
+    </div>
+
+  <h2 class="apartado" id="seguimiento">Para llevar el seguimiento</h2>
+  <p class="apartado-intro">Un test es una foto de un momento. Esto es lo que sirve para ver la película: qué pasa, cuándo pasa y qué lo mantiene.</p>
+    <div class="test-card">
+      <h3><a href="/registro-abc.html">Registro de siete días</a></h3>
+      <p class="test-sigla">A-B-C</p>
+      <p class="test-que">Apuntas la situación, lo que hiciste y lo que vino después. Es con lo que empieza casi cualquier terapia conductual, y es lo más útil de esta web.</p>
+      <div class="test-chips"><span>una entrada al día</span><span>1 minuto por entrada</span><span>resumen y gráfico</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> Cuando ya sabes que algo pasa pero no sabes qué lo dispara.</p>
+      <a class="test-btn" href="/registro-abc.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Registro conductual clásico (Skinner; análisis funcional).</p>
+    </div>
+    <div class="test-card">
+      <h3><a href="/mis-resultados.html">Tus resultados</a></h3>
+      <p class="test-sigla">Todos juntos</p>
+      <p class="test-que">Todos los tests que hayas hecho, con su evolución en el tiempo y en una sola página. Un test suelto dice poco; la comparación contigo mismo dice bastante.</p>
+      <div class="test-chips"><span>no se responde</span><span>inmediato</span><span>tu evolución</span><span>sin registro</span></div>
+      <p class="test-cuando"><b>Para ti si:</b> En cuanto hayas hecho un test dos veces.</p>
+      <a class="test-btn" href="/mis-resultados.html">Hacer el test →</a>
+      <p class="test-origen">De dónde sale: Se lee de tu propio navegador. No hay servidor ni cuenta.</p>
+    </div>
+
+  <div class="aviso">
+    <strong>Si estás mal ahora mismo, no hagas un test: pide ayuda.</strong> En España, el
+    <strong>024</strong> atiende las 24 horas, es gratis y es confidencial. Para una urgencia médica,
+    el <strong>112</strong>. Un cuestionario no es el sitio al que ir cuando lo que hace falta es que
+    alguien te coja el teléfono.
+  </div>
+
+  <div class="faq">
+    <h2>Preguntas frecuentes sobre estos tests</h2>
+    <details>
+      <summary>¿Estos tests dan un diagnóstico?</summary>
+      <p>No, y ninguno lo da. Son cuestionarios de cribado: sirven para poner un número a lo que sientes y ver si ese número está por encima de lo esperable. Un diagnóstico lo hace un profesional con una entrevista, mirando cuánto tiempo llevas así, qué se descarta y qué te está limitando.</p>
+    </details>
+    <details>
+      <summary>¿Se guardan mis respuestas?</summary>
+      <p>No salen de tu navegador. No hay servidor, no hay cuenta y no hay correo. El historial que ves al repetir un test está guardado en tu propio dispositivo, y puedes borrarlo desde la misma página cuando quieras. Es a propósito: una puntuación de ansiedad o de depresión es un dato de salud, y esos datos no tienen por qué estar en ningún sitio que no sea tu móvil.</p>
+    </details>
+    <details>
+      <summary>¿Cada cuánto puedo repetirlos?</summary>
+      <p>Cada dos semanas es un buen ritmo, porque las preguntas se refieren precisamente a las dos últimas semanas. Repetirlos cada día no informa de nada y suele acabar convertido en una comprobación ansiosa más.</p>
+    </details>
+    <details>
+      <summary>¿Son fiables?</summary>
+      <p>Son los que se usan en consulta y en investigación, con miles de estudios detrás. Pero fiable no significa infalible: si contestas en un día especialmente malo, el número saldrá alto; si contestas queriendo quedar bien, saldrá bajo. Contesta rápido y sin pensarlo demasiado, que es como mejor funcionan.</p>
+    </details>
+    <details>
+      <summary>Me ha salido alto. ¿Ahora qué?</summary>
+      <p>Un resultado alto no es una sentencia, es una señal de que conviene mirarlo con alguien. El primer paso barato y sensato es tu médico de cabecera. Si prefieres ir directo a psicología, puedes escribirme: trabajo online para toda España y presencial en Valencia.</p>
+    </details>
+    <details>
+      <summary>¿Por qué son gratis?</summary>
+      <p>Porque los cuestionarios en sí son de uso libre y porque tenerlos aquí no me cuesta nada. Solo publico tests que no tengan derechos de autor de por medio, y por eso no verás aquí otros muy conocidos que sí están bajo licencia.</p>
+    </details>
+  </div>
+
+  <div class="consulta-cta">
+    <p class="consulta-tit">¿Y si el resultado te ha dado que pensar?</p>
+    <p>Soy Miguel Martínez, psicólogo colegiado nº CV17649. Trabajo online para toda España y presencial
+    en Valencia. Puedes escribirme y te cuento cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/calmar-la-ansiedad.html">Calmar la ansiedad →</a>
+  </div>
+</main>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Tests de psicología gratuitos", "description": "Tests de ansiedad, depresión y consumo de alcohol: los mismos cuestionarios que se usan en consulta. Gratis, sin registro y sin salir de tu navegador.", "url": "https://psicolinks.com/tests.html", "inLanguage": "es", "isAccessibleForFree": true, "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia de conducta", "Ansiedad", "Depresión"], "sameAs": ["https://concienciaconductual.com"]}, "datePublished": "2026-08-24", "dateModified": "2026-08-24", "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "mainEntity": {"@type": "ItemList", "numberOfItems": 11, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Chequeo rápido (PHQ-4)", "url": "https://psicolinks.com/test-rapido-ansiedad-depresion.html"}, {"@type": "ListItem", "position": 2, "name": "Chequeo rápido de alcohol (AUDIT-C)", "url": "https://psicolinks.com/test-rapido-alcohol.html"}, {"@type": "ListItem", "position": 3, "name": "Test de ansiedad (GAD-7)", "url": "https://psicolinks.com/test-de-ansiedad.html"}, {"@type": "ListItem", "position": 4, "name": "Test de ataques de pánico (Módulo PHQ)", "url": "https://psicolinks.com/test-de-ataques-de-panico.html"}, {"@type": "ListItem", "position": 5, "name": "Test de depresión (PHQ-9)", "url": "https://psicolinks.com/test-de-depresion.html"}, {"@type": "ListItem", "position": 6, "name": "Test de dependencia del tabaco (Fagerström)", "url": "https://psicolinks.com/test-de-dependencia-del-tabaco.html"}, {"@type": "ListItem", "position": 7, "name": "Test de consumo de alcohol (AUDIT)", "url": "https://psicolinks.com/test-de-alcohol.html"}, {"@type": "ListItem", "position": 8, "name": "Test de síntomas físicos (PHQ-15)", "url": "https://psicolinks.com/test-de-sintomas-fisicos.html"}, {"@type": "ListItem", "position": 9, "name": "Test de estrés postraumático (PC-PTSD-5)", "url": "https://psicolinks.com/test-de-estres-postraumatico.html"}, {"@type": "ListItem", "position": 10, "name": "Registro de siete días (A-B-C)", "url": "https://psicolinks.com/registro-abc.html"}, {"@type": "ListItem", "position": 11, "name": "Tus resultados (Todos juntos)", "url": "https://psicolinks.com/mis-resultados.html"}]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Estos tests dan un diagnóstico?", "acceptedAnswer": {"@type": "Answer", "text": "No, y ninguno lo da. Son cuestionarios de cribado: sirven para poner un número a lo que sientes y ver si ese número está por encima de lo esperable. Un diagnóstico lo hace un profesional con una entrevista, mirando cuánto tiempo llevas así, qué se descarta y qué te está limitando."}}, {"@type": "Question", "name": "¿Se guardan mis respuestas?", "acceptedAnswer": {"@type": "Answer", "text": "No salen de tu navegador. No hay servidor, no hay cuenta y no hay correo. El historial que ves al repetir un test está guardado en tu propio dispositivo, y puedes borrarlo desde la misma página cuando quieras. Es a propósito: una puntuación de ansiedad o de depresión es un dato de salud, y esos datos no tienen por qué estar en ningún sitio que no sea tu móvil."}}, {"@type": "Question", "name": "¿Cada cuánto puedo repetirlos?", "acceptedAnswer": {"@type": "Answer", "text": "Cada dos semanas es un buen ritmo, porque las preguntas se refieren precisamente a las dos últimas semanas. Repetirlos cada día no informa de nada y suele acabar convertido en una comprobación ansiosa más."}}, {"@type": "Question", "name": "¿Son fiables?", "acceptedAnswer": {"@type": "Answer", "text": "Son los que se usan en consulta y en investigación, con miles de estudios detrás. Pero fiable no significa infalible: si contestas en un día especialmente malo, el número saldrá alto; si contestas queriendo quedar bien, saldrá bajo. Contesta rápido y sin pensarlo demasiado, que es como mejor funcionan."}}, {"@type": "Question", "name": "Me ha salido alto. ¿Ahora qué?", "acceptedAnswer": {"@type": "Answer", "text": "Un resultado alto no es una sentencia, es una señal de que conviene mirarlo con alguien. El primer paso barato y sensato es tu médico de cabecera. Si prefieres ir directo a psicología, puedes escribirme: trabajo online para toda España y presencial en Valencia."}}, {"@type": "Question", "name": "¿Por qué son gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Porque los cuestionarios en sí son de uso libre y porque tenerlos aquí no me cuesta nada. Solo publico tests que no tengan derechos de autor de por medio, y por eso no verás aquí otros muy conocidos que sí están bajo licencia."}}]}</script>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script src="/cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Tests de psicología gratuitos y validados", "url": "https://psicolinks.com/tests.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Ansiedad"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Tests de ansiedad, depresión y consumo de alcohol: los mismos cuestionarios que se usan en consulta. Gratis, sin registro y sin salir de tu navegador."}</script>
+</body>
+</html>

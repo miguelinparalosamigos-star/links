@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de estrés postraumático PC-PTSD-5 · Psicolinks</title>
+<meta name="description" content="Cribado de cinco preguntas usado en atención primaria. Gratis, sin registro y sin que tus respuestas salgan de tu navegador. Con qué hacer después.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Test de estrés postraumático (PC-PTSD-5)">
+<meta property="og:description" content="Cribado de cinco preguntas usado en atención primaria. Gratis, sin registro y sin que tus respuestas salgan de tu navegador. Con qué hacer después.">
+<meta property="og:url" content="https://psicolinks.com/test-de-estres-postraumatico.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/test-de-estres-postraumatico.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}, {"@type": "ListItem", "position": 3, "name": "Test de estrés postraumático (PC-PTSD-5)", "item": "https://psicolinks.com/test-de-estres-postraumatico.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Test de estrés postraumático (PC-PTSD-5)", "description": "Cribado de cinco preguntas usado en atención primaria. Gratis, sin registro y sin que tus respuestas salgan de tu navegador. Con qué hacer después.", "url": "https://psicolinks.com/test-de-estres-postraumatico.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Trastorno de estrés postraumático"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/tests.html" class="back-link">← Todos los tests</a>
+  <div class="stamp">🧪 Test gratuito · PC-PTSD-5</div>
+  <h1>Test de estrés postraumático (PC-PTSD-5)</h1>
+  <p class="autor">Comentado por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Cinco preguntas de sí o no sobre el <strong>último mes</strong>. Es el cribado que se usa en atención primaria. Un minuto, sin registro y sin que tus respuestas salgan de tu navegador.</p>
+
+  <div class="alerta-riesgo"><strong>Antes de empezar, léelo.</strong> Estas preguntas van sobre un suceso duro. Responderlas puede remover cosas, y eso es normal. Si en algún momento te pones muy mal, para y respira: no hay ninguna obligación de terminarlo. Si necesitas hablar con alguien ahora, el <strong>024</strong> atiende las 24 horas, es gratis y es confidencial. Para una urgencia, el <strong>112</strong>.</div>
+
+  <div class="idea"><strong>Qué mide y qué no.</strong> No diagnostica estrés postraumático: ningún cuestionario de cinco preguntas lo hace. Es un <em>cribado</em>: detecta a quién conviene valorar en condiciones. Está diseñado para atención primaria justamente por eso, y por eso es corto.</div>
+
+  <div class="idea"><strong>Y lo que más me importa que sepas.</strong> Si sale positivo, no te asustes: el estrés postraumático es de los problemas psicológicos que <strong>mejor responden al tratamiento</strong>. Hay terapias con resultados sólidos y plazos razonables. Un resultado positivo aquí no es una condena: es una indicación de por dónde ir.</div>
+
+  <form id="puerta">
+    <h2 class="bloque-tit">Primero, una pregunta</h2>
+    <div class="pregunta">
+      <span class="num">PREGUNTA PREVIA</span>
+      <p>A veces pasan cosas especialmente duras o aterradoras: un accidente grave, un incendio, una agresión, un abuso, un desastre, una guerra, ver morir a alguien, o enterarse de algo así que le ha ocurrido a una persona cercana. <strong>¿Has vivido alguna vez algo de este tipo?</strong></p>
+      <div class="ops">
+        <label class="op"><input type="radio" name="gate" value="si"><span>Sí</span></label>
+        <label class="op"><input type="radio" name="gate" value="no"><span>No</span></label>
+      </div>
+    </div>
+  </form>
+
+  <div class="idea" id="sin-suceso" style="display:none">
+    <strong>Entonces este cribado no es el tuyo, y es una buena noticia.</strong> Las cinco preguntas que vienen después solo tienen sentido referidas a un suceso concreto, así que no te las hago. Si estás aquí porque lo estás pasando mal por otra cosa, prueba con el <a href="/tests.html">test de ansiedad o el de depresión</a>, que igual encajan mejor con lo que te pasa.
+  </div>
+
+  <div id="cuerpo-test">
+  <div class="barra-progreso">
+    <p class="pista" id="pista">Respondidas 0 de 5</p>
+    <div class="barra"><i id="relleno"></i></div>
+  </div>
+
+  <form id="test">
+    <h2 class="bloque-tit">En el último mes, ¿te ha pasado alguna de estas cosas?</h2>
+    <div id="preguntas"></div>
+    <p style="margin:1.4rem 0 0;"><button type="submit" class="btn" id="calcular" disabled>Ver mi resultado</button></p>
+  </form>
+
+  <section class="resultado" id="resultado" aria-live="polite">
+    <h2 class="bloque-tit">Tu resultado</h2>
+    <div class="marcador">
+      <p class="cifra" id="cifra">0</p>
+      <p class="de">de 5 puntos</p>
+      <p class="nivel" id="nivel"></p>
+      <div class="escala" id="escala"></div>
+      <div class="escala-leyenda"><span>0</span><span>CRIBADO NEGATIVO</span><span>CRIBADO POSITIVO</span><span>5</span></div>
+    </div>
+
+    <div class="interpreta" id="interpreta"></div>
+    <div class="interpreta" id="comparacion" style="display:none"></div>
+    <div class="alerta-riesgo" id="crisis" style="display:none"></div>
+
+    <div class="sugerencias">
+      <h3>Por dónde puedes seguir</h3>
+      <ul id="sugerencias"></ul>
+    </div>
+
+    <div class="sugerencias" id="plan">
+      <h3>Qué hacer con este resultado</h3>
+      <ol style="margin:0;padding-left:20px;">
+        <li style="font-size:0.97rem;line-height:1.7;">Si ha salido positivo, pide cita con tu médico de familia o con un psicólogo y enséñale el resultado.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">No te fuerces a contar lo que pasó a gente que no va a saber sostenerlo. Con un profesional es distinto.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Evitar todo lo que lo recuerda alivia hoy y mantiene el problema. Eso es justo lo que se trabaja en terapia, y con orden.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Cuida lo básico mientras tanto: sueño, alcohol y movimiento. No es el tratamiento, pero cambia mucho cómo se llevan los días.</li>
+      </ol>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin:0.9rem 0 0;line-height:1.55;">Y si lo que viviste fue hace mucho tiempo, sigue contando: el estrés postraumático puede aparecer meses o años después, y también se trata igual de bien.</p>
+    </div>
+
+    <p><button type="button" class="btn sec" id="repetir">Volver a hacer el test</button></p>
+  </section>
+
+  <section class="historial" id="historial" style="display:none">
+    <h3>Tus resultados anteriores</h3>
+    <p class="nota">Guardados solo en este navegador y en este dispositivo. Sirven para ver la evolución, que dice mucho más que una medición suelta.</p>
+    <table>
+      <thead><tr><th>Fecha</th><th>Puntuación</th><th>Nivel</th></tr></thead>
+      <tbody id="filas"></tbody>
+    </table>
+    <p style="margin:1rem 0 0;"><button type="button" class="btn sec" id="borrar">Borrar mi historial</button></p>
+  </section>
+  </div>
+
+  <div class="cierre"><strong>Si esto te está pasando.</strong> En España, el <strong>024</strong> atiende las 24 horas de forma gratuita y confidencial, también a familiares. Tu médico de familia es la puerta de entrada a la sanidad pública. Y si quieres trabajarlo conmigo, puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online o presencial.</div>
+
+  <p class="privacidad">
+    <strong>Privacidad.</strong> Tus respuestas y tus resultados <strong>no se envían a ningún sitio</strong>: se calculan en tu propio navegador y se quedan solo en este dispositivo. Ni yo ni nadie podemos verlos. Puedes borrarlos con el botón de arriba cuando quieras. Esto importa especialmente en un cuestionario como este.<br><br>
+    <strong>Sobre el cuestionario.</strong> PC-PTSD-5 (Primary Care PTSD Screen for DSM-5), desarrollado por el National Center for PTSD del Departamento de Asuntos de los Veteranos de Estados Unidos. Las obras de las agencias federales estadounidenses son de dominio público y el organismo lo distribuye libremente. Aquí se ha adaptado la redacción al español de España manteniendo los ítems y el punto de corte originales (3 o más respuestas afirmativas).
+  </p>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/tests.html">Todos los tests</a> · <a href="/temas.html">Todas las guías</a> · <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a></p>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/estres-postraumatico.html">Estrés postraumático: qué es y qué se hace →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+</main>
+
+<script>
+(function(){
+  var PREGUNTAS = [{"t": "¿Has tenido pesadillas sobre lo que pasó, o has pensado en ello sin querer?", "o": [["No", 0], ["Sí", 1]]}, {"t": "¿Has evitado con esfuerzo pensar en ello, o has esquivado situaciones que te lo recordaban?", "o": [["No", 0], ["Sí", 1]]}, {"t": "¿Has estado constantemente en guardia, alerta o te has sobresaltado con facilidad?", "o": [["No", 0], ["Sí", 1]]}, {"t": "¿Te has notado insensible o desconectado de la gente, de las actividades o de lo que te rodea?", "o": [["No", 0], ["Sí", 1]]}, {"t": "¿Te has sentido culpable, o sin poder dejar de culparte a ti o a otros por lo que pasó o por lo que vino después?", "o": [["No", 0], ["Sí", 1]]}];
+  var CLAVE = "pl_pcptsd_historial";
+  var MAXIMO = 5;
+  var BANDAS = [[2, "Cribado negativo"], [5, "Cribado positivo"]];
+  var TEXTOS = ["Tu cribado sale <strong>negativo</strong>. Por lo que has respondido, ahora mismo no aparece el patrón de síntomas que hace sospechar un estrés postraumático. Eso no quiere decir que lo que viviste no fuera duro ni que no te siga afectando de otras maneras: quiere decir que este patrón concreto no está. Si aun así lo estás pasando mal, eso merece atención igual.", "Tu cribado sale <strong>positivo</strong>. Con tres o más respuestas afirmativas, lo indicado es que un profesional lo valore: es exactamente para lo que sirve este cuestionario. Y esto es importante que lo leas entero: un cribado positivo <strong>no es un diagnóstico</strong>, y el estrés postraumático es de los problemas psicológicos que mejor responden al tratamiento. Hay terapias con buenos resultados y no hace falta convivir con esto para siempre."];
+  var ENLACES = [["Estrés postraumático", "/estres-postraumatico.html"], ["Después de un accidente", "/despues-de-un-accidente.html"], ["Cómo elegir psicólogo", "/elegir-psicologo.html"], ["Dónde pedir ayuda en España", "/donde-pedir-ayuda.html"]];
+  var AVISO = "<strong>Un cribado positivo no es un diagnóstico, y esto tiene tratamiento.</strong> El estrés postraumático responde bien a la terapia y no hace falta convivir con ello. Pide cita con tu médico de familia o con un psicólogo y enséñale este resultado. Si ahora mismo lo estás pasando muy mal, el <strong>024</strong> atiende las 24 horas, gratis y confidencial. Para una urgencia, el <strong>112</strong>.";
+  var GATE = true;
+  var N = PREGUNTAS.length;
+
+  var cont = document.getElementById('preguntas');
+  cont.innerHTML = PREGUNTAS.map(function(p, i){
+    return '<div class="pregunta" id="p' + i + '">'
+      + '<span class="num">PREGUNTA ' + (i+1) + ' DE ' + N + '</span>'
+      + '<p>' + p.t + '</p>'
+      + '<div class="ops">' + p.o.map(function(o){
+          return '<label class="op"><input type="radio" name="q' + i + '" value="' + o[1] + '"><span>' + o[0] + '</span></label>';
+        }).join('') + '</div>'
+      + '</div>';
+  }).join('');
+
+  var form = document.getElementById('test');
+  var boton = document.getElementById('calcular');
+  var pista = document.getElementById('pista');
+  var relleno = document.getElementById('relleno');
+
+  function marcada(i){ return form.querySelector('input[name="q' + i + '"]:checked'); }
+  function respondidas(){
+    var n = 0;
+    for (var i = 0; i < N; i++) { if (marcada(i)) n++; }
+    return n;
+  }
+  function actualiza(){
+    var n = respondidas();
+    pista.textContent = 'Respondidas ' + n + ' de ' + N;
+    relleno.style.width = (n / N * 100) + '%';
+    boton.disabled = n < N;
+  }
+  form.addEventListener('change', function(){
+    actualiza();
+    for (var i = 0; i < N; i++) { document.getElementById('p' + i).classList.remove('sin-responder'); }
+  });
+
+  function nivelDe(p){
+    for (var b = 0; b < BANDAS.length; b++) { if (p <= BANDAS[b][0]) return { nombre: BANDAS[b][1], banda: b }; }
+    return { nombre: BANDAS[BANDAS.length-1][1], banda: BANDAS.length-1 };
+  }
+
+  function guarda(p, nivel){
+    try {
+      var h = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+      h.unshift({ f: new Date().toISOString().slice(0,10), p: p, n: nivel });
+      localStorage.setItem(CLAVE, JSON.stringify(h.slice(0, 12)));
+    } catch(e) {}
+  }
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function pintaHistorial(){
+    var h = [];
+    try { h = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { h = []; }
+    var caja = document.getElementById('historial');
+    if (!h.length) { caja.style.display = 'none'; return; }
+    document.getElementById('filas').innerHTML = h.map(function(r){
+      return '<tr><td>' + esc(r.f) + '</td><td>' + esc(r.p) + ' / ' + MAXIMO + '</td><td>' + esc(r.n) + '</td></tr>';
+    }).join('');
+    caja.style.display = '';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (respondidas() < N) {
+      for (var i = 0; i < N; i++) {
+        if (!marcada(i)) { document.getElementById('p' + i).classList.add('sin-responder'); }
+      }
+      return;
+    }
+    var total = 0;
+    for (var i = 0; i < N; i++) { total += parseInt(marcada(i).value, 10); }
+    var nivel = nivelDe(total);
+
+    document.getElementById('cifra').textContent = total;
+    document.getElementById('nivel').textContent = nivel.nombre;
+    document.getElementById('interpreta').innerHTML = TEXTOS[nivel.banda];
+    document.getElementById('escala').innerHTML = BANDAS.map(function(_, b){
+      return '<div class="' + (b <= nivel.banda ? 'on' : '') + '"></div>';
+    }).join('');
+    document.getElementById('sugerencias').innerHTML = ENLACES.map(function(l){
+      return '<li><a href="' + l[1] + '">' + l[0] + '</a></li>';
+    }).join('');
+
+    var crisis = document.getElementById('crisis');
+    if (AVISO && nivel.banda >= BANDAS.length - 1) { crisis.innerHTML = AVISO; crisis.style.display = ''; }
+    else { crisis.style.display = 'none'; }
+
+    var previos = [];
+    try { previos = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { previos = []; }
+    var cmp = document.getElementById('comparacion');
+    if (previos.length) {
+      var antes = previos[0], dif = total - antes.p, txt;
+      if (dif < 0) txt = '<strong>Has bajado ' + Math.abs(dif) + ' punto' + (Math.abs(dif) === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + esc(antes.f) + ', que fue de ' + esc(antes.p) + '. Sea lo que sea que estés haciendo, va en la buena dirección.';
+      else if (dif > 0) txt = '<strong>Has subido ' + dif + ' punto' + (dif === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + esc(antes.f) + ', que fue de ' + esc(antes.p) + '. Puede ser una mala racha puntual; si se mantiene en la siguiente, coméntalo con un profesional.';
+      else txt = 'Has sacado <strong>la misma puntuación</strong> que el ' + esc(antes.f) + '. Si llevas semanas intentándolo por tu cuenta y no se mueve, suele ser el momento de pedir ayuda.';
+      cmp.innerHTML = txt; cmp.style.display = '';
+    } else { cmp.style.display = 'none'; }
+
+    guarda(total, nivel.nombre);
+    pintaHistorial();
+
+    var caja = document.getElementById('resultado');
+    caja.classList.add('visible');
+    caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('repetir').addEventListener('click', function(){
+    form.reset(); actualiza();
+    document.getElementById('resultado').classList.remove('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    try { localStorage.removeItem(CLAVE); } catch(e) {}
+    pintaHistorial();
+  });
+
+  // Puerta de entrada: en el cribado de trauma, las preguntas solo tienen
+  // sentido si ha habido un suceso. Si dice que no, no se le hacen.
+  if (GATE) {
+    var puerta = document.getElementById('puerta');
+    var cuerpo = document.getElementById('cuerpo-test');
+    var salida = document.getElementById('sin-suceso');
+    cuerpo.style.display = 'none';
+    puerta.addEventListener('change', function(){
+      var v = puerta.querySelector('input[name="gate"]:checked');
+      if (!v) return;
+      if (v.value === 'si') { cuerpo.style.display = ''; salida.style.display = 'none'; cuerpo.scrollIntoView({behavior:'smooth', block:'start'}); }
+      else { cuerpo.style.display = 'none'; salida.style.display = ''; }
+    });
+  }
+
+  actualiza();
+  pintaHistorial();
+})();
+</script>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="/cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
+</body>
+</html>

@@ -159,7 +159,7 @@
       leidas.map(function (x) {
         return '<li><a href="/' + x.slug + '.html">' + x.titulo + '</a></li>';
       }).join('') +
-      '</ul><p><a href="/guias.html">Ver todas las guías →</a></p>';
+      '</ul><p><a href="/temas.html">Ver todas las guías →</a></p>';
     hueco.hidden = false;
   }
 

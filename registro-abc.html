@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro A-B-C de 7 días, gratis · Psicolinks</title>
+<meta name="description" content="La herramienta con la que empieza cualquier terapia conductual: apunta qué pasa antes, qué haces y qué pasa después. Se guarda solo en tu navegador.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Registro A-B-C de 7 días, gratis y sin registro">
+<meta property="og:description" content="Apunta qué pasa antes, qué haces y qué pasa después. En tres anotaciones empieza a verse el patrón. Todo se queda en tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/registro-abc.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/registro-abc.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+
+  .campo { margin: 0 0 1.1rem; }
+  .campo label { display: block; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--stamp); margin: 0 0 0.35rem; }
+  .campo .ayuda { font-size: 0.86rem; color: var(--ink-soft); line-height: 1.5; margin: 0 0 0.5rem; }
+  .campo input[type="text"], .campo input[type="date"], .campo textarea {
+    width: 100%; padding: 0.65rem 0.8rem; border: 1.5px solid var(--border); border-radius: 9px;
+    font-family: inherit; font-size: 0.97rem; color: var(--ink); background: var(--surface); resize: vertical; }
+  .campo textarea { min-height: 62px; }
+  .campo input:focus, .campo textarea:focus { border-color: var(--accent); outline: none; }
+  .fila-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  @media (max-width: 520px) { .fila-2 { grid-template-columns: 1fr; } }
+  .rango { display: flex; align-items: center; gap: 0.8rem; }
+  .rango input[type="range"] { flex: 1; accent-color: var(--accent); }
+  .rango output { font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; color: var(--accent); min-width: 2.2rem; text-align: right; }
+  .resumen { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1.2rem; }
+  .dato { flex: 1; min-width: 130px; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 0.8rem 1rem; }
+  .dato .cifra-p { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: 0; line-height: 1.1; }
+  .dato .et { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0.25rem 0 0; }
+  .grafico { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 1rem 1.1rem 0.8rem; margin: 0 0 1.2rem; }
+  .grafico .g-tit { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 0.7rem; }
+  .barras { display: flex; align-items: flex-end; gap: 2px; height: 90px; }
+  .barras i { flex: 1; max-width: 46px; background: var(--accent); border-radius: 4px 4px 0 0; min-height: 3px; display: block; }
+  .barras-pie { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.62rem; color: var(--ink-soft); margin: 0.4rem 0 0; }
+  .entrada { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 0.9rem 1.1rem; margin: 0 0 0.7rem; }
+  .entrada .cab { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; margin: 0 0 0.5rem; }
+  .entrada .fecha { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+  .entrada .malestar { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+  .entrada dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.7rem; }
+  .entrada dt { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--stamp); padding-top: 0.2rem; }
+  .entrada dd { margin: 0; font-size: 0.94rem; line-height: 1.55; }
+  .entrada .quitar { margin: 0.7rem 0 0; font: inherit; font-size: 0.78rem; background: none; border: 1px solid var(--border); border-radius: 99px; padding: 0.25rem 0.75rem; cursor: pointer; color: var(--ink-soft); }
+  .entrada .quitar:hover { border-color: var(--stamp); color: var(--stamp); }
+  #copiado { font-size: 0.86rem; color: #2f6b4f; margin: 0.6rem 0 0; }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Tu registro de siete días", "item": "https://psicolinks.com/registro-abc.html"}]}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/temas.html" class="back-link">← Todas las guías</a>
+  <div class="stamp">🗒️ Herramienta gratuita</div>
+  <h1>Tu registro de siete días</h1>
+  <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">La herramienta con la que empieza casi cualquier terapia conductual, aquí y gratis. Apunta durante una semana lo que pasa <strong>antes</strong>, lo que <strong>haces</strong> y lo que pasa <strong>después</strong>. En tres o cuatro anotaciones empieza a verse el patrón.</p>
+
+  <div class="idea"><strong>Por qué esto y no un diario normal.</strong> Un diario cuenta cómo te sentiste; un registro A-B-C cuenta <em>qué lo enciende y qué lo mantiene</em>. Y esa segunda parte —la consecuencia, lo que consigues o de lo que te libras justo después— es la que explica por qué algo se repite aunque te esté costando la vida. Es el instrumento básico del análisis de la conducta y se lleva usando desde hace décadas.</div>
+
+  <div class="idea"><strong>Todo se queda en tu navegador.</strong> Lo que escribas aquí <strong>no se envía a ningún sitio</strong>: se guarda solo en este dispositivo. Ni yo ni nadie puede verlo. Puedes borrarlo entero cuando quieras, y puedes copiarlo con un botón para llevárselo a tu psicólogo.</div>
+
+  <h2 class="bloque-tit">Añadir una anotación</h2>
+  <form id="reg">
+      <div class="campo">
+        <label for="f-fecha">Fecha</label>
+        <input type="date" id="f-fecha" required>
+      </div>
+
+      <div class="campo">
+        <label for="f-a">A · Antecedente: ¿qué había justo antes?</label>
+        <p class="ayuda">Dónde estabas, con quién, qué hora era, cómo estabas de cansancio o de ánimo, qué pensamiento apareció. Cuanto más concreto, mejor.</p>
+        <textarea id="f-a" required placeholder="Ej.: domingo por la tarde, solo en casa, cansado, pensando en la semana"></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="f-b">B · Conducta: ¿qué hiciste exactamente?</label>
+        <p class="ayuda">Cuéntalo como lo grabaría una cámara. Nada de etiquetas («me dio ansiedad») ni interpretaciones: qué hiciste tú.</p>
+        <textarea id="f-b" required placeholder="Ej.: cancelé el plan y me quedé dos horas mirando el móvil"></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="f-c">C · Consecuencia: ¿qué pasó justo después?</label>
+        <p class="ayuda">Qué conseguiste o de qué te libraste en ese momento, y qué costó después. Esta es la casilla que explica por qué se repite.</p>
+        <textarea id="f-c" required placeholder="Ej.: me quité el agobio de golpe; luego me sentí mal por no haber ido"></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="f-m">Malestar en ese momento (0 a 10)</label>
+        <div class="rango">
+          <input type="range" id="f-m" min="0" max="10" step="1" value="5">
+          <output id="f-m-val">5</output>
+        </div>
+      </div>
+      <p style="margin:1.2rem 0 0;"><button type="submit" class="btn">Guardar la anotación</button></p>
+  </form>
+
+  <section id="panel" style="display:none">
+    <h2 class="bloque-tit">Lo que llevas</h2>
+    <div class="resumen">
+      <div class="dato"><p class="cifra-p" id="d-total">0</p><p class="et">Anotaciones</p></div>
+      <div class="dato"><p class="cifra-p" id="d-dias">0</p><p class="et">Días distintos</p></div>
+      <div class="dato"><p class="cifra-p" id="d-media">0</p><p class="et">Malestar medio</p></div>
+    </div>
+
+    <div class="grafico" id="grafico">
+      <p class="g-tit">Malestar en tus últimas anotaciones</p>
+      <div class="barras" id="barras" role="img" aria-label="Malestar de las últimas anotaciones, de 0 a 10"></div>
+      <p class="barras-pie"><span>más antiguas</span><span>0 a 10</span><span>más recientes</span></p>
+    </div>
+
+    <div id="lista"></div>
+
+    <p style="margin:1.4rem 0 0;display:flex;gap:0.6rem;flex-wrap:wrap;">
+      <button type="button" class="btn sec" id="copiar">Copiar todo para llevármelo</button>
+      <button type="button" class="btn sec" id="borrar">Borrar mi registro</button>
+    </p>
+    <p id="copiado" style="display:none">Copiado. Ya puedes pegarlo en un correo, en una nota o imprimirlo.</p>
+  </section>
+
+  <div class="idea" style="margin-top:2rem;"><strong>Cómo leerlo al cabo de una semana.</strong> Busca lo que se repite en la columna A: ¿siempre a la misma hora?, ¿siempre con la misma persona?, ¿siempre cuando estás cansado? Y después mira la columna C: si en casi todas las anotaciones te estás quitando algo desagradable de encima —agobio, aburrimiento, una conversación—, ya sabes qué está sosteniendo la conducta. Eso es exactamente lo que se trabaja después.</div>
+
+  <div class="cierre"><strong>Y si quieres que lo miremos juntos.</strong> Un registro de una semana es la mejor primera sesión que existe: se ve el patrón en diez minutos en vez de en tres sesiones. Puedes copiarlo con el botón de arriba y llevártelo a quien te atienda, sea quien sea. Y si quieres trabajarlo conmigo, paso consulta en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online y presencial.</div>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/terapia-conductual-preguntas.html">Preguntas antes de ir al psicólogo</a> · <a href="/temas.html">Todas las guías</a> · <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a></p>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/terapia-conductual-preguntas.html">Preguntas antes de ir al psicólogo →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+  <p style="text-align:center;font-size:0.92rem;margin:1.6rem 0 0;">¿Buscas otro? <a href="/tests.html">Todos los tests y herramientas →</a></p>
+</main>
+
+<script>
+(function(){
+  var CLAVE = 'pl_registro_abc';
+  var form = document.getElementById('reg');
+  var rango = document.getElementById('f-m');
+  var salida = document.getElementById('f-m-val');
+
+  function hoy(){
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  }
+  document.getElementById('f-fecha').value = hoy();
+  rango.addEventListener('input', function(){ salida.textContent = rango.value; });
+
+  function leer(){
+    try { var d = JSON.parse(localStorage.getItem(CLAVE) || '[]'); return Array.isArray(d) ? d : []; }
+    catch(e) { return []; }
+  }
+  function guardar(l){
+    try { localStorage.setItem(CLAVE, JSON.stringify(l.slice(0, 200))); } catch(e) {}
+  }
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function pinta(){
+    var l = leer();
+    var panel = document.getElementById('panel');
+    if (!l.length) { panel.style.display = 'none'; return; }
+    panel.style.display = '';
+
+    var dias = {};
+    var suma = 0;
+    l.forEach(function(r){ dias[r.fecha] = 1; suma += r.m; });
+    document.getElementById('d-total').textContent = l.length;
+    document.getElementById('d-dias').textContent = Object.keys(dias).length;
+    document.getElementById('d-media').textContent = (suma / l.length).toFixed(1);
+
+    // Barras: las 14 últimas, de la más antigua a la más reciente
+    var ult = l.slice(0, 14).reverse();
+    document.getElementById('barras').innerHTML = ult.map(function(r){
+      var alto = Math.max(3, Math.round(r.m / 10 * 90));
+      return '<i style="height:' + alto + 'px" title="' + esc(r.fecha) + ': ' + r.m + ' de 10"></i>';
+    }).join('');
+    document.getElementById('grafico').style.display = ult.length > 1 ? '' : 'none';
+
+    document.getElementById('lista').innerHTML = l.map(function(r, i){
+      return '<div class="entrada">'
+        + '<div class="cab"><span class="fecha">' + esc(r.fecha) + '</span>'
+        + '<span class="malestar">' + r.m + ' / 10</span></div>'
+        + '<dl>'
+        + '<dt>A</dt><dd>' + esc(r.a) + '</dd>'
+        + '<dt>B</dt><dd>' + esc(r.b) + '</dd>'
+        + '<dt>C</dt><dd>' + esc(r.c) + '</dd>'
+        + '</dl>'
+        + '<button type="button" class="quitar" data-i="' + i + '">Borrar esta anotación</button>'
+        + '</div>';
+    }).join('');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var l = leer();
+    l.unshift({
+      fecha: document.getElementById('f-fecha').value || hoy(),
+      a: document.getElementById('f-a').value.trim(),
+      b: document.getElementById('f-b').value.trim(),
+      c: document.getElementById('f-c').value.trim(),
+      m: parseInt(rango.value, 10)
+    });
+    guardar(l);
+    document.getElementById('f-a').value = '';
+    document.getElementById('f-b').value = '';
+    document.getElementById('f-c').value = '';
+    rango.value = 5; salida.textContent = '5';
+    document.getElementById('f-fecha').value = hoy();
+    pinta();
+    document.getElementById('panel').scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+
+  document.getElementById('lista').addEventListener('click', function(e){
+    var b = e.target.closest('.quitar');
+    if (!b) return;
+    var l = leer();
+    l.splice(parseInt(b.getAttribute('data-i'), 10), 1);
+    guardar(l);
+    pinta();
+  });
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    try { localStorage.removeItem(CLAVE); } catch(e) {}
+    pinta();
+  });
+
+  document.getElementById('copiar').addEventListener('click', function(){
+    var l = leer();
+    var txt = 'REGISTRO A-B-C · Psicolinks\n\n' + l.map(function(r){
+      return r.fecha + '  (malestar ' + r.m + '/10)\n'
+        + 'A (antes): ' + r.a + '\n'
+        + 'B (qué hice): ' + r.b + '\n'
+        + 'C (después): ' + r.c + '\n';
+    }).join('\n');
+    var aviso = document.getElementById('copiado');
+    function ok(){ aviso.style.display = ''; setTimeout(function(){ aviso.style.display='none'; }, 4000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(ok, function(){ manual(txt, ok); });
+    } else { manual(txt, ok); }
+  });
+
+  function manual(txt, ok){
+    var ta = document.createElement('textarea');
+    ta.value = txt; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); ok(); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+
+  pinta();
+})();
+</script>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+</body>
+</html>

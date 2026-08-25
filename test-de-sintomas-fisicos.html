@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de síntomas físicos PHQ-15, gratis · Psicolinks</title>
+<meta name="description" content="Quince preguntas sobre dolores, mareos, cansancio y digestiones. Cuestionario PHQ-15, gratis y sin registro. Resultado al momento y qué hacer con él.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Test de síntomas físicos (PHQ-15), gratis y sin registro">
+<meta property="og:description" content="Quince preguntas sobre dolores, mareos, cansancio y digestiones. Cuestionario PHQ-15, gratis y sin registro. Resultado al momento y qué hacer con él.">
+<meta property="og:url" content="https://psicolinks.com/test-de-sintomas-fisicos.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/test-de-sintomas-fisicos.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}, {"@type": "ListItem", "position": 3, "name": "Test de síntomas físicos (PHQ-15)", "item": "https://psicolinks.com/test-de-sintomas-fisicos.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Test de síntomas físicos (PHQ-15)", "description": "Quince preguntas sobre dolores, mareos, cansancio y digestiones. Cuestionario PHQ-15, gratis y sin registro. Resultado al momento y qué hacer con él.", "url": "https://psicolinks.com/test-de-sintomas-fisicos.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Síntomas somáticos"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/tests.html" class="back-link">← Todos los tests</a>
+  <div class="stamp">🧪 Test gratuito · PHQ-15</div>
+  <h1>Test de síntomas físicos (PHQ-15)</h1>
+  <p class="autor">Comentado por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Quince preguntas sobre molestias físicas en las <strong>últimas cuatro semanas</strong>. Dos minutos, sin registro, resultado al momento y una explicación de qué significa.</p>
+
+  <div class="idea"><strong>Lo primero, porque importa mucho.</strong> Que este test salga alto <strong>no</strong> significa que tus síntomas sean imaginarios ni que «sea de la cabeza». Los dolores, los mareos y el cansancio que notas son reales. Lo que mide este cuestionario es <em>cuánto te están molestando</em>, que es otra cosa. Y un total alto es un motivo para que te miren mejor, no para que te miren menos.</div>
+
+  <div class="idea"><strong>El orden correcto: primero tu médico.</strong> Un síntoma físico nuevo o que ha cambiado se valora médicamente antes que nada. Este test no descarta nada. Lo que sí hace, cuando lo físico ya está mirado, es poner un número a la carga de síntomas y ver si baja con el tiempo.</div>
+
+  <div class="idea"><strong>Por qué existe este cuestionario.</strong> Porque el cuerpo y el estrés van juntos más de lo que solemos aceptar: la tensión sostenida da dolor de cabeza, contracturas, digestiones malas y palpitaciones de verdad, no de mentira. El PHQ-15 es de la misma familia que el PHQ-9 y el GAD-7 que ya tienes aquí, y se usa en atención primaria en todo el mundo.</div>
+
+  <div class="barra-progreso">
+    <p class="pista" id="pista">Respondidas 0 de 15</p>
+    <div class="barra"><i id="relleno"></i></div>
+  </div>
+
+  <form id="test">
+    <h2 class="bloque-tit">En las últimas cuatro semanas, ¿cuánto te ha molestado…?</h2>
+    <div id="preguntas"></div>
+    <p style="margin:1.4rem 0 0;"><button type="submit" class="btn" id="calcular" disabled>Ver mi resultado</button></p>
+  </form>
+
+  <section class="resultado" id="resultado" aria-live="polite">
+    <h2 class="bloque-tit">Tu resultado</h2>
+    <div class="marcador">
+      <p class="cifra" id="cifra">0</p>
+      <p class="de">de 30 puntos</p>
+      <p class="nivel" id="nivel"></p>
+      <div class="escala" id="escala"></div>
+      <div class="escala-leyenda"><span>0</span><span>MÍNIMO</span><span>LEVE</span><span>MODERADO</span><span>ALTO</span><span>30</span></div>
+    </div>
+
+    <div class="interpreta" id="interpreta"></div>
+    <div class="interpreta" id="comparacion" style="display:none"></div>
+    <div class="alerta-riesgo" id="crisis" style="display:none"></div>
+
+    <div class="sugerencias">
+      <h3>Por dónde puedes seguir</h3>
+      <ul id="sugerencias"></ul>
+    </div>
+
+    <div class="sugerencias" id="plan">
+      <h3>Qué hacer con este resultado</h3>
+      <ol style="margin:0;padding-left:20px;">
+        <li style="font-size:0.97rem;line-height:1.7;">Si hay algún síntoma nuevo o que ha cambiado, <strong>al médico primero</strong>. Este test no sustituye eso.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Apunta durante dos semanas cuándo aparece cada molestia y qué estaba pasando antes. El patrón suele verse enseguida.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Mira también la ansiedad y el ánimo con los otros dos tests: en puntuaciones medias y altas suelen ir de la mano.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Repite este test dentro de cuatro semanas y compara. La evolución dice mucho más que una foto suelta.</li>
+      </ol>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin:0.9rem 0 0;line-height:1.55;">Y una cosa que ayuda más de lo que parece: dejar de comprobarte y de buscar los síntomas en internet. Eso los amplifica de verdad, y lo explico en la guía de buscar síntomas en internet.</p>
+    </div>
+
+    <p><button type="button" class="btn sec" id="repetir">Volver a hacer el test</button></p>
+  </section>
+
+  <section class="historial" id="historial" style="display:none">
+    <h3>Tus resultados anteriores</h3>
+    <p class="nota">Guardados solo en este navegador y en este dispositivo. Sirven para ver la evolución, que dice mucho más que una medición suelta.</p>
+    <table>
+      <thead><tr><th>Fecha</th><th>Puntuación</th><th>Nivel</th></tr></thead>
+      <tbody id="filas"></tbody>
+    </table>
+    <p style="margin:1rem 0 0;"><button type="button" class="btn sec" id="borrar">Borrar mi historial</button></p>
+  </section>
+
+  <div class="idea"><strong>Un apunte sobre dos preguntas.</strong> La de la regla y la de las relaciones sexuales llevan la opción «no me aplica», que puntúa cero. En la versión original, a los hombres simplemente no se les hace la pregunta de la regla y su puntuación máxima es 28 en vez de 30. Si eres hombre y has marcado «no me aplica», tu resultado ya está bien calculado.</div>
+
+  <div class="cierre"><strong>Si el resultado te ha preocupado.</strong> Llévaselo a tu médico de familia: es la puerta de entrada y puede valorar la parte física. Y si lo que ves es que tu cuerpo lleva meses avisando de que vas al límite, eso se trabaja bien en terapia. Puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online o presencial.</div>
+
+  <p class="privacidad">
+    <strong>Privacidad.</strong> Tus respuestas y tus resultados <strong>no se envían a ningún sitio</strong>: se calculan en tu propio navegador y se quedan solo en este dispositivo. Ni yo ni nadie podemos verlos. Puedes borrarlos con el botón de arriba cuando quieras.<br><br>
+    <strong>Sobre el cuestionario.</strong> PHQ-15 (Patient Health Questionnaire, escala de síntomas somáticos), de Kroenke, Spitzer y Williams. El formulario original lleva impreso: «Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute» — no hace falta permiso para reproducirlo, traducirlo, mostrarlo ni distribuirlo. Aquí se ha adaptado la redacción al español de España manteniendo los ítems y la puntuación originales.
+  </p>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/tests.html">Todos los tests</a> · <a href="/temas.html">Todas las guías</a> · <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a></p>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/cuando-el-cuerpo-avisa.html">Cuando el cuerpo avisa →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+</main>
+
+<script>
+(function(){
+  var PREGUNTAS = [{"t": "Dolor de estómago", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Dolor de espalda", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Dolor en brazos, piernas o articulaciones (rodillas, caderas…)", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Dolores o problemas con la regla", "o": [["No me aplica", 0], ["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Dolor de cabeza", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Dolor en el pecho", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Mareos", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Desmayos", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Notar el corazón acelerado o dando golpes", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Falta de aire", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Dolor o molestias durante las relaciones sexuales", "o": [["No me aplica", 0], ["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Estreñimiento, diarrea o descomposición", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Náuseas, gases o digestiones pesadas", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Cansancio o falta de energía", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}, {"t": "Problemas para dormir", "o": [["Nada", 0], ["Un poco", 1], ["Bastante", 2]]}];
+  var CLAVE = "pl_phq15_historial";
+  var MAXIMO = 30;
+  var BANDAS = [[4, "Mínimo"], [9, "Leve"], [14, "Moderado"], [30, "Alto"]];
+  var TEXTOS = ["Tu puntuación está en el rango <strong>mínimo</strong>. Los síntomas físicos no te están dando guerra de forma importante. Si aun así hay uno concreto que te preocupa, eso se mira con tu médico aunque el total salga bajo: este cuestionario suma, y una sola cosa importante puede quedar diluida en la suma.", "Tu puntuación está en el rango <strong>leve</strong>. Hay algunas molestias, pero en un nivel que mucha gente tiene y que no suele indicar nada serio. Lo útil aquí es fijarse en cuáles son y si aparecen sobre todo en épocas de más tensión: eso ya da información.", "Tu puntuación está en el rango <strong>moderado</strong>. A este nivel las molestias físicas ya suelen estar condicionando el día a día. Dos cosas, en este orden: que tu médico valore lo físico, y mirar también la parte de estrés y ansiedad, porque en este rango casi siempre van juntas y tratar solo una deja el problema a medias.", "Tu puntuación está en el rango <strong>alto</strong>. Un total así indica una carga de síntomas físicos importante, y es de las puntuaciones que mejor predicen que la persona lleva tiempo yendo de consulta en consulta sin respuesta. No significa que sea «cosa de la cabeza»: significa que conviene un abordaje que mire las dos cosas a la vez. Enséñale este resultado a tu médico."];
+  var ENLACES = [["Cuando el cuerpo avisa", "/cuando-el-cuerpo-avisa.html"], ["Buscar síntomas en internet", "/buscar-sintomas-en-internet.html"], ["El estrés que no para", "/el-estres-que-no-para.html"], ["Dolor crónico", "/dolor-cronico.html"], ["Hablar con tu médico de salud mental", "/hablar-con-tu-medico-salud-mental.html"]];
+  var AVISO = "<strong>Con una puntuación así, no te quedes solo con este resultado.</strong> Pide cita con tu médico de familia y enséñaselo. Que salga alto no quiere decir que no haya nada físico: quiere decir que la carga de síntomas es grande y que conviene mirarla entera, lo físico y lo demás, en vez de por trozos.";
+  var GATE = false;
+  var N = PREGUNTAS.length;
+
+  var cont = document.getElementById('preguntas');
+  cont.innerHTML = PREGUNTAS.map(function(p, i){
+    return '<div class="pregunta" id="p' + i + '">'
+      + '<span class="num">PREGUNTA ' + (i+1) + ' DE ' + N + '</span>'
+      + '<p>' + p.t + '</p>'
+      + '<div class="ops">' + p.o.map(function(o){
+          return '<label class="op"><input type="radio" name="q' + i + '" value="' + o[1] + '"><span>' + o[0] + '</span></label>';
+        }).join('') + '</div>'
+      + '</div>';
+  }).join('');
+
+  var form = document.getElementById('test');
+  var boton = document.getElementById('calcular');
+  var pista = document.getElementById('pista');
+  var relleno = document.getElementById('relleno');
+
+  function marcada(i){ return form.querySelector('input[name="q' + i + '"]:checked'); }
+  function respondidas(){
+    var n = 0;
+    for (var i = 0; i < N; i++) { if (marcada(i)) n++; }
+    return n;
+  }
+  function actualiza(){
+    var n = respondidas();
+    pista.textContent = 'Respondidas ' + n + ' de ' + N;
+    relleno.style.width = (n / N * 100) + '%';
+    boton.disabled = n < N;
+  }
+  form.addEventListener('change', function(){
+    actualiza();
+    for (var i = 0; i < N; i++) { document.getElementById('p' + i).classList.remove('sin-responder'); }
+  });
+
+  function nivelDe(p){
+    for (var b = 0; b < BANDAS.length; b++) { if (p <= BANDAS[b][0]) return { nombre: BANDAS[b][1], banda: b }; }
+    return { nombre: BANDAS[BANDAS.length-1][1], banda: BANDAS.length-1 };
+  }
+
+  function guarda(p, nivel){
+    try {
+      var h = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+      h.unshift({ f: new Date().toISOString().slice(0,10), p: p, n: nivel });
+      localStorage.setItem(CLAVE, JSON.stringify(h.slice(0, 12)));
+    } catch(e) {}
+  }
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function pintaHistorial(){
+    var h = [];
+    try { h = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { h = []; }
+    var caja = document.getElementById('historial');
+    if (!h.length) { caja.style.display = 'none'; return; }
+    document.getElementById('filas').innerHTML = h.map(function(r){
+      return '<tr><td>' + esc(r.f) + '</td><td>' + esc(r.p) + ' / ' + MAXIMO + '</td><td>' + esc(r.n) + '</td></tr>';
+    }).join('');
+    caja.style.display = '';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (respondidas() < N) {
+      for (var i = 0; i < N; i++) {
+        if (!marcada(i)) { document.getElementById('p' + i).classList.add('sin-responder'); }
+      }
+      return;
+    }
+    var total = 0;
+    for (var i = 0; i < N; i++) { total += parseInt(marcada(i).value, 10); }
+    var nivel = nivelDe(total);
+
+    document.getElementById('cifra').textContent = total;
+    document.getElementById('nivel').textContent = nivel.nombre;
+    document.getElementById('interpreta').innerHTML = TEXTOS[nivel.banda];
+    document.getElementById('escala').innerHTML = BANDAS.map(function(_, b){
+      return '<div class="' + (b <= nivel.banda ? 'on' : '') + '"></div>';
+    }).join('');
+    document.getElementById('sugerencias').innerHTML = ENLACES.map(function(l){
+      return '<li><a href="' + l[1] + '">' + l[0] + '</a></li>';
+    }).join('');
+
+    var crisis = document.getElementById('crisis');
+    if (AVISO && nivel.banda >= BANDAS.length - 1) { crisis.innerHTML = AVISO; crisis.style.display = ''; }
+    else { crisis.style.display = 'none'; }
+
+    var previos = [];
+    try { previos = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { previos = []; }
+    var cmp = document.getElementById('comparacion');
+    if (previos.length) {
+      var antes = previos[0], dif = total - antes.p, txt;
+      if (dif < 0) txt = '<strong>Has bajado ' + Math.abs(dif) + ' punto' + (Math.abs(dif) === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + esc(antes.f) + ', que fue de ' + esc(antes.p) + '. Sea lo que sea que estés haciendo, va en la buena dirección.';
+      else if (dif > 0) txt = '<strong>Has subido ' + dif + ' punto' + (dif === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + esc(antes.f) + ', que fue de ' + esc(antes.p) + '. Puede ser una mala racha puntual; si se mantiene en la siguiente, coméntalo con un profesional.';
+      else txt = 'Has sacado <strong>la misma puntuación</strong> que el ' + esc(antes.f) + '. Si llevas semanas intentándolo por tu cuenta y no se mueve, suele ser el momento de pedir ayuda.';
+      cmp.innerHTML = txt; cmp.style.display = '';
+    } else { cmp.style.display = 'none'; }
+
+    guarda(total, nivel.nombre);
+    pintaHistorial();
+
+    var caja = document.getElementById('resultado');
+    caja.classList.add('visible');
+    caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('repetir').addEventListener('click', function(){
+    form.reset(); actualiza();
+    document.getElementById('resultado').classList.remove('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    try { localStorage.removeItem(CLAVE); } catch(e) {}
+    pintaHistorial();
+  });
+
+  // Puerta de entrada: en el cribado de trauma, las preguntas solo tienen
+  // sentido si ha habido un suceso. Si dice que no, no se le hacen.
+  if (GATE) {
+    var puerta = document.getElementById('puerta');
+    var cuerpo = document.getElementById('cuerpo-test');
+    var salida = document.getElementById('sin-suceso');
+    cuerpo.style.display = 'none';
+    puerta.addEventListener('change', function(){
+      var v = puerta.querySelector('input[name="gate"]:checked');
+      if (!v) return;
+      if (v.value === 'si') { cuerpo.style.display = ''; salida.style.display = 'none'; cuerpo.scrollIntoView({behavior:'smooth', block:'start'}); }
+      else { cuerpo.style.display = 'none'; salida.style.display = ''; }
+    });
+  }
+
+  actualiza();
+  pintaHistorial();
+})();
+</script>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="/cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de personalidad Big Five gratis (20 frases) · Psicolinks</title>
+<meta name="description" content="Los cinco grandes rasgos en veinte frases y tres minutos. Sin registro, sin correo y sin salir de tu navegador. Con la fuente y la licencia a la vista.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Test de personalidad Big Five gratis (20 frases)">
+<meta property="og:description" content="Los cinco grandes rasgos en veinte frases y tres minutos. Sin registro y sin salir de tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/test-de-personalidad.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/test-de-personalidad.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+
+  .perfil{ margin:1.4rem 0 0; }
+  .factor{ margin:0 0 1.5rem; padding:0 0 1.3rem; border-bottom:1px solid var(--border); }
+  .factor:last-child{ border-bottom:0; }
+  .factor-cab{ display:flex; align-items:baseline; gap:0.55rem; margin:0 0 0.15rem; }
+  .factor-nom{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; }
+  .factor-pts{ margin-left:auto; font-family:var(--font-mono); font-size:0.82rem; color:var(--ink-soft); white-space:nowrap; }
+  .factor-que{ font-size:0.9rem; color:var(--ink-soft); margin:0 0 0.6rem; }
+  .factor-barra{ height:12px; background:var(--border); border-radius:6px; overflow:hidden; }
+  .factor-relleno{ height:100%; background:var(--accent); border-radius:6px; transition:width 0.5s ease; }
+  .factor-tramos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.3rem 0 0.7rem; }
+  .factor-txt{ font-size:0.93rem; line-height:1.65; margin:0; }
+  .factor-nivel{ display:inline-block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; padding:0.16rem 0.5rem; border-radius:5px; background:var(--surface); border:1px solid var(--border); color:var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/tests.html" class="back-link">← Todos los tests</a>
+  <div class="stamp">📎 Cuestionario · Personalidad</div>
+  <h1>Test de personalidad (Big Five)</h1>
+  <p class="autor">Comentado por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Veinte frases, tres minutos y un perfil de los cinco grandes rasgos. Sin registro, sin correo y sin que tus respuestas salgan de tu navegador.</p>
+
+  <div class="idea"><strong>Esto no es un test clínico, y la diferencia importa.</strong> Los otros cuestionarios de esta web —el de ansiedad, el de ánimo— miden <em>síntomas</em>: cuánto estás sufriendo ahora y si conviene que alguien lo mire. Este mide <em>rasgos</em>: cómo eres habitualmente. Un rasgo no es un síntoma, no se trata y no hay puntuaciones buenas ni malas. Si lo que buscas es saber si lo que te pasa necesita ayuda, el sitio es <a href="/test-rapido-ansiedad-depresion.html">el chequeo rápido</a>, no esta página.</div>
+
+  <div class="idea"><strong>De dónde salen las frases.</strong> Son veinte ítems del <strong>International Personality Item Pool</strong>, en la versión corta de Donnellan, Oswald, Baird y Lucas (2006). El IPIP es de <strong>dominio público</strong>: su propia web dice que se pueden copiar, editar, traducir y usar para cualquier fin sin pedir permiso y sin pagar. Por eso está aquí y por eso la traducción al español es legítima. La mayoría de los tests de personalidad que circulan por internet no pueden decir lo mismo.</div>
+
+  <div class="idea"><strong>Y lo que este test no puede hacer.</strong> No hay baremos españoles publicados de esta versión corta, así que <strong>no te voy a dar un percentil</strong>: sería inventarme una precisión que no tengo. Verás tus puntos directos sobre 20 y tres tramos orientativos. Tampoco sirve para seleccionar personal, ni para decidir con quién salir, ni para explicar por qué alguien te cae mal. Es un mapa aproximado, no una sentencia.</div>
+
+  <p class="escala-leyenda"><strong>Para cada frase, elige lo que se parezca más a cómo eres <em>en general</em></strong>, no a cómo estás esta semana. No hay respuestas correctas y la primera que se te ocurra suele ser la buena.</p>
+
+  <div class="barra-progreso"><div class="barra" id="barra"></div></div>
+  <p class="pista">Contestadas: <span id="cuenta">0 de 20</span></p>
+
+  <div id="preguntas"></div>
+
+  <p class="sin-responder" id="faltan" style="display:none;"></p>
+  <button type="button" class="btn" id="calcular">Ver mi perfil</button>
+
+  <div class="resultado" id="resultado">
+    <h2 class="bloque-tit">Tu perfil</h2>
+    <p style="font-size:0.93rem;color:var(--ink-soft);">Cada rasgo va de 4 a 20 puntos. Los tramos —bajo, en la media, alto— son <strong>orientativos</strong>: los pongo por dar una referencia, no porque haya un baremo español detrás.</p>
+    <div class="perfil" id="perfil"></div>
+
+    <div class="idea" style="margin-top:1.6rem;"><strong>Cómo leer esto sin hacerse daño.</strong> Ninguno de los cinco rasgos es bueno o malo, y ninguno te obliga a nada: son tendencias, y las tendencias se llevan mejor cuando se conocen. Si algo de lo que has leído te ha sentado mal, quédate con esto: un rasgo describe por dónde te sale a ti lo fácil y lo difícil, no lo que puedes llegar a hacer.</div>
+
+    <div class="idea"><strong>Un rasgo bajo no es un diagnóstico.</strong> Sacar poco en estabilidad emocional no significa tener ansiedad, y sacar poco en extraversión no significa tener fobia social. Si lo que te preocupa es cómo lo estás pasando, y no cómo eres, mira los cuestionarios de <a href="/tests.html">síntomas</a>, que es lo que sí está baremado.</div>
+  </div>
+
+  <div class="historial" id="historial" style="display:none;"></div>
+
+  <div class="privacidad"><strong>Tus respuestas no salen de tu navegador.</strong> Este test funciona entero en tu dispositivo: no se envía nada a ningún servidor, no hay cuenta y no hay correo. Lo que guardo lo guarda tu propio navegador para que puedas compararte contigo, y lo borras con el botón de arriba cuando quieras.</div>
+
+  <div class="cierre"><strong>La fuente, por si quieres comprobarla.</strong> Los ítems son del International Personality Item Pool (ipip.ori.org), de dominio público. La versión corta de veinte es de Donnellan, M. B., Oswald, F. L., Baird, B. M. y Lucas, R. E. (2006), «The Mini-IPIP scales: Tiny-yet-effective measures of the Big Five factors of personality», <em>Psychological Assessment</em>, 18, 192-203. La traducción al español es mía, cosa que el dominio público permite expresamente.</div>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/mejorar-tu-autoestima.html">Mejorar tu autoestima →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Test de personalidad Big Five", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "inLanguage": "es-ES", "url": "https://psicolinks.com/test-de-personalidad.html", "description": "Cuestionario de los cinco grandes rasgos de personalidad con 20 ítems del International Personality Item Pool, de dominio público. Funciona entero en el navegador.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "citation": "Donnellan, M. B., Oswald, F. L., Baird, B. M., & Lucas, R. E. (2006). The Mini-IPIP scales. Psychological Assessment, 18, 192-203.", "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}, {"@type": "ListItem", "position": 3, "name": "Test de personalidad Big Five", "item": "https://psicolinks.com/test-de-personalidad.html"}]}</script>
+<script>
+(function(){
+  var ITEMS = [{"t": "Soy el alma de las fiestas.", "f": "E", "inv": false}, {"t": "Me hago cargo de cómo se sienten los demás.", "f": "A", "inv": false}, {"t": "Hago enseguida lo que tengo pendiente.", "f": "C", "inv": false}, {"t": "Mi ánimo cambia con facilidad.", "f": "S", "inv": true}, {"t": "Tengo mucha imaginación.", "f": "M", "inv": false}, {"t": "Hablo poco.", "f": "E", "inv": true}, {"t": "La verdad es que los demás no me interesan mucho.", "f": "A", "inv": true}, {"t": "A menudo se me olvida dejar las cosas en su sitio.", "f": "C", "inv": true}, {"t": "Casi siempre estoy tranquilo.", "f": "S", "inv": false}, {"t": "Me cuesta entender las ideas abstractas.", "f": "M", "inv": true}, {"t": "En una reunión hablo con mucha gente distinta.", "f": "E", "inv": false}, {"t": "Noto las emociones de los demás.", "f": "A", "inv": false}, {"t": "Me gusta el orden.", "f": "C", "inv": false}, {"t": "Me disgusto con facilidad.", "f": "S", "inv": true}, {"t": "Las ideas abstractas no me interesan.", "f": "M", "inv": true}, {"t": "Prefiero quedarme en segundo plano.", "f": "E", "inv": true}, {"t": "Los problemas de los demás no me interesan.", "f": "A", "inv": true}, {"t": "Lo dejo todo hecho un lío.", "f": "C", "inv": true}, {"t": "Rara vez me siento decaído.", "f": "S", "inv": false}, {"t": "No tengo mucha imaginación.", "f": "M", "inv": true}];
+  var FACTORES = {"E": {"nombre": "Extraversión", "ico": "🗣️", "que": "Cuánto te recarga estar con gente y cuánto te desgasta.", "texto": "Puntuación alta: buscas gente, hablas con desconocidos sin esfuerzo, las reuniones te suben. Puntuación baja: no es timidez ni tener un problema, es que el trato social te consume energía en vez de dártela, y necesitas rato a solas para recuperarte. Ninguna de las dos es mejor: son formas distintas de gastar y recuperar energía."}, "A": {"nombre": "Amabilidad", "ico": "🤝", "que": "Cuánto te mueves por lo que le pasa al otro.", "texto": "Puntuación alta: te pones en el lugar del otro con facilidad y te cuesta ver a alguien mal. Ojo, porque muy alta y sin límites se convierte en decir que sí a todo. Puntuación baja: te cuesta menos decir que no y priorizar lo tuyo, y también te cuesta más notar cuándo alguien está mal si no te lo dice."}, "C": {"nombre": "Responsabilidad", "ico": "📋", "que": "Orden, constancia y hacer lo que hay que hacer.", "texto": "Es el factor que más se relaciona con terminar lo que se empieza. Puntuación alta: planificas, ordenas y cumples; muy alta puede virar a perfeccionismo y a no soltar. Puntuación baja: te cuesta arrancar y mantener el sistema, y esto sí es lo que más se puede entrenar de los cinco."}, "S": {"nombre": "Estabilidad emocional", "ico": "⚖️", "que": "Cuánto te mueven las cosas y cuánto tardas en volver.", "texto": "Puntuación alta: te alteras poco y vuelves rápido a tu sitio. Puntuación baja: las cosas te llegan más adentro y el ánimo te cambia con más facilidad. Baja NO significa tener ansiedad ni depresión —eso es otra cosa y se mide con otros cuestionarios—, pero sí es el factor que más se asocia a pasarlo mal cuando vienen malas rachas."}, "M": {"nombre": "Apertura mental", "ico": "💡", "que": "Curiosidad, imaginación y gusto por lo abstracto.", "texto": "Puntuación alta: te atraen las ideas, lo nuevo y darle vueltas a las cosas por gusto. Puntuación baja: prefieres lo concreto, lo práctico y lo que ya sabes que funciona. Aquí no hay ninguna que sea «más lista»: es en qué disfruta tu cabeza."}};
+  var ORDEN = ["E", "A", "C", "S", "M"];
+  var ESCALA = ["Muy en desacuerdo", "Algo en desacuerdo", "Ni una cosa ni otra", "Algo de acuerdo", "Muy de acuerdo"];
+  var N = ITEMS.length;
+  var CLAVE = 'pl_bigfive_historial';
+
+  var cont = document.getElementById('preguntas');
+  cont.innerHTML = ITEMS.map(function(it, i){
+    return '<div class="pregunta" id="p' + i + '">'
+      + '<span class="num">FRASE ' + (i+1) + ' DE ' + N + '</span>'
+      + '<p>' + it.t + '</p>'
+      + '<div class="ops">' + ESCALA.map(function(e, v){
+          return '<button type="button" class="op" data-i="' + i + '" data-v="' + (v+1) + '">' + e + '</button>';
+        }).join('') + '</div></div>';
+  }).join('');
+
+  var resp = new Array(N).fill(null);
+
+  cont.addEventListener('click', function(ev){
+    var b = ev.target.closest('.op');
+    if (!b) return;
+    var i = +b.dataset.i;
+    resp[i] = +b.dataset.v;
+    var caja = document.getElementById('p' + i);
+    caja.querySelectorAll('.op').forEach(function(o){ o.classList.remove('on'); });
+    b.classList.add('on');
+    caja.classList.remove('sin-responder');
+    progreso();
+    var sig = document.getElementById('p' + (i+1));
+    if (sig) sig.scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+
+  function progreso(){
+    var hechas = resp.filter(function(r){ return r !== null; }).length;
+    document.getElementById('barra').style.width = (hechas / N * 100) + '%';
+    document.getElementById('cuenta').textContent = hechas + ' de ' + N;
+  }
+
+  function nivel(p){
+    if (p <= 9)  return ['bajo',  'Bajo'];
+    if (p <= 14) return ['medio', 'En la media'];
+    return ['alto', 'Alto'];
+  }
+
+  document.getElementById('calcular').addEventListener('click', function(){
+    var faltan = [];
+    resp.forEach(function(r, i){ if (r === null) faltan.push(i); });
+    if (faltan.length) {
+      faltan.forEach(function(i){ document.getElementById('p' + i).classList.add('sin-responder'); });
+      var aviso = document.getElementById('faltan');
+      aviso.textContent = faltan.length === 1
+        ? 'Te queda una frase por contestar.'
+        : 'Te quedan ' + faltan.length + ' frases por contestar.';
+      aviso.style.display = 'block';
+      document.getElementById('p' + faltan[0]).scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+    document.getElementById('faltan').style.display = 'none';
+
+    var puntos = {};
+    ORDEN.forEach(function(f){ puntos[f] = 0; });
+    ITEMS.forEach(function(it, i){
+      // Los ítems invertidos se puntúan al revés: 1 vale 5, 2 vale 4...
+      puntos[it.f] += it.inv ? (6 - resp[i]) : resp[i];
+    });
+
+    document.getElementById('perfil').innerHTML = ORDEN.map(function(f){
+      var d = FACTORES[f], p = puntos[f], niv = nivel(p);
+      var pct = Math.round((p - 4) / 16 * 100);
+      return '<div class="factor">'
+        + '<div class="factor-cab"><span aria-hidden="true">' + d.ico + '</span>'
+        + '<span class="factor-nom">' + d.nombre + '</span>'
+        + '<span class="factor-pts">' + p + '/20 · <span class="factor-nivel">' + niv[1] + '</span></span></div>'
+        + '<p class="factor-que">' + d.que + '</p>'
+        + '<div class="factor-barra"><div class="factor-relleno" style="width:' + pct + '%"></div></div>'
+        + '<div class="factor-tramos"><span>4</span><span>12</span><span>20</span></div>'
+        + '<p class="factor-txt">' + d.texto + '</p>'
+        + '</div>';
+    }).join('');
+
+    var res = document.getElementById('resultado');
+    res.classList.add('visible');
+    res.scrollIntoView({ behavior:'smooth', block:'start' });
+
+    try {
+      var h = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+      h.push({ fecha: new Date().toISOString().slice(0,10), puntos: puntos });
+      localStorage.setItem(CLAVE, JSON.stringify(h.slice(-20)));
+      pintarHistorial();
+    } catch(e){}
+  });
+
+  function pintarHistorial(){
+    var caja = document.getElementById('historial');
+    if (!caja) return;
+    var h = [];
+    try { h = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e){ return; }
+    if (h.length < 2) { caja.style.display = 'none'; return; }
+    caja.style.display = 'block';
+    caja.innerHTML = '<h2 class="bloque-tit">Lo que has contestado otras veces</h2>'
+      + '<p style="font-size:0.9rem;color:var(--ink-soft);">La personalidad se mueve poco de un mes a otro. '
+      + 'Si ves cambios grandes entre dos veces seguidas, lo más probable no es que hayas cambiado tú, '
+      + 'sino el día que tenías al contestar.</p>'
+      + '<ul style="font-size:0.92rem;line-height:1.9;">' + h.slice().reverse().map(function(r){
+          return '<li><strong>' + r.fecha + '</strong> — ' + ORDEN.map(function(f){
+            return FACTORES[f].nombre + ' ' + r.puntos[f];
+          }).join(' · ') + '</li>';
+        }).join('') + '</ul>'
+      + '<button type="button" class="btn" id="borrar" style="font-size:0.85rem;">Borrar mis resultados</button>';
+    document.getElementById('borrar').addEventListener('click', function(){
+      if (this.dataset.seguro) {
+        localStorage.removeItem(CLAVE);
+        caja.style.display = 'none';
+      } else {
+        this.dataset.seguro = '1';
+        this.textContent = 'Pulsa otra vez para borrarlos de verdad';
+      }
+    });
+  }
+
+  progreso();
+  pintarHistorial();
+})();
+</script>
+<script src="/cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

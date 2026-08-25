@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de consumo de alcohol AUDIT · Psicolinks</title>
+<meta name="description" content="Cuestionario AUDIT de la OMS, gratis y sin registro. Diez preguntas, resultado orientativo al momento y qué hacer con él. Por un psicólogo colegiado.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Test de consumo de alcohol (AUDIT), gratis y sin registro">
+<meta property="og:description" content="Diez preguntas de la OMS, resultado orientativo al momento y qué hacer con él. Tus respuestas no salen de tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/test-de-alcohol.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/test-de-alcohol.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Test de consumo de alcohol (AUDIT)", "item": "https://psicolinks.com/test-de-alcohol.html"}]}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/temas.html" class="back-link">← Todas las guías</a>
+  <div class="stamp">🧪 Test gratuito · OMS</div>
+  <h1>Test de consumo de alcohol (AUDIT)</h1>
+  <p class="autor">Comentado por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Diez preguntas sobre tu relación con el alcohol en el <strong>último año</strong>. Dos minutos, sin registro, resultado al momento y una explicación de qué significa y qué hacer con él.</p>
+
+  <div class="idea"><strong>Por qué este test y no uno de internet.</strong> El AUDIT lo desarrolló la <strong>Organización Mundial de la Salud</strong> a partir de un estudio en seis países, y es el cuestionario de cribado de consumo de alcohol más usado del mundo en atención primaria. Está <strong>baremado</strong>: se sabe qué puntuación corresponde a cada nivel porque se comparó con valoraciones clínicas. Y está validado en español.</div>
+
+  <div class="idea"><strong>Qué mide y qué no.</strong> No mide si eres alcohólico: eso no lo dice un cuestionario. Mide <em>patrón de consumo, señales de dependencia y consecuencias</em>, y sitúa el resultado en un nivel de riesgo. Orienta, no diagnostica. El diagnóstico lo hace un profesional valorando tu caso completo.</div>
+
+  <div class="idea"><strong>Antes de empezar: qué cuenta como una consumición.</strong> En España se usa la <strong>unidad de bebida estándar</strong>, unos 10 gramos de alcohol puro. Cuenta como <strong>una</strong>: una caña o quinto de cerveza, un vaso de vino, un vermú. Cuenta como <strong>dos</strong>: una copa de licor, un combinado (cubata, gin-tonic), una copa de coñac o whisky. Un tercio de cerveza son unas 1,5. Redondea sin agobiarte, pero no a la baja.</div>
+
+  <div class="barra-progreso">
+    <p class="pista" id="pista">Respondidas 0 de 10</p>
+    <div class="barra"><i id="relleno"></i></div>
+  </div>
+
+  <form id="test">
+    <h2 class="bloque-tit">Piensa en cómo ha sido el último año</h2>
+    <div id="preguntas"></div>
+    <div class="alerta-riesgo" id="alerta9" style="display:none"></div>
+    <p style="margin:1.4rem 0 0;"><button type="submit" class="btn" id="calcular" disabled>Ver mi resultado</button></p>
+  </form>
+
+  <section class="resultado" id="resultado" aria-live="polite">
+    <h2 class="bloque-tit">Tu resultado</h2>
+    <div class="marcador">
+      <p class="cifra" id="cifra">0</p>
+      <p class="de">de 40 puntos</p>
+      <p class="nivel" id="nivel"></p>
+      <div class="escala" id="escala"></div>
+      <div class="escala-leyenda"><span>0</span><span>BAJO RIESGO</span><span>RIESGO</span><span>PERJUDICIAL</span><span>POSIBLE DEPENDENCIA</span><span>40</span></div>
+    </div>
+
+    <div class="interpreta" id="interpreta"></div>
+    <div class="interpreta" id="comparacion" style="display:none"></div>
+    <div class="alerta-riesgo" id="crisis" style="display:none"></div>
+
+    <div class="sugerencias">
+      <h3>Por dónde puedes seguir</h3>
+      <ul id="sugerencias"></ul>
+    </div>
+
+    <div class="sugerencias" id="plan">
+      <h3>Un plan de tres semanas</h3>
+      <ol style="margin:0;padding-left:20px;">
+        <li style="font-size:0.97rem;line-height:1.7;">Fija <strong>días secos</strong> en el calendario. Concretos, no «entre semana menos».</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Decide un <strong>tope por ocasión</strong> antes de salir, no en la tercera copa.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Apunta cada día lo que bebes. Solo apuntarlo ya baja el consumo en bastante gente.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">A las tres semanas repite el test y compara con el resultado de hoy.</li>
+      </ol>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin:0.9rem 0 0;line-height:1.55;">Si baja, vas bien. Si no puedes sostener los días secos o el tope, eso no es falta de voluntad: es la señal de que esto se lleva mejor con ayuda.</p>
+    </div>
+
+    <p><button type="button" class="btn sec" id="repetir">Volver a hacer el test</button></p>
+  </section>
+
+  <section class="historial" id="historial" style="display:none">
+    <h3>Tus resultados anteriores</h3>
+    <p class="nota">Guardados solo en este navegador y en este dispositivo. Sirven para ver la evolución, que dice mucho más que una medición suelta. Lo suyo es repetirlo cada tres o cuatro semanas, no cada día.</p>
+    <table>
+      <thead><tr><th>Fecha</th><th>Puntuación</th><th>Nivel</th></tr></thead>
+      <tbody id="filas"></tbody>
+    </table>
+    <p style="margin:1rem 0 0;"><button type="button" class="btn sec" id="borrar">Borrar mi historial</button></p>
+  </section>
+
+  <div class="idea"><strong>Un apunte sobre el punto de corte.</strong> El umbral clásico de la OMS son <strong>8 puntos</strong>. En mujeres y en personas mayores de 65 años suele bajarse a <strong>6</strong>, porque el mismo consumo hace más daño con menos peso corporal y con el metabolismo más lento. Si estás entre 6 y 7 y estás en alguno de esos dos grupos, léelo como si estuvieras en el escalón siguiente.</div>
+
+  <div class="cierre"><strong>Si el resultado te ha preocupado.</strong> Lo más útil que puedes hacer con él es enseñárselo a tu médico de familia, que es la puerta de entrada a la sanidad pública, y que además puede valorar la parte física. En España existen los <strong>centros de atención a las adicciones</strong> de cada comunidad autónoma, que son públicos y gratuitos, y grupos de apoyo como <strong>Alcohólicos Anónimos</strong>. Y si lo que quieres es trabajar el hábito y lo que hay debajo, puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online o presencial.</div>
+
+  <p class="privacidad">
+    <strong>Privacidad.</strong> Tus respuestas y tus resultados <strong>no se envían a ningún sitio</strong>: se calculan en tu propio navegador y se quedan almacenados solo en este dispositivo. Ni yo ni nadie podemos verlos. Puedes borrarlos con el botón de arriba cuando quieras.<br><br>
+    <strong>Sobre el cuestionario.</strong> AUDIT (Alcohol Use Disorders Identification Test), desarrollado por la Organización Mundial de la Salud. Como instrumento aprobado por la OMS, el AUDIT es de dominio público: su uso no comercial no requiere permiso, siempre que se reproduzca sin alterar y se identifique su origen. Aquí se ha adaptado únicamente la redacción al español coloquial de España, manteniendo el contenido y la puntuación originales.
+  </p>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/test-de-ansiedad.html">Test de ansiedad (GAD-7)</a> · <a href="/test-de-depresion.html">Test de depresión (PHQ-9)</a> · <a href="/temas.html">Todas las guías</a> · <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a></p>
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/alcohol-y-ansiedad.html">Beber para calmar la ansiedad →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+  <p style="text-align:center;font-size:0.92rem;margin:1.6rem 0 0;">¿Buscas otro? <a href="/tests.html">Todos los tests y herramientas →</a></p>
+</main>
+
+<script>
+(function(){
+  var PREGUNTAS = [{"t": "¿Con qué frecuencia tomas alguna bebida alcohólica?", "o": [["Nunca", 0], ["Una vez al mes o menos", 1], ["De 2 a 4 veces al mes", 2], ["De 2 a 3 veces por semana", 3], ["4 o más veces por semana", 4]]}, {"t": "En un día normal en el que bebas, ¿cuántas consumiciones tomas?", "o": [["1 o 2", 0], ["3 o 4", 1], ["5 o 6", 2], ["7, 8 o 9", 3], ["10 o más", 4]]}, {"t": "¿Con qué frecuencia tomas 6 o más consumiciones en una misma ocasión?", "o": [["Nunca", 0], ["Menos de una vez al mes", 1], ["Mensualmente", 2], ["Semanalmente", 3], ["A diario o casi a diario", 4]]}, {"t": "En el último año, ¿con qué frecuencia no has podido parar de beber una vez habías empezado?", "o": [["Nunca", 0], ["Menos de una vez al mes", 1], ["Mensualmente", 2], ["Semanalmente", 3], ["A diario o casi a diario", 4]]}, {"t": "En el último año, ¿con qué frecuencia no pudiste hacer lo que se esperaba de ti porque habías bebido?", "o": [["Nunca", 0], ["Menos de una vez al mes", 1], ["Mensualmente", 2], ["Semanalmente", 3], ["A diario o casi a diario", 4]]}, {"t": "En el último año, ¿con qué frecuencia has necesitado beber por la mañana para poder arrancar después de una noche de mucho alcohol?", "o": [["Nunca", 0], ["Menos de una vez al mes", 1], ["Mensualmente", 2], ["Semanalmente", 3], ["A diario o casi a diario", 4]]}, {"t": "En el último año, ¿con qué frecuencia has tenido remordimientos o sentimiento de culpa después de haber bebido?", "o": [["Nunca", 0], ["Menos de una vez al mes", 1], ["Mensualmente", 2], ["Semanalmente", 3], ["A diario o casi a diario", 4]]}, {"t": "En el último año, ¿con qué frecuencia no has podido recordar lo que pasó la noche anterior porque habías estado bebiendo?", "o": [["Nunca", 0], ["Menos de una vez al mes", 1], ["Mensualmente", 2], ["Semanalmente", 3], ["A diario o casi a diario", 4]]}, {"t": "¿Tú u otra persona habéis resultado heridos porque tú habías bebido?", "o": [["No", 0], ["Sí, pero no en el último año", 2], ["Sí, en el último año", 4]]}, {"t": "¿Algún familiar, amigo, médico o profesional sanitario se ha preocupado por lo que bebes o te ha sugerido que dejes de beber?", "o": [["No", 0], ["Sí, pero no en el último año", 2], ["Sí, en el último año", 4]]}];
+  var CLAVE = 'pl_audit_historial';
+  var AVISO_RETIRADA = "<strong>Importante si bebes mucho a diario.</strong> Si llevas tiempo bebiendo todos los días y en cantidad, <strong>no lo dejes de golpe por tu cuenta</strong>: la retirada brusca de alcohol puede provocar temblores, convulsiones y un cuadro grave llamado <em>delirium tremens</em>. Eso se retira con supervisión médica, y es sencillo de hacer bien. Habla con tu médico antes de parar. Si aparecen temblores fuertes, sudoración, confusión o alucinaciones al dejar de beber, llama al <strong>112</strong>.";
+
+  var cont = document.getElementById('preguntas');
+  cont.innerHTML = PREGUNTAS.map(function(p, i){
+    return '<div class="pregunta" id="p' + i + '">'
+      + '<span class="num">PREGUNTA ' + (i+1) + ' DE 10</span>'
+      + '<p>' + p.t + '</p>'
+      + '<div class="ops">' + p.o.map(function(o){
+          return '<label class="op"><input type="radio" name="q' + i + '" value="' + o[1] + '"><span>' + o[0] + '</span></label>';
+        }).join('') + '</div>'
+      + '</div>';
+  }).join('');
+
+  var form = document.getElementById('test');
+  var boton = document.getElementById('calcular');
+  var pista = document.getElementById('pista');
+  var relleno = document.getElementById('relleno');
+  var alerta = document.getElementById('alerta9');
+
+  function marcada(i){ return form.querySelector('input[name="q' + i + '"]:checked'); }
+  function respondidas(){
+    var n = 0;
+    for (var i = 0; i < PREGUNTAS.length; i++) { if (marcada(i)) n++; }
+    return n;
+  }
+  function actualiza(){
+    var n = respondidas();
+    pista.textContent = 'Respondidas ' + n + ' de 10';
+    relleno.style.width = (n / PREGUNTAS.length * 100) + '%';
+    boton.disabled = n < PREGUNTAS.length;
+    // Aviso inmediato si dice que bebe a diario o casi a diario (preguntas 1 y 3)
+    var q1 = marcada(0), q3 = marcada(2);
+    var diario = (q1 && parseInt(q1.value, 10) === 4) || (q3 && parseInt(q3.value, 10) >= 3);
+    if (diario) { alerta.innerHTML = AVISO_RETIRADA; alerta.style.display = ''; }
+    else { alerta.style.display = 'none'; }
+  }
+  form.addEventListener('change', function(){
+    actualiza();
+    for (var i = 0; i < PREGUNTAS.length; i++) { document.getElementById('p' + i).classList.remove('sin-responder'); }
+  });
+
+  function nivelDe(p){
+    if (p <= 7) return { nombre:'Consumo de bajo riesgo', banda:0 };
+    if (p <= 15) return { nombre:'Consumo de riesgo', banda:1 };
+    if (p <= 19) return { nombre:'Consumo perjudicial', banda:2 };
+    return { nombre:'Posible dependencia', banda:3 };
+  }
+
+  var TEXTOS = ["Tu puntuación está en el rango de <strong>consumo de bajo riesgo</strong>. Por lo que has respondido, tu relación con el alcohol no está dando señales de alarma. Eso no significa que beber sea inocuo —no hay una cantidad de alcohol que se considere segura para la salud—, pero sí que aquí no aparece un patrón problemático.", "Tu puntuación está en el rango de <strong>consumo de riesgo</strong>. Es el escalón más frecuente y el más fácil de corregir: todavía no hay un problema instalado, pero sí un patrón que, sostenido, acaba pasando factura. Este es el punto en el que basta con decidir cambios concretos: días sin alcohol fijos, un tope por ocasión, y no beber para regular el ánimo.", "Tu puntuación está en el rango de <strong>consumo perjudicial</strong>. A este nivel el alcohol ya suele estar dejando marca en algún sitio: el sueño, el ánimo, el trabajo o la gente de alrededor. Conviene comentarlo con tu médico de familia y plantearse una intervención breve, que a esta altura funciona muy bien.", "Tu puntuación está en el rango de <strong>posible dependencia</strong>. Aquí lo sensato no es seguir intentándolo en solitario ni a base de propósitos. Pide cita con tu médico de familia y enséñale este resultado: es la puerta de entrada, y hay tratamientos que funcionan. Que la puntuación sea alta no significa que no tenga arreglo."];
+
+  function enlaces(banda){
+    var base = [["Beber para calmar la ansiedad", "/alcohol-y-ansiedad.html"], ["Cuando recaes y vuelves al punto de partida", "/cuando-recaes.html"], ["Crear hábitos que duren", "/crear-habitos-que-duren.html"]];
+    if (banda >= 1) base.push(['Dormir mejor en 7 pasos', '/dormir-mejor-en-7-pasos.html']);
+    if (banda >= 2) base.push(['Cómo elegir psicólogo', '/elegir-psicologo.html']);
+    if (banda >= 2) base.push(['Dónde pedir ayuda en España', '/donde-pedir-ayuda.html']);
+    return base;
+  }
+
+  function guarda(p, nivel){
+    try {
+      var h = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+      h.unshift({ f: new Date().toISOString().slice(0,10), p: p, n: nivel });
+      localStorage.setItem(CLAVE, JSON.stringify(h.slice(0, 12)));
+    } catch(e) {}
+  }
+
+  function pintaHistorial(){
+    var h = [];
+    try { h = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { h = []; }
+    var caja = document.getElementById('historial');
+    if (!h.length) { caja.style.display = 'none'; return; }
+    document.getElementById('filas').innerHTML = h.map(function(r){
+      return '<tr><td>' + r.f + '</td><td>' + r.p + ' / 40</td><td>' + r.n + '</td></tr>';
+    }).join('');
+    caja.style.display = '';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (respondidas() < PREGUNTAS.length) {
+      for (var i = 0; i < PREGUNTAS.length; i++) {
+        if (!marcada(i)) { document.getElementById('p' + i).classList.add('sin-responder'); }
+      }
+      return;
+    }
+    var total = 0;
+    for (var i = 0; i < PREGUNTAS.length; i++) { total += parseInt(marcada(i).value, 10); }
+    var nivel = nivelDe(total);
+    var dano = parseInt(marcada(8).value, 10) > 0;
+
+    document.getElementById('cifra').textContent = total;
+    document.getElementById('nivel').textContent = nivel.nombre;
+    document.getElementById('interpreta').innerHTML = TEXTOS[nivel.banda];
+    document.getElementById('escala').innerHTML = [0,1,2,3].map(function(b){
+      return '<div class="' + (b <= nivel.banda ? 'on' : '') + '"></div>';
+    }).join('');
+    document.getElementById('sugerencias').innerHTML = enlaces(nivel.banda).map(function(l){
+      return '<li><a href="' + l[1] + '">' + l[0] + '</a></li>';
+    }).join('');
+
+    var crisis = document.getElementById('crisis');
+    if (nivel.banda >= 2) {
+      crisis.innerHTML = AVISO_RETIRADA;
+      crisis.style.display = '';
+    } else if (dano) {
+      crisis.innerHTML = '<strong>Has marcado que hubo daño físico.</strong> Que alguien haya resultado herido, aunque fuera hace tiempo, es de las señales que más peso tienen en este cuestionario. Merece la pena comentarlo con tu médico aunque el resto de tu puntuación sea baja.';
+      crisis.style.display = '';
+    } else {
+      crisis.style.display = 'none';
+    }
+
+    var previos = [];
+    try { previos = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { previos = []; }
+    var cmp = document.getElementById('comparacion');
+    if (previos.length) {
+      var antes = previos[0], dif = total - antes.p, txt;
+      if (dif < 0) txt = '<strong>Has bajado ' + Math.abs(dif) + ' punto' + (Math.abs(dif) === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + antes.f + ', que fue de ' + antes.p + '. Sea lo que sea que estés haciendo, va en la buena dirección.';
+      else if (dif > 0) txt = '<strong>Has subido ' + dif + ' punto' + (dif === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + antes.f + ', que fue de ' + antes.p + '. Puede ser una mala racha puntual; si se mantiene en la siguiente, consúltalo con un profesional.';
+      else txt = 'Has sacado <strong>la misma puntuación</strong> que el ' + antes.f + '. Si llevas semanas intentándolo por tu cuenta y no se mueve, suele ser el momento de pedir ayuda.';
+      cmp.innerHTML = txt; cmp.style.display = '';
+    } else { cmp.style.display = 'none'; }
+
+    guarda(total, nivel.nombre);
+    pintaHistorial();
+
+    var caja = document.getElementById('resultado');
+    caja.classList.add('visible');
+    caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('repetir').addEventListener('click', function(){
+    form.reset(); actualiza();
+    document.getElementById('resultado').classList.remove('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    try { localStorage.removeItem(CLAVE); } catch(e) {}
+    pintaHistorial();
+  });
+
+  actualiza();
+  pintaHistorial();
+})();
+</script>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Test de consumo de alcohol AUDIT", "url": "https://psicolinks.com/test-de-alcohol.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Consumo de alcohol"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Cuestionario AUDIT de la OMS, gratis y sin registro. Diez preguntas, resultado orientativo al momento y qué hacer con él. Por un psicólogo colegiado."}</script>
+</body>
+</html>

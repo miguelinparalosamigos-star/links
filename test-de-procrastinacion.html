@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de procrastinación gratis (10 frases) · Psicolinks</title>
+<meta name="description" content="Cuánto te cuesta arrancar y terminar lo que empiezas, en diez frases y dos minutos. Sin registro y sin salir de tu navegador. Con la fuente a la vista.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Test de procrastinación gratis (10 frases)">
+<meta property="og:description" content="Cuánto te cuesta arrancar y terminar lo que empiezas, en diez frases y dos minutos. Sin registro.">
+<meta property="og:url" content="https://psicolinks.com/test-de-procrastinacion.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/test-de-procrastinacion.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+
+  .franja{ display:flex; height:10px; border-radius:5px; overflow:hidden; margin:1rem 0 0.35rem; }
+  .franja span{ flex:1; background:var(--border); }
+  .franja span.on{ background:var(--accent); }
+  .franja-pie{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 1.2rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/tests.html" class="back-link">← Todos los tests</a>
+  <div class="stamp">📎 Cuestionario · Constancia</div>
+  <h1>Test de procrastinación</h1>
+  <p class="autor">Comentado por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Diez frases y dos minutos para ver cuánto te cuesta arrancar y cuánto terminas de lo que empiezas. Sin registro y sin que tus respuestas salgan de tu navegador.</p>
+
+  <div class="idea"><strong>Esto mide cómo eres, no si te pasa algo.</strong> Igual que el <a href="/test-de-personalidad.html">test de personalidad</a>, esto es un rasgo, no un síntoma: no hay puntuaciones buenas ni malas y no orienta sobre si necesitas ayuda. Si lo que buscas es saber si lo que te pasa necesita que alguien lo mire, el sitio es <a href="/test-rapido-ansiedad-depresion.html">el chequeo rápido</a>.</div>
+
+  <div class="idea"><strong>Y sacar poco aquí no es tener TDAH.</strong> Lo digo antes de que empieces porque es la confusión más habitual con este tipo de test. Que te cueste arrancar es algo que le pasa a mucha gente sin que haya ningún trastorno detrás. El TDAH es otra cosa, tiene más piezas, viene de la infancia y lo diagnostica un profesional: si te ronda la duda, mira <a href="/tdah-en-adultos.html">TDAH en adultos</a> antes de sacar conclusiones de aquí.</div>
+
+  <div class="idea"><strong>De dónde salen las frases.</strong> Son los diez ítems de la escala de autodisciplina del <strong>International Personality Item Pool</strong>, que es de <strong>dominio público</strong>: su propia web dice que se pueden copiar, editar, traducir y usar para cualquier fin sin permiso y sin pagar. Su fiabilidad es de las más altas del conjunto (alfa .85). Como no hay baremos españoles publicados, <strong>no verás percentiles</strong>: verás tus puntos directos y tres tramos orientativos.</div>
+
+  <p class="escala-leyenda"><strong>Para cada frase, elige lo que se parezca más a cómo eres <em>en general</em></strong>, no a cómo va esta semana concreta. La primera respuesta que se te ocurra suele ser la buena.</p>
+
+  <div class="barra-progreso"><div class="barra" id="barra"></div></div>
+  <p class="pista">Contestadas: <span id="cuenta">0 de 10</span></p>
+
+  <div id="preguntas"></div>
+
+  <p class="sin-responder" id="faltan" style="display:none;"></p>
+  <button type="button" class="btn" id="calcular">Ver mi resultado</button>
+
+  <div class="resultado" id="resultado">
+    <h2 class="bloque-tit">Tu resultado</h2>
+    <div id="marcador"></div>
+
+    <div class="idea"><strong>Lo que sí se puede hacer con esto.</strong> De las cinco grandes dimensiones de la personalidad, esta es <strong>la que más se deja entrenar</strong>, y no a base de proponérselo más fuerte. Lo que funciona es hacer más pequeño el primer paso —tan pequeño que dé vergüenza—, quitar de en medio lo que te distrae antes de empezar y no fiarte de las ganas, porque las ganas llegan después de empezar y no antes.</div>
+
+    <div class="idea"><strong>Y una trampa que conviene ver.</strong> Si has sacado poco y llevas años diciéndote que eres un desastre, ese juicio es parte del problema: la culpa por haber aplazado es justo lo que hace más difícil ponerse mañana. Se avanza mucho más cambiando el tamaño de la tarea que la opinión que tienes de ti.</div>
+  </div>
+
+  <div class="historial" id="historial" style="display:none;"></div>
+
+  <div class="privacidad"><strong>Tus respuestas no salen de tu navegador.</strong> Este test funciona entero en tu dispositivo: no se envía nada a ningún servidor, no hay cuenta y no hay correo. Lo que se guarda lo guarda tu propio navegador para que puedas compararte contigo, y lo borras con el botón cuando quieras.</div>
+
+  <div class="cierre"><strong>La fuente, por si quieres comprobarla.</strong> Escala «Self-Discipline» (C5) del International Personality Item Pool (ipip.ori.org), de dominio público, con una fiabilidad alfa de .85. La traducción al español es mía, cosa que el dominio público permite expresamente.</div>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/concentrarte-y-dejar-de-procrastinar.html">Concentrarte y dejar de procrastinar →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Test de procrastinación", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "inLanguage": "es-ES", "url": "https://psicolinks.com/test-de-procrastinacion.html", "description": "Cuestionario de constancia y procrastinación con los diez ítems de la escala de autodisciplina del International Personality Item Pool, de dominio público. Funciona entero en el navegador.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "citation": "International Personality Item Pool, escala Self-Discipline (C5). ipip.ori.org. Dominio público.", "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}, {"@type": "ListItem", "position": 3, "name": "Test de procrastinación", "item": "https://psicolinks.com/test-de-procrastinacion.html"}]}</script>
+<script>
+(function(){
+  var ITEMS = [{"t": "Hago enseguida lo que tengo pendiente.", "inv": false}, {"t": "Me cuesta ponerme a trabajar.", "inv": true}, {"t": "Siempre lo llevo todo preparado.", "inv": false}, {"t": "Pierdo el tiempo.", "inv": true}, {"t": "Empiezo las tareas cuanto antes.", "inv": false}, {"t": "Necesito que alguien me empuje para arrancar.", "inv": true}, {"t": "Me pongo a ello de inmediato.", "inv": false}, {"t": "Me cuesta empezar las cosas.", "inv": true}, {"t": "Llevo a cabo lo que planeo.", "inv": false}, {"t": "Voy dejando las decisiones para después.", "inv": true}];
+  var ESCALA = ["Nada como yo", "Poco como yo", "A veces", "Bastante como yo", "Muy como yo"];
+  var BANDAS = [{"tope": 22, "clave": "baja", "nombre": "Constancia baja", "texto": "Arrancar te cuesta bastante, y probablemente lo que te pasa no es que no quieras: es que el momento de empezar se te hace cuesta arriba y lo aplazas, y luego llega la culpa por haberlo aplazado, que no ayuda a empezar mañana. La buena noticia es que <strong>esta es la faceta de la personalidad que más se puede entrenar</strong>, y no con fuerza de voluntad: bajando el tamaño de lo que hay que empezar y quitando de en medio lo que te distrae."}, {"tope": 36, "clave": "media", "nombre": "Constancia en la media", "texto": "Ni te arrastras ni eres una máquina: te pones a las cosas con un empujón normal y algunas se te atragantan. Es donde está la mayoría. Si te llama la atención haber sacado esto cuando te sientes un desastre, ojo con eso: mucha gente se juzga por los días malos y no por la media."}, {"tope": 50, "clave": "alta", "nombre": "Constancia alta", "texto": "Te pones a las cosas sin necesitar empujón y terminas lo que empiezas. Una advertencia, porque no todo son ventajas: puntuaciones muy altas se juntan a veces con no saber parar, con exigirse de más y con llevar mal los días en los que el cuerpo no da. Si algo de eso te suena, la guía que te toca no es la de procrastinar."}];
+  var N = ITEMS.length;
+  var CLAVE = 'pl_constancia_historial';
+
+  var cont = document.getElementById('preguntas');
+  cont.innerHTML = ITEMS.map(function(it, i){
+    return '<div class="pregunta" id="p' + i + '">'
+      + '<span class="num">FRASE ' + (i+1) + ' DE ' + N + '</span>'
+      + '<p>' + it.t + '</p>'
+      + '<div class="ops">' + ESCALA.map(function(e, v){
+          return '<button type="button" class="op" data-i="' + i + '" data-v="' + (v+1) + '">' + e + '</button>';
+        }).join('') + '</div></div>';
+  }).join('');
+
+  var resp = new Array(N).fill(null);
+
+  cont.addEventListener('click', function(ev){
+    var b = ev.target.closest('.op');
+    if (!b) return;
+    var i = +b.dataset.i;
+    resp[i] = +b.dataset.v;
+    var caja = document.getElementById('p' + i);
+    caja.querySelectorAll('.op').forEach(function(o){ o.classList.remove('on'); });
+    b.classList.add('on');
+    caja.classList.remove('sin-responder');
+    progreso();
+    var sig = document.getElementById('p' + (i+1));
+    if (sig) sig.scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+
+  function progreso(){
+    var hechas = resp.filter(function(r){ return r !== null; }).length;
+    document.getElementById('barra').style.width = (hechas / N * 100) + '%';
+    document.getElementById('cuenta').textContent = hechas + ' de ' + N;
+  }
+
+  document.getElementById('calcular').addEventListener('click', function(){
+    var faltan = [];
+    resp.forEach(function(r, i){ if (r === null) faltan.push(i); });
+    if (faltan.length) {
+      faltan.forEach(function(i){ document.getElementById('p' + i).classList.add('sin-responder'); });
+      var aviso = document.getElementById('faltan');
+      aviso.textContent = faltan.length === 1
+        ? 'Te queda una frase por contestar.'
+        : 'Te quedan ' + faltan.length + ' frases por contestar.';
+      aviso.style.display = 'block';
+      document.getElementById('p' + faltan[0]).scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+    document.getElementById('faltan').style.display = 'none';
+
+    var p = 0;
+    ITEMS.forEach(function(it, i){ p += it.inv ? (6 - resp[i]) : resp[i]; });
+
+    var banda = BANDAS[BANDAS.length - 1];
+    for (var k = 0; k < BANDAS.length; k++) { if (p <= BANDAS[k].tope) { banda = BANDAS[k]; break; } }
+
+    // Cinco tramos de la franja, para situar la puntuación de un vistazo.
+    var lleno = Math.max(1, Math.round((p - 10) / 40 * 5));
+    var franja = '';
+    for (var j = 0; j < 5; j++) franja += '<span class="' + (j < lleno ? 'on' : '') + '"></span>';
+
+    document.getElementById('marcador').innerHTML =
+        '<p class="cifra">' + p + '<span class="de"> / 50</span></p>'
+      + '<p class="nivel">' + banda.nombre + '</p>'
+      + '<div class="franja">' + franja + '</div>'
+      + '<div class="franja-pie"><span>10</span><span>30</span><span>50</span></div>'
+      + '<p class="interpreta">' + banda.texto + '</p>';
+
+    var res = document.getElementById('resultado');
+    res.classList.add('visible');
+    res.scrollIntoView({ behavior:'smooth', block:'start' });
+
+    try {
+      var h = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+      h.unshift({ f: new Date().toISOString().slice(0,10), p: p });
+      localStorage.setItem(CLAVE, JSON.stringify(h.slice(0, 20)));
+      pintarHistorial();
+    } catch(e){}
+  });
+
+  function pintarHistorial(){
+    var caja = document.getElementById('historial');
+    if (!caja) return;
+    var h = [];
+    try { h = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e){ return; }
+    if (h.length < 2) { caja.style.display = 'none'; return; }
+    caja.style.display = 'block';
+    caja.innerHTML = '<h2 class="bloque-tit">Otras veces que lo has hecho</h2>'
+      + '<ul style="font-size:0.92rem;line-height:1.9;">'
+      + h.map(function(r){ return '<li><strong>' + r.f + '</strong> — ' + r.p + '/50</li>'; }).join('')
+      + '</ul>'
+      + '<button type="button" class="btn" id="borrar" style="font-size:0.85rem;">Borrar mis resultados</button>';
+    document.getElementById('borrar').addEventListener('click', function(){
+      if (this.dataset.seguro) { localStorage.removeItem(CLAVE); caja.style.display = 'none'; }
+      else { this.dataset.seguro = '1'; this.textContent = 'Pulsa otra vez para borrarlos de verdad'; }
+    });
+  }
+
+  progreso();
+  pintarHistorial();
+})();
+</script>
+<script src="/cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

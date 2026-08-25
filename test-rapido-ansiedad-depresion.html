@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chequeo rápido de ansiedad y ánimo (PHQ-4) · Psicolinks</title>
+<meta name="description" content="Cuatro preguntas y treinta segundos para saber por cuál de los tests largos empezar. Gratis, sin registro y sin salir de tu navegador.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Chequeo rápido de ansiedad y ánimo (PHQ-4)">
+<meta property="og:description" content="Cuatro preguntas y treinta segundos para saber por cuál de los tests largos empezar. Gratis, sin registro y sin salir de tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/test-rapido-ansiedad-depresion.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/test-rapido-ansiedad-depresion.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}, {"@type": "ListItem", "position": 3, "name": "Chequeo rápido de ansiedad y ánimo (PHQ-4)", "item": "https://psicolinks.com/test-rapido-ansiedad-depresion.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Chequeo rápido de ansiedad y ánimo (PHQ-4)", "description": "Cuatro preguntas y treinta segundos para saber por cuál de los tests largos empezar. Gratis, sin registro y sin salir de tu navegador.", "url": "https://psicolinks.com/test-rapido-ansiedad-depresion.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Ansiedad y depresión"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/tests.html" class="back-link">← Todos los tests</a>
+  <div class="stamp">🧪 Test gratuito · 30 segundos</div>
+  <h1>Chequeo rápido de ansiedad y ánimo (PHQ-4)</h1>
+  <p class="autor">Comentado por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Cuatro preguntas, treinta segundos. Sirve para una cosa muy concreta: saber <strong>por cuál de los tests largos empezar</strong> cuando no lo tienes claro.</p>
+
+  <div class="idea"><strong>Para qué sirve exactamente.</strong> Las cuatro preguntas son las dos primeras del test de ansiedad y las dos primeras del de depresión. No sustituyen a ninguno de los dos: te dicen cuál de los dos bloques está pesando más para que hagas ese, en vez de hacer los dos a ciegas. Si tu puntuación sale moderada o alta, el paso siguiente es el test largo, no quedarte con este.</div>
+
+  <div class="barra-progreso">
+    <p class="pista" id="pista">Respondidas 0 de 4</p>
+    <div class="barra"><i id="relleno"></i></div>
+  </div>
+
+  <form id="test">
+    <h2 class="bloque-tit">En las dos últimas semanas, ¿con qué frecuencia te ha molestado…?</h2>
+    <div id="preguntas"></div>
+    <p style="margin:1.4rem 0 0;"><button type="submit" class="btn" id="calcular" disabled>Ver mi resultado</button></p>
+  </form>
+
+  <section class="resultado" id="resultado" aria-live="polite">
+    <h2 class="bloque-tit">Tu resultado</h2>
+    <div class="marcador">
+      <p class="cifra" id="cifra">0</p>
+      <p class="de">de 12 puntos</p>
+      <p class="nivel" id="nivel"></p>
+      <div class="escala" id="escala"></div>
+      <div class="escala-leyenda"><span>0</span><span>NORMAL</span><span>LEVE</span><span>MODERADO</span><span>GRAVE</span><span>12</span></div>
+    </div>
+
+    <div class="interpreta" id="interpreta"></div>
+    <div class="interpreta" id="comparacion" style="display:none"></div>
+    <div class="alerta-riesgo" id="crisis" style="display:none"></div>
+
+    <div class="sugerencias">
+      <h3>Por dónde puedes seguir</h3>
+      <ul id="sugerencias"></ul>
+    </div>
+
+    <div class="sugerencias" id="plan">
+      <h3>Qué hacer con este resultado</h3>
+      <ol style="margin:0;padding-left:20px;">
+        <li style="font-size:0.97rem;line-height:1.7;">Mira arriba cuál de los dos bloques te ha salido marcado.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Haz el test largo de ese bloque: el <a href="/test-de-ansiedad.html">GAD-7</a> si es ansiedad, el <a href="/test-de-depresion.html">PHQ-9</a> si es ánimo.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Si te han salido los dos, empieza por el del ánimo: cuando van juntos, tratar primero el ánimo suele arrastrar al otro.</li>
+        <li style="font-size:0.97rem;line-height:1.7;">Y si no te ha salido ninguno pero sigues mal, prueba con los <a href="/tests.html">otros tests</a>: sueño, cuerpo o consumo.</li>
+      </ol>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin:0.9rem 0 0;line-height:1.55;">Repetirlo cada dos semanas y comparar dice mucho más que la primera medición suelta.</p>
+    </div>
+
+    <p><button type="button" class="btn sec" id="repetir">Volver a hacer el test</button></p>
+  </section>
+
+  <section class="historial" id="historial" style="display:none">
+    <h3>Tus resultados anteriores</h3>
+    <p class="nota">Guardados solo en este navegador y en este dispositivo. Sirven para ver la evolución, que dice mucho más que una medición suelta.</p>
+    <table>
+      <thead><tr><th>Fecha</th><th>Puntuación</th><th>Nivel</th></tr></thead>
+      <tbody id="filas"></tbody>
+    </table>
+    <p style="margin:1rem 0 0;"><button type="button" class="btn sec" id="borrar">Borrar mi historial</button></p>
+  </section>
+
+  <div class="cierre"><strong>Si el resultado te ha preocupado.</strong> Con cuatro preguntas no se decide nada importante, pero sí sirven para dar el paso siguiente. Ese paso es el test largo, y después tu médico de familia. Si prefieres ir directo a psicología, puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online o presencial.</div>
+
+  <p class="privacidad">
+    <strong>Privacidad.</strong> Tus respuestas y tus resultados <strong>no se envían a ningún sitio</strong>: se calculan en tu propio navegador y se quedan solo en este dispositivo. Ni yo ni nadie podemos verlos. Puedes borrarlos con el botón de arriba cuando quieras.<br><br>
+    <strong>Sobre el cuestionario.</strong> PHQ-4, de Kroenke, Spitzer, Williams y Löwe (2009). Combina los dos primeros ítems del GAD-7 y los dos primeros del PHQ-9. Los formularios originales llevan impreso: «Copyright Pfizer Inc. No permission required to reproduce, translate, display, or distribute». Aquí se ha adaptado la redacción al español de España manteniendo los ítems y la puntuación.
+  </p>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/tests.html">Todos los tests</a> · <a href="/temas.html">Todas las guías</a> · <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a></p>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/como-saber-si-tengo-ansiedad.html">Cómo saber si tengo ansiedad →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+</main>
+
+<script>
+(function(){
+  var PREGUNTAS = [{"t": "Sentirte nervioso, angustiado o con los nervios de punta", "o": [["Nunca", 0], ["Varios días", 1], ["Más de la mitad de los días", 2], ["Casi todos los días", 3]]}, {"t": "No poder parar de preocuparte o no poder controlar la preocupación", "o": [["Nunca", 0], ["Varios días", 1], ["Más de la mitad de los días", 2], ["Casi todos los días", 3]]}, {"t": "Poco interés o poco placer en hacer cosas", "o": [["Nunca", 0], ["Varios días", 1], ["Más de la mitad de los días", 2], ["Casi todos los días", 3]]}, {"t": "Sentirte bajo de ánimo, deprimido o sin esperanza", "o": [["Nunca", 0], ["Varios días", 1], ["Más de la mitad de los días", 2], ["Casi todos los días", 3]]}];
+  var CLAVE = "pl_phq4_historial";
+  var MAXIMO = 12;
+  var BANDAS = [[2, "Normal"], [5, "Leve"], [8, "Moderado"], [12, "Grave"]];
+  var TEXTOS = ["Tu puntuación está en el rango <strong>normal</strong>. Por lo que has respondido, ni la ansiedad ni el ánimo bajo están dando señales en las dos últimas semanas. Si aun así has llegado aquí porque algo no va bien, mira el <a href=\"/tests.html\">resto de tests</a>: puede que lo tuyo vaya por otro sitio —el sueño, el cuerpo, el consumo— y este chequeo no lo recoge.", "Tu puntuación está en el rango <strong>leve</strong>. Hay algo, pero poco. Merece la pena mirar cuál de los dos bloques pesa más —lo tienes justo debajo— y hacer el test largo de ese, que da bastante más información que estas cuatro preguntas.", "Tu puntuación está en el rango <strong>moderado</strong>. Con este resultado sí conviene medirlo bien: haz el test largo del bloque que te salga marcado abajo. Cuatro preguntas sirven para levantar la mano, no para saber por dónde va la cosa.", "Tu puntuación está en el rango <strong>grave</strong>. Este es el punto en el que lo sensato no es hacer más tests, sino hablar con alguien. Empieza por tu médico de familia, que es la puerta de entrada. Y si quieres llevarle un número más completo, haz antes el <a href=\"/test-de-ansiedad.html\">GAD-7</a> y el <a href=\"/test-de-depresion.html\">PHQ-9</a>, que son los que se usan en consulta."];
+  var ENLACES = [["Test de ansiedad (GAD-7)", "/test-de-ansiedad.html"], ["Test de depresión (PHQ-9)", "/test-de-depresion.html"], ["Cómo saber si tengo ansiedad", "/como-saber-si-tengo-ansiedad.html"], ["Cuando no tienes ganas de nada", "/cuando-no-tienes-ganas-de-nada.html"]];
+  var AVISO = "<strong>Con esta puntuación, lo siguiente no es otro test: es hablar con alguien.</strong> Pide cita con tu médico de familia. Y si en algún momento aparecen pensamientos de hacerte daño, el <strong>024</strong> atiende las 24 horas, gratis y confidencial. Para una urgencia, el <strong>112</strong>.";
+  var GATE = false;
+  var N = PREGUNTAS.length;
+
+  var cont = document.getElementById('preguntas');
+  cont.innerHTML = PREGUNTAS.map(function(p, i){
+    return '<div class="pregunta" id="p' + i + '">'
+      + '<span class="num">PREGUNTA ' + (i+1) + ' DE ' + N + '</span>'
+      + '<p>' + p.t + '</p>'
+      + '<div class="ops">' + p.o.map(function(o){
+          return '<label class="op"><input type="radio" name="q' + i + '" value="' + o[1] + '"><span>' + o[0] + '</span></label>';
+        }).join('') + '</div>'
+      + '</div>';
+  }).join('');
+
+  var form = document.getElementById('test');
+  var boton = document.getElementById('calcular');
+  var pista = document.getElementById('pista');
+  var relleno = document.getElementById('relleno');
+
+  function marcada(i){ return form.querySelector('input[name="q' + i + '"]:checked'); }
+  function respondidas(){
+    var n = 0;
+    for (var i = 0; i < N; i++) { if (marcada(i)) n++; }
+    return n;
+  }
+  function actualiza(){
+    var n = respondidas();
+    pista.textContent = 'Respondidas ' + n + ' de ' + N;
+    relleno.style.width = (n / N * 100) + '%';
+    boton.disabled = n < N;
+  }
+  form.addEventListener('change', function(){
+    actualiza();
+    for (var i = 0; i < N; i++) { document.getElementById('p' + i).classList.remove('sin-responder'); }
+  });
+
+  function nivelDe(p){
+    for (var b = 0; b < BANDAS.length; b++) { if (p <= BANDAS[b][0]) return { nombre: BANDAS[b][1], banda: b }; }
+    return { nombre: BANDAS[BANDAS.length-1][1], banda: BANDAS.length-1 };
+  }
+
+  function guarda(p, nivel){
+    try {
+      var h = JSON.parse(localStorage.getItem(CLAVE) || '[]');
+      h.unshift({ f: new Date().toISOString().slice(0,10), p: p, n: nivel });
+      localStorage.setItem(CLAVE, JSON.stringify(h.slice(0, 12)));
+    } catch(e) {}
+  }
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function pintaHistorial(){
+    var h = [];
+    try { h = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { h = []; }
+    var caja = document.getElementById('historial');
+    if (!h.length) { caja.style.display = 'none'; return; }
+    document.getElementById('filas').innerHTML = h.map(function(r){
+      return '<tr><td>' + esc(r.f) + '</td><td>' + esc(r.p) + ' / ' + MAXIMO + '</td><td>' + esc(r.n) + '</td></tr>';
+    }).join('');
+    caja.style.display = '';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (respondidas() < N) {
+      for (var i = 0; i < N; i++) {
+        if (!marcada(i)) { document.getElementById('p' + i).classList.add('sin-responder'); }
+      }
+      return;
+    }
+    var total = 0;
+    for (var i = 0; i < N; i++) { total += parseInt(marcada(i).value, 10); }
+    var nivel = nivelDe(total);
+
+    document.getElementById('cifra').textContent = total;
+    document.getElementById('nivel').textContent = nivel.nombre;
+    document.getElementById('interpreta').innerHTML = TEXTOS[nivel.banda];
+    document.getElementById('escala').innerHTML = BANDAS.map(function(_, b){
+      return '<div class="' + (b <= nivel.banda ? 'on' : '') + '"></div>';
+    }).join('');
+    document.getElementById('sugerencias').innerHTML = ENLACES.map(function(l){
+      return '<li><a href="' + l[1] + '">' + l[0] + '</a></li>';
+    }).join('');
+
+    var crisis = document.getElementById('crisis');
+    if (AVISO && nivel.banda >= BANDAS.length - 1) { crisis.innerHTML = AVISO; crisis.style.display = ''; }
+    else { crisis.style.display = 'none'; }
+
+    var previos = [];
+    try { previos = JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e) { previos = []; }
+    var cmp = document.getElementById('comparacion');
+    if (previos.length) {
+      var antes = previos[0], dif = total - antes.p, txt;
+      if (dif < 0) txt = '<strong>Has bajado ' + Math.abs(dif) + ' punto' + (Math.abs(dif) === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + esc(antes.f) + ', que fue de ' + esc(antes.p) + '. Sea lo que sea que estés haciendo, va en la buena dirección.';
+      else if (dif > 0) txt = '<strong>Has subido ' + dif + ' punto' + (dif === 1 ? '' : 's') + '</strong> respecto a tu medición del ' + esc(antes.f) + ', que fue de ' + esc(antes.p) + '. Puede ser una mala racha puntual; si se mantiene en la siguiente, coméntalo con un profesional.';
+      else txt = 'Has sacado <strong>la misma puntuación</strong> que el ' + esc(antes.f) + '. Si llevas semanas intentándolo por tu cuenta y no se mueve, suele ser el momento de pedir ayuda.';
+      cmp.innerHTML = txt; cmp.style.display = '';
+    } else { cmp.style.display = 'none'; }
+
+    guarda(total, nivel.nombre);
+    pintaHistorial();
+
+    var caja = document.getElementById('resultado');
+    caja.classList.add('visible');
+    caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('repetir').addEventListener('click', function(){
+    form.reset(); actualiza();
+    document.getElementById('resultado').classList.remove('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    try { localStorage.removeItem(CLAVE); } catch(e) {}
+    pintaHistorial();
+  });
+
+  // Puerta de entrada: en el cribado de trauma, las preguntas solo tienen
+  // sentido si ha habido un suceso. Si dice que no, no se le hacen.
+  if (GATE) {
+    var puerta = document.getElementById('puerta');
+    var cuerpo = document.getElementById('cuerpo-test');
+    var salida = document.getElementById('sin-suceso');
+    cuerpo.style.display = 'none';
+    puerta.addEventListener('change', function(){
+      var v = puerta.querySelector('input[name="gate"]:checked');
+      if (!v) return;
+      if (v.value === 'si') { cuerpo.style.display = ''; salida.style.display = 'none'; cuerpo.scrollIntoView({behavior:'smooth', block:'start'}); }
+      else { cuerpo.style.display = 'none'; salida.style.display = ''; }
+    });
+  }
+
+  actualiza();
+  pintaHistorial();
+})();
+</script>
+<script>
+(function(){
+  var form = document.getElementById('test');
+  var caja = document.createElement('div');
+  caja.className = 'interpreta';
+  caja.id = 'subescalas';
+  caja.style.display = 'none';
+  var ref = document.getElementById('comparacion');
+  ref.parentNode.insertBefore(caja, ref);
+
+  form.addEventListener('submit', function(){
+    var v = [];
+    for (var i = 0; i < 4; i++) {
+      var m = form.querySelector('input[name="q' + i + '"]:checked');
+      if (!m) return;
+      v.push(parseInt(m.value, 10));
+    }
+    var ansiedad = v[0] + v[1], animo = v[2] + v[3];
+    var partes = [];
+    partes.push('<p style="margin:0 0 0.7rem;"><strong>Por bloques:</strong> ansiedad <strong>'
+      + ansiedad + ' de 6</strong> · ánimo <strong>' + animo + ' de 6</strong>. '
+      + 'A partir de 3 en un bloque, conviene hacer el test largo de ese.</p>');
+    if (ansiedad >= 3 && animo >= 3) {
+      partes.push('<p style="margin:0;">Te salen <strong>los dos</strong>, que es lo más frecuente de todo: la ansiedad y el ánimo bajo van juntos muchísimas veces. Empieza por el <a href="/test-de-depresion.html">test de depresión (PHQ-9)</a>, y luego haz el <a href="/test-de-ansiedad.html">de ansiedad (GAD-7)</a>.</p>');
+    } else if (ansiedad >= 3) {
+      partes.push('<p style="margin:0;">Pesa más la <strong>ansiedad</strong>. El siguiente paso es el <a href="/test-de-ansiedad.html">test de ansiedad (GAD-7)</a>, que son siete preguntas y da una medida de verdad.</p>');
+    } else if (animo >= 3) {
+      partes.push('<p style="margin:0;">Pesa más el <strong>ánimo</strong>. El siguiente paso es el <a href="/test-de-depresion.html">test de depresión (PHQ-9)</a>, que son nueve preguntas y da una medida de verdad.</p>');
+    } else {
+      partes.push('<p style="margin:0;">Ninguno de los dos bloques llega al umbral. Si aun así estás mal, mira los <a href="/tests.html">otros tests</a>: sueño, síntomas físicos o consumo.</p>');
+    }
+    caja.innerHTML = partes.join('');
+    caja.style.display = '';
+  });
+})();
+</script>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="/cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
+</body>
+</html>

@@ -39,9 +39,13 @@
   .aviso-destacado { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin: 16px 0; font-size: 0.92rem; }
 
   .site-footer { border-top: 1px solid var(--border); padding: 1.75rem 1.5rem 2.5rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
 </style>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/guias.html"}, {"@type": "ListItem", "position": 3, "name": "Política de Privacidad", "item": "https://psicolinks.com/privacidad.html"}]}
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Política de Privacidad", "item": "https://psicolinks.com/privacidad.html"}]}
 </script>
 </head>
 <body>
@@ -92,8 +96,9 @@
   <p>Consulta la <a href="cookies.html">política de cookies</a> para el detalle de qué se guarda en tu navegador.</p>
   <p>Además de las cookies, hay dos cosas que se guardan en el almacenamiento local de tu propio navegador y que <strong>nunca se envían a ningún servidor</strong>:</p>
   <ul>
-    <li><strong>Resultados de los tests</strong> (test de ansiedad y test de depresión): las puntuaciones y las fechas se quedan en tu dispositivo para que puedas comparar mediciones. Al tratarse de información sobre tu salud, se ha decidido expresamente no guardarlas en ningún servidor. Puedes borrarlas cuando quieras con el botón «Borrar mi historial» de la propia página del test.</li>
-    <li><strong>Guías que has leído</strong>: se guarda una lista de las guías visitadas para poder mostrarte por dónde ibas. Puedes borrarla con el botón «Borrar mi progreso» de la <a href="guias.html">página de guías</a>.</li>
+    <li><strong>Resultados de los tests</strong> (test de ansiedad, test de depresión y test de consumo de alcohol): las puntuaciones y las fechas se quedan en tu dispositivo para que puedas comparar mediciones. Al tratarse de información sobre tu salud, se ha decidido expresamente no guardarlas en ningún servidor. Puedes borrarlas cuando quieras con el botón «Borrar mi historial» de la propia página del test.</li>
+    <li><strong>Tu registro A-B-C</strong>: lo que escribas en el <a href="registro-abc.html">registro de siete días</a> —situaciones, conductas y consecuencias, con tus propias palabras— se guarda únicamente en tu dispositivo. Es la información más personal que puede haber en esta web y por eso <strong>no existe ninguna copia en ningún servidor</strong>: no se envía, no se transmite y nadie más que tú puede leerla. Puedes borrar una anotación suelta o el registro entero desde la propia página.</li>
+    <li><strong>Guías que has leído</strong>: se guarda una lista de las guías visitadas para poder mostrarte por dónde ibas. Puedes borrarla con el botón «Borrar mi progreso» de la <a href="/temas.html">página de guías</a>.</li>
   </ul>
   <p>Borrar los datos de navegación de tu navegador elimina también toda esta información.</p>
 
@@ -105,8 +110,9 @@
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 Psicolinks · <a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a> · <a href="como-leemos-los-estudios.html">Cómo leemos los estudios</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
-  <p class="pie-consulta" style="margin:0.6rem 0 0;"><a href="/test-de-ansiedad.html">🧪 Test de ansiedad</a> · <a href="/test-de-depresion.html">Test de depresión</a> · Consulta de psicología: <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></p>
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>

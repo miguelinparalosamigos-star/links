@@ -179,6 +179,10 @@
   .sitio-amigo-texto { display: flex; flex-direction: column; text-align: left; }
   .sitio-amigo-nombre { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 0.98rem; color: var(--ink); }
   .sitio-amigo-desc { font-size: 0.72rem; color: var(--ink-soft); }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
 </style>
 </head>
 <body>
@@ -190,17 +194,9 @@
 </main>
 
 <footer class="site-footer">
-  <p class="otras-webs-titulo">Otras webs</p>
-  <div class="otras-webs-lista">
-    <a class="sitio-amigo" href="https://concienciaconductual.com" target="_blank" rel="noopener" onclick="registrarClic('concienciaconductual')">
-      <svg class="sitio-amigo-icono" viewBox="0 0 42 22" fill="none" stroke="#8C3B4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1,12 L5,4 L8,19 L12,3 L15,13 C17.5,8 20.5,8 23,12 C24.5,14.5 27,14.5 28.5,12 C30,9.5 32,9.5 34,12 L41,12"/></svg>
-      <span class="sitio-amigo-texto">
-        <span class="sitio-amigo-nombre">Conciencia Conductual</span>
-        <span class="sitio-amigo-desc">Consulta de psicología con Miguel Martínez</span>
-      </span>
-    </a>
-  </div>
-  <p>© 2026 Psicolinks · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script>
@@ -780,10 +776,9 @@
       <div class="guia-cta">
         <p class="guia-cta-titulo">📎 Guías gratis para tu día a día</p>
         <p>Descarga mis guías prácticas en PDF —dormir mejor, calmar la ansiedad, concentrarte— escritas por un psicólogo. Gratis, en lenguaje claro.</p>
-        <a class="guia-cta-btn" href="/guias.html">Ver las guías gratuitas →</a>
+        <a class="guia-cta-btn" href="/temas.html">Ver las guías gratuitas →</a>
       </div>
       <div id="relacionados-container"></div>
-      <div class="pl-newsletter" data-variant="digest" data-origen="articulo"></div>
     `;
     if (window.PL_initNewsletter) window.PL_initNewsletter();
 
@@ -835,6 +830,5 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
-<script src="/newsletter-psicolinks.js" defer></script>
 </body>
 </html>

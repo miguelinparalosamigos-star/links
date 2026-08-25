@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terapia psicológica online · Psicolinks</title>
+<meta name="description" content="Cómo funciona la terapia online conmigo: la primera sesión, objetivos que se pueden comprobar y trabajo entre sesiones. Psicólogo colegiado CV17649.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Terapia psicológica online con Miguel Martínez">
+<meta property="og:description" content="Cómo funciona, qué pasa en la primera sesión y cómo sabremos si está funcionando. Psicólogo colegiado nº CV17649.">
+<meta property="og:url" content="https://psicolinks.com/terapia-online.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/terapia-online.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+
+  .paso { display: flex; gap: 0.9rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 0.9rem 1.1rem; margin: 0 0 0.7rem; }
+  .paso-num { flex-shrink: 0; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: #8C3B4A; color: #fff; font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; }
+  .paso-txt h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin: 0 0 0.3rem; }
+  .paso-txt p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
+  .cta-grande { background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; padding: 1.5rem 1.6rem; margin: 2rem 0 0; text-align: center; }
+  .cta-grande h2 { font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 0.6rem; }
+  .cta-grande p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; margin: 0 0 1.1rem; }
+  .cta-grande .btn-consulta { display: inline-block; background: #8C3B4A; color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem; padding: 0.85rem 1.6rem; border-radius: 10px; }
+  .cta-grande .btn-consulta:hover { background: #75303d; }
+  .cta-grande .nota { font-size: 0.83rem; margin: 1rem 0 0; }
+  .quien { display: flex; gap: 1rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.3rem; margin: 0 0 1.5rem; }
+  .quien-txt p { margin: 0 0 0.6rem; font-size: 0.96rem; line-height: 1.65; }
+  .quien-txt p:last-child { margin-bottom: 0; }
+  .credencial { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase; color: #8C3B4A; border: 1.3px solid #8C3B4A; border-radius: 999px; padding: 0.2rem 0.65rem; margin: 0 0 0.6rem; }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿La terapia online funciona igual que la presencial?", "acceptedAnswer": {"@type": "Answer", "text": "Para la mayoría de los motivos de consulta habituales —ansiedad, insomnio, fobias, ánimo bajo, hábitos— las revisiones que comparan psicoterapia por videollamada con presencial no encuentran diferencias relevantes en resultados. Lo que sí cambia es lo práctico: te ahorra desplazamientos, es más fácil mantener la continuidad y amplía a quién puedes elegir. Hay situaciones en las que el presencial es preferible, y eso se valora en la primera sesión."}}, {"@type": "Question", "name": "¿Qué necesito para una sesión online?", "acceptedAnswer": {"@type": "Answer", "text": "Una conexión estable, auriculares y, sobre todo, un sitio donde nadie te oiga durante una hora. Eso último es lo que más falla y lo que más condiciona la sesión. Si en casa no lo tienes, se puede pensar una alternativa: el coche aparcado funciona sorprendentemente bien."}}, {"@type": "Question", "name": "¿Es confidencial?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El secreto profesional obliga igual online que en consulta, y solo se rompe en los supuestos tasados por la ley, como un riesgo grave e inminente. Las sesiones no se graban."}}, {"@type": "Question", "name": "¿Cuánto dura y cuántas sesiones?", "acceptedAnswer": {"@type": "Answer", "text": "Las sesiones son de unos cincuenta minutos. Para los motivos más frecuentes se suele hablar de entre 8 y 20 sesiones, semanales al principio y espaciándose después. Eso no se sabe con exactitud el primer día, pero sí debería tenerse una estimación pronto."}}, {"@type": "Question", "name": "¿Desde qué enfoque trabajas?", "acceptedAnswer": {"@type": "Answer", "text": "Análisis de la conducta y terapias cognitivo-conductuales y contextuales, que son las que más evidencia acumulan para los motivos de consulta más frecuentes. En la práctica significa: mirar qué mantiene el problema, poner objetivos comprobables y trabajar también fuera de sesión."}}, {"@type": "Question", "name": "¿Y si no conectamos?", "acceptedAnswer": {"@type": "Answer", "text": "Se cambia, y no pasa nada. La relación entre paciente y terapeuta es uno de los factores que más se asocian a que una terapia funcione. Si a las tres o cuatro sesiones no te sientes escuchado, dilo: se habla y, si hace falta, te derivo."}}, {"@type": "Question", "name": "¿Desde dónde puedo conectarme?", "acceptedAnswer": {"@type": "Answer", "text": "Desde cualquier punto de España. Si vives fuera, escríbeme y lo miramos: según el país puede haber requisitos distintos, y prefiero comprobarlo antes que dar por hecho que sí."}}, {"@type": "Question", "name": "¿Y si prefiero presencial?", "acceptedAnswer": {"@type": "Answer", "text": "También paso consulta presencial. Si vives cerca y lo prefieres, dilo al escribir."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Terapia online", "item": "https://psicolinks.com/terapia-online.html"}]}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/" class="back-link">← Volver a Psicolinks</a>
+  <div class="stamp">🩺 Consulta de psicología</div>
+  <h1>Terapia psicológica online</h1>
+  <p class="autor">Con <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Todo lo que hay en Psicolinks —las guías, los tests, el registro— sirve para entender
+  y para empezar a moverte. Pero no sustituye a que alguien mire tu caso concreto. Si has llegado a ese
+  punto, esta página explica cómo trabajo, sin marketing.</p>
+
+  <div class="quien">
+    <div class="quien-txt">
+      <span class="credencial">Colegiado nº CV17649</span>
+      <p>Soy quien escribe todo lo de esta web: las 211 guías, los resúmenes de estudios de cada día y
+      los tests. Paso consulta en <strong>Conciencia Conductual</strong>, online para toda España y
+      presencial en Valencia.</p>
+      <p>Trabajo desde el análisis de la conducta y las terapias cognitivo-conductuales y contextuales,
+      que son las que más evidencia acumulan para los motivos de consulta más frecuentes. En la práctica
+      eso significa tres cosas: entender qué mantiene el problema antes de proponer nada, poner objetivos
+      que se puedan comprobar, y trabajar también fuera de la sesión.</p>
+    </div>
+  </div>
+
+  <div class="idea"><strong>Con qué se suele venir.</strong> Ansiedad y crisis de pánico, insomnio,
+  fobias concretas, ánimo bajo, obsesiones, hábitos que no se pueden soltar, problemas de pareja,
+  duelo, estrés y agotamiento en el trabajo. Si lo tuyo no está en esa lista, escríbeme igual: si no
+  es lo mío, te lo digo y te oriento hacia dónde ir.</div>
+
+  <h2 class="bloque-tit">Cómo funciona, paso a paso</h2>
+  <div class="paso"><span class="paso-num">1</span><div class="paso-txt">
+    <h3>Escribes y contamos qué te pasa</h3><p>Un correo o un formulario, sin compromiso y sin tener que explicarlo todo. Con dos o tres frases basta para saber si esto encaja o si te conviene otra cosa.</p></div></div>
+  <div class="paso"><span class="paso-num">2</span><div class="paso-txt">
+    <h3>Primera sesión: entender antes de proponer</h3><p>La primera sesión no es un cuestionario ni un discurso mío. Es entender qué te pasa exactamente, desde cuándo, qué has probado y qué te está costando. De ahí sale una hipótesis de qué lo mantiene.</p></div></div>
+  <div class="paso"><span class="paso-num">3</span><div class="paso-txt">
+    <h3>Un plan concreto, con objetivos que se puedan comprobar</h3><p>No «sentirte mejor», que no se puede medir. Sino dormir del tirón cuatro noches por semana, volver a entrar solo al supermercado, o hacer esa llamada que llevas meses aplazando.</p></div></div>
+  <div class="paso"><span class="paso-num">4</span><div class="paso-txt">
+    <h3>Trabajo entre sesiones</h3><p>Aquí pasa la mitad de lo importante. Registros, exposición por pasos, cambios concretos en tu semana. Una hora de conversación cada quince días no cambia una conducta de años.</p></div></div>
+  <div class="paso"><span class="paso-num">5</span><div class="paso-txt">
+    <h3>Revisamos si funciona, con datos</h3><p>Se vuelve a medir cada cierto tiempo, con los mismos cuestionarios y con tus propios objetivos. Si a las sesiones acordadas no se mueve, se cambia el plan o se deriva. No se alarga por alargar.</p></div></div>
+
+  <div class="cta-grande">
+    <h2>¿Lo hablamos?</h2>
+    <p>Escríbeme contando en dos o tres frases qué te pasa. Sin compromiso: si veo que lo tuyo se
+    trabaja mejor en otro sitio, te lo digo.</p>
+    <a class="btn-consulta" href="https://concienciaconductual.com" target="_blank" rel="noopener" onclick="registrarClicConsulta()">Ir a mi consulta →</a>
+    <p class="nota">Se abre <strong>concienciaconductual.com</strong>, que es mi web de consulta.
+    Allí están las tarifas y el formulario de contacto.</p>
+  </div>
+
+  <h2 class="bloque-tit">Preguntas antes de dar el paso</h2>
+  <div class="tool">
+  <h3>¿La terapia online funciona igual que la presencial?</h3>
+  <p>Para la mayoría de los motivos de consulta habituales —ansiedad, insomnio, fobias, ánimo bajo, hábitos— las revisiones que comparan psicoterapia por videollamada con presencial no encuentran diferencias relevantes en resultados. Lo que sí cambia es lo práctico: te ahorra desplazamientos, es más fácil mantener la continuidad y amplía a quién puedes elegir. Hay situaciones en las que el presencial es preferible, y eso se valora en la primera sesión.</p>
+</div>
+  <div class="tool">
+  <h3>¿Qué necesito para una sesión online?</h3>
+  <p>Una conexión estable, auriculares y, sobre todo, <strong>un sitio donde nadie te oiga durante una hora</strong>. Eso último es lo que más falla y lo que más condiciona la sesión. Si en casa no lo tienes, se puede pensar una alternativa: el coche aparcado funciona sorprendentemente bien.</p>
+</div>
+  <div class="tool">
+  <h3>¿Es confidencial?</h3>
+  <p>Sí. El secreto profesional obliga igual online que en consulta, y solo se rompe en los supuestos tasados por la ley, como un riesgo grave e inminente. Las sesiones no se graban.</p>
+</div>
+  <div class="tool">
+  <h3>¿Cuánto dura y cuántas sesiones?</h3>
+  <p>Las sesiones son de unos cincuenta minutos. Para los motivos más frecuentes se suele hablar de entre 8 y 20 sesiones, semanales al principio y espaciándose después. Eso no se sabe con exactitud el primer día, pero sí debería tenerse una estimación pronto.</p>
+</div>
+  <div class="tool">
+  <h3>¿Desde qué enfoque trabajas?</h3>
+  <p>Análisis de la conducta y terapias cognitivo-conductuales y contextuales, que son las que más evidencia acumulan para los motivos de consulta más frecuentes. En la práctica significa: mirar qué mantiene el problema, poner objetivos comprobables y trabajar también fuera de sesión.</p>
+</div>
+  <div class="tool">
+  <h3>¿Y si no conectamos?</h3>
+  <p>Se cambia, y no pasa nada. La relación entre paciente y terapeuta es uno de los factores que más se asocian a que una terapia funcione. Si a las tres o cuatro sesiones no te sientes escuchado, dilo: se habla y, si hace falta, te derivo.</p>
+</div>
+  <div class="tool">
+  <h3>¿Desde dónde puedo conectarme?</h3>
+  <p>Desde cualquier punto de España. Si vives fuera, escríbeme y lo miramos: según el país puede haber requisitos distintos, y prefiero comprobarlo antes que dar por hecho que sí.</p>
+</div>
+  <div class="tool">
+  <h3>¿Y si prefiero presencial?</h3>
+  <p>También paso consulta presencial. Si vives cerca y lo prefieres, dilo al escribir.</p>
+</div>
+
+  <div class="idea"><strong>Si lo que necesitas es ayuda hoy.</strong> Esto es una consulta privada,
+  con lista de espera y con un coste. No es el recurso adecuado para una urgencia. Si estás en crisis:
+  <strong>112</strong> para emergencias, y <strong>024</strong> para la conducta suicida, gratuito y las
+  veinticuatro horas. Y si buscas la vía pública o gratuita, la tienes en
+  <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>.</div>
+
+  <div class="cierre"><strong>Y si todavía no es el momento.</strong> No pasa nada. Psicolinks es
+  gratis y no pide nada a cambio: tienes <a href="/temas.html">206 guías</a>, diez tests
+  (<a href="/test-de-ansiedad.html">ansiedad</a>, <a href="/test-de-depresion.html">depresión</a>,
+  <a href="/test-de-alcohol.html">alcohol</a>) y el <a href="/registro-abc.html">registro de siete
+  días</a>. Empieza por ahí, y si dentro de unas semanas ves que no se mueve, entonces hablamos.</div>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">Si quieres seguir</span>
+    <a href="/terapia-conductual-preguntas.html">Preguntas antes de ir al psicólogo →</a>
+  </div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual, online y presencial.</p>
+    <a class="consulta-btn" href="https://concienciaconductual.com" target="_blank" rel="noopener">Ver mi consulta →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+</main>
+
+<script>
+function registrarClicConsulta(){
+  try {
+    fetch('/.netlify/functions/track-view', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ clic: 'consulta-terapia-online' }),
+      keepalive: true
+    }).catch(function(){});
+  } catch(e) {}
+}
+</script>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+</body>
+</html>

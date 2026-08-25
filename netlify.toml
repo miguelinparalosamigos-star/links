@@ -9,6 +9,32 @@
 # 07:00 UTC (ver "schedule" dentro del propio fichero). No hace falta configurar
 # nada aqui para eso.
 
+# ---------------------------------------------------------------------------
+# Tres paginas eran la misma lista de doscientas guias: guias.html (buscador y
+# filtros), temas.html (por temas) e indice.html (de la A a la Z). Y las tres
+# se enlazaban entre si, asi que quien entraba a una tenia delante las otras
+# dos. Se queda temas.html, que ademas se pliega y no crece al anadir guias, y
+# se le metio dentro el buscador.
+#
+# El 301 (no 302) es importante: le dice a Google que la mudanza es definitiva
+# y le pasa a temas.html las posiciones que tuvieran las otras dos. Sin esto,
+# se perderian. "force" hace falta porque los ficheros siguen existiendo en el
+# repositorio: si algun dia hay que dar marcha atras, basta con quitar estas
+# dos reglas.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/guias.html"
+  to = "/temas.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/indice.html"
+  to = "/temas.html"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/sitemap.xml"
   to = "/.netlify/functions/sitemap"
@@ -22,6 +48,18 @@
 
 # Páginas de artículo con URL limpia y renderizadas en el servidor (para SEO):
 # /articulo/titulo-legible/<id>  ->  función articulo (le pasa la ruta en "ruta").
+# Archivo de artículos renderizado en el servidor. La version estatica
+# archivo.html pinta la lista con JavaScript, asi que en el HTML que ve
+# Google no habia ni un enlace a los articulos: cientos de paginas
+# dependian solo del sitemap. Con esto los enlaces van dentro del HTML.
+# "force" es necesario porque existe el fichero estatico con ese nombre
+# (se queda como respaldo: si se quita esta regla, vuelve a servirse el).
+[[redirects]]
+  from = "/archivo.html"
+  to = "/.netlify/functions/archivo"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/articulo/*"
   to = "/.netlify/functions/articulo?ruta=:splat"

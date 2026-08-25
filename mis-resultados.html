@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tus resultados de los tests, juntos · Psicolinks</title>
+<meta name="description" content="Todos los tests que hayas hecho, con su evolución en el tiempo, en una sola página. Se lee de tu propio navegador: no sale nada de tu dispositivo.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Tus resultados de los tests, juntos">
+<meta property="og:description" content="Todos los tests que hayas hecho, con su evolución en el tiempo, en una sola página. Se lee de tu propio navegador: no sale nada de tu dispositivo.">
+<meta property="og:url" content="https://psicolinks.com/mis-resultados.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/mis-resultados.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+
+  .tarjeta-res{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .tarjeta-res h3{ font-family:var(--font-display); font-size:1.1rem; font-weight:600; margin:0 0 0.15rem; }
+  .tarjeta-res h3 a{ text-decoration:none; color:var(--ink); }
+  .tarjeta-res h3 a:hover{ color:var(--accent); text-decoration:underline; }
+  .res-ultimo{ display:flex; align-items:baseline; gap:0.5rem; flex-wrap:wrap; margin:0.5rem 0 0.2rem; }
+  .res-cifra{ font-family:var(--font-display); font-size:2rem; font-weight:700; line-height:1; }
+  .res-de{ font-size:0.85rem; color:var(--ink-soft); }
+  .res-nivel{ font-weight:600; font-size:0.95rem; color:var(--accent); }
+  .res-fecha{ font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--ink-soft); }
+  .res-cambio{ font-size:0.9rem; line-height:1.5; margin:0.6rem 0 0; }
+  .res-cambio.baja{ color:#2f6b4f; }
+  .res-cambio.sube{ color:#8C3B4A; }
+  .res-cambio.igual{ color:var(--ink-soft); }
+  .grafico{ display:flex; align-items:flex-end; gap:4px; height:70px; margin:0.9rem 0 0.3rem; }
+  .grafico .barra-r{ flex:1 1 0; min-width:8px; background:var(--accent); border-radius:3px 3px 0 0; opacity:0.75; position:relative; }
+  .grafico .barra-r:last-child{ opacity:1; }
+  .grafico-pie{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.63rem; color:var(--ink-soft); }
+  .vacio{ background:var(--surface); border:1px dashed var(--border); border-radius:12px; padding:1.6rem 1.4rem; text-align:center; }
+  .vacio p{ margin:0 0 1rem; color:var(--ink-soft); line-height:1.6; }
+  .pendientes{ display:flex; flex-wrap:wrap; gap:0.45rem; margin:0.7rem 0 0; }
+  .pendientes a{ font-size:0.86rem; font-weight:600; text-decoration:none; color:var(--accent); background:var(--surface); border:1.5px solid var(--border); border-radius:999px; padding:0.35rem 0.8rem; }
+  .pendientes a:hover{ border-color:var(--accent); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}, {"@type": "ListItem", "position": 3, "name": "Tus resultados", "item": "https://psicolinks.com/mis-resultados.html"}]}
+</script>
+</head>
+<body>
+<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<main>
+  <a href="/tests.html" class="back-link">← Todos los tests</a>
+  <div class="stamp">📈 Tu evolución · solo en tu navegador</div>
+  <h1>Tus resultados</h1>
+  <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Todos los tests que hayas hecho, con su evolución, en una sola página. Un test suelto dice poco; la comparación contigo mismo dice bastante.</p>
+
+  <div class="idea"><strong>Esto se lee de tu propio navegador.</strong> No hay servidor, no hay cuenta y no hay correo: los resultados están guardados en <em>este</em> dispositivo desde que hiciste cada test, y esta página solo los junta y los dibuja. Si abres Psicolinks en otro móvil o borras los datos del navegador, aquí no habrá nada. Es a propósito: una puntuación de ansiedad o de depresión es un dato de salud, y no tiene por qué estar en ningún sitio que no sea tuyo.</div>
+
+  <h2 class="bloque-tit">Lo que has hecho</h2>
+  <div id="resultados"></div>
+
+  <div id="pendientes"></div>
+
+  <div class="idea" style="margin-top:2rem;"><strong>Cómo leer la evolución.</strong> Lo que informa no es la cifra de hoy: es la línea. Dos semanas es el intervalo que tiene sentido, porque casi todos estos cuestionarios preguntan justamente por las dos últimas semanas. Repetirlos cada día no informa de nada y acaba convertido en una comprobación ansiosa más. Y una bajada de dos o tres puntos en una sola medición puede ser simplemente que hoy has tenido mejor día: lo que cuenta es la tendencia de un mes o dos.</div>
+
+  <p style="margin:1.6rem 0 0;"><button type="button" class="btn sec" id="borrar-todo">Borrar todos mis resultados</button></p>
+  <p class="nota" id="confirma" style="display:none;margin:0.7rem 0 0;"></p>
+
+  <div class="cierre"><strong>Y si los números no bajan.</strong> Si llevas semanas intentándolo por tu cuenta y la línea no se mueve, eso no es falta de constancia: es la información más útil que te van a dar estos tests. Empieza por tu médico de familia, que es la puerta de entrada. Y si quieres trabajarlo conmigo, puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online para toda España y presencial en Valencia.</div>
+
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/tests.html">Todos los tests</a> · <a href="/registro-abc.html">Tu registro de siete días</a> · <a href="/temas.html">Todas las guías</a> · <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a></p>
+
+  <div class="consulta-cta">
+    <h3>¿Y si esto te está pasando a ti?</h3>
+    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
+    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
+    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
+    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
+  </div>
+</main>
+
+<script>
+(function(){
+  var TESTS = [{"k": "pl_gad7_historial", "n": "Ansiedad (GAD-7)", "m": 21, "u": "/test-de-ansiedad.html", "d": "más ansiedad"}, {"k": "pl_phq9_historial", "n": "Depresión (PHQ-9)", "m": 27, "u": "/test-de-depresion.html", "d": "más síntomas de depresión"}, {"k": "pl_phq4_historial", "n": "Chequeo rápido (PHQ-4)", "m": 12, "u": "/test-rapido-ansiedad-depresion.html", "d": "más ansiedad o ánimo bajo"}, {"k": "pl_phq15_historial", "n": "Síntomas físicos (PHQ-15)", "m": 30, "u": "/test-de-sintomas-fisicos.html", "d": "más molestias físicas"}, {"k": "pl_panico_historial", "n": "Ataques de pánico", "m": 4, "u": "/test-de-ataques-de-panico.html", "d": "más cerca del patrón de trastorno de pánico"}, {"k": "pl_pcptsd_historial", "n": "Estrés postraumático", "m": 5, "u": "/test-de-estres-postraumatico.html", "d": "más síntomas de estrés postraumático"}, {"k": "pl_audit_historial", "n": "Alcohol (AUDIT)", "m": 40, "u": "/test-de-alcohol.html", "d": "más consumo de riesgo"}, {"k": "pl_auditc_historial", "n": "Alcohol rápido (AUDIT-C)", "m": 12, "u": "/test-rapido-alcohol.html", "d": "más consumo"}, {"k": "pl_ftnd_historial", "n": "Tabaco (Fagerström)", "m": 10, "u": "/test-de-dependencia-del-tabaco.html", "d": "más dependencia de la nicotina"}, {"k": "pl_constancia_historial", "n": "Constancia (IPIP)", "m": 50, "u": "/test-de-procrastinacion.html", "d": "m\u00e1s constancia", "subirEsBueno": true}];
+
+  function leer(clave){
+    try {
+      var v = JSON.parse(localStorage.getItem(clave) || '[]');
+      return Array.isArray(v) ? v.filter(function(r){ return r && typeof r.p === 'number'; }) : [];
+    } catch(e) { return []; }
+  }
+  function esc(s){
+    return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function fechaCorta(f){
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(f || ''));
+    return m ? m[3] + '/' + m[2] : esc(f);
+  }
+
+  // Las entradas se guardan con la más reciente primero.
+  function grafico(hist, maximo){
+    var ult = hist.slice(0, 10).reverse();
+    if (ult.length < 2) return '';
+    var barras = ult.map(function(r){
+      var alto = Math.max(4, Math.round(r.p / maximo * 100));
+      return '<div class="barra-r" style="height:' + alto + '%" title="' + esc(r.f) + ': ' + esc(r.p) + '"></div>';
+    }).join('');
+    return '<div class="grafico" role="img" aria-label="Evolución de las últimas ' + ult.length + ' mediciones">'
+      + barras + '</div><div class="grafico-pie"><span>' + fechaCorta(ult[0].f)
+      + '</span><span>' + fechaCorta(ult[ult.length - 1].f) + '</span></div>';
+  }
+
+  // Ojo con la dirección: en casi todos estos cuestionarios más puntos es peor
+  // —más ansiedad, más síntomas—, pero en el de constancia más puntos es mejor.
+  // Sin distinguirlo, a quien mejora su constancia le salía «puede ser una mala
+  // racha puntual, coméntalo con un profesional», que es justo al revés.
+  function cambio(hist, dice, subirEsBueno){
+    if (hist.length < 2) return '<p class="res-cambio igual">Con una sola medición no hay evolución todavía. '
+      + 'Repítelo dentro de dos semanas y aquí verás la comparación, que es lo que de verdad informa.</p>';
+    var hoy = hist[0].p, antes = hist[1].p, dif = hoy - antes;
+    if (dif === 0) return '<p class="res-cambio igual">Igual que el ' + esc(hist[1].f) + '.</p>';
+
+    var sube = dif > 0;
+    var aMejor = subirEsBueno ? sube : !sube;
+    var texto = sube ? esc(dice) : esc(dice).replace('más ', 'menos ');
+    var coda = aMejor
+      ? ' Un cambio en la buena dirección, aunque una sola comparación todavía dice poco.'
+      : ' Puede ser una mala racha puntual; si se mantiene en la siguiente, coméntalo con un profesional.';
+    return '<p class="res-cambio ' + (sube ? 'sube' : 'baja') + '">Has '
+      + (sube ? 'subido' : 'bajado') + ' <strong>' + Math.abs(dif) + '</strong> respecto al '
+      + esc(hist[1].f) + ', es decir ' + texto + '.' + coda + '</p>';
+  }
+
+  var cont = document.getElementById('resultados');
+  var hechos = 0, pendientes = [];
+  var trozos = [];
+
+  TESTS.forEach(function(t){
+    var hist = leer(t.k);
+    if (!hist.length) { pendientes.push(t); return; }
+    hechos++;
+    var u = hist[0];
+    trozos.push(
+      '<div class="tarjeta-res">'
+      + '<h3><a href="' + t.u + '">' + esc(t.n) + '</a></h3>'
+      + '<p class="res-fecha">Última vez: ' + esc(u.f) + ' · ' + hist.length
+      + (hist.length === 1 ? ' medición' : ' mediciones') + '</p>'
+      + '<div class="res-ultimo"><span class="res-cifra">' + esc(u.p) + '</span>'
+      + '<span class="res-de">de ' + t.m + '</span>'
+      + '<span class="res-nivel">' + esc(u.n || '') + '</span></div>'
+      + grafico(hist, t.m)
+      + cambio(hist, t.d, t.subirEsBueno)
+      + '</div>');
+  });
+
+  var registro = [];
+  try { registro = JSON.parse(localStorage.getItem('pl_registro_abc') || '[]'); } catch(e) {}
+  if (Array.isArray(registro) && registro.length) {
+    trozos.push('<div class="tarjeta-res"><h3><a href="/registro-abc.html">Tu registro de siete días</a></h3>'
+      + '<p class="res-fecha">' + registro.length + (registro.length === 1 ? ' entrada' : ' entradas') + ' guardadas</p>'
+      + '<p class="res-cambio igual">El registro tiene su propia página, con el gráfico de malestar y el detalle de cada entrada.</p></div>');
+  }
+
+  // El test de personalidad guarda cinco puntuaciones en vez de una, así que
+  // no encaja en el array de arriba y va aparte.
+  var big = [];
+  try { big = JSON.parse(localStorage.getItem('pl_bigfive_historial') || '[]'); } catch(e) {}
+  big = Array.isArray(big) ? big.filter(function(r){ return r && r.puntos; }) : [];
+  if (big.length) {
+    var NOMBRES = { E:'Extraversión', A:'Amabilidad', C:'Responsabilidad',
+                    S:'Estabilidad emocional', M:'Apertura mental' };
+    var ult = big[big.length - 1];
+    var filas = ['E','A','C','S','M'].map(function(k){
+      var v = ult.puntos[k] || 0;
+      return '<div style="display:flex;align-items:center;gap:0.6rem;margin:0 0 0.35rem;">'
+        + '<span style="flex:0 0 9.5rem;font-size:0.88rem;">' + esc(NOMBRES[k]) + '</span>'
+        + '<span style="flex:1;height:9px;background:var(--border);border-radius:5px;overflow:hidden;">'
+        + '<span style="display:block;height:100%;width:' + Math.round((v - 4) / 16 * 100)
+        + '%;background:var(--accent);"></span></span>'
+        + '<span style="flex:0 0 3rem;text-align:right;font-family:var(--font-mono);font-size:0.78rem;color:var(--ink-soft);">'
+        + esc(v) + '/20</span></div>';
+    }).join('');
+    trozos.push('<div class="tarjeta-res"><h3><a href="/test-de-personalidad.html">Personalidad (Big Five)</a></h3>'
+      + '<p class="res-fecha">' + esc(fechaCorta(ult.fecha)) + (big.length > 1 ? ' · ' + big.length + ' veces' : '') + '</p>'
+      + filas
+      + '<p class="res-cambio igual">Aquí no pongo evolución a propósito: los rasgos apenas se mueven '
+      + 'de un mes a otro, y un gráfico invitaría a leer como un cambio lo que casi siempre es el día '
+      + 'que tenías al contestar.</p></div>');
+    hechos++;
+  }
+
+  if (!hechos && !(Array.isArray(registro) && registro.length)) {
+    cont.innerHTML = '<div class="vacio"><p>Aquí no hay nada todavía, y eso significa que en este navegador '
+      + 'no has hecho ningún test. En cuanto hagas uno, su resultado aparecerá en esta página y podrás '
+      + 'ver cómo evoluciona.</p><p><a class="btn" href="/tests.html">Ver los tests →</a></p></div>';
+  } else {
+    cont.innerHTML = trozos.join('');
+  }
+
+  if (pendientes.length) {
+    document.getElementById('pendientes').innerHTML =
+      '<h2 class="bloque-tit">Los que todavía no has hecho</h2>'
+      + '<p style="color:var(--ink-soft);font-size:0.95rem;line-height:1.6;margin:0 0 0.6rem;">'
+      + 'No hace falta hacerlos todos: solo el que encaje con lo que te pasa.</p>'
+      + '<div class="pendientes">'
+      + pendientes.map(function(t){ return '<a href="' + t.u + '">' + esc(t.n) + '</a>'; }).join('')
+      + '</div>';
+  }
+
+  var borrar = document.getElementById('borrar-todo');
+  borrar.addEventListener('click', function(){
+    var aviso = document.getElementById('confirma');
+    if (borrar.dataset.armado !== '1') {
+      borrar.dataset.armado = '1';
+      borrar.textContent = 'Pulsa otra vez para borrarlo todo';
+      aviso.textContent = 'Esto borra tus resultados de los nueve tests y no se puede deshacer. El registro A-B-C se borra desde su propia página.';
+      aviso.style.display = '';
+      return;
+    }
+    TESTS.forEach(function(t){ try { localStorage.removeItem(t.k); } catch(e) {} });
+    location.reload();
+  });
+})();
+</script>
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script src="/cookies-psicolinks.js" defer></script>
+<script src="/progreso-psicolinks.js" defer></script>
+</body>
+</html>

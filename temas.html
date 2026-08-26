@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Explora la psicología por temas · Psicolinks</title>
-<meta name="description" content="Ansiedad, depresión, pareja, autoestima, sueño, estrés y familia: 211 guías gratuitas de psicología ordenadas por lo que te preocupa.">
+<meta name="description" content="Ansiedad, depresión, pareja, autoestima, sueño, estrés y familia: 253 guías gratuitas de psicología ordenadas por lo que te preocupa.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Psicolinks">
 <meta property="og:title" content="Temas de psicología · Guías, libros y recursos · Psicolinks">
-<meta property="og:description" content="Ansiedad, depresión, pareja, autoestima, sueño, estrés y familia: 211 guías gratuitas de psicología ordenadas por lo que te preocupa.">
+<meta property="og:description" content="Ansiedad, depresión, pareja, autoestima, sueño, estrés y familia: 253 guías gratuitas de psicología ordenadas por lo que te preocupa.">
 <meta property="og:url" content="https://psicolinks.com/temas.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
@@ -47,9 +47,10 @@
   .tema h2{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0 0 0.4rem; }
   .tema .desc{ color:var(--ink-soft); font-size:0.96rem; line-height:1.6; margin:0 0 1rem; }
   .bloque-titulo{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--stamp); margin:0.9rem 0 0.5rem; }
-  .guias-lista{ display:flex; flex-wrap:wrap; gap:0.5rem; }
-  .btn-guia{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.88rem; padding:0.55rem 1rem; border-radius:9px; background:var(--accent); color:#fff; }
-  .btn-guia:hover{ background:#3a2e63; }
+  .guias-lista{ display:grid; gap:0.55rem; }
+  @media (min-width:560px){ .guias-lista{ grid-template-columns:1fr 1fr; } }
+  .btn-guia{ display:block; text-decoration:none; font-weight:600; font-size:0.94rem; line-height:1.35; padding:0.8rem 1rem; border-radius:12px; background:var(--surface); color:var(--ink); border:1px solid var(--border); }
+  .btn-guia:hover{ border-color:var(--accent); color:var(--accent); }
   .btn-guia.pdf{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); }
   .btn-guia.pdf:hover{ background:var(--accent-soft); }
   .libros-lista{ display:flex; flex-direction:column; gap:0.5rem; margin-top:0.3rem; }
@@ -69,17 +70,16 @@
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
 
-  /* --- Rejilla de temas: lo primero que se ve al entrar ----------------- */
-  .temas-rejilla{ display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:0.7rem; margin:0 0 2rem; }
-  .tema-tarjeta{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
-                 gap:0.25rem; text-decoration:none; background:var(--surface); border:1px solid var(--border);
-                 border-radius:14px; padding:1.05rem 0.7rem 0.95rem; transition:border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease; }
-  .tema-tarjeta:hover{ border-color:var(--accent); transform:translateY(-2px); box-shadow:0 4px 12px rgba(33,31,46,0.08); }
-  .tt-icono{ font-size:1.65rem; line-height:1; }
-  .tt-nombre{ font-family:var(--font-display); font-weight:600; font-size:1rem; color:var(--ink); line-height:1.25; }
-  .tt-cuenta{ font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); }
+  /* --- Los temas, en tarjetas ------------------------------------------
+     Dos por fila como en el menú de herramientas. El que se abre pasa a
+     ocupar la fila entera, para que las guías no salgan en una columna
+     estrecha. */
+  .temas-rejilla{ display:grid; grid-template-columns:1fr; gap:0.7rem; align-items:stretch; margin:0 0 2rem; }
+  @media (min-width:46rem){ .temas-rejilla{ grid-template-columns:1fr 1fr; } }
+  .temas-rejilla .tema{ margin:0; min-width:0; display:flex; }
+  .temas-rejilla .tema > .tema-caja{ flex:1; }
+  .temas-rejilla .tema.abierto{ grid-column:1 / -1; }
   .tema-icono{ display:inline-block; margin-right:0.5rem; font-size:1.15em; line-height:1; vertical-align:-0.08em; }
-  @media (max-width:420px){ .temas-rejilla{ grid-template-columns:repeat(2,1fr); gap:0.55rem; } .tt-nombre{ font-size:0.93rem; } }
 
   /* --- Subgrupos dentro de cada tema ----------------------------------- */
   /* Con veinte o treinta enlaces seguidos no se sabe por dónde entrar. Con
@@ -91,20 +91,24 @@
   .volver-temas{ display:inline-block; margin:1.4rem 0 0; font-size:0.85rem;
                  color:var(--ink-soft); text-decoration:none; }
   .volver-temas:hover{ color:var(--accent); text-decoration:underline; }
-  .tema-caja{ border:1px solid var(--border); border-radius:14px; background:var(--surface); margin:0 0 0.7rem; overflow:hidden; }
+  .tema-caja{ border:1px solid var(--border); border-radius:14px; background:var(--surface); margin:0; overflow:hidden;
+              transition:border-color 0.15s ease, transform 0.15s ease; }
+  .tema-caja:hover{ transform:translateY(-1px); }
   .tema-caja[open]{ border-color:var(--accent); }
-  .tema-caja > summary{ display:flex; align-items:center; gap:0.7rem; padding:1rem 1.1rem; cursor:pointer; list-style:none; font-weight:600; color:var(--ink); }
+  .tema-caja > summary{ display:flex; align-items:flex-start; gap:0.85rem; padding:1rem 1.1rem; cursor:pointer; list-style:none; font-weight:600; color:var(--ink); }
   .tema-caja > summary::-webkit-details-marker{ display:none; }
-  .tema-caja > summary::after{ content:'⌄'; margin-left:auto; font-size:1.2rem; line-height:1; color:var(--ink-soft); transition:transform 0.15s; }
+  .tema-caja > summary::after{ content:'⌄'; margin-left:auto; align-self:center; font-size:1.2rem; line-height:1; color:var(--ink-soft); transition:transform 0.15s; }
   .tema-caja[open] > summary::after{ transform:rotate(180deg); }
   .tema-caja > summary:hover{ background:var(--bg); }
   .tema-caja > summary:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; }
-  .tema-caja .tema-icono{ font-size:1.25rem; margin:0; }
-  .tema-caja .tc-nombre{ font-size:1.02rem; line-height:1.3; }
-  .tema-caja .tc-cuenta{ font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); white-space:nowrap; }
+  .tema-caja .tema-icono{ font-size:1.4rem; margin:0; line-height:1.2; flex:0 0 auto; }
+  .tc-txt{ display:block; min-width:0; }
+  .tema-caja .tc-nombre{ display:block; font-size:1.02rem; line-height:1.3; margin:0 0 0.2rem; }
+  .tc-que{ display:block; font-weight:400; font-size:0.9rem; color:var(--ink-soft); line-height:1.5; }
+  .tema-caja .tc-cuenta{ display:block; margin-top:0.45rem; font-family:var(--font-mono); font-size:0.68rem;
+                         letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); }
   .tema-cuerpo{ padding:0 1.1rem 1.2rem; border-top:1px solid var(--border); }
-  .tema-cuerpo .desc{ margin-top:0.9rem; }
-  .tema-cuerpo .subgrupo-tit:first-child{ margin-top:1rem; }
+  .tema-cuerpo .subgrupo-tit:first-child{ margin-top:1.1rem; }
   .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
   .buscador{ margin:1.4rem 0 1.5rem; }
   .buscador input[type="search"]{ width:100%; padding:0.8rem 1rem; border:1.5px solid var(--border); border-radius:10px; font-family:inherit; font-size:1rem; color:var(--ink); background:var(--surface); }
@@ -115,6 +119,23 @@
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
   .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .firma-consulta{ margin:2rem 0 0; padding:1rem 1.15rem; background:var(--surface); border:1px solid var(--border); border-left:4px solid #8C3B4A; border-radius:11px; }
+  .firma-consulta p{ margin:0; font-size:0.93rem; line-height:1.65; color:var(--ink-soft); }
+  .firma-consulta p strong a{ color:var(--ink); }
+  .firma-consulta .fc-otras{ margin:0.5rem 0 0; font-size:0.86rem; opacity:0.9; }
+  .cc-banda{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .cc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .cc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:600px){ .cc-rejilla{ grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); } }
+  .cc-tarjeta{ display:flex; align-items:center; gap:0.85rem; text-decoration:none; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1rem 1.15rem; color:var(--ink); }
+  .cc-tarjeta:hover{ border-color:#8C3B4A; }
+  .cc-marca{ flex-shrink:0; width:2.6rem; height:1.1rem; color:#8C3B4A; }
+  .cc-txt{ display:flex; flex-direction:column; gap:0.1rem; min-width:0; }
+  .cc-nom{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; line-height:1.25; }
+  .cc-quien{ font-size:0.88rem; color:var(--ink-soft); line-height:1.35; }
+  .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
+  .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
+  @media print{ .cc-banda{ display:none; } }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Explora por temas", "item": "https://psicolinks.com/temas.html"}]}
@@ -141,14 +162,18 @@
   <!-- SUEÑO Y DESCANSO -->
     <p class="sin-resultados" id="sin-resultados">No hay ninguna guía con esa palabra. Prueba con una más corta, o escríbeme y te digo por dónde tirar: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>.</p>
 
+  <div class="temas-rejilla">
   <section class="tema" id="ansiedad">
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🧠</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Ansiedad y preocupación</span>
-        <span class="tc-cuenta">26 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Ansiedad y preocupación</span>
+          <span class="tc-que">Herramientas para cuando la cabeza se acelera y el cuerpo se pone en alerta: respirar, anclarte, dejar de evitar y aparcar la preocupación.</span>
+          <span class="tc-cuenta">27 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Herramientas para cuando la cabeza se acelera y el cuerpo se pone en alerta: respirar, anclarte, dejar de evitar y aparcar la preocupación.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Por dónde empezar</p>
     <div class="guias-lista">
@@ -166,9 +191,11 @@
     <p class="subgrupo-tit">La cabeza que no para</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/cuando-te-preocupas-por-todo.html">Cuando te preocupas por todo</a>
+      <a class="btn-guia" href="/ecoansiedad.html">Ecoansiedad</a>
       <a class="btn-guia" href="/deja-de-darle-vueltas.html">Deja de darle vueltas</a>
       <a class="btn-guia" href="/pensamientos-que-no-quieres-tener.html">Pensamientos que no quieres tener</a>
       <a class="btn-guia" href="/obsesiones-y-toc.html">Obsesiones y TOC: qué funciona</a>
+      <a class="btn-guia" href="/registro-de-obsesiones.html">🔁 Registro de obsesiones y compulsiones</a>
     </div>
     <p class="subgrupo-tit">Cuando el miedo va sobre tu salud</p>
     <div class="guias-lista">
@@ -210,14 +237,18 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">😔</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Ánimo, depresión y emociones</span>
-        <span class="tc-cuenta">27 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Ánimo, depresión y emociones</span>
+          <span class="tc-que">Cuando no hay ganas de nada, cuando pesa la culpa o el enfado, y cómo acompañar a alguien que lo está pasando mal.</span>
+          <span class="tc-cuenta">28 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Cuando no hay ganas de nada, cuando pesa la culpa o el enfado, y cómo acompañar a alguien que lo está pasando mal.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Por dónde empezar</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/cuando-no-tienes-ganas-de-nada.html">Cuando no tienes ganas de nada</a>
+      <a class="btn-guia" href="/el-bajon-de-la-falta-de-luz.html">El bajón de invierno y la falta de luz</a>
       <a class="btn-guia" href="/gestionar-tus-emociones.html">Entender y gestionar tus emociones</a>
     </div>
     <p class="subgrupo-tit">Cuando no sientes nada</p>
@@ -231,6 +262,7 @@
     <p class="subgrupo-tit">Ser duro contigo mismo</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/la-culpa.html">La culpa que no te suelta</a>
+      <a class="btn-guia" href="/arrepentirse.html">Arrepentirse</a>
       <a class="btn-guia" href="/perdonarse-a-uno-mismo.html">Perdonarse a uno mismo</a>
       <a class="btn-guia" href="/aceptar-las-criticas.html">Cuando te duelen mucho las críticas</a>
       <a class="btn-guia" href="/miedo-al-fracaso.html">Miedo al fracaso: cómo desbloquearte</a>
@@ -249,12 +281,16 @@
     <p class="subgrupo-tit">El enfado y el rencor</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/controlar-el-enfado.html">Controlar el enfado</a>
+      <a class="btn-guia" href="/test-de-irritabilidad.html">📝 Test de irritabilidad</a>
       <a class="btn-guia" href="/soltar-el-rencor.html">Soltar el rencor sin obligarte a perdonar</a>
     </div>
     <p class="subgrupo-tit">Pedir ayuda, o dársela a alguien</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/elegir-psicologo.html">Cómo elegir psicólogo</a>
+      <a class="btn-guia" href="/cuando-la-terapia-no-funciona.html">Cuando la terapia no funciona</a>
+      <a class="btn-guia" href="/necesito-ir-al-psicologo.html">¿Necesito ir al psicólogo?</a>
       <a class="btn-guia" href="/primera-sesion-psicologo.html">La primera sesión con el psicólogo</a>
+      <a class="btn-guia" href="/cosas-para-terapia-online.html">🛒 Cosas para hacer terapia online</a>
       <a class="btn-guia" href="/hablar-con-tu-medico-salud-mental.html">Cómo pedir ayuda a tu médico de cabecera</a>
       <a class="btn-guia" href="/ayudar-a-alguien-que-sufre.html">Cómo ayudar a alguien que lo está pasando mal</a>
       <a class="btn-guia" href="/ayudar-a-alguien-con-ansiedad.html">Cómo ayudar a alguien con ansiedad</a>
@@ -265,6 +301,7 @@
     <p class="subgrupo-tit">Cosas que ayudan</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/cosas-que-ayudan-cuando-estas-bajo.html">🛒 Cosas que ayudan cuando estás de bajón</a>
+      <a class="btn-guia" href="/cosas-para-los-meses-sin-luz.html">🛒 Cosas para los meses sin luz</a>
     </div>
     </div>
   <p class="bloque-titulo">Libros recomendados</p>
@@ -279,14 +316,19 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">❤️</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Pareja y relaciones</span>
-        <span class="tc-cuenta">24 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Pareja y relaciones</span>
+          <span class="tc-que">Discutir mejor, decidir si seguir, reconstruir la confianza y la parte de las relaciones que no es de pareja.</span>
+          <span class="tc-cuenta">27 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Discutir mejor, decidir si seguir, reconstruir la confianza y la parte de las relaciones que no es de pareja.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Discutir mejor</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/discutir-mejor-en-pareja.html">Discutir mejor en pareja</a>
+      <a class="btn-guia" href="/cuando-tu-pareja-te-controla.html">Cuando tu pareja te controla</a>
+      <a class="btn-guia" href="/deseo-sexual-bajo-en-pareja.html">Cuando baja el deseo en la pareja</a>
       <a class="btn-guia" href="/mi-pareja-no-me-habla.html">Cuando tu pareja se cierra y no habla</a>
       <a class="btn-guia" href="/dinero-en-pareja.html">Discutir de dinero en pareja</a>
     </div>
@@ -296,6 +338,7 @@
       <a class="btn-guia" href="/celos-y-revisar-el-movil.html">Revisar el móvil de tu pareja</a>
       <a class="btn-guia" href="/reconstruir-la-confianza-en-pareja.html">Reconstruir la confianza en la pareja</a>
       <a class="btn-guia" href="/volver-a-confiar-en-alguien.html">Cómo volver a confiar después de una traición</a>
+      <a class="btn-guia" href="/test-de-confianza.html">📝 Test de confianza en los demás</a>
       <a class="btn-guia" href="/miedo-al-abandono.html">Miedo al abandono en las relaciones</a>
       <a class="btn-guia" href="/la-dependencia-emocional.html">La dependencia emocional</a>
     </div>
@@ -317,11 +360,14 @@
     <p class="subgrupo-tit">Amistad y soledad</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/hacer-amigos-de-adulto.html">Hacer amigos de adulto</a>
+      <a class="btn-guia" href="/sentirse-solo.html">Sentirse solo</a>
       <a class="btn-guia" href="/volver-a-salir-despues-de-mucho-tiempo.html">Volver a salir después de mucho tiempo</a>
       <a class="btn-guia" href="/cuando-te-sientes-solo.html">Cuando te sientes solo</a>
+      <a class="btn-guia" href="/solo-estando-en-pareja.html">Sentirte solo estando en pareja</a>
       <a class="btn-guia" href="/cuando-se-acaba-una-amistad.html">Cuando se acaba una amistad</a>
       <a class="btn-guia" href="/me-cuesta-pedir-ayuda.html">Me cuesta pedir ayuda</a>
       <a class="btn-guia" href="/vivir-solo-por-primera-vez.html">Vivir solo por primera vez</a>
+      <a class="btn-guia" href="/volver-a-casa-de-tus-padres.html">Volver a casa de tus padres</a>
     </div>
     </div>
   <p class="bloque-titulo">Libros recomendados</p>
@@ -337,10 +383,13 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🧩</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Autoestima y personalidad</span>
-        <span class="tc-cuenta">11 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Autoestima y personalidad</span>
+          <span class="tc-que">Cómo te hablas, con quién te comparas y qué esperas de ti. Lo que sostiene la autoestima y lo que la mina.</span>
+          <span class="tc-cuenta">11 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Cómo te hablas, con quién te comparas y qué esperas de ti. Lo que sostiene la autoestima y lo que la mina.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Trabajar la autoestima</p>
     <div class="guias-lista">
@@ -351,7 +400,9 @@
     <p class="subgrupo-tit">Cuando te exiges demasiado</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/menos-perfeccionismo.html">Menos perfeccionismo</a>
+      <a class="btn-guia" href="/autoexigencia.html">Autoexigencia</a>
       <a class="btn-guia" href="/sindrome-del-impostor.html">Síndrome del impostor: cuando sientes que no lo mereces</a>
+      <a class="btn-guia" href="/test-de-verte-capaz.html">📝 Test de confianza en ti mismo</a>
       <a class="btn-guia" href="/cuando-te-comparan-con-otros.html">Cuando te comparan con otros</a>
     </div>
     <p class="subgrupo-tit">Con tu cuerpo</p>
@@ -382,15 +433,20 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">😴</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Sueño y descanso</span>
-        <span class="tc-cuenta">12 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Sueño y descanso</span>
+          <span class="tc-que">Dormir mejor sin pastillas: hábitos que funcionan, qué comprar y qué no, y cómo ganar oscuridad y silencio.</span>
+          <span class="tc-cuenta">13 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Dormir mejor sin pastillas: hábitos que funcionan, qué comprar y qué no, y cómo ganar oscuridad y silencio.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Si no consigues dormir</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/dormir-mejor-en-7-pasos.html">Dormir mejor en 7 pasos</a>
       <a class="btn-guia" href="/insomnio.html">Insomnio: qué hacer cuando no consigues dormir</a>
+      <a class="btn-guia" href="/pesadillas-que-se-repiten.html">Pesadillas que se repiten</a>
+      <a class="btn-guia" href="/trabajar-a-turnos.html">Trabajar a turnos o de noche</a>
       <a class="btn-guia" href="/no-puedo-dormir-esta-noche.html">No puedo dormir: qué hacer esta noche</a>
       <a class="btn-guia" href="/no-puedo-parar-de-pensar-por-la-noche.html">No puedo parar de pensar por la noche</a>
     </div>
@@ -400,11 +456,13 @@
       <a class="btn-guia" href="/no-me-acuesto-aunque-tengo-sueno.html">No me acuesto aunque tengo sueño</a>
       <a class="btn-guia" href="/dormir-en-pareja.html">Dormir en pareja sin acabar agotado</a>
       <a class="btn-guia" href="/menopausia-y-animo.html">Menopausia: sueño, ánimo y niebla mental</a>
+      <a class="btn-guia" href="/sindrome-premenstrual-y-animo.html">Síndrome premenstrual y ánimo</a>
       <a class="btn-guia" href="/sueno-de-los-ninos.html">El sueño de los niños: qué ayuda</a>
     </div>
     <p class="subgrupo-tit">Cosas que ayudan</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/cosas-para-dormir-mejor.html">Cosas que ayudan a dormir mejor (y cuáles no valen la pena)</a>
+      <a class="btn-guia" href="/cosas-para-dormir-de-dia.html">🛒 Cosas para dormir de día</a>
       <a class="btn-guia" href="/guia-mantas-de-peso.html">Mantas de peso: cuál elegir para descansar mejor</a>
       <a class="btn-guia" href="/dejar-el-movil-por-la-noche.html">Dejar el móvil por la noche</a>
     </div>
@@ -422,10 +480,13 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🔥</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Trabajo, estrés y burnout</span>
-        <span class="tc-cuenta">21 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Trabajo, estrés y burnout</span>
+          <span class="tc-que">Empezar, aguantar, poner límites y salir: lo que pasa en el trabajo y lo que pasa cuando se acaba.</span>
+          <span class="tc-cuenta">23 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Empezar, aguantar, poner límites y salir: lo que pasa en el trabajo y lo que pasa cuando se acaba.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Cuando el trabajo te está quemando</p>
     <div class="guias-lista">
@@ -453,10 +514,14 @@
       <a class="btn-guia" href="/la-entrevista-de-trabajo.html">Nervios en la entrevista de trabajo</a>
       <a class="btn-guia" href="/empezar-un-trabajo-nuevo.html">Empezar un trabajo nuevo sin agobiarte</a>
       <a class="btn-guia" href="/cuando-te-despiden.html">Cuando te quedas sin trabajo</a>
+      <a class="btn-guia" href="/miedo-a-que-te-despidan.html">Miedo a que te despidan</a>
+      <a class="btn-guia" href="/paro-de-larga-duracion.html">Cuando el paro se hace largo</a>
       <a class="btn-guia" href="/volver-al-trabajo-tras-una-baja.html">Volver al trabajo tras una baja</a>
+      <a class="btn-guia" href="/estar-de-baja-por-salud-mental.html">Estar de baja por salud mental</a>
       <a class="btn-guia" href="/volver-al-trabajo-en-septiembre.html">Volver al trabajo en septiembre</a>
       <a class="btn-guia" href="/jubilacion.html">Jubilarse: cómo llevar el cambio</a>
       <a class="btn-guia" href="/oposiciones-sin-quemarte.html">Preparar una oposición sin quemarte</a>
+      <a class="btn-guia" href="/cosas-para-las-oposiciones.html">🛒 Cosas para preparar una oposición</a>
     </div>
     <p class="subgrupo-tit">El tiempo y el enfado</p>
     <div class="guias-lista">
@@ -465,6 +530,7 @@
     <p class="subgrupo-tit">Cosas que ayudan</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/trabajar-en-casa-sin-reventar.html">🛒 Trabajar en casa sin reventar</a>
+      <a class="btn-guia" href="/cosas-para-trabajar-en-casa.html">🛒 Cosas para trabajar en casa</a>
     </div>
     </div>
   <p class="bloque-titulo">Libros recomendados</p>
@@ -479,10 +545,13 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">👨‍👩‍👧</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Hijos y familia</span>
-        <span class="tc-cuenta">35 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Hijos y familia</span>
+          <span class="tc-que">Criar, acompañar y cuidar: adolescentes, pantallas, hermanos, mayores y las conversaciones difíciles de casa.</span>
+          <span class="tc-cuenta">39 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Criar, acompañar y cuidar: adolescentes, pantallas, hermanos, mayores y las conversaciones difíciles de casa.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Con hijos pequeños</p>
     <div class="guias-lista">
@@ -499,9 +568,12 @@
     <p class="subgrupo-tit">Con adolescentes</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/ayudar-a-un-hijo-adolescente.html">Tu hijo adolescente lo está pasando mal: qué hacer</a>
+      <a class="btn-guia" href="/mi-hijo-tiene-ansiedad.html">Mi hijo tiene ansiedad</a>
+      <a class="btn-guia" href="/problema-con-la-comida-de-un-hijo.html">Tu hijo y la comida: cuándo preocuparse</a>
       <a class="btn-guia" href="/mi-hijo-me-contesta-mal.html">Mi hijo adolescente me contesta mal</a>
       <a class="btn-guia" href="/mi-hijo-no-estudia.html">Cuando tu hijo no estudia</a>
       <a class="btn-guia" href="/pantallas-y-adolescentes.html">Pantallas y adolescentes en casa</a>
+      <a class="btn-guia" href="/hablar-de-drogas-con-tu-hijo.html">Hablar de drogas y alcohol con tu hijo</a>
       <a class="btn-guia" href="/autolesiones-adolescentes.html">Si tu hijo se autolesiona: qué hacer</a>
     </div>
     <p class="subgrupo-tit">Cuando se hacen mayores</p>
@@ -515,10 +587,12 @@
       <a class="btn-guia" href="/agotamiento-de-padres.html">Agotamiento de madres y padres</a>
       <a class="btn-guia" href="/carga-mental.html">Carga mental: repartir lo invisible</a>
       <a class="btn-guia" href="/depresion-posparto.html">Posparto: cuando no te sientes bien</a>
+      <a class="btn-guia" href="/volver-al-trabajo-tras-el-permiso.html">Volver al trabajo tras el permiso</a>
       <a class="btn-guia" href="/ansiedad-por-la-salud-de-los-hijos.html">Cuando temes por la salud de tus hijos</a>
       <a class="btn-guia" href="/diagnostico-de-un-hijo.html">Cuando a tu hijo le dan un diagnóstico</a>
       <a class="btn-guia" href="/no-poder-tener-hijos.html">Cuando no llega el embarazo</a>
       <a class="btn-guia" href="/separacion-con-hijos.html">Separación: cómo contárselo a los hijos</a>
+      <a class="btn-guia" href="/ansiedad-ante-un-divorcio.html">Un divorcio o un juicio: llevar el proceso</a>
       <a class="btn-guia" href="/no-tengo-tiempo-para-nada.html">No tengo tiempo para nada</a>
     </div>
     <p class="subgrupo-tit">Con tus propios padres y hermanos</p>
@@ -528,7 +602,9 @@
       <a class="btn-guia" href="/hermanos-y-cuidar-a-los-padres.html">Hermanos y el cuidado de los padres</a>
       <a class="btn-guia" href="/familia-politica.html">Llevarte con la familia de tu pareja</a>
       <a class="btn-guia" href="/sobrecarga-del-cuidador.html">Cuidar a alguien sin agotarte</a>
+      <a class="btn-guia" href="/familiar-con-trastorno-mental-grave.html">Un familiar con un trastorno mental grave</a>
       <a class="btn-guia" href="/acompanar-demencia.html">Acompañar a alguien con demencia</a>
+      <a class="btn-guia" href="/cosas-para-una-casa-con-demencia.html">🛒 Cosas para una casa con demencia</a>
     </div>
     <p class="subgrupo-tit">Cosas que ayudan</p>
     <div class="guias-lista">
@@ -553,14 +629,19 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">😰</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Miedos y fobias</span>
-        <span class="tc-cuenta">14 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Miedos y fobias</span>
+          <span class="tc-que">Fobias y miedos concretos, con lo que de verdad los baja: acercarse por pasos y dejar de esquivar.</span>
+          <span class="tc-cuenta">17 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Fobias y miedos concretos, con lo que de verdad los baja: acercarse por pasos y dejar de esquivar.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Cómo se trabaja un miedo</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/superar-una-fobia.html">Cómo superar una fobia</a>
+      <a class="btn-guia" href="/miedo-a-las-alturas.html">Miedo a las alturas</a>
+      <a class="btn-guia" href="/miedo-a-los-perros.html">Miedo a los perros</a>
       <a class="btn-guia" href="/miedo-a-salir-de-casa.html">Miedo a salir de casa</a>
       <a class="btn-guia" href="/ansiedad-en-sitios-cerrados.html">Ansiedad en el súper, el metro o el cine</a>
     </div>
@@ -568,12 +649,14 @@
     <div class="guias-lista">
       <a class="btn-guia" href="/hablar-en-publico.html">Hablar en público sin morirte de nervios</a>
       <a class="btn-guia" href="/vencer-la-timidez.html">Vencer la timidez</a>
+      <a class="btn-guia" href="/test-de-timidez.html">📝 Test de timidez</a>
       <a class="btn-guia" href="/el-miedo-al-que-diran.html">El miedo al qué dirán</a>
       <a class="btn-guia" href="/ansiedad-al-telefono.html">Cuando te da ansiedad llamar por teléfono</a>
     </div>
     <p class="subgrupo-tit">Miedos concretos</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/miedo-a-volar.html">Miedo a volar: cómo perderlo</a>
+      <a class="btn-guia" href="/cosas-para-viajar-con-ansiedad.html">🛒 Cosas para viajar con ansiedad</a>
       <a class="btn-guia" href="/miedo-a-conducir.html">Miedo a conducir: cómo volver al coche</a>
       <a class="btn-guia" href="/miedo-a-las-agujas.html">Miedo a las agujas y a la sangre</a>
       <a class="btn-guia" href="/miedo-al-dentista.html">Miedo al dentista: cómo ir sin pasarlo mal</a>
@@ -597,14 +680,19 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🎯</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Concentración, hábitos y procrastinación</span>
-        <span class="tc-cuenta">19 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Concentración, hábitos y procrastinación</span>
+          <span class="tc-que">Empezar lo que cuesta, sostener lo que has empezado y cambiar los hábitos que se te han automatizado.</span>
+          <span class="tc-cuenta">21 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Empezar lo que cuesta, sostener lo que has empezado y cambiar los hábitos que se te han automatizado.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Arrancar y concentrarte</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/concentrarte-y-dejar-de-procrastinar.html">Concentrarte y dejar de procrastinar</a>
+      <a class="btn-guia" href="/la-multitarea-no-existe.html">La multitarea no existe</a>
+      <a class="btn-guia" href="/aburrirse.html">Aburrirse</a>
       <a class="btn-guia" href="/rincon-para-concentrarte.html">Montar un rincón para concentrarte</a>
       <a class="btn-guia" href="/cosas-para-el-ruido-y-la-concentracion.html">🛒 Cosas para el ruido y concentrarte</a>
     </div>
@@ -623,9 +711,13 @@
       <a class="btn-guia" href="/beber-menos-sin-dejarlo.html">Beber menos sin tener que dejarlo</a>
       <a class="btn-guia" href="/test-rapido-alcohol.html">🧪 Chequeo rápido de alcohol (AUDIT-C)</a>
       <a class="btn-guia" href="/juego-y-apuestas.html">Juego y apuestas: cómo salir</a>
+      <a class="btn-guia" href="/alguien-de-tu-familia-juega.html">Cuando alguien de tu familia juega</a>
       <a class="btn-guia" href="/compras-compulsivas.html">Compras compulsivas: cómo pararlo</a>
       <a class="btn-guia" href="/porno-y-habito-compulsivo.html">Porno: cuando se vuelve un hábito difícil</a>
       <a class="btn-guia" href="/morderse-las-unas.html">Morderse las uñas y otros hábitos así</a>
+      <a class="btn-guia" href="/tics-y-manias-nerviosas.html">Tics y manías nerviosas</a>
+      <a class="btn-guia" href="/cosas-para-las-manos-inquietas.html">🛒 Cosas para las manos inquietas</a>
+      <a class="btn-guia" href="/pellizcarse-la-piel-y-el-pelo.html">Pellizcarse la piel o arrancarse el pelo</a>
       <a class="btn-guia" href="/apretar-los-dientes.html">Apretar los dientes: bruxismo y tensión</a>
     </div>
     <p class="subgrupo-tit">Redes y comparación</p>
@@ -648,10 +740,13 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🧘</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Calma y relajación</span>
-        <span class="tc-cuenta">9 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Calma y relajación</span>
+          <span class="tc-que">Formas rápidas de bajar la activación y sitios de tu casa preparados para no acelerarte.</span>
+          <span class="tc-cuenta">9 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Formas rápidas de bajar la activación y sitios de tu casa preparados para no acelerarte.</p>
+      <div class="tema-cuerpo">
     <p class="bloque-titulo">Guías</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/calma-en-5-minutos.html">Calma en 5 minutos</a>
@@ -676,10 +771,13 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🕊️</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Duelo y pérdida</span>
-        <span class="tc-cuenta">15 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Duelo y pérdida</span>
+          <span class="tc-que">Pérdidas de todo tipo, y qué se puede hacer con ellas cuando no hay nada que arreglar.</span>
+          <span class="tc-cuenta">16 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Pérdidas de todo tipo, y qué se puede hacer con ellas cuando no hay nada que arreglar.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Cuando pierdes a alguien</p>
     <div class="guias-lista">
@@ -700,6 +798,9 @@
     <div class="guias-lista">
       <a class="btn-guia" href="/diagnostico-enfermedad-grave.html">Te han dado un diagnóstico serio</a>
       <a class="btn-guia" href="/acompanar-en-una-enfermedad-grave.html">Acompañar a alguien con una enfermedad grave</a>
+      <a class="btn-guia" href="/duelo-anticipado.html">Duelo anticipado</a>
+      <a class="btn-guia" href="/cosas-para-el-duelo.html">🛒 Cosas para el duelo</a>
+      <a class="btn-guia" href="/el-duelo.html">El duelo</a>
       <a class="btn-guia" href="/dolor-cronico.html">Dolor crónico: qué puede hacer la psicología</a>
       <a class="btn-guia" href="/cosas-para-el-dolor-cronico.html">🛒 Cosas que ayudan con el dolor crónico</a>
     </div>
@@ -721,14 +822,18 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">📚</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Memoria, estudio y decisiones</span>
-        <span class="tc-cuenta">12 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Memoria, estudio y decisiones</span>
+          <span class="tc-que">Despistes, decisiones difíciles y cómo estudiar y leer ciencia sin perderte.</span>
+          <span class="tc-cuenta">12 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Despistes, decisiones difíciles y cómo estudiar y leer ciencia sin perderte.</p>
+      <div class="tema-cuerpo">
     <div class="subgrupo">
     <p class="subgrupo-tit">Memoria y despistes</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/se-me-olvida-todo.html">«Se me olvida todo»: despistes y memoria</a>
+      <a class="btn-guia" href="/tu-memoria-no-es-un-video.html">Tu memoria no es un vídeo</a>
     </div>
     <p class="subgrupo-tit">Estudiar</p>
     <div class="guias-lista">
@@ -738,6 +843,7 @@
     <p class="subgrupo-tit">Decidir</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/tomar-decisiones-dificiles.html">Tomar decisiones difíciles</a>
+      <a class="btn-guia" href="/resolver-un-problema.html">🧩 Resolver un problema</a>
       <a class="btn-guia" href="/no-se-que-hacer-con-mi-vida.html">No sé qué hacer con mi vida</a>
     </div>
     <p class="subgrupo-tit">Leer ciencia</p>
@@ -767,10 +873,13 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🏃</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Cuerpo, ejercicio y alimentación</span>
-        <span class="tc-cuenta">5 guías</span>
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Cuerpo, ejercicio y alimentación</span>
+          <span class="tc-que">Lo que el cuerpo tiene que ver con el ánimo: moverse, comer y llevarse bien con el físico que tienes.</span>
+          <span class="tc-cuenta">5 guías</span>
+        </span>
       </summary>
-      <div class="tema-cuerpo"><p class="desc">Lo que el cuerpo tiene que ver con el ánimo: moverse, comer y llevarse bien con el físico que tienes.</p>
+      <div class="tema-cuerpo">
     <p class="bloque-titulo">Guías</p>
     <div class="guias-lista">
       <a class="btn-guia" href="/moverte-en-casa.html">Moverte en casa (y de paso, subir el ánimo)</a>
@@ -791,12 +900,15 @@
     <details class="tema-caja" name="temas">
       <summary>
         <span class="tema-icono" aria-hidden="true">🧪</span>
-        <span class="tc-nombre" role="heading" aria-level="2">Ponle un número a cómo estás</span>
-        <span class="tc-cuenta">13 guías</span>
-      </summary>
-      <div class="tema-cuerpo"><p class="desc">Cuestionarios de cribado validados y de uso libre. No diagnostican: sirven
+        <span class="tc-txt">
+          <span class="tc-nombre" role="heading" aria-level="2">Ponle un número a cómo estás</span>
+          <span class="tc-que">Cuestionarios de cribado validados y de uso libre. No diagnostican: sirven
     para medir por dónde andas y, sobre todo, para compararte contigo mismo dentro de unas semanas.
-    Los resultados se guardan solo en tu navegador y puedes borrarlos cuando quieras.</p>
+    Los resultados se guardan solo en tu navegador y puedes borrarlos cuando quieras.</span>
+          <span class="tc-cuenta">25 guías</span>
+        </span>
+      </summary>
+      <div class="tema-cuerpo">
     <div class="guias-lista">
       <a class="btn-guia" href="/tests.html">🧪 Todos los tests, por apartados</a>
       <a class="btn-guia" href="/test-de-ansiedad.html">🧪 Test de ansiedad (GAD-7)</a>
@@ -805,6 +917,29 @@
       <a class="btn-guia" href="/test-de-depresion.html">🧪 Test de depresión (PHQ-9)</a>
       <a class="btn-guia" href="/test-de-alcohol.html">🧪 Test de consumo de alcohol (AUDIT)</a>
       <a class="btn-guia" href="/registro-abc.html">🗒️ Tu registro de siete días (A-B-C)</a>
+      <a class="btn-guia" href="/la-brujula.html">🧭 La brújula</a>
+      <a class="btn-guia" href="/preparar-una-conversacion.html">🗣️ Preparar una conversación difícil</a>
+      <a class="btn-guia" href="/mis-objetivos-de-terapia.html">🎯 Mis objetivos de terapia</a>
+      <a class="btn-guia" href="/cuantas-veces-al-dia.html">🔢 Cuántas veces al día</a>
+      <a class="btn-guia" href="/registro-de-crisis.html">⚡ Registro de crisis de ansiedad</a>
+      <a class="btn-guia" href="/la-balanza.html">⚖️ La balanza</a>
+      <a class="btn-guia" href="/tarjeta-de-afrontamiento.html">🃏 Tarjeta de afrontamiento</a>
+      <a class="btn-guia" href="/flecha-descendente.html">⬇️ Flecha descendente</a>
+      <a class="btn-guia" href="/experimento-conductual.html">🔬 Experimento conductual</a>
+      <a class="btn-guia" href="/tiempo-de-preocupacion.html">⏳ Tiempo de preocupación</a>
+      <a class="btn-guia" href="/antes-de-la-sesion.html">🗓️ Antes y después de la sesión</a>
+      <a class="btn-guia" href="/plan-de-prevencion-de-recaidas.html">🧭 Plan de prevención de recaídas</a>
+      <a class="btn-guia" href="/jerarquia-de-exposicion.html">🪜 Jerarquía de exposición</a>
+      <a class="btn-guia" href="/herramientas.html">🗒️ Todas las herramientas</a>
+      <a class="btn-guia" href="/registro-de-exposicion.html">🪜 Registro de exposición</a>
+      <a class="btn-guia" href="/registro-de-actividades.html">📅 Registro de actividades y ánimo</a>
+      <a class="btn-guia" href="/diario-de-sueno.html">😴 Diario de sueño</a>
+      <a class="btn-guia" href="/registro-de-pensamientos.html">💭 Registro de pensamientos</a>
+      <a class="btn-guia" href="/darle-la-vuelta-a-un-pensamiento.html">🔄 Darle la vuelta a un pensamiento</a>
+      <a class="btn-guia" href="/termometro-del-dia.html">🌡️ Termómetro del día</a>
+      <a class="btn-guia" href="/diario-de-gratitud.html">🌱 Diario de gratitud</a>
+      <a class="btn-guia" href="/registro-de-meditacion.html">🧘 Registro de meditación</a>
+      <a class="btn-guia" href="/carta-que-no-vas-a-enviar.html">✉️ La carta que no vas a enviar</a>
       <a class="btn-guia" href="/mis-resultados.html">📈 Tus resultados, todos juntos</a>
       <a class="btn-guia" href="/preguntas-frecuentes.html">❓ Preguntas frecuentes sobre ir al psicólogo</a>
       <a class="btn-guia" href="/terapia-online.html">🩺 Terapia online conmigo</a>
@@ -815,23 +950,13 @@
   </div>
     </details>
   </section>
-
-  <div class="consulta-cta">
-    <h2>¿Y si esto te está pasando a ti?</h2>
-    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
-    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
-    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
-    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
-    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
-    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
-    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
   </div>
 </main>
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -842,7 +967,6 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
-<script src="/progreso-psicolinks.js" defer></script>
 
 <script>
 (function(){
@@ -857,6 +981,21 @@
   }
   abrir();
   window.addEventListener('hashchange', abrir);
+
+  /* El tema abierto ocupa las dos columnas. Se marca con una clase en vez
+     de con :has() para que funcione también en navegadores viejos. */
+  var secs = document.querySelectorAll('section.tema');
+  function sincronizar(){
+    Array.prototype.forEach.call(secs, function(s){
+      var d = s.querySelector('details.tema-caja');
+      s.classList.toggle('abierto', !!(d && d.open));
+    });
+  }
+  Array.prototype.forEach.call(secs, function(s){
+    var d = s.querySelector('details.tema-caja');
+    if (d) d.addEventListener('toggle', sincronizar);
+  });
+  sincronizar();
 })();
 </script>
 

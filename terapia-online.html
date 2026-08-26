@@ -130,6 +130,18 @@
   .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
   .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
   .siguiente-paso a:hover{ text-decoration:underline; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿La terapia online funciona igual que la presencial?", "acceptedAnswer": {"@type": "Answer", "text": "Para la mayoría de los motivos de consulta habituales —ansiedad, insomnio, fobias, ánimo bajo, hábitos— las revisiones que comparan psicoterapia por videollamada con presencial no encuentran diferencias relevantes en resultados. Lo que sí cambia es lo práctico: te ahorra desplazamientos, es más fácil mantener la continuidad y amplía a quién puedes elegir. Hay situaciones en las que el presencial es preferible, y eso se valora en la primera sesión."}}, {"@type": "Question", "name": "¿Qué necesito para una sesión online?", "acceptedAnswer": {"@type": "Answer", "text": "Una conexión estable, auriculares y, sobre todo, un sitio donde nadie te oiga durante una hora. Eso último es lo que más falla y lo que más condiciona la sesión. Si en casa no lo tienes, se puede pensar una alternativa: el coche aparcado funciona sorprendentemente bien."}}, {"@type": "Question", "name": "¿Es confidencial?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El secreto profesional obliga igual online que en consulta, y solo se rompe en los supuestos tasados por la ley, como un riesgo grave e inminente. Las sesiones no se graban."}}, {"@type": "Question", "name": "¿Cuánto dura y cuántas sesiones?", "acceptedAnswer": {"@type": "Answer", "text": "Las sesiones son de unos cincuenta minutos. Para los motivos más frecuentes se suele hablar de entre 8 y 20 sesiones, semanales al principio y espaciándose después. Eso no se sabe con exactitud el primer día, pero sí debería tenerse una estimación pronto."}}, {"@type": "Question", "name": "¿Desde qué enfoque trabajas?", "acceptedAnswer": {"@type": "Answer", "text": "Análisis de la conducta y terapias cognitivo-conductuales y contextuales, que son las que más evidencia acumulan para los motivos de consulta más frecuentes. En la práctica significa: mirar qué mantiene el problema, poner objetivos comprobables y trabajar también fuera de sesión."}}, {"@type": "Question", "name": "¿Y si no conectamos?", "acceptedAnswer": {"@type": "Answer", "text": "Se cambia, y no pasa nada. La relación entre paciente y terapeuta es uno de los factores que más se asocian a que una terapia funcione. Si a las tres o cuatro sesiones no te sientes escuchado, dilo: se habla y, si hace falta, te derivo."}}, {"@type": "Question", "name": "¿Desde dónde puedo conectarme?", "acceptedAnswer": {"@type": "Answer", "text": "Desde cualquier punto de España. Si vives fuera, escríbeme y lo miramos: según el país puede haber requisitos distintos, y prefiero comprobarlo antes que dar por hecho que sí."}}, {"@type": "Question", "name": "¿Y si prefiero presencial?", "acceptedAnswer": {"@type": "Answer", "text": "También paso consulta presencial. Si vives cerca y lo prefieres, dilo al escribir."}}]}
@@ -141,7 +153,7 @@
 <body>
 <header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
 <main>
-  <a href="/" class="back-link">← Volver a Psicolinks</a>
+  <a href="/consultas.html" class="back-link">← Volver a consultas</a>
   <div class="stamp">🩺 Consulta de psicología</div>
   <h1>Terapia psicológica online</h1>
   <p class="autor">Con <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
@@ -152,7 +164,7 @@
   <div class="quien">
     <div class="quien-txt">
       <span class="credencial">Colegiado nº CV17649</span>
-      <p>Soy quien escribe todo lo de esta web: las 211 guías, los resúmenes de estudios de cada día y
+      <p>Soy quien escribe todo lo de esta web: las 253 guías, los resúmenes de estudios de cada día y
       los tests. Paso consulta en <strong>Conciencia Conductual</strong>, online para toda España y
       presencial en Valencia.</p>
       <p>Trabajo desde el análisis de la conducta y las terapias cognitivo-conductuales y contextuales,
@@ -229,26 +241,37 @@
   <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>.</div>
 
   <div class="cierre"><strong>Y si todavía no es el momento.</strong> No pasa nada. Psicolinks es
-  gratis y no pide nada a cambio: tienes <a href="/temas.html">206 guías</a>, diez tests
+  gratis y no pide nada a cambio: tienes <a href="/temas.html">253 guías</a>, quince tests
   (<a href="/test-de-ansiedad.html">ansiedad</a>, <a href="/test-de-depresion.html">depresión</a>,
   <a href="/test-de-alcohol.html">alcohol</a>) y el <a href="/registro-abc.html">registro de siete
   días</a>. Empieza por ahí, y si dentro de unas semanas ves que no se mueve, entonces hablamos.</div>
 
-  <div class="siguiente-paso">
-    <span class="sp-eti">Si quieres seguir</span>
-    <a href="/terapia-conductual-preguntas.html">Preguntas antes de ir al psicólogo →</a>
-  </div>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
 
-  <div class="consulta-cta">
-    <h3>¿Y si esto te está pasando a ti?</h3>
-    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
-    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
-    Paso consulta en Conciencia Conductual, online y presencial.</p>
-    <a class="consulta-btn" href="https://concienciaconductual.com" target="_blank" rel="noopener">Ver mi consulta →</a>
-    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
-    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
-    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
-  </div>
 </main>
 
 <script>
@@ -266,8 +289,8 @@ function registrarClicConsulta(){
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>

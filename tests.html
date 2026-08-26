@@ -46,11 +46,11 @@
   .apartado-intro{ color:var(--ink-soft); font-size:0.96rem; line-height:1.6; margin:0 0 1.1rem; }
 
   .test-card{ background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--accent); border-radius:12px; padding:1.3rem 1.4rem 1.4rem; margin:0 0 1rem; }
-  .test-card h3{ font-family:var(--font-display); font-size:1.25rem; font-weight:600; margin:0 0 0.15rem; }
+  .test-card h3{ font-weight:600; font-size:1.02rem; line-height:1.3; margin:0 0 0.15rem; }
   .test-card h3 a{ text-decoration:none; color:var(--ink); }
   .test-card h3 a:hover{ color:var(--accent); text-decoration:underline; }
   .test-sigla{ font-family:var(--font-mono); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.7rem; }
-  .test-que{ font-size:0.96rem; line-height:1.6; margin:0 0 0.9rem; }
+  .test-que{ font-size:0.9rem; line-height:1.55; margin:0 0 0.9rem; }
   .test-chips{ display:flex; flex-wrap:wrap; gap:0.4rem; margin:0 0 0.9rem; }
   .test-chips span{ font-size:0.8rem; color:var(--ink-soft); background:var(--paper); border:1px solid var(--border); border-radius:999px; padding:0.25rem 0.7rem; }
   .test-cuando{ font-size:0.9rem; line-height:1.55; color:var(--ink-soft); background:var(--accent-soft); border-radius:9px; padding:0.6rem 0.85rem; margin:0 0 1rem; }
@@ -75,23 +75,22 @@
   .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.95rem; padding:0.7rem 1.25rem; border-radius:9px; background:var(--consulta); color:#fff; }
   .consulta-cta .consulta-btn:hover{ background:#75303d; }
 
-  .relacionadas{ margin:2.2rem 0 0; padding:1.2rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
-  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; font-weight:600; margin:0 0 0.7rem; }
-  .relacionadas ul{ margin:0; padding-left:1.1rem; }
-  .relacionadas li{ margin:0 0 0.4rem; font-size:0.95rem; line-height:1.5; }
 
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  @media print{ .menu-cuadros{ display:none; } }
   .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
   .site-footer p{ margin:0 0 0.5rem; }
   .site-footer a{ color:var(--ink-soft); }
   @media (max-width:520px){ h1{ font-size:1.6rem; } main{ padding:2rem 1.1rem 3rem; } }
-  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
-  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
-  .site-footer .pie-nav a:hover{ text-decoration:underline; }
-  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
-  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
-  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
-  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
-  .siguiente-paso a:hover{ text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -118,7 +117,6 @@
     <a href="#animo">Ánimo y ansiedad</a>
     <a href="#consumo">Alcohol y tabaco</a>
     <a href="#cuerpo">Cuerpo y sucesos duros</a>
-    <a href="#personalidad">Cómo eres, no cómo estás</a>
     <a href="#seguimiento">Para llevar el seguimiento</a>
   </nav>
 
@@ -215,28 +213,6 @@
       <p class="test-origen">De dónde sale: National Center for PTSD (Dept. de Veteranos de EE. UU.). Obra pública, de uso libre.</p>
     </div>
 
-  <h2 class="apartado" id="personalidad">Cómo eres, no cómo estás</h2>
-  <p class="apartado-intro">Los demás cuestionarios de esta página miden síntomas: cuánto estás sufriendo ahora. Este mide rasgos: cómo eres habitualmente. No hay puntuaciones buenas ni malas y no orienta sobre si necesitas ayuda.</p>
-    <div class="test-card">
-      <h3><a href="/test-de-personalidad.html">Test de personalidad</a></h3>
-      <p class="test-sigla">Big Five · Mini-IPIP</p>
-      <p class="test-que">Los cinco grandes rasgos: extraversión, amabilidad, responsabilidad, estabilidad emocional y apertura. Es el modelo de personalidad con más respaldo de los que existen.</p>
-      <div class="test-chips"><span>20 frases</span><span>3 minutos</span><span>4 a 20 por rasgo</span><span>sin registro</span></div>
-      <p class="test-cuando"><b>Para ti si:</b> Si te pica la curiosidad y quieres uno que no sea de revista.</p>
-      <a class="test-btn" href="/test-de-personalidad.html">Hacer el test →</a>
-      <p class="test-origen">De dónde sale: International Personality Item Pool, de dominio público. Versión corta de Donnellan y cols. (2006).</p>
-    </div>
-
-    <div class="test-card">
-      <h3><a href="/test-de-procrastinacion.html">Test de procrastinación</a></h3>
-      <p class="test-sigla">IPIP · Autodisciplina</p>
-      <p class="test-que">Cuánto te cuesta arrancar y cuánto terminas de lo que empiezas. Es la faceta de la personalidad que más se deja entrenar, así que una puntuación baja no es una sentencia.</p>
-      <div class="test-chips"><span>10 frases</span><span>2 minutos</span><span>10 a 50 puntos</span><span>sin registro</span></div>
-      <p class="test-cuando"><b>Para ti si:</b> Si llevas tiempo diciéndote que eres un desastre y quieres un dato.</p>
-      <a class="test-btn" href="/test-de-procrastinacion.html">Hacer el test →</a>
-      <p class="test-origen">De dónde sale: escala Self-Discipline del International Personality Item Pool, de dominio público.</p>
-    </div>
-
   <h2 class="apartado" id="seguimiento">Para llevar el seguimiento</h2>
   <p class="apartado-intro">Un test es una foto de un momento. Esto es lo que sirve para ver la película: qué pasa, cuándo pasa y qué lo mantiene.</p>
     <div class="test-card">
@@ -300,10 +276,31 @@
     <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
   </div>
 
-  <div class="siguiente-paso">
-    <span class="sp-eti">Si quieres seguir</span>
-    <a href="/calmar-la-ansiedad.html">Calmar la ansiedad →</a>
-  </div>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
 </main>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Tests de psicología gratuitos", "description": "Tests de ansiedad, depresión y consumo de alcohol: los mismos cuestionarios que se usan en consulta. Gratis, sin registro y sin salir de tu navegador.", "url": "https://psicolinks.com/tests.html", "inLanguage": "es", "isAccessibleForFree": true, "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia de conducta", "Ansiedad", "Depresión"], "sameAs": ["https://concienciaconductual.com"]}, "datePublished": "2026-08-24", "dateModified": "2026-08-24", "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "mainEntity": {"@type": "ItemList", "numberOfItems": 11, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Chequeo rápido (PHQ-4)", "url": "https://psicolinks.com/test-rapido-ansiedad-depresion.html"}, {"@type": "ListItem", "position": 2, "name": "Chequeo rápido de alcohol (AUDIT-C)", "url": "https://psicolinks.com/test-rapido-alcohol.html"}, {"@type": "ListItem", "position": 3, "name": "Test de ansiedad (GAD-7)", "url": "https://psicolinks.com/test-de-ansiedad.html"}, {"@type": "ListItem", "position": 4, "name": "Test de ataques de pánico (Módulo PHQ)", "url": "https://psicolinks.com/test-de-ataques-de-panico.html"}, {"@type": "ListItem", "position": 5, "name": "Test de depresión (PHQ-9)", "url": "https://psicolinks.com/test-de-depresion.html"}, {"@type": "ListItem", "position": 6, "name": "Test de dependencia del tabaco (Fagerström)", "url": "https://psicolinks.com/test-de-dependencia-del-tabaco.html"}, {"@type": "ListItem", "position": 7, "name": "Test de consumo de alcohol (AUDIT)", "url": "https://psicolinks.com/test-de-alcohol.html"}, {"@type": "ListItem", "position": 8, "name": "Test de síntomas físicos (PHQ-15)", "url": "https://psicolinks.com/test-de-sintomas-fisicos.html"}, {"@type": "ListItem", "position": 9, "name": "Test de estrés postraumático (PC-PTSD-5)", "url": "https://psicolinks.com/test-de-estres-postraumatico.html"}, {"@type": "ListItem", "position": 10, "name": "Registro de siete días (A-B-C)", "url": "https://psicolinks.com/registro-abc.html"}, {"@type": "ListItem", "position": 11, "name": "Tus resultados (Todos juntos)", "url": "https://psicolinks.com/mis-resultados.html"}]}}</script>
@@ -312,12 +309,11 @@
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script src="/cookies-psicolinks.js" defer></script>
 <script src="/progreso-psicolinks.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Tests de psicología gratuitos y validados", "url": "https://psicolinks.com/tests.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Ansiedad"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Tests de ansiedad, depresión y consumo de alcohol: los mismos cuestionarios que se usan en consulta. Gratis, sin registro y sin salir de tu navegador."}</script>
 </body>
 </html>

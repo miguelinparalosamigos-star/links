@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiempo de preocupación: aplaza y apunta · Psicolinks</title>
+<meta name="description" content="Apunta la preocupación, ponle hora y sigue con lo tuyo. La técnica de siempre para la cabeza que no para, en una hoja que se guarda en tu navegador.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Tiempo de preocupación">
+<meta property="og:description" content="Apunta la preocupación, ponle hora y sigue con lo tuyo. La técnica de siempre para la cabeza que no para, en una hoja que se guarda en tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/tiempo-de-preocupacion.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/tiempo-de-preocupacion.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+
+  .campo { margin: 0 0 1.1rem; }
+  .campo label { display: block; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--stamp); margin: 0 0 0.35rem; }
+  .campo .ayuda { font-size: 0.86rem; color: var(--ink-soft); line-height: 1.5; margin: 0 0 0.5rem; }
+  .campo input[type="text"], .campo input[type="date"], .campo textarea {
+    width: 100%; padding: 0.65rem 0.8rem; border: 1.5px solid var(--border); border-radius: 9px;
+    font-family: inherit; font-size: 0.97rem; color: var(--ink); background: var(--surface); resize: vertical; }
+  .campo textarea { min-height: 62px; }
+  .campo input:focus, .campo textarea:focus { border-color: var(--accent); outline: none; }
+  .fila-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  @media (max-width: 520px) { .fila-2 { grid-template-columns: 1fr; } }
+  .rango { display: flex; align-items: center; gap: 0.8rem; }
+  .rango input[type="range"] { flex: 1; accent-color: var(--accent); }
+  .rango output { font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; color: var(--accent); min-width: 2.2rem; text-align: right; }
+  .resumen { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1.2rem; }
+  .dato { flex: 1; min-width: 130px; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 0.8rem 1rem; }
+  .dato .cifra-p { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: 0; line-height: 1.1; }
+  .dato .et { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0.25rem 0 0; }
+  .grafico { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 1rem 1.1rem 0.8rem; margin: 0 0 1.2rem; }
+  .grafico .g-tit { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 0.7rem; }
+  .barras { display: flex; align-items: flex-end; gap: 2px; height: 90px; }
+  .barras i { flex: 1; max-width: 46px; background: var(--accent); border-radius: 4px 4px 0 0; min-height: 3px; display: block; }
+  .barras-pie { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.62rem; color: var(--ink-soft); margin: 0.4rem 0 0; }
+  .entrada { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 0.9rem 1.1rem; margin: 0 0 0.7rem; }
+  .entrada .cab { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; margin: 0 0 0.5rem; }
+  .entrada .fecha { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+  .entrada .malestar { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+  .entrada dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.7rem; }
+  .entrada dt { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--stamp); padding-top: 0.2rem; }
+  .entrada dd { margin: 0; font-size: 0.94rem; line-height: 1.55; }
+  .entrada .quitar { margin: 0.7rem 0 0; font: inherit; font-size: 0.78rem; background: none; border: 1px solid var(--border); border-radius: 99px; padding: 0.25rem 0.75rem; cursor: pointer; color: var(--ink-soft); }
+  .entrada .quitar:hover { border-color: var(--stamp); color: var(--stamp); }
+  #copiado { font-size: 0.86rem; color: #2f6b4f; margin: 0.6rem 0 0; }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+  .descarga{ margin:1.6rem 0 0; padding:1rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .descarga p{ margin:0 0 0.75rem; font-size:0.92rem; color:var(--ink-soft); }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; border:0; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; cursor:pointer; font-family:inherit; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  @media print {
+    .site-header, .site-footer, .nota-wa, .envio-ops, .back-link, .descarga, .firma-consulta,
+    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
+    .buscador, .migas{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+  }
+  .nota-wa{ font-size:0.82rem; line-height:1.55; color:var(--ink-soft); margin:0.6rem 0 0; }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .envio-largo{ font-size:0.85rem; color:var(--ink-soft); }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  @media print{ .menu-cuadros{ display:none; } }
+
+  .campo{ margin:0 0 1.15rem; }
+  .campo label{ display:block; font-weight:600; font-size:0.95rem; margin:0 0 0.3rem; }
+  .campo .ayuda{ display:block; font-size:0.85rem; color:var(--ink-soft); line-height:1.5; margin:0 0 0.45rem; font-weight:400; }
+  .campo input[type=text], .campo input[type=time], .campo input[type=date],
+  .campo input[type=number], .campo select, .campo textarea{
+    width:100%; padding:0.65rem 0.8rem; border:1.5px solid var(--border); border-radius:9px;
+    font-family:inherit; font-size:1rem; color:var(--ink); background:var(--surface); }
+  .campo textarea{ min-height:5.5rem; line-height:1.6; resize:vertical; }
+  .campo input:focus, .campo select:focus, .campo textarea:focus{ border-color:var(--accent); outline:none; }
+  .campo .num-fila{ display:flex; align-items:center; gap:0.6rem; }
+  .campo .num-fila input{ max-width:7rem; }
+  .campo .num-suf{ font-size:0.92rem; color:var(--ink-soft); }
+  .rango-fila{ display:flex; align-items:center; gap:0.8rem; }
+  .rango-fila input[type=range]{ flex:1; accent-color:var(--accent); }
+  .rango-val{ font-family:var(--font-mono); font-size:1.05rem; font-weight:700; min-width:2.2rem; text-align:right; color:var(--accent); }
+  .rango-pie{ display:flex; justify-content:space-between; font-size:0.78rem; color:var(--ink-soft); margin:0.15rem 0 0; }
+  .acciones-h{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.4rem 0 0; }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .envio-largo{ font-size:0.85rem; color:var(--ink-soft); }
+  .nota-wa{ font-size:0.82rem; line-height:1.55; color:var(--ink-soft); margin:0.6rem 0 0; }
+  .btn-sec{ background:transparent; color:var(--ink); border:1.5px solid var(--border); }
+  .entrada{ border:1px solid var(--border); border-radius:11px; padding:0.9rem 1.05rem; margin:0 0 0.75rem; background:var(--surface); }
+  .entrada .fecha{ font-family:var(--font-mono); font-size:0.74rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--stamp); }
+  .entrada .resumen{ font-weight:600; font-size:0.98rem; margin:0.2rem 0 0.4rem; line-height:1.45; }
+  .entrada dl{ margin:0; font-size:0.9rem; line-height:1.6; }
+  .entrada dt{ color:var(--ink-soft); font-size:0.82rem; margin:0.45rem 0 0; }
+  .entrada dd{ margin:0; white-space:pre-wrap; }
+  .entrada .quitar{ background:none; border:0; color:var(--ink-soft); font-size:0.82rem; cursor:pointer; padding:0.3rem 0; text-decoration:underline; }
+  .vacio-h{ color:var(--ink-soft); font-size:0.95rem; line-height:1.6; padding:1.1rem 0; }
+  .racha{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); margin:0 0 0.9rem; }
+  .grafico-h{ display:flex; align-items:flex-end; gap:3px; height:110px; margin:0.6rem 0 0.2rem; }
+  .grafico-h span{ flex:1; background:var(--accent); border-radius:3px 3px 0 0; min-height:3px; }
+  .grafico-pie-h{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-soft); margin:0 0 1.3rem; }
+  .copiadero{ position:absolute; left:-9999px; }
+  @media print {
+    .site-header, .site-footer, form, .acciones-h, .nota-wa, .envio-ops, .back-link, .idea, .privacidad,
+    .siguiente-paso, .quitar, .stamp, #cookie-banner, [class*=cookie]{ display:none !important; }
+    body{ background:#fff; }
+    .entrada{ break-inside:avoid; border-color:#bbb; }
+    main{ max-width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/herramientas.html" class="back-link">← Volver a herramientas</a>
+  <div class="stamp">⏳ Herramienta gratuita</div>
+  <h1>Tiempo de preocupación</h1>
+  <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Apúntala, ponle una hora y sigue con lo tuyo. Cuando llegue la hora, la miras.</p>
+
+  <div class="idea"><strong>No es dejar de preocuparse: es cambiarle la hora.</strong> «Deja de darle vueltas» no funciona, y hay un motivo: cuanto más te propones no pensar en algo, más vuelve. Lo que sí funciona es aplazarlo. Apuntas la preocupación en cuanto aparece, le pones una cita —quince minutos, a una hora fija, ni justo antes de dormir ni en la cama— y sigues con lo que estabas haciendo. No te estás prohibiendo pensarlo; le estás dando hora, que es lo que hace que la cabeza lo suelte. Cuando llega la cita pasan dos cosas: la mitad de lo apuntado ya no te importa, y lo que sí importa lo miras con la cabeza más fría. <em>Esto es para las preocupaciones del día a día.</em> Si lo que vuelve son recuerdos de algo grave que te pasó, o ideas de hacerte daño, esto no es lo que toca y hay que hablarlo con alguien.</div>
+
+  <div class="idea"><strong>Nada de esto sale de tu navegador.</strong> Lo que escribas se guarda
+  <strong>solo en este dispositivo</strong>: no se envía a ningún servidor, no hay cuenta y no hay correo.
+  Ni yo ni nadie puede verlo. Lo borras entero cuando quieras, y tienes un botón para copiarlo o
+  imprimirlo si quieres llevártelo a tu psicólogo.</div>
+
+  <h2 class="bloque-tit">Añadir una anotación</h2>
+  <form id="reg">
+      <div class="campo">
+        <label for="f-fecha">Fecha</label>
+        <input type="date" id="f-fecha" required>
+      </div>
+      <div class="campo">
+        <label for="f-que">¿Qué te ha venido a la cabeza?</label>
+        <span class="ayuda">Una línea basta. Desarrollarla ahora es justamente lo que estamos aplazando.</span>
+        <input type="text" id="f-que" placeholder="Lo que dijo mi jefe en la reunión" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="f-tipo">¿Puedes hacer algo con esto?</label>
+        <span class="ayuda">La pregunta que más ordena. Lo que no depende de ti no se resuelve dándole vueltas, por muchas que le des.</span>
+        <select id="f-tipo"><option value="">Elige…</option><option>Sí, y puedo hoy</option><option>Sí, pero no hoy</option><option>No depende de mí</option></select>
+      </div>
+      <div class="campo">
+        <label for="f-cita">¿A qué hora la miras?</label>
+        <span class="ayuda">Elige una hora fija y déjala ahí. Ni de noche, ni en la cama.</span>
+        <input type="time" id="f-cita">
+      </div>
+      <div class="campo">
+        <label for="f-antes">Cuánto te agobia AHORA</label>
+        
+        <div class="rango-fila"><input type="range" id="f-antes" min="0" max="10" step="1" value="5"><span class="rango-val" id="v-antes">5</span></div><p class="rango-pie"><span>0 · nada</span><span>10 · muchísimo</span></p>
+      </div>
+      <div class="campo">
+        <label for="f-despues">Cuánto te agobia EN LA CITA</label>
+        <span class="ayuda">Esta se rellena luego, cuando llegue la hora. Ver la diferencia entre las dos columnas es el ejercicio entero.</span>
+        <div class="rango-fila"><input type="range" id="f-despues" min="0" max="10" step="1" value="5"><span class="rango-val" id="v-despues">5</span></div><p class="rango-pie"><span>0 · nada</span><span>10 · muchísimo</span></p>
+      </div>
+      <div class="campo">
+        <label for="f-paso">Si se podía hacer algo, ¿qué es y cuándo?</label>
+        <span class="ayuda">Un paso concreto con día y hora. Si no cabe en una frase, es que no es un paso: es otra preocupación.</span>
+        <textarea id="f-paso" placeholder="Escribirle el lunes a primera hora"></textarea>
+      </div>
+
+      <p class="sin-responder" id="aviso-vacio" style="display:none;"></p>
+      <button type="submit" class="btn">Guardar la anotación</button>
+  </form>
+
+  <h2 class="bloque-tit">Lo que llevas <span id="cuantas" style="font-family:var(--font-mono);font-size:0.78rem;font-weight:400;color:var(--ink-soft);"></span></h2>
+  <p class="racha" id="racha" style="display:none;"></p>
+
+  <div id="caja-grafico" style="display:none;">
+    <p class="g-tit" style="font-size:0.88rem;color:var(--ink-soft);margin:0;">Cuánto agobiaba al apuntarla</p>
+    <div class="grafico-h" id="grafico" role="img" aria-label="Evolución"></div>
+    <div class="grafico-pie-h"><span id="g-desde"></span><span id="g-hasta"></span></div>
+  </div>
+
+  <div id="lista"></div>
+  <textarea id="copiadero" class="copiadero" aria-hidden="true"></textarea>
+
+  <div class="acciones-h" id="acciones" style="display:none;">
+    <button type="button" class="btn" id="copiar">Copiar todo para llevármelo</button>
+    <button type="button" class="btn btn-sec" id="imprimir">Imprimir o guardar en PDF</button>
+    <button type="button" class="btn btn-sec" id="enviar" aria-expanded="false">Enviar</button>
+    <button type="button" class="btn btn-sec" id="borrar">Borrar todo</button>
+  </div>
+  <div class="envio-ops" id="envio-ops" hidden>
+    <span class="envio-eti">Elige por dónde:</span>
+    <a id="env-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <a id="env-mail" href="#">Correo</a>
+    <span class="envio-largo" id="env-largo" hidden>Es mucho texto para enviarlo así: usa «copiar» y pégalo.</span>
+  </div>
+  <p class="nota-wa" id="nota-wa" style="display:none;"><strong>Para mandárselo a tu psicólogo o
+  psicóloga.</strong> «Enviar» abre el menú de compartir de tu móvil o de tu ordenador y eliges tú por
+  dónde. Copiar e imprimir no sacan nada de este dispositivo; enviarlo sí lo envía.</p>
+
+  <div class="privacidad" style="margin-top:1.8rem;"><strong>Un aviso práctico.</strong> Como esto vive en
+  tu navegador, si borras los datos de navegación o cambias de dispositivo, se pierde. Si llevas semanas
+  apuntando y no quieres arriesgarte, cópialo de vez en cuando y guárdalo donde tú quieras.</div>
+
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Tiempo de preocupación", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "inLanguage": "es-ES", "url": "https://psicolinks.com/tiempo-de-preocupacion.html", "description": "Apunta la preocupación, ponle hora y sigue con lo tuyo. La técnica de siempre para la cabeza que no para, en una hoja que se guarda en tu navegador.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://psicolinks.com/herramientas.html"}, {"@type": "ListItem", "position": 3, "name": "Tiempo de preocupación", "item": "https://psicolinks.com/tiempo-de-preocupacion.html"}]}</script>
+<script>
+(function(){
+  var CAMPOS = [{"id": "que", "tipo": "texto", "etq": "¿Qué te ha venido a la cabeza?", "suf": ""}, {"id": "tipo", "tipo": "opciones", "etq": "¿Puedes hacer algo con esto?", "suf": ""}, {"id": "cita", "tipo": "hora", "etq": "¿A qué hora la miras?", "suf": ""}, {"id": "antes", "tipo": "escala", "etq": "Cuánto te agobia AHORA", "suf": ""}, {"id": "despues", "tipo": "escala", "etq": "Cuánto te agobia EN LA CITA", "suf": ""}, {"id": "paso", "tipo": "largo", "etq": "Si se podía hacer algo, ¿qué es y cuándo?", "suf": ""}];
+  var CLAVE  = "pl_preocupacion";
+  var TITULO = "Tiempo de preocupación";
+  var RESUMEN = "{que} — {tipo}";
+  var GRAFICO = {"campo": "antes", "max": 10};
+
+  var form = document.getElementById('reg');
+  var lista = document.getElementById('lista');
+
+  function hoy(){ var d = new Date(); return new Date(d - d.getTimezoneOffset()*60000).toISOString().slice(0,10); }
+  document.getElementById('f-fecha').value = hoy();
+
+  // El valor del deslizador, visible mientras se mueve.
+  CAMPOS.filter(function(c){ return c.tipo === 'escala'; }).forEach(function(c){
+    var i = document.getElementById('f-' + c.id), v = document.getElementById('v-' + c.id);
+    i.addEventListener('input', function(){ v.textContent = i.value; });
+  });
+
+  function leer(){
+    try { var v = JSON.parse(localStorage.getItem(CLAVE) || '[]'); return Array.isArray(v) ? v : []; }
+    catch(e){ return []; }
+  }
+  function guardar(v){ try { localStorage.setItem(CLAVE, JSON.stringify(v)); } catch(e){
+    alert('No se ha podido guardar. Si estás en modo incógnito, el navegador no deja guardar nada.'); } }
+  function esc(s){ return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function unidad(c){
+    if (c.tipo === 'escala') return ' / 10';
+    return c.suf ? ' ' + c.suf : '';
+  }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var e = { f: document.getElementById('f-fecha').value || hoy(), ts: Date.now() };
+    var algo = false;
+    CAMPOS.forEach(function(c){
+      var el = document.getElementById('f-' + c.id);
+      e[c.id] = el.value;
+      if (c.tipo !== 'escala' && String(el.value).trim() !== '') algo = true;
+    });
+    if (!algo) {
+      var av = document.getElementById('aviso-vacio');
+      av.textContent = 'Escribe algo antes de guardar, aunque sea una palabra.';
+      av.style.display = 'block';
+      return;
+    }
+    document.getElementById('aviso-vacio').style.display = 'none';
+    var v = leer(); v.unshift(e); guardar(v.slice(0, 400));
+    // Se limpia todo menos la fecha, que casi siempre es la misma sesión.
+    CAMPOS.forEach(function(c){
+      var el = document.getElementById('f-' + c.id);
+      if (c.tipo === 'escala') { el.value = 5; document.getElementById('v-' + c.id).textContent = '5'; }
+      else el.value = '';
+    });
+    pintar();
+    lista.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+
+  function resumenDe(e){
+    return RESUMEN.replace(/\{(\w+)\}/g, function(_, k){ return esc(e[k] || '—'); });
+  }
+
+  function pintar(){
+    var v = leer();
+    document.getElementById('cuantas').textContent =
+      v.length === 0 ? '' : (v.length === 1 ? '1 anotación' : v.length + ' anotaciones');
+
+    // Racha de días seguidos, contando desde hoy hacia atrás.
+    var caja = document.getElementById('racha');
+    if (v.length > 1) {
+      var dias = {}; v.forEach(function(e){ dias[e.f] = 1; });
+      var n = 0, d = new Date();
+      while (true) {
+        var s = new Date(d - d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+        if (!dias[s]) { if (n > 0 || s !== hoy()) break; } else n++;
+        d.setDate(d.getDate() - 1);
+        if (n === 0 && s !== hoy()) break;
+      }
+      caja.textContent = n > 1 ? n + ' días seguidos' : '';
+      caja.style.display = n > 1 ? 'block' : 'none';
+    } else { caja.style.display = 'none'; }
+
+    if (!v.length) {
+      lista.innerHTML = '<p class="vacio-h">Aquí no hay nada todavía. En cuanto guardes la primera '
+        + 'anotación aparecerá abajo, y podrás copiarla o imprimirla cuando quieras.</p>';
+      document.getElementById('caja-grafico').style.display = 'none';
+      var _nw = document.getElementById('nota-wa'); if (_nw) _nw.style.display = (leer().length ? 'block' : 'none');
+    document.getElementById('acciones').style.display = 'none';
+      return;
+    }
+    var _nw = document.getElementById('nota-wa'); if (_nw) _nw.style.display = (leer().length ? 'block' : 'none');
+    document.getElementById('acciones').style.display = 'flex';
+
+    if (GRAFICO) {
+      var ult = v.slice(0, 30).reverse().filter(function(e){ return e[GRAFICO.campo] !== ''; });
+      if (ult.length > 1) {
+        document.getElementById('caja-grafico').style.display = 'block';
+        document.getElementById('grafico').innerHTML = ult.map(function(e){
+          var alto = Math.max(3, Math.round(Math.min(1, (+e[GRAFICO.campo] || 0) / GRAFICO.max) * 100));
+          return '<span style="height:' + alto + '%" title="' + esc(e.f) + ': ' + esc(e[GRAFICO.campo]) + '"></span>';
+        }).join('');
+        document.getElementById('g-desde').textContent = ult[0].f;
+        document.getElementById('g-hasta').textContent = ult[ult.length-1].f;
+      } else { document.getElementById('caja-grafico').style.display = 'none'; }
+    }
+
+    lista.innerHTML = v.map(function(e, i){
+      var filas = CAMPOS.map(function(c){
+        if (e[c.id] === '' || e[c.id] == null) return '';
+        return '<dt>' + esc(c.etq) + '</dt><dd>' + esc(e[c.id]) + unidad(c) + '</dd>';
+      }).join('');
+      return '<div class="entrada"><p class="fecha">' + esc(e.f) + '</p>'
+        + '<p class="resumen">' + resumenDe(e) + '</p>'
+        + '<dl>' + filas + '</dl>'
+        + '<button type="button" class="quitar" data-i="' + i + '">Quitar esta</button></div>';
+    }).join('');
+  }
+
+  lista.addEventListener('click', function(ev){
+    var b = ev.target.closest('.quitar');
+    if (!b) return;
+    var v = leer(); v.splice(+b.dataset.i, 1); guardar(v); pintar();
+  });
+
+  function comoTexto(){
+    var v = leer();
+    return TITULO + ' — ' + v.length + (v.length === 1 ? ' anotación' : ' anotaciones') + '\n' +
+      '(Psicolinks · psicolinks.com)\n\n' +
+      v.map(function(e){
+        return e.f + '\n' + CAMPOS.map(function(c){
+          if (e[c.id] === '' || e[c.id] == null) return null;
+          return '  ' + c.etq + ': ' + e[c.id] + unidad(c);
+        }).filter(Boolean).join('\n');
+      }).join('\n\n');
+  }
+
+  document.getElementById('copiar').addEventListener('click', function(){
+    var t = comoTexto(), b = this;
+    function ok(){ b.textContent = 'Copiado ✓'; setTimeout(function(){ b.textContent = 'Copiar todo para llevármelo'; }, 2200); }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(t).then(ok, manual);
+    } else { manual(); }
+    function manual(){
+      // Sin portapapeles (http, navegador antiguo): se selecciona para copiar a mano.
+      var a = document.getElementById('copiadero');
+      a.value = t; a.classList.remove('copiadero'); a.style.cssText = 'width:100%;height:9rem;margin-top:0.7rem;';
+      a.select();
+      try { document.execCommand('copy'); ok(); }
+      catch(e){ b.textContent = 'Selecciónalo y cópialo tú'; }
+    }
+  });
+
+  document.getElementById('imprimir').addEventListener('click', function(){ window.print(); });
+  function enviarRegistro(t, b){
+    // 1) El menu de compartir del sistema, que es lo que la gente conoce del
+    //    movil. Si existe, se acabo: no hace falta enseñar nada mas.
+    if (navigator.share) {
+      navigator.share({ title: 'Mis registros · Psicolinks', text: t }).catch(function(){});
+      return;
+    }
+    // 2) Plan B para Chrome y Firefox de escritorio, que no lo traen.
+    var ops = document.getElementById('envio-ops');
+    if (!ops) return;
+    var wa = document.getElementById('env-wa'),
+        mail = document.getElementById('env-mail'),
+        largo = document.getElementById('env-largo');
+    // Aqui si hay tope: wa.me y mailto meten el texto en la direccion.
+    if (encodeURIComponent(t).length > 1800) {
+      wa.hidden = true; mail.hidden = true; largo.hidden = false;
+    } else {
+      wa.hidden = false; mail.hidden = false; largo.hidden = true;
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(t);
+      mail.href = 'mailto:?subject=' + encodeURIComponent('Mis registros · Psicolinks') +
+                  '&body=' + encodeURIComponent(t);
+    }
+    ops.hidden = false;
+    b.setAttribute('aria-expanded', 'true');
+  }
+
+  document.getElementById('enviar').addEventListener('click', function(){
+    enviarRegistro(comoTexto(), this);
+  });
+
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    if (this.dataset.seguro) { localStorage.removeItem(CLAVE); pintar(); this.textContent = 'Borrar todo'; delete this.dataset.seguro; }
+    else { this.dataset.seguro = '1'; this.textContent = 'Pulsa otra vez para borrarlo de verdad'; }
+  });
+
+  pintar();
+})();
+</script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

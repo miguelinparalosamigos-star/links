@@ -25,6 +25,8 @@
   tr:last-child td{ border-bottom:none; }
   .status-msg{ text-align:center; color:var(--ink-soft); padding:2rem 0; }
   .row-msg{ font-size:0.82rem; color:var(--ink-soft); margin-left:0.4rem; }
+  .tabla-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1rem 0; }
+  .tabla-scroll table{ min-width:32rem; }
 </style>
 </head>
 <body>
@@ -71,11 +73,11 @@
     document.getElementById('contador').textContent = SUS.length + ' suscriptor(es)';
     var t = document.getElementById('tabla');
     if(!SUS.length){ t.innerHTML = '<p class="status-msg">Aún no hay suscriptores.</p>'; return; }
-    t.innerHTML = '<table><thead><tr><th>Email</th><th>Fecha</th><th>Origen</th></tr></thead><tbody>'
+    t.innerHTML = '<div class="tabla-scroll"><table><thead><tr><th>Email</th><th>Fecha</th><th>Origen</th></tr></thead><tbody>'
       + SUS.map(function(s){
           return '<tr><td>'+esc(s.email)+'</td><td>'+esc((s.fecha||'').slice(0,10))+'</td><td>'+esc(s.origen||'—')+'</td></tr>';
         }).join('')
-      + '</tbody></table>';
+      + '</tbody></table></div>';
   }
 
   function copiar(){

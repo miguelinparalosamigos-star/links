@@ -279,7 +279,11 @@ function paginaHtml({ base, urlCanonica, post }) {
   const descripcion = (post.teaser || parrafos[0] || '').slice(0, 155);
   const totalPalabras = parrafos.join(' ').split(/\s+/).filter(Boolean).length;
   const minutos = Math.max(1, Math.round(totalPalabras / 200));
-  const urlEstudio = post.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${post.pmid}/` : '#';
+  // Los estudios que vienen de OpenAlex no tienen PMID: llevan su DOI.
+  const urlEstudio = post.urlFuente
+    ? post.urlFuente
+    : (post.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${post.pmid}/` : '#');
+  const nombreFuente = post.pmid ? 'PubMed' : 'la revista';
 
   // --- Ficha + cadena visual del estudio -------------------------------
   const textoAnalizable = [post.desglose && post.desglose.metodo, post.titulo, post.resumen]
@@ -388,7 +392,7 @@ function paginaHtml({ base, urlCanonica, post }) {
     alimentacion: { url: "/comer-por-ansiedad.html", tag: "Guía gratuita · Alimentación", titulo: "Comer por ansiedad", desc: "Cuando la comida hace de calmante: qué la enciende y qué hacer con el hueco." },
     bienestar: { url: "/gestionar-tus-emociones.html", tag: "Guía gratuita · Bienestar", titulo: "Gestionar tus emociones", desc: "Qué significa de verdad, más allá de la frase, y por dónde se empieza." },
   };
-  const GUIA_POR_DEFECTO = { url: "/temas.html", tag: "Guía gratuita · Psicolinks", titulo: "Las guías de Psicolinks", desc: "211 guías prácticas y gratuitas: sueño, ansiedad, pareja, trabajo, familia y hábitos." };
+  const GUIA_POR_DEFECTO = { url: "/temas.html", tag: "Guía gratuita · Psicolinks", titulo: "Las guías de Psicolinks", desc: "253 guías prácticas y gratuitas: sueño, ansiedad, pareja, trabajo, familia y hábitos." };
   const guiaRel = GUIAS_POR_TEMA[(post.tema || '').toLowerCase().trim()] || GUIA_POR_DEFECTO;
   const guiaRelHtml = !guiaRel ? '' : `
   <div class="guia-rel">
@@ -425,7 +429,8 @@ function paginaHtml({ base, urlCanonica, post }) {
     // página —un resumen no es un artículo científico— pero sí decimos a qué
     // trabajo se refiere, que es lo que de verdad describe esta página.
     ...(post.fuente ? { citation: { '@type': 'ScholarlyArticle', url: post.fuente,
-        ...(post.pmid ? { identifier: 'PMID:' + post.pmid } : {}) },
+        ...(post.pmid ? { identifier: 'PMID:' + post.pmid } : {}),
+        ...(post.doi ? { identifier: 'DOI:' + post.doi } : {}) },
       isBasedOn: post.fuente } : {}),
   });
   const breadcrumbLd = JSON.stringify({
@@ -475,7 +480,7 @@ function paginaHtml({ base, urlCanonica, post }) {
     <div class="post-body">${parrafos.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}</div>
     <div class="fuente-original">
       <p>Este resumen se basa en un estudio científico real. Si quieres profundizar, el original está aquí:</p>
-      <a class="btn-source" href="${urlEstudio}" target="_blank" rel="noopener">Ver el estudio original en PubMed (en inglés) →</a>
+      <a class="btn-source" href="${urlEstudio}" target="_blank" rel="noopener">Ver el estudio original en ${nombreFuente} →</a>
       <p style="margin-top:0.9rem; font-size:0.85rem;"><a href="/como-leemos-los-estudios.html">¿Qué significa que un estudio sea "significativo"? Cómo leemos los estudios →</a></p>
     </div>
   </div>

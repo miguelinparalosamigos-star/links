@@ -102,8 +102,90 @@ async function obtenerArticulos(pmids) {
   return articulos;
 }
 
+// ───────────────────────────── SEGUNDA FUENTE: OpenAlex ─────────────────────
+// PubMed es una base biomédica: cubre muy bien la psicología clínica y del
+// sueño, y deja fuera la social, la del trabajo, la educativa y casi todo lo
+// publicado en castellano. OpenAlex sí lo cubre, es abierta y no pide clave.
+//
+// REGLA DE ORO DE ESTE BLOQUE: si algo falla aquí, no puede romper la
+// publicación. Todo va dentro de un try/catch que devuelve [] y la función
+// sigue con lo de PubMed, exactamente igual que antes de existir esto.
+const OPENALEX_BASE = 'https://api.openalex.org/works';
+// El correo en el parámetro `mailto` es lo que OpenAlex pide para darte la cola
+// rápida. No es una clave y no es obligatorio.
+const OPENALEX_MAILTO = process.env.OPENALEX_MAILTO || 'contacto@psicolinks.com';
+
+function reconstruirAbstract(indice) {
+  // OpenAlex no da el abstract en texto plano, sino un índice invertido:
+  // { "palabra": [posiciones...] }. Se rehace poniendo cada palabra en su
+  // sitio. Con guardas: si viene algo raro se devuelve cadena vacía y el
+  // artículo se descarta, que es mejor que publicar un abstract sin sentido.
+  if (!indice || typeof indice !== 'object') return '';
+  const huecos = [];
+  for (const [palabra, posiciones] of Object.entries(indice)) {
+    if (!Array.isArray(posiciones)) continue;
+    for (const p of posiciones) {
+      if (typeof p === 'number' && p >= 0 && p < 5000) huecos[p] = palabra;
+    }
+  }
+  const texto = huecos.filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+  // Un abstract de verdad no baja de unas cuantas palabras.
+  return texto.split(' ').length >= 40 ? texto : '';
+}
+
+async function buscarEnOpenAlex(dias, cuantos) {
+  try {
+    const desde = new Date(Date.now() - dias * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+    const filtros = [
+      'concepts.id:C15744967',          // Psychology
+      `from_publication_date:${desde}`,
+      'type:article',                   // solo artículos de revista: nada de preprints
+      'has_abstract:true',
+      'has_doi:true',
+      'language:en|es',
+    ].join(',');
+    const url = `${OPENALEX_BASE}?filter=${encodeURIComponent(filtros)}` +
+      `&sort=publication_date:desc&per-page=${Math.max(1, Math.min(50, cuantos * 4))}` +
+      `&mailto=${encodeURIComponent(OPENALEX_MAILTO)}`;
+
+    const res = await fetch(url, { headers: { 'User-Agent': `Psicolinks (${OPENALEX_MAILTO})` } });
+    if (!res.ok) {
+      console.warn(`fetch-studies: OpenAlex respondió ${res.status}; se sigue solo con PubMed`);
+      return [];
+    }
+    const data = await res.json();
+    const obras = Array.isArray(data?.results) ? data.results : [];
+
+    const salida = [];
+    for (const o of obras) {
+      const abstract = reconstruirAbstract(o?.abstract_inverted_index);
+      const titulo = (o?.title || o?.display_name || '').trim();
+      const doi = (o?.doi || '').replace(/^https?:\/\/doi\.org\//i, '');
+      const revista = o?.primary_location?.source?.display_name || '';
+      if (!abstract || !titulo || !doi) continue;
+      // Los artículos que además están en PubMed ya los trae la fuente
+      // principal: si vienen por aquí se duplicarían con otro identificador.
+      if (o?.ids?.pmid) continue;
+      salida.push({
+        pmid: null,
+        doi,
+        urlFuente: `https://doi.org/${doi}`,
+        tituloOriginal: titulo,
+        abstract,
+        revista: revista || 'Revista científica',
+        anio: (o?.publication_year || '').toString(),
+      });
+      if (salida.length >= cuantos) break;
+    }
+    return salida;
+  } catch (e) {
+    console.warn('fetch-studies: OpenAlex falló, se sigue solo con PubMed:', e?.message || e);
+    return [];
+  }
+}
+
 async function redactarConClaude(articulo) {
-  const prompt = `Eres el redactor de "Psicolinks", un blog de divulgación de psicología en español (de España). Te paso el título y el abstract (en inglés) de un estudio científico real y reciente.
+  const prompt = `Eres el redactor de "Psicolinks", un blog de divulgación de psicología en español (de España). Te paso el título y el abstract (en inglés o en castellano) de un estudio científico real y reciente.
 
 Tu tarea, en español, con tono claro y cercano pero riguroso (nunca sensacionalista, nunca afirmando algo que el estudio no respalde):
 
@@ -324,11 +406,13 @@ export default async () => {
 
     // No repetir un estudio ya publicado (ni uno que quedara de alguna prueba antigua)
     const pmidsExistentes = new Set();
+    const doisPublicados = new Set();   // para lo que venga de OpenAlex, que no tiene PMID
     for (const store of [posts, drafts]) {
       const { blobs } = await store.list();
       for (const b of blobs) {
         const item = await store.get(b.key, { type: 'json' });
         if (item?.pmid) pmidsExistentes.add(item.pmid);
+        if (item?.doi) doisPublicados.add(item.doi);
       }
     }
 
@@ -338,6 +422,21 @@ export default async () => {
     const CANDIDATOS_A_EVALUAR = 6;
     const idsNuevos = idsRecientes.filter((id) => !pmidsExistentes.has(id)).slice(0, CANDIDATOS_A_EVALUAR);
     const candidatos = await obtenerArticulos(idsNuevos);
+
+    // OpenAlex SOLO rellena. Si PubMed ya trae candidatos de sobra, ni se le
+    // pregunta; y si falla, buscarEnOpenAlex devuelve [] y esto sigue igual.
+    if (candidatos.length < CANDIDATOS_A_EVALUAR) {
+      const faltan = CANDIDATOS_A_EVALUAR - candidatos.length;
+      const extra = await buscarEnOpenAlex(14, faltan);
+      const doisExistentes = new Set([...doisPublicados]);
+      const titulosVistos = new Set(candidatos.map((c) => (c.tituloOriginal || '').toLowerCase()));
+      for (const a of extra) {
+        if (doisExistentes.has(a.doi)) continue;
+        if (titulosVistos.has((a.tituloOriginal || '').toLowerCase())) continue;
+        candidatos.push(a);
+      }
+    }
+
     const articulos = await elegirMasInteresantes(candidatos, MAX_PUBLICACIONES_POR_EJECUCION);
 
     // Se redactan en paralelo (no en cadena) para no acercarse al límite de 30s
@@ -345,11 +444,12 @@ export default async () => {
     const resultados = await Promise.allSettled(
       articulos.map(async (articulo) => {
         const redaccion = await redactarConClaude(articulo);
-        const id = `${Date.now()}-${articulo.pmid}`;
+        const id = `${Date.now()}-${articulo.pmid || articulo.doi.replace(/[^a-z0-9]+/gi, '-')}`;
         const ahora = new Date().toISOString();
         const post = {
           id,
-          pmid: articulo.pmid,
+          pmid: articulo.pmid || null,
+          ...(articulo.doi ? { doi: articulo.doi, urlFuente: articulo.urlFuente } : {}),
           fuente: `${articulo.revista}${articulo.anio ? ' · ' + articulo.anio : ''}`,
           titulo: redaccion.titulo,
           teaser: redaccion.teaser,
@@ -374,7 +474,7 @@ export default async () => {
     const publicados = postsPublicados.length;
     resultados.forEach((r, i) => {
       if (r.status === 'rejected') {
-        console.error(`fetch-studies: fallo con PMID ${articulos[i]?.pmid}:`, r.reason?.message || r.reason);
+        console.error(`fetch-studies: fallo con ${articulos[i]?.pmid || articulos[i]?.doi}:`, r.reason?.message || r.reason);
       }
     });
 

@@ -146,7 +146,7 @@ export function htmlBienvenida(email, token) {
       </td></tr>
       ${filas}
       <tr><td style="padding:14px 0 0;">
-        <p style="margin:0; font-size:15px; line-height:1.6; color:#625C70;">A partir de ahora te escribo <strong>los domingos</strong>, con lo que haya publicado esa semana. Un correo, y si no te aporta, te borras en un clic desde abajo.</p>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#625C70;">Y hasta aquí: <strong>no te voy a escribir cada semana</strong>. Si quieres ver lo que se va publicando, la web está siempre ahí. Este es el único correo que recibes.</p>
         <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:#625C70;">Miguel Martínez, psicólogo · Colegiado nº CV17649</p>
       </td></tr>
       <tr><td style="padding:18px 0 0; border-top:1px solid #DDD7CB;">

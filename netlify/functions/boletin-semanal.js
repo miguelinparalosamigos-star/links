@@ -238,6 +238,20 @@ function responder(resumen, manual, status = 200) {
   });
 }
 
-export const config = {
-  schedule: '0 8 * * 0', // domingos, 08:00 UTC (10:00 en España en verano, 9:00 en invierno)
-};
+// ───────────────────────────────────────────────────────────────────────────
+// APAGADO A PROPOSITO (agosto de 2026)
+//
+// Miguel: «aunque no lo veo, a la gente le agobia tanto envío; mejor solo
+// darle ese pack y olvidarse, no enviar nada cada domingo».
+//
+// Se quita el `config.schedule`, que era lo unico que hacia que esto se
+// disparase solo. La funcion sigue aqui entera y sigue siendo invocable a
+// mano por su URL, por si algun dia quiere mandar algo puntual — pero ya no
+// sale ningun correo semanal sin que nadie lo pida.
+//
+// PARA VOLVER A ENCENDERLO: descomentar el bloque de abajo. Nada mas.
+//
+// export const config = {
+//   schedule: '0 8 * * 0', // domingos, 08:00 UTC
+// };
+// ───────────────────────────────────────────────────────────────────────────

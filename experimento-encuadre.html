@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El encuadre: el experimento que necesita dos · Psicolinks</title>
+<meta name="description" content="Un problema con dos programas. A ti te sale contado de una manera y a quien se lo mandes, del revés. Y las dos versiones dicen exactamente lo mismo.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El encuadre: un experimento para dos">
+<meta property="og:description" content="Contesta y mándaselo a alguien: le sale el mismo problema contado del revés.">
+<meta property="og:url" content="https://psicolinks.com/experimento-encuadre.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-encuadre.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+
+  .en-enunciado{ background:var(--paper); border:1px solid var(--border); border-radius:12px;
+                 padding:1rem 1.2rem; font-size:1rem; line-height:1.7; margin:0 0 1.1rem; }
+  .en-ops{ display:grid; gap:0.6rem; }
+  .en-op{ display:block; width:100%; text-align:left; font-family:inherit; font-size:0.98rem;
+          line-height:1.55; padding:1rem 1.15rem; border-radius:12px; border:2px solid var(--border);
+          background:var(--surface); color:var(--ink); cursor:pointer; }
+  .en-op:hover{ border-color:var(--accent); }
+  .en-op b{ display:block; font-size:0.72rem; font-family:var(--font-mono); letter-spacing:0.08em;
+            text-transform:uppercase; color:var(--stamp); margin:0 0 0.25rem; }
+  .en-caras{ display:grid; gap:0.7rem; margin:0 0 1.2rem; }
+  @media (min-width:46rem){ .en-caras{ grid-template-columns:1fr 1fr; } }
+  .en-cara{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; }
+  .en-cara.tuya{ border-color:#8C3B4A; border-width:2px; }
+  .en-cara .eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em;
+                 text-transform:uppercase; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .en-cara p{ margin:0 0 0.4rem; font-size:0.93rem; line-height:1.6; }
+  .en-cara p:last-child{ margin-bottom:0; }
+  .en-cifra{ font-family:var(--font-mono); font-weight:700; color:#8C3B4A; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Dos minutos</div>
+  <h1>El encuadre</h1>
+  <p class="lead">Este necesita dos personas. Contesta tú primero y luego mándaselo a alguien: le va a
+  salir el mismo problema contado del revés.</p>
+
+  <div class="lab-amigo" id="lab-amigo-intro" hidden></div>
+
+  <!-- ─────────────────────────────── 1. la pregunta ───────────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Decide tú.</p>
+      <p class="en-enunciado">Un país se prepara para el brote de una enfermedad rara que, si no se
+      hace nada, <strong>matará a 600 personas</strong>. Hay dos programas posibles y hay que elegir
+      uno. Estas son las estimaciones científicas de lo que pasaría con cada uno.</p>
+      <div class="en-ops" id="en-ops"></div>
+      <p class="lab-sub" style="margin:1rem 0 0;">No le des muchas vueltas: lo que interesa es lo que
+      te sale, no lo que decidirías con una hoja de cálculo.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. la vuelta ─────────────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="lab-veredicto" id="lab-veredicto"></p>
+      <div class="en-caras" id="en-caras"></div>
+      <p class="lab-sub" style="margin:0;">Los porcentajes son los del estudio original, no los de esta
+      web: no se guarda ni se cuenta nada de lo que respondes aquí.</p>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien (le sale la otra versión)</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Los dos programas son idénticos en los dos textos. De 600 personas, «se salvan 200» y «mueren
+    400» son la misma frase. Y sin embargo la gente cambia de opinión según cómo se le cuente:
+    cuando se habla de <strong>vidas salvadas</strong>, la mayoría se agarra a lo seguro; cuando se
+    habla de <strong>vidas perdidas</strong>, la mayoría prefiere arriesgar. Lo mismo, del revés.</p>
+
+    <div class="idea"><strong>Por qué pasa.</strong> Ante una ganancia segura tendemos a no
+    arriesgar —200 salvados, en la mano—, pero ante una pérdida segura casi cualquiera prefiere
+    jugársela antes que firmar 400 muertes. Lo que cambia no son los números: es qué punto de
+    partida te ponen delante. Y ese punto de partida lo elige quien te cuenta las cosas.</div>
+
+    <p>Fuera del ejercicio esto está en todas partes: «te queda el 40&nbsp;% del tratamiento» o «ya
+    llevas el 60&nbsp;%»; «he suspendido tres» o «he aprobado seis»; un yogur con «90&nbsp;% sin
+    grasa» o con «10&nbsp;% de grasa». Y también dentro de tu cabeza: la misma semana se puede contar
+    como «no he hecho nada de lo que quería» o como «he hecho dos de las cinco cosas». Ninguna de las
+    dos miente. Pero una te deja de pie y la otra no.</p>
+
+    <div class="idea"><strong>Y esto no es «pensar en positivo».</strong> Pensar en positivo es
+    decirse algo que no es verdad para sentirse mejor un rato. Esto es otra cosa: <strong>elegir cuál
+    de las descripciones verdaderas usas</strong>, sabiendo que ninguna es la neutra porque la neutra
+    no existe. Cómo se hace, en <a href="/hablarte-mejor.html">hablarte mejor</a> y en
+    <a href="/registro-de-pensamientos.html">el registro de pensamientos</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Tversky, A. y Kahneman, D.
+    (1981). <em>The framing of decisions and the psychology of choice</em>. Science, 211(4481),
+    453–458. Los porcentajes son los de sus problemas 1 y 2 (152 y 155 personas). Aquí se ha quitado
+    el gentilicio del enunciado original, que no aportaba nada; los números y la estructura son los
+    mismos. Esto <strong>no mide nada de ti</strong>: elegir A o B no es un acierto ni un fallo, y
+    contestar «bien» solo significa que ya conocías el problema.</p>
+  </section>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El encuadre · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-encuadre.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Un problema con dos programas. A ti te sale contado de una manera y a quien se lo mandes, del revés — y las dos versiones dicen lo mismo."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "El encuadre", "item": "https://psicolinks.com/experimento-encuadre.html"}]}</script>
+<script>
+/* El encuadre --------------------------------------------------------------
+   Con una persona sola esto no se puede demostrar: si le enseñas las dos
+   versiones seguidas, ya ha visto el truco. Así que el experimento se reparte
+   entre dos — a ti te toca un encuadre al azar y el enlace que mandas lleva
+   EL OTRO. La demostración ocurre en dos móviles a la vez, y sin servidor:
+   el encuadre viaja detrás de la # del enlace.
+
+   No guarda nada.                                                           */
+(function(){
+  'use strict';
+  /* Tversky y Kahneman (1981), problemas 1 y 2. Comprobado en el original. */
+  var DATOS = {
+    ganancia: { n:152, seguro:72, riesgo:28 },
+    perdida:  { n:155, seguro:22, riesgo:78 }
+  };
+  var TEXTOS = {
+    ganancia: {
+      eti: 'Contado en vidas salvadas',
+      seguro: 'Se salvan 200 personas.',
+      riesgo: 'Un tercio de probabilidad de que se salven las 600, y dos tercios de que no se salve nadie.'
+    },
+    perdida: {
+      eti: 'Contado en vidas perdidas',
+      seguro: 'Mueren 400 personas.',
+      riesgo: 'Un tercio de probabilidad de que no muera nadie, y dos tercios de que mueran las 600.'
+    }
+  };
+
+  var marco, elegido = null;
+
+  function ver(id){
+    ['lab-1','lab-2'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function otro(m){ return m === 'ganancia' ? 'perdida' : 'ganancia'; }
+
+  /* ¿me lo ha mandado alguien, y con qué encuadre? */
+  var m = /^m=(ganancia|perdida)$/.exec((location.hash || '').replace(/^#/, ''));
+  var deAmigo = !!m;
+  marco = m ? m[1] : (Math.random() < 0.5 ? 'ganancia' : 'perdida');
+
+  if (deAmigo) {
+    var caja = document.getElementById('lab-amigo-intro');
+    caja.innerHTML = 'Te lo ha mandado alguien que ya lo ha hecho. <strong>A ti te va a salir la ' +
+      'versión que esa persona no vio</strong> — responde sin preguntarle qué le puso a ella, que si no ' +
+      'no vale.';
+    caja.hidden = false;
+  }
+
+  /* ------------------------------------------------------ 1. la pregunta */
+  document.getElementById('en-ops').innerHTML =
+    '<button type="button" class="en-op" data-o="seguro"><b>Programa A</b>' +
+      esc(TEXTOS[marco].seguro) + '</button>' +
+    '<button type="button" class="en-op" data-o="riesgo"><b>Programa B</b>' +
+      esc(TEXTOS[marco].riesgo) + '</button>';
+
+  document.getElementById('en-ops').addEventListener('click', function(ev){
+    var b = ev.target.closest('.en-op');
+    if (!b) return;
+    elegido = b.dataset.o;
+    pintar();
+    ver('lab-2');
+  });
+
+  /* -------------------------------------------------------- 2. la vuelta */
+  function cara(m2, tuya){
+    var d = DATOS[m2], t = TEXTOS[m2];
+    return '<div class="en-cara' + (tuya ? ' tuya' : '') + '">' +
+      '<span class="eti">' + esc(t.eti) + (tuya ? ' · la tuya' : '') + '</span>' +
+      '<p><strong>A.</strong> ' + esc(t.seguro) + ' → <span class="en-cifra">' + d.seguro + '&nbsp;%</span> lo eligió</p>' +
+      '<p><strong>B.</strong> ' + esc(t.riesgo) + ' → <span class="en-cifra">' + d.riesgo + '&nbsp;%</span> lo eligió</p>' +
+      '</div>';
+  }
+
+  function pintar(){
+    document.getElementById('en-caras').innerHTML = cara(marco, true) + cara(otro(marco), false);
+
+    var d = DATOS[marco];
+    var tuPct = elegido === 'seguro' ? d.seguro : d.riesgo;
+    var v = 'Has elegido el <strong>programa ' + (elegido === 'seguro' ? 'A' : 'B') + '</strong>, como el <strong>' +
+      tuPct + '&nbsp;%</strong> de las personas a las que se lo contaron así. ';
+    v += 'Y ahora mira las dos columnas de abajo: <strong>dicen exactamente lo mismo</strong>. De 600 personas, ' +
+      'que se salven 200 es que mueran 400. Lo único que cambia entre una versión y otra es la palabra.';
+    document.getElementById('lab-veredicto').innerHTML = v;
+  }
+
+  /* ----------------------------------------------------------- compartir */
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = 'Haz esto y no me digas nada hasta que lo hayas contestado — a ti te va a salir la versión ' +
+      'que yo no he visto: https://psicolinks.com/experimento-encuadre.html#m=' + otro(marco);
+    if (navigator.share) { navigator.share({ text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('Contéstame a esto sin pensarlo mucho') + '&body=' + encodeURIComponent(t);
+  });
+})();
+</script>
+
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

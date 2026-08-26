@@ -58,6 +58,18 @@
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
   .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
 </style>
 <script type="application/ld+json">
 { "@context":"https://schema.org","@type":"Article","headline":"Dónde pedir ayuda en España","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/donde-pedir-ayuda.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
@@ -140,10 +152,16 @@
 </div>
 
 <div class="tool">
-  <p class="tool-kicker">Mi consulta</p>
-  <h3>Conciencia Conductual</h3>
-  <p>Soy psicólogo colegiado (nº CV17649) y atiendo en consulta privada, online y presencial, en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">concienciaconductual.com</a></strong>. Trabajo sobre todo ansiedad, estado de ánimo, insomnio y problemas de pareja, desde terapias cognitivo-conductuales y contextuales.</p>
-  <div class="hazlo"><strong>Con transparencia:</strong> esta es mi consulta, así que aquí no soy neutral. Si prefieres a otro profesional, en la guía <a href="/elegir-psicologo.html">Cómo elegir psicólogo</a> tienes los criterios para buscar por tu cuenta, y en tu colegio oficial hay buscador público de colegiados.</div>
+  <p class="tool-kicker">Consultas asociadas</p>
+  <h3>La vía privada, si decides ir por ahí</h3>
+  <p>Psicolinks trabaja con <a href="/consultas.html">consultas asociadas</a>. Hoy hay una, Conciencia
+  Conductual, de Miguel Martínez (colegiado nº CV17649): online y presencial en Valencia, sobre todo
+  ansiedad, estado de ánimo, insomnio y problemas de pareja, desde terapias cognitivo-conductuales y
+  contextuales.</p>
+  <div class="hazlo"><strong>Para que sepas quién es quién:</strong> esa consulta es la de Miguel Martínez, el psicólogo
+  que escribe esta web, y por eso va la última de esta lista y no la primera.
+  Si prefieres buscar por tu cuenta, en <a href="/elegir-psicologo.html">cómo elegir psicólogo</a>
+  tienes los criterios, y en tu colegio oficial hay un buscador público de colegiados.</div>
 </div>
 
 <div class="tool">
@@ -158,11 +176,37 @@
   <div class="cierre"><strong>Una cosa más.</strong> Pedir ayuda pronto no es exagerar. La mayoría de la gente que llega a consulta lleva meses o años aguantando, y casi todos dicen lo mismo al final: que ojalá hubieran ido antes. Si dudas de si tu caso «merece» consulta, esa duda es justo el motivo por el que conviene consultarlo.</div>
 
 
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">

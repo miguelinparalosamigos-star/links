@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El efecto foco: un experimento de dos minutos · Psicolinks</title>
+<meta name="description" content="Cuánta gente crees que se fijó en tu momento vergonzoso, y cuántos momentos vergonzosos de otros recuerdas tú. Las dos respuestas no cuadran.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El efecto foco: un experimento de dos minutos">
+<meta property="og:description" content="Dos preguntas y tus propios números. La gente se fija en ti la mitad de lo que crees.">
+<meta property="og:url" content="https://psicolinks.com/experimento-efecto-foco.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-efecto-foco.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-escala{ display:flex; align-items:center; gap:0.8rem; }
+  .lab-escala input[type=range]{ flex:1; accent-color:#8C3B4A; }
+  .lab-escala output{ font-family:var(--font-mono); font-weight:700; font-size:1.6rem; min-width:3.5ch; text-align:right; }
+  .lab-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .lab-barras{ display:grid; gap:0.55rem; margin:0.4rem 0 1.2rem; }
+  .lab-b{ display:grid; grid-template-columns:7.5rem 1fr auto; align-items:center; gap:0.6rem; font-size:0.9rem; }
+  .lab-b .via{ height:0.72rem; border-radius:99px; background:var(--border); overflow:hidden; }
+  .lab-b .via i{ display:block; height:100%; background:#8C3B4A; }
+  .lab-b .via.otro i{ background:var(--accent); }
+  .lab-b .num{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .oculto{ position:absolute; left:-9999px; }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Dos minutos</div>
+  <h1>El efecto foco</h1>
+  <p class="lead">No te vamos a contar que la gente se fija en ti menos de lo que crees. Vamos a
+  dejar que lo compruebes con tus propios números.</p>
+
+  <div class="lab-amigo" id="lab-amigo-intro" hidden></div>
+
+  <!-- ─────────────────────────────── 1. la predicción ─────────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Piensa en un momento tuyo de los de «tierra trágame».</p>
+      <p class="lab-sub">Algo de hace poco y con gente delante: una mancha en la camisa, tropezarte,
+      decir una tontería en una reunión, que se te quiebre la voz. No hace falta que lo escribas en
+      ningún sitio — de hecho, aquí no se escribe nada.</p>
+      <p class="lab-pregunta" style="font-size:1.05rem;">De la gente que estaba delante, ¿qué porcentaje crees que se dio cuenta?</p>
+      <div class="lab-escala">
+        <input type="range" id="lab-c" min="0" max="100" step="5" value="50" aria-label="Qué porcentaje de la gente crees que se dio cuenta">
+        <output id="lab-c-val" for="lab-c">50%</output>
+      </div>
+      <p class="lab-extremos"><span>nadie</span><span>todo el mundo</span></p>
+      <button type="button" class="lab-btn" id="lab-seguir">Siguiente →</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. la vuelta ─────────────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Ahora al revés.</p>
+      <p class="lab-sub">Piensa en <strong>la semana pasada</strong>. Toda entera: el trabajo, la
+      calle, la gente con la que comiste. ¿Cuántos momentos vergonzosos <strong>de otras
+      personas</strong> puedes recordar ahora mismo? Manchas, tropiezos, meteduras de pata de otros.
+      Cuéntalos de verdad, no lo que te parece que deberían ser.</p>
+      <div class="lab-escala">
+        <input type="range" id="lab-r" min="0" max="20" step="1" value="0" aria-label="Cuántos momentos vergonzosos de otras personas recuerdas">
+        <output id="lab-r-val" for="lab-r">0</output>
+      </div>
+      <p class="lab-extremos"><span>ninguno</span><span>veinte o más</span></p>
+      <button type="button" class="lab-btn" id="lab-ver">Ver el resultado →</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 3. el resultado ──────────────────── -->
+  <section class="lab-paso" id="lab-3">
+    <div class="lab-caja">
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="lab-r-c">0%</b><span>creías que se fijaron en ti</span></div>
+        <div class="lab-dato"><b id="lab-r-r">0</b><span>momentos de otros recuerdas</span></div>
+      </div>
+      <p class="lab-veredicto" id="lab-veredicto"></p>
+      <div class="lab-barras" id="lab-barras"></div>
+      <div class="lab-amigo" id="lab-amigo-final" hidden></div>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+      <button type="button" class="lab-btn sec" id="lab-otra">Probar otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Lo que has notado se llama <strong>efecto foco</strong>, y está medido. En el año 2000, Thomas
+    Gilovich y su equipo hicieron entrar a estudiantes en una sala con una camiseta que les daba
+    vergüenza llevar, y luego les preguntaron cuánta gente creían que se había fijado.
+    <strong>Calcularon el 46 %. Se fijó el 23 %: exactamente la mitad de lo que creían.</strong></p>
+
+    <div class="idea"><strong>Y el motivo no es que la gente sea maleducada.</strong> Es que cada uno
+    está dentro de su propia cabeza todo el rato. Tú tienes tu mancha en primer plano porque la has
+    vivido desde dentro; los demás tienen en primer plano <em>lo suyo</em>. Por eso la segunda
+    pregunta es la buena: la cantidad de momentos ajenos que recuerdas es exactamente la atención
+    que los demás tienen disponible para los tuyos.</div>
+
+    <p>Con una camiseta esto es una anécdota. Con «no puedo entrar ahí, van a notar que estoy
+    nervioso», «se me nota la voz» o «todo el mundo me está mirando», es justo el mecanismo que
+    sostiene la ansiedad social: se evita una situación por una audiencia que, medida, es la mitad
+    de lo que uno cree — y que además se olvida.</p>
+
+    <div class="idea"><strong>Y entonces, ¿qué se hace?</strong> Lo que funciona no es convencerse
+    de que nadie mira: es <strong>ir a comprobarlo</strong>, en pequeño y a propósito. Eso tiene
+    nombre, experimento conductual, y tiene su hoja en
+    <a href="/experimento-conductual.html">experimento conductual</a>. Si lo que te pasa es esto
+    mismo pero a diario, está explicado en <a href="/ansiedad-social.html">ansiedad social</a> y en
+    <a href="/hablar-en-publico.html">hablar en público</a>. Y si quieres notar otro
+    de estos efectos en tu propia cabeza, en el laboratorio está
+    <a href="/experimento-oso-blanco.html">el oso blanco</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Gilovich, T., Medvec,
+    V. H. y Savitsky, K. (2000). <em>The spotlight effect in social judgment: An egocentric bias in
+    estimates of the salience of one's own actions and appearance</em>. Journal of Personality and
+    Social Psychology, 78(2), 211–222. Lo de aquí arriba <strong>no es ese estudio</strong>: allí
+    había observadores de verdad contando quién se fijaba, y aquí solo hay dos preguntas y tu
+    memoria. Sirve para notar el sesgo, no para medirte: no puntúa nada y no dice nada de ti.</p>
+  </section>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El efecto foco · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-efecto-foco.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Un experimento de dos minutos: cuánta gente crees que se fijó en tu momento vergonzoso, y cuántos momentos vergonzosos de otros recuerdas tú."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "El efecto foco", "item": "https://psicolinks.com/experimento-efecto-foco.html"}]}</script>
+<script>
+/* El efecto foco -----------------------------------------------------------
+   Tres pasos: cuánta gente crees que se fijó en lo tuyo, cuántas cosas de
+   otros recuerdas tú, y el contraste. La explicación va la última: si se
+   cuenta antes, la segunda respuesta ya sale contaminada.
+
+   No guarda nada, ni en el navegador. Al compartir, los dos números viajan
+   detrás de la # del enlace, que es la parte que no llega al servidor.     */
+(function(){
+  'use strict';
+  var PUBLICADO_CREEN = 46, PUBLICADO_REAL = 23;   /* Gilovich et al. (2000), estudio 1 */
+  var creo = 0, recuerdo = 0;
+
+  function ver(id){
+    ['lab-1','lab-2','lab-3'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* ------------------------------------------------- ¿viene de un amigo? */
+  function leerEnlace(){
+    var m = /^r=(\d+)-(\d+)$/.exec((location.hash || '').replace(/^#/, ''));
+    if (!m) return null;
+    var c = +m[1], r = +m[2];
+    if (c < 0 || c > 100 || r < 0 || r > 20) return null;   /* por si viene manipulado */
+    return { c: c, r: r };
+  }
+  var amigo = leerEnlace();
+  if (amigo) {
+    var caja = document.getElementById('lab-amigo-intro');
+    caja.innerHTML = 'Alguien lo ha hecho antes que tú: creía que se había fijado <strong>el ' +
+      amigo.c + ' %</strong> de la gente, y de los demás recuerda <strong>' + amigo.r +
+      (amigo.r === 1 ? ' momento' : ' momentos') + '</strong>. A ver qué te sale a ti.';
+    caja.hidden = false;
+  }
+
+  /* ------------------------------------------------------ 1. la predicción */
+  var r1 = document.getElementById('lab-c');
+  r1.addEventListener('input', function(){ document.getElementById('lab-c-val').textContent = this.value + '%'; });
+
+  document.getElementById('lab-seguir').addEventListener('click', function(){
+    creo = +r1.value;
+    ver('lab-2');
+  });
+
+  /* --------------------------------------------------------- 2. la vuelta */
+  var r2 = document.getElementById('lab-r');
+  r2.addEventListener('input', function(){ document.getElementById('lab-r-val').textContent = this.value; });
+
+  document.getElementById('lab-ver').addEventListener('click', function(){
+    recuerdo = +r2.value;
+    pintar();
+    ver('lab-3');
+  });
+
+  function barra(eti, pct, texto, otro){
+    return '<div class="lab-b"><span>' + esc(eti) + '</span>' +
+      '<span class="via' + (otro ? ' otro' : '') + '"><i style="width:' + Math.max(1, Math.min(100, pct)) + '%"></i></span>' +
+      '<span class="num">' + esc(texto) + '</span></div>';
+  }
+
+  function pintar(){
+    document.getElementById('lab-r-c').textContent = creo + '%';
+    document.getElementById('lab-r-r').textContent = recuerdo;
+
+    document.getElementById('lab-barras').innerHTML =
+      barra('Tú creías', creo, creo + '%') +
+      barra('Ellos creían', PUBLICADO_CREEN, PUBLICADO_CREEN + '%', true) +
+      barra('Se fijó de verdad', PUBLICADO_REAL, PUBLICADO_REAL + '%', true);
+
+    var v = '';
+    if (recuerdo === 0) {
+      v = 'No recuerdas <strong>ni un solo</strong> momento vergonzoso de otra persona de la semana pasada. ' +
+          'Y sin embargo das por hecho que el ' + creo + ' % de la gente se acuerda del tuyo. ' +
+          'Los demás están exactamente igual de ocupados contigo que tú con ellos: nada.';
+    } else if (recuerdo <= 2) {
+      v = 'Recuerdas ' + recuerdo + (recuerdo === 1 ? ' momento' : ' momentos') +
+          ' de otra gente en toda una semana — y calculas que el ' + creo + ' % se acuerda del tuyo. ' +
+          'Esa diferencia entre lo poco que guardas de los demás y lo mucho que crees que guardan de ti ' +
+          'es el efecto, en tus propios números.';
+    } else {
+      v = 'Recuerdas ' + recuerdo + ' momentos de otra gente, que es bastante más de lo habitual. ' +
+          'Aun así, mira la proporción: de los tuyos te acuerdas de todos, y de los de los demás, ' +
+          recuerdo + ' en una semana entera.';
+    }
+    if (creo > PUBLICADO_REAL) {
+      v += ' Tu predicción (' + creo + ' %) está por encima del ' + PUBLICADO_REAL +
+           ' % que se fijó de verdad en el estudio.';
+    }
+    document.getElementById('lab-veredicto').innerHTML = v;
+
+    if (amigo) {
+      var f = document.getElementById('lab-amigo-final');
+      f.innerHTML = 'Quien te lo mandó: creía el <strong>' + amigo.c + ' %</strong> y recuerda <strong>' +
+        amigo.r + '</strong>. Tú: <strong>' + creo + ' %</strong> y <strong>' + recuerdo + '</strong>.';
+      f.hidden = false;
+    }
+  }
+
+  /* ----------------------------------------------------------- compartir */
+  var texto = function(){
+    return 'Acabo de hacer el experimento del efecto foco de Psicolinks: creía que se había fijado en mí ' +
+      'el ' + creo + ' % de la gente, y de los demás no recuerdo más que ' + recuerdo + '. Pruébalo: ' +
+      'https://psicolinks.com/experimento-efecto-foco.html#r=' + creo + '-' + recuerdo;
+  };
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = texto();
+    if (navigator.share) {
+      navigator.share({ text: t }).catch(function(){});
+      return;
+    }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('El experimento del efecto foco') + '&body=' + encodeURIComponent(t);
+  });
+
+  document.getElementById('lab-otra').addEventListener('click', function(){
+    if (location.hash) { history.replaceState(null, '', location.pathname); amigo = null;
+      document.getElementById('lab-amigo-intro').hidden = true;
+      document.getElementById('lab-amigo-final').hidden = true; }
+    ver('lab-1');
+  });
+})();
+</script>
+
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

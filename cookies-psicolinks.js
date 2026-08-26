@@ -1,3 +1,20 @@
+/* Vista previa en local -----------------------------------------------------
+   Si esta pagina se ha abierto con doble clic (file://), el navegador lee
+   href="/temas.html" como la raiz del disco duro y todos los enlaces mueren.
+   Como todas las paginas estan en la misma carpeta, basta con quitarles la
+   barra de delante. En psicolinks.com esto no se ejecuta nunca.            */
+if (location.protocol === 'file:') {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[href^="/"], [src^="/"]').forEach(function (el) {
+      ['href', 'src'].forEach(function (attr) {
+        var v = el.getAttribute(attr);
+        if (!v || v.charAt(0) !== '/' || v.charAt(1) === '/') return;
+        el.setAttribute(attr, v === '/' ? 'index.html' : v.slice(1));
+      });
+    });
+  });
+}
+
 /* =========================================================
    AVISO DE COOKIES — Psicolinks
    =========================================================

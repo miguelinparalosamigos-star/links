@@ -2220,3 +2220,315 @@ debería mover las 84 «Descubierta: actualmente sin indexar».
    `temas.html` y de `archivo.html`. Solo esas dos.
 2. **El enlace en concienciaconductual.com.** Te mandé el bloque hecho.
 3. Vuelve a mirar la indexación en dos semanas.
+
+
+---
+
+# Nueve herramientas para tus pacientes
+
+Tu idea, y es buena: mandar a tus pacientes a la web a llevar sus
+autorregistros. Ellos lo tienen a mano en el móvil, tú recibes visitas, y
+cuando vuelven a consulta te lo enseñan en vez de reconstruirlo de memoria.
+
+## Las nueve, en tres grupos de tres
+
+**Para ver qué mantiene lo que te pasa** — Registro A-B-C (ya lo tenías),
+Registro de pensamientos, Termómetro del día.
+
+**Para trabajar en algo concreto** — Registro de exposición, Registro de
+actividades y ánimo (activación conductual), Diario de sueño.
+
+**Para cuidarte** — Diario de gratitud, Registro de meditación, La carta que no
+vas a enviar.
+
+Tres grupos de tres, no una lista de nueve: nueve cosas seguidas no se leen.
+Es el mismo motivo por el que temas.html se plegó.
+
+## Cómo funcionan, y por qué así
+
+- **Nada sale del navegador.** Son datos de salud de personas identificables.
+  Guardarlos en un servidor obligaría a base legal, cifrado, encargado de
+  tratamiento y todo el aparato del RGPD; con `localStorage` no hay nada de eso
+  porque no hay tratamiento por tu parte.
+- **Todas llevan «copiar» e «imprimir».** Es el punto entero del invento. Copiar
+  saca un texto plano ordenado por fechas; imprimir sale limpio, sin cabecera,
+  sin pie y sin el formulario: solo las anotaciones.
+- **Las que tienen un número llevan gráfico** de las últimas treinta entradas.
+  En el registro de exposición eso es lo que más sostiene: ver la columna de
+  «ansiedad al terminar» bajar semana a semana.
+- **Ninguna lleva el bloque de tu consulta.** A quien llega ahí lo mandas tú.
+- Se generan **desde un solo script**. Nueve páginas escritas a mano se
+  desincronizan en dos semanas.
+
+`herramientas.html` es la página a la que mandar a la gente. Sin buscador, sin
+filtros y sin guías relacionadas: nueve tarjetas y una línea cada una.
+
+## Lo de repetir «ven a mi consulta»
+
+Tenías razón en el diagnóstico: el bloque salía en 242 páginas y repetido así
+deja de leerse. Pero dejarlo **solo en la portada** te haría daño, y prefiero
+decírtelo: la gente no entra por la portada, entra desde Google a una guía
+concreta. De tus 66 páginas indexadas, la portada es una. Si el único sitio
+donde dice que pasas consulta fuera esa, casi nadie lo vería.
+
+Así que:
+
+- **Herramientas y registros:** fuera del todo, como pediste.
+- **Guías y tests (233 páginas):** el bloque de seis líneas pasa a **una sola
+  frase**. Sigue el enlace a tu consulta y sigue «dónde pedir ayuda», que es lo
+  que evita que sea un anuncio. Ocupa una quinta parte.
+- **Portada:** ahí sí va el bloque entero, y de hecho era la única página que
+  no lo tenía. Ya está puesto, después de los estudios del día.
+
+Si aun así lo quieres solo en la portada, es cambiar una lista en un script.
+
+## La redundancia que viste en la captura
+
+`registro-abc.html` tenía «Preguntas antes de ir al psicólogo» en una línea
+suelta y otra vez dos centímetros más abajo. No era un caso aislado:
+
+- **10 líneas de enlaces sueltas** quitadas, de cuando no existía el bloque de
+  «si quieres seguir» y ahora lo duplicaban.
+- **El «siguiente paso» ya no repite un enlace que esté en el texto.** Ahora
+  avanza por el anillo de su categoría hasta encontrar una guía que no estés
+  leyendo ya enlazada arriba.
+- **Mi propia firma repetía tu nombre y el enlace a «sobre mí»**, que ya está en
+  la línea de autoría de arriba. Acortada.
+
+Enlaces repetidos a menos de media pantalla: de más de 200 a 9, y los que
+quedan son legítimos (una ficha de test con enlace en el título y en el botón).
+
+## Comprobado antes de entregar
+
+267 páginas, validador sin problemas, auditoría sin avisos. Las ocho
+herramientas nuevas probadas una a una en Chromium: guardan, listan, no dejan
+guardar en vacío, pintan el gráfico, y ninguna lleva bloque de consulta. Copiar
+al portapapeles y la vista de impresión, comprobados de verdad. Cero errores de
+JavaScript. **De las 253 páginas del sitemap, 253 tienen enlace interno.**
+
+Dos fallos míos corregidos por el camino: `reequilibrar_enlaces.py` se pisaba a
+sí mismo —contaba su propio enlace como «ya está en el texto» y elegía otro en
+cada ejecución— y `validar.py` contaba reglas CSS como si fueran bloques. Los
+dos scripts vuelven a ser idempotentes.
+
+
+---
+
+# Tanda del 25 de agosto (tarde): dos herramientas, cinco guías y dos de compra
+
+## Las dos herramientas, que es lo que me preguntabas
+
+**Jerarquía de exposición.** Es la mitad que faltaba. Tenías el *registro* de
+exposición, que sirve para apuntar cada práctica ya hecha, pero no la escalera,
+que va antes: la lista de situaciones puntuadas de 0 a 100 y ordenadas de la más
+fácil a la más difícil. Sin escalera no hay exposición ordenada, y montarla es
+justo lo que un psicólogo manda hacer entre la primera y la segunda sesión.
+
+Tres detalles que importan: se ordena sola de menor a mayor (la escalera se sube
+por abajo), cada peldaño se marca «en marcha» o «superado», y **la página avisa
+cuando entre dos peldaños hay más de veinte puntos**, que es el error que más
+abandonos provoca. Escala 0-100 y no 0-10 a propósito: con diez puntos la gente
+amontona media lista en el 8 y luego no hay forma de ordenarla.
+
+**Plan de prevención de recaídas.** Esta la eché en falta yo mismo: en la guía
+del familiar con un trastorno mental grave escribí «haced juntos una lista de
+señales, escrita», y luego no había dónde escribirla. Seis apartados —señales de
+aviso, qué suele venir antes, lo que me funciona, lo que me hunde, a quién aviso
+y qué le pido, y lo acordado de antemano— y arriba del todo lo único que
+importa: **esto se rellena en un día bueno**, porque en mitad de una mala racha
+nadie está en condiciones de decidir a quién llamar.
+
+No es un registro diario: es un documento que se guarda, se vuelve a abrir con
+lo que había y se edita. Al imprimir sale una hoja limpia, sin formulario, para
+la nevera. **El 024 y el 112 salen siempre**, se escriba lo que se escriba
+arriba: quien rellena esa hoja puede estar en un mal momento y esos dos números
+no pueden depender de que se acuerde de ponerlos.
+
+El hub pasa a **once herramientas** en los mismos tres grupos, con la escalera
+justo antes del registro de exposición: primero se monta, luego se sube.
+
+## Cinco guías
+
+- **Duelo anticipado.** Estaba «acompañar en una enfermedad grave» y estaba
+  «cuando pierdes a alguien», pero no el tiempo de en medio, que es larguísimo.
+  Incluye el alivio y la culpa que trae detrás, que casi nadie se atreve a decir.
+- **Hablar de drogas y alcohol con tu hijo.** Con los dos errores que hunden esa
+  conversación: la charla solemne y exagerar, que te quita credibilidad también
+  para lo que sí es grave.
+- **Cuando el paro se hace largo.** Lo que más deteriora no es el dinero: es que
+  se cae la estructura del día. Y cambiar el marcador de «me han llamado» a
+  conductas, que es lo único que depende de ti.
+- **Miedo a los perros.** Faltaba, siendo de las fobias más frecuentes. Enlaza
+  directamente con la jerarquía nueva.
+- **Un divorcio o un juicio.** Estaba «separación con hijos» pero no el proceso,
+  que dura meses. Con la confusión que sale más cara: esperar que la sentencia
+  dé la razón moral.
+
+## Dos guías de compra
+
+**Cosas para preparar una oposición** y **viajar con ansiedad**. La segunda
+lleva un apartado que desactiva media guía y tenía que ir: casi todo lo que se
+vende para el miedo a volar sirve para **no enterarte** de que estás volando, y
+no enterarse es evitación, que es exactamente lo que mantiene el miedo.
+
+## Comprobado antes de entregar
+
+283 páginas, validador sin problemas, auditoría sin avisos. Las nueve páginas
+nuevas verificadas una a una en Chromium. Las dos herramientas, probadas de
+verdad: la jerarquía ordena sola (metí 85, 15, 45 y 30 y salieron 15→30→45→85),
+detecta el salto grande, marca superados y copia bien; el plan guarda, recupera
+lo escrito al recargar, mete el 024 y el 112 en lo que se copia, y al imprimir
+oculta el formulario y saca la hoja limpia. Cero errores de JavaScript.
+
+Un fallo mío corregido: la hoja de impresión del plan llevaba su propio `h1`, o
+sea que la página tenía dos. Lo pilló el validador.
+
+**De las 269 páginas del sitemap, 269 tienen enlace interno.**
+
+
+---
+
+# Arreglo: las herramientas no se podían encontrar
+
+Miguel abrió su registro A-B-C, pulsó la flecha de volver y acabó en las guías.
+Y luego no encontraba el diario de gratitud. Al mirarlo, el problema era bastante
+peor que la flecha:
+
+**A `herramientas.html` solo enlazaban las diez herramientas nuevas y
+`temas.html`.** La portada no. `tests.html` tampoco. Y `registro-abc.html` —que
+es la que mandas a tus pacientes y la que lleva más tiempo en la web— tampoco:
+su flecha iba a las guías. O sea que **quien entraba por el A-B-C no tenía
+ninguna forma de descubrir que existían otras diez.**
+
+El A-B-C es más antiguo que el resto y se quedó con la navegación de cuando era
+una herramienta suelta. Ahora es una de once y no se le había actualizado.
+
+Arreglado:
+
+- La flecha del A-B-C va a las herramientas, y su pie iguala al de las otras diez.
+- **La portada gana «🗒️ Herramientas» en el menú.** Es la cuarta entrada y hace
+  falta: es el único sitio de la web donde alguien se orienta. El menú queda en
+  Empieza aquí · Las guías · Herramientas · Mi consulta.
+- `tests.html` y `herramientas.html` se enlazan entre sí. Son hermanas —medirse
+  y registrarse— y no se conocían.
+
+Lo que **no** se ha tocado: el pie de las 277 páginas sigue con tres enlaces.
+Añadir un cuarto a todo el sitio es justo lo que se quitó hace dos días.
+
+Comprobado en navegador: desde el A-B-C la flecha lleva al hub, el hub lista las
+once, desde la portada se llega en un clic y las once páginas responden 200.
+
+**Un recordatorio importante:** nada de esto está en psicolinks.com todavía. En
+la web publicada solo existe el registro A-B-C; las otras diez herramientas, las
+guías nuevas y todo lo demás están únicamente en el ZIP. Si has mirado el sitio
+en vivo, por eso no encontrabas el diario de gratitud.
+
+
+---
+
+# Contacto, cuatro guías y una herramienta más
+
+## El correo de contacto
+
+Está en `contacto.html`, enlazado desde la línea legal del pie de las 283
+páginas: **© 2026 Psicolinks · Contacto · Aviso legal · Privacidad · Cookies**.
+No he tocado la línea de navegación, que sigue con tres.
+
+Tres decisiones que conviene que sepas:
+
+- **La dirección no está escrita entera en el código.** Va partida y la junta el
+  JavaScript al cargar. Un correo escrito tal cual en 283 pies es un imán para
+  los robots que rastrean direcciones. Quien tenga el JavaScript desactivado ve
+  «concienciaconductual arroba gmail.com» y una nota diciendo que junte las dos
+  partes: probado con el JavaScript apagado y se lee bien.
+- **No hay formulario, a propósito.** Un formulario necesita un servicio de
+  envío por detrás, y ese sería Resend, cuya clave sigue sin configurarse en
+  Netlify —lo mismo que tiene parada la newsletter—. Un formulario que no envía
+  es peor que no tenerlo: la persona escribe, pulsa enviar y cree que ha
+  llegado. Cuando pongas la clave, montarlo es media hora.
+- **Arriba del todo van el 024, el 112 y el 016**, antes que la dirección. Quien
+  llega a una web de psicología buscando ayuda no puede encontrarse primero un
+  correo que a lo mejor se lee en tres días.
+
+**Y una cosa que tienes que decidir tú:** tu `aviso-legal.html` ya lleva un
+correo de contacto, y **es otro distinto: `miqvalsagi@gmail.com`**. No lo he
+tocado porque es un documento legal y cambiar ahí la dirección es decisión tuya.
+Pero conviene que sean el mismo, o alguien que escriba a la del aviso legal
+puede no ser leído. Dime cuál quieres y lo unifico.
+
+## Cuatro guías
+
+- **Cuando tu pareja te controla.** Era el hueco más serio que quedaba: había
+  acoso laboral y no había nada sobre violencia psicológica en pareja. Lleva el
+  **016** dentro —gratuito, 24 horas, no deja rastro en la factura— y, lo
+  primero de todo, el aviso de cerrar la página y borrar el historial si alguien
+  puede mirar ese móvil.
+- **Tu hijo y la comida: cuándo preocuparse.** Tampoco había nada de conducta
+  alimentaria. Escrita **solo para el padre o la madre** y sin un solo dato que
+  pueda usarse mal: ni pesos, ni cifras, ni métodos. Lo que describe son cambios
+  de conducta observables desde fuera, y el mensaje central es que no se ve en
+  la báscula y que entrar por la comida es el error más repetido.
+- **Miedo a las alturas.** Había ocho fobias concretas y esta no. Empieza
+  deshaciendo la confusión con el vértigo, que manda a mucha gente al médico
+  equivocado durante años.
+- **Sentirte solo estando en pareja.** Distinto de «cuando te sientes solo» y de
+  «mi pareja no me habla», y no estaba.
+
+## Una herramienta más: antes y después de la sesión
+
+Ya son doce. Esta es la que un paciente usaría **cada semana**, que es la
+frecuencia más alta de todas: lo que quiere contar hoy, cómo ha ido la semana,
+lo que se lleva al salir y —la casilla que de verdad importa— **lo que va a
+probar hasta la próxima**, que es lo que más se olvida y donde ocurre el cambio.
+Lleva también «¿hiciste lo de la vez anterior?», con la nota de que un «no» es
+información buena y normalmente significa que el paso era demasiado grande.
+
+## Un fallo mío, pillado por mi propia comprobación
+
+Puse el enlace de contacto en el pie **antes** de generar las guías nuevas, así
+que las seis páginas creadas después nacieron sin él, y otras ocho tampoco lo
+tenían. La prueba de navegador contaba enlaces del pie y saltó. Arreglado en las
+catorce páginas **y en las ocho plantillas**, que era lo importante: si solo
+arreglas los ficheros, la próxima tanda vuelve a nacer sin el enlace.
+
+## Comprobado antes de entregar
+
+289 páginas, validador sin problemas, auditoría sin avisos. Las seis páginas
+nuevas verificadas una a una en Chromium. La página de contacto probada con y
+sin JavaScript. La herramienta de sesión, guardando. La guía de control,
+comprobado que lleva el 016 y el aviso del historial. Cero errores de
+JavaScript. **De las 275 páginas del sitemap, 275 tienen enlace interno.**
+
+
+---
+
+# El bloque de la consulta que se me coló en dos herramientas
+
+Miguel señaló, con captura, un bloque al final del registro A-B-C: «Y si quieres
+que lo miremos juntos… paso consulta en Conciencia Conductual». En una página a
+la que él manda a sus pacientes, eso sobra, y era justo lo que se había quedado
+en quitar.
+
+**Por qué mi propia comprobación no lo pilló**, que es lo importante: el script
+que reparte el bloque de la consulta busca `<div class="consulta-cta">` y
+`<div class="firma-consulta">`. Estas dos menciones no eran bloques: eran una
+frase dentro de un párrafo de cierre normal, escrita hace semanas. Así que el
+control decía «ninguna herramienta lleva nada de la consulta ✓» y era mentira.
+
+Arreglado en las dos páginas —`registro-abc.html` y `mis-resultados.html`, que
+tenía otra igual que nadie había visto— y, sobre todo, **en la comprobación**:
+ahora mira también el texto del cuerpo, no solo los dos `<div>` conocidos. Los
+datos estructurados sí conservan el enlace, que ahí es legítimo y no lo lee
+ningún visitante.
+
+Lo que queda en su lugar dice lo útil sin vender nada: «Llévatelo cuando vayas.
+Una semana de registro es la mejor primera sesión que existe… llévaselo a quien
+te atienda, sea quien sea».
+
+## Sobre la flecha y las herramientas que no aparecían
+
+Las dos cosas **ya estaban arregladas** en el ZIP anterior: la flecha del A-B-C
+lleva a las herramientas desde entonces y el hub lista las doce. Comprobado otra
+vez en navegador: la flecha va a `/herramientas.html`, y ahí están las doce,
+incluido el diario de gratitud. Si sigues viendo «← Todas las guías», estás
+mirando una copia anterior o la web publicada, donde nada de esto existe todavía.

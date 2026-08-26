@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro A-B-C de 7 días, gratis · Psicolinks</title>
-<meta name="description" content="La herramienta con la que empieza cualquier terapia conductual: apunta qué pasa antes, qué haces y qué pasa después. Se guarda solo en tu navegador.">
+<title>Plan de prevención de recaídas · Psicolinks</title>
+<meta name="description" content="Escribe en un día bueno tus señales de aviso, lo que te funciona y a quién avisar. Para tenerlo decidido antes, no en mitad de la mala racha.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Registro A-B-C de 7 días, gratis y sin registro">
-<meta property="og:description" content="Apunta qué pasa antes, qué haces y qué pasa después. En tres anotaciones empieza a verse el patrón. Todo se queda en tu navegador.">
-<meta property="og:url" content="https://psicolinks.com/registro-abc.html">
+<meta property="og:title" content="Plan de prevención de recaídas">
+<meta property="og:description" content="Tus señales de aviso, lo que te funciona y a quién avisar, escrito en un día bueno. Se guarda solo en tu navegador.">
+<meta property="og:url" content="https://psicolinks.com/plan-de-prevencion-de-recaidas.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/registro-abc.html">
+<link rel="canonical" href="https://psicolinks.com/plan-de-prevencion-de-recaidas.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,19 +148,35 @@
   .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
   .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
   .siguiente-paso a:hover{ text-decoration:underline; }
+
+  .campo{ margin:0 0 1.4rem; }
+  .campo label{ display:block; font-weight:600; font-size:1rem; margin:0 0 0.3rem; }
+  .campo .ayuda{ display:block; font-size:0.86rem; color:var(--ink-soft); line-height:1.55; margin:0 0 0.5rem; font-weight:400; }
+  .campo textarea{ width:100%; padding:0.7rem 0.85rem; border:1.5px solid var(--border); border-radius:9px; font-family:inherit; font-size:1rem; line-height:1.6; color:var(--ink); background:var(--surface); resize:vertical; }
+  .campo textarea:focus{ border-color:var(--accent); outline:none; }
+  .acciones-h{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.6rem 0 0; }
+  .btn-sec{ background:transparent; color:var(--ink); border:1.5px solid var(--border); }
+  .guardado{ font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-soft); margin:0.9rem 0 0; min-height:1.2em; }
+  .telefonos{ background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; padding:1.05rem 1.2rem; margin:1.8rem 0 0; }
+  .telefonos p{ margin:0; font-size:0.95rem; line-height:1.7; }
+  .telefonos strong{ font-size:1.05rem; }
+  .copiadero{ position:absolute; left:-9999px; }
+  .hoja{ display:none; }
+  @media print {
+    .site-header, .site-footer, form, .acciones-h, .nota-wa, .envio-ops, .back-link, .idea, .privacidad,
+    .siguiente-paso, .stamp, .guardado, [class*=cookie]{ display:none !important; }
+    .hoja{ display:block; }
+    .hoja .hoja-tit{ font-family:var(--font-display); font-size:1.5rem; font-weight:600; margin:0 0 0.2rem; }
+    .hoja h2{ font-family:var(--font-display); font-size:1.05rem; margin:1.1rem 0 0.3rem; }
+    .hoja pre{ font-family:inherit; font-size:0.95rem; line-height:1.6; white-space:pre-wrap; margin:0; }
+    .telefonos{ break-inside:avoid; }
+    body{ background:#fff; }
+    main{ max-width:100%; }
+  }
   .descarga{ margin:1.6rem 0 0; padding:1rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
   .descarga p{ margin:0 0 0.75rem; font-size:0.92rem; color:var(--ink-soft); }
   .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; border:0; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; cursor:pointer; font-family:inherit; }
   .btn-pdf:hover{ background:#3a2e63; }
-  @media print {
-    .site-header, .site-footer, .nota-wa, .envio-ops, .back-link, .descarga, .firma-consulta,
-    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
-    .buscador, .migas{ display:none !important; }
-    body{ background:#fff; color:#000; }
-    main{ max-width:100%; }
-    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
-    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
-  }
   .nota-wa{ font-size:0.82rem; line-height:1.55; color:var(--ink-soft); margin:0.6rem 0 0; }
   .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
   .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
@@ -178,84 +194,92 @@
   .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
   @media print{ .menu-cuadros{ display:none; } }
 </style>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Tu registro de siete días", "item": "https://psicolinks.com/registro-abc.html"}]}
-</script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
 <main>
   <a href="/herramientas.html" class="back-link">← Volver a herramientas</a>
-  <div class="stamp">🗒️ Herramienta gratuita</div>
-  <h1>Tu registro de siete días</h1>
+  <div class="stamp">🧭 Herramienta gratuita</div>
+  <h1>Plan de prevención de recaídas</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">La herramienta con la que empieza casi cualquier terapia conductual, aquí y gratis. Apunta durante una semana lo que pasa <strong>antes</strong>, lo que <strong>haces</strong> y lo que pasa <strong>después</strong>. En tres o cuatro anotaciones empieza a verse el patrón.</p>
+  <p class="lead">Tus señales de aviso, lo que te funciona y a quién avisar, decidido de antemano. Se rellena una vez, se revisa de vez en cuando y se imprime para tenerlo a la vista.</p>
 
-  <div class="idea"><strong>Por qué esto y no un diario normal.</strong> Un diario cuenta cómo te sentiste; un registro A-B-C cuenta <em>qué lo enciende y qué lo mantiene</em>. Y esa segunda parte —la consecuencia, lo que consigues o de lo que te libras justo después— es la que explica por qué algo se repite aunque te esté costando la vida. Es el instrumento básico del análisis de la conducta y se lleva usando desde hace décadas.</div>
+  <div class="idea"><strong>Esto se escribe en un día bueno. Es lo único importante de esta página.</strong>
+  En mitad de una mala racha nadie está en condiciones de reconocer que va a peor, ni de decidir a quién
+  llamar, ni de acordarse de qué le funcionó la última vez. Justamente por eso se hace antes, cuando uno
+  está bien y piensa con claridad: para no tener que decidir nada cuando llegue, solo seguir el papel.
+  Si lo estás rellenando hoy porque estás mal, rellena lo que puedas y vuelve otro día a completarlo.</div>
 
 
-  <div class="idea"><strong>Todo se queda en tu navegador.</strong> Lo que escribas aquí <strong>no se envía a ningún sitio</strong>: se guarda solo en este dispositivo. Ni yo ni nadie puede verlo. Puedes borrarlo entero cuando quieras, y puedes copiarlo con un botón para llevárselo a tu psicólogo.</div>
+  <div class="idea"><strong>Y se hace concreto.</strong> «Estar raro» no sirve de señal de aviso porque
+  nadie sabe cuándo empieza. «Dejo de contestar mensajes» o «duermo menos de seis horas dos noches
+  seguidas» sí: se ven, se pueden comprobar y otra persona puede darse cuenta. Cuanto más concreto sea
+  lo que escribas, más pronto se enciende la alarma, y adelantarse unos días suele ser la diferencia
+  entre un ajuste y algo más gordo.</div>
 
-  <h2 class="bloque-tit">Añadir una anotación</h2>
+  <div class="idea"><strong>Nada de esto sale de tu navegador.</strong> Lo que escribas se guarda
+  <strong>solo en este dispositivo</strong>: no se envía a ningún servidor, no hay cuenta y no hay
+  correo. Ni yo ni nadie puede verlo. Lo borras cuando quieras, y tienes botones para copiarlo o
+  imprimirlo.</div>
+
   <form id="reg">
-      <div class="campo">
-        <label for="f-fecha">Fecha</label>
-        <input type="date" id="f-fecha" required>
-      </div>
+    <div class="campo">
+      <label for="f-senales">Mis señales de aviso</label>
+      <span class="ayuda">Las cosas concretas que aparecen cuando empiezo a ir a peor, en orden: primero las de dentro (dormir menos, aislarme, dejar de contestar) y luego las que ven los demás. Cuanto más concretas, más pronto se ven. «Estar raro» no sirve; «dejo de bajar la basura» sí.</span>
+      <textarea id="f-senales" rows="5" placeholder="Duermo menos de seis horas dos noches seguidas
+Dejo de contestar mensajes
+Empiezo a saltarme la medicación"></textarea>
+    </div>
+    <div class="campo">
+      <label for="f-disparadores">Lo que suele venir antes</label>
+      <span class="ayuda">Situaciones que en otras ocasiones han precedido a una mala racha: fechas señaladas, discusiones, cambios de trabajo, beber, dejar la rutina.</span>
+      <textarea id="f-disparadores" rows="4" placeholder="La semana del aniversario
+Discusiones fuertes en casa
+Tres o cuatro días seguidos durmiendo mal"></textarea>
+    </div>
+    <div class="campo">
+      <label for="f-funciona">Lo que a mí me funciona</label>
+      <span class="ayuda">Lo que ya has comprobado que te ayuda cuando empiezas a notarlo. No lo que debería ayudar: lo que te ha ayudado a ti otras veces.</span>
+      <textarea id="f-funciona" rows="4" placeholder="Salir a andar por la mañana aunque no quiera
+Llamar a mi hermana
+Volver al horario de dormir"></textarea>
+    </div>
+    <div class="campo">
+      <label for="f-no_funciona">Lo que me hunde más</label>
+      <span class="ayuda">Lo que sabes que empeora las cosas aunque en el momento apetezca. Verlo escrito, con tu letra y desde un día bueno, pesa bastante más que oírlo de alguien.</span>
+      <textarea id="f-no_funciona" rows="3" placeholder="Quedarme en la cama todo el día
+Beber
+Mirar el móvil hasta las tres"></textarea>
+    </div>
+    <div class="campo">
+      <label for="f-avisar">A quién aviso, y qué le pido</label>
+      <span class="ayuda">Nombre y teléfono, y qué quieres que haga esa persona. Lo segundo es lo que casi nadie deja escrito y lo que evita la mitad de los malentendidos.</span>
+      <textarea id="f-avisar" rows="4" placeholder="Mi hermana Ana · 6XX XXX XXX · que venga a casa aunque le diga que no hace falta
+Mi psicóloga · 9XX XXX XXX · pedir cita antes de la que tengo"></textarea>
+    </div>
+    <div class="campo">
+      <label for="f-acuerdo">Lo que acordamos de antemano</label>
+      <span class="ayuda">Si estás haciendo esto con alguien —tu pareja, tu familia, tu terapeuta—, aquí va lo que habéis pactado que se hace si aparecen las señales, incluso si en ese momento tú dices que no.</span>
+      <textarea id="f-acuerdo" rows="3" placeholder="Si aparecen dos señales de la lista, Ana llama a mi psicóloga aunque yo diga que estoy bien"></textarea>
+    </div>
 
-      <div class="campo">
-        <label for="f-a">A · Antecedente: ¿qué había justo antes?</label>
-        <p class="ayuda">Dónde estabas, con quién, qué hora era, cómo estabas de cansancio o de ánimo, qué pensamiento apareció. Cuanto más concreto, mejor.</p>
-        <textarea id="f-a" required placeholder="Ej.: domingo por la tarde, solo en casa, cansado, pensando en la semana"></textarea>
-      </div>
-
-      <div class="campo">
-        <label for="f-b">B · Conducta: ¿qué hiciste exactamente?</label>
-        <p class="ayuda">Cuéntalo como lo grabaría una cámara. Nada de etiquetas («me dio ansiedad») ni interpretaciones: qué hiciste tú.</p>
-        <textarea id="f-b" required placeholder="Ej.: cancelé el plan y me quedé dos horas mirando el móvil"></textarea>
-      </div>
-
-      <div class="campo">
-        <label for="f-c">C · Consecuencia: ¿qué pasó justo después?</label>
-        <p class="ayuda">Qué conseguiste o de qué te libraste en ese momento, y qué costó después. Esta es la casilla que explica por qué se repite.</p>
-        <textarea id="f-c" required placeholder="Ej.: me quité el agobio de golpe; luego me sentí mal por no haber ido"></textarea>
-      </div>
-
-      <div class="campo">
-        <label for="f-m">Malestar en ese momento (0 a 10)</label>
-        <div class="rango">
-          <input type="range" id="f-m" min="0" max="10" step="1" value="5">
-          <output id="f-m-val">5</output>
-        </div>
-      </div>
-      <p style="margin:1.2rem 0 0;"><button type="submit" class="btn">Guardar la anotación</button></p>
+    <p class="sin-responder" id="aviso-vacio" style="display:none;"></p>
+    <button type="submit" class="btn" id="btn-guardar">Guardar mi plan</button>
+    <p class="guardado" id="guardado"></p>
   </form>
 
-  <section id="panel" style="display:none">
-    <h2 class="bloque-tit">Lo que llevas</h2>
-    <div class="resumen">
-      <div class="dato"><p class="cifra-p" id="d-total">0</p><p class="et">Anotaciones</p></div>
-      <div class="dato"><p class="cifra-p" id="d-dias">0</p><p class="et">Días distintos</p></div>
-      <div class="dato"><p class="cifra-p" id="d-media">0</p><p class="et">Malestar medio</p></div>
-    </div>
+  <textarea id="copiadero" class="copiadero" aria-hidden="true"></textarea>
 
-    <div class="grafico" id="grafico">
-      <p class="g-tit">Malestar en tus últimas anotaciones</p>
-      <div class="barras" id="barras" role="img" aria-label="Malestar de las últimas anotaciones, de 0 a 10"></div>
-      <p class="barras-pie"><span>más antiguas</span><span>0 a 10</span><span>más recientes</span></p>
-    </div>
-
-    <div id="lista"></div>
-
-    <p style="margin:1.4rem 0 0;display:flex;gap:0.6rem;flex-wrap:wrap;">
-      <button type="button" class="btn sec" id="copiar">Copiar todo para llevármelo</button>
+  <div class="acciones-h" id="acciones">
+    <button type="button" class="btn btn-sec" id="copiar">Copiar para llevármelo</button>
     <button type="button" class="btn btn-sec" id="enviar" aria-expanded="false">Enviar</button>
-      <button type="button" class="btn sec" id="borrar">Borrar mi registro</button>
-    </p>
-    <p id="copiado" style="display:none">Copiado. Ya puedes pegarlo en un correo, en una nota o imprimirlo.</p>
-  </section>
-
-  <div class="idea" style="margin-top:2rem;"><strong>Cómo leerlo al cabo de una semana.</strong> Busca lo que se repite en la columna A: ¿siempre a la misma hora?, ¿siempre con la misma persona?, ¿siempre cuando estás cansado? Y después mira la columna C: si en casi todas las anotaciones te estás quitando algo desagradable de encima —agobio, aburrimiento, una conversación—, ya sabes qué está sosteniendo la conducta. Eso es exactamente lo que se trabaja después.</div>
+    <button type="button" class="btn btn-sec" id="imprimir">Imprimir o guardar en PDF</button>
+    <button type="button" class="btn btn-sec" id="borrar">Borrar mi plan</button>
+  </div>
   <div class="envio-ops" id="envio-ops" hidden>
     <span class="envio-eti">Elige por dónde:</span>
     <a id="env-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
@@ -264,9 +288,20 @@
   </div>
   <p class="nota-wa" id="nota-wa"><strong>Para mandárselo a tu psicólogo o psicóloga.</strong> «Enviar» abre el menú de compartir de tu móvil o de tu ordenador y eliges tú por dónde. Copiar e imprimir no sacan nada de este dispositivo; enviarlo sí lo envía.</p>
 
-  <div class="cierre"><strong>Llévatelo cuando vayas.</strong> Una semana de registro es la mejor primera sesión que existe: con esto delante, el patrón se ve en diez minutos en vez de en tres sesiones. Cópialo con el botón de arriba o imprímelo, y llévaselo a quien te atienda, sea quien sea.</div>
+  <div class="hoja" id="hoja"></div>
 
-<p style="text-align:center;font-size:0.92rem;margin:1.6rem 0 0;">¿Buscas otro? <a href="/tests.html">Todos los tests y herramientas →</a></p>
+  <div class="telefonos">
+    <p><strong>Si hay riesgo ahora mismo, esto no espera.</strong><br>
+    <strong>024</strong> — atención a la conducta suicida. Gratis, las 24 horas, todos los días.<br>
+    <strong>112</strong> — urgencias.<br>
+    Estos dos números salen siempre al imprimir y al copiar, escribas lo que escribas arriba.</p>
+  </div>
+
+  <div class="privacidad" style="margin-top:1.6rem;"><strong>Un aviso práctico.</strong> Como esto vive
+  en tu navegador, si borras los datos de navegación o cambias de dispositivo, se pierde. Este papel es
+  de los que conviene tener también impreso y en un sitio fijo de casa: en la nevera, en la cartera o
+  donde lo vayáis a mirar.</div>
+
 
   <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
     <p class="mc-eti">Seguir por aquí</p>
@@ -295,128 +330,123 @@
   </nav>
 </main>
 
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Plan de prevención de recaídas", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "inLanguage": "es-ES", "url": "https://psicolinks.com/plan-de-prevencion-de-recaidas.html", "description": "Escribe en un momento bueno tus señales de aviso, lo que te funciona y a quién avisar. Se guarda solo en tu navegador y se puede imprimir.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://psicolinks.com/herramientas.html"}, {"@type": "ListItem", "position": 3, "name": "Plan de prevención de recaídas", "item": "https://psicolinks.com/plan-de-prevencion-de-recaidas.html"}]}</script>
 <script>
 (function(){
-  var CLAVE = 'pl_registro_abc';
-  var form = document.getElementById('reg');
-  var rango = document.getElementById('f-m');
-  var salida = document.getElementById('f-m-val');
-
-  function hoy(){
-    var d = new Date();
-    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-  }
-  document.getElementById('f-fecha').value = hoy();
-  rango.addEventListener('input', function(){ salida.textContent = rango.value; });
+  var CLAVE = 'pl_plan_recaidas';
+  var IDS = ["senales", "disparadores", "funciona", "no_funciona", "avisar", "acuerdo"];
+  var ETQ = {"senales": "Mis señales de aviso", "disparadores": "Lo que suele venir antes", "funciona": "Lo que a mí me funciona", "no_funciona": "Lo que me hunde más", "avisar": "A quién aviso, y qué le pido", "acuerdo": "Lo que acordamos de antemano"};
 
   function leer(){
-    try { var d = JSON.parse(localStorage.getItem(CLAVE) || '[]'); return Array.isArray(d) ? d : []; }
-    catch(e) { return []; }
+    try { return JSON.parse(localStorage.getItem(CLAVE) || '{}') || {}; } catch(e){ return {}; }
   }
-  function guardar(l){
-    try { localStorage.setItem(CLAVE, JSON.stringify(l.slice(0, 200))); } catch(e) {}
-  }
-  function esc(s){
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
+  function esc(s){ return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-  function pinta(){
-    var l = leer();
-    var panel = document.getElementById('panel');
-    if (!l.length) { panel.style.display = 'none'; return; }
-    panel.style.display = '';
+  // Se rellena con lo guardado al abrir: esto es un documento, no una bitácora.
+  var datos = leer();
+  IDS.forEach(function(id){
+    var el = document.getElementById('f-' + id);
+    if (datos[id]) el.value = datos[id];
+  });
+  if (datos._f) document.getElementById('guardado').textContent = 'Guardado por última vez el ' + datos._f;
 
-    var dias = {};
-    var suma = 0;
-    l.forEach(function(r){ dias[r.fecha] = 1; suma += r.m; });
-    document.getElementById('d-total').textContent = l.length;
-    document.getElementById('d-dias').textContent = Object.keys(dias).length;
-    document.getElementById('d-media').textContent = (suma / l.length).toFixed(1);
-
-    // Barras: las 14 últimas, de la más antigua a la más reciente
-    var ult = l.slice(0, 14).reverse();
-    document.getElementById('barras').innerHTML = ult.map(function(r){
-      var alto = Math.max(3, Math.round(r.m / 10 * 90));
-      return '<i style="height:' + alto + 'px" title="' + esc(r.fecha) + ': ' + r.m + ' de 10"></i>';
-    }).join('');
-    document.getElementById('grafico').style.display = ult.length > 1 ? '' : 'none';
-
-    document.getElementById('lista').innerHTML = l.map(function(r, i){
-      return '<div class="entrada">'
-        + '<div class="cab"><span class="fecha">' + esc(r.fecha) + '</span>'
-        + '<span class="malestar">' + r.m + ' / 10</span></div>'
-        + '<dl>'
-        + '<dt>A</dt><dd>' + esc(r.a) + '</dd>'
-        + '<dt>B</dt><dd>' + esc(r.b) + '</dd>'
-        + '<dt>C</dt><dd>' + esc(r.c) + '</dd>'
-        + '</dl>'
-        + '<button type="button" class="quitar" data-i="' + i + '">Borrar esta anotación</button>'
-        + '</div>';
-    }).join('');
+  function recoger(){
+    var d = {};
+    IDS.forEach(function(id){ d[id] = document.getElementById('f-' + id).value; });
+    return d;
   }
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var l = leer();
-    l.unshift({
-      fecha: document.getElementById('f-fecha').value || hoy(),
-      a: document.getElementById('f-a').value.trim(),
-      b: document.getElementById('f-b').value.trim(),
-      c: document.getElementById('f-c').value.trim(),
-      m: parseInt(rango.value, 10)
-    });
-    guardar(l);
-    document.getElementById('f-a').value = '';
-    document.getElementById('f-b').value = '';
-    document.getElementById('f-c').value = '';
-    rango.value = 5; salida.textContent = '5';
-    document.getElementById('f-fecha').value = hoy();
-    pinta();
-    document.getElementById('panel').scrollIntoView({ behavior:'smooth', block:'start' });
+  function guardar(){
+    var d = recoger();
+    var hay = IDS.some(function(id){ return d[id].trim() !== ''; });
+    var aviso = document.getElementById('aviso-vacio');
+    if (!hay) {
+      aviso.textContent = 'Escribe algo antes de guardar, aunque sea una sola señal.';
+      aviso.style.display = 'block';
+      return false;
+    }
+    aviso.style.display = 'none';
+    var hoy = new Date();
+    d._f = new Date(hoy - hoy.getTimezoneOffset()*60000).toISOString().slice(0,10);
+    try { localStorage.setItem(CLAVE, JSON.stringify(d)); }
+    catch(e){ alert('No se ha podido guardar. En modo incógnito el navegador no deja guardar nada.'); return false; }
+    document.getElementById('guardado').textContent = 'Guardado por última vez el ' + d._f;
+    pintarHoja();
+    return true;
+  }
+
+  document.getElementById('reg').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (guardar()) {
+      var b = document.getElementById('btn-guardar');
+      b.textContent = 'Guardado ✓';
+      setTimeout(function(){ b.textContent = 'Guardar mi plan'; }, 2200);
+    }
   });
 
-  document.getElementById('lista').addEventListener('click', function(e){
-    var b = e.target.closest('.quitar');
-    if (!b) return;
-    var l = leer();
-    l.splice(parseInt(b.getAttribute('data-i'), 10), 1);
-    guardar(l);
-    pinta();
-  });
-
-  document.getElementById('borrar').addEventListener('click', function(){
-    try { localStorage.removeItem(CLAVE); } catch(e) {}
-    pinta();
-  });
+  // La hoja que sale al imprimir: solo lo escrito, sin formulario.
+  function pintarHoja(){
+    var d = leer();
+    var partes = IDS.map(function(id){
+      if (!d[id] || !d[id].trim()) return '';
+      return '<h2>' + esc(ETQ[id]) + '</h2><pre>' + esc(d[id].trim()) + '</pre>';
+    }).filter(Boolean);
+    document.getElementById('hoja').innerHTML =
+      '<p class="hoja-tit">Mi plan</p>' + (d._f ? '<p style="font-size:0.85rem;">Escrito el ' + esc(d._f) + '</p>' : '')
+      + partes.join('');
+  }
 
   function comoTexto(){
-    var l = leer();
-    return 'REGISTRO A-B-C · Psicolinks\n\n' + l.map(function(r){
-      return r.fecha + '  (malestar ' + r.m + '/10)\n'
-        + 'A (antes): ' + r.a + '\n'
-        + 'B (qué hice): ' + r.b + '\n'
-        + 'C (después): ' + r.c + '\n';
-    }).join('\n');
+    var d = leer();
+    return 'Mi plan de prevención de recaídas' + (d._f ? ' — ' + d._f : '')
+      + '\n(Psicolinks · psicolinks.com)\n\n'
+      + IDS.map(function(id){
+          if (!d[id] || !d[id].trim()) return null;
+          return ETQ[id].toUpperCase() + '\n' + d[id].trim();
+        }).filter(Boolean).join('\n\n')
+      + '\n\nSI HAY RIESGO AHORA MISMO\n024 (atención a la conducta suicida, 24 h, gratis)\n112 (urgencias)';
   }
 
   document.getElementById('copiar').addEventListener('click', function(){
-    var txt = comoTexto();
-    var aviso = document.getElementById('copiado');
-    function ok(){ aviso.style.display = ''; setTimeout(function(){ aviso.style.display='none'; }, 4000); }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(txt).then(ok, function(){ manual(txt, ok); });
-    } else { manual(txt, ok); }
+    var t = comoTexto(), b = this;
+    function ok(){ b.textContent = 'Copiado ✓'; setTimeout(function(){ b.textContent = 'Copiar para llevármelo'; }, 2200); }
+    function manual(){
+      var a = document.getElementById('copiadero');
+      a.value = t; a.classList.remove('copiadero');
+      a.style.cssText = 'width:100%;height:9rem;margin-top:0.7rem;';
+      a.select();
+      try { document.execCommand('copy'); ok(); } catch(e){ b.textContent = 'Selecciónalo y cópialo tú'; }
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(ok, manual);
+    else manual();
   });
 
-  function manual(txt, ok){
-    var ta = document.createElement('textarea');
-    ta.value = txt; ta.style.position = 'fixed'; ta.style.left = '-9999px';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); ok(); } catch(e) {}
-    document.body.removeChild(ta);
-  }
+  document.getElementById('imprimir').addEventListener('click', function(){
+    guardar();          // que no se imprima algo distinto de lo que hay en pantalla
+    window.print();
+  });
 
-  pinta();
+  document.getElementById('borrar').addEventListener('click', function(){
+    if (this.dataset.seguro) {
+      localStorage.removeItem(CLAVE);
+      IDS.forEach(function(id){ document.getElementById('f-' + id).value = ''; });
+      document.getElementById('guardado').textContent = '';
+      pintarHoja();
+      this.textContent = 'Borrar mi plan'; delete this.dataset.seguro;
+    } else {
+      this.dataset.seguro = '1'; this.textContent = 'Pulsa otra vez para borrarlo de verdad';
+    }
+  });
+
+  pintarHoja();
 
   function enviarRegistro(t, b){
     // El menu de compartir del sistema, que es lo que la gente conoce del movil.
@@ -447,12 +477,7 @@
   });
 })();
 </script>
-<footer class="site-footer">
-  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
-</footer>
-
+<script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
   window.dataLayer = window.dataLayer || [];
@@ -460,6 +485,5 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
-<script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

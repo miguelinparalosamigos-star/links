@@ -36,9 +36,9 @@
     titulo: '📚 Llévate el pack de inicio, gratis',
     texto: 'Cinco guías en PDF para tener a mano: calmar la ansiedad, dormir mejor, ' +
            'cuando no tienes ganas de nada, dejar de darle vueltas y crear hábitos que duren. ' +
-           'Te las doy en cuanto dejes el correo —aparecen aquí mismo, al instante— y a partir ' +
-           'de ahí te escribo <strong>los domingos</strong> con lo que haya publicado esa ' +
-           'semana. Un correo. Te borras en un clic.',
+           'Las tienes en cuanto dejes el correo —aparecen aquí mismo, al instante, y también ' +
+           'te llegan por correo para que no dependas de esta pestaña—. ' +
+           '<strong>Y ya está: no hay boletín ni correos cada semana.</strong>',
     boton: 'Darme el pack'
   };
 
@@ -93,7 +93,7 @@
           '<input type="email" name="email" required autocomplete="email" placeholder="tu@correo.com" aria-label="Tu correo electrónico">' +
           '<button type="submit">' + TEXTOS.boton + '</button>' +
         '</div>' +
-        '<label class="pl-consent"><input type="checkbox" name="consentimiento" required> Acepto recibir los avisos de Psicolinks y he leído la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Me puedo borrar cuando quiera.</label>' +
+        '<label class="pl-consent"><input type="checkbox" name="consentimiento" required> Acepto que me mandes el pack por correo y he leído la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Me puedo borrar cuando quiera.</label>' +
         '<div class="pl-hp"><label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>' +
         '<p class="pl-msg" role="status" aria-live="polite" hidden></p>' +
       '</form>';

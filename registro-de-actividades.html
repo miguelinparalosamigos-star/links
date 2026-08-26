@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro A-B-C de 7 días, gratis · Psicolinks</title>
-<meta name="description" content="La herramienta con la que empieza cualquier terapia conductual: apunta qué pasa antes, qué haces y qué pasa después. Se guarda solo en tu navegador.">
+<title>Registro de actividades y ánimo (activación) · Psicolinks</title>
+<meta name="description" content="Apunta qué hiciste y cómo estabas antes y después. Sirve para ver qué te sube el ánimo de verdad, en vez de fiarte de lo que recuerdas.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Registro A-B-C de 7 días, gratis y sin registro">
-<meta property="og:description" content="Apunta qué pasa antes, qué haces y qué pasa después. En tres anotaciones empieza a verse el patrón. Todo se queda en tu navegador.">
-<meta property="og:url" content="https://psicolinks.com/registro-abc.html">
+<meta property="og:title" content="Registro de actividades y ánimo">
+<meta property="og:description" content="Apunta qué hiciste y cómo estabas antes y después. Sirve para ver qué te sube el ánimo de verdad, en vez de fiarte de lo que recuerdas.">
+<meta property="og:url" content="https://psicolinks.com/registro-de-actividades.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/registro-abc.html">
+<link rel="canonical" href="https://psicolinks.com/registro-de-actividades.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,24 +177,71 @@
   .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
   .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
   @media print{ .menu-cuadros{ display:none; } }
+
+  .campo{ margin:0 0 1.15rem; }
+  .campo label{ display:block; font-weight:600; font-size:0.95rem; margin:0 0 0.3rem; }
+  .campo .ayuda{ display:block; font-size:0.85rem; color:var(--ink-soft); line-height:1.5; margin:0 0 0.45rem; font-weight:400; }
+  .campo input[type=text], .campo input[type=time], .campo input[type=date],
+  .campo input[type=number], .campo select, .campo textarea{
+    width:100%; padding:0.65rem 0.8rem; border:1.5px solid var(--border); border-radius:9px;
+    font-family:inherit; font-size:1rem; color:var(--ink); background:var(--surface); }
+  .campo textarea{ min-height:5.5rem; line-height:1.6; resize:vertical; }
+  .campo input:focus, .campo select:focus, .campo textarea:focus{ border-color:var(--accent); outline:none; }
+  .campo .num-fila{ display:flex; align-items:center; gap:0.6rem; }
+  .campo .num-fila input{ max-width:7rem; }
+  .campo .num-suf{ font-size:0.92rem; color:var(--ink-soft); }
+  .rango-fila{ display:flex; align-items:center; gap:0.8rem; }
+  .rango-fila input[type=range]{ flex:1; accent-color:var(--accent); }
+  .rango-val{ font-family:var(--font-mono); font-size:1.05rem; font-weight:700; min-width:2.2rem; text-align:right; color:var(--accent); }
+  .rango-pie{ display:flex; justify-content:space-between; font-size:0.78rem; color:var(--ink-soft); margin:0.15rem 0 0; }
+  .acciones-h{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.4rem 0 0; }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .envio-largo{ font-size:0.85rem; color:var(--ink-soft); }
+  .nota-wa{ font-size:0.82rem; line-height:1.55; color:var(--ink-soft); margin:0.6rem 0 0; }
+  .btn-sec{ background:transparent; color:var(--ink); border:1.5px solid var(--border); }
+  .entrada{ border:1px solid var(--border); border-radius:11px; padding:0.9rem 1.05rem; margin:0 0 0.75rem; background:var(--surface); }
+  .entrada .fecha{ font-family:var(--font-mono); font-size:0.74rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--stamp); }
+  .entrada .resumen{ font-weight:600; font-size:0.98rem; margin:0.2rem 0 0.4rem; line-height:1.45; }
+  .entrada dl{ margin:0; font-size:0.9rem; line-height:1.6; }
+  .entrada dt{ color:var(--ink-soft); font-size:0.82rem; margin:0.45rem 0 0; }
+  .entrada dd{ margin:0; white-space:pre-wrap; }
+  .entrada .quitar{ background:none; border:0; color:var(--ink-soft); font-size:0.82rem; cursor:pointer; padding:0.3rem 0; text-decoration:underline; }
+  .vacio-h{ color:var(--ink-soft); font-size:0.95rem; line-height:1.6; padding:1.1rem 0; }
+  .racha{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); margin:0 0 0.9rem; }
+  .grafico-h{ display:flex; align-items:flex-end; gap:3px; height:110px; margin:0.6rem 0 0.2rem; }
+  .grafico-h span{ flex:1; background:var(--accent); border-radius:3px 3px 0 0; min-height:3px; }
+  .grafico-pie-h{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-soft); margin:0 0 1.3rem; }
+  .copiadero{ position:absolute; left:-9999px; }
+  @media print {
+    .site-header, .site-footer, form, .acciones-h, .nota-wa, .envio-ops, .back-link, .idea, .privacidad,
+    .siguiente-paso, .quitar, .stamp, #cookie-banner, [class*=cookie]{ display:none !important; }
+    body{ background:#fff; }
+    .entrada{ break-inside:avoid; border-color:#bbb; }
+    main{ max-width:100%; }
+  }
 </style>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Tu registro de siete días", "item": "https://psicolinks.com/registro-abc.html"}]}
-</script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
 <main>
   <a href="/herramientas.html" class="back-link">← Volver a herramientas</a>
-  <div class="stamp">🗒️ Herramienta gratuita</div>
-  <h1>Tu registro de siete días</h1>
+  <div class="stamp">📅 Herramienta gratuita</div>
+  <h1>Registro de actividades y ánimo</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">La herramienta con la que empieza casi cualquier terapia conductual, aquí y gratis. Apunta durante una semana lo que pasa <strong>antes</strong>, lo que <strong>haces</strong> y lo que pasa <strong>después</strong>. En tres o cuatro anotaciones empieza a verse el patrón.</p>
+  <p class="lead">Apunta qué haces y cómo estás antes y después. Es la herramienta central de la activación conductual.</p>
 
-  <div class="idea"><strong>Por qué esto y no un diario normal.</strong> Un diario cuenta cómo te sentiste; un registro A-B-C cuenta <em>qué lo enciende y qué lo mantiene</em>. Y esa segunda parte —la consecuencia, lo que consigues o de lo que te libras justo después— es la que explica por qué algo se repite aunque te esté costando la vida. Es el instrumento básico del análisis de la conducta y se lleva usando desde hace décadas.</div>
+  <div class="idea"><strong>Por qué esto va antes que las ganas.</strong> Cuando uno está bajo, la cabeza dice «cuando tenga ganas, lo haré», y las ganas no vuelven solas: vuelven <em>después</em> de hacer cosas, no antes. Este registro sirve para comprobarlo con tus propios datos. La casilla que más informa no es qué hiciste: es la diferencia entre el ánimo de antes y el de después, porque casi siempre es mejor de lo que uno esperaba, y verlo escrito pesa más que oírlo.</div>
 
-
-  <div class="idea"><strong>Todo se queda en tu navegador.</strong> Lo que escribas aquí <strong>no se envía a ningún sitio</strong>: se guarda solo en este dispositivo. Ni yo ni nadie puede verlo. Puedes borrarlo entero cuando quieras, y puedes copiarlo con un botón para llevárselo a tu psicólogo.</div>
+  <div class="idea"><strong>Nada de esto sale de tu navegador.</strong> Lo que escribas se guarda
+  <strong>solo en este dispositivo</strong>: no se envía a ningún servidor, no hay cuenta y no hay correo.
+  Ni yo ni nadie puede verlo. Lo borras entero cuando quieras, y tienes un botón para copiarlo o
+  imprimirlo si quieres llevártelo a tu psicólogo.</div>
 
   <h2 class="bloque-tit">Añadir una anotación</h2>
   <form id="reg">
@@ -202,71 +249,72 @@
         <label for="f-fecha">Fecha</label>
         <input type="date" id="f-fecha" required>
       </div>
-
       <div class="campo">
-        <label for="f-a">A · Antecedente: ¿qué había justo antes?</label>
-        <p class="ayuda">Dónde estabas, con quién, qué hora era, cómo estabas de cansancio o de ánimo, qué pensamiento apareció. Cuanto más concreto, mejor.</p>
-        <textarea id="f-a" required placeholder="Ej.: domingo por la tarde, solo en casa, cansado, pensando en la semana"></textarea>
+        <label for="f-que">¿Qué has hecho?</label>
+        <span class="ayuda">Vale cualquier cosa, por pequeña que sea.</span>
+        <input type="text" id="f-que" placeholder="Bajar a comprar el pan" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="f-tipo">¿De qué tipo?</label>
+        
+        <select id="f-tipo"><option value="">Elige…</option><option>Algo que me gusta</option><option>Algo que tenía que hacer</option><option>Estar con alguien</option><option>Moverme</option><option>Otra cosa</option></select>
+      </div>
+      <div class="campo">
+        <label for="f-antes">Ánimo justo antes</label>
+        
+        <div class="rango-fila"><input type="range" id="f-antes" min="0" max="10" step="1" value="5"><span class="rango-val" id="v-antes">5</span></div><p class="rango-pie"><span>0 · muy bajo</span><span>10 · muy bien</span></p>
+      </div>
+      <div class="campo">
+        <label for="f-despues">Ánimo justo después</label>
+        
+        <div class="rango-fila"><input type="range" id="f-despues" min="0" max="10" step="1" value="5"><span class="rango-val" id="v-despues">5</span></div><p class="rango-pie"><span>0 · muy bajo</span><span>10 · muy bien</span></p>
+      </div>
+      <div class="campo">
+        <label for="f-esperaba">¿Fue como esperabas?</label>
+        <span class="ayuda">Esta casilla es la interesante: la mayoría de las veces sale «mejor de lo que pensaba», y eso es justo lo que la cabeza no recuerda al día siguiente.</span>
+        <select id="f-esperaba"><option value="">Elige…</option><option>Mejor de lo que pensaba</option><option>Como esperaba</option><option>Peor de lo que pensaba</option></select>
+      </div>
+      <div class="campo">
+        <label for="f-nota">¿Algo que quieras recordar?</label>
+        
+        <textarea id="f-nota" placeholder=""></textarea>
       </div>
 
-      <div class="campo">
-        <label for="f-b">B · Conducta: ¿qué hiciste exactamente?</label>
-        <p class="ayuda">Cuéntalo como lo grabaría una cámara. Nada de etiquetas («me dio ansiedad») ni interpretaciones: qué hiciste tú.</p>
-        <textarea id="f-b" required placeholder="Ej.: cancelé el plan y me quedé dos horas mirando el móvil"></textarea>
-      </div>
-
-      <div class="campo">
-        <label for="f-c">C · Consecuencia: ¿qué pasó justo después?</label>
-        <p class="ayuda">Qué conseguiste o de qué te libraste en ese momento, y qué costó después. Esta es la casilla que explica por qué se repite.</p>
-        <textarea id="f-c" required placeholder="Ej.: me quité el agobio de golpe; luego me sentí mal por no haber ido"></textarea>
-      </div>
-
-      <div class="campo">
-        <label for="f-m">Malestar en ese momento (0 a 10)</label>
-        <div class="rango">
-          <input type="range" id="f-m" min="0" max="10" step="1" value="5">
-          <output id="f-m-val">5</output>
-        </div>
-      </div>
-      <p style="margin:1.2rem 0 0;"><button type="submit" class="btn">Guardar la anotación</button></p>
+      <p class="sin-responder" id="aviso-vacio" style="display:none;"></p>
+      <button type="submit" class="btn">Guardar la anotación</button>
   </form>
 
-  <section id="panel" style="display:none">
-    <h2 class="bloque-tit">Lo que llevas</h2>
-    <div class="resumen">
-      <div class="dato"><p class="cifra-p" id="d-total">0</p><p class="et">Anotaciones</p></div>
-      <div class="dato"><p class="cifra-p" id="d-dias">0</p><p class="et">Días distintos</p></div>
-      <div class="dato"><p class="cifra-p" id="d-media">0</p><p class="et">Malestar medio</p></div>
-    </div>
+  <h2 class="bloque-tit">Lo que llevas <span id="cuantas" style="font-family:var(--font-mono);font-size:0.78rem;font-weight:400;color:var(--ink-soft);"></span></h2>
+  <p class="racha" id="racha" style="display:none;"></p>
 
-    <div class="grafico" id="grafico">
-      <p class="g-tit">Malestar en tus últimas anotaciones</p>
-      <div class="barras" id="barras" role="img" aria-label="Malestar de las últimas anotaciones, de 0 a 10"></div>
-      <p class="barras-pie"><span>más antiguas</span><span>0 a 10</span><span>más recientes</span></p>
-    </div>
+  <div id="caja-grafico" style="display:none;">
+    <p class="g-tit" style="font-size:0.88rem;color:var(--ink-soft);margin:0;">Ánimo después</p>
+    <div class="grafico-h" id="grafico" role="img" aria-label="Evolución"></div>
+    <div class="grafico-pie-h"><span id="g-desde"></span><span id="g-hasta"></span></div>
+  </div>
 
-    <div id="lista"></div>
+  <div id="lista"></div>
+  <textarea id="copiadero" class="copiadero" aria-hidden="true"></textarea>
 
-    <p style="margin:1.4rem 0 0;display:flex;gap:0.6rem;flex-wrap:wrap;">
-      <button type="button" class="btn sec" id="copiar">Copiar todo para llevármelo</button>
+  <div class="acciones-h" id="acciones" style="display:none;">
+    <button type="button" class="btn" id="copiar">Copiar todo para llevármelo</button>
+    <button type="button" class="btn btn-sec" id="imprimir">Imprimir o guardar en PDF</button>
     <button type="button" class="btn btn-sec" id="enviar" aria-expanded="false">Enviar</button>
-      <button type="button" class="btn sec" id="borrar">Borrar mi registro</button>
-    </p>
-    <p id="copiado" style="display:none">Copiado. Ya puedes pegarlo en un correo, en una nota o imprimirlo.</p>
-  </section>
-
-  <div class="idea" style="margin-top:2rem;"><strong>Cómo leerlo al cabo de una semana.</strong> Busca lo que se repite en la columna A: ¿siempre a la misma hora?, ¿siempre con la misma persona?, ¿siempre cuando estás cansado? Y después mira la columna C: si en casi todas las anotaciones te estás quitando algo desagradable de encima —agobio, aburrimiento, una conversación—, ya sabes qué está sosteniendo la conducta. Eso es exactamente lo que se trabaja después.</div>
+    <button type="button" class="btn btn-sec" id="borrar">Borrar todo</button>
+  </div>
   <div class="envio-ops" id="envio-ops" hidden>
     <span class="envio-eti">Elige por dónde:</span>
     <a id="env-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
     <a id="env-mail" href="#">Correo</a>
     <span class="envio-largo" id="env-largo" hidden>Es mucho texto para enviarlo así: usa «copiar» y pégalo.</span>
   </div>
-  <p class="nota-wa" id="nota-wa"><strong>Para mandárselo a tu psicólogo o psicóloga.</strong> «Enviar» abre el menú de compartir de tu móvil o de tu ordenador y eliges tú por dónde. Copiar e imprimir no sacan nada de este dispositivo; enviarlo sí lo envía.</p>
+  <p class="nota-wa" id="nota-wa" style="display:none;"><strong>Para mandárselo a tu psicólogo o
+  psicóloga.</strong> «Enviar» abre el menú de compartir de tu móvil o de tu ordenador y eliges tú por
+  dónde. Copiar e imprimir no sacan nada de este dispositivo; enviarlo sí lo envía.</p>
 
-  <div class="cierre"><strong>Llévatelo cuando vayas.</strong> Una semana de registro es la mejor primera sesión que existe: con esto delante, el patrón se ve en diez minutos en vez de en tres sesiones. Cópialo con el botón de arriba o imprímelo, y llévaselo a quien te atienda, sea quien sea.</div>
-
-<p style="text-align:center;font-size:0.92rem;margin:1.6rem 0 0;">¿Buscas otro? <a href="/tests.html">Todos los tests y herramientas →</a></p>
+  <div class="privacidad" style="margin-top:1.8rem;"><strong>Un aviso práctico.</strong> Como esto vive en
+  tu navegador, si borras los datos de navegación o cambias de dispositivo, se pierde. Si llevas semanas
+  apuntando y no quieres arriesgarte, cópialo de vez en cuando y guárdalo donde tú quieras.</div>
 
   <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
     <p class="mc-eti">Seguir por aquí</p>
@@ -295,141 +343,183 @@
   </nav>
 </main>
 
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Registro de actividades y ánimo", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "inLanguage": "es-ES", "url": "https://psicolinks.com/registro-de-actividades.html", "description": "Apunta qué hiciste y cómo estabas antes y después. Sirve para ver qué te sube el ánimo de verdad, en vez de fiarte de lo que recuerdas.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://psicolinks.com/herramientas.html"}, {"@type": "ListItem", "position": 3, "name": "Registro de actividades y ánimo", "item": "https://psicolinks.com/registro-de-actividades.html"}]}</script>
 <script>
 (function(){
-  var CLAVE = 'pl_registro_abc';
-  var form = document.getElementById('reg');
-  var rango = document.getElementById('f-m');
-  var salida = document.getElementById('f-m-val');
+  var CAMPOS = [{"id": "que", "tipo": "texto", "etq": "¿Qué has hecho?", "suf": ""}, {"id": "tipo", "tipo": "opciones", "etq": "¿De qué tipo?", "suf": ""}, {"id": "antes", "tipo": "escala", "etq": "Ánimo justo antes", "suf": ""}, {"id": "despues", "tipo": "escala", "etq": "Ánimo justo después", "suf": ""}, {"id": "esperaba", "tipo": "opciones", "etq": "¿Fue como esperabas?", "suf": ""}, {"id": "nota", "tipo": "largo", "etq": "¿Algo que quieras recordar?", "suf": ""}];
+  var CLAVE  = "pl_actividades";
+  var TITULO = "Registro de actividades y ánimo";
+  var RESUMEN = "{que} · ánimo {antes}→{despues}";
+  var GRAFICO = {"campo": "despues", "max": 10};
 
-  function hoy(){
-    var d = new Date();
-    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-  }
+  var form = document.getElementById('reg');
+  var lista = document.getElementById('lista');
+
+  function hoy(){ var d = new Date(); return new Date(d - d.getTimezoneOffset()*60000).toISOString().slice(0,10); }
   document.getElementById('f-fecha').value = hoy();
-  rango.addEventListener('input', function(){ salida.textContent = rango.value; });
+
+  // El valor del deslizador, visible mientras se mueve.
+  CAMPOS.filter(function(c){ return c.tipo === 'escala'; }).forEach(function(c){
+    var i = document.getElementById('f-' + c.id), v = document.getElementById('v-' + c.id);
+    i.addEventListener('input', function(){ v.textContent = i.value; });
+  });
 
   function leer(){
-    try { var d = JSON.parse(localStorage.getItem(CLAVE) || '[]'); return Array.isArray(d) ? d : []; }
-    catch(e) { return []; }
+    try { var v = JSON.parse(localStorage.getItem(CLAVE) || '[]'); return Array.isArray(v) ? v : []; }
+    catch(e){ return []; }
   }
-  function guardar(l){
-    try { localStorage.setItem(CLAVE, JSON.stringify(l.slice(0, 200))); } catch(e) {}
-  }
-  function esc(s){
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function pinta(){
-    var l = leer();
-    var panel = document.getElementById('panel');
-    if (!l.length) { panel.style.display = 'none'; return; }
-    panel.style.display = '';
-
-    var dias = {};
-    var suma = 0;
-    l.forEach(function(r){ dias[r.fecha] = 1; suma += r.m; });
-    document.getElementById('d-total').textContent = l.length;
-    document.getElementById('d-dias').textContent = Object.keys(dias).length;
-    document.getElementById('d-media').textContent = (suma / l.length).toFixed(1);
-
-    // Barras: las 14 últimas, de la más antigua a la más reciente
-    var ult = l.slice(0, 14).reverse();
-    document.getElementById('barras').innerHTML = ult.map(function(r){
-      var alto = Math.max(3, Math.round(r.m / 10 * 90));
-      return '<i style="height:' + alto + 'px" title="' + esc(r.fecha) + ': ' + r.m + ' de 10"></i>';
-    }).join('');
-    document.getElementById('grafico').style.display = ult.length > 1 ? '' : 'none';
-
-    document.getElementById('lista').innerHTML = l.map(function(r, i){
-      return '<div class="entrada">'
-        + '<div class="cab"><span class="fecha">' + esc(r.fecha) + '</span>'
-        + '<span class="malestar">' + r.m + ' / 10</span></div>'
-        + '<dl>'
-        + '<dt>A</dt><dd>' + esc(r.a) + '</dd>'
-        + '<dt>B</dt><dd>' + esc(r.b) + '</dd>'
-        + '<dt>C</dt><dd>' + esc(r.c) + '</dd>'
-        + '</dl>'
-        + '<button type="button" class="quitar" data-i="' + i + '">Borrar esta anotación</button>'
-        + '</div>';
-    }).join('');
+  function guardar(v){ try { localStorage.setItem(CLAVE, JSON.stringify(v)); } catch(e){
+    alert('No se ha podido guardar. Si estás en modo incógnito, el navegador no deja guardar nada.'); } }
+  function esc(s){ return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function unidad(c){
+    if (c.tipo === 'escala') return ' / 10';
+    return c.suf ? ' ' + c.suf : '';
   }
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var l = leer();
-    l.unshift({
-      fecha: document.getElementById('f-fecha').value || hoy(),
-      a: document.getElementById('f-a').value.trim(),
-      b: document.getElementById('f-b').value.trim(),
-      c: document.getElementById('f-c').value.trim(),
-      m: parseInt(rango.value, 10)
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var e = { f: document.getElementById('f-fecha').value || hoy(), ts: Date.now() };
+    var algo = false;
+    CAMPOS.forEach(function(c){
+      var el = document.getElementById('f-' + c.id);
+      e[c.id] = el.value;
+      if (c.tipo !== 'escala' && String(el.value).trim() !== '') algo = true;
     });
-    guardar(l);
-    document.getElementById('f-a').value = '';
-    document.getElementById('f-b').value = '';
-    document.getElementById('f-c').value = '';
-    rango.value = 5; salida.textContent = '5';
-    document.getElementById('f-fecha').value = hoy();
-    pinta();
-    document.getElementById('panel').scrollIntoView({ behavior:'smooth', block:'start' });
+    if (!algo) {
+      var av = document.getElementById('aviso-vacio');
+      av.textContent = 'Escribe algo antes de guardar, aunque sea una palabra.';
+      av.style.display = 'block';
+      return;
+    }
+    document.getElementById('aviso-vacio').style.display = 'none';
+    var v = leer(); v.unshift(e); guardar(v.slice(0, 400));
+    // Se limpia todo menos la fecha, que casi siempre es la misma sesión.
+    CAMPOS.forEach(function(c){
+      var el = document.getElementById('f-' + c.id);
+      if (c.tipo === 'escala') { el.value = 5; document.getElementById('v-' + c.id).textContent = '5'; }
+      else el.value = '';
+    });
+    pintar();
+    lista.scrollIntoView({ behavior:'smooth', block:'start' });
   });
 
-  document.getElementById('lista').addEventListener('click', function(e){
-    var b = e.target.closest('.quitar');
+  function resumenDe(e){
+    return RESUMEN.replace(/\{(\w+)\}/g, function(_, k){ return esc(e[k] || '—'); });
+  }
+
+  function pintar(){
+    var v = leer();
+    document.getElementById('cuantas').textContent =
+      v.length === 0 ? '' : (v.length === 1 ? '1 anotación' : v.length + ' anotaciones');
+
+    // Racha de días seguidos, contando desde hoy hacia atrás.
+    var caja = document.getElementById('racha');
+    if (v.length > 1) {
+      var dias = {}; v.forEach(function(e){ dias[e.f] = 1; });
+      var n = 0, d = new Date();
+      while (true) {
+        var s = new Date(d - d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+        if (!dias[s]) { if (n > 0 || s !== hoy()) break; } else n++;
+        d.setDate(d.getDate() - 1);
+        if (n === 0 && s !== hoy()) break;
+      }
+      caja.textContent = n > 1 ? n + ' días seguidos' : '';
+      caja.style.display = n > 1 ? 'block' : 'none';
+    } else { caja.style.display = 'none'; }
+
+    if (!v.length) {
+      lista.innerHTML = '<p class="vacio-h">Aquí no hay nada todavía. En cuanto guardes la primera '
+        + 'anotación aparecerá abajo, y podrás copiarla o imprimirla cuando quieras.</p>';
+      document.getElementById('caja-grafico').style.display = 'none';
+      var _nw = document.getElementById('nota-wa'); if (_nw) _nw.style.display = (leer().length ? 'block' : 'none');
+    document.getElementById('acciones').style.display = 'none';
+      return;
+    }
+    var _nw = document.getElementById('nota-wa'); if (_nw) _nw.style.display = (leer().length ? 'block' : 'none');
+    document.getElementById('acciones').style.display = 'flex';
+
+    if (GRAFICO) {
+      var ult = v.slice(0, 30).reverse().filter(function(e){ return e[GRAFICO.campo] !== ''; });
+      if (ult.length > 1) {
+        document.getElementById('caja-grafico').style.display = 'block';
+        document.getElementById('grafico').innerHTML = ult.map(function(e){
+          var alto = Math.max(3, Math.round(Math.min(1, (+e[GRAFICO.campo] || 0) / GRAFICO.max) * 100));
+          return '<span style="height:' + alto + '%" title="' + esc(e.f) + ': ' + esc(e[GRAFICO.campo]) + '"></span>';
+        }).join('');
+        document.getElementById('g-desde').textContent = ult[0].f;
+        document.getElementById('g-hasta').textContent = ult[ult.length-1].f;
+      } else { document.getElementById('caja-grafico').style.display = 'none'; }
+    }
+
+    lista.innerHTML = v.map(function(e, i){
+      var filas = CAMPOS.map(function(c){
+        if (e[c.id] === '' || e[c.id] == null) return '';
+        return '<dt>' + esc(c.etq) + '</dt><dd>' + esc(e[c.id]) + unidad(c) + '</dd>';
+      }).join('');
+      return '<div class="entrada"><p class="fecha">' + esc(e.f) + '</p>'
+        + '<p class="resumen">' + resumenDe(e) + '</p>'
+        + '<dl>' + filas + '</dl>'
+        + '<button type="button" class="quitar" data-i="' + i + '">Quitar esta</button></div>';
+    }).join('');
+  }
+
+  lista.addEventListener('click', function(ev){
+    var b = ev.target.closest('.quitar');
     if (!b) return;
-    var l = leer();
-    l.splice(parseInt(b.getAttribute('data-i'), 10), 1);
-    guardar(l);
-    pinta();
-  });
-
-  document.getElementById('borrar').addEventListener('click', function(){
-    try { localStorage.removeItem(CLAVE); } catch(e) {}
-    pinta();
+    var v = leer(); v.splice(+b.dataset.i, 1); guardar(v); pintar();
   });
 
   function comoTexto(){
-    var l = leer();
-    return 'REGISTRO A-B-C · Psicolinks\n\n' + l.map(function(r){
-      return r.fecha + '  (malestar ' + r.m + '/10)\n'
-        + 'A (antes): ' + r.a + '\n'
-        + 'B (qué hice): ' + r.b + '\n'
-        + 'C (después): ' + r.c + '\n';
-    }).join('\n');
+    var v = leer();
+    return TITULO + ' — ' + v.length + (v.length === 1 ? ' anotación' : ' anotaciones') + '\n' +
+      '(Psicolinks · psicolinks.com)\n\n' +
+      v.map(function(e){
+        return e.f + '\n' + CAMPOS.map(function(c){
+          if (e[c.id] === '' || e[c.id] == null) return null;
+          return '  ' + c.etq + ': ' + e[c.id] + unidad(c);
+        }).filter(Boolean).join('\n');
+      }).join('\n\n');
   }
 
   document.getElementById('copiar').addEventListener('click', function(){
-    var txt = comoTexto();
-    var aviso = document.getElementById('copiado');
-    function ok(){ aviso.style.display = ''; setTimeout(function(){ aviso.style.display='none'; }, 4000); }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(txt).then(ok, function(){ manual(txt, ok); });
-    } else { manual(txt, ok); }
+    var t = comoTexto(), b = this;
+    function ok(){ b.textContent = 'Copiado ✓'; setTimeout(function(){ b.textContent = 'Copiar todo para llevármelo'; }, 2200); }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(t).then(ok, manual);
+    } else { manual(); }
+    function manual(){
+      // Sin portapapeles (http, navegador antiguo): se selecciona para copiar a mano.
+      var a = document.getElementById('copiadero');
+      a.value = t; a.classList.remove('copiadero'); a.style.cssText = 'width:100%;height:9rem;margin-top:0.7rem;';
+      a.select();
+      try { document.execCommand('copy'); ok(); }
+      catch(e){ b.textContent = 'Selecciónalo y cópialo tú'; }
+    }
   });
 
-  function manual(txt, ok){
-    var ta = document.createElement('textarea');
-    ta.value = txt; ta.style.position = 'fixed'; ta.style.left = '-9999px';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); ok(); } catch(e) {}
-    document.body.removeChild(ta);
-  }
-
-  pinta();
-
+  document.getElementById('imprimir').addEventListener('click', function(){ window.print(); });
   function enviarRegistro(t, b){
-    // El menu de compartir del sistema, que es lo que la gente conoce del movil.
+    // 1) El menu de compartir del sistema, que es lo que la gente conoce del
+    //    movil. Si existe, se acabo: no hace falta enseñar nada mas.
     if (navigator.share) {
       navigator.share({ title: 'Mis registros · Psicolinks', text: t }).catch(function(){});
       return;
     }
-    // Plan B para Chrome y Firefox de escritorio, que no lo traen.
+    // 2) Plan B para Chrome y Firefox de escritorio, que no lo traen.
     var ops = document.getElementById('envio-ops');
     if (!ops) return;
     var wa = document.getElementById('env-wa'),
         mail = document.getElementById('env-mail'),
         largo = document.getElementById('env-largo');
+    // Aqui si hay tope: wa.me y mailto meten el texto en la direccion.
     if (encodeURIComponent(t).length > 1800) {
       wa.hidden = true; mail.hidden = true; largo.hidden = false;
     } else {
@@ -445,14 +535,17 @@
   document.getElementById('enviar').addEventListener('click', function(){
     enviarRegistro(comoTexto(), this);
   });
+
+
+  document.getElementById('borrar').addEventListener('click', function(){
+    if (this.dataset.seguro) { localStorage.removeItem(CLAVE); pintar(); this.textContent = 'Borrar todo'; delete this.dataset.seguro; }
+    else { this.dataset.seguro = '1'; this.textContent = 'Pulsa otra vez para borrarlo de verdad'; }
+  });
+
+  pintar();
 })();
 </script>
-<footer class="site-footer">
-  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
-</footer>
-
+<script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
   window.dataLayer = window.dataLayer || [];
@@ -460,6 +553,5 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
-<script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

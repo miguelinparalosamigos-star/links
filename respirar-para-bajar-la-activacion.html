@@ -74,6 +74,27 @@
   .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
   .siguiente-paso a:hover{ text-decoration:underline; }
 
+  @media print {
+    .site-header, .site-footer, .back-link, .descarga, .firma-consulta,
+    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
+    .buscador, .migas{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+  }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
 </style>
 <script type="application/ld+json">
 { "@context":"https://schema.org","@type":"Article","headline":"Respirar para bajar la activación","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/respirar-para-bajar-la-activacion.html","inLanguage":"es-ES"}
@@ -91,6 +112,22 @@
   <p class="autor">Por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis herramientas para usar bien lo que todo el mundo recomienda y casi nadie explica: la respiración.</p>
   <div class="idea"><strong>La idea de fondo.</strong> «Respira hondo» es el peor consejo que se da con buena intención. Coger mucho aire y soltarlo deprisa es <strong>exactamente lo que hace la ansiedad</strong>, y mucha gente acaba hiperventilando mientras cree que se está relajando. Lo que enciende el freno del cuerpo es otra cosa: que <strong>soltar el aire dure más que cogerlo</strong>. Con eso solo ya baja el pulso, y se puede medir. Lo demás —la barriga en vez del pecho, poco rato y muchas veces— hace que funcione mejor. Y hay un caso en el que conviene ir con cuidado, el del pánico, que te cuento abajo.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="descarga">
+    <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
+    <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
+  </div>
 
   <h2 class="bloque-tit">Seis herramientas</h2>
 <div class="tool">
@@ -130,18 +167,39 @@
   <div class="hazlo"><strong>Hazlo así:</strong> aprende la cuenta y hazla sin nada. Si necesitas un apoyo al principio, un reloj de segundero o un temporizador de cocina bastan.</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si la activación no baja nunca, si llevas meses con el cuerpo en tensión o si esto lo estás usando para aguantar una situación que no se aguanta, la respiración no es el problema ni la solución. Tienes <a href="/el-estres-que-no-para.html">el estrés que no para</a> y <a href="/calmar-la-ansiedad.html">calmar la ansiedad</a>, y para ponerle un número, el <a href="/test-de-ansiedad.html">test de ansiedad</a>. Si quieres, puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online o presencial.</div>
+  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si la activación no baja nunca, si llevas meses con el cuerpo en tensión o si esto lo estás usando para aguantar una situación que no se aguanta, la respiración no es el problema ni la solución. Tienes <a href="/el-estres-que-no-para.html">el estrés que no para</a> y <a href="/calmar-la-ansiedad.html">calmar la ansiedad</a>, y para ponerle un número, el <a href="/test-de-ansiedad.html">test de ansiedad</a>.</div>
 
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
 
-  <div class="siguiente-paso">
-    <span class="sp-eti">Si quieres seguir</span>
-    <a href="/volver-a-confiar-en-tu-cuerpo.html">Volver a confiar en tu cuerpo →</a>
-  </div>
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
@@ -151,6 +209,5 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
-<script src="/progreso-psicolinks.js" defer></script>
 </body>
 </html>

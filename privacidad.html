@@ -43,6 +43,17 @@
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
   .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  @media print{ .menu-cuadros{ display:none; } }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Política de Privacidad", "item": "https://psicolinks.com/privacidad.html"}]}
@@ -67,7 +78,7 @@
 
   <h2>2. Usar Psicolinks no requiere datos personales</h2>
   <div class="aviso-destacado">
-    <p style="margin:0;">Puedes usar la práctica totalidad de Psicolinks —leer los artículos y descargar las guías en PDF— sin registrarte ni facilitar ningún dato personal. El único sitio donde puedes aportar datos, y siempre de forma voluntaria, es el <a href="consultorio.html">consultorio</a> (ver el punto 3).</p>
+    <p style="margin:0;">Puedes usar la práctica totalidad de Psicolinks —leer los artículos y descargar las guías en PDF— sin registrarte ni facilitar ningún dato personal. El único sitio donde puedes aportar datos, y siempre de forma voluntaria, son el <a href="consultorio.html">consultorio</a> (punto 3) y el pack de guías por correo (punto 4).</p>
   </div>
 
   <h2>3. El consultorio (datos que aportas voluntariamente)</h2>
@@ -78,12 +89,20 @@
     <li><strong>Base y voluntariedad</strong>: tratamos estos datos con tu consentimiento, que otorgas al enviar el formulario. Es totalmente voluntario; te pedimos que no incluyas datos personales o de salud que no quieras que se traten.</li>
     <li><strong>Conservación</strong>: las consultas no publicadas se descartan al revisarlas; las publicadas se conservan (de forma anónima) mientras sigan siendo útiles.</li>
   </ul>
-  <p>Psicolinks <strong>no ofrece boletín por correo</strong>. Si en el futuro se activa una suscripción, esta política se actualizará antes de tratar ningún dato con ese fin.</p>
+  <h2>4. El pack de guías por correo</h2>
+  <p>En algunas páginas puedes dejar tu correo electrónico para recibir el <strong>pack de cinco guías en PDF</strong>. Es lo único que se te pide y lo único que se guarda.</p>
+  <ul>
+    <li><strong>Para qué</strong>: para enviarte esas cinco guías por correo, de modo que las tengas aunque cierres la página. <strong>Psicolinks no tiene boletín</strong>: no se envían correos periódicos ni novedades semanales.</li>
+    <li><strong>Qué se guarda</strong>: tu dirección de correo, la fecha del alta, la página desde la que te apuntaste y la constancia de que marcaste la casilla de consentimiento. Nada más.</li>
+    <li><strong>Base</strong>: tu consentimiento, que otorgas al marcar la casilla y enviar el formulario. Es voluntario y no hace falta para usar nada de la web.</li>
+    <li><strong>Quién lo envía</strong>: el correo sale a través de <strong>Resend</strong> (Resend Inc.), que actúa como proveedor de envío; la dirección se guarda en el almacenamiento de <strong>Netlify</strong>, que aloja la web.</li>
+    <li><strong>Baja y borrado</strong>: cada correo lleva un enlace de baja que elimina tu dirección. También puedes pedir el borrado escribiendo a la dirección de contacto que aparece más abajo.</li>
+  </ul>
 
-  <h2>4. Estadísticas de uso</h2>
-  <p>Registramos, de forma agregada y sin vincularlos a tu identidad, los clics en algunos enlaces (libros y guías recomendados, enlace a la consulta, botones de compartir), para saber qué contenido interesa más. Además, medimos las visitas con <strong>Google Analytics</strong> (ver el punto 5). Estos datos no se cruzan con ninguna información personal tuya.</p>
+  <h2>5. Estadísticas de uso</h2>
+  <p>Registramos, de forma agregada y sin vincularlos a tu identidad, los clics en algunos enlaces (libros y guías recomendados, enlace a la consulta, botones de compartir), para saber qué contenido interesa más. Además, medimos las visitas con <strong>Google Analytics</strong> (ver el punto 6). Estos datos no se cruzan con ninguna información personal tuya.</p>
 
-  <h2>5. Otros terceros</h2>
+  <h2>6. Otros terceros</h2>
   <ul>
     <li><strong>Netlify</strong>: aloja la web y las funciones que registran las estadísticas de clics y gestionan el consultorio.</li>
     <li><strong>Google Analytics</strong>: si aceptas las cookies de análisis, medimos las visitas con este servicio de Google, que puede tratar datos como tu dirección IP. Puedes gestionarlo desde <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a>.</li>
@@ -92,7 +111,7 @@
   </ul>
   <p>No cedemos datos personales a terceros con fines comerciales o publicitarios propios.</p>
 
-  <h2>6. Cookies y almacenamiento local</h2>
+  <h2>7. Cookies y almacenamiento local</h2>
   <p>Consulta la <a href="cookies.html">política de cookies</a> para el detalle de qué se guarda en tu navegador.</p>
   <p>Además de las cookies, hay dos cosas que se guardan en el almacenamiento local de tu propio navegador y que <strong>nunca se envían a ningún servidor</strong>:</p>
   <ul>
@@ -102,17 +121,43 @@
   </ul>
   <p>Borrar los datos de navegación de tu navegador elimina también toda esta información.</p>
 
-  <h2>7. Plazo de conservación</h2>
-  <p>Las estadísticas agregadas se conservan sin límite temporal definido, al no tratarse de datos personales identificables. Los datos que aportes en el consultorio se conservan según lo indicado en el punto 3.</p>
+  <h2>8. Plazo de conservación</h2>
+  <p>Las estadísticas agregadas se conservan sin límite temporal definido, al no tratarse de datos personales identificables. Los datos que aportes en el consultorio se conservan según lo indicado en el punto 3, y tu correo del pack, hasta que te des de baja o pidas el borrado (punto 4).</p>
 
-  <h2>8. Tus derechos</h2>
+  <h2>9. Tus derechos</h2>
   <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a <a href="mailto:miqvalsagi@gmail.com">miqvalsagi@gmail.com</a>. Tienes derecho a reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>) si consideras que el tratamiento no se ajusta a la normativa.</p>
+
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
 </main>
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>

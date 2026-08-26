@@ -58,7 +58,6 @@
   .relacionadas ul{ margin:0; padding-left:20px; }
   .relacionadas li{ font-size:0.97rem; line-height:1.8; }
 
-
   .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
   .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
   .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
@@ -66,8 +65,6 @@
   .consulta-cta .consulta-btn:hover { background: #75303d; }
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
-  .desambigua { font-size:0.9rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:0.7rem 0.95rem; margin:0 0 1.4rem; line-height:1.55; }
-  .desambigua a { color:var(--accent); font-weight:600; }
   .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
@@ -76,9 +73,35 @@
   .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
   .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
   .siguiente-paso a:hover{ text-decoration:underline; }
+  .firma-consulta{ margin:2rem 0 0; padding:1rem 1.15rem; background:var(--surface); border:1px solid var(--border); border-left:4px solid #8C3B4A; border-radius:11px; }
+  .firma-consulta p{ margin:0; font-size:0.93rem; line-height:1.65; color:var(--ink-soft); }
+  .firma-consulta p strong a{ color:var(--ink); }
+  .firma-consulta .fc-otras{ margin:0.5rem 0 0; font-size:0.86rem; opacity:0.9; }
+  @media print {
+    .site-header, .site-footer, .back-link, .descarga, .firma-consulta,
+    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
+    .buscador, .migas{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+  }
+
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
 </style>
 <script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Insomnio: qué hacer cuando no consigues dormir","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/insomnio.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
+{ "@context":"https://schema.org","@type":"Article","headline":"Insomnio: qué hacer cuando no consigues dormir","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/insomnio.html","inLanguage":"es-ES"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Insomnio: qué hacer cuando no consigues dormir", "item": "https://psicolinks.com/insomnio.html"}]}
@@ -90,10 +113,24 @@
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">📎 Guía gratuita · Sueño</div>
   <h1>Insomnio: qué hacer cuando no consigues dormir</h1>
-  <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="autor">Por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis herramientas para cuando llevas semanas o meses durmiendo mal y los consejos de siempre ya no te sirven. No van de relajarse más: van de romper el círculo que mantiene el insomnio.</p>
-  <p class="desambigua">Si es esta noche concreta la que se te está haciendo larga, la guía que buscas es <a href="/no-puedo-dormir-esta-noche.html">qué hacer ahora mismo</a>.</p>
   <div class="idea"><strong>La idea de fondo.</strong> El insomnio empieza por algo —una mala racha, un cambio, una preocupación— pero se mantiene por lo que hacemos para intentar arreglarlo: quedarnos más rato en la cama, esforzarnos en dormir, compensar con siestas, vigilar el reloj. El tratamiento con más respaldo para el insomnio crónico no son las pastillas, es la terapia cognitivo-conductual para el insomnio, y se basa precisamente en desmontar esos apaños. Aquí tienes sus piezas principales.</div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="descarga">
+    <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
+    <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
+  </div>
 
   <h2 class="bloque-tit">Seis herramientas</h2>
 <div class="tool">
@@ -133,33 +170,39 @@
   <div class="hazlo"><strong>Hazlo así:</strong> diez minutos, a primera hora de la tarde, con un cuaderno: lo que te preocupa y el siguiente paso de cada cosa. Te ayudan las guías «Deja de darle vueltas» y «Escribir para aclarar la cabeza».</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo esto se te queda corto.</strong> Si llevas más de tres meses con dificultades tres o más noches por semana, si roncas fuerte con pausas en la respiración —eso hay que descartarlo con un médico— o si estás tomando medicación para dormir y quieres dejarla, esto se trabaja con un profesional: la terapia cognitivo-conductual del insomnio es el tratamiento de primera elección y suele durar pocas sesiones. Si quieres, puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online o presencial.</div>
+  <div class="cierre"><strong>Cuándo esto se te queda corto.</strong> Si llevas más de tres meses con dificultades tres o más noches por semana, si roncas fuerte con pausas en la respiración —eso hay que descartarlo con un médico— o si estás tomando medicación para dormir y quieres dejarla, esto se trabaja con un profesional: la terapia cognitivo-conductual del insomnio es el tratamiento de primera elección y suele durar pocas sesiones.</div>
 
-  <p class="nota-hermana" style="font-size:0.93rem;line-height:1.6;color:var(--ink-soft);margin:1.6rem 0 0;">Esta guía es para el insomnio que ya lleva semanas. Si lo que tienes es <strong>esta noche concreta</strong> dando vueltas, ve a <a href="/no-puedo-dormir-esta-noche.html">no puedo dormir: qué hacer esta noche</a>.</p>
-
-  <div class="siguiente-paso">
-    <span class="sp-eti">Si quieres seguir</span>
-    <a href="/menopausia-y-animo.html">Menopausia: sueño, ánimo y niebla mental →</a>
-  </div>
-
-  <div class="consulta-cta">
-    <h3>¿Y si esto te está pasando a ti?</h3>
-    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
-    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
-    Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
-    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
-    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
-    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
-    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
-  </div>
-
-
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
 
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
@@ -169,7 +212,5 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
-<script src="/progreso-psicolinks.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Insomnio: qué hacer cuando no consigues dormir", "url": "https://psicolinks.com/insomnio.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Insomnio"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Cuando la higiene del sueño no basta: restricción de sueño, control de estímulos y qué dejar de hacer. Lo que de verdad funciona contra el insomnio."}</script>
 </body>
 </html>

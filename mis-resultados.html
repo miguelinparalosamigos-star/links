@@ -105,6 +105,58 @@
   .consulta-cta .consulta-btn:hover { background: #75303d; }
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+  .firma-consulta{ margin:2rem 0 0; padding:1rem 1.15rem; background:var(--surface); border:1px solid var(--border); border-left:4px solid #8C3B4A; border-radius:11px; }
+  .firma-consulta p{ margin:0; font-size:0.93rem; line-height:1.65; color:var(--ink-soft); }
+  .firma-consulta p strong a{ color:var(--ink); }
+  .firma-consulta .fc-otras{ margin:0.5rem 0 0; font-size:0.86rem; opacity:0.9; }
+  .descarga{ margin:1.6rem 0 0; padding:1rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .descarga p{ margin:0 0 0.75rem; font-size:0.92rem; color:var(--ink-soft); }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; border:0; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; cursor:pointer; font-family:inherit; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  @media print {
+    .site-header, .site-footer, .back-link, .descarga, .firma-consulta,
+    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
+    .buscador, .migas{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+  }
+  .tabla-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1rem 0; }
+  .tabla-scroll table{ min-width:32rem; }
+  .cc-banda{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .cc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .cc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:600px){ .cc-rejilla{ grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); } }
+  .cc-tarjeta{ display:flex; align-items:center; gap:0.85rem; text-decoration:none; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1rem 1.15rem; color:var(--ink); }
+  .cc-tarjeta:hover{ border-color:#8C3B4A; }
+  .cc-marca{ flex-shrink:0; width:2.6rem; height:1.1rem; color:#8C3B4A; }
+  .cc-txt{ display:flex; flex-direction:column; gap:0.1rem; min-width:0; }
+  .cc-nom{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; line-height:1.25; }
+  .cc-quien{ font-size:0.88rem; color:var(--ink-soft); line-height:1.35; }
+  .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
+  .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
+  @media print{ .cc-banda{ display:none; } }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
 
 
   .tarjeta-res{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
@@ -130,10 +182,6 @@
   .pendientes a{ font-size:0.86rem; font-weight:600; text-decoration:none; color:var(--accent); background:var(--surface); border:1.5px solid var(--border); border-radius:999px; padding:0.35rem 0.8rem; }
   .pendientes a:hover{ border-color:var(--accent); }
 
-  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
-  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
-  .site-footer .pie-nav a:hover{ text-decoration:underline; }
-  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tests", "item": "https://psicolinks.com/tests.html"}, {"@type": "ListItem", "position": 3, "name": "Tus resultados", "item": "https://psicolinks.com/mis-resultados.html"}]}
@@ -170,15 +218,42 @@
     Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
     Paso consulta en Conciencia Conductual: <strong>online para toda España</strong> y presencial en Valencia.</p>
     <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
-    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a> ·
+    <a href="/elegir-psicologo.html">cómo elegir psicólogo</a> ·
+    <a href="/preguntas-frecuentes.html">preguntas frecuentes</a></p>
     <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
     las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
   </div>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
 </main>
 
 <script>
 (function(){
-  var TESTS = [{"k": "pl_gad7_historial", "n": "Ansiedad (GAD-7)", "m": 21, "u": "/test-de-ansiedad.html", "d": "más ansiedad"}, {"k": "pl_phq9_historial", "n": "Depresión (PHQ-9)", "m": 27, "u": "/test-de-depresion.html", "d": "más síntomas de depresión"}, {"k": "pl_phq4_historial", "n": "Chequeo rápido (PHQ-4)", "m": 12, "u": "/test-rapido-ansiedad-depresion.html", "d": "más ansiedad o ánimo bajo"}, {"k": "pl_phq15_historial", "n": "Síntomas físicos (PHQ-15)", "m": 30, "u": "/test-de-sintomas-fisicos.html", "d": "más molestias físicas"}, {"k": "pl_panico_historial", "n": "Ataques de pánico", "m": 4, "u": "/test-de-ataques-de-panico.html", "d": "más cerca del patrón de trastorno de pánico"}, {"k": "pl_pcptsd_historial", "n": "Estrés postraumático", "m": 5, "u": "/test-de-estres-postraumatico.html", "d": "más síntomas de estrés postraumático"}, {"k": "pl_audit_historial", "n": "Alcohol (AUDIT)", "m": 40, "u": "/test-de-alcohol.html", "d": "más consumo de riesgo"}, {"k": "pl_auditc_historial", "n": "Alcohol rápido (AUDIT-C)", "m": 12, "u": "/test-rapido-alcohol.html", "d": "más consumo"}, {"k": "pl_ftnd_historial", "n": "Tabaco (Fagerström)", "m": 10, "u": "/test-de-dependencia-del-tabaco.html", "d": "más dependencia de la nicotina"}, {"k": "pl_constancia_historial", "n": "Constancia (IPIP)", "m": 50, "u": "/test-de-procrastinacion.html", "d": "m\u00e1s constancia", "subirEsBueno": true}];
+  var TESTS = [{"k": "pl_gad7_historial", "n": "Ansiedad (GAD-7)", "m": 21, "u": "/test-de-ansiedad.html", "d": "más ansiedad"}, {"k": "pl_phq9_historial", "n": "Depresión (PHQ-9)", "m": 27, "u": "/test-de-depresion.html", "d": "más síntomas de depresión"}, {"k": "pl_phq4_historial", "n": "Chequeo rápido (PHQ-4)", "m": 12, "u": "/test-rapido-ansiedad-depresion.html", "d": "más ansiedad o ánimo bajo"}, {"k": "pl_phq15_historial", "n": "Síntomas físicos (PHQ-15)", "m": 30, "u": "/test-de-sintomas-fisicos.html", "d": "más molestias físicas"}, {"k": "pl_panico_historial", "n": "Ataques de pánico", "m": 4, "u": "/test-de-ataques-de-panico.html", "d": "más cerca del patrón de trastorno de pánico"}, {"k": "pl_pcptsd_historial", "n": "Estrés postraumático", "m": 5, "u": "/test-de-estres-postraumatico.html", "d": "más síntomas de estrés postraumático"}, {"k": "pl_audit_historial", "n": "Alcohol (AUDIT)", "m": 40, "u": "/test-de-alcohol.html", "d": "más consumo de riesgo"}, {"k": "pl_auditc_historial", "n": "Alcohol rápido (AUDIT-C)", "m": 12, "u": "/test-rapido-alcohol.html", "d": "más consumo"}, {"k": "pl_ftnd_historial", "n": "Tabaco (Fagerström)", "m": 10, "u": "/test-de-dependencia-del-tabaco.html", "d": "más dependencia de la nicotina"}];
 
   function leer(clave){
     try {
@@ -208,25 +283,15 @@
       + '</span><span>' + fechaCorta(ult[ult.length - 1].f) + '</span></div>';
   }
 
-  // Ojo con la dirección: en casi todos estos cuestionarios más puntos es peor
-  // —más ansiedad, más síntomas—, pero en el de constancia más puntos es mejor.
-  // Sin distinguirlo, a quien mejora su constancia le salía «puede ser una mala
-  // racha puntual, coméntalo con un profesional», que es justo al revés.
-  function cambio(hist, dice, subirEsBueno){
+  function cambio(hist, dice){
     if (hist.length < 2) return '<p class="res-cambio igual">Con una sola medición no hay evolución todavía. '
       + 'Repítelo dentro de dos semanas y aquí verás la comparación, que es lo que de verdad informa.</p>';
     var hoy = hist[0].p, antes = hist[1].p, dif = hoy - antes;
-    if (dif === 0) return '<p class="res-cambio igual">Igual que el ' + esc(hist[1].f) + '.</p>';
-
-    var sube = dif > 0;
-    var aMejor = subirEsBueno ? sube : !sube;
-    var texto = sube ? esc(dice) : esc(dice).replace('más ', 'menos ');
-    var coda = aMejor
-      ? ' Un cambio en la buena dirección, aunque una sola comparación todavía dice poco.'
-      : ' Puede ser una mala racha puntual; si se mantiene en la siguiente, coméntalo con un profesional.';
-    return '<p class="res-cambio ' + (sube ? 'sube' : 'baja') + '">Has '
-      + (sube ? 'subido' : 'bajado') + ' <strong>' + Math.abs(dif) + '</strong> respecto al '
-      + esc(hist[1].f) + ', es decir ' + texto + '.' + coda + '</p>';
+    if (dif < 0) return '<p class="res-cambio baja">Has bajado <strong>' + Math.abs(dif) + '</strong> respecto al '
+      + esc(hist[1].f) + '. Menos puntos aquí significa ' + esc(dice).replace('más ', 'menos ') + '.</p>';
+    if (dif > 0) return '<p class="res-cambio sube">Has subido <strong>' + dif + '</strong> respecto al '
+      + esc(hist[1].f) + ', es decir ' + esc(dice) + '. Puede ser una mala racha puntual; si se mantiene en la siguiente, coméntalo con un profesional.</p>';
+    return '<p class="res-cambio igual">Igual que el ' + esc(hist[1].f) + '.</p>';
   }
 
   var cont = document.getElementById('resultados');
@@ -247,7 +312,7 @@
       + '<span class="res-de">de ' + t.m + '</span>'
       + '<span class="res-nivel">' + esc(u.n || '') + '</span></div>'
       + grafico(hist, t.m)
-      + cambio(hist, t.d, t.subirEsBueno)
+      + cambio(hist, t.d)
       + '</div>');
   });
 
@@ -257,34 +322,6 @@
     trozos.push('<div class="tarjeta-res"><h3><a href="/registro-abc.html">Tu registro de siete días</a></h3>'
       + '<p class="res-fecha">' + registro.length + (registro.length === 1 ? ' entrada' : ' entradas') + ' guardadas</p>'
       + '<p class="res-cambio igual">El registro tiene su propia página, con el gráfico de malestar y el detalle de cada entrada.</p></div>');
-  }
-
-  // El test de personalidad guarda cinco puntuaciones en vez de una, así que
-  // no encaja en el array de arriba y va aparte.
-  var big = [];
-  try { big = JSON.parse(localStorage.getItem('pl_bigfive_historial') || '[]'); } catch(e) {}
-  big = Array.isArray(big) ? big.filter(function(r){ return r && r.puntos; }) : [];
-  if (big.length) {
-    var NOMBRES = { E:'Extraversión', A:'Amabilidad', C:'Responsabilidad',
-                    S:'Estabilidad emocional', M:'Apertura mental' };
-    var ult = big[big.length - 1];
-    var filas = ['E','A','C','S','M'].map(function(k){
-      var v = ult.puntos[k] || 0;
-      return '<div style="display:flex;align-items:center;gap:0.6rem;margin:0 0 0.35rem;">'
-        + '<span style="flex:0 0 9.5rem;font-size:0.88rem;">' + esc(NOMBRES[k]) + '</span>'
-        + '<span style="flex:1;height:9px;background:var(--border);border-radius:5px;overflow:hidden;">'
-        + '<span style="display:block;height:100%;width:' + Math.round((v - 4) / 16 * 100)
-        + '%;background:var(--accent);"></span></span>'
-        + '<span style="flex:0 0 3rem;text-align:right;font-family:var(--font-mono);font-size:0.78rem;color:var(--ink-soft);">'
-        + esc(v) + '/20</span></div>';
-    }).join('');
-    trozos.push('<div class="tarjeta-res"><h3><a href="/test-de-personalidad.html">Personalidad (Big Five)</a></h3>'
-      + '<p class="res-fecha">' + esc(fechaCorta(ult.fecha)) + (big.length > 1 ? ' · ' + big.length + ' veces' : '') + '</p>'
-      + filas
-      + '<p class="res-cambio igual">Aquí no pongo evolución a propósito: los rasgos apenas se mueven '
-      + 'de un mes a otro, y un gráfico invitaría a leer como un cambio lo que casi siempre es el día '
-      + 'que tenías al contestar.</p></div>');
-    hechos++;
   }
 
   if (!hechos && !(Array.isArray(registro) && registro.length)) {
@@ -322,8 +359,8 @@
 </script>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p>© 2026 Psicolinks · <a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/archivo.html">Estudios</a> · <a href="/consultorio.html">Consultorio</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Configurar cookies</a></p>
+  <p class="pie-consulta" style="margin:0.6rem 0 0;"><a href="/tests.html">🧪 Tests</a> · <a href="/registro-abc.html">🗒️ Tu registro</a> · Consulta de psicología: <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></p>
 </footer>
 
 <script src="/cookies-psicolinks.js" defer></script>

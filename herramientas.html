@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herramientas y autorregistros gratuitos · Psicolinks</title>
+<meta name="description" content="Veinticinco registros para llevar entre sesiones: A-B-C, exposición, actividades, sueño, pensamientos, preocupación, gratitud y el plan de recaídas.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Herramientas y autorregistros gratuitos">
+<meta property="og:description" content="Veinticinco registros para llevar entre sesiones. Se guardan en tu navegador y los puedes copiar o imprimir.">
+<meta property="og:url" content="https://psicolinks.com/herramientas.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/herramientas.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D;
+         --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+
+  .pregunta{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.3rem 1.2rem; margin:0 0 0.9rem; }
+  .pregunta.sin-responder{ border-left:4px solid var(--stamp); }
+  .pregunta p{ margin:0 0 0.8rem; font-size:1rem; line-height:1.55; }
+  .pregunta .num{ font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); letter-spacing:0.06em; }
+  .ops{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.5rem; }
+  .op{ position:relative; }
+  .op input{ position:absolute; opacity:0; width:1px; height:1px; }
+  .op span{ display:block; text-align:center; padding:0.6rem 0.5rem; border:1.5px solid var(--border); border-radius:9px; font-size:0.88rem; line-height:1.3; cursor:pointer; background:#fdfdfb; }
+  .op input:checked + span{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .op input:focus-visible + span{ outline:3px solid var(--accent); outline-offset:2px; }
+
+  .barra-progreso{ position:sticky; top:0; background:var(--paper); padding:0.7rem 0; z-index:5; }
+  .barra-progreso .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .barra{ height:8px; background:var(--border); border-radius:999px; overflow:hidden; }
+  .barra i{ display:block; height:100%; width:0; background:var(--accent); transition:width 0.25s; }
+
+  .btn{ display:inline-block; border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:1rem; padding:0.8rem 1.5rem; cursor:pointer; text-decoration:none; }
+  .btn:hover{ background:#3a2e63; }
+  .btn:disabled{ opacity:0.45; cursor:default; }
+  .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); font-size:0.9rem; padding:0.55rem 1.1rem; }
+
+  .resultado{ display:none; }
+  .resultado.visible{ display:block; }
+  .marcador{ background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--accent); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; text-align:center; margin:0 0 1.2rem; }
+  .marcador .cifra{ font-family:var(--font-display); font-size:3.2rem; font-weight:700; line-height:1; margin:0; }
+  .marcador .de{ color:var(--ink-soft); font-size:0.95rem; margin:0.2rem 0 0.9rem; }
+  .marcador .nivel{ font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0; }
+  .escala{ display:flex; gap:3px; margin:1.1rem 0 0.5rem; }
+  .escala div{ flex:1; height:10px; border-radius:3px; background:var(--border); }
+  .escala div.on{ background:var(--accent); }
+  .escala-leyenda{ display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ink-soft); font-family:var(--font-mono); }
+  .interpreta{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1.1rem 1.3rem; font-size:0.96rem; line-height:1.6; color:#3d3357; margin:0 0 1.2rem; }
+  .interpreta strong{ color:var(--accent); }
+  .sugerencias{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:0 0 1.2rem; }
+  .sugerencias h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.6rem; }
+  .sugerencias ul{ margin:0; padding-left:20px; }
+  .sugerencias li{ font-size:0.97rem; line-height:1.7; }
+  .aviso-crisis{ background:#fff4ef; border:1px solid #f0cdb8; border-left:4px solid var(--stamp); border-radius:12px; padding:1rem 1.3rem; font-size:0.94rem; line-height:1.6; margin:0 0 1.2rem; }
+  .aviso-crisis strong{ color:var(--stamp); }
+
+  .historial{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; }
+  .historial h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.3rem; }
+  .historial .nota{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 0.9rem; line-height:1.5; }
+  table{ width:100%; border-collapse:collapse; font-size:0.93rem; }
+  th, td{ text-align:left; padding:0.5rem 0.4rem; border-bottom:1px solid var(--border); }
+  th{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600; }
+  .privacidad{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:1.4rem 0 0; padding-top:1rem; border-top:1px solid var(--border); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .alerta-riesgo{ background:#fff4ef; border:1.5px solid #e0a583; border-left:5px solid var(--stamp); border-radius:12px; padding:1.1rem 1.3rem; font-size:0.97rem; line-height:1.65; margin:1.2rem 0; }
+  .alerta-riesgo strong{ color:var(--stamp); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+
+
+  .campo { margin: 0 0 1.1rem; }
+  .campo label { display: block; font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--stamp); margin: 0 0 0.35rem; }
+  .campo .ayuda { font-size: 0.86rem; color: var(--ink-soft); line-height: 1.5; margin: 0 0 0.5rem; }
+  .campo input[type="text"], .campo input[type="date"], .campo textarea {
+    width: 100%; padding: 0.65rem 0.8rem; border: 1.5px solid var(--border); border-radius: 9px;
+    font-family: inherit; font-size: 0.97rem; color: var(--ink); background: var(--surface); resize: vertical; }
+  .campo textarea { min-height: 62px; }
+  .campo input:focus, .campo textarea:focus { border-color: var(--accent); outline: none; }
+  .fila-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  @media (max-width: 520px) { .fila-2 { grid-template-columns: 1fr; } }
+  .rango { display: flex; align-items: center; gap: 0.8rem; }
+  .rango input[type="range"] { flex: 1; accent-color: var(--accent); }
+  .rango output { font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; color: var(--accent); min-width: 2.2rem; text-align: right; }
+  .resumen { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1.2rem; }
+  .dato { flex: 1; min-width: 130px; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 0.8rem 1rem; }
+  .dato .cifra-p { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: 0; line-height: 1.1; }
+  .dato .et { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0.25rem 0 0; }
+  .grafico { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 1rem 1.1rem 0.8rem; margin: 0 0 1.2rem; }
+  .grafico .g-tit { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 0.7rem; }
+  .barras { display: flex; align-items: flex-end; gap: 2px; height: 90px; }
+  .barras i { flex: 1; max-width: 46px; background: var(--accent); border-radius: 4px 4px 0 0; min-height: 3px; display: block; }
+  .barras-pie { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.62rem; color: var(--ink-soft); margin: 0.4rem 0 0; }
+  .entrada { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 0.9rem 1.1rem; margin: 0 0 0.7rem; }
+  .entrada .cab { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; margin: 0 0 0.5rem; }
+  .entrada .fecha { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+  .entrada .malestar { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+  .entrada dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.7rem; }
+  .entrada dt { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--stamp); padding-top: 0.2rem; }
+  .entrada dd { margin: 0; font-size: 0.94rem; line-height: 1.55; }
+  .entrada .quitar { margin: 0.7rem 0 0; font: inherit; font-size: 0.78rem; background: none; border: 1px solid var(--border); border-radius: 99px; padding: 0.25rem 0.75rem; cursor: pointer; color: var(--ink-soft); }
+  .entrada .quitar:hover { border-color: var(--stamp); color: var(--stamp); }
+  #copiado { font-size: 0.86rem; color: #2f6b4f; margin: 0.6rem 0 0; }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+  .descarga{ margin:1.6rem 0 0; padding:1rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .descarga p{ margin:0 0 0.75rem; font-size:0.92rem; color:var(--ink-soft); }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; border:0; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; cursor:pointer; font-family:inherit; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  @media print {
+    .site-header, .site-footer, .nota-wa, .envio-ops, .back-link, .descarga, .firma-consulta,
+    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
+    .buscador, .migas{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+  }
+  .nota-wa{ font-size:0.82rem; line-height:1.55; color:var(--ink-soft); margin:0.6rem 0 0; }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .envio-largo{ font-size:0.85rem; color:var(--ink-soft); }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  @media print{ .menu-cuadros{ display:none; } }
+
+
+  .ver-mios{ margin:0 0 1.6rem; font-size:0.98rem; }
+  .ver-mios a{ display:inline-block; background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:11px; padding:0.7rem 1.05rem; text-decoration:none; color:var(--ink); font-weight:600; }
+  .ver-mios a:hover{ border-color:var(--accent); color:var(--accent); }
+  .idea-prof{ margin-top:2.2rem; }
+  @media print{ .ver-mios{ display:none; } }
+  .grupo-h{ margin:2.2rem 0 0; }
+  /* Pegada a las tarjetas del grupo de arriba no se leía como algo aparte. */
+  .grupo-h + .idea{ margin-top:2.2rem; }
+  .grupo-h h2{ font-family:var(--font-display); font-size:1.22rem; font-weight:600; margin:0 0 0.25rem; }
+  .grupo-h .g-desc{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .h-lista{ display:grid; gap:0.7rem; }
+  .h-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none;
+           border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem;
+           background:var(--surface); transition:border-color 0.15s ease, transform 0.15s ease; }
+  .h-card:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  .h-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .h-txt{ min-width:0; }
+  .h-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .h-que{ display:block; font-size:0.9rem; color:var(--ink-soft); line-height:1.55; }
+  @media (min-width: 46rem){ .h-lista{ grid-template-columns:1fr 1fr; } }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  @media print{ .menu-cuadros{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/" class="back-link">← Volver a la portada</a>
+  <h1>Herramientas y autorregistros</h1>
+  <p class="lead">Veinticinco registros para llevar entre sesiones. Todos se rellenan en un minuto, se guardan
+  <strong>solo en tu navegador</strong> y los puedes copiar o imprimir para enseñárselos a tu psicólogo.</p>
+
+  <div class="idea"><strong>Elige uno, no cuatro.</strong> El error de siempre con esto es empezar tres
+  registros el lunes y dejarlos todos el jueves. Un registro que se rellena durante tres semanas vale
+  muchísimo más que cuatro llevados a medias. Si te ha mandado aquí tu psicólogo, usa el que te haya
+  dicho; si has llegado por tu cuenta, empieza por el <strong>A-B-C</strong> o por el
+  <strong>termómetro del día</strong>, que están aquí debajo.</div>
+
+  <p class="ver-mios" id="ver-mios" hidden><a href="/mis-registros.html">📓 Ver lo que ya tienes apuntado →</a></p>
+
+  <section class="grupo-h">
+    <h2>Para ver qué mantiene lo que te pasa</h2>
+    <p class="g-desc">Registros cortos, de los que se llevan a diario. Sirven para encontrar el patrón, que casi nunca es el que uno se imagina.</p>
+    <div class="h-lista">
+      <a class="h-card" href="/registro-abc.html">
+        <span class="h-ico" aria-hidden="true">🗒️</span>
+        <span class="h-txt"><span class="h-nom">Registro A-B-C</span><span class="h-que">Qué pasa antes, qué haces y qué pasa después.</span></span>
+      </a>
+      <a class="h-card" href="/registro-de-pensamientos.html">
+        <span class="h-ico" aria-hidden="true">💭</span>
+        <span class="h-txt"><span class="h-nom">Registro de pensamientos</span><span class="h-que">Situación, qué te pasó por la cabeza, qué sentiste y qué otra lectura cabe.</span></span>
+      </a>
+      <a class="h-card" href="/antes-de-la-sesion.html">
+        <span class="h-ico" aria-hidden="true">🗓️</span>
+        <span class="h-txt"><span class="h-nom">Antes y después de la sesión</span><span class="h-que">Lo que quieres hablar hoy, lo que te llevas y lo que vas a probar hasta la próxima.</span></span>
+      </a>
+      <a class="h-card" href="/termometro-del-dia.html">
+        <span class="h-ico" aria-hidden="true">🌡️</span>
+        <span class="h-txt"><span class="h-nom">Termómetro del día</span><span class="h-que">Un número al día y treinta segundos.</span></span>
+      </a>
+      <a class="h-card" href="/flecha-descendente.html">
+        <span class="h-ico" aria-hidden="true">⬇️</span>
+        <span class="h-txt"><span class="h-nom">Flecha descendente</span><span class="h-que">Del pensamiento de arriba a lo que hay debajo, bajando un escalón cada vez.</span></span>
+      </a>
+      <a class="h-card" href="/la-balanza.html">
+        <span class="h-ico" aria-hidden="true">⚖️</span>
+        <span class="h-txt"><span class="h-nom">La balanza</span><span class="h-que">Las cuatro casillas para decidir si cambias algo, incluida la que nadie escribe.</span></span>
+      </a>
+      <a class="h-card" href="/cuantas-veces-al-dia.html">
+        <span class="h-ico" aria-hidden="true">🔢</span>
+        <span class="h-txt"><span class="h-nom">Cuántas veces al día</span><span class="h-que">Un número al día para lo que quieras dejar de hacer.</span></span>
+      </a>
+    </div>
+  </section>
+  <section class="grupo-h">
+    <h2>Para poner a prueba lo que crees</h2>
+    <p class="g-desc">Discutir un pensamiento sirve poco; comprobarlo sirve mucho. Estos tres son para salir a mirar qué pasa de verdad.</p>
+    <div class="h-lista">
+      <a class="h-card" href="/jerarquia-de-exposicion.html">
+        <span class="h-ico" aria-hidden="true">🪜</span>
+        <span class="h-txt"><span class="h-nom">Jerarquía de exposición</span><span class="h-que">Tu escalera: lo que evitas, puntuado de 0 a 100 y ordenado de lo fácil a lo difícil.</span></span>
+      </a>
+      <a class="h-card" href="/registro-de-obsesiones.html">
+        <span class="h-ico" aria-hidden="true">🔁</span>
+        <span class="h-txt"><span class="h-nom">Obsesiones y compulsiones</span><span class="h-que">La hoja del trabajo de exposición con prevención de respuesta, para llevar entre sesiones.</span></span>
+      </a>
+      <a class="h-card" href="/registro-de-exposicion.html">
+        <span class="h-ico" aria-hidden="true">🪜</span>
+        <span class="h-txt"><span class="h-nom">Registro de exposición</span><span class="h-que">Para apuntar cada práctica de exposición: qué hiciste, cuánta ansiedad tuviste y cuánto aguantaste.</span></span>
+      </a>
+      <a class="h-card" href="/experimento-conductual.html">
+        <span class="h-ico" aria-hidden="true">🔬</span>
+        <span class="h-txt"><span class="h-nom">Experimento conductual</span><span class="h-que">Qué crees que va a pasar, qué haces para comprobarlo y qué pasó de verdad.</span></span>
+      </a>
+      <a class="h-card" href="/registro-de-crisis.html">
+        <span class="h-ico" aria-hidden="true">⚡</span>
+        <span class="h-txt"><span class="h-nom">Registro de crisis</span><span class="h-que">Dónde estabas, qué notaste, qué creíste que iba a pasar y qué pasó de verdad.</span></span>
+      </a>
+    </div>
+  </section>
+  <section class="grupo-h">
+    <h2>Para sostener el plan</h2>
+    <p class="g-desc">Los que se llevan entre sesiones cuando ya hay un plan en marcha: activación, sueño, preocupación y lo que hacer cuando venga mal dada.</p>
+    <div class="h-lista">
+      <a class="h-card" href="/darle-la-vuelta-a-un-pensamiento.html">
+        <span class="h-ico" aria-hidden="true">🔄</span>
+        <span class="h-txt"><span class="h-nom">Darle la vuelta a un pensamiento</span><span class="h-que">Los cinco pasos de la reestructuración cognitiva, con las preguntas puestas y en el orden que funciona.</span></span>
+      </a>
+      <a class="h-card" href="/resolver-un-problema.html">
+        <span class="h-ico" aria-hidden="true">🧩</span>
+        <span class="h-txt"><span class="h-nom">Resolver un problema</span><span class="h-que">Para los problemas de verdad, los que tienen varias salidas y ninguna buena del todo.</span></span>
+      </a>
+      <a class="h-card" href="/registro-de-actividades.html">
+        <span class="h-ico" aria-hidden="true">📅</span>
+        <span class="h-txt"><span class="h-nom">Actividades y ánimo</span><span class="h-que">Apunta qué haces y cómo estás antes y después.</span></span>
+      </a>
+      <a class="h-card" href="/diario-de-sueno.html">
+        <span class="h-ico" aria-hidden="true">😴</span>
+        <span class="h-txt"><span class="h-nom">Diario de sueño</span><span class="h-que">Dos semanas apuntando cómo duermes.</span></span>
+      </a>
+      <a class="h-card" href="/tiempo-de-preocupacion.html">
+        <span class="h-ico" aria-hidden="true">⏳</span>
+        <span class="h-txt"><span class="h-nom">Tiempo de preocupación</span><span class="h-que">Apúntala, ponle una hora y sigue con lo tuyo.</span></span>
+      </a>
+      <a class="h-card" href="/tarjeta-de-afrontamiento.html">
+        <span class="h-ico" aria-hidden="true">🃏</span>
+        <span class="h-txt"><span class="h-nom">Tarjeta de afrontamiento</span><span class="h-que">Lo que te vas a decir y lo que vas a hacer en el mal momento, escrito ahora que estás bien.</span></span>
+      </a>
+      <a class="h-card" href="/mis-objetivos-de-terapia.html">
+        <span class="h-ico" aria-hidden="true">🎯</span>
+        <span class="h-txt"><span class="h-nom">Mis objetivos de terapia</span><span class="h-que">Qué quieres cambiar, en qué se notaría si funciona y dónde estás hoy.</span></span>
+      </a>
+      <a class="h-card" href="/preparar-una-conversacion.html">
+        <span class="h-ico" aria-hidden="true">🗣️</span>
+        <span class="h-txt"><span class="h-nom">Preparar una conversación</span><span class="h-que">Qué quieres decir, con qué frase empiezas y qué haces si la cosa se tuerce.</span></span>
+      </a>
+      <a class="h-card" href="/plan-de-prevencion-de-recaidas.html">
+        <span class="h-ico" aria-hidden="true">🧭</span>
+        <span class="h-txt"><span class="h-nom">Plan de prevención de recaídas</span><span class="h-que">Tus señales de aviso y a quién avisar, escrito en un día bueno y para tener a la vista.</span></span>
+      </a>
+    </div>
+  </section>
+  <section class="grupo-h">
+    <h2>Para cuidarte</h2>
+    <p class="g-desc">Más breves y menos clínicos. Se sostienen mejor y valen para cualquiera.</p>
+    <div class="h-lista">
+      <a class="h-card" href="/diario-de-gratitud.html">
+        <span class="h-ico" aria-hidden="true">🌱</span>
+        <span class="h-txt"><span class="h-nom">Diario de gratitud</span><span class="h-que">Tres cosas del día, un minuto.</span></span>
+      </a>
+      <a class="h-card" href="/registro-de-meditacion.html">
+        <span class="h-ico" aria-hidden="true">🧘</span>
+        <span class="h-txt"><span class="h-nom">Registro de meditación</span><span class="h-que">Cuánto has practicado, de qué tipo y cómo fue.</span></span>
+      </a>
+      <a class="h-card" href="/carta-que-no-vas-a-enviar.html">
+        <span class="h-ico" aria-hidden="true">✉️</span>
+        <span class="h-txt"><span class="h-nom">Carta que no vas a enviar</span><span class="h-que">Para un duelo, una pareja, un padre, alguien que ya no está.</span></span>
+      </a>
+      <a class="h-card" href="/la-brujula.html">
+        <span class="h-ico" aria-hidden="true">🧭</span>
+        <span class="h-txt"><span class="h-nom">La brújula</span><span class="h-que">Qué te importa, cuánto lo estás viviendo, y qué distancia hay entre las dos cosas.</span></span>
+      </a>
+    </div>
+  </section>
+
+  <div class="idea"><strong>¿Con menos de un minuto?</strong> Si lo que te frena es que rellenar una hoja entera se te hace cuesta arriba, empieza por el <a href="/registro-rapido.html">registro rápido</a>: cuatro preguntas, y él solo va sacando los patrones.</div>
+
+  <div class="idea idea-prof"><strong>¿Eres psicólogo o psicóloga?</strong> Puedes mandar estas hojas a tus pacientes sin pedir permiso: son gratis, no piden cuenta y lo que escriben no sale de su dispositivo, así que no hay cesión de datos por medio. Te lo cuento en <a href="/para-psicologos.html">para psicólogos</a>.</div>
+
+  <div class="privacidad"><strong>Nada de esto sale de tu navegador.</strong> No hay cuenta, no hay
+  correo y no se envía nada a ningún servidor: lo que escribes se guarda en tu propio dispositivo y
+  puedes borrarlo cuando quieras. Eso también significa que si borras los datos de navegación o cambias
+  de móvil, se pierde: cópialo de vez en cuando si llevas semanas apuntando.</div>
+
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Herramientas y autorregistros", "description": "Veinticinco herramientas gratuitas para llevar entre sesiones: A-B-C, jerarquía y registro de exposición, actividades y ánimo, sueño, pensamientos, termómetro, tiempo de preocupación, gratitud, meditación, la carta que no se envía y el plan de recaídas.", "inLanguage": "es-ES", "url": "https://psicolinks.com/herramientas.html", "hasPart": [{"@type": "WebApplication", "name": "Registro A-B-C de siete días", "url": "https://psicolinks.com/registro-abc.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Jerarquía de exposición", "url": "https://psicolinks.com/jerarquia-de-exposicion.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Registro de obsesiones y compulsiones", "url": "https://psicolinks.com/registro-de-obsesiones.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Darle la vuelta a un pensamiento", "url": "https://psicolinks.com/darle-la-vuelta-a-un-pensamiento.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Resolver un problema", "url": "https://psicolinks.com/resolver-un-problema.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Registro de exposición", "url": "https://psicolinks.com/registro-de-exposicion.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Registro de actividades y ánimo", "url": "https://psicolinks.com/registro-de-actividades.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Diario de sueño", "url": "https://psicolinks.com/diario-de-sueno.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Registro de pensamientos", "url": "https://psicolinks.com/registro-de-pensamientos.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Antes y después de la sesión", "url": "https://psicolinks.com/antes-de-la-sesion.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Termómetro del día", "url": "https://psicolinks.com/termometro-del-dia.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Diario de gratitud", "url": "https://psicolinks.com/diario-de-gratitud.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Registro de meditación", "url": "https://psicolinks.com/registro-de-meditacion.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "La carta que no vas a enviar", "url": "https://psicolinks.com/carta-que-no-vas-a-enviar.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Tiempo de preocupación", "url": "https://psicolinks.com/tiempo-de-preocupacion.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Experimento conductual", "url": "https://psicolinks.com/experimento-conductual.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Flecha descendente", "url": "https://psicolinks.com/flecha-descendente.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Tarjeta de afrontamiento", "url": "https://psicolinks.com/tarjeta-de-afrontamiento.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "La balanza", "url": "https://psicolinks.com/la-balanza.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Registro de crisis de ansiedad", "url": "https://psicolinks.com/registro-de-crisis.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Cuántas veces al día", "url": "https://psicolinks.com/cuantas-veces-al-dia.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Mis objetivos de terapia", "url": "https://psicolinks.com/mis-objetivos-de-terapia.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Preparar una conversación difícil", "url": "https://psicolinks.com/preparar-una-conversacion.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "La brújula", "url": "https://psicolinks.com/la-brujula.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}, {"@type": "WebApplication", "name": "Plan de prevención de recaídas", "url": "https://psicolinks.com/plan-de-prevencion-de-recaidas.html", "applicationCategory": "HealthApplication", "isAccessibleForFree": true}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://psicolinks.com/herramientas.html"}]}</script>
+
+<script>
+/* El enlace a «mis registros» solo aparece si hay algo apuntado. Un enlace a
+   una pagina vacia es peor que no tener enlace. Las claves salen del catalogo:
+   si mañana hay una herramienta mas, entra sola.                           */
+(function(){
+  var CLAVES = ["pl_registro_abc", "pl_jerarquia", "pl_plan_recaidas", "pl_obsesiones", "pl_vuelta", "pl_problemas", "pl_exposicion", "pl_actividades", "pl_sueno", "pl_pensamientos", "pl_sesiones", "pl_termometro", "pl_gratitud", "pl_meditacion", "pl_cartas", "pl_preocupacion", "pl_experimentos", "pl_flecha", "pl_tarjetas", "pl_balanza", "pl_crisis", "pl_cuenta", "pl_objetivos", "pl_conversaciones", "pl_brujula"];
+  var hay = CLAVES.some(function(k){
+    try { var v = JSON.parse(localStorage.getItem(k) || 'null');
+          return Array.isArray(v) ? v.length > 0 : !!(v && Object.keys(v).length); }
+    catch(e){ return false; }
+  });
+  if (!hay) return;
+  var e = document.getElementById('ver-mios');
+  if (e) e.hidden = false;
+})();
+</script>
+
+
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

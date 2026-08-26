@@ -74,6 +74,44 @@
   .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
   .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
   .siguiente-paso a:hover{ text-decoration:underline; }
+  .firma-consulta{ margin:2rem 0 0; padding:1rem 1.15rem; background:var(--surface); border:1px solid var(--border); border-left:4px solid #8C3B4A; border-radius:11px; }
+  .firma-consulta p{ margin:0; font-size:0.93rem; line-height:1.65; color:var(--ink-soft); }
+  .firma-consulta p strong a{ color:var(--ink); }
+  .firma-consulta .fc-otras{ margin:0.5rem 0 0; font-size:0.86rem; opacity:0.9; }
+  @media print {
+    .site-header, .site-footer, .back-link, .descarga, .firma-consulta,
+    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
+    .buscador, .migas{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+  }
+  .cc-banda{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .cc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .cc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:600px){ .cc-rejilla{ grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); } }
+  .cc-tarjeta{ display:flex; align-items:center; gap:0.85rem; text-decoration:none; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1rem 1.15rem; color:var(--ink); }
+  .cc-tarjeta:hover{ border-color:#8C3B4A; }
+  .cc-marca{ flex-shrink:0; width:2.6rem; height:1.1rem; color:#8C3B4A; }
+  .cc-txt{ display:flex; flex-direction:column; gap:0.1rem; min-width:0; }
+  .cc-nom{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; line-height:1.25; }
+  .cc-quien{ font-size:0.88rem; color:var(--ink-soft); line-height:1.35; }
+  .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
+  .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
+  @media print{ .cc-banda{ display:none; } }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
 </style>
 <script type="application/ld+json">
 { "@context":"https://schema.org","@type":"Article","headline":"Me cuesta pedir ayuda","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/me-cuesta-pedir-ayuda.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
@@ -91,6 +129,22 @@
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis herramientas para cuando prefieres cargar con todo antes que molestar a nadie, y luego te enfadas porque nadie se ofrece.</p>
   <div class="idea"><strong>La idea de fondo.</strong> Hay un dato que cambia bastante las cosas: la gente subestima mucho la probabilidad de que alguien acceda a ayudarles si se lo piden directamente. Vamos por la vida con una predicción pesimista que casi nunca comprobamos, porque justamente no pedimos. Lo segundo que falla es el formato: «avísame si necesitas algo» no lo usa nadie, y «necesito ayuda» es demasiado grande. Lo que se concede es lo concreto, pequeño y con fecha. Y lo tercero: disculparse al pedir no suaviza nada, le dice al otro que esto es una carga y le deja la salida hecha.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="descarga">
+    <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
+    <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
+  </div>
 
   <h2 class="bloque-tit">Seis herramientas</h2>
 <div class="tool">
@@ -130,31 +184,39 @@
   <div class="hazlo"><strong>Hazlo así:</strong> pregúntate de dónde te viene y qué pasaba cuando pedías de pequeño. Si ahí hay algo grande, eso es lo que hay que trabajar, y se trabaja bien.</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si esto viene de lejos, si te deja aislado o si te has encontrado cargando con cosas que no te tocaban hasta reventar, merece la pena trabajarlo: casi siempre hay debajo algo aprendido que se puede cambiar. Y si lo que te cuesta es pedir ayuda profesional, empieza por aquí: <a href="/elegir-psicologo.html">cómo elegir psicólogo</a> y <a href="/primera-sesion-psicologo.html">cómo es la primera sesión</a>. Si quieres, puedes escribirme en <strong><a href="https://concienciaconductual.com" target="_blank" rel="noopener">Conciencia Conductual</a></strong> (concienciaconductual.com), online o presencial.</div>
+  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si esto viene de lejos, si te deja aislado o si te has encontrado cargando con cosas que no te tocaban hasta reventar, merece la pena trabajarlo: casi siempre hay debajo algo aprendido que se puede cambiar. Y si lo que te cuesta es pedir ayuda profesional, empieza por aquí: <a href="/elegir-psicologo.html">cómo elegir psicólogo</a> y <a href="/primera-sesion-psicologo.html">cómo es la primera sesión</a>.</div>
 
-
-
-  <div class="siguiente-paso">
-    <span class="sp-eti">Si quieres seguir</span>
-    <a href="/primera-sesion-psicologo.html">Qué pasa en la primera sesión con el psicólogo →</a>
-  </div>
-
-  <div class="consulta-cta">
-    <h3>¿Y si esto te está pasando a ti?</h3>
-    <p>Leer sobre un tema ayuda a entenderlo, pero no sustituye a que alguien mire tu caso concreto.
-    Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº CV17649, y el que escribe todo esto.
-    Paso consulta en Conciencia Conductual, online y presencial.</p>
-    <a class="consulta-btn" href="https://concienciaconductual.com" target="_blank" rel="noopener">Ver mi consulta →</a>
-    <p class="consulta-otros">Si prefieres otras opciones: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
-    <p class="consulta-nota">Aquí no soy neutral: te estoy recomendando mi propia consulta. Por eso te dejo también
-    las otras vías, incluida la pública, en «dónde pedir ayuda».</p>
-  </div>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
 
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
@@ -164,6 +226,5 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
-<script src="/progreso-psicolinks.js" defer></script>
 </body>
 </html>

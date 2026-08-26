@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El test de Stroop: pruébalo cronometrado · Psicolinks</title>
+<meta name="description" content="Di de qué color está escrita la palabra, no lo que pone. Dos rondas cronometradas y la diferencia, que la produces tú, no un dato de nadie.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El test de Stroop, cronometrado">
+<meta property="og:description" content="Di el color de la tinta, no lo que pone la palabra. Vas a tardar bastante más.">
+<meta property="og:url" content="https://psicolinks.com/experimento-stroop.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-stroop.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+
+  .st-marca{ font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.09em; text-transform:uppercase;
+             color:var(--ink-soft); text-align:center; margin:0 0 0.6rem; }
+  .st-palabra{ font-family:var(--font-display); font-weight:700; font-size:clamp(2.6rem,13vw,4rem);
+               line-height:1.1; text-align:center; margin:1.4rem 0 1.8rem; letter-spacing:0.02em;
+               min-height:1.2em; user-select:none; }
+  .st-botones{ display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; }
+  .st-b{ font-family:inherit; font-weight:700; font-size:1.05rem; padding:1.1rem 0.6rem; border-radius:12px;
+         border:2px solid var(--border); background:var(--surface); cursor:pointer; }
+  .st-b:active{ transform:translateY(1px); }
+  .st-via{ height:0.4rem; border-radius:99px; background:var(--border); overflow:hidden; margin:1.1rem 0 0; }
+  .st-via i{ display:block; height:100%; background:#8C3B4A; width:0; transition:width 0.12s linear; }
+  .st-fallo{ color:#8C3B4A; font-weight:600; text-align:center; font-size:0.9rem; margin:0.7rem 0 0; min-height:1.3em; }
+  .st-aviso{ background:var(--paper); border:1px solid var(--border); border-left:4px solid var(--stamp);
+             border-radius:10px; padding:0.8rem 1rem; font-size:0.9rem; line-height:1.6; margin:1.2rem 0 0; }
+  .lab-barras{ display:grid; gap:0.55rem; margin:0.4rem 0 1.2rem; }
+  .lab-b{ display:grid; grid-template-columns:8.5rem 1fr auto; align-items:center; gap:0.6rem; font-size:0.9rem; }
+  .lab-b .via{ height:0.72rem; border-radius:99px; background:var(--border); overflow:hidden; }
+  .lab-b .via i{ display:block; height:100%; background:#8C3B4A; }
+  .lab-b .via.otro i{ background:var(--accent); }
+  .lab-b .num{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Dos minutos</div>
+  <h1>El test de Stroop</h1>
+  <p class="lead">Este no hace falta creérselo: lo mide un cronómetro, y el número lo produces tú.</p>
+
+  <!-- ─────────────────────────────── 1. las instrucciones ─────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Dos rondas de veinte, y las dos van cronometradas.</p>
+      <p class="lab-sub">En la primera aparece un bloque de color y pulsas de qué color es. En la
+      segunda aparece una palabra —ROJO, AZUL, VERDE, AMARILLO— escrita en un color <strong>que nunca
+      es el que dice</strong>, y tienes que pulsar el color de la tinta, no lo que pone. Si te
+      equivocas, la palabra se queda hasta que aciertes.</p>
+      <p class="lab-sub" style="margin-bottom:0;">Ve lo más rápido que puedas. La gracia está en la
+      prisa: despacio no se nota nada.</p>
+      <button type="button" class="lab-btn" id="st-empezar">Empezar la primera ronda →</button>
+      <div class="st-aviso"><strong>Si no distingues bien los colores</strong> —daltonismo de
+      cualquier tipo—, este experimento no te va a funcionar y no dice nada de ti. Los otros del
+      <a href="/laboratorio.html">laboratorio</a> no van de color.</div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 1.5 entre rondas ─────────────────── -->
+  <section class="lab-paso" id="lab-15">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Ronda 1 hecha. Ahora la buena.</p>
+      <p class="lab-sub">Ahora salen palabras de colores, escritas siempre en <strong>otro</strong>
+      color. Tienes que pulsar el color de la tinta e ignorar lo que pone. Igual de rápido que antes.</p>
+      <button type="button" class="lab-btn" id="st-seguir">Empezar la segunda ronda →</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. la ronda ──────────────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="st-marca" id="st-marca" role="status" aria-live="off">Ronda 1 de 2</p>
+      <p class="lab-sub" id="st-instr" style="text-align:center;">Pulsa el color del bloque.</p>
+      <p class="st-palabra" id="st-palabra" aria-live="off">&nbsp;</p>
+      <div class="st-botones" id="st-botones"></div>
+      <p class="st-fallo" id="st-fallo" role="status" aria-live="polite"></p>
+      <div class="st-via"><i id="st-via-i"></i></div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 3. el resultado ──────────────────── -->
+  <section class="lab-paso" id="lab-3">
+    <div class="lab-caja">
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="st-t1">0s</b><span>bloques de color</span></div>
+        <div class="lab-dato"><b id="st-t2">0s</b><span>palabras al revés</span></div>
+      </div>
+      <div class="lab-barras" id="st-barras"></div>
+      <p class="lab-veredicto" id="lab-veredicto"></p>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+      <button type="button" class="lab-btn sec" id="lab-otra">Probar otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Leer es automático. Llevas tantos años haciéndolo que ya no lo decides: la palabra se lee sola
+    antes de que te dé tiempo a querer leerla. Así que en la segunda ronda tenías dos respuestas
+    peleándose por salir —la que lees y la que ves— y has tenido que frenar una para dar la otra.
+    <strong>Frenar cuesta tiempo, y ese tiempo es lo que acabas de medir.</strong></p>
+
+    <div class="idea"><strong>Esto lo midió John Ridley Stroop en 1935</strong>, y desde entonces se
+    ha repetido miles de veces: en su experimento, la condición con interferencia subió el tiempo
+    <strong>alrededor de un 74&nbsp;%</strong>. Es de los efectos más sólidos de toda la psicología —
+    sale prácticamente en todo el mundo, sepas o no sepas de qué va.</div>
+
+    <p>Y aquí está lo que importa fuera del laboratorio: <strong>lo automático no se apaga con
+    voluntad</strong>. Puedes taparlo, contrarrestarlo o darle otra respuesta encima, pero apagarlo
+    no. Por eso «tú no le hagas caso», «pasa de eso» o «no te lo tomes así» no son instrucciones que
+    nadie pueda cumplir: el primer pensamiento sale solo, igual que la palabra se lee sola. Lo único
+    que se elige es lo segundo — qué haces con él.</p>
+
+    <div class="idea"><strong>Dos sitios donde esto se nota mucho.</strong> Uno: cuando alguien te
+    dice «no pienses en eso» — lo tienes en <a href="/experimento-oso-blanco.html">el oso blanco</a>.
+    Y dos: cuando crees que puedes hacer dos cosas a la vez, que es exactamente el mismo peaje pagado
+    cien veces al día — está en <a href="/la-multitarea-no-existe.html">la multitarea no existe</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Stroop, J. R. (1935).
+    <em>Studies of interference in serial verbal reactions</em>. Journal of Experimental Psychology,
+    18(6), 643–662. Lo de aquí arriba es una <strong>versión de salón</strong>: veinte palabras en un
+    móvil, no listas impresas leídas en voz alta y cronometradas por otra persona. Tus segundos
+    dependen de tu pantalla, de tus dedos y de las ganas que tuvieras — sirven para compararlos entre
+    sí, no con nadie. <strong>No es una prueba psicológica, no puntúa nada y no dice nada de ti.</strong></p>
+  </section>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El test de Stroop · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-stroop.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Dos rondas cronometradas: decir el color de un bloque y decir el color de una palabra que dice otro color. La diferencia la produces tú."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "El test de Stroop", "item": "https://psicolinks.com/experimento-stroop.html"}]}</script>
+<script>
+/* El test de Stroop --------------------------------------------------------
+   Dos rondas de veinte. En la primera solo hay un bloque de color; en la
+   segunda, palabras de colores escritas en otro color. Se cronometran las dos
+   y la diferencia es el resultado — que lo produce la propia persona, así que
+   aquí no hay que creerse ningún dato de nadie.
+
+   La ronda difícil va la segunda a propósito: así la práctica juega A FAVOR
+   de la ronda difícil, y si aun así sale más lenta, la interferencia es mayor
+   que lo que marca el reloj. Se dice en la página.
+
+   No guarda nada. Al compartir, los dos tiempos viajan detrás de la # del
+   enlace, que es la parte que no llega al servidor.                        */
+(function(){
+  'use strict';
+  var COLORES = [
+    { id:'rojo',     nom:'Rojo',     css:'#C0392B' },
+    { id:'azul',     nom:'Azul',     css:'#2456A6' },
+    { id:'verde',    nom:'Verde',    css:'#1E7A45' },
+    { id:'amarillo', nom:'Amarillo', css:'#B8860B' }
+  ];
+  var POR_RONDA = 20;
+  var ronda = 0, i = 0, fallos = 0, t0 = 0, lista = [], tiempos = [0, 0], errores = [0, 0];
+
+  /* lab-15 es la pantalla de entre rondas: si se olvida en esta lista, la
+     persona termina la ronda 1 y se queda mirando una pantalla muerta. */
+  function ver(id){
+    ['lab-1','lab-15','lab-2','lab-3'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function az(n){ return Math.floor(Math.random() * n); }
+
+  /* Ronda 1: un bloque, sin palabra. Ronda 2: palabra que dice otro color. */
+  function generar(r){
+    var out = [];
+    for (var k = 0; k < POR_RONDA; k++) {
+      var tinta = COLORES[az(4)];
+      if (r === 1) { out.push({ texto:'████', tinta:tinta }); }
+      else {
+        var dice;
+        do { dice = COLORES[az(4)]; } while (dice.id === tinta.id);   /* nunca coinciden */
+        out.push({ texto:dice.nom.toUpperCase(), tinta:tinta });
+      }
+    }
+    return out;
+  }
+
+  var elPal = document.getElementById('st-palabra');
+  var elVia = document.getElementById('st-via-i');
+  var elMar = document.getElementById('st-marca');
+  var elFal = document.getElementById('st-fallo');
+
+  document.getElementById('st-botones').innerHTML = COLORES.map(function(c){
+    return '<button type="button" class="st-b" data-c="' + c.id + '" style="color:' + c.css + '">' +
+      esc(c.nom) + '</button>';
+  }).join('');
+
+  function pintar(){
+    var it = lista[i];
+    elPal.textContent = it.texto;
+    elPal.style.color = it.tinta.css;
+    elVia.style.width = (i / POR_RONDA * 100) + '%';
+    elMar.textContent = 'Ronda ' + ronda + ' de 2 · ' + (i + 1) + ' de ' + POR_RONDA;
+  }
+
+  function empezar(r){
+    ronda = r; i = 0; fallos = 0;
+    lista = generar(r);
+    elFal.textContent = '';
+    document.getElementById('st-instr').innerHTML = r === 1
+      ? 'Pulsa el color del bloque. Lo más rápido que puedas.'
+      : '<strong>Pulsa el color de la TINTA, no lo que pone la palabra.</strong> Lo más rápido que puedas.';
+    ver('lab-2');
+    pintar();
+    t0 = Date.now();
+  }
+
+  document.getElementById('st-empezar').addEventListener('click', function(){ empezar(1); });
+
+  document.getElementById('st-botones').addEventListener('click', function(ev){
+    var b = ev.target.closest('.st-b');
+    if (!b || !lista.length) return;
+    if (b.dataset.c !== lista[i].tinta.id) {
+      fallos++; elFal.textContent = 'Ese no. Mira el color, no la palabra.';
+      return;                                   /* se queda hasta acertar */
+    }
+    elFal.textContent = '';
+    i++;
+    if (i < POR_RONDA) { pintar(); return; }
+
+    tiempos[ronda - 1] = (Date.now() - t0) / 1000;
+    errores[ronda - 1] = fallos;
+    elVia.style.width = '100%';
+    if (ronda === 1) { setTimeout(function(){ ver('lab-15'); }, 200); }
+    else { resultado(); }
+  });
+
+  document.getElementById('st-seguir').addEventListener('click', function(){ empezar(2); });
+
+  /* ---------------------------------------------------------- el resultado */
+  function un(n){ return Math.round(n * 10) / 10; }
+  function barra(eti, pct, texto, otro){
+    return '<div class="lab-b"><span>' + esc(eti) + '</span>' +
+      '<span class="via' + (otro ? ' otro' : '') + '"><i style="width:' + Math.max(2, Math.min(100, pct)) + '%"></i></span>' +
+      '<span class="num">' + esc(texto) + '</span></div>';
+  }
+
+  function resultado(){
+    var t1 = tiempos[0], t2 = tiempos[1];
+    var subida = t1 > 0 ? Math.round((t2 - t1) / t1 * 100) : 0;
+    document.getElementById('st-t1').textContent = un(t1) + 's';
+    document.getElementById('st-t2').textContent = un(t2) + 's';
+
+    var tope = Math.max(t1, t2);
+    document.getElementById('st-barras').innerHTML =
+      barra('Bloques de color', t1 / tope * 100, un(t1) + 's', true) +
+      barra('Palabras al revés', t2 / tope * 100, un(t2) + 's');
+
+    var v;
+    if (subida >= 5) {
+      v = 'Has tardado <strong>un ' + subida + '&nbsp;% más</strong> en la segunda ronda. ' +
+          'Y fíjate en el detalle: la ronda difícil iba la segunda, o sea con la práctica a tu favor. ' +
+          'Aun así te ha frenado.';
+    } else if (subida > -5) {
+      v = 'Te ha salido prácticamente igual de rápido en las dos. Pasa: si vas despacio y con cuidado, ' +
+          'la interferencia casi no se nota en el reloj — se nota en el esfuerzo. Repítelo yendo a toda ' +
+          'velocidad y suele aparecer.';
+    } else {
+      v = 'Has ido más rápido en la segunda, cosa poco frecuente. Casi siempre es la práctica: ya sabías ' +
+          'dónde estaban los botones. Prueba otra vez a ver si se mantiene.';
+    }
+    var fal = errores[0] + errores[1];
+    if (fal) {
+      v += ' Y te has equivocado ' + fal + (fal === 1 ? ' vez' : ' veces') +
+           (errores[1] > errores[0] ? ', casi todas en la ronda difícil.' : '.');
+    }
+    document.getElementById('lab-veredicto').innerHTML = v;
+    ver('lab-3');
+  }
+
+  /* ----------------------------------------------------------- compartir */
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = 'Acabo de hacer el test de Stroop de Psicolinks: ' + un(tiempos[0]) + 's con los bloques de ' +
+      'color y ' + un(tiempos[1]) + 's cuando la palabra me llevaba la contraria. Pruébalo: ' +
+      'https://psicolinks.com/experimento-stroop.html';
+    if (navigator.share) { navigator.share({ text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('El test de Stroop') + '&body=' + encodeURIComponent(t);
+  });
+
+  document.getElementById('lab-otra').addEventListener('click', function(){ ver('lab-1'); });
+})();
+</script>
+
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

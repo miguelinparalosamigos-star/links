@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La ilusión de control: pruébalo en dos minutos · Psicolinks</title>
+<meta name="description" content="Cuarenta rondas intentando encender una luz y una pregunta al final: cuánto control creías tener. La respuesta suele descolocar.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="La ilusión de control">
+<meta property="og:description" content="Cuarenta rondas para encender una luz. Y una pregunta al final.">
+<meta property="og:url" content="https://psicolinks.com/experimento-ilusion-de-control.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-ilusion-de-control.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-btn:disabled{ opacity:0.45; cursor:default; }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.8rem; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+
+  .ic-marca{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.09em; text-transform:uppercase;
+             color:var(--ink-soft); text-align:center; margin:0; }
+  .ic-luz{ width:7.5rem; height:7.5rem; border-radius:50%; margin:1.4rem auto 1.2rem; background:#DDD7CB;
+           border:6px solid var(--border); transition:background 0.1s, box-shadow 0.1s; }
+  .ic-luz.on{ background:#F2C744; border-color:#D9A800; box-shadow:0 0 34px rgba(242,199,68,0.75); }
+  .ic-botones{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
+  .ic-b{ font-family:inherit; font-weight:700; font-size:1.02rem; padding:1.05rem 0.6rem; border-radius:12px;
+         border:2px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer; }
+  .ic-b.pulsar{ border-color:var(--accent); color:var(--accent); }
+  .ic-b:disabled{ opacity:0.4; cursor:default; }
+  .ic-via{ height:0.4rem; border-radius:99px; background:var(--border); overflow:hidden; margin:1.1rem 0 0; }
+  .ic-via i{ display:block; height:100%; background:#8C3B4A; width:0; transition:width 0.15s linear; }
+  .ic-escala{ display:flex; align-items:center; gap:0.8rem; }
+  .ic-escala input[type=range]{ flex:1; accent-color:#8C3B4A; }
+  .ic-escala output{ font-family:var(--font-mono); font-weight:700; font-size:1.7rem; min-width:3.4ch; text-align:right; }
+  .ic-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem;
+                letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .ic-golpe{ background:#8C3B4A; color:#fff; border-radius:14px; padding:1.2rem 1.3rem; margin:0 0 1.1rem; }
+  .ic-golpe .eti{ display:block; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.09em;
+                  text-transform:uppercase; opacity:0.8; }
+  .ic-golpe p{ margin:0.35rem 0 0; font-size:1.08rem; line-height:1.5; font-weight:600; }
+  .lab-barras{ display:grid; gap:0.55rem; margin:0.4rem 0 1.2rem; }
+  .lab-b{ display:grid; grid-template-columns:8.5rem 1fr auto; align-items:center; gap:0.6rem; font-size:0.9rem; }
+  .lab-b .via{ height:0.72rem; border-radius:99px; background:var(--border); overflow:hidden; }
+  .lab-b .via i{ display:block; height:100%; background:#8C3B4A; }
+  .lab-b .num{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); white-space:nowrap; }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Dos minutos</div>
+  <h1>La ilusión de control</h1>
+  <p class="lead">Cuarenta rondas para encender una luz. Y una pregunta al final que es de lo que va
+  esto de verdad.</p>
+
+  <!-- ─────────────────────────────── 1. instrucciones ─────────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Tu objetivo es que se encienda la luz.</p>
+      <p class="lab-sub">En cada ronda eliges una de dos cosas: <strong>pulsar</strong> o
+      <strong>no pulsar</strong>. Después verás si la luz se enciende. Vas a tener cuarenta rondas para
+      averiguar cómo va.</p>
+      <p class="lab-sub" style="margin-bottom:0;">Ve probando: pulsa unas veces sí y otras no, a ver
+      qué pasa. Tarda menos de dos minutos.</p>
+      <button type="button" class="lab-btn" id="ic-empezar">Empezar →</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. las rondas ────────────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="ic-marca" id="ic-marca" role="status" aria-live="off">Ronda 1 de 40</p>
+      <div class="ic-luz" id="ic-luz" role="img" aria-label="La luz"></div>
+      <div class="ic-botones" id="ic-botones">
+        <button type="button" class="ic-b pulsar" data-v="si">Pulsar</button>
+        <button type="button" class="ic-b" data-v="no">No pulsar</button>
+      </div>
+      <div class="ic-via"><i id="ic-via-i"></i></div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 3. la pregunta ───────────────────── -->
+  <section class="lab-paso" id="lab-3">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Ya está. Ahora la pregunta.</p>
+      <p class="lab-sub">De 0 a 100: <strong>¿cuánto control crees que has tenido</strong> sobre si la
+      luz se encendía? Cero sería «ninguno, iba a su aire»; cien, «la controlaba del todo».</p>
+      <div class="ic-escala">
+        <input type="range" id="ic-c" min="0" max="100" step="5" value="50" aria-label="Cuánto control crees que has tenido">
+        <output id="ic-c-val" for="ic-c">50</output>
+      </div>
+      <p class="ic-extremos"><span>0 · ninguno</span><span>100 · total</span></p>
+      <button type="button" class="lab-btn" id="ic-ver">Ver el resultado →</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 4. el resultado ──────────────────── -->
+  <section class="lab-paso" id="lab-4">
+    <div class="lab-caja">
+      <div class="ic-golpe" id="ic-golpe"></div>
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="ic-r-tu">0%</b><span>control que creías tener</span></div>
+        <div class="lab-dato"><b id="ic-r-real">0%</b><span>control que tenías</span></div>
+      </div>
+      <div class="lab-barras" id="ic-barras"></div>
+      <p class="lab-veredicto" id="lab-veredicto"></p>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+      <button type="button" class="lab-btn sec" id="ic-otra">Probar otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>La luz se encendía tirando una moneda trucada al 75&nbsp;%, siempre igual, hicieras lo que
+    hicieras. Y ahí está la clave de todo esto: <strong>la sensación de control no viene de controlar
+    — viene de que las cosas salgan bien a menudo</strong>. Si la luz se hubiera encendido solo una de
+    cada cuatro veces, casi nadie habría dicho que la controlaba. Con tres de cada cuatro, casi todo
+    el mundo lo dice.</p>
+
+    <div class="idea"><strong>Eso es exactamente lo que midieron Alloy y Abramson en 1979.</strong>
+    Mismo montaje: pulsar o no pulsar, una luz, y cero relación entre las dos cosas. Con la luz
+    encendiéndose el 25&nbsp;% de las veces, la gente acertaba y decía que no controlaba nada. Con el
+    75&nbsp;%, se atribuía un control que no existía. <strong>La ilusión no la fabrica el esfuerzo:
+    la fabrica el buen resultado.</strong></div>
+
+    <p>Y de aquí sale casi todo el catálogo: la camiseta de la suerte, el orden exacto de las cosas
+    antes de un examen, tocar madera. Pero también, y esto ya no es folclore, <strong>lo que mantiene
+    una compulsión</strong>. Comprobar el gas y que no pase nada. Repasar la conversación y que no
+    pase nada. Como casi siempre no pasa nada, el ritual se queda con el mérito — igual que tu dedo
+    se quedaba con el mérito de una luz que iba a encenderse de todas formas.</p>
+
+    <div class="idea"><strong>Y por eso el tratamiento es el que es.</strong> Para romperlo no basta
+    con saberlo: hay que <em>no hacer el ritual</em> y comprobar que tampoco pasa nada. Eso tiene
+    nombre —exposición con prevención de respuesta— y su hoja está en
+    <a href="/registro-de-obsesiones.html">registro de obsesiones y compulsiones</a>; el porqué, en
+    <a href="/obsesiones-y-toc.html">obsesiones y TOC</a>. Y si lo que te interesa es lo contrario —
+    lo que sí controlas y lo que no—, está en
+    <a href="/aceptar-lo-que-no-puedes-cambiar.html">aceptar lo que no puedes cambiar</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Alloy, L. B. y Abramson,
+    L. Y. (1979). <em>Judgment of contingency in depressed and nondepressed students: sadder but
+    wiser?</em> Journal of Experimental Psychology: General, 108(4), 441–485. Del título habrás
+    deducido la otra mitad del estudio: el grupo con ánimo bajo estimaba el control con más exactitud.
+    Es un resultado famoso, se ha replicado de forma desigual y, sobre todo, <strong>no se puede leer
+    al revés</strong>: que hayas acertado aquí no dice absolutamente nada sobre tu estado de ánimo, y
+    que te hayas equivocado tampoco. Esto es una versión de salón —cuarenta rondas en un móvil— y
+    <strong>no mide nada de ti</strong>.</p>
+  </section>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "La ilusión de control · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-ilusion-de-control.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Cuarenta rondas intentando encender una luz, y al final la pregunta: cuánto control creías tener. Spoiler que no se cuenta hasta el final."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "La ilusión de control", "item": "https://psicolinks.com/experimento-ilusion-de-control.html"}]}</script>
+<script>
+/* La ilusión de control ----------------------------------------------------
+   Cuarenta rondas. En cada una eliges pulsar o no pulsar, y después la luz se
+   enciende o no. Lo que no se dice hasta el final: la luz se enciende el
+   75 % de las veces HAGAS LO QUE HAGAS. No hay ninguna relación.
+
+   El resultado no se apoya en el estudio: se apoya en los propios datos de
+   quien lo hace — cuántas veces se encendió pulsando y cuántas sin pulsar.
+   Casi siempre salen parecidas, y ahí está la demostración.
+
+   No guarda nada, ni en el navegador.                                       */
+(function(){
+  'use strict';
+  var RONDAS = 40, P_LUZ = 0.75;
+  var i = 0, conPulsar = [0, 0], sinPulsar = [0, 0];   /* [veces, encendidos] */
+  var estimado = 0, bloqueado = false;
+
+  function ver(id){
+    ['lab-1','lab-2','lab-3','lab-4'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function pct(a, b){ return b ? Math.round(a / b * 100) : 0; }
+
+  document.getElementById('ic-empezar').addEventListener('click', function(){
+    i = 0; conPulsar = [0, 0]; sinPulsar = [0, 0];
+    marcador();
+    ver('lab-2');
+  });
+
+  function marcador(){
+    document.getElementById('ic-marca').textContent = 'Ronda ' + Math.min(i + 1, RONDAS) + ' de ' + RONDAS;
+    document.getElementById('ic-via-i').style.width = (i / RONDAS * 100) + '%';
+  }
+
+  document.getElementById('ic-botones').addEventListener('click', function(ev){
+    var b = ev.target.closest('.ic-b');
+    if (!b || bloqueado || i >= RONDAS) return;
+    bloqueado = true;
+    var pulsa = b.dataset.v === 'si';
+
+    /* Aquí está el truco entero: la moneda se tira igual, se pulse o no. */
+    var enciende = Math.random() < P_LUZ;
+    (pulsa ? conPulsar : sinPulsar)[0]++;
+    if (enciende) (pulsa ? conPulsar : sinPulsar)[1]++;
+
+    var luz = document.getElementById('ic-luz');
+    luz.classList.toggle('on', enciende);
+    i++;
+    setTimeout(function(){
+      luz.classList.remove('on');
+      bloqueado = false;
+      if (i >= RONDAS) { preguntar(); } else { marcador(); }
+    }, 500);
+  });
+
+  /* ------------------------------------------------------- 3. la pregunta */
+  function preguntar(){
+    document.getElementById('ic-c').value = 50;
+    document.getElementById('ic-c-val').textContent = '50';
+    ver('lab-3');
+  }
+  var r = document.getElementById('ic-c');
+  r.addEventListener('input', function(){ document.getElementById('ic-c-val').textContent = this.value; });
+
+  /* ------------------------------------------------------ 4. el resultado */
+  document.getElementById('ic-ver').addEventListener('click', function(){
+    estimado = +r.value;
+    var pc = pct(conPulsar[1], conPulsar[0]), ps = pct(sinPulsar[1], sinPulsar[0]);
+    var real = Math.abs(pc - ps);
+
+    document.getElementById('ic-golpe').innerHTML = '<span class="eti">Lo que no te habíamos dicho</span>' +
+      '<p>La luz se encendía <strong>el 75&nbsp;% de las veces, pulsaras o no pulsaras</strong>. ' +
+      'No había ninguna relación entre lo que hacías y lo que pasaba. Ninguna.</p>';
+
+    document.getElementById('ic-barras').innerHTML =
+      '<div class="lab-b"><span>Pulsando</span><span class="via"><i style="width:' + Math.max(2, pc) + '%"></i></span>' +
+      '<span class="num">' + pc + '% (' + conPulsar[1] + ' de ' + conPulsar[0] + ')</span></div>' +
+      '<div class="lab-b"><span>Sin pulsar</span><span class="via"><i style="width:' + Math.max(2, ps) + '%"></i></span>' +
+      '<span class="num">' + ps + '% (' + sinPulsar[1] + ' de ' + sinPulsar[0] + ')</span></div>';
+
+    document.getElementById('ic-r-tu').textContent = estimado + '%';
+    document.getElementById('ic-r-real').textContent = '0%';
+
+    var v = '';
+    if (estimado >= 30) {
+      v = 'Has dicho que tenías un <strong>' + estimado + '&nbsp;%</strong> de control sobre algo que no ' +
+          'controlabas en absoluto. Y no es que no te fijaras: es que la luz se encendía mucho, y eso basta.';
+    } else if (estimado >= 10) {
+      v = 'Has dicho <strong>' + estimado + '&nbsp;%</strong>, poco — pero el control real era cero. ' +
+          'Ese resto es la parte que la cabeza se inventa cuando las cosas salen bien a menudo.';
+    } else {
+      v = 'Has acertado casi del todo: has dicho <strong>' + estimado + '&nbsp;%</strong> y el control era ' +
+          'cero. No es lo habitual, y no dice nada de ti — hay gente que va con la mosca detrás de la oreja ' +
+          'desde la ronda tres.';
+    }
+    if (conPulsar[0] && sinPulsar[0]) {
+      v += ' En tus propios números: se encendió el ' + pc + '&nbsp;% de las veces que pulsaste y el ' +
+           ps + '&nbsp;% de las que no' +
+           (real <= 12 ? ' — prácticamente lo mismo, que es lo que tenía que salir.'
+                       : '. Esa diferencia de ' + real + ' puntos es el azar de tirar una moneda cuarenta veces, no tu dedo.');
+    }
+    document.getElementById('lab-veredicto').innerHTML = v;
+    ver('lab-4');
+  });
+
+  document.getElementById('ic-otra').addEventListener('click', function(){ ver('lab-1'); });
+
+  /* ----------------------------------------------------------- compartir */
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = 'Acabo de hacer esto y he dicho que controlaba un ' + estimado + '% de algo que no controlaba ' +
+      'nada. No leas nada antes, pruébalo: https://psicolinks.com/experimento-ilusion-de-control.html';
+    if (navigator.share) { navigator.share({ text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('Pruébate esto') + '&body=' + encodeURIComponent(t);
+  });
+})();
+</script>
+
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

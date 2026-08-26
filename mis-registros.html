@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis registros · Psicolinks</title>
+<meta name="description" content="Todo lo que has apuntado en las herramientas, junto y en tu propio navegador. Puedes leerlo, copiarlo, imprimirlo, enviarlo o borrarlo cuando quieras.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Mis registros · Psicolinks">
+<meta property="og:description" content="Todo lo que has apuntado, junto y en tu propio navegador.">
+<meta property="og:url" content="https://psicolinks.com/mis-registros.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/mis-registros.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
+
+  .vacio{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.6rem 1.5rem; margin:1.6rem 0 0; text-align:center; }
+  .vacio p{ margin:0 0 1rem; font-size:1rem; line-height:1.7; color:var(--ink-soft); }
+  .vacio a.btn-ir{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.95rem; padding:0.7rem 1.3rem; border-radius:9px; }
+  .bloque-mr{ margin:1.8rem 0 0; }
+  .bloque-mr h2{ font-family:var(--font-display); font-size:1.14rem; margin:0 0 0.15rem; }
+  .bloque-mr .cuantas{ font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 0.7rem; }
+  .bloque-mr .cuantas a{ color:var(--accent); }
+  .anot{ background:var(--surface); border:1px solid var(--border); border-radius:11px; padding:0.85rem 1rem; margin:0 0 0.6rem; }
+  .anot .f{ font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--stamp); }
+  .anot dl{ margin:0.35rem 0 0; font-size:0.92rem; line-height:1.6; }
+  .anot dt{ color:var(--ink-soft); font-size:0.8rem; margin:0.4rem 0 0; }
+  .anot dd{ margin:0; }
+  .anot .quitar{ background:none; border:0; color:var(--ink-soft); font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; cursor:pointer; padding:0.35rem 0 0; }
+  .anot .quitar:hover{ color:#8C3B4A; }
+  .mr-botones{ display:flex; flex-wrap:wrap; gap:0.55rem; margin:1.8rem 0 0; }
+  .mr-botones button{ font-family:inherit; font-size:0.9rem; font-weight:600; padding:0.6rem 1.1rem; border-radius:9px; border:1px solid var(--border); background:var(--paper); color:var(--ink); cursor:pointer; }
+  .mr-botones button.principal{ background:var(--accent); color:#fff; border-color:var(--accent); }
+  .envio-ops button{ font-family:inherit; font-size:0.92rem; font-weight:600; color:var(--accent);
+                     background:none; border:0; padding:0; cursor:pointer; text-decoration:underline; }
+  .mr-nota{ font-size:0.82rem; line-height:1.55; color:var(--ink-soft); margin:0.7rem 0 0; }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .envio-largo{ font-size:0.85rem; color:var(--ink-soft); }
+  .oculto{ position:absolute; left:-9999px; }
+  @media print{
+    .site-header, .site-footer, .back-link, .mr-botones, .mr-nota, .envio-ops, .quitar, .stamp, .privacidad,
+    #cookie-banner, [class*=cookie]{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .anot{ break-inside:avoid; border-color:#bbb; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/" class="back-link">← Volver a la portada</a>
+  <div class="stamp">📓 Lo tuyo</div>
+  <h1>Mis registros</h1>
+  <p class="lead">Todo lo que has apuntado en las hojas, junto. Está guardado en este navegador y en ningún sitio más.</p>
+
+  <div class="vacio" id="vacio" hidden>
+    <p><strong>Aquí todavía no hay nada.</strong> En cuanto rellenes cualquiera de las hojas, lo que
+    escribas aparecerá en esta página, y desde aquí podrás leerlo, copiarlo, imprimirlo o borrarlo.</p>
+    <a class="btn-ir" href="/herramientas.html">Ver las hojas que hay →</a>
+  </div>
+
+  <div id="todo"></div>
+
+  <div class="mr-botones" id="botones" hidden>
+    <button type="button" class="principal" id="mr-enviar" aria-expanded="false">Enviar a mi psicólogo</button>
+    <button type="button" id="mr-imprimir">Descargar en PDF</button>
+  </div>
+  <div class="envio-ops" id="envio-ops" hidden>
+    <span class="envio-eti">Elige por dónde:</span>
+    <a id="env-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <a id="env-mail" href="#">Correo</a>
+    <button type="button" id="mr-copiar">Copiar y pegarlo yo</button>
+    <span class="envio-largo" id="env-largo" hidden>Es mucho texto para enviarlo así: usa «copiar» y pégalo.</span>
+  </div>
+  <p class="mr-nota" id="nota"><strong>Para mandárselo a tu psicólogo o psicóloga.</strong> «Enviar»
+  abre el menú de compartir de tu móvil o de tu ordenador y eliges tú por dónde. Descargar el PDF no
+  saca nada de este dispositivo; enviarlo sí lo envía.</p>
+  <textarea class="oculto" id="mr-oculto" aria-hidden="true" tabindex="-1"></textarea>
+
+  <div class="privacidad" style="margin-top:2rem;"><strong>Nada de esto sale de tu navegador.</strong>
+  No hay cuenta, no hay correo y no se envía nada a ningún servidor: lo que ves aquí lo guarda tu
+  propio dispositivo. Eso también significa que si borras los datos de navegación o cambias de móvil,
+  se pierde — cópialo de vez en cuando si llevas semanas apuntando.</div>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Mis registros · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/mis-registros.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Todo lo que has apuntado en las herramientas de Psicolinks, junto y en tu propio navegador. Se puede copiar, imprimir, enviar y borrar."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Mis registros", "item": "https://psicolinks.com/mis-registros.html"}]}</script>
+<script>
+/* Mis registros ------------------------------------------------------------
+   Lee el almacenamiento local de este dispositivo y pinta lo que haya. No
+   envia nada a ningun sitio. Borrar reescribe la misma clave con el mismo
+   formato que usa la propia herramienta, para que la hoja siga funcionando
+   igual cuando se abra.                                                    */
+(function(){
+  var HERR = [{"k": "pl_rapido", "n": "Registro rápido", "i": "⚡", "u": "registro-rapido", "c": [["q", "Qué pasó"], ["p", "Qué pensé"], ["d", "Qué hice después"], ["m", "Malestar (0-10)"], ["h", "Hora"]]}, {"k": "pl_registro_abc", "n": "Registro A-B-C", "i": "🗒️", "u": "registro-abc", "c": [["fecha", "Fecha"], ["a", "A · qué pasó antes"], ["b", "B · qué hiciste"], ["c", "C · qué pasó después"], ["m", "Malestar (0-10)"]]}, {"k": "pl_jerarquia", "n": "Jerarquía de exposición", "i": "🪜", "u": "jerarquia-de-exposicion", "c": []}, {"k": "pl_plan_recaidas", "n": "Plan de prevención de recaídas", "i": "🧭", "u": "plan-de-prevencion-de-recaidas", "c": [], "unico": true}, {"k": "pl_obsesiones", "n": "Obsesiones y compulsiones", "i": "🔁", "u": "registro-de-obsesiones", "c": [["disparo", "¿Qué lo disparó?"], ["obsesion", "La obsesión, en pocas palabras"], ["ansiedad_inicio", "Ansiedad al aparecer"], ["hizo", "¿Hiciste la compulsión?"], ["demora", "Si la retrasaste, ¿cuánto?"], ["compulsion", "¿Qué hiciste exactamente?"], ["ansiedad_final", "Ansiedad al cabo de un rato"], ["paso", "¿Qué pasó de verdad?"]]}, {"k": "pl_vuelta", "n": "Darle la vuelta a un pensamiento", "i": "🔄", "u": "darle-la-vuelta-a-un-pensamiento", "c": [["situacion", "Paso 0 · ¿Qué pasó?"], ["pensamiento", "Paso 0 · ¿Qué pensaste, con tus palabras?"], ["creo_antes", "¿Cuánto te lo crees ahora?"], ["malestar_antes", "¿Cuánto malestar te da ahora?"], ["hecho", "Paso 1 · Baja de la etiqueta al hecho"], ["paraque", "Paso 2 · ¿Para qué te sirve pensar eso?"], ["afavor", "Paso 3 · ¿Qué lo apoya? Hechos, no impresiones"], ["encontra", "Paso 3 · ¿Qué lo contradice? ¿Ha habido alguna vez que no?"], ["doble", "Paso 3 · La prueba del doble rasero"], ["deberia", "Paso 4 · ¿Hay un «debería» debajo?"], ["otra", "Paso 5 · Otra lectura que encaje IGUAL de bien con los hechos"], ["distinto", "Paso 5 · ¿Qué harías distinto la próxima vez?"], ["creo_despues", "Y ahora, ¿cuánto te crees el pensamiento de arriba?"], ["malestar_despues", "Y ahora, ¿cuánto malestar te da?"]]}, {"k": "pl_problemas", "n": "Resolver un problema", "i": "🧩", "u": "resolver-un-problema", "c": [["problema", "¿Cuál es el problema?"], ["meta", "¿Qué querrías que pasara?"], ["cuanto", "¿Cuánto te está afectando?"], ["opciones", "Todas las salidas que se te ocurran"], ["pesar", "De las que te convencen, qué tienen a favor y en contra"], ["elegida", "¿Cuál vas a probar?"], ["primer_paso", "¿Cuál es el primer paso, y cuándo?"], ["reviso", "¿Cuándo lo vuelves a mirar?"], ["resultado", "Al volver a mirarlo: ¿qué pasó?"]]}, {"k": "pl_exposicion", "n": "Registro de exposición", "i": "🪜", "u": "registro-de-exposicion", "c": [["que", "¿Qué has hecho?"], ["antes", "Ansiedad justo antes"], ["pico", "Lo más alto que llegó"], ["final", "Ansiedad al terminar"], ["minutos", "¿Cuánto aguantaste?"], ["salida", "¿Cómo terminó?"], ["trucos", "¿Hiciste algo para que fuera más llevadero?"]]}, {"k": "pl_actividades", "n": "Actividades y ánimo", "i": "📅", "u": "registro-de-actividades", "c": [["que", "¿Qué has hecho?"], ["tipo", "¿De qué tipo?"], ["antes", "Ánimo justo antes"], ["despues", "Ánimo justo después"], ["esperaba", "¿Fue como esperabas?"], ["nota", "¿Algo que quieras recordar?"]]}, {"k": "pl_sueno", "n": "Diario de sueño", "i": "😴", "u": "diario-de-sueno", "c": [["acostar", "¿A qué hora te acostaste?"], ["tardar", "¿Cuánto tardaste en dormirte?"], ["despertares", "¿Cuántas veces te despertaste?"], ["desvelado", "En total, ¿cuánto estuviste despierto de noche?"], ["levantar", "¿A qué hora te levantaste de la cama?"], ["calidad", "¿Cómo has amanecido?"], ["nota", "Algo del día anterior que pueda tener que ver"]]}, {"k": "pl_pensamientos", "n": "Registro de pensamientos", "i": "💭", "u": "registro-de-pensamientos", "c": [["situacion", "¿Qué estaba pasando?"], ["pensamiento", "¿Qué te pasó por la cabeza?"], ["emocion", "¿Qué sentiste?"], ["intensidad", "¿Cuánto?"], ["pruebas", "¿Qué dice a favor y qué dice en contra?"], ["otra", "¿Qué otra lectura cabe, que también encaje?"], ["despues", "¿Cuánto sientes eso ahora?"]]}, {"k": "pl_sesiones", "n": "Antes y después de la sesión", "i": "🗓️", "u": "antes-de-la-sesion", "c": [["con_quien", "¿Con quién?"], ["hablar", "Lo que quiero contar hoy"], ["semana", "¿Cómo ha ido la semana?"], ["llevo", "Lo que me llevo de la sesión"], ["probar", "Lo que voy a probar hasta la próxima"], ["hecho", "¿Hiciste lo de la vez anterior?"]]}, {"k": "pl_termometro", "n": "Termómetro del día", "i": "🌡️", "u": "termometro-del-dia", "c": [["animo", "¿Cómo ha ido el día?"], ["sueno", "¿Y esta noche?"], ["una", "Una cosa del día, si quieres"]]}, {"k": "pl_gratitud", "n": "Diario de gratitud", "i": "🌱", "u": "diario-de-gratitud", "c": [["una", "Una"], ["dos", "Dos"], ["tres", "Tres"], ["quien", "¿Alguien tuvo algo que ver?"]]}, {"k": "pl_meditacion", "n": "Registro de meditación", "i": "🧘", "u": "registro-de-meditacion", "c": [["minutos", "¿Cuántos minutos?"], ["tipo", "¿De qué tipo?"], ["inquieta", "¿Cómo andaba la cabeza?"], ["nota", "Algo que quieras recordar"]]}, {"k": "pl_cartas", "n": "Carta que no vas a enviar", "i": "✉️", "u": "carta-que-no-vas-a-enviar", "c": [["para", "¿A quién le escribes?"], ["sobre", "¿Qué es lo que quedó pendiente?"], ["carta", "Escribe"], ["antes", "¿Cómo estabas antes de escribir?"], ["despues", "¿Y ahora?"]]}, {"k": "pl_preocupacion", "n": "Tiempo de preocupación", "i": "⏳", "u": "tiempo-de-preocupacion", "c": [["que", "¿Qué te ha venido a la cabeza?"], ["tipo", "¿Puedes hacer algo con esto?"], ["cita", "¿A qué hora la miras?"], ["antes", "Cuánto te agobia AHORA"], ["despues", "Cuánto te agobia EN LA CITA"], ["paso", "Si se podía hacer algo, ¿qué es y cuándo?"]]}, {"k": "pl_experimentos", "n": "Experimento conductual", "i": "🔬", "u": "experimento-conductual", "c": [["prediccion", "¿Qué crees que va a pasar?"], ["antes", "¿Cuánto te lo crees ANTES?"], ["prueba", "¿Qué vas a hacer para comprobarlo?"], ["paso", "¿Qué pasó de verdad?"], ["despues", "¿Cuánto te lo crees DESPUÉS?"], ["aprendido", "¿Qué te llevas?"]]}, {"k": "pl_flecha", "n": "Flecha descendente", "i": "⬇️", "u": "flecha-descendente", "c": [["arriba", "El pensamiento de arriba"], ["paso1", "Y si fuera verdad, ¿qué significaría?"], ["paso2", "¿Y eso qué querría decir?"], ["paso3", "¿Y eso?"], ["fondo", "Lo que queda al final del todo"], ["creencia", "¿Cuánto te crees esa última?"]]}, {"k": "pl_tarjetas", "n": "Tarjeta de afrontamiento", "i": "🃏", "u": "tarjeta-de-afrontamiento", "c": [["cuando", "¿Para qué momento es esta tarjeta?"], ["digo", "Lo que me voy a decir"], ["hago", "Lo que voy a hacer, por orden"], ["prueba", "La prueba de que esto ya lo he pasado"], ["llamo", "A quién puedo llamar"]]}, {"k": "pl_balanza", "n": "La balanza", "i": "⚖️", "u": "la-balanza", "c": [["decision", "¿Qué te estás pensando?"], ["gano_igual", "Qué gano SI SIGO IGUAL"], ["pierdo_igual", "Qué me cuesta SI SIGO IGUAL"], ["gano_cambio", "Qué gano SI CAMBIO"], ["pierdo_cambio", "Qué me cuesta SI CAMBIO"], ["importancia", "¿Cuánto te importa cambiarlo?"], ["confianza", "¿Cuánto confías en poder?"]]}, {"k": "pl_crisis", "n": "Registro de crisis", "i": "⚡", "u": "registro-de-crisis", "c": [["donde", "¿Dónde estabas y con quién?"], ["minutos", "¿Cuánto duró lo peor?"], ["pico", "¿Cuánto llegó a subir?"], ["cuerpo", "¿Qué notaste en el cuerpo?"], ["temi", "¿Qué creíste que iba a pasar?"], ["paso", "¿Qué pasó de verdad?"], ["hice", "¿Qué hiciste?"]]}, {"k": "pl_cuenta", "n": "Cuántas veces al día", "i": "🔢", "u": "cuantas-veces-al-dia", "c": [["que", "¿Qué estás contando?"], ["veces", "¿Cuántas veces hoy?"], ["cuando", "¿Cuándo más?"], ["ganas", "¿Cuántas ganas has tenido?"], ["nota", "¿Algo que quieras recordar?"]]}, {"k": "pl_objetivos", "n": "Mis objetivos de terapia", "i": "🎯", "u": "mis-objetivos-de-terapia", "c": [["objetivo", "¿Qué quieres que cambie?"], ["notaria", "¿En qué se notaría que va bien?"], ["hoy", "¿Dónde estás hoy con esto?"], ["meta", "¿Con cuánto te darías por satisfecho?"], ["estorba", "¿Qué se ha interpuesto hasta ahora?"], ["primer", "¿Cuál sería el primer paso pequeño?"]]}, {"k": "pl_conversaciones", "n": "Preparar una conversación", "i": "🗣️", "u": "preparar-una-conversacion", "c": [["con_quien", "¿Con quién y sobre qué?"], ["quiero", "¿Qué quieres conseguir de verdad?"], ["primera", "Tu primera frase, literal"], ["no_hoy", "¿Qué NO vas a discutir hoy?"], ["si_defensiva", "¿Qué haces si se pone a la defensiva?"], ["si_no", "¿Y si te dice que no?"], ["antes", "¿Cuánto miedo le tienes AHORA?"], ["despues", "¿Y DESPUÉS de tenerla?"]]}, {"k": "pl_brujula", "n": "La brújula", "i": "🧭", "u": "la-brujula", "c": [["area", "¿De qué área hablamos?"], ["importa", "¿Qué te importa de esa área, en concreto?"], ["cuanto", "¿Cuánto te importa?"], ["vives", "¿Cuánto lo estás viviendo estas semanas?"], ["estorba", "¿Qué se está comiendo ese hueco?"], ["paso", "Una cosa pequeña esta semana"]]}];
+
+  function leer(k){ try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch(e){ return null; } }
+  function guardar(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+  function entradas(v){
+    if (Array.isArray(v)) return v;
+    if (v && typeof v === 'object' && Object.keys(v).length) return [v];
+    return [];
+  }
+  function fecha(e){ return (e && (e.f || e.fecha)) || ''; }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function conDatos(){
+    var out = [];
+    HERR.forEach(function(h){
+      var es = entradas(leer(h.k));
+      if (es.length) out.push({ h: h, es: es });
+    });
+    return out;
+  }
+
+  function pintar(){
+    var datos = conDatos();
+    var caja = document.getElementById('todo');
+    var vacio = document.getElementById('vacio');
+    var botones = document.getElementById('botones');
+
+    if (!datos.length) {
+      caja.innerHTML = '';
+      vacio.hidden = false;
+      botones.hidden = true;
+      return;
+    }
+    vacio.hidden = true;
+    botones.hidden = false;
+
+    caja.innerHTML = datos.map(function(d){
+      var n = d.es.length;
+      var cuantas = n + (n === 1 ? ' anotación' : ' anotaciones');
+      var filas = d.es.map(function(e, i){
+        var campos = (d.h.c || []).map(function(c){
+          var v = e[c[0]];
+          if (v === undefined || v === null || String(v).trim() === '') return '';
+          return '<dt>' + esc(c[1]) + '</dt><dd>' + esc(v) + '</dd>';
+        }).join('');
+        if (!campos) {
+          campos = Object.keys(e).filter(function(k){ return k !== 'f' && k !== 'ts' && k !== 'fecha'; })
+            .map(function(k){
+              var v = e[k];
+              if (v === null || v === undefined || String(v).trim() === '') return '';
+              return '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>';
+            }).join('');
+        }
+        return '<div class="anot"><span class="f">' + esc(fecha(e) || 'sin fecha') + '</span>'
+             + '<dl>' + campos + '</dl>'
+             + '<button type="button" class="quitar" data-k="' + esc(d.h.k) + '" data-i="' + i + '"'
+             + (d.h.unico ? ' data-unico="1"' : '') + '>Borrar esta</button></div>';
+      }).join('');
+      return '<section class="bloque-mr"><h2>' + d.h.i + ' ' + esc(d.h.n) + '</h2>'
+           + '<p class="cuantas">' + cuantas + ' · <a href="/' + d.h.u + '.html">abrir la hoja →</a></p>'
+           + filas + '</section>';
+    }).join('');
+  }
+
+  document.getElementById('todo').addEventListener('click', function(ev){
+    var b = ev.target.closest('.quitar');
+    if (!b) return;
+    // Doble pulsacion: borrar tres semanas de registro sin confirmar es una
+    // crueldad, y un «¿estas seguro?» del navegador bloquea la pagina.
+    if (!b.dataset.seguro) {
+      b.dataset.seguro = '1';
+      b.textContent = b.dataset.unico ? 'Pulsa otra vez para borrarlo entero' : 'Pulsa otra vez para borrarla';
+      setTimeout(function(){ if (b.dataset.seguro) { delete b.dataset.seguro;
+        b.textContent = b.dataset.unico ? 'Borrar esto' : 'Borrar esta'; } }, 4000);
+      return;
+    }
+    var k = b.dataset.k, i = +b.dataset.i, v = leer(k);
+    if (Array.isArray(v)) { v.splice(i, 1); if (v.length) guardar(k, v); else localStorage.removeItem(k); }
+    else { localStorage.removeItem(k); }
+    pintar();
+  });
+
+  function texto(){
+    var out = ['MIS REGISTROS — psicolinks.com', ''];
+    conDatos().forEach(function(d){
+      out.push('== ' + d.h.n.toUpperCase() + ' (' + d.es.length + ') ==');
+      d.es.slice().sort(function(a,b){ return String(fecha(a)).localeCompare(String(fecha(b))); })
+        .forEach(function(e){
+          out.push('· ' + (fecha(e) || 'sin fecha'));
+          (d.h.c || []).forEach(function(c){
+            var v = e[c[0]];
+            if (v !== undefined && v !== null && String(v).trim() !== '') out.push('   ' + c[1] + ': ' + v);
+          });
+          Object.keys(e).forEach(function(k){
+            if (k === 'f' || k === 'ts' || k === 'fecha') return;
+            if ((d.h.c || []).some(function(c){ return c[0] === k; })) return;
+            var v = e[k];
+            if (v !== null && v !== undefined && String(v).trim() !== '') out.push('   ' + k + ': ' + v);
+          });
+          out.push('');
+        });
+    });
+    return out.join('\n');
+  }
+
+  function ok(b, txt){ var v = b.textContent; b.textContent = txt;
+                       setTimeout(function(){ b.textContent = v; }, 1900); }
+
+  document.getElementById('mr-copiar').addEventListener('click', function(){
+    var t = texto(), b = this;
+    function hecho(){ ok(b, '¡Copiado!'); }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(t).then(hecho, function(){ viejo(t, hecho); });
+    } else { viejo(t, hecho); }
+  });
+  function viejo(t, hecho){
+    var a = document.getElementById('mr-oculto');
+    a.value = t; a.select();
+    try { document.execCommand('copy'); hecho(); } catch(e){ alert('Copia el texto a mano, por favor.'); }
+  }
+
+  document.getElementById('mr-imprimir').addEventListener('click', function(){ window.print(); });
+
+function enviarRegistro(t, b){
+    // El menu de compartir del sistema, que es lo que la gente conoce del movil.
+    if (navigator.share) {
+      navigator.share({ title: 'Mis registros · Psicolinks', text: t }).catch(function(){});
+      return;
+    }
+    // Plan B para Chrome y Firefox de escritorio, que no lo traen.
+    var ops = document.getElementById('envio-ops');
+    if (!ops) return;
+    var wa = document.getElementById('env-wa'),
+        mail = document.getElementById('env-mail'),
+        largo = document.getElementById('env-largo');
+    if (encodeURIComponent(t).length > 1800) {
+      wa.hidden = true; mail.hidden = true; largo.hidden = false;
+    } else {
+      wa.hidden = false; mail.hidden = false; largo.hidden = true;
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(t);
+      mail.href = 'mailto:?subject=' + encodeURIComponent('Mis registros · Psicolinks') +
+                  '&body=' + encodeURIComponent(t);
+    }
+    ops.hidden = false;
+    b.setAttribute('aria-expanded', 'true');
+  }
+
+  document.getElementById('mr-enviar').addEventListener('click', function(){
+    enviarRegistro(texto(), this);
+  });
+
+  pintar();
+})();
+</script>
+
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

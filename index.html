@@ -127,6 +127,13 @@
   .bloque-util .bu-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.6rem 1.05rem; border-radius:9px; background:var(--accent); color:#fff; }
   .bloque-util .bu-btn-2{ background:transparent; color:var(--ink); border:1.5px solid var(--border); }
   .bloque-util .bu-btn:hover{ opacity:0.9; }
+  .consulta-cta { max-width:44rem; margin:2.4rem auto 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h2 { font-family:var(--font-display); font-size:1.2rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p { margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.94rem; line-height:1.65; }
+  .consulta-cta .consulta-btn { display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover { background:#75303d; }
+  .consulta-cta .consulta-otros { margin:0.9rem 0 0; font-size:0.9rem; }
+  .consulta-cta .consulta-nota { margin:0.6rem 0 0; font-size:0.83rem; opacity:0.85; }
 </style>
 <script type="application/ld+json">
 {
@@ -181,20 +188,22 @@
   <nav class="menu-cabecera" aria-label="Secciones principales">
     <a href="/empieza-aqui.html">🧭 Empieza aquí</a>
     <a href="/temas.html">📎 Las guías</a>
-    <a href="/terapia-online.html">🩺 Mi consulta</a>
+    <a href="/herramientas.html">🗒️ Herramientas</a>
+    <a href="/laboratorio.html">🧪 Laboratorio</a>
   </nav>
 </header>
 
 <section class="bloque-util" aria-label="Herramientas gratuitas">
   <p class="bu-kicker">🧪 Gratis · 2 minutos · no salen de tu navegador</p>
   <h2 class="bu-tit">¿Quieres ponerle un número a cómo estás?</h2>
-  <p class="bu-txt">El <strong>GAD-7</strong> es el cuestionario de ansiedad que se usa en atención
-  primaria: siete preguntas y un resultado con qué hacer a partir de ahí. Y el <strong>registro
-  A-B-C</strong> es con lo que empieza casi cualquier terapia conductual: apuntas qué pasa antes, qué
-  haces y qué pasa después, y en tres o cuatro anotaciones se ve el patrón.</p>
+  <p class="bu-txt">El <strong>registro rápido</strong> son cuatro preguntas y medio minuto:
+  qué pasó, qué pensaste, qué hiciste después y cuánto malestar. Con unos cuantos apuntados empiezan a
+  salir solos los patrones —dónde, a qué horas y qué se te repite—, y se los puedes mandar a tu
+  psicólogo. El <strong>GAD-7</strong> es el cuestionario de ansiedad que se usa en atención primaria.</p>
   <p class="bu-acciones">
-    <a class="bu-btn" href="/test-de-ansiedad.html">Hacer el test →</a>
-    <a class="bu-btn bu-btn-2" href="/registro-abc.html">Abrir mi registro →</a>
+    <a class="bu-btn" href="/registro-rapido.html">Apuntar en 30 segundos →</a>
+    <a class="bu-btn bu-btn-2" href="/test-de-ansiedad.html">Hacer el test →</a>
+    <a class="bu-btn bu-btn-2" href="/mis-registros.html">Abrir mis registros →</a>
   </p>
 </section>
 
@@ -226,9 +235,16 @@
     <a href="/archivo.html" class="read-more">Leer más →</a>
     </div>
   </article>
-
-  <section id="pl-continuar" class="pl-continuar" hidden aria-label="Sigue donde lo dejaste"></section>
 </main>
+
+<section class="consulta-cta" aria-label="Consultas asociadas">
+  <h2>¿Y si esto te está pasando a ti?</h2>
+  <p>Leer sobre un tema ayuda a entenderlo, pero llega un punto en que hace falta que alguien mire
+  tu caso. Estas son las <strong>consultas asociadas</strong> a Psicolinks.</p>
+  <a class="consulta-btn" href="/consultas.html">Ver las consultas →</a>
+  <p class="consulta-otros">Y antes de decidir, la vía pública es gratuita: <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a></p>
+</section>
+
 
 <section class="bloque-pack" aria-label="Pack de guías gratuito">
   <div class="bloque-pack-inner">
@@ -238,8 +254,8 @@
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
-  <p class="pie-legal">© 2026 Psicolinks · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script>
@@ -289,7 +305,6 @@
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
 <script src="cookies-psicolinks.js" defer></script>
-<script src="/progreso-psicolinks.js" defer></script>
-<script src="/newsletter-psicolinks.js" defer></script>
+<script src="newsletter-psicolinks.js" defer></script>
 </body>
 </html>

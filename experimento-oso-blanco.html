@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El oso blanco: un experimento de un minuto · Psicolinks</title>
+<meta name="description" content="Intenta no pensar en un oso blanco durante un minuto y cuenta las veces que se te cuela. Predice antes cuántas serán: casi nadie acierta.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El oso blanco: un experimento de un minuto">
+<meta property="og:description" content="Predice cuántas veces se te va a colar. Luego inténtalo de verdad durante un minuto.">
+<meta property="og:url" content="https://psicolinks.com/experimento-oso-blanco.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-oso-blanco.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .mc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
+  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
+  .mc-card:hover{ border-color:var(--accent); }
+  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
+  .mc-txt{ min-width:0; }
+  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
+  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
+  .mc-card:hover .mc-nom{ color:var(--accent); }
+  @media print{ .menu-cuadros{ display:none; } }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-escala{ display:flex; align-items:center; gap:0.8rem; }
+  .lab-escala input[type=range]{ flex:1; accent-color:#8C3B4A; }
+  .lab-escala output{ font-family:var(--font-mono); font-weight:700; font-size:1.6rem; min-width:2.2ch; text-align:right; }
+  .lab-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-reloj{ font-family:var(--font-mono); font-size:3rem; font-weight:700; line-height:1; text-align:center; margin:0.4rem 0 0.2rem; }
+  .lab-via{ height:0.5rem; border-radius:99px; background:var(--border); overflow:hidden; margin:0 0 1.2rem; }
+  .lab-via i{ display:block; height:100%; background:#8C3B4A; width:100%; }
+  .lab-golpe{ width:100%; min-height:9rem; background:#8C3B4A; color:#fff; border:0; border-radius:16px; font-family:inherit; font-size:1.25rem; font-weight:700; cursor:pointer; line-height:1.35; }
+  .lab-golpe:active{ background:#75303d; }
+  .lab-cuenta{ font-family:var(--font-mono); font-size:0.95rem; text-align:center; color:var(--ink-soft); margin:0.8rem 0 0; }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Un minuto</div>
+  <h1>El oso blanco</h1>
+  <p class="lead">No te vamos a contar cómo funciona tu cabeza. Vamos a dejar que lo compruebes tú en sesenta segundos.</p>
+
+  <div class="lab-amigo" id="lab-amigo-intro" hidden></div>
+
+  <!-- ─────────────────────────────── 1. la predicción ─────────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Durante un minuto vas a intentar no pensar en un oso blanco.</p>
+      <p class="lab-sub">Puedes pensar en lo que quieras: en la compra, en el trabajo, en nada. En lo
+      único que no puedes pensar es en un oso blanco. Cada vez que se te cuele, pulsarás un botón.</p>
+      <p class="lab-pregunta" style="font-size:1.05rem;">Antes de empezar: ¿cuántas veces crees que se te va a colar?</p>
+      <div class="lab-escala">
+        <input type="range" id="lab-p" min="0" max="20" step="1" value="5" aria-label="Cuántas veces crees que se te va a colar">
+        <output id="lab-p-val" for="lab-p">5</output>
+      </div>
+      <p class="lab-extremos"><span>ninguna</span><span>veinte o más</span></p>
+      <button type="button" class="lab-btn" id="lab-empezar">Empezar el minuto →</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. el minuto ─────────────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="lab-reloj" id="lab-reloj" role="timer" aria-live="off">1:00</p>
+      <div class="lab-via"><i id="lab-via-i"></i></div>
+      <button type="button" class="lab-golpe" id="lab-golpe">Se me ha colado</button>
+      <p class="lab-cuenta" id="lab-cuenta" role="status" aria-live="polite">Van 0</p>
+      <p class="lab-sub" style="margin:1rem 0 0;">Pulsa cada vez que aparezca el oso, aunque sea de
+      refilón. Nadie te está mirando.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 3. el resultado ──────────────────── -->
+  <section class="lab-paso" id="lab-3">
+    <div class="lab-caja">
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="lab-r-p">0</b><span>creías que se colaría</span></div>
+        <div class="lab-dato"><b id="lab-r-v">0</b><span>se te coló</span></div>
+      </div>
+      <p class="lab-veredicto" id="lab-veredicto"></p>
+      <div class="lab-amigo" id="lab-amigo-final" hidden></div>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+      <button type="button" class="lab-btn sec" id="lab-otra">Probar otra vez</button>
+      <input type="text" id="lab-enlace" class="oculto" aria-hidden="true" tabindex="-1" style="position:absolute;left:-9999px;">
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Lo que has notado tiene nombre y tiene casi cuarenta años de estudio detrás. En 1987, Daniel
+    Wegner y su equipo pidieron a un grupo de personas que hablaran en voz alta durante cinco minutos
+    sin pensar en un oso blanco, tocando una campana cada vez que el oso apareciera. <strong>La
+    supresión no fue completa en nadie: el oso aparecía más de una vez por minuto.</strong></p>
+
+    <div class="idea"><strong>Y ahora la parte que de verdad importa.</strong> En ese mismo estudio
+    hicieron algo más: a un grupo le pidieron primero que <em>no</em> pensara en el oso y luego que
+    pensara en él libremente. A otro grupo, al revés. Los que habían empezado suprimiendo pensaban
+    después en el oso <strong>más</strong> que los que nunca lo habían suprimido. Es decir: intentar
+    no pensar en algo no solo falla mientras lo intentas — puede dejarte pensando más en ello
+    después.</div>
+
+    <p>Con un oso blanco esto es una curiosidad. Con «no pienses en lo que te dijo», «no le des
+    vueltas al análisis» o «no pienses en beber», es exactamente el mecanismo por el que la gente se
+    queda atrapada. Y explica por qué el consejo más repetido del mundo —«no pienses en eso»— es de
+    los peores que se pueden dar.</p>
+
+    <div class="idea"><strong>Entonces, ¿qué se hace en vez de eso?</strong> Lo que funciona no es
+    prohibirse el pensamiento, es <strong>cambiarle la hora</strong>: apuntarlo, ponerle una cita y
+    seguir con lo tuyo. Suena demasiado simple y es de lo mejor estudiado que hay. Lo tienes explicado
+    en <a href="/deja-de-darle-vueltas.html">deja de darle vueltas</a>, y para hacerlo por escrito
+    está la hoja de <a href="/tiempo-de-preocupacion.html">tiempo de preocupación</a>. Y en el <a href="/laboratorio.html">laboratorio</a> hay más experimentos como este. Y si lo que se
+    te cuela son pensamientos que te asustan a ti mismo, eso tiene su propia guía:
+    <a href="/pensamientos-que-no-quieres-tener.html">pensamientos que no quieres tener</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Wegner, D. M., Schneider,
+    D. J., Carter, S. R. y White, T. L. (1987). <em>Paradoxical effects of thought suppression</em>.
+    Journal of Personality and Social Psychology, 53(1), 5–13. Lo de aquí arriba es una
+    <strong>versión corta y casera</strong>: un minuto y un botón, en vez de cinco minutos hablando en
+    voz alta con una campana y en un laboratorio. Sirve para notar el efecto, no para medirte: no es
+    una prueba psicológica, no puntúa nada y no dice nada de ti.</p>
+  </section>
+  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
+    <p class="mc-eti">Seguir por aquí</p>
+    <div class="mc-rejilla">
+      <a class="mc-card" href="/empieza-aqui.html">
+        <span class="mc-ico" aria-hidden="true">🧭</span>
+        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
+      </a>
+      <a class="mc-card" href="/temas.html">
+        <span class="mc-ico" aria-hidden="true">📎</span>
+        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
+      </a>
+      <a class="mc-card" href="/herramientas.html">
+        <span class="mc-ico" aria-hidden="true">🗒️</span>
+        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
+      </a>
+      <a class="mc-card" href="/tests.html">
+        <span class="mc-ico" aria-hidden="true">📝</span>
+        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
+      </a>
+      <a class="mc-card" href="/laboratorio.html">
+        <span class="mc-ico" aria-hidden="true">🧪</span>
+        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
+      </a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El oso blanco · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-oso-blanco.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "citation": "Wegner, D. M., Schneider, D. J., Carter, S. R., & White, T. L. (1987). Paradoxical effects of thought suppression. Journal of Personality and Social Psychology, 53(1), 5-13.", "description": "Un experimento de un minuto: intenta no pensar en un oso blanco y cuenta las veces que se te cuela. Versión corta y casera del estudio de Wegner de 1987."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "El oso blanco", "item": "https://psicolinks.com/experimento-oso-blanco.html"}]}</script>
+<script>
+/* El oso blanco ------------------------------------------------------------
+   Tres pasos: predices, lo intentas, ves la diferencia. La explicación va la
+   última a propósito: si se cuenta antes, ya no hay experimento.
+
+   No guarda nada, ni en el navegador. Para compartir, el resultado viaja
+   dentro del propio enlace (después de la #), que es la parte de una dirección
+   que ni siquiera llega al servidor.                                        */
+(function(){
+  'use strict';
+  var DURACION = 60;
+  var prediccion = 0, veces = 0, resto = DURACION, reloj = null;
+
+  function ver(id){
+    ['lab-1','lab-2','lab-3'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  /* ------------------------------------------------- ¿viene de un amigo? */
+  function leerEnlace(){
+    var h = (location.hash || '').replace(/^#/, '');
+    var m = /^r=(\d+)-(\d+)$/.exec(h);
+    if (!m) return null;
+    var p = +m[1], v = +m[2];
+    if (p < 0 || p > 20 || v < 0 || v > 200) return null;   // por si viene manipulado
+    return { p: p, v: v };
+  }
+  var amigo = leerEnlace();
+  if (amigo) {
+    var caja = document.getElementById('lab-amigo-intro');
+    caja.innerHTML = 'Alguien ha hecho esto antes que tú: <strong>creía que se le colaría ' +
+      amigo.p + (amigo.p === 1 ? ' vez' : ' veces') + '</strong> y se le coló <strong>' +
+      amigo.v + (amigo.v === 1 ? ' vez' : ' veces') + '</strong>. A ver qué te pasa a ti.';
+    caja.hidden = false;
+  }
+
+  /* ------------------------------------------------------ 1. la predicción */
+  var rango = document.getElementById('lab-p');
+  rango.addEventListener('input', function(){ document.getElementById('lab-p-val').textContent = this.value; });
+
+  document.getElementById('lab-empezar').addEventListener('click', function(){
+    prediccion = +rango.value;
+    veces = 0; resto = DURACION;
+    document.getElementById('lab-cuenta').textContent = 'Van 0';
+    document.getElementById('lab-reloj').textContent = '1:00';
+    document.getElementById('lab-via-i').style.width = '100%';
+    ver('lab-2');
+    document.getElementById('lab-golpe').focus();
+    reloj = setInterval(tic, 1000);
+  });
+
+  function tic(){
+    resto--;
+    var m = Math.floor(resto / 60), s = resto % 60;
+    document.getElementById('lab-reloj').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    document.getElementById('lab-via-i').style.width = (resto / DURACION * 100) + '%';
+    if (resto <= 0) { clearInterval(reloj); reloj = null; terminar(); }
+  }
+
+  document.getElementById('lab-golpe').addEventListener('click', function(){
+    if (!reloj) return;
+    veces++;
+    document.getElementById('lab-cuenta').textContent = 'Van ' + veces;
+  });
+
+  /* --------------------------------------------------------- 3. resultado */
+  function terminar(){
+    document.getElementById('lab-r-p').textContent = prediccion;
+    document.getElementById('lab-r-v').textContent = veces;
+
+    var v = document.getElementById('lab-veredicto');
+    if (veces === 0) {
+      v.innerHTML = 'Cero veces. Pasa, y no significa que lo hayas hecho mal: hay gente a la que le ' +
+        'sale, sobre todo si se pone a hacer cuentas o a recitar algo para llenar la cabeza. Si te has ' +
+        'pillado haciendo eso, fíjate en el detalle: <strong>has tenido que ocupar la cabeza a propósito ' +
+        'todo el minuto</strong> para que no entrara.';
+    } else if (veces > prediccion) {
+      v.innerHTML = 'Se te ha colado <strong>más veces de las que creías</strong>. Eso es exactamente ' +
+        'lo que se esperaba, y no es un fallo tuyo.';
+    } else if (veces === prediccion) {
+      v.innerHTML = 'Lo has clavado. Aun así, fíjate en lo importante: <strong>se te coló</strong>, y ' +
+        'lo estabas intentando de verdad.';
+    } else {
+      v.innerHTML = 'Menos de las que creías, pero se te coló igual. Y ese es el asunto: ' +
+        '<strong>proponérselo no lo impide</strong>.';
+    }
+
+    if (amigo) {
+      var c = document.getElementById('lab-amigo-final');
+      c.innerHTML = 'A quien te mandó esto se le coló <strong>' + amigo.v +
+        (amigo.v === 1 ? ' vez' : ' veces') + '</strong>; a ti, <strong>' + veces +
+        (veces === 1 ? ' vez' : ' veces') + '</strong>.';
+      c.hidden = false;
+    }
+
+    var enlace = location.origin + location.pathname + '#r=' + prediccion + '-' + veces;
+    document.getElementById('lab-enlace').value = enlace;
+    ver('lab-3');
+  }
+
+  /* --------------------------------------------------------- compartir */
+  function texto(){
+    return 'He probado a no pensar en un oso blanco durante un minuto.\n' +
+      'Creía que se me colaría ' + prediccion + (prediccion === 1 ? ' vez' : ' veces') +
+      ' y se me coló ' + veces + (veces === 1 ? ' vez' : ' veces') + '.\n' +
+      '¿Cuántas se te colarían a ti?\n' +
+      document.getElementById('lab-enlace').value;
+  }
+  document.getElementById('lab-compartir').addEventListener('click', function(){
+    var t = texto(), b = this;
+    if (navigator.share) { navigator.share({ title: 'El oso blanco · Psicolinks', text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('El oso blanco') + '&body=' + encodeURIComponent(t);
+    ops.hidden = false;
+    b.setAttribute('aria-expanded', 'true');
+  });
+
+  document.getElementById('lab-otra').addEventListener('click', function(){
+    location.hash = '';
+    rango.value = 5; document.getElementById('lab-p-val').textContent = '5';
+    ver('lab-1');
+  });
+})();
+</script>
+
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

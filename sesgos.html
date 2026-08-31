@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca de sesgos cognitivos · Psicolinks</title>
+<meta name="description" content="Los sesgos que usa la cabeza para decidir rápido, uno por uno: qué son, dónde se notan y qué hacer con ellos. Con animaciones y experimentos para probarlos.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Biblioteca de sesgos">
+<meta property="og:description" content="Los sesgos que usa la cabeza para decidir rápido, uno por uno: qué son, dónde se notan y qué hacer con ellos. Con animaciones y experimentos para probarlos.">
+<meta property="og:url" content="https://psicolinks.com/sesgos.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/sesgos.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+
+  .lab-lista{ display:grid; grid-template-columns:1fr; gap:0.8rem; margin:1.6rem 0 0; }
+  @media (min-width:46rem){ .lab-lista{ grid-template-columns:1fr 1fr; } }
+  .lab-card{ display:flex; flex-direction:column; text-decoration:none; background:var(--surface);
+             border:1px solid var(--border); border-radius:14px; padding:1.1rem 1.2rem;
+             transition:border-color 0.15s ease, transform 0.15s ease; }
+  .lab-card:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  .lab-card .ico{ font-size:1.4rem; line-height:1.2; margin:0 0 0.45rem; }
+  .lab-card .nom{ font-weight:600; font-size:1.02rem; line-height:1.3; color:var(--ink); margin:0 0 0.2rem; }
+  .lab-card .que{ font-size:0.9rem; color:var(--ink-soft); line-height:1.55; margin:0 0 0.7rem; }
+  .lab-card .dur{ margin-top:auto; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.06em;
+                  text-transform:uppercase; color:var(--stamp); }
+  .lab-pronto{ opacity:0.62; }
+  .lab-pronto .dur{ color:var(--ink-soft); }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+
+  .sg-video{ margin:0 0 1.5rem; }
+  .sg-video video, .sg-video img{ display:block; width:100%; height:auto; border:1px solid var(--border);
+                                  border-radius:14px; background:var(--surface); }
+  .sg-video figcaption{ font-size:0.85rem; color:var(--ink-soft); line-height:1.55; margin:0.6rem 0 0; }
+  .cita-suave{ margin:2.4rem 0 0; padding:1.1rem 1.3rem; background:var(--surface);
+               border:1px solid var(--border); border-left:3px solid #8C3B4A; border-radius:12px; }
+  .cita-suave p{ margin:0; font-size:0.92rem; line-height:1.65; color:var(--ink-soft); }
+  .cita-suave p strong{ color:var(--ink); }
+  .cita-suave a{ display:inline-block; margin:0.6rem 0 0; font-weight:600; font-size:0.92rem; color:#8C3B4A; }
+  @media print{ .cita-suave, .sg-video video{ display:none; } }
+  .sg-lista{ display:grid; grid-template-columns:1fr; gap:0.8rem; margin:1.4rem 0 0; }
+  @media (min-width:46rem){ .sg-lista{ grid-template-columns:1fr 1fr; } }
+  .sg-card{ display:flex; flex-direction:column; text-decoration:none; background:var(--surface);
+            border:1px solid var(--border); border-radius:14px; padding:1.1rem 1.2rem;
+            transition:border-color 0.15s ease, transform 0.15s ease; }
+  .sg-card:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  .sg-card .ico{ font-size:1.4rem; line-height:1.2; margin:0 0 0.45rem; }
+  .sg-card .nom{ font-weight:600; font-size:1.02rem; line-height:1.3; color:var(--ink); margin:0 0 0.2rem; }
+  .sg-card .que{ font-size:0.9rem; color:var(--ink-soft); line-height:1.55; margin:0 0 0.7rem; }
+  .sg-card .eti{ margin-top:auto; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.06em;
+                 text-transform:uppercase; color:var(--stamp); }
+  .sg-buscador{ margin:1.4rem 0 0.9rem; }
+  .sg-buscador input[type="search"]{ width:100%; padding:0.8rem 1rem; border:1.5px solid var(--border);
+    border-radius:10px; font-family:inherit; font-size:1rem; color:var(--ink); background:var(--surface); }
+  .sg-buscador input[type="search"]:focus{ border-color:var(--accent); outline:none; }
+  .sg-info{ font-size:0.85rem; color:var(--ink-soft); margin:0.5rem 0 0; min-height:1.2em; }
+  .sg-letras{ display:flex; flex-wrap:wrap; gap:0.35rem; margin:0.9rem 0 0; }
+  .sg-letras button{ font-family:var(--font-mono); font-size:0.8rem; min-width:2rem; padding:0.35rem 0.5rem;
+    border:1px solid var(--border); background:var(--surface); color:var(--ink); border-radius:8px; cursor:pointer; }
+  .sg-letras button:hover:not(:disabled){ border-color:var(--accent); color:var(--accent); }
+  .sg-letras button[aria-pressed="true"]{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .sg-letras button:disabled{ opacity:0.3; cursor:default; }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/" class="back-link">← Volver a la portada</a>
+  <div class="stamp">🧠 Biblioteca de sesgos</div>
+  <h1>Biblioteca de sesgos</h1>
+  <p class="lead">Los atajos que usa la cabeza para decidir rápido, contados de uno en uno: qué son, dónde
+  se notan y qué se puede hacer con ellos. Cada uno en su página, con la fuente a la vista.</p>
+
+  <div class="idea"><strong>Un sesgo no es un defecto tuyo.</strong> Son atajos que funcionan bien casi
+  siempre y fallan en situaciones concretas. Saber cuáles son no los apaga —eso no lo hace nadie—, pero
+  sí permite reconocer el momento en que están operando, que es cuando se puede hacer algo.</div>
+
+  <div class="sg-buscador">
+    <label for="sg-buscar" class="mc-eti" style="text-align:left;display:block;margin:0 0 0.4rem;">Buscar un sesgo</label>
+    <input type="search" id="sg-buscar" placeholder="Buscar: crítica, decisiones, control, entrevista…" autocomplete="off">
+    <p class="sg-info" id="sg-info" role="status"></p>
+  </div>
+  <div class="sg-letras" id="sg-letras-arriba" role="group" aria-label="Filtrar por letra"><button type="button" data-l="A">A</button><button type="button" data-l="B">B</button><button type="button" data-l="C">C</button><button type="button" data-l="D">D</button><button type="button" data-l="E">E</button><button type="button" data-l="F">F</button><button type="button" data-l="G">G</button><button type="button" data-l="H">H</button><button type="button" data-l="I">I</button><button type="button" data-l="J">J</button><button type="button" data-l="K">K</button><button type="button" data-l="L">L</button><button type="button" data-l="M">M</button><button type="button" data-l="N">N</button><button type="button" data-l="O">O</button><button type="button" data-l="P">P</button><button type="button" data-l="Q">Q</button><button type="button" data-l="R">R</button><button type="button" data-l="S">S</button><button type="button" data-l="T">T</button><button type="button" data-l="U">U</button><button type="button" data-l="V">V</button><button type="button" data-l="W">W</button><button type="button" data-l="X">X</button><button type="button" data-l="Y">Y</button><button type="button" data-l="Z">Z</button></div>
+
+  <div class="sg-lista" id="sg-lista">
+      <a class="sg-card" href="/descuento-por-demora.html" data-letra="D" data-claves="procrastinar ahorrar dieta fumar impulsividad recompensa habitos esperar">
+        <span class="ico" aria-hidden="true">⏳</span>
+        <span class="nom">El descuento por demora</span>
+        <span class="que">Lo que hay que esperar pierde valor, y no de forma proporcional. De ahí que cueste tanto elegir lo de después.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/efecto-de-dotacion.html" data-letra="D" data-claves="vender casa coche precio regatear apego cosas mudanza tirar acumular desprenderse">
+        <span class="ico" aria-hidden="true">🎁</span>
+        <span class="nom">El efecto de dotación</span>
+        <span class="que">En cuanto algo es tuyo, vale más. Aunque lo tengas desde hace cinco minutos.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/efecto-de-encuadre.html" data-letra="E" data-claves="porcentaje riesgo decisiones medicas operacion como se cuenta ganancias perdidas">
+        <span class="ico" aria-hidden="true">🪞</span>
+        <span class="nom">El efecto de encuadre</span>
+        <span class="que">La misma información contada en ganancias o en pérdidas cambia la decisión, aunque los números sean idénticos.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/efecto-de-mera-exposicion.html" data-letra="M" data-claves="publicidad canciones gustos costumbre familiaridad exposicion miedo evitar repetir marcas">
+        <span class="ico" aria-hidden="true">🔁</span>
+        <span class="nom">El efecto de mera exposición</span>
+        <span class="que">Lo que se repite empieza a gustar. Sin argumentos, sin motivo, solo por haberlo visto más veces.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/efecto-foco.html" data-letra="F" data-claves="verguenza ansiedad social timidez hablar en publico ridiculo miradas">
+        <span class="ico" aria-hidden="true">🔦</span>
+        <span class="nom">El efecto foco</span>
+        <span class="que">Creemos que los demás nos miran y nos juzgan mucho más de lo que en realidad lo hacen.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/efecto-forer.html" data-letra="F" data-claves="horoscopo test de personalidad tarot adivino perfil coach eneagrama descripcion me describe">
+        <span class="ico" aria-hidden="true">🔮</span>
+        <span class="nom">El efecto Forer</span>
+        <span class="que">Una descripción que vale para cualquiera se lee como si fuera para uno. Cuanto más vaga, mejor encaja.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/efecto-halo.html" data-letra="H" data-claves="entrevista trabajo primera impresion apariencia curriculum foto publicidad pareja prejuicio simpatia">
+        <span class="ico" aria-hidden="true">✨</span>
+        <span class="nom">El efecto halo</span>
+        <span class="que">Una cualidad buena tiñe todo lo demás: si alguien nos cae bien, lo suponemos también competente.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/error-fundamental-de-atribucion.html" data-letra="E" data-claves="juzgar a los demas discutir pareja jefe conducir prejuicio culpa contexto es un borde caracter">
+        <span class="ico" aria-hidden="true">🎭</span>
+        <span class="nom">El error fundamental de atribución</span>
+        <span class="que">A los demás los explicamos por cómo son; a nosotros, por la situación en la que estábamos.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/falso-consenso.html" data-letra="F" data-claves="todo el mundo piensa opiniones politica discutir normal la gente mayoria sorpresa desacuerdo">
+        <span class="ico" aria-hidden="true">🗳️</span>
+        <span class="nom">El falso consenso</span>
+        <span class="que">Damos por hecho que la mayoría piensa como nosotros, y nos sorprende cada vez que no.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/punto-ciego.html" data-letra="P" data-claves="objetividad imparcial yo no soy asi los demas discutir opiniones autoconocimiento introspeccion">
+        <span class="ico" aria-hidden="true">🕶️</span>
+        <span class="nom">El punto ciego de los sesgos</span>
+        <span class="que">Reconocemos los sesgos en los demás con facilidad y en nosotros casi nunca. También este.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/sesgo-de-anclaje.html" data-letra="A" data-claves="precio rebajas negociacion sueldo oferta compras coche piso primera cifra">
+        <span class="ico" aria-hidden="true">⚓</span>
+        <span class="nom">El sesgo de anclaje</span>
+        <span class="que">Cuando no sabes la respuesta, la cabeza no busca desde cero: ajusta desde lo primero que tiene delante. Y ajusta poco.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/sesgo-de-autoservicio.html" data-letra="A" data-claves="culpa merito excusas examen trabajo pareja discutir responsabilidad autoestima fracaso">
+        <span class="ico" aria-hidden="true">🎖️</span>
+        <span class="nom">El sesgo de autoservicio</span>
+        <span class="que">Lo que sale bien es mérito propio; lo que sale mal, culpa de las circunstancias.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/sesgo-de-confirmacion.html" data-letra="C" data-claves="buscar en internet sintomas sospechas celos pruebas hipotesis discutir opiniones">
+        <span class="ico" aria-hidden="true">🔍</span>
+        <span class="nom">El sesgo de confirmación</span>
+        <span class="que">Buscamos lo que encaja con lo que ya pensamos, y esa es justo la prueba que menos informa.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/sesgo-de-impacto.html" data-letra="I" data-claves="ruptura despido suspender miedo al futuro no lo supero loteria mudanza cambio adaptacion duelo">
+        <span class="ico" aria-hidden="true">⏱️</span>
+        <span class="nom">El sesgo de impacto</span>
+        <span class="que">Creemos que lo que venga —bueno o malo— nos va a afectar mucho más y mucho más tiempo del que nos afecta.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/sesgo-de-negatividad.html" data-letra="N" data-claves="critica criticas elogio elogios malas noticias balance del dia rumiar autoexigencia feedback">
+        <span class="ico" aria-hidden="true">🔴</span>
+        <span class="nom">El sesgo de negatividad</span>
+        <span class="que">Lo malo pesa más que lo bueno, aunque venga en menor cantidad. Por eso una crítica tapa nueve elogios.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/sesgo-de-optimismo.html" data-letra="O" data-claves="a mi no me va a pasar riesgo salud tabaco conducir planificar plazos divorcio seguro futuro">
+        <span class="ico" aria-hidden="true">🍀</span>
+        <span class="nom">El sesgo de optimismo</span>
+        <span class="que">«A mí no me va a pasar.» Nos vemos por encima de la media en casi todo lo que va a salir bien.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/sesgo-del-statu-quo.html" data-letra="S" data-claves="no cambiar quedarse igual rutina trabajo relacion inercia decisiones aplazar seguir igual">
+        <span class="ico" aria-hidden="true">🪑</span>
+        <span class="nom">El sesgo del statu quo</span>
+        <span class="que">Dejarlo como está gana por defecto, aunque nadie haya elegido que fuera así.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/sesgo-del-superviviente.html" data-letra="S" data-claves="exito comparacion redes emprender consejos famosos casos de exito muestra sesgada abandonar">
+        <span class="ico" aria-hidden="true">✈️</span>
+        <span class="nom">El sesgo del superviviente</span>
+        <span class="que">Solo ves a los que llegaron. Los que lo intentaron igual y no llegaron no salen en la foto.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/sesgo-retrospectivo.html" data-letra="R" data-claves="ya lo sabia culpa duelo deberia haberlo visto arrepentimiento decisiones pasadas hindsight lo veia venir">
+        <span class="ico" aria-hidden="true">⏪</span>
+        <span class="nom">El sesgo retrospectivo</span>
+        <span class="que">Cuando ya sabes cómo acabó, parece que se veía venir. Antes de saberlo no lo veía nadie, tú incluido.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/aversion-a-la-perdida.html" data-letra="A" data-claves="perder ganar riesgo apostar cambiar de trabajo dejar una relacion vender inversion soltar miedo al cambio">
+        <span class="ico" aria-hidden="true">⚖️</span>
+        <span class="nom">La aversión a la pérdida</span>
+        <span class="que">Perder cien duele bastante más de lo que alegra ganar cien. Por eso cuesta tanto soltar y tan poco quedarse.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/falacia-del-coste-hundido.html" data-letra="C" data-claves="relacion carrera abandonar dejarlo invertido dinero tiempo anos proyecto">
+        <span class="ico" aria-hidden="true">🎟️</span>
+        <span class="nom">La falacia del coste hundido</span>
+        <span class="que">Seguir con algo porque ya has invertido, aunque de ahí en adelante no compense. Lo gastado no vuelve.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/falacia-del-jugador.html" data-letra="J" data-claves="azar loteria apuestas juego ruleta racha suerte ya toca probabilidad casualidad casino">
+        <span class="ico" aria-hidden="true">🎲</span>
+        <span class="nom">La falacia del jugador</span>
+        <span class="que">«Ya toca que salga.» La moneda no se acuerda de las veces anteriores, pero nosotros sí.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/heuristica-de-disponibilidad.html" data-letra="D" data-claves="miedo a volar noticias telediario probabilidad riesgo avion accidente ejemplos memoria alarma">
+        <span class="ico" aria-hidden="true">📰</span>
+        <span class="nom">La heurística de disponibilidad</span>
+        <span class="que">Lo que te viene rápido a la cabeza parece más frecuente de lo que es. Y lo que viene rápido es lo que más se cuenta.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/ilusion-de-agrupamiento.html" data-letra="A" data-claves="racha suerte casualidad coincidencia patron baloncesto loteria estadistica malas rachas señales">
+        <span class="ico" aria-hidden="true">🎯</span>
+        <span class="nom">La ilusión de agrupamiento</span>
+        <span class="que">Vemos rachas y patrones donde solo hay azar, porque el azar de verdad viene a grumos.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/ilusion-de-control.html" data-letra="I" data-claves="rituales manias compulsiones toc azar apuestas juego supersticion comprobar">
+        <span class="ico" aria-hidden="true">💡</span>
+        <span class="nom">La ilusión de control</span>
+        <span class="que">Creer que influimos en algo que va solo. Es el mecanismo de los rituales y las manías.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/ilusion-de-profundidad-explicativa.html" data-letra="I" data-claves="entender explicar saber opinion discutir politica cremallera vater nevera creo que lo entiendo">
+        <span class="ico" aria-hidden="true">🔧</span>
+        <span class="nom">La ilusión de profundidad explicativa</span>
+        <span class="que">Crees que entiendes cómo funciona algo hasta que te sientas a explicarlo paso a paso.</span>
+        <span class="eti">🎬 Con animación y experimento</span>
+      </a>
+      <a class="sg-card" href="/ilusion-de-transparencia.html" data-letra="T" data-claves="verguenza nervios hablar en publico se me nota ansiedad social rubor temblor examen entrevista">
+        <span class="ico" aria-hidden="true">👓</span>
+        <span class="nom">La ilusión de transparencia</span>
+        <span class="que">Creemos que por fuera se nota todo lo que pasa por dentro. Casi nunca se nota.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/la-maldicion-del-conocimiento.html" data-letra="M" data-claves="explicar ensenar clases jerga instrucciones no me entienden comunicar hijos alumnos manual">
+        <span class="ico" aria-hidden="true">🥁</span>
+        <span class="nom">La maldición del conocimiento</span>
+        <span class="que">Cuando sabes algo, ya no puedes imaginar cómo es no saberlo. Y explicas dando por hecho lo que el otro no tiene.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/profecia-autocumplida.html" data-letra="P" data-claves="expectativas hijos clase alumnos pareja desconfianza celos prejuicio autoestima etiquetas">
+        <span class="ico" aria-hidden="true">🔮</span>
+        <span class="nom">La profecía autocumplida</span>
+        <span class="que">Lo que esperas de alguien cambia cómo lo tratas, y cómo lo tratas acaba dándote la razón.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+      <a class="sg-card" href="/la-prueba-social.html" data-letra="P" data-claves="presion de grupo que diran adolescentes moda opiniones seguir a los demas colas reseñas">
+        <span class="ico" aria-hidden="true">👥</span>
+        <span class="nom">La prueba social</span>
+        <span class="que">Si lo hace todo el mundo, damos por hecho que será lo correcto. Aunque veamos que no lo es.</span>
+        <span class="eti">🎬 Con animación</span>
+      </a>
+  </div>
+
+  <p class="sg-info" id="sg-nada" hidden>No hay ningún sesgo con eso. Prueba con otra palabra o
+  <button type="button" class="sg-limpiar" style="background:none;border:0;color:var(--accent);font:inherit;font-weight:600;cursor:pointer;padding:0;">quita el filtro</button>.</p>
+
+
+  <h2 class="bloque-tit">Y para notarlos, no solo leerlos</h2>
+  <p>Leer que la cabeza hace algo raro no convence a nadie; notarlo, sí. Buena parte de estos sesgos
+  tienen su versión corta y jugable en <a href="/laboratorio.html">el laboratorio</a>: predices qué va a
+  pasar, lo haces, y la explicación viene la última.</p>
+
+  <div class="cita-suave">
+    <p><strong>¿Y si no es solo curiosidad?</strong> Si la ansiedad, el ánimo o cualquiera de estas cosas
+    te está complicando el día a día, se puede trabajar con alguien. Soy Miguel Martínez, psicólogo
+    colegiado nº&nbsp;CV17649: consulta online para toda España y presencial en Valencia.</p>
+    <a href="https://concienciaconductual.com">Pedir cita en Conciencia Conductual →</a>
+  </div>
+
+
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Biblioteca de sesgos · Psicolinks", "inLanguage": "es-ES", "url": "https://psicolinks.com/sesgos.html", "description": "Los sesgos que usa la cabeza para decidir rápido, uno por uno: qué son, dónde se notan y qué hacer con ellos. Con animaciones y experimentos para probarlos.", "hasPart": [{"@type": "Article", "name": "El descuento por demora", "url": "https://psicolinks.com/descuento-por-demora.html"}, {"@type": "Article", "name": "El efecto de dotación", "url": "https://psicolinks.com/efecto-de-dotacion.html"}, {"@type": "Article", "name": "El efecto de encuadre", "url": "https://psicolinks.com/efecto-de-encuadre.html"}, {"@type": "Article", "name": "El efecto de mera exposición", "url": "https://psicolinks.com/efecto-de-mera-exposicion.html"}, {"@type": "Article", "name": "El efecto foco", "url": "https://psicolinks.com/efecto-foco.html"}, {"@type": "Article", "name": "El efecto Forer", "url": "https://psicolinks.com/efecto-forer.html"}, {"@type": "Article", "name": "El efecto halo", "url": "https://psicolinks.com/efecto-halo.html"}, {"@type": "Article", "name": "El error fundamental de atribución", "url": "https://psicolinks.com/error-fundamental-de-atribucion.html"}, {"@type": "Article", "name": "El falso consenso", "url": "https://psicolinks.com/falso-consenso.html"}, {"@type": "Article", "name": "El punto ciego de los sesgos", "url": "https://psicolinks.com/punto-ciego.html"}, {"@type": "Article", "name": "El sesgo de anclaje", "url": "https://psicolinks.com/sesgo-de-anclaje.html"}, {"@type": "Article", "name": "El sesgo de autoservicio", "url": "https://psicolinks.com/sesgo-de-autoservicio.html"}, {"@type": "Article", "name": "El sesgo de confirmación", "url": "https://psicolinks.com/sesgo-de-confirmacion.html"}, {"@type": "Article", "name": "El sesgo de impacto", "url": "https://psicolinks.com/sesgo-de-impacto.html"}, {"@type": "Article", "name": "El sesgo de negatividad", "url": "https://psicolinks.com/sesgo-de-negatividad.html"}, {"@type": "Article", "name": "El sesgo de optimismo", "url": "https://psicolinks.com/sesgo-de-optimismo.html"}, {"@type": "Article", "name": "El sesgo del statu quo", "url": "https://psicolinks.com/sesgo-del-statu-quo.html"}, {"@type": "Article", "name": "El sesgo del superviviente", "url": "https://psicolinks.com/sesgo-del-superviviente.html"}, {"@type": "Article", "name": "El sesgo retrospectivo", "url": "https://psicolinks.com/sesgo-retrospectivo.html"}, {"@type": "Article", "name": "La aversión a la pérdida", "url": "https://psicolinks.com/aversion-a-la-perdida.html"}, {"@type": "Article", "name": "La falacia del coste hundido", "url": "https://psicolinks.com/falacia-del-coste-hundido.html"}, {"@type": "Article", "name": "La falacia del jugador", "url": "https://psicolinks.com/falacia-del-jugador.html"}, {"@type": "Article", "name": "La heurística de disponibilidad", "url": "https://psicolinks.com/heuristica-de-disponibilidad.html"}, {"@type": "Article", "name": "La ilusión de agrupamiento", "url": "https://psicolinks.com/ilusion-de-agrupamiento.html"}, {"@type": "Article", "name": "La ilusión de control", "url": "https://psicolinks.com/ilusion-de-control.html"}, {"@type": "Article", "name": "La ilusión de profundidad explicativa", "url": "https://psicolinks.com/ilusion-de-profundidad-explicativa.html"}, {"@type": "Article", "name": "La ilusión de transparencia", "url": "https://psicolinks.com/ilusion-de-transparencia.html"}, {"@type": "Article", "name": "La maldición del conocimiento", "url": "https://psicolinks.com/la-maldicion-del-conocimiento.html"}, {"@type": "Article", "name": "La profecía autocumplida", "url": "https://psicolinks.com/profecia-autocumplida.html"}, {"@type": "Article", "name": "La prueba social", "url": "https://psicolinks.com/la-prueba-social.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Biblioteca de sesgos", "item": "https://psicolinks.com/sesgos.html"}]}</script>
+
+
+<script>
+/* Buscador y filtro por letra de la biblioteca de sesgos. Sin librerías: son
+   treinta tarjetas, no hace falta nada más. */
+(function(){
+  'use strict';
+  var lista = document.getElementById('sg-lista');
+  var cartas = [].slice.call(lista.querySelectorAll('.sg-card'));
+  var campo = document.getElementById('sg-buscar');
+  var info = document.getElementById('sg-info');
+  var nada = document.getElementById('sg-nada');
+  var letra = '';
+
+  function normaliza(s){
+    return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  // Se busca en lo que se ve y también en unas cuantas palabras por las que la
+  // gente buscaría de verdad («entrevista», «rebajas», «rituales»…).
+  var textos = cartas.map(function(c){
+    return normaliza(c.textContent + ' ' + (c.dataset.claves || ''));
+  });
+  // La letra la marca la palabra que da nombre al sesgo, no el artículo:
+  // negatividad va en la N y coste hundido en la C.
+  var iniciales = cartas.map(function(c){ return (c.dataset.letra || '').toUpperCase(); });
+
+  // Se apagan las letras que no tienen ningún sesgo detrás.
+  [].forEach.call(document.querySelectorAll('.sg-letras button'), function(b){
+    if (iniciales.indexOf(b.dataset.l) < 0) b.disabled = true;
+  });
+
+  function filtrar(){
+    var q = normaliza(campo.value.trim());
+    var n = 0;
+    cartas.forEach(function(c, i){
+      var ok = (!q || textos[i].indexOf(q) >= 0) && (!letra || iniciales[i] === letra);
+      c.hidden = !ok;
+      if (ok) n++;
+    });
+    nada.hidden = n > 0;
+    if (!q && !letra) info.textContent = cartas.length + ' sesgos';
+    else info.textContent = n === 0 ? 'Ninguno' : (n === 1 ? '1 sesgo' : n + ' sesgos');
+  }
+
+  campo.addEventListener('input', filtrar);
+  [].forEach.call(document.querySelectorAll('.sg-letras'), function(g){
+    g.addEventListener('click', function(ev){
+      var b = ev.target.closest('button[data-l]');
+      if (!b || b.disabled) return;
+      letra = (letra === b.dataset.l) ? '' : b.dataset.l;
+      [].forEach.call(document.querySelectorAll('.sg-letras button'), function(x){
+        x.setAttribute('aria-pressed', String(x.dataset.l === letra));
+      });
+      filtrar();
+    });
+  });
+  document.querySelector('.sg-limpiar').addEventListener('click', function(){
+    campo.value = ''; letra = '';
+    [].forEach.call(document.querySelectorAll('.sg-letras button'), function(x){ x.setAttribute('aria-pressed','false'); });
+    filtrar();
+  });
+
+  filtrar();
+})();
+</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

@@ -100,18 +100,69 @@
   .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
   .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
   @media print{ .cc-banda{ display:none; } }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuál es la diferencia entre un psicólogo y un psiquiatra?", "acceptedAnswer": {"@type": "Answer", "text": "El psiquiatra es médico y puede recetar medicación. El psicólogo no receta y trabaja con lo que haces, lo que piensas y lo que sientes mediante técnicas psicológicas. No compiten: en muchos casos lo que mejor funciona es ir a los dos a la vez. En España, además, para tratar problemas de salud mental un psicólogo tiene que ser Psicólogo General Sanitario o especialista en Psicología Clínica por la vía PIR, y estar colegiado."}}, {"@type": "Question", "name": "¿Cómo sé si necesito ir al psicólogo?", "acceptedAnswer": {"@type": "Answer", "text": "No hace falta estar hundido para ir. La señal práctica es esta: algo lleva semanas o meses afectando a tu día —al sueño, al trabajo, a tus relaciones o a tu ánimo—, has intentado arreglarlo por tu cuenta y no se mueve. Si además has empezado a evitar cosas que antes hacías, eso suele ser el momento. Cuanto antes se coge, menos tarda."}}, {"@type": "Question", "name": "¿Cuánto dura una terapia?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del problema, pero para los motivos más frecuentes —ansiedad, insomnio, un duelo, una fobia— se suele hablar de algo entre 8 y 20 sesiones, con frecuencia semanal al principio y espaciándose después. Lo que sí deberías tener claro pronto es el plan: qué te pasa, qué vais a hacer y cómo sabréis si funciona. Una terapia sin rumbo explicable es una mala señal."}}, {"@type": "Question", "name": "¿Cuánto cuesta ir al psicólogo en España?", "acceptedAnswer": {"@type": "Answer", "text": "En consulta privada, lo habitual está entre 45 y 80 € por sesión según la ciudad y el profesional. Por la sanidad pública es gratuito, pero el acceso pasa por tu médico de cabecera y las listas de espera suelen ser largas, con sesiones muy espaciadas. También existen centros universitarios y servicios municipales con tarifas reducidas: merece la pena preguntar en tu ayuntamiento."}}, {"@type": "Question", "name": "¿La terapia online funciona igual que la presencial?", "acceptedAnswer": {"@type": "Answer", "text": "Para la mayoría de los motivos de consulta habituales, la evidencia disponible no encuentra diferencias relevantes de eficacia entre el formato online y el presencial. Lo que sí cambia es la comodidad: te ahorra desplazamientos y facilita la continuidad. Hay situaciones donde el presencial es preferible, y eso lo debería valorar el profesional contigo en la primera sesión."}}, {"@type": "Question", "name": "¿Voy a tener que tomar medicación?", "acceptedAnswer": {"@type": "Answer", "text": "El psicólogo no receta, así que esa decisión no sale de la terapia: la toma un médico. Para muchos problemas la psicoterapia sola es suficiente, y en otros la combinación funciona mejor. Lo que nunca debería pasar es que un psicólogo te desaconseje una medicación pautada por tu médico: eso es una señal de alarma para cambiar de profesional."}}, {"@type": "Question", "name": "¿Es confidencial lo que cuento en consulta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El secreto profesional es una obligación deontológica y legal. Solo se rompe en supuestos muy concretos y tasados, como un riesgo grave e inminente para tu vida o la de otra persona, o un requerimiento judicial. Si tienes dudas, pregúntalo en la primera sesión: es una pregunta normal y debería contestártela sin rodeos."}}, {"@type": "Question", "name": "¿Y si no conecto con el psicólogo?", "acceptedAnswer": {"@type": "Answer", "text": "Se cambia, y no pasa nada. La relación entre paciente y terapeuta es uno de los factores que más se asocian a que una terapia funcione, así que si a las tres o cuatro sesiones no te sientes escuchado, dilo en voz alta. Un buen profesional lo agradece, lo habla contigo y, si hace falta, te deriva. Lo que no conviene es desaparecer y concluir que la terapia no sirve."}}, {"@type": "Question", "name": "¿Los tests de esta web sirven para diagnosticar?", "acceptedAnswer": {"@type": "Answer", "text": "No. El test de ansiedad (GAD-7) y el test de depresión (PHQ-9) son cuestionarios de cribado validados y de uso libre: sirven para ponerle un número a cómo estás y, sobre todo, para comparar contigo mismo dentro de unas semanas. Un diagnóstico lo hace un profesional en una entrevista, nunca un formulario. Los resultados se guardan solo en tu navegador y puedes borrarlos cuando quieras."}}, {"@type": "Question", "name": "¿Qué es Psicolinks y quién lo escribe?", "acceptedAnswer": {"@type": "Answer", "text": "Psicolinks publica cada día laborable resúmenes de estudios reales de psicología, con enlace al original, y guías prácticas gratuitas. Lo escribe Miguel Martínez, psicólogo colegiado nº CV17649. Es divulgación y psicoeducación: no sustituye una consulta. Si buscas terapia, Psicolinks trabaja con consultas asociadas y la de quien escribe la web es una de ellas."}}]}
@@ -121,7 +172,20 @@
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">❓ Preguntas frecuentes</div>
@@ -195,35 +259,17 @@
 
   <div class="cierre"><strong>¿Te ha faltado alguna?</strong> Puedes preguntar lo que quieras en el <a href="/consultorio.html">consultorio</a>: se contesta en abierto, sin dar datos personales de nadie.</div>
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que cuenta la guía te está pasando de verdad y quieres que alguien mire tu caso, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -233,6 +279,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

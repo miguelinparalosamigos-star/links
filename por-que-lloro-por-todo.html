@@ -100,34 +100,135 @@
   .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
   .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
   @media print{ .cc-banda{ display:none; } }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+
+  /* El color de este tema: Ánimo. */
+  :root{ --accent:#A6491C; --accent-soft:#F8EAE0; --stamp:#A6491C; }
+  .idea{ background:#F8EAE0 !important; border-color:#e6ded2 !important;
+         border-left-color:#A6491C !important; }
+  .hazlo{ background:#F8EAE0 !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#A6491C; border-color:#A6491C; color:#fff; }
+  .tool-kicker .num{ background:#A6491C; }
+  .cierre{ border-left:4px solid #A6491C; }
+  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
+              border:1px solid var(--border); border-radius:14px;
+              background:var(--surface); }
+  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
+  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
+  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
 <script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Por qué lloro por todo","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/por-que-lloro-por-todo.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
+{ "@context":"https://schema.org","@type":"Article","headline":"Por qué lloro por todo","image":"https://psicolinks.com/ilustraciones/animo.jpg","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/por-que-lloro-por-todo.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Por qué lloro por todo", "item": "https://psicolinks.com/por-que-lloro-por-todo.html"}]}
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">📎 Guía gratuita · Ánimo</div>
   <h1>Por qué lloro por todo</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis claves para cuando se te saltan las lágrimas con un anuncio, con una tontería en el trabajo o sin motivo, y te da vergüenza que te pase.</p>
+  <img class="guia-ilus" src="/ilustraciones/animo.jpg" alt="Ilustración: el ratón de Psicolinks junto a una nube de lluvia con un sol detrás"
+       width="1360" height="460" loading="lazy" decoding="async">
   <div class="idea"><strong>La idea de fondo.</strong> Llorar por cualquier cosa se suele leer como un defecto —ser flojo, ser exagerado— y casi nunca lo es. Es una señal de que el umbral está bajo, y el umbral baja por motivos bastante concretos: dormir poco durante meses, aguantar una situación sin decirla, un cambio hormonal, algo médico, o un ánimo que se está apagando. Por eso lo que ayuda no es controlarse mejor en el momento, sino averiguar cuál de esas cosas está detrás.</div>
 
 
@@ -147,38 +248,50 @@
   </div>
 
   <h2 class="bloque-tit">Seis claves</h2>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 1</p>
+  <nav class="ruta" aria-label="Las herramientas de esta guía">
+    <p class="ruta-eti">Las seis, de un vistazo</p>
+    <ol>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Llorar mucho no es un defecto de carácter</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Casi siempre hay cansancio detrás</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Descarta lo médico y lo hormonal</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Puede ser lo contrario de lo que parece</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">No lo pelees en el momento; ocúpate de la causa</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Fíjate en qué lo dispara</span></a></li>
+    </ol>
+  </nav>
+
+<div class="tool" id="h1">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1</p>
   <h3>Llorar mucho no es un defecto de carácter</h3>
   <p>Se vive con vergüenza —«soy una llorona», «qué flojo soy»— y casi nunca es eso. Llorar más de lo habitual suele indicar que el sistema está saturado, no que seas débil.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> cambia la pregunta: en vez de «por qué soy así», pregúntate «desde cuándo». Si hay un antes y un después, ahí está la información.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 2 · La sospecha número uno</p>
+<div class="tool" id="h2">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2 · La sospecha número uno</p>
   <h3>Casi siempre hay cansancio detrás</h3>
   <p>Dormir poco de forma sostenida baja el umbral de todo: llorar, saltar, agobiarse. Mucha gente que llora por cualquier cosa lleva meses durmiendo mal y no lo relaciona.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> mira tus últimas semanas de sueño antes de buscar explicaciones profundas. En bastante gente, arreglar eso ya cambia bastante.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 3</p>
+<div class="tool" id="h3">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
   <h3>Descarta lo médico y lo hormonal</h3>
   <p>Tiroides, anemia, déficits, el posparto, la perimenopausia y algunos medicamentos producen exactamente esto. No se resuelve con voluntad porque no es de voluntad.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> coméntaselo a tu médico si lleva meses o si empezó de golpe. Es una consulta corta que ahorra mucho tiempo perdido.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 4</p>
+<div class="tool" id="h4">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
   <h3>Puede ser lo contrario de lo que parece</h3>
   <p>A veces no es que sientas de más: es que llevas mucho aguantando y ha llegado el punto en que se desborda por cualquier sitio. El llanto por todo y el no sentir nada suelen ser dos caras de lo mismo.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> pregúntate qué llevas sosteniendo estos meses sin haberlo hablado con nadie. Suele haber algo, y suele ser eso.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 5</p>
+<div class="tool" id="h5">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
   <h3>No lo pelees en el momento; ocúpate de la causa</h3>
   <p>Intentar aguantarse las lágrimas en el momento es agotador y no resuelve nada. Lo que baja la frecuencia es atender lo de debajo, no controlar el síntoma.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> si llegan en un mal momento, sal, respira alargando la exhalación y vuelve. Y sin disculparte demasiado: llorar delante de alguien no es un desastre.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 6</p>
+<div class="tool" id="h6">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
   <h3>Fíjate en qué lo dispara</h3>
   <p>Muchas veces no es «por todo»: hay temas concretos que aparecen una y otra vez, y no siempre son los que uno cree.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> apunta una semana en qué momentos ha pasado y qué había justo antes. En tres o cuatro anotaciones suele verse el patrón. Puedes usar el <a href="/registro-abc.html">registro de siete días</a>.</div>
@@ -186,38 +299,20 @@
 
   <div class="cierre"><strong>Cuándo consultar.</strong> Si esto lleva semanas, si va con ánimo bajo, con falta de ganas o con la sensación de no poder con nada, conviene mirarlo: puedes situarte con el <a href="/test-de-depresion.html">test de depresión</a> y comentarlo con tu médico. Y si empezó después de un parto o de una pérdida, díselo expresamente.</div>
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que cuenta la guía te está pasando de verdad y quieres que alguien mire tu caso, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 
 
 
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -227,6 +322,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Por qué lloro por todo", "url": "https://psicolinks.com/por-que-lloro-por-todo.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Depresión"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Llorar por cualquier cosa no es debilidad: qué descartar con tu médico, por qué el cansancio es la sospecha número uno y qué suele haber debajo."}</script>
 </body>

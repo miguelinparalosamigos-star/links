@@ -58,18 +58,6 @@
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
   .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
 
   .rr-form{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.2rem 1.3rem; margin:1.5rem 0 0; }
   .rr-campo{ margin:0 0 1rem; }
@@ -190,7 +178,6 @@
        llega al psicólogo sale sin gráficos. */
     *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .site-header, .site-footer, .back-link, .rr-form, .rr-acciones, .rr-nota, .quitar, .envio-ops, .rr-periodos,
-    .menu-cuadros, .cc-banda, #cookie-banner, [class*=cookie], .plc-banner, .plc-overlay,
     .lead, .privacidad, .rr-vacio,
     .rr-bloque > .sub, .rr-marca .mej, .siguiente-simple,
     .rr-bloque[data-vacio]{ display:none !important; }
@@ -251,19 +238,104 @@
   .envio-ops button{ font-family:inherit; font-size:0.92rem; font-weight:600; color:var(--accent);
                      background:none; border:0; padding:0; cursor:pointer; text-decoration:underline; }
   .envio-largo{ font-size:0.85rem; color:var(--ink-soft); }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+  .rr-ayuda{ display:block; font-size:0.82rem; color:var(--ink-soft); line-height:1.5; margin:0 0 0.4rem; font-weight:400; }
+  input[type="time"]{ width:100%; padding:0.65rem 0.8rem; border:1.5px solid var(--border); border-radius:9px;
+                      font-family:inherit; font-size:1rem; color:var(--ink); background:var(--surface); }
+  @media print{ .rr-mas{ display:none; } }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
 </header>
 
 <main>
   <a href="/" class="back-link">← Volver a la portada</a>
   <div class="stamp">⚡ Treinta segundos</div>
   <h1>Registro rápido</h1>
-  <p class="lead">Cuatro cosas y a otra cosa. Cuando lleves unos cuantos, aquí abajo empiezan a salir los patrones solos: dónde te pasa, a qué horas y qué es lo que más se te repite por la cabeza.</p>
+  <p class="lead">Cuatro cosas y a otra cosa. Cuando lleves unos cuantos, aquí abajo empiezan a salir los patrones solos: dónde te pasa, a qué horas lo apuntas y qué se te repite por la cabeza.</p>
 
   <form class="rr-form" id="rr-form">
     <div class="rr-campo">
@@ -289,7 +361,7 @@
       </div>
       <p class="rr-extremos"><span>nada</span><span>lo peor</span></p>
     </div>
-    <button type="submit" class="rr-guardar">Guardar</button>
+<button type="submit" class="rr-guardar">Guardar</button>
     <p class="rr-ok" id="rr-ok" role="status" aria-live="polite"></p>
   </form>
 
@@ -365,6 +437,18 @@
       <div id="rr-donde"></div>
     </section>
 
+    <section class="rr-bloque" id="rr-bloque-quien" hidden>
+      <h2>Con quién</h2>
+      <div id="rr-quienes"></div>
+    </section>
+
+    <section class="rr-bloque" id="rr-bloque-alivio" hidden>
+      <h2>Qué alivia de verdad</h2>
+      <p class="sub">Cuánto baja el malestar entre el momento y un rato después, según lo que se hizo.
+      Es la única cuenta de esta hoja que compara un episodio consigo mismo.</p>
+      <div id="rr-alivio"></div>
+    </section>
+
     <section class="rr-bloque">
       <h2>A qué hora</h2>
       <div id="rr-cuando"></div>
@@ -427,36 +511,19 @@
   <div class="siguiente-simple" style="margin-top:1.6rem;font-size:0.95rem;">¿Quieres algo más
   detallado? Las <a href="/herramientas.html">veinticuatro hojas de registro</a> van por temas concretos:
   exposición, sueño, pensamientos, actividades. Esto de aquí es la versión de andar por casa.</div>
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si esto pide algo más que una hoja?</h3>
+    <p>Un registro enseña el patrón; lo que se hace con el patrón ya es el trabajo de terapia. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia. Escríbeme y te cuento cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-nota">Lo que apuntas aquí no lo ve nadie más que tú: se queda en tu dispositivo. Si algún día quieres enseñármelo, me lo traes tú.</p>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/mis-registros.html">Mis registros</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
@@ -500,6 +567,24 @@
   function un(n){ return Math.round(n * 10) / 10; }
 
   /* ---------------------------------------------------------- los patrones */
+
+  /* Cuánto baja el malestar entre el momento y un rato después, según lo que
+     se hizo. Es la única cuenta de la hoja que compara al mismo episodio
+     consigo mismo: las demás comparan episodios distintos entre sí. */
+  function alivioPorRespuesta(v){
+    var con = v.filter(function(e){ return typeof e.m2 === 'number'; });
+    if (con.length < 3) return [];
+    var out = [];
+    CONDUCTAS_RE.forEach(function(regla){
+      var difs = [];
+      con.forEach(function(e){
+        if (casan(regla[2], pelar(e.d || ''))) difs.push(e.m - e.m2);
+      });
+      if (difs.length >= 2) out.push({ k: regla[0], n: difs.length, baja: un(media(difs)) });
+    });
+    return out.sort(function(a, b){ return b.baja - a.baja; });
+  }
+
   function agrupar(v, dame){
     var m = {};
     v.forEach(function(e){
@@ -903,6 +988,8 @@
       media: un(media(v.map(function(e){ return e.m; })) || 0),
       cambio: ant,
       lugares: agrupar(v, sitioDe),
+      personas: agrupar(v.filter(function(e){ return e.quien; }), function(e){ return e.quien; }),
+      alivio: alivioPorRespuesta(v),
       franjas: agrupar(v, function(e){ return franja(e.h); }),
       semana: agrupar(v, function(e){ return diaSemana(e.f); }),
       palabras: palabrasRepetidas(v),
@@ -1025,6 +1112,7 @@
       L.push('  malestar ahora?», sino «¿me deja mejor la próxima vez?».');
     }
     seccion('Dónde', a.lugares);
+    seccion('Con quién', a.personas);
     seccion('A qué hora', a.franjas);
     seccion('Qué día', a.semana);
 
@@ -1263,6 +1351,21 @@
     pintarFuncional(a);
     setTimeout(marcarVacias, 0);
     document.getElementById('rr-donde').innerHTML = barras(a.lugares.slice(0,6));
+    var cajaQ = document.getElementById('rr-bloque-quien');
+    if (cajaQ) {
+      cajaQ.hidden = !a.personas.length;
+      document.getElementById('rr-quienes').innerHTML = barras(a.personas.slice(0,6));
+    }
+    var cajaA = document.getElementById('rr-bloque-alivio');
+    if (cajaA) {
+      cajaA.hidden = !a.alivio.length;
+      document.getElementById('rr-alivio').innerHTML = a.alivio.map(function(x){
+        var signo = x.baja > 0 ? 'baja ' + x.baja : (x.baja < 0 ? 'sube ' + (-x.baja) : 'no se mueve');
+        return '<div class="rr-barra"><span>' + esc(x.k) + '</span>' +
+               '<span class="via"><i style="width:' + Math.min(100, Math.abs(x.baja) * 20) + '%"></i></span>' +
+               '<span class="num">' + signo + ' · ' + x.n + '</span></div>';
+      }).join('');
+    }
     document.getElementById('rr-cuando').innerHTML = barras(a.franjas);
     document.getElementById('rr-dia').innerHTML = barras(a.semana);
 
@@ -1310,8 +1413,10 @@
       return;
     }
     var v = leer();
-    v.push({ q: q, p: p, d: d, m: +rango.value,
-             f: hoy(), h: ahora(), ts: Date.now() });
+    // La hora la pone el propio registro: la de ahora, que es cuando se apunta.
+    var reg = { q: q, p: p, d: d, m: +rango.value,
+                f: hoy(), h: ahora(), ts: Date.now() };
+    v.push(reg);
     guardar(v);
     form.reset();
     rango.value = 5; document.getElementById('rr-m-val').textContent = '5';
@@ -1360,6 +1465,7 @@
     tres('Qué hago después', a.hechos);
     tres('Emociones', a.emociones);
     tres('Dónde', a.lugares);
+    tres('Con quién', a.personas);
     tres('A qué hora', a.franjas);
     if (a.marcas.length) {
       L.push('');
@@ -1430,6 +1536,7 @@
 })();
 </script>
 
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">

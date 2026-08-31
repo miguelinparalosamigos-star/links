@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de discusiones: ver el patrón · Psicolinks</title>
+<meta name="description" content="Un autorregistro para apuntar las discusiones y ver lo que se repite: el tema, la hora y cómo acaban. Se guarda solo en tu navegador.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Registro de discusiones">
+<meta property="og:description" content="Casi ninguna pareja tiene veinte problemas: tiene tres disfrazados de veinte.">
+<meta property="og:url" content="https://psicolinks.com/registro-de-discusiones.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/registro-de-discusiones.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+  .relacionadas{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem 1.4rem; margin:2rem 0 0; }
+  .relacionadas h3{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 0.7rem; }
+  .relacionadas ul{ margin:0; padding-left:20px; }
+  .relacionadas li{ font-size:0.97rem; line-height:1.8; }
+
+  .consulta-cta { margin: 2.4rem 0 0; padding: 1.3rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid #8C3B4A; border-radius: 12px; }
+  .consulta-cta h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .consulta-cta p { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+  .consulta-cta .consulta-btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.93rem; padding: 0.65rem 1.15rem; border-radius: 9px; background: #8C3B4A; color: #fff; }
+  .consulta-cta .consulta-btn:hover { background: #75303d; }
+  .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
+  .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+  .desambigua { font-size:0.9rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:0.7rem 0.95rem; margin:0 0 1.4rem; line-height:1.55; }
+  .desambigua a { color:var(--accent); font-weight:600; }
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .siguiente-paso{ margin:2.2rem 0 0; padding:1.05rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+  .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
+  .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
+  .siguiente-paso a:hover{ text-decoration:underline; }
+  .firma-consulta{ margin:2rem 0 0; padding:1rem 1.15rem; background:var(--surface); border:1px solid var(--border); border-left:4px solid #8C3B4A; border-radius:11px; }
+  .firma-consulta p{ margin:0; font-size:0.93rem; line-height:1.65; color:var(--ink-soft); }
+  .firma-consulta p strong a{ color:var(--ink); }
+  .firma-consulta .fc-otras{ margin:0.5rem 0 0; font-size:0.86rem; opacity:0.9; }
+  @media print {
+    .site-header, .site-footer, .back-link, .descarga, .firma-consulta,
+    .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
+    .buscador, .migas{ display:none !important; }
+    body{ background:#fff; color:#000; }
+    main{ max-width:100%; }
+    .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+  }
+  .cc-banda{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .cc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .cc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:600px){ .cc-rejilla{ grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); } }
+  .cc-tarjeta{ display:flex; align-items:center; gap:0.85rem; text-decoration:none; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1rem 1.15rem; color:var(--ink); }
+  .cc-tarjeta:hover{ border-color:#8C3B4A; }
+  .cc-marca{ flex-shrink:0; width:2.6rem; height:1.1rem; color:#8C3B4A; }
+  .cc-txt{ display:flex; flex-direction:column; gap:0.1rem; min-width:0; }
+  .cc-nom{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; line-height:1.25; }
+  .cc-quien{ font-size:0.88rem; color:var(--ink-soft); line-height:1.35; }
+  .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
+  .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
+  @media print{ .cc-banda{ display:none; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  .hr-form{ background:var(--surface); border:1px solid var(--border); border-left:5px solid var(--accent);
+            border-radius:14px; padding:1.3rem 1.4rem 1.4rem; margin:0 0 1.6rem; }
+  .hr-campo{ margin:0 0 1.1rem; }
+  .hr-campo label{ display:block; font-weight:600; font-size:1rem; margin:0 0 0.2rem; }
+  .hr-campo .pista{ display:block; font-size:0.85rem; color:var(--ink-soft); line-height:1.5; margin:0 0 0.45rem; }
+  .hr-campo input[type="text"], .hr-campo textarea, .hr-campo select{
+      width:100%; padding:0.6rem 0.75rem; border:1.5px solid var(--border); border-radius:9px;
+      font-family:inherit; font-size:0.97rem; color:var(--ink); background:var(--paper); }
+  .hr-campo textarea{ min-height:4.5rem; resize:vertical; }
+  .hr-campo input:focus, .hr-campo textarea:focus, .hr-campo select:focus{ border-color:var(--accent); outline:none; }
+  .hr-escala{ display:flex; align-items:center; gap:0.8rem; }
+  .hr-escala input[type="range"]{ flex:1; accent-color:var(--accent); }
+  .hr-escala output{ font-family:var(--font-mono); font-weight:700; font-size:1.1rem; color:var(--accent); min-width:1.6rem; text-align:right; }
+  .hr-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem;
+                letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.15rem 0 0; }
+  .hr-guardar{ width:100%; padding:0.85rem; border:0; border-radius:10px; background:var(--accent);
+               color:#fff; font-family:inherit; font-weight:600; font-size:1rem; cursor:pointer; }
+  .hr-guardar:hover{ background:#3a2e63; }
+  .hr-ok{ font-size:0.9rem; color:#2F6B4F; margin:0.6rem 0 0; min-height:1.2em; text-align:center; }
+  .hr-vacio{ background:var(--surface); border:1px dashed var(--border); border-radius:12px;
+             padding:1.4rem; text-align:center; color:var(--ink-soft); font-size:0.94rem; line-height:1.6; }
+  .hr-bloque{ margin:2rem 0 0; }
+  .hr-bloque h2{ font-family:var(--font-display); font-size:1.3rem; font-weight:600; margin:0 0 0.3rem; }
+  .hr-bloque .sub{ font-size:0.9rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .hr-barra{ display:flex; align-items:center; gap:0.7rem; margin:0 0 0.45rem; font-size:0.88rem; }
+  .hr-barra .eti{ flex:0 0 8.5rem; color:var(--ink-soft); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .hr-barra .via{ flex:1; height:0.95rem; background:var(--surface); border:1px solid var(--border); border-radius:999px; overflow:hidden; }
+  .hr-barra .via i{ display:block; height:100%; background:var(--accent); }
+  .hr-barra .num{ flex:0 0 2.6rem; text-align:right; font-family:var(--font-mono); font-size:0.8rem; color:var(--ink); }
+  .hr-lista{ display:grid; gap:0.7rem; margin:1rem 0 0; }
+  .hr-item{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.9rem 1.05rem; }
+  .hr-item .cab{ display:flex; justify-content:space-between; align-items:baseline; gap:0.7rem;
+                 font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.06em;
+                 text-transform:uppercase; color:var(--stamp); margin:0 0 0.5rem; }
+  .hr-item dl{ margin:0; display:grid; gap:0.35rem; }
+  .hr-item dt{ font-size:0.72rem; font-family:var(--font-mono); letter-spacing:0.05em;
+               text-transform:uppercase; color:var(--ink-soft); }
+  .hr-item dd{ margin:0 0 0.2rem; font-size:0.94rem; line-height:1.5; }
+  .hr-borrar{ background:none; border:0; color:var(--ink-soft); font:inherit; font-size:0.8rem;
+              cursor:pointer; text-decoration:underline; padding:0; }
+  .hr-borrar:hover{ color:#8C3B4A; }
+  .hr-acciones{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.2rem 0 0; }
+  .hr-acciones button{ font:inherit; font-size:0.9rem; padding:0.55rem 1rem; border-radius:9px;
+                       border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer; }
+  .hr-acciones button:hover{ border-color:var(--accent); color:var(--accent); }
+  @media print{ .hr-form, .hr-acciones, .hr-borrar{ display:none !important; } }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta, en versión discreta y marcada como anuncio. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px;
+                 background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/herramientas.html" class="back-link">← Todas las herramientas</a>
+  <div class="stamp">💬 Herramienta gratuita</div>
+  <h1>Registro de discusiones</h1>
+  <p class="lead">Dos minutos después de cada discusión. A las cinco o seis empiezan a verse las tres o cuatro que en realidad son la misma.</p>
+
+  <div class="idea"><strong>Para qué sirve.</strong> Casi ninguna pareja tiene veinte problemas: tiene tres, que salen disfrazados de veinte. Y en caliente es imposible verlo, porque cada discusión parece nueva. Apuntarlas cuando ya ha pasado es lo que las junta y enseña el patrón: el mismo tema, la misma hora, el mismo final.</div>
+
+  <form class="hr-form" id="hr-form">
+    <div class="hr-campo">
+      <label for="c-quien">¿Con quién?</label>
+      <span class="pista">Sirve también fuera de la pareja: un hermano, tu madre, alguien del trabajo.</span>
+      <input type="text" id="c-quien" placeholder="Mi pareja" autocomplete="off">
+    </div>
+    <div class="hr-campo">
+      <label for="c-tema">¿De qué, en dos palabras?</label>
+      <span class="pista">Escríbelo siempre igual —«dinero», «tareas», «sus padres»— para que se puedan contar.</span>
+      <input type="text" id="c-tema" placeholder="Tareas de casa" autocomplete="off">
+    </div>
+    <div class="hr-campo">
+      <label for="c-chispa">¿Qué la encendió?</label>
+      <span class="pista">La frase o el gesto concreto de justo antes. No el motivo de fondo.</span>
+      <input type="text" id="c-chispa" placeholder="Le dije «otra vez la cocina así»" autocomplete="off">
+    </div>
+    <div class="hr-campo">
+      <label for="c-hice">¿Qué hiciste tú?</label>
+      <span class="pista">Solo tu parte. Es la única que puedes cambiar y la que más cuesta escribir.</span>
+      <textarea id="c-hice" placeholder="Subí el tono y saqué lo de la semana pasada"></textarea>
+    </div>
+    <div class="hr-campo">
+      <label for="c-final">¿Cómo acabó?</label>
+      <span class="pista">Elige la que más se parezca.</span>
+      <select id="c-final"><option>Se habló y se arregló</option><option>Se cortó y se dejó pasar</option><option>Uno se fue</option><option>Portazo o gritos</option><option>Silencio de horas</option><option>Se pidió perdón</option><option>Sigue abierto</option></select>
+    </div>
+    <div class="hr-campo">
+      <label for="c-intensidad">¿Cuánto subió?</label>
+      <span class="pista">De 0 a 10, lo alto que llegó.</span>
+      <div class="hr-escala"><input type="range" id="c-intensidad" min="0" max="10" step="1" value="5"><output id="v-intensidad">5</output></div>
+      <p class="hr-extremos"><span>un roce</span><span>lo peor</span></p>
+    </div>
+    <button type="submit" class="hr-guardar">Guardar</button>
+    <p class="hr-ok" id="hr-ok" role="status" aria-live="polite"></p>
+  </form>
+
+  <p class="hr-vacio" id="hr-vacio">Todavía no has apuntado nada. En cuanto haya unas cuantas
+  anotaciones, aquí abajo empiezan a salir los patrones solos.<br><br>
+  <strong>Nada de esto sale de tu navegador:</strong> se guarda en este dispositivo y no se envía a
+  ningún sitio. Si borras los datos del navegador, se va.</p>
+
+  <div id="hr-resultados" hidden>
+    <div class="hr-bloque">
+      <h2>Lo que se repite</h2>
+      <p class="sub">Cuentas de lo que has apuntado. Lo interesante casi nunca es el motivo: es cuál se repite, a qué hora y cómo acaba.</p>
+      <div id="hr-patrones"></div>
+    </div>
+
+    <div class="hr-bloque">
+      <h2>Lo apuntado</h2>
+      <p class="sub">De lo más reciente a lo más antiguo.</p>
+      <div class="hr-lista" id="hr-lista"></div>
+      <div class="hr-acciones">
+        <button type="button" id="hr-imprimir">⬇ Guardar en PDF o imprimir</button>
+        <button type="button" id="hr-csv">Exportar a CSV</button>
+        <button type="button" id="hr-borrar-todo">Borrar todo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cierre"><strong>Para llevarlo a consulta.</strong> Si vais a terapia de pareja, esta hoja impresa ahorra tres sesiones: en vez de discutir sobre quién recuerda mejor, hay una lista. Y si al mirarla ves que casi todas son del mismo tema, ese es el que hay que hablar en frío, no los veinte.</div>
+
+  <p class="nota-hermana" style="font-size:0.93rem;line-height:1.6;color:var(--ink-soft);margin:1.6rem 0 0;">Para tenerla en frío, están <a href="/preparar-una-conversacion.html">preparar una conversación</a> y <a href="/discutir-mejor-en-pareja.html">discutir mejor en pareja</a>. Y si lo que sube es el tono, <a href="/controlar-el-enfado.html">controlar el enfado</a>.</p>
+
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que estás apuntando te está pasando de verdad, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Registro de discusiones", "inLanguage": "es-ES", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/registro-de-discusiones.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Un autorregistro para apuntar las discusiones y ver lo que se repite: el tema, la hora y cómo acaban. Se guarda solo en tu navegador."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://psicolinks.com/herramientas.html"}, {"@type": "ListItem", "position": 3, "name": "Registro de discusiones", "item": "https://psicolinks.com/registro-de-discusiones.html"}]}</script>
+<script>
+/* Registro de discusiones ---------------------------------------------------------------
+   Se guarda todo en el navegador de quien lo usa (localStorage) y no se
+   manda a ningún sitio. Sin librerías: son cuatro cuentas.               */
+(function(){
+  'use strict';
+  var CLAVE = 'pl_discusiones';
+  var CAMPOS = [{"k": "quien", "tipo": "texto", "label": "¿Con quién?", "pista": "Sirve también fuera de la pareja: un hermano, tu madre, alguien del trabajo.", "ph": "Mi pareja"}, {"k": "tema", "tipo": "texto", "label": "¿De qué, en dos palabras?", "pista": "Escríbelo siempre igual —«dinero», «tareas», «sus padres»— para que se puedan contar.", "ph": "Tareas de casa"}, {"k": "chispa", "tipo": "texto", "label": "¿Qué la encendió?", "pista": "La frase o el gesto concreto de justo antes. No el motivo de fondo.", "ph": "Le dije «otra vez la cocina así»"}, {"k": "hice", "tipo": "area", "label": "¿Qué hiciste tú?", "pista": "Solo tu parte. Es la única que puedes cambiar y la que más cuesta escribir.", "ph": "Subí el tono y saqué lo de la semana pasada"}, {"k": "final", "tipo": "select", "label": "¿Cómo acabó?", "pista": "Elige la que más se parezca.", "opciones": ["Se habló y se arregló", "Se cortó y se dejó pasar", "Uno se fue", "Portazo o gritos", "Silencio de horas", "Se pidió perdón", "Sigue abierto"]}, {"k": "intensidad", "tipo": "rango", "label": "¿Cuánto subió?", "pista": "De 0 a 10, lo alto que llegó.", "izq": "un roce", "der": "lo peor"}];
+
+  function leer(){ try { return JSON.parse(localStorage.getItem(CLAVE) || '[]'); } catch(e){ return []; } }
+  function guardar(v){ try { localStorage.setItem(CLAVE, JSON.stringify(v)); } catch(e){} }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function dos(n){ return (n < 10 ? '0' : '') + n; }
+  function ahora(){ var d = new Date();
+    return dos(d.getDate()) + '/' + dos(d.getMonth()+1) + ' · ' + dos(d.getHours()) + ':' + dos(d.getMinutes()); }
+
+  CAMPOS.forEach(function(c){
+    if (c.tipo !== 'rango') return;
+    var r = document.getElementById('c-' + c.k), o = document.getElementById('v-' + c.k);
+    if (r && o) r.addEventListener('input', function(){ o.textContent = r.value; });
+  });
+
+  document.getElementById('hr-form').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var reg = { ts: Date.now(), cuando: ahora() }, algo = false;
+    CAMPOS.forEach(function(c){
+      var el = document.getElementById('c-' + c.k);
+      if (!el) return;
+      var v = c.tipo === 'rango' ? +el.value : el.value.trim();
+      reg[c.k] = v;
+      if (c.tipo !== 'rango' && v) algo = true;
+    });
+    if (!algo) {
+      document.getElementById('hr-ok').textContent = 'Escribe al menos una cosa antes de guardar.';
+      return;
+    }
+    var v = leer(); v.push(reg); guardar(v);
+    this.reset();
+    CAMPOS.forEach(function(c){
+      if (c.tipo !== 'rango') return;
+      var r = document.getElementById('c-' + c.k), o = document.getElementById('v-' + c.k);
+      if (r && o) { r.value = 5; o.textContent = '5'; }
+    });
+    var ok = document.getElementById('hr-ok');
+    ok.textContent = 'Guardado. Llevas ' + v.length + (v.length === 1 ? ' anotación.' : ' anotaciones.');
+    setTimeout(function(){ ok.textContent = ''; }, 4000);
+    pintar();
+  });
+
+  function barra(eti, pct, num){
+    return '<div class="hr-barra"><span class="eti">' + esc(eti) + '</span>' +
+           '<span class="via"><i style="width:' + Math.max(2, Math.round(pct * 100)) + '%"></i></span>' +
+           '<span class="num">' + esc(num) + '</span></div>';
+  }
+
+  function pintar(){
+    var v = leer();
+    document.getElementById('hr-vacio').hidden = v.length > 0;
+    document.getElementById('hr-resultados').hidden = v.length === 0;
+    if (!v.length) return;
+
+    document.getElementById('hr-patrones').innerHTML = (function(v, barra, esc){
+      var h = '';
+      var temas = {}, finales = {}, horas = {};
+      v.forEach(function(e){
+        if (e.tema) { var t = e.tema.toLowerCase().trim(); temas[t] = (temas[t]||0)+1; }
+        if (e.final) finales[e.final] = (finales[e.final]||0)+1;
+        var hh = (e.cuando||'').split('·')[1];
+        if (hh) { var f = +hh.trim().slice(0,2);
+          var fr = f < 12 ? 'mañana' : (f < 18 ? 'tarde' : 'noche');
+          horas[fr] = (horas[fr]||0)+1; }
+      });
+      function pinta(titulo, obj, sub){
+        var ks = Object.keys(obj).sort(function(a,b){ return obj[b]-obj[a]; }).slice(0,8);
+        if (!ks.length) return '';
+        var tope = obj[ks[0]];
+        var t = '<p class="sub" style="margin-top:1.2rem;"><strong>' + titulo + '</strong> ' + sub + '</p>';
+        ks.forEach(function(k){ t += barra(k, obj[k]/tope, obj[k]); });
+        return t;
+      }
+      h += pinta('De qué discutís', temas, '— lo que más se repite es por donde empezar.');
+      h += pinta('Cómo suele acabar', finales, '— el final dice más del patrón que el motivo.');
+      h += pinta('A qué hora', horas, '— muchas discusiones son cuestión de cuándo, no de qué.');
+      var inten = v.filter(function(e){ return typeof e.intensidad === 'number'; });
+      if (inten.length >= 3) {
+        var m = inten.reduce(function(a,e){ return a + e.intensidad; }, 0) / inten.length;
+        h += '<p class="sub" style="margin-top:1.2rem;"><strong>Intensidad media:</strong> ' +
+             m.toFixed(1) + ' sobre 10, en ' + inten.length + ' anotaciones.</p>';
+      }
+      return h;
+    })(v, barra, esc);
+
+    document.getElementById('hr-lista').innerHTML = v.slice().reverse().map(function(e, i){
+      var filas = CAMPOS.map(function(c){
+        var val = e[c.k];
+        if (val === '' || val == null) return '';
+        return '<dt>' + esc(c.label) + '</dt><dd>' + esc(c.tipo === 'rango' ? val + ' de 10' : val) + '</dd>';
+      }).join('');
+      return '<div class="hr-item"><div class="cab"><span>' + esc(e.cuando || '') + '</span>' +
+             '<button type="button" class="hr-borrar" data-i="' + (v.length - 1 - i) + '">borrar</button></div>' +
+             '<dl>' + filas + '</dl></div>';
+    }).join('');
+  }
+
+  document.getElementById('hr-lista').addEventListener('click', function(ev){
+    var b = ev.target.closest('.hr-borrar');
+    if (!b) return;
+    var v = leer(); v.splice(+b.dataset.i, 1); guardar(v); pintar();
+  });
+
+  document.getElementById('hr-borrar-todo').addEventListener('click', function(){
+    if (leer().length && confirm('¿Borrar todas las anotaciones? No se puede deshacer.')) {
+      guardar([]); pintar();
+    }
+  });
+
+  document.getElementById('hr-imprimir').addEventListener('click', function(){ window.print(); });
+
+  document.getElementById('hr-csv').addEventListener('click', function(){
+    var v = leer();
+    var cab = ['cuando'].concat(CAMPOS.map(function(c){ return c.label; }));
+    var filas = v.map(function(e){
+      return ['cuando'].concat(CAMPOS.map(function(c){ return c.k; })).map(function(k){
+        return '"' + String(e[k] == null ? '' : e[k]).replace(/"/g, '""') + '"';
+      }).join(',');
+    });
+    var csv = '\ufeff' + cab.map(function(c){ return '"' + c + '"'; }).join(',') + '\n' + filas.join('\n');
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    a.download = 'pl_discusiones.csv';
+    a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  });
+
+  pintar();
+})();
+</script>
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

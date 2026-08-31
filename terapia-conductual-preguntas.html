@@ -116,18 +116,104 @@
   .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
   .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
   @media print{ .cc-banda{ display:none; } }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+
+  /* El color de este tema: Tests. */
+  :root{ --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#4A3B78; }
+  .idea{ background:#ECE8F5 !important; border-color:#e6ded2 !important;
+         border-left-color:#4A3B78 !important; }
+  .hazlo{ background:#ECE8F5 !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#4A3B78; border-color:#4A3B78; color:#fff; }
+  .tool-kicker .num{ background:#4A3B78; }
+  .cierre{ border-left:4px solid #4A3B78; }
+  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
+              border:1px solid var(--border); border-radius:14px;
+              background:var(--surface); }
+  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
+  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
+  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué hago exactamente cuando me pasa?", "acceptedAnswer": {"@type": "Answer", "text": "Es la pregunta que más cambia las cosas, y la que peor se contesta al principio. «Tengo ansiedad» no es una conducta: es una etiqueta. «Salgo del supermercado sin comprar», «miro el móvil cuarenta veces», «no cojo el teléfono», «me tomo dos copas antes de entrar» sí lo son. Lo primero se discute; lo segundo se cuenta, se mide y se cambia."}}, {"@type": "Question", "name": "¿Qué pasa justo antes?", "acceptedAnswer": {"@type": "Answer", "text": "Nada aparece de la nada. Suele haber un momento del día, un sitio, una persona, un pensamiento o un estado del cuerpo que va delante casi siempre. A eso se le llama antecedente, y encontrarlo es media faena: si sabes dónde se enciende, puedes intervenir antes de que se encienda."}}, {"@type": "Question", "name": "¿Qué consigo o de qué me libro justo después?", "acceptedAnswer": {"@type": "Answer", "text": "Esta es la clave de por qué algo se repite aunque te haga daño. Casi todas las conductas que se mantienen están quitando algo desagradable de en medio: la evitación quita ansiedad, la copa quita incomodidad, el móvil quita aburrimiento, gritar acaba la discusión. Funciona a corto plazo, y por eso se repite; el problema es lo que cuesta a largo."}}, {"@type": "Question", "name": "¿Cuántas veces, cuánto dura y desde cuándo?", "acceptedAnswer": {"@type": "Answer", "text": "Sin números no se sabe si algo mejora: la memoria es mala jueza y en una mala semana parece que nada ha cambiado nunca. Una cuenta sencilla durante dos semanas —veces al día, minutos, intensidad del 0 al 10— es la línea de partida contra la que se compara todo lo demás."}}, {"@type": "Question", "name": "¿Qué he dejado de hacer por esto?", "acceptedAnswer": {"@type": "Answer", "text": "Aquí es donde se ve el tamaño real del problema. No en cómo de fuerte es el malestar, sino en cuánta vida se ha llevado por delante: sitios a los que ya no vas, planes que rechazas, cosas que solo haces acompañado. Esa lista suele ser, además, el orden en que se va a recuperar."}}, {"@type": "Question", "name": "¿Qué he probado ya y qué pasó exactamente?", "acceptedAnswer": {"@type": "Answer", "text": "Lo que has intentado sin éxito no es una lista de fracasos: es información. Muchas veces la solución intentada forma parte del problema —evitar, comprobar, buscar tranquilidad, controlar los pensamientos— porque alivia hoy y refuerza mañana. Un profesional necesita saber esto antes de proponerte nada."}}, {"@type": "Question", "name": "¿Qué haría si esto ya no fuera un problema?", "acceptedAnswer": {"@type": "Answer", "text": "Contestar en concreto, no en abstracto: no «estaría bien», sino «volvería a quedar los viernes», «cogería el coche para ir a ver a mi hermana», «dormiría del tirón». Esas frases son los objetivos de la terapia, y son las que dicen si está funcionando."}}, {"@type": "Question", "name": "¿Cómo sabremos, tú y yo, que esto va mejor?", "acceptedAnswer": {"@type": "Answer", "text": "Un buen criterio se puede comprobar sin discutir: dormir seis horas seguidas cuatro noches por semana, entrar solo al supermercado, hacer la llamada que llevas meses aplazando. Si el criterio es «sentirme bien», no hay manera de saber si se avanza."}}, {"@type": "Question", "name": "¿Desde qué enfoque trabajas y por qué encaja con lo mío?", "acceptedAnswer": {"@type": "Answer", "text": "Para los motivos más frecuentes —ansiedad, insomnio, fobias, obsesiones, ánimo bajo— las terapias cognitivo-conductuales y contextuales son las que más evidencia acumulan. Que te lo pueda explicar en cristiano es buena señal; que responda con jerga o vaguedades, no."}}, {"@type": "Question", "name": "¿Vamos a hacer un análisis de qué mantiene esto?", "acceptedAnswer": {"@type": "Answer", "text": "En un enfoque conductual las primeras sesiones se dedican a eso: cuándo pasa, qué va antes, qué viene después y qué lo sostiene. Si a la cuarta sesión no sabrías explicarle a alguien qué mantiene tu problema, dilo en voz alta."}}, {"@type": "Question", "name": "¿Qué voy a tener que hacer entre sesiones?", "acceptedAnswer": {"@type": "Answer", "text": "Esta es la parte que a mucha gente le sorprende: el trabajo de verdad pasa fuera de la consulta. Registros, exposición por pasos, cambios concretos en la semana. Una hora de conversación cada quince días no cambia una conducta que llevas años repitiendo."}}, {"@type": "Question", "name": "¿Cuánto puede durar y cómo lo mediremos?", "acceptedAnswer": {"@type": "Answer", "text": "Para muchos motivos de consulta se suele hablar de entre 8 y 20 sesiones, semanales al principio y espaciándose después. Y la medida no debería ser una impresión: puede ser un cuestionario repetido, un registro o los objetivos concretos que fijasteis al empezar."}}, {"@type": "Question", "name": "¿Qué hacemos si a las X sesiones no mejora?", "acceptedAnswer": {"@type": "Answer", "text": "Una pregunta incómoda y muy útil. La respuesta razonable es: se revisa el análisis, se cambia el plan y, si hace falta, se deriva o se valora consultar con medicina. La respuesta mala es «hay que tener paciencia» sin nada más."}}, {"@type": "Question", "name": "¿Qué pasa con la medicación?", "acceptedAnswer": {"@type": "Answer", "text": "Un psicólogo no receta: esa decisión es de un médico. Para muchos problemas la psicoterapia sola basta, y en otros la combinación va mejor. Lo que nunca debería pasar es que un psicólogo te desaconseje una medicación pautada por tu médico."}}]}
@@ -137,13 +223,28 @@
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">❓ Preguntas y respuestas</div>
   <h1>Preguntas antes de ir al psicólogo</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Catorce preguntas para llevar preparadas: ocho para hacerte tú y seis para hacerle a quien te atienda. Todas desde el mismo sitio: qué haces, qué va antes y qué viene después.</p>
+  <img class="guia-ilus" src="/ilustraciones/tests.jpg" alt="Ilustración: el ratón de Psicolinks junto a un portapapeles con casillas marcadas"
+       width="1360" height="460" loading="lazy" decoding="async">
   <div class="idea"><strong>Qué significa aquí «conductual».</strong> No tiene nada que ver con la caricatura
   de perros, timbres y castigos. Significa mirar lo que haces en su contexto: qué haces exactamente, en qué
   situación, y qué consigues o de qué te libras justo después. Esa última parte es la que explica por qué algo se
@@ -167,45 +268,65 @@
   </div>
 
   <h2 class="bloque-tit">Ocho preguntas para hacerte tú, antes de la primera cita</h2>
+  <nav class="ruta" aria-label="Las herramientas de esta guía">
+    <p class="ruta-eti">Las catorce, de un vistazo</p>
+    <ol>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">¿Qué hago exactamente cuando me pasa?</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">¿Qué pasa justo antes?</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">¿Qué consigo o de qué me libro justo después?</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">¿Cuántas veces, cuánto dura y desde cuándo?</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">¿Qué he dejado de hacer por esto?</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">¿Qué he probado ya y qué pasó exactamente?</span></a></li>
+      <li><a href="#h7"><span class="n" aria-hidden="true">7</span><span class="t">¿Qué haría si esto ya no fuera un problema?</span></a></li>
+      <li><a href="#h8"><span class="n" aria-hidden="true">8</span><span class="t">¿Cómo sabremos, tú y yo, que esto va mejor?</span></a></li>
+      <li><a href="#h9"><span class="n" aria-hidden="true">9</span><span class="t">¿Desde qué enfoque trabajas y por qué encaja con lo mío?</span></a></li>
+      <li><a href="#h10"><span class="n" aria-hidden="true">10</span><span class="t">¿Vamos a hacer un análisis de qué mantiene esto?</span></a></li>
+      <li><a href="#h11"><span class="n" aria-hidden="true">11</span><span class="t">¿Qué voy a tener que hacer entre sesiones?</span></a></li>
+      <li><a href="#h12"><span class="n" aria-hidden="true">12</span><span class="t">¿Cuánto puede durar y cómo lo mediremos?</span></a></li>
+      <li><a href="#h13"><span class="n" aria-hidden="true">13</span><span class="t">¿Qué hacemos si a las X sesiones no mejora?</span></a></li>
+      <li><a href="#h14"><span class="n" aria-hidden="true">14</span><span class="t">¿Qué pasa con la medicación?</span></a></li>
+    </ol>
+  </nav>
+
   <p class="bloque-sub">Contestarlas por escrito, aunque sea a medias, hace que la primera sesión rinda el doble.
   No hace falta que sean respuestas buenas: hacen falta respuestas concretas.</p>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 1</p>
+  <div class="tool" id="h1">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Pregunta 1</p>
   <h3>¿Qué hago exactamente cuando me pasa?</h3>
   <p>Es la pregunta que más cambia las cosas, y la que peor se contesta al principio. «Tengo ansiedad» no es una conducta: es una etiqueta. «Salgo del supermercado sin comprar», «miro el móvil cuarenta veces», «no cojo el teléfono», «me tomo dos copas antes de entrar» sí lo son. Lo primero se discute; lo segundo se cuenta, se mide y se cambia.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 2</p>
+  <div class="tool" id="h2">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Pregunta 2</p>
   <h3>¿Qué pasa justo antes?</h3>
   <p>Nada aparece de la nada. Suele haber un momento del día, un sitio, una persona, un pensamiento o un estado del cuerpo que va delante casi siempre. A eso se le llama antecedente, y encontrarlo es media faena: si sabes dónde se enciende, puedes intervenir antes de que se encienda.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 3</p>
+  <div class="tool" id="h3">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Pregunta 3</p>
   <h3>¿Qué consigo o de qué me libro justo después?</h3>
   <p>Esta es la clave de por qué algo se repite aunque te haga daño. Casi todas las conductas que se mantienen están quitando algo desagradable de en medio: la evitación quita ansiedad, la copa quita incomodidad, el móvil quita aburrimiento, gritar acaba la discusión. Funciona a corto plazo, y por eso se repite; el problema es lo que cuesta a largo.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 4</p>
+  <div class="tool" id="h4">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Pregunta 4</p>
   <h3>¿Cuántas veces, cuánto dura y desde cuándo?</h3>
   <p>Sin números no se sabe si algo mejora: la memoria es mala jueza y en una mala semana parece que nada ha cambiado nunca. Una cuenta sencilla durante dos semanas —veces al día, minutos, intensidad del 0 al 10— es la línea de partida contra la que se compara todo lo demás.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 5</p>
+  <div class="tool" id="h5">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Pregunta 5</p>
   <h3>¿Qué he dejado de hacer por esto?</h3>
   <p>Aquí es donde se ve el tamaño real del problema. No en cómo de fuerte es el malestar, sino en cuánta vida se ha llevado por delante: sitios a los que ya no vas, planes que rechazas, cosas que solo haces acompañado. Esa lista suele ser, además, el orden en que se va a recuperar.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 6</p>
+  <div class="tool" id="h6">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Pregunta 6</p>
   <h3>¿Qué he probado ya y qué pasó exactamente?</h3>
   <p>Lo que has intentado sin éxito no es una lista de fracasos: es información. Muchas veces la solución intentada forma parte del problema —evitar, comprobar, buscar tranquilidad, controlar los pensamientos— porque alivia hoy y refuerza mañana. Un profesional necesita saber esto antes de proponerte nada.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 7</p>
+  <div class="tool" id="h7">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">7</span>Pregunta 7</p>
   <h3>¿Qué haría si esto ya no fuera un problema?</h3>
   <p>Contestar en concreto, no en abstracto: no «estaría bien», sino «volvería a quedar los viernes», «cogería el coche para ir a ver a mi hermana», «dormiría del tirón». Esas frases son los objetivos de la terapia, y son las que dicen si está funcionando.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 8</p>
+  <div class="tool" id="h8">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">8</span>Pregunta 8</p>
   <h3>¿Cómo sabremos, tú y yo, que esto va mejor?</h3>
   <p>Un buen criterio se puede comprobar sin discutir: dormir seis horas seguidas cuatro noches por semana, entrar solo al supermercado, hacer la llamada que llevas meses aplazando. Si el criterio es «sentirme bien», no hay manera de saber si se avanza.</p>
 </div>
@@ -225,71 +346,53 @@
   <h2 class="bloque-tit2">Seis preguntas para hacerle al psicólogo</h2>
   <p class="bloque-sub">Son preguntas normales y un buen profesional las agradece. Si alguna incomoda de verdad,
   eso también es información.</p>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 9</p>
+  <div class="tool" id="h9">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">9</span>Pregunta 9</p>
   <h3>¿Desde qué enfoque trabajas y por qué encaja con lo mío?</h3>
   <p>Para los motivos más frecuentes —ansiedad, insomnio, fobias, obsesiones, ánimo bajo— las terapias cognitivo-conductuales y contextuales son las que más evidencia acumulan. Que te lo pueda explicar en cristiano es buena señal; que responda con jerga o vaguedades, no.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 10</p>
+  <div class="tool" id="h10">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">10</span>Pregunta 10</p>
   <h3>¿Vamos a hacer un análisis de qué mantiene esto?</h3>
   <p>En un enfoque conductual las primeras sesiones se dedican a eso: cuándo pasa, qué va antes, qué viene después y qué lo sostiene. Si a la cuarta sesión no sabrías explicarle a alguien qué mantiene tu problema, dilo en voz alta.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 11</p>
+  <div class="tool" id="h11">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">11</span>Pregunta 11</p>
   <h3>¿Qué voy a tener que hacer entre sesiones?</h3>
   <p>Esta es la parte que a mucha gente le sorprende: el trabajo de verdad pasa fuera de la consulta. Registros, exposición por pasos, cambios concretos en la semana. Una hora de conversación cada quince días no cambia una conducta que llevas años repitiendo.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 12</p>
+  <div class="tool" id="h12">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">12</span>Pregunta 12</p>
   <h3>¿Cuánto puede durar y cómo lo mediremos?</h3>
   <p>Para muchos motivos de consulta se suele hablar de entre 8 y 20 sesiones, semanales al principio y espaciándose después. Y la medida no debería ser una impresión: puede ser un cuestionario repetido, un registro o los objetivos concretos que fijasteis al empezar.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 13</p>
+  <div class="tool" id="h13">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">13</span>Pregunta 13</p>
   <h3>¿Qué hacemos si a las X sesiones no mejora?</h3>
   <p>Una pregunta incómoda y muy útil. La respuesta razonable es: se revisa el análisis, se cambia el plan y, si hace falta, se deriva o se valora consultar con medicina. La respuesta mala es «hay que tener paciencia» sin nada más.</p>
 </div>
-  <div class="tool">
-  <p class="tool-kicker">Pregunta 14</p>
+  <div class="tool" id="h14">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">14</span>Pregunta 14</p>
   <h3>¿Qué pasa con la medicación?</h3>
   <p>Un psicólogo no receta: esa decisión es de un médico. Para muchos problemas la psicoterapia sola basta, y en otros la combinación va mejor. Lo que nunca debería pasar es que un psicólogo te desaconseje una medicación pautada por tu médico.</p>
 </div>
 
   <div class="cierre"><strong>Y si quieres trabajarlo con alguien.</strong> Así se trabaja desde este enfoque: análisis de qué mantiene el problema, objetivos concretos que se puedan comprobar, y tareas entre sesiones. Psicolinks trabaja con <a href="/consultas.html">consultas asociadas</a>, y si prefieres otras vías, incluida la pública, las tienes en <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>.</div>
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que cuenta la guía te está pasando de verdad y quieres que alguien mire tu caso, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 
 
 
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -299,6 +402,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

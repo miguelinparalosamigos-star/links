@@ -166,17 +166,6 @@
   .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
   .envio-ops a{ font-weight:600; color:var(--accent); }
   .envio-largo{ font-size:0.85rem; color:var(--ink-soft); }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  @media print{ .menu-cuadros{ display:none; } }
 
   .campo{ margin:0 0 1.15rem; }
   .campo label{ display:block; font-weight:600; font-size:0.95rem; margin:0 0 0.3rem; }
@@ -210,9 +199,18 @@
   .entrada .quitar{ background:none; border:0; color:var(--ink-soft); font-size:0.82rem; cursor:pointer; padding:0.3rem 0; text-decoration:underline; }
   .vacio-h{ color:var(--ink-soft); font-size:0.95rem; line-height:1.6; padding:1.1rem 0; }
   .racha{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); margin:0 0 0.9rem; }
-  .grafico-h{ display:flex; align-items:flex-end; gap:3px; height:110px; margin:0.6rem 0 0.2rem; }
-  .grafico-h span{ flex:1; background:var(--accent); border-radius:3px 3px 0 0; min-height:3px; }
-  .grafico-pie-h{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-soft); margin:0 0 1.3rem; }
+  .g-caja{ background:var(--surface); border:1px solid var(--border); border-radius:12px;
+           padding:1rem 1.1rem 0.9rem; margin:0.6rem 0 1.4rem; }
+  .g-cab{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline;
+          gap:0.3rem 0.9rem; margin:0 0 0.6rem; }
+  .g-caja .g-tit{ font-family:var(--font-mono); font-size:0.66rem; font-weight:700;
+                  letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-soft); margin:0; }
+  .g-rango{ font-family:var(--font-mono); font-size:0.68rem; color:var(--ink-soft); margin:0; }
+  .g-svg{ display:block; width:100%; height:auto; }
+  .g-resumen{ display:flex; flex-wrap:wrap; gap:0.25rem 1.1rem; margin:0.7rem 0 0;
+              font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-soft); }
+  .g-resumen b{ color:var(--accent); font-size:0.86rem; }
+  .g-nota{ font-size:0.82rem; line-height:1.55; color:var(--ink-soft); margin:0.55rem 0 0; }
   .copiadero{ position:absolute; left:-9999px; }
   @media print {
     .site-header, .site-footer, form, .acciones-h, .nota-wa, .envio-ops, .back-link, .idea, .privacidad,
@@ -221,12 +219,86 @@
     .entrada{ break-inside:avoid; border-color:#bbb; }
     main{ max-width:100%; }
   }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
 </header>
 
 <main>
@@ -277,10 +349,10 @@
   <h2 class="bloque-tit">Lo que llevas <span id="cuantas" style="font-family:var(--font-mono);font-size:0.78rem;font-weight:400;color:var(--ink-soft);"></span></h2>
   <p class="racha" id="racha" style="display:none;"></p>
 
-  <div id="caja-grafico" style="display:none;">
-    <p class="g-tit" style="font-size:0.88rem;color:var(--ink-soft);margin:0;"></p>
-    <div class="grafico-h" id="grafico" role="img" aria-label="Evolución"></div>
-    <div class="grafico-pie-h"><span id="g-desde"></span><span id="g-hasta"></span></div>
+  <div id="caja-grafico" class="g-caja" style="display:none;">
+    <div class="g-cab"><p class="g-tit"></p><p class="g-rango" id="g-rango"></p></div>
+    <svg class="g-svg" id="grafico" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Evolución"></svg>
+    <p class="g-resumen" id="g-resumen"></p>
   </div>
 
   <div id="lista"></div>
@@ -306,36 +378,19 @@
   tu navegador, si borras los datos de navegación o cambias de dispositivo, se pierde. Si llevas semanas
   apuntando y no quieres arriesgarte, cópialo de vez en cuando y guárdalo donde tú quieras.</div>
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si esto pide algo más que una hoja?</h3>
+    <p>Un registro enseña el patrón; lo que se hace con el patrón ya es el trabajo de terapia. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia. Escríbeme y te cuento cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-nota">Lo que apuntas aquí no lo ve nadie más que tú: se queda en tu dispositivo. Si algún día quieres enseñármelo, me lo traes tú.</p>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
@@ -405,6 +460,145 @@
     return RESUMEN.replace(/\{(\w+)\}/g, function(_, k){ return esc(e[k] || '—'); });
   }
 
+
+  /* --------------------------------------------------------------- gráfico
+     Un dibujo por día, no por anotación: si hay varias en el mismo día se
+     suman (cuando son recuentos) o se promedian (cuando son escalas de 0 a 10).
+     El eje horizontal va por fechas reales, así que los días que no apuntaste
+     salen como hueco y no disimulados. */
+  var G_W = 640, G_H = 200, G_L = 40, G_R = 12, G_T = 14, G_B = 28;
+  var G_PW = G_W - G_L - G_R, G_PH = G_H - G_T - G_B;
+
+  function gNum(f){ var p = String(f).split('-'); return Date.UTC(+p[0], +p[1]-1, +p[2]) / 86400000; }
+  function gDia(f){ return String(f).slice(8,10) + '/' + String(f).slice(5,7); }
+  function gRedondo(x){
+    if (!(x > 0)) return 1;
+    var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), r = x / p;
+    var e = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10], i = 0;
+    while (i < e.length - 1 && r > e[i]) i++;
+    return e[i] * p;
+  }
+  function gCifra(x, cuenta){
+    return cuenta ? String(Math.round(x)) : (Math.round(x * 10) / 10).toString().replace('.', ',');
+  }
+
+  function pintarGrafico(v){
+    var caja = document.getElementById('caja-grafico');
+    if (!caja) return;
+    var cuenta = GRAFICO.max > 10;          // minutos, veces… frente a escalas de 0 a 10
+    var porDia = {}, fechas = [];
+    v.forEach(function(e){
+      var x = e[GRAFICO.campo];
+      if (x === '' || x == null || isNaN(+x) || !/^\d{4}-\d{2}-\d{2}$/.test(e.f || '')) return;
+      if (!porDia[e.f]) { porDia[e.f] = { s:0, n:0 }; fechas.push(e.f); }
+      porDia[e.f].s += +x; porDia[e.f].n++;
+    });
+    fechas.sort();
+    if (fechas.length < 2) { caja.style.display = 'none'; return; }
+    fechas = fechas.slice(-60);
+    var serie = fechas.map(function(f){
+      var d = porDia[f];
+      return { f: f, y: cuenta ? d.s : d.s / d.n, n: d.n };
+    });
+
+    var vals = serie.map(function(s){ return s.y; });
+    var maxV = Math.max.apply(null, vals), minV = Math.min.apply(null, vals);
+    var media = vals.reduce(function(a,b){ return a+b; }, 0) / vals.length;
+    var tope = cuenta ? gRedondo(maxV * 1.05) : GRAFICO.max;
+    if (!(tope > 0)) tope = 1;
+
+    var d0 = gNum(serie[0].f), d1 = gNum(serie[serie.length-1].f);
+    var span = d1 - d0;
+    var porFecha = span > 0 && span <= 400;   // si no, se reparten a partes iguales
+    function px(i){
+      if (!porFecha) return G_L + (serie.length === 1 ? G_PW/2 : G_PW * i / (serie.length - 1));
+      return G_L + G_PW * (gNum(serie[i].f) - d0) / span;
+    }
+    function py(y){ return G_T + G_PH * (1 - Math.max(0, Math.min(1, y / tope))); }
+
+    var s = [];
+    // Rejilla y escala vertical.
+    [0, 0.5, 1].forEach(function(k){
+      var y = G_T + G_PH * (1 - k);
+      s.push('<line x1="' + G_L + '" y1="' + y.toFixed(1) + '" x2="' + (G_W-G_R) + '" y2="' + y.toFixed(1) +
+             '" stroke="#DDD7CB" stroke-width="1"' + (k ? ' stroke-dasharray="2 4"' : '') + '/>');
+      s.push('<text x="' + (G_L-8) + '" y="' + (y+4).toFixed(1) + '" text-anchor="end" font-size="11" ' +
+             'fill="#625C70" font-family="monospace">' + gCifra(tope * k, cuenta) + '</text>');
+    });
+
+    if (cuenta) {
+      var ancho = porFecha ? Math.max(3, Math.min(26, G_PW / (span + 1) - 1)) : Math.max(3, Math.min(26, G_PW / serie.length - 2));
+      serie.forEach(function(p, i){
+        var x = px(i), y = py(p.y);
+        // Sin salirse del área: la primera y la última barra se meten para dentro.
+        var bx = Math.max(G_L, Math.min(G_W - G_R - ancho, x - ancho/2));
+        s.push('<rect x="' + bx.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + ancho.toFixed(1) +
+               '" height="' + Math.max(2, G_T + G_PH - y).toFixed(1) + '" rx="2" fill="#4A3B78">' +
+               '<title>' + esc(gDia(p.f)) + ': ' + gCifra(p.y, cuenta) + '</title></rect>');
+      });
+    } else {
+      var pts = serie.map(function(p, i){ return px(i).toFixed(1) + ',' + py(p.y).toFixed(1); });
+      s.push('<polygon points="' + G_L + ',' + (G_T+G_PH) + ' ' + pts.join(' ') + ' ' +
+             px(serie.length-1).toFixed(1) + ',' + (G_T+G_PH) + '" fill="#4A3B78" opacity="0.12"/>');
+      // Los tramos que saltan por encima de un día sin apuntar van de puntos:
+      // así se ve que ahí no hay dato, en vez de dar por hecha una línea recta.
+      for (var i = 1; i < serie.length; i++) {
+        var hueco = porFecha && (gNum(serie[i].f) - gNum(serie[i-1].f)) > 1;
+        s.push('<line x1="' + px(i-1).toFixed(1) + '" y1="' + py(serie[i-1].y).toFixed(1) +
+               '" x2="' + px(i).toFixed(1) + '" y2="' + py(serie[i].y).toFixed(1) +
+               '" stroke="#4A3B78" stroke-width="2.2" stroke-linecap="round"' +
+               (hueco ? ' stroke-dasharray="3 4" opacity="0.45"' : '') + '/>');
+      }
+      serie.forEach(function(p, i){
+        s.push('<circle cx="' + px(i).toFixed(1) + '" cy="' + py(p.y).toFixed(1) + '" r="3.4" fill="#FFFFFF" ' +
+               'stroke="#4A3B78" stroke-width="2"><title>' + esc(gDia(p.f)) + ': ' + gCifra(p.y, cuenta) +
+               '</title></circle>');
+      });
+    }
+
+    // La media, para tener una referencia de dónde te mueves normalmente.
+    var ym = py(media);
+    s.push('<line x1="' + G_L + '" y1="' + ym.toFixed(1) + '" x2="' + (G_W-G_R) + '" y2="' + ym.toFixed(1) +
+           '" stroke="#B5541D" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>');
+    s.push('<text x="' + (G_W-G_R) + '" y="' + (ym - 6).toFixed(1) + '" text-anchor="end" font-size="11" ' +
+           'stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" ' +
+           'fill="#B5541D" font-family="monospace">media ' + gCifra(media, cuenta) + '</text>');
+
+    // Fechas de referencia abajo: la primera, la última y una en medio.
+    var idx = serie.length > 3 ? [0, Math.floor((serie.length-1)/2), serie.length-1] : [0, serie.length-1];
+    idx.forEach(function(i, k){
+      var anc = k === 0 ? 'start' : (k === idx.length-1 ? 'end' : 'middle');
+      s.push('<text x="' + px(i).toFixed(1) + '" y="' + (G_H - 8) + '" text-anchor="' + anc +
+             '" font-size="11" fill="#625C70" font-family="monospace">' + gDia(serie[i].f) + '</text>');
+    });
+
+    var svg = document.getElementById('grafico');
+    svg.innerHTML = s.join('');
+    svg.setAttribute('aria-label', 'De ' + gDia(serie[0].f) + ' a ' + gDia(serie[serie.length-1].f) +
+      ': media ' + gCifra(media, cuenta) + ', mínimo ' + gCifra(minV, cuenta) + ', máximo ' + gCifra(maxV, cuenta) + '.');
+
+    var rango = document.getElementById('g-rango');
+    if (rango) rango.textContent = serie.length + (serie.length === 1 ? ' día' : ' días') +
+      ' · ' + gDia(serie[0].f) + ' → ' + gDia(serie[serie.length-1].f);
+
+    // Dos mitades comparadas: es lo único que se parece a «voy mejor o peor»,
+    // y aun así se deja en números, sin adjetivos.
+    var res = document.getElementById('g-resumen');
+    if (res) {
+      var partes = ['Media <b>' + gCifra(media, cuenta) + '</b>',
+                    'Mínimo <b>' + gCifra(minV, cuenta) + '</b>',
+                    'Máximo <b>' + gCifra(maxV, cuenta) + '</b>'];
+      if (serie.length >= 6) {
+        var mitad = Math.floor(serie.length / 2);
+        var mA = vals.slice(0, mitad).reduce(function(a,b){ return a+b; }, 0) / mitad;
+        var mB = vals.slice(mitad).reduce(function(a,b){ return a+b; }, 0) / (vals.length - mitad);
+        partes.push('Primera mitad <b>' + gCifra(mA, cuenta) + '</b> → segunda <b>' + gCifra(mB, cuenta) + '</b>');
+      }
+      res.innerHTML = partes.map(function(p){ return '<span>' + p + '</span>'; }).join('');
+    }
+    caja.style.display = 'block';
+  }
+
   function pintar(){
     var v = leer();
     document.getElementById('cuantas').textContent =
@@ -437,16 +631,7 @@
     document.getElementById('acciones').style.display = 'flex';
 
     if (GRAFICO) {
-      var ult = v.slice(0, 30).reverse().filter(function(e){ return e[GRAFICO.campo] !== ''; });
-      if (ult.length > 1) {
-        document.getElementById('caja-grafico').style.display = 'block';
-        document.getElementById('grafico').innerHTML = ult.map(function(e){
-          var alto = Math.max(3, Math.round(Math.min(1, (+e[GRAFICO.campo] || 0) / GRAFICO.max) * 100));
-          return '<span style="height:' + alto + '%" title="' + esc(e.f) + ': ' + esc(e[GRAFICO.campo]) + '"></span>';
-        }).join('');
-        document.getElementById('g-desde').textContent = ult[0].f;
-        document.getElementById('g-hasta').textContent = ult[ult.length-1].f;
-      } else { document.getElementById('caja-grafico').style.display = 'none'; }
+      pintarGrafico(v);
     }
 
     lista.innerHTML = v.map(function(e, i){
@@ -535,6 +720,7 @@
   pintar();
 })();
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">

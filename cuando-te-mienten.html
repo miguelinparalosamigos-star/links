@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ecoansiedad: cuando el clima te quita el sueño · Psicolinks</title>
-<meta name="description" content="Preocuparse por el clima no es un síntoma. Dónde está la línea, por qué el goteo de noticias agota y qué es lo único que se asocia a llevarlo mejor.">
-<meta property="og:type" content="article">
+<title>Cuando descubres que te han mentido · Psicolinks</title>
+<meta name="description" content="Seis herramientas para los días siguientes a descubrir una mentira: qué preguntar, qué no, y cómo decidir si esto se puede reconstruir.">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Ecoansiedad: cuando el clima te quita el sueño">
-<meta property="og:description" content="Preocuparse por el clima no es un síntoma. Dónde está la línea, por qué el goteo de noticias agota y qué es lo único que se asocia a llevarlo mejor.">
-<meta property="og:url" content="https://psicolinks.com/ecoansiedad.html">
+<meta property="og:title" content="Cuando descubres que te han mentido">
+<meta property="og:description" content="La mentira hace dos daños. El segundo —haber creído algo falso— es el que hace dudar de todo lo demás.">
+<meta property="og:url" content="https://psicolinks.com/cuando-te-mienten.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/ecoansiedad.html">
+<link rel="canonical" href="https://psicolinks.com/cuando-te-mienten.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,8 @@
   .consulta-cta .consulta-btn:hover { background: #75303d; }
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+  .desambigua { font-size:0.9rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:0.7rem 0.95rem; margin:0 0 1.4rem; line-height:1.55; }
+  .desambigua a { color:var(--accent); font-weight:600; }
   .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
@@ -77,7 +79,6 @@
   .firma-consulta p{ margin:0; font-size:0.93rem; line-height:1.65; color:var(--ink-soft); }
   .firma-consulta p strong a{ color:var(--ink); }
   .firma-consulta .fc-otras{ margin:0.5rem 0 0; font-size:0.86rem; opacity:0.9; }
-
   @media print {
     .site-header, .site-footer, .back-link, .descarga, .firma-consulta,
     .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
@@ -87,6 +88,19 @@
     .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
     a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
   }
+  .cc-banda{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .cc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .cc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:600px){ .cc-rejilla{ grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); } }
+  .cc-tarjeta{ display:flex; align-items:center; gap:0.85rem; text-decoration:none; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1rem 1.15rem; color:var(--ink); }
+  .cc-tarjeta:hover{ border-color:#8C3B4A; }
+  .cc-marca{ flex-shrink:0; width:2.6rem; height:1.1rem; color:#8C3B4A; }
+  .cc-txt{ display:flex; flex-direction:column; gap:0.1rem; min-width:0; }
+  .cc-nom{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; line-height:1.25; }
+  .cc-quien{ font-size:0.88rem; color:var(--ink-soft); line-height:1.35; }
+  .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
+  .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
+  @media print{ .cc-banda{ display:none; } }
   .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
   .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
   .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
@@ -98,6 +112,35 @@
   .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
   .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
   .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* El color de este tema: Pareja y relaciones. */
+  :root{ --accent:#9B3D5E; --accent-soft:#F8E7EC; --stamp:#9B3D5E; }
+  .idea{ background:#F8E7EC !important; border-color:#e6ded2 !important;
+         border-left-color:#9B3D5E !important; }
+  .hazlo{ background:#F8E7EC !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#9B3D5E; border-color:#9B3D5E; color:#fff; }
+  .tool-kicker .num{ background:#9B3D5E; }
+  .cierre{ border-left:4px solid #9B3D5E; }
 
   /* El buscador de la cabecera (sustituye al menú). */
   .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
@@ -140,45 +183,20 @@
   .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
   @media print{ .pl-buscador{ display:none !important; } }
 
-  /* El índice visual de las herramientas. */
-  .ruta{ margin:1.5rem 0 2rem; }
-  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
-             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
-  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
-  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
-  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
-           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
-  .ruta a:hover{ background:var(--surface,#fff); }
-  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
-            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
-            border:1.5px solid #d8d0ec; display:grid; place-items:center;
-            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
-  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
-  .tool{ scroll-margin-top:1rem; }
-  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
-                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
-                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
-  @media print{ .ruta{ display:none !important; } }
-
-  /* La caja de la consulta va marcada como lo que es: un anuncio de una
-     consulta particular, que no forma parte de los recursos gratuitos. */
-  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+  /* La caja de la consulta, en versión discreta y marcada como anuncio. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px;
+                 background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
                  border-left:3px solid #8C3B4A !important; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
   .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
                  display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
                  letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
                  opacity:0.85; margin:0 0 0.55rem; }
   .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
   @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
-
-  /* El color de este tema: Ansiedad. */
-  :root{ --accent:#1F6F6B; --accent-soft:#E4F0EE; --stamp:#1F6F6B; }
-  .idea{ background:#E4F0EE !important; border-color:#e6ded2 !important;
-         border-left-color:#1F6F6B !important; }
-  .hazlo{ background:#E4F0EE !important; border-color:#e6ded2 !important; }
-  .ruta .n{ background:#1F6F6B; border-color:#1F6F6B; color:#fff; }
-  .tool-kicker .num{ background:#1F6F6B; }
-  .cierre{ border-left:4px solid #1F6F6B; }
   .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
               border:1px solid var(--border); border-radius:14px;
               background:var(--surface); }
@@ -186,14 +204,9 @@
   /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
   @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
-<script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Ecoansiedad","image":"https://psicolinks.com/ilustraciones/ansiedad.jpg","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/ecoansiedad.html","inLanguage":"es-ES"}
-</script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Ecoansiedad", "item": "https://psicolinks.com/ecoansiedad.html"}]}
-</script>
 </head>
 <body>
+
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
   <div class="pl-buscador" id="pl-buscador">
@@ -208,83 +221,76 @@
     <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
   </div>
 </header>
+
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
-  <div class="stamp">📎 Guía gratuita · Ansiedad</div>
-  <h1>Ecoansiedad</h1>
-  <p class="autor">Por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">Seis herramientas para cuando la crisis climática te ocupa la cabeza y no sabes qué hacer con eso.</p>
-  <img class="guia-ilus" src="/ilustraciones/ansiedad.jpg" alt="Ilustración: el ratón de Psicolinks junto a una alarma que suena"
+  <div class="stamp">📎 Guía gratuita · Relaciones</div>
+  <h1>Cuando descubres que te han mentido</h1>
+  <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Seis herramientas para los días siguientes, que son los que más se estropean. Sirve para pareja, familia, amigos y trabajo.</p>
+  <img class="guia-ilus" src="/ilustraciones/pareja.jpg" alt="Ilustración: el ratón de Psicolinks junto a dos bocadillos de diálogo enfrentados"
        width="1360" height="460" loading="lazy" decoding="async">
-  <div class="idea"><strong>La idea de fondo.</strong> Lo primero, porque mucha gente llega creyendo que le pasa algo raro: <strong>preocuparse por esto no es una distorsión</strong>. Es una respuesta razonable a un problema real, y tratarla como si fuera un pensamiento irracional que hay que corregir sería mentir. Lo que sí se puede trabajar es otra cosa: que la preocupación te esté impidiendo dormir, disfrutar o decidir. Y ahí hay un hallazgo que orienta bastante: lo que mejor se relaciona con llevarlo sin hundirse <strong>no es informarse más ni menos, sino participar en algo con otras personas</strong>. La impotencia en solitario desgasta; compartida, bastante menos.</div>
 
-
-
-
-
-
-
-
-
-
-
+  <div class="idea"><strong>La idea de fondo.</strong> Una mentira hace dos daños distintos y conviene no mezclarlos: el del hecho que se ocultó y el de haber estado creyendo algo falso. El segundo suele doler más y es el que hace dudar de todo lo demás. Casi todo el trabajo de las semanas siguientes va de decidir hasta dónde llega la mancha, en vez de dejar que lo decida el susto.</div>
 
   <div class="descarga">
     <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
     <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
   </div>
 
-  <h2 class="bloque-tit">Seis herramientas</h2>
+  <h2 class="bloque-tit">6 herramientas</h2>
   <nav class="ruta" aria-label="Las herramientas de esta guía">
     <p class="ruta-eti">Las seis, de un vistazo</p>
     <ol>
-      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Preocuparse por esto no es un síntoma</span></a></li>
-      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Corta el goteo de noticias, no la información</span></a></li>
-      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Haz algo, aunque sea pequeño, y hazlo con gente</span></a></li>
-      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Separa lo que te toca a ti de lo que no</span></a></li>
-      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Con los hijos y los adolescentes, ni negar ni asustar</span></a></li>
-      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Vigila que no se convierta en darle vueltas</span></a></li>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">No decidas nada en las primeras 48 horas</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Pregunta lo que necesitas saber, no todo</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Mira si hubo una mentira o un sistema</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Que la reparación la proponga quien mintió</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Decide qué haces con las comprobaciones</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Cuéntaselo a una persona, no a diez</span></a></li>
     </ol>
   </nav>
 
 <div class="tool" id="h1">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1 · La que quita la culpa por sentirlo</p>
-  <h3>Preocuparse por esto no es un síntoma</h3>
-  <p>Conviene decirlo primero, porque mucha gente llega pensando que le pasa algo raro: preocuparse por el clima es una respuesta razonable a un problema real, no una distorsión. Lo que se puede trabajar no es la preocupación en sí, sino que te esté impidiendo vivir.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> la pregunta útil no es «¿estoy exagerando?», sino «¿esto me está dejando hacer mi vida o no?». Ahí está la línea.</div>
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1</p>
+  <h3>No decidas nada en las primeras 48 horas</h3>
+  <p>El descubrimiento activa un estado que se parece mucho al de una urgencia: todo parece que hay que resolverlo ya. Las decisiones tomadas ahí se toman con la peor información y con la peor cabeza.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> date un plazo explícito antes de decidir nada importante. Escríbelo: «hasta el sábado no decido». No es dejarlo pasar; es no firmar con las manos temblando.</div>
 </div>
 <div class="tool" id="h2">
   <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2</p>
-  <h3>Corta el goteo de noticias, no la información</h3>
-  <p>Informarse una vez a la semana a fondo y estar leyendo titulares diez veces al día no producen el mismo resultado: lo primero informa y lo segundo solo activa. El goteo constante es lo que agota, y no te deja mejor informado.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> ponle horario: un rato fijo, una o dos veces por semana, en una fuente decente. Fuera notificaciones y fuera bajar el dedo antes de dormir.</div>
+  <h3>Pregunta lo que necesitas saber, no todo</h3>
+  <p>La tentación es reconstruirlo entero: cada fecha, cada detalle. Casi nunca ayuda. Los detalles se quedan como imágenes y aparecen solos durante meses.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> haz una lista corta de lo que de verdad necesitas para decidir —qué pasó, desde cuándo, quién más lo sabía— y quédate ahí. Lo demás no cambia ninguna decisión y sí cambia lo que vas a estar viendo por las noches.</div>
 </div>
 <div class="tool" id="h3">
   <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
-  <h3>Haz algo, aunque sea pequeño, y hazlo con gente</h3>
-  <p>De todo lo que se ha estudiado sobre esto, lo que mejor se relaciona con estar menos hundido no es informarse más ni menos: es participar en algo con otras personas. La impotencia se lleva fatal en solitario y bastante mejor en grupo.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> una cosa concreta y con gente: una asociación del barrio, un grupo, un huerto, lo que sea. La escala importa menos que no estar solo en ello.</div>
+  <h3>Mira si hubo una mentira o un sistema</h3>
+  <p>No es lo mismo un episodio ocultado por vergüenza que meses de tapar con más mentiras. Lo primero se repara; lo segundo dice cómo funciona esa persona contigo.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> pregúntate cuántas veces tuvo la ocasión de contarlo y no lo hizo. Ese número informa más que la gravedad del hecho, y es el que suele decidir si esto se puede reconstruir.</div>
 </div>
 <div class="tool" id="h4">
   <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
-  <h3>Separa lo que te toca a ti de lo que no</h3>
-  <p>Buena parte del agobio viene de cargar con una responsabilidad que no es individual. Reciclar bien está muy bien y no arregla el problema, y creer que debería hacerlo lleva directo a la culpa permanente.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> divide en dos: lo que depende de ti y lo que depende de decisiones colectivas. Lo primero, hazlo y déjalo estar. Para lo segundo, lo que cabe es participar, no cargar.</div>
+  <h3>Que la reparación la proponga quien mintió</h3>
+  <p>Si eres tú quien tiene que decidir qué hace el otro para arreglarlo, sigues llevando tú el peso. Y la disculpa que hay que pedir no repara nada.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> la pregunta que hay que hacer es «¿qué vas a hacer tú para que esto se pueda arreglar?». Y después mirar lo que hace, no lo que dice. La confianza se recupera con conducta repetida, no con conversaciones.</div>
 </div>
 <div class="tool" id="h5">
   <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
-  <h3>Con los hijos y los adolescentes, ni negar ni asustar</h3>
-  <p>Ninguno de los dos extremos ayuda: decir que no pasa nada les enseña a no fiarse de ti, y trasladarles tu angustia les deja con un problema de adultos y sin recursos. Lo que sostiene es la verdad más la sensación de que se está haciendo algo.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> reconoce el problema con palabras que entiendan y termina siempre en qué se está haciendo y en qué podéis hacer vosotros. Y pregunta más de lo que explicas.</div>
+  <h3>Decide qué haces con las comprobaciones</h3>
+  <p>Revisar el móvil, preguntar por dónde va, comprobar las historias: calma diez minutos y deja peor. Además convierte la relación en una vigilancia, y nadie aguanta mucho tiempo vigilando ni siendo vigilado.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> si necesitas comprobar algo, pídelo abierto y con fecha de caducidad: «durante un mes quiero saber esto, y luego lo dejamos». Comprobar a escondidas es lo que alarga esto años.</div>
 </div>
 <div class="tool" id="h6">
   <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
-  <h3>Vigila que no se convierta en darle vueltas</h3>
-  <p>Hay una diferencia entre preocuparse y rumiar: lo primero lleva a hacer algo, lo segundo da vueltas sin salir del sitio y desgasta igual que cualquier otra rumia. El tema es distinto; el mecanismo es el mismo.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> si llevas veinte minutos dándole vueltas y no ha aparecido ninguna acción, no es información: es rumia. Tienes el método en <a href="/deja-de-darle-vueltas.html">deja de darle vueltas</a>.</div>
+  <h3>Cuéntaselo a una persona, no a diez</h3>
+  <p>Contarlo alivia y contarlo a todo el mundo complica: cada persona te devuelve su opinión, y acabas gestionando quince opiniones además de lo tuyo.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> elige a una persona de confianza que no vaya a decidir por ti. Si necesitas más, ahí es donde entra un profesional: es el sitio donde se puede contar entero sin que tenga consecuencias con nadie.</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si te está quitando el sueño, si has dejado de hacer planes o de tomar decisiones de futuro, o si la cosa ha ido a más en los últimos meses, merece la pena trabajarlo. Tienes <a href="/cuando-te-preocupas-por-todo.html">cuando te preocupas por todo</a> y <a href="/deja-de-darle-vueltas.html">deja de darle vueltas</a>, que es el mismo mecanismo con otro tema.</div>
+  <div class="cierre"><strong>Y si te supera.</strong> Si llevas semanas sin dormir, revisando cosas a todas horas o con la cabeza en bucle, no es que seas desconfiado: es una reacción normal a que se te caiga el suelo, y se trabaja bien. Y si la mentira venía acompañada de control o de miedo, eso ya no es una mentira: mira <a href="/cuando-tu-pareja-te-controla.html">cuando tu pareja te controla</a>.</div>
+
+  <p class="nota-hermana" style="font-size:0.93rem;line-height:1.6;color:var(--ink-soft);margin:1.6rem 0 0;">Para lo que viene después, están <a href="/reconstruir-la-confianza-en-pareja.html">reconstruir la confianza en pareja</a>, <a href="/volver-a-confiar-en-alguien.html">volver a confiar en alguien</a> y <a href="/celos-y-revisar-el-movil.html">celos y revisar el móvil</a>.</p>
 
   <div class="consulta-cta">
     <h3>¿Y si quieres trabajarlo con alguien?</h3>
@@ -292,14 +298,20 @@
     <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
   </div>
 
-
 </main>
+
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
   <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
   <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cuando descubres que te han mentido", "image": "https://psicolinks.com/ilustraciones/pareja.jpg", "inLanguage": "es-ES", "url": "https://psicolinks.com/cuando-te-mienten.html", "description": "Seis herramientas para los días siguientes a descubrir una mentira: qué preguntar, qué no, y cómo decidir si esto se puede reconstruir.", "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649"}, "isAccessibleForFree": true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Cuando descubres que te han mentido", "item": "https://psicolinks.com/cuando-te-mienten.html"}]}</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
   window.dataLayer = window.dataLayer || [];
@@ -307,7 +319,5 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
-<script src="/buscador-psicolinks.js" defer></script>
-<script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

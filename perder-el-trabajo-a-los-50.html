@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miedo al dentista: cómo ir sin pasarlo mal · Psicolinks</title>
-<meta name="description" content="Pactar una señal para parar, empezar por una cita que no duela y qué pedir en la clínica. Y por qué aplazarlo sale mucho más caro.">
-<meta property="og:type" content="article">
+<title>Perder el trabajo pasados los 50 · Psicolinks</title>
+<meta name="description" content="Seis herramientas para una búsqueda larga a partir de los cincuenta: cómo organizar el día, cómo contar la experiencia y qué hacer con la parte que no es económica.">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Miedo al dentista: cómo ir sin pasarlo mal">
-<meta property="og:description" content="Pactar una señal para parar, empezar por una cita que no duela y qué pedir en la clínica. Y por qué aplazarlo sale mucho más caro.">
-<meta property="og:url" content="https://psicolinks.com/miedo-al-dentista.html">
+<meta property="og:title" content="Perder el trabajo pasados los 50">
+<meta property="og:description" content="El golpe tiene dos partes: la económica y la de identidad. La segunda es la que hunde.">
+<meta property="og:url" content="https://psicolinks.com/perder-el-trabajo-a-los-50.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/miedo-al-dentista.html">
+<link rel="canonical" href="https://psicolinks.com/perder-el-trabajo-a-los-50.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,8 @@
   .consulta-cta .consulta-btn:hover { background: #75303d; }
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
-
+  .desambigua { font-size:0.9rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:0.7rem 0.95rem; margin:0 0 1.4rem; line-height:1.55; }
+  .desambigua a { color:var(--accent); font-weight:600; }
   .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
@@ -112,6 +113,35 @@
   .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
   .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
 
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* El color de este tema: Trabajo. */
+  :root{ --accent:#2F6B4F; --accent-soft:#E5F1EA; --stamp:#2F6B4F; }
+  .idea{ background:#E5F1EA !important; border-color:#e6ded2 !important;
+         border-left-color:#2F6B4F !important; }
+  .hazlo{ background:#E5F1EA !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#2F6B4F; border-color:#2F6B4F; color:#fff; }
+  .tool-kicker .num{ background:#2F6B4F; }
+  .cierre{ border-left:4px solid #2F6B4F; }
+
   /* El buscador de la cabecera (sustituye al menú). */
   .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
   .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
@@ -153,45 +183,20 @@
   .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
   @media print{ .pl-buscador{ display:none !important; } }
 
-  /* El índice visual de las herramientas. */
-  .ruta{ margin:1.5rem 0 2rem; }
-  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
-             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
-  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
-  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
-  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
-           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
-  .ruta a:hover{ background:var(--surface,#fff); }
-  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
-            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
-            border:1.5px solid #d8d0ec; display:grid; place-items:center;
-            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
-  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
-  .tool{ scroll-margin-top:1rem; }
-  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
-                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
-                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
-  @media print{ .ruta{ display:none !important; } }
-
-  /* La caja de la consulta va marcada como lo que es: un anuncio de una
-     consulta particular, que no forma parte de los recursos gratuitos. */
-  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+  /* La caja de la consulta, en versión discreta y marcada como anuncio. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px;
+                 background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
                  border-left:3px solid #8C3B4A !important; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
   .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
                  display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
                  letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
                  opacity:0.85; margin:0 0 0.55rem; }
   .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
   @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
-
-  /* El color de este tema: Miedos. */
-  :root{ --accent:#7A3E8C; --accent-soft:#F2E8F6; --stamp:#7A3E8C; }
-  .idea{ background:#F2E8F6 !important; border-color:#e6ded2 !important;
-         border-left-color:#7A3E8C !important; }
-  .hazlo{ background:#F2E8F6 !important; border-color:#e6ded2 !important; }
-  .ruta .n{ background:#7A3E8C; border-color:#7A3E8C; color:#fff; }
-  .tool-kicker .num{ background:#7A3E8C; }
-  .cierre{ border-left:4px solid #7A3E8C; }
   .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
               border:1px solid var(--border); border-radius:14px;
               background:var(--surface); }
@@ -199,14 +204,9 @@
   /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
   @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
-<script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Miedo al dentista: cómo ir sin pasarlo mal","image":"https://psicolinks.com/ilustraciones/miedos.jpg","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/miedo-al-dentista.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
-</script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Miedo al dentista: cómo ir sin pasarlo mal", "item": "https://psicolinks.com/miedo-al-dentista.html"}]}
-</script>
 </head>
 <body>
+
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
   <div class="pl-buscador" id="pl-buscador">
@@ -221,83 +221,76 @@
     <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
   </div>
 </header>
+
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
-  <div class="stamp">📎 Guía gratuita · Miedos</div>
-  <h1>Miedo al dentista: cómo ir sin pasarlo mal</h1>
+  <div class="stamp">📎 Guía gratuita · Trabajo</div>
+  <h1>Perder el trabajo pasados los 50</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">Seis herramientas para cuando llevas años esquivando la clínica, se te acumulan los tratamientos y la sola idea de pedir cita te revuelve el estómago.</p>
-  <img class="guia-ilus" src="/ilustraciones/miedos.jpg" alt="Ilustración: el ratón de Psicolinks junto a una escalera de peldaños que sube"
+  <p class="lead">Seis herramientas para cuando la búsqueda es larga y la edad pesa. Sobre lo práctico y sobre lo otro, que es de lo que no habla nadie.</p>
+  <img class="guia-ilus" src="/ilustraciones/trabajo.jpg" alt="Ilustración: el ratón de Psicolinks junto a un escritorio con un ordenador y una taza"
        width="1360" height="460" loading="lazy" decoding="async">
-  <div class="idea"><strong>La idea de fondo.</strong> Casi todo el mundo cree que este miedo va al dolor, y en la mayoría de los casos va a otra cosa: a no poder parar. Estás tumbado, con la boca abierta, sin poder hablar y con alguien trabajando donde no ves. Por eso lo que más lo baja no es la anestesia, es recuperar el control: avisar antes, pactar una señal para detener, y empezar por una cita en la que no vaya a pasar nada. La clínica lo oye a diario y tiene recursos para esto.</div>
 
-
-
-
-
-
-
-
-
-
-
+  <div class="idea"><strong>La idea de fondo.</strong> A esta edad el golpe tiene dos partes que se confunden: la económica y la de identidad. La primera se planifica; la segunda es la que hunde, porque muchas personas descubren de golpe que casi todo lo que eran estaba dentro del trabajo. Tratarlas por separado es lo que hace que la búsqueda no se coma a la persona.</div>
 
   <div class="descarga">
     <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
     <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
   </div>
 
-  <h2 class="bloque-tit">Seis herramientas</h2>
+  <h2 class="bloque-tit">6 herramientas</h2>
   <nav class="ruta" aria-label="Las herramientas de esta guía">
     <p class="ruta-eti">Las seis, de un vistazo</p>
     <ol>
-      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Dilo al pedir la cita, no al sentarte</span></a></li>
-      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Pacta una señal para parar</span></a></li>
-      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Empieza por una cita que no duela</span></a></li>
-      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Cuida el cuerpo durante la sesión</span></a></li>
-      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Pregunta por la sedación consciente si hace falta</span></a></li>
-      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Lo que de verdad cuesta es aplazar</span></a></li>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Ponle horario a la búsqueda</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Cuenta lo que sabes hacer, no dónde has estado</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Trabaja los contactos, no los portales</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Separa el «no» del rechazo personal</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Reconstruye lo que era el trabajo, no solo el sueldo</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Habla en casa de números y de cómo estás</span></a></li>
     </ol>
   </nav>
 
 <div class="tool" id="h1">
   <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1</p>
-  <h3>Dilo al pedir la cita, no al sentarte</h3>
-  <p>El personal de una clínica dental oye esto todos los días y tiene recursos: citas más largas, más pausas, explicar cada paso. Pero solo si lo saben antes.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> al pedir hora, di la frase completa: «me da bastante miedo el dentista, ¿podéis tenerlo en cuenta?». Cambia la cita entera y no cuesta nada.</div>
+  <h3>Ponle horario a la búsqueda</h3>
+  <p>Sin horario, buscar trabajo ocupa las veinticuatro horas y a la vez no se hace nunca: se está siempre a medias y siempre en deuda con uno mismo.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> de tal hora a tal hora, y se cierra el portátil. Tres horas bien hechas rinden más que un día entero de estar pendiente. Y lo que sobra del día deja de ser tiempo robado.</div>
 </div>
 <div class="tool" id="h2">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2 · La que más baja el miedo</p>
-  <h3>Pacta una señal para parar</h3>
-  <p>Buena parte del miedo no es al dolor: es a no poder parar. Con la boca abierta y sin poder hablar, la sensación de no controlar dispara la ansiedad más que la molestia real.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> acuerda antes una señal —levantar la mano izquierda— que signifique «para un momento». Y comprueba que la respetan la primera vez. Saber que puedes parar hace que casi nunca necesites hacerlo.</div>
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2</p>
+  <h3>Cuenta lo que sabes hacer, no dónde has estado</h3>
+  <p>Un currículum ordenado por empresas y años pone la edad en primer plano. Uno ordenado por lo que sabes resolver pone delante lo que a los cincuenta juega a favor.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> arriba, cuatro líneas de lo que sabes hacer y de problemas concretos que has resuelto, con un número si lo hay. Los años debajo. Y en la entrevista, si sale la edad, contéstala como experiencia y sigue.</div>
 </div>
 <div class="tool" id="h3">
   <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
-  <h3>Empieza por una cita que no duela</h3>
-  <p>Ir directamente a la muela que llevas dos años evitando garantiza que el miedo salga reforzado. Se sube por escalones, como en cualquier fobia.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> pide primero una revisión o una limpieza, sin tratamiento. Que la primera experiencia sea aburrida es exactamente el objetivo.</div>
+  <h3>Trabaja los contactos, no los portales</h3>
+  <p>A partir de cierta edad y en muchos sectores, la mayor parte de los puestos no se cubren por anuncio. Echar cien currículums a un portal es la forma más agotadora y menos eficaz de buscar.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> una lista de veinte personas que te conocen trabajando. Dos mensajes por semana, sin pedir trabajo: pedir información y consejo. Es más lento de escribir y muchísimo más eficaz.</div>
 </div>
 <div class="tool" id="h4">
   <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
-  <h3>Cuida el cuerpo durante la sesión</h3>
-  <p>La ansiedad aparece antes de que empiece nada: hombros subidos, mandíbula tensa, respiración corta. Y con el cuerpo así, cualquier estímulo se nota más.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> suelta hombros, alarga la exhalación y despega la lengua del paladar. Auriculares con música o un pódcast ayudan bastante, y en la mayoría de clínicas no ponen ninguna pega.</div>
+  <h3>Separa el «no» del rechazo personal</h3>
+  <p>Cuando llevas meses, cada silencio se lee como una nota sobre tu valor. Y no lo es: la mayoría no contesta a nadie, y muchos procesos estaban decididos antes de empezar.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> lleva una cuenta de lo que haces, no de lo que consigues: contactos, entrevistas, candidaturas. Es lo único que depende de ti, y es lo que hay que mirar los días malos.</div>
 </div>
 <div class="tool" id="h5">
   <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
-  <h3>Pregunta por la sedación consciente si hace falta</h3>
-  <p>Para tratamientos largos o miedo intenso existe la sedación consciente, con óxido nitroso o medicación oral. No es rendirse: es una herramienta más, y a veces es lo que permite empezar.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> pregúntalo abiertamente en la clínica. Y si te lo plantean, que te expliquen qué implica, qué coste tiene y si necesitas ir acompañado.</div>
+  <h3>Reconstruye lo que era el trabajo, no solo el sueldo</h3>
+  <p>El trabajo daba horario, gente, un sitio donde ir y sentirse útil. Si nada de eso se sustituye, la búsqueda se hace desde un hueco enorme y se nota en las entrevistas.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> coloca tres cosas en la semana: una que te saque de casa a una hora fija, una con gente y una en la que ayudes a alguien. No es rellenar el tiempo, es no llegar a las entrevistas desde el vacío.</div>
 </div>
 <div class="tool" id="h6">
   <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
-  <h3>Lo que de verdad cuesta es aplazar</h3>
-  <p>El precio de este miedo no es el mal rato: es la caries que se convierte en endodoncia y la endodoncia en extracción. Cuanto más se espera, más largo y más caro es el tratamiento, y eso alimenta el miedo.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> si llevas años sin ir, pide una revisión esta semana. No para tratarte: solo para saber en qué punto estás. Suele ser mucho menos grave de lo que la cabeza había montado.</div>
+  <h3>Habla en casa de números y de cómo estás</h3>
+  <p>Callar por no preocupar convierte la casa en un sitio donde hay que fingir, y eso cansa más que el problema. Y los demás lo notan igual, solo que sin poder ayudar.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> una conversación con números encima de la mesa —cuánto hay, hasta cuándo, qué se ajusta— y otra distinta sobre cómo lo estás llevando. Que no sean la misma: mezclarlas hace que ninguna salga bien.</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si llevas años sin ir y eso ya te está costando la dentadura, o si solo pensar en la cita te da náuseas o taquicardia, merece la pena tratarlo: es una de las fobias que mejor y más rápido responde a la exposición guiada, muchas veces en pocas sesiones. Tienes también la guía «Miedo a las agujas y a la sangre».</div>
+  <div class="cierre"><strong>Y si te supera.</strong> Si llevas meses sin salir de casa, te has ido apartando de la gente o te descubres pensando que ya no pintas nada, eso no es la búsqueda: es un ánimo que se ha ido hundiendo por debajo, y se trata bien. Cuanto antes se coja, más corta es la caída.</div>
+
+  <p class="nota-hermana" style="font-size:0.93rem;line-height:1.6;color:var(--ink-soft);margin:1.6rem 0 0;">Está también <a href="/paro-de-larga-duracion.html">paro de larga duración</a>, <a href="/cuando-te-despiden.html">cuando te despiden</a> y <a href="/la-entrevista-de-trabajo.html">la entrevista de trabajo</a>.</p>
 
   <div class="consulta-cta">
     <h3>¿Y si quieres trabajarlo con alguien?</h3>
@@ -305,16 +298,20 @@
     <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
   </div>
 
-
-
-
 </main>
+
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
   <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
   <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Perder el trabajo pasados los 50", "image": "https://psicolinks.com/ilustraciones/trabajo.jpg", "inLanguage": "es-ES", "url": "https://psicolinks.com/perder-el-trabajo-a-los-50.html", "description": "Seis herramientas para una búsqueda larga a partir de los cincuenta: cómo organizar el día, cómo contar la experiencia y qué hacer con la parte que no es económica.", "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649"}, "isAccessibleForFree": true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Perder el trabajo pasados los 50", "item": "https://psicolinks.com/perder-el-trabajo-a-los-50.html"}]}</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
   window.dataLayer = window.dataLayer || [];
@@ -322,8 +319,5 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
-<script src="/buscador-psicolinks.js" defer></script>
-<script src="cookies-psicolinks.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Miedo al dentista: cómo ir sin pasarlo mal", "url": "https://psicolinks.com/miedo-al-dentista.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Fobia"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Pactar una señal para parar, empezar por una cita que no duela y qué pedir en la clínica. Y por qué aplazarlo sale mucho más caro."}</script>
 </body>
 </html>

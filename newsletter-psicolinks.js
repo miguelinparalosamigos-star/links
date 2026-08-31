@@ -56,6 +56,7 @@
       '.pl-nl button:hover{background:#3a2e63;}' +
       '.pl-nl button:disabled{opacity:.6;cursor:default;}' +
       '.pl-nl label.pl-consent{display:flex;gap:.5rem;align-items:flex-start;font-size:.8rem;line-height:1.45;color:var(--ink-soft,#625C70);}' +
+      '.pl-nl label.pl-consent input{flex:0 0 auto;margin-top:.15rem;}' +
       '.pl-nl label.pl-consent a{color:var(--accent,#4A3B78);}' +
       '.pl-nl .pl-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}' +
       '.pl-nl .pl-msg{margin:.2rem 0 0;font-size:.9rem;line-height:1.5;}' +
@@ -93,7 +94,9 @@
           '<input type="email" name="email" required autocomplete="email" placeholder="tu@correo.com" aria-label="Tu correo electrónico">' +
           '<button type="submit">' + TEXTOS.boton + '</button>' +
         '</div>' +
-        '<label class="pl-consent"><input type="checkbox" name="consentimiento" required> Acepto que me mandes el pack por correo y he leído la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Me puedo borrar cuando quiera.</label>' +
+        /* El texto va dentro de un <span>: si no, el enlace y los trozos de
+           texto sueltos se vuelven columnas del flex y la frase sale partida. */
+        '<label class="pl-consent"><input type="checkbox" name="consentimiento" required><span>Acepto que me mandes el pack por correo y he leído la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Me puedo borrar cuando quiera.</span></label>' +
         '<div class="pl-hp"><label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>' +
         '<p class="pl-msg" role="status" aria-live="polite" hidden></p>' +
       '</form>';

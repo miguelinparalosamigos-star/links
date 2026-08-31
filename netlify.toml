@@ -40,6 +40,36 @@
   to = "/.netlify/functions/sitemap"
   status = 200
 
+
+# ---------------------------------------------------------------------------
+# Las dos guias antiguas que quedaron casi calcadas de su version nueva.
+# Se redirigen (301) para que no compitan entre si en Google y para que
+# quien llegue por un enlace viejo caiga en la buena. "force" hace falta
+# porque los ficheros siguen existiendo en el repositorio.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/guia-calma-en-5-minutos.html"
+  to = "/calma-en-5-minutos.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guia-dormir-mejor-en-7-pasos.html"
+  to = "/dormir-mejor-en-7-pasos.html"
+  status = 301
+  force = true
+
+# Las notas internas del proyecto (README, cambios, auditorias) estaban
+# publicas en el dominio. Se siguen guardando en el repositorio, pero
+# ya no se sirven.
+
+[[redirects]]
+  from = "/*.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # Feed RSS de los articulos diarios, para lectores tipo Feedly y agregadores.
 [[redirects]]
   from = "/feed.xml"
@@ -85,6 +115,16 @@
 
 [[headers]]
   for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/ilustraciones/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/videos/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

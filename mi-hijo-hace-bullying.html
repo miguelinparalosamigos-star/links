@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miedo al dentista: cómo ir sin pasarlo mal · Psicolinks</title>
-<meta name="description" content="Pactar una señal para parar, empezar por una cita que no duela y qué pedir en la clínica. Y por qué aplazarlo sale mucho más caro.">
-<meta property="og:type" content="article">
+<title>Cuando el que hace bullying es tu hijo · Psicolinks</title>
+<meta name="description" content="Qué hacer cuando te llaman del colegio porque tu hijo está haciendo daño a otro: cómo hablarlo, qué consecuencia poner y qué mirar debajo.">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Miedo al dentista: cómo ir sin pasarlo mal">
-<meta property="og:description" content="Pactar una señal para parar, empezar por una cita que no duela y qué pedir en la clínica. Y por qué aplazarlo sale mucho más caro.">
-<meta property="og:url" content="https://psicolinks.com/miedo-al-dentista.html">
+<meta property="og:title" content="Cuando el que hace daño es tu hijo">
+<meta property="og:description" content="Ni negarlo ni hundirse. Qué hacer cuando el que hace daño en el colegio es el tuyo.">
+<meta property="og:url" content="https://psicolinks.com/mi-hijo-hace-bullying.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/miedo-al-dentista.html">
+<link rel="canonical" href="https://psicolinks.com/mi-hijo-hace-bullying.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,8 @@
   .consulta-cta .consulta-btn:hover { background: #75303d; }
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
-
+  .desambigua { font-size:0.9rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:0.7rem 0.95rem; margin:0 0 1.4rem; line-height:1.55; }
+  .desambigua a { color:var(--accent); font-weight:600; }
   .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
@@ -153,60 +154,24 @@
   .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
   @media print{ .pl-buscador{ display:none !important; } }
 
-  /* El índice visual de las herramientas. */
-  .ruta{ margin:1.5rem 0 2rem; }
-  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
-             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
-  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
-  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
-  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
-           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
-  .ruta a:hover{ background:var(--surface,#fff); }
-  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
-            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
-            border:1.5px solid #d8d0ec; display:grid; place-items:center;
-            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
-  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
-  .tool{ scroll-margin-top:1rem; }
-  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
-                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
-                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
-  @media print{ .ruta{ display:none !important; } }
-
-  /* La caja de la consulta va marcada como lo que es: un anuncio de una
-     consulta particular, que no forma parte de los recursos gratuitos. */
-  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+  /* La caja de la consulta, en versión discreta y marcada como anuncio. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px;
+                 background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
                  border-left:3px solid #8C3B4A !important; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
   .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
                  display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
                  letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
                  opacity:0.85; margin:0 0 0.55rem; }
   .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
   @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
-
-  /* El color de este tema: Miedos. */
-  :root{ --accent:#7A3E8C; --accent-soft:#F2E8F6; --stamp:#7A3E8C; }
-  .idea{ background:#F2E8F6 !important; border-color:#e6ded2 !important;
-         border-left-color:#7A3E8C !important; }
-  .hazlo{ background:#F2E8F6 !important; border-color:#e6ded2 !important; }
-  .ruta .n{ background:#7A3E8C; border-color:#7A3E8C; color:#fff; }
-  .tool-kicker .num{ background:#7A3E8C; }
-  .cierre{ border-left:4px solid #7A3E8C; }
-  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
-              border:1px solid var(--border); border-radius:14px;
-              background:var(--surface); }
-  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
-  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
-  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
-<script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Miedo al dentista: cómo ir sin pasarlo mal","image":"https://psicolinks.com/ilustraciones/miedos.jpg","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/miedo-al-dentista.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
-</script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Miedo al dentista: cómo ir sin pasarlo mal", "item": "https://psicolinks.com/miedo-al-dentista.html"}]}
-</script>
 </head>
 <body>
+
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
   <div class="pl-buscador" id="pl-buscador">
@@ -221,83 +186,62 @@
     <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
   </div>
 </header>
+
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
-  <div class="stamp">📎 Guía gratuita · Miedos</div>
-  <h1>Miedo al dentista: cómo ir sin pasarlo mal</h1>
+  <div class="stamp">📎 Guía gratuita · Acoso escolar</div>
+  <h1>Cuando el que hace daño es tu hijo</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">Seis herramientas para cuando llevas años esquivando la clínica, se te acumulan los tratamientos y la sola idea de pedir cita te revuelve el estómago.</p>
-  <img class="guia-ilus" src="/ilustraciones/miedos.jpg" alt="Ilustración: el ratón de Psicolinks junto a una escalera de peldaños que sube"
-       width="1360" height="460" loading="lazy" decoding="async">
-  <div class="idea"><strong>La idea de fondo.</strong> Casi todo el mundo cree que este miedo va al dolor, y en la mayoría de los casos va a otra cosa: a no poder parar. Estás tumbado, con la boca abierta, sin poder hablar y con alguien trabajando donde no ves. Por eso lo que más lo baja no es la anestesia, es recuperar el control: avisar antes, pactar una señal para detener, y empezar por una cita en la que no vaya a pasar nada. La clínica lo oye a diario y tiene recursos para esto.</div>
+  <p class="lead">Que te llamen del colegio para decirte esto es de las cosas peores que hay. Seis herramientas para no romperlo todo en la primera reacción y hacer lo que de verdad cambia algo.</p>
 
-
-
-
-
-
-
-
-
-
-
+  <div class="idea"><strong>La idea de fondo.</strong> La reacción automática es una de dos: negarlo («exageran, son cosas de críos») o hundirse («entonces lo he hecho fatal»). Las dos dejan igual al otro niño y a tu hijo. Lo que funciona es una tercera: tomárselo en serio sin convertirlo en la identidad de tu hijo. Él ha hecho algo, no es algo.</div>
 
   <div class="descarga">
     <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
     <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
   </div>
 
-  <h2 class="bloque-tit">Seis herramientas</h2>
-  <nav class="ruta" aria-label="Las herramientas de esta guía">
-    <p class="ruta-eti">Las seis, de un vistazo</p>
-    <ol>
-      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Dilo al pedir la cita, no al sentarte</span></a></li>
-      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Pacta una señal para parar</span></a></li>
-      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Empieza por una cita que no duela</span></a></li>
-      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Cuida el cuerpo durante la sesión</span></a></li>
-      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Pregunta por la sedación consciente si hace falta</span></a></li>
-      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Lo que de verdad cuesta es aplazar</span></a></li>
-    </ol>
-  </nav>
-
-<div class="tool" id="h1">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1</p>
-  <h3>Dilo al pedir la cita, no al sentarte</h3>
-  <p>El personal de una clínica dental oye esto todos los días y tiene recursos: citas más largas, más pausas, explicar cada paso. Pero solo si lo saben antes.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> al pedir hora, di la frase completa: «me da bastante miedo el dentista, ¿podéis tenerlo en cuenta?». Cambia la cita entera y no cuesta nada.</div>
+  <h2 class="bloque-tit">6 herramientas</h2>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 1</p>
+  <h3>Aguanta la primera reacción sin decidir nada</h3>
+  <p>La llamada del colegio activa vergüenza, y la vergüenza empuja a defender o a castigar en caliente. Las dos cosas se hacen mal en los primeros veinte minutos.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> escucha, pregunta qué han visto exactamente y quién, y di que lo hablarás en casa y les contestas. No prometas castigos ni defensas por teléfono. Los veinte minutos siguientes son para ti, no para tu hijo.</div>
 </div>
-<div class="tool" id="h2">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2 · La que más baja el miedo</p>
-  <h3>Pacta una señal para parar</h3>
-  <p>Buena parte del miedo no es al dolor: es a no poder parar. Con la boca abierta y sin poder hablar, la sensación de no controlar dispara la ansiedad más que la molestia real.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> acuerda antes una señal —levantar la mano izquierda— que signifique «para un momento». Y comprueba que la respetan la primera vez. Saber que puedes parar hace que casi nunca necesites hacerlo.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 2</p>
+  <h3>Pregunta por los hechos, no por los motivos</h3>
+  <p>«¿Por qué lo has hecho?» se contesta con «no sé» o con una excusa, y la conversación se muere ahí. Los motivos vienen luego; primero hay que fijar qué pasó, porque es lo que no se puede discutir.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> pregunta qué hizo, cuántas veces y quién estaba delante. Si minimiza —«era broma»—, no discutas la intención: pregunta qué cara puso el otro. Es la vía más corta para que aparezca lo que hay que ver.</div>
 </div>
-<div class="tool" id="h3">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
-  <h3>Empieza por una cita que no duela</h3>
-  <p>Ir directamente a la muela que llevas dos años evitando garantiza que el miedo salga reforzado. Se sube por escalones, como en cualquier fobia.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> pide primero una revisión o una limpieza, sin tratamiento. Que la primera experiencia sea aburrida es exactamente el objetivo.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 3</p>
+  <h3>Separa lo que hizo de lo que es</h3>
+  <p>Decirle «eres un abusón» no le hace parar: le da un papel. Los niños que se quedan con esa etiqueta la defienden, porque nadie renuncia a lo único que le han dicho que es.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> ponlo en conducta: «lo que hiciste el martes fue acoso y no se va a repetir», en vez de «eres un acosador». La primera frase tiene arreglo. La segunda no.</div>
 </div>
-<div class="tool" id="h4">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
-  <h3>Cuida el cuerpo durante la sesión</h3>
-  <p>La ansiedad aparece antes de que empiece nada: hombros subidos, mandíbula tensa, respiración corta. Y con el cuerpo así, cualquier estímulo se nota más.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> suelta hombros, alarga la exhalación y despega la lengua del paladar. Auriculares con música o un pódcast ayudan bastante, y en la mayoría de clínicas no ponen ninguna pega.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 4</p>
+  <h3>Que haya consecuencia y que haya reparación</h3>
+  <p>Un castigo sin reparación solo enseña a que no te pillen. Lo que cambia la conducta es que tenga un coste y, sobre todo, que tenga que arreglar algo con la persona a la que hizo daño.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> una consecuencia proporcionada y corta, y algo que repare de verdad: una disculpa hecha en serio, con el colegio de intermediario si hace falta. Reparar cuesta más que estar castigado, y por eso enseña más.</div>
 </div>
-<div class="tool" id="h5">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
-  <h3>Pregunta por la sedación consciente si hace falta</h3>
-  <p>Para tratamientos largos o miedo intenso existe la sedación consciente, con óxido nitroso o medicación oral. No es rendirse: es una herramienta más, y a veces es lo que permite empezar.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> pregúntalo abiertamente en la clínica. Y si te lo plantean, que te expliquen qué implica, qué coste tiene y si necesitas ir acompañado.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 5</p>
+  <h3>Mira qué le está dando esa conducta</h3>
+  <p>Nadie hace daño porque sí. Casi siempre hay debajo un sitio en el grupo, un miedo a ser el siguiente, un modelo en casa o algo que le está pasando a él y no sabe contar.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> pregúntate qué gana con eso: risas, estatus, no ser el objetivo. Y mira qué pasa en casa cuando hay tensión: si en tu casa el que grita más gana, tu hijo ya ha aprendido algo. Cambiar eso hace más que veinte charlas.</div>
 </div>
-<div class="tool" id="h6">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
-  <h3>Lo que de verdad cuesta es aplazar</h3>
-  <p>El precio de este miedo no es el mal rato: es la caries que se convierte en endodoncia y la endodoncia en extracción. Cuanto más se espera, más largo y más caro es el tratamiento, y eso alimenta el miedo.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> si llevas años sin ir, pide una revisión esta semana. No para tratarte: solo para saber en qué punto estás. Suele ser mucho menos grave de lo que la cabeza había montado.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 6</p>
+  <h3>Colabora con el colegio, aunque duela</h3>
+  <p>La tentación de pelearse con el centro es enorme porque quita la vergüenza de encima un rato. Pero un niño que ve a sus padres desautorizando al colegio entiende que lo que hizo no es tan grave.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> ponte del lado del protocolo, aunque no te guste el tono con el que te lo cuentan. Puedes pedir respeto y proporcionalidad para tu hijo y a la vez sostener la consecuencia. Las dos cosas caben.</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si llevas años sin ir y eso ya te está costando la dentadura, o si solo pensar en la cita te da náuseas o taquicardia, merece la pena tratarlo: es una de las fobias que mejor y más rápido responde a la exposición guiada, muchas veces en pocas sesiones. Tienes también la guía «Miedo a las agujas y a la sangre».</div>
+  <div class="cierre"><strong>Y si te supera.</strong> Si además de esto ves crueldad sostenida con animales o con niños más pequeños, fuego, o que a tu hijo le da igual el daño que hace, eso ya no se trabaja con una guía: pide valoración profesional. Cuanto antes se mire, mejor pronóstico tiene.</div>
+
+  <p class="nota-hermana" style="font-size:0.93rem;line-height:1.6;color:var(--ink-soft);margin:1.6rem 0 0;">La otra cara está en <a href="/acoso-escolar.html">cuando a tu hijo le hacen bullying</a>. Y si en casa hay muchos gritos, <a href="/gritar-menos-a-los-hijos.html">gritar menos a los hijos</a> y <a href="/premios-y-castigos.html">premios y castigos</a>.</p>
 
   <div class="consulta-cta">
     <h3>¿Y si quieres trabajarlo con alguien?</h3>
@@ -305,16 +249,20 @@
     <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
   </div>
 
-
-
-
 </main>
+
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
   <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
   <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cuando el que hace daño es tu hijo", "inLanguage": "es-ES", "url": "https://psicolinks.com/mi-hijo-hace-bullying.html", "description": "Qué hacer cuando te llaman del colegio porque tu hijo está haciendo daño a otro: cómo hablarlo, qué consecuencia poner y qué mirar debajo.", "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649"}, "isAccessibleForFree": true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Cuando el que hace daño es tu hijo", "item": "https://psicolinks.com/mi-hijo-hace-bullying.html"}]}</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
   window.dataLayer = window.dataLayer || [];
@@ -322,8 +270,5 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
-<script src="/buscador-psicolinks.js" defer></script>
-<script src="cookies-psicolinks.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Miedo al dentista: cómo ir sin pasarlo mal", "url": "https://psicolinks.com/miedo-al-dentista.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Fobia"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Pactar una señal para parar, empezar por una cita que no duela y qué pedir en la clínica. Y por qué aplazarlo sale mucho más caro."}</script>
 </body>
 </html>

@@ -1,0 +1,82 @@
+PSICOLINKS · TODO LO QUE HAY QUE SUBIR
+======================================
+(31 de agosto de 2026)
+
+⚠️ LO PRIMERO: ESTE ZIP NO ES UNA COPIA DE SEGURIDAD DE LA WEB
+---------------------------------------------------------------
+Lleva las PÁGINAS (guías, herramientas, tests, laboratorio, sesgos), que es
+lo que vive en GitHub. NO lleva:
+   · los artículos que publica el bot cada día
+   · los suscriptores
+   · las consultas del consultorio
+   · las estadísticas de visitas
+Todo eso vive solo en el almacén de Netlify (Blobs). Acuérdate de entrar en
+/admin.html y darle a "Descargar copia de seguridad" una vez por semana.
+
+CÓMO SE SUBE
+------------
+1. Copia el CONTENIDO de esta carpeta encima de tu carpeta del proyecto,
+   respetando la estructura: los .html a la raíz, y las carpetas
+   netlify/functions/, videos/ e ilustraciones/ encima de las que ya tienes.
+   ⚠️ ilustraciones/ es una carpeta NUEVA: hay que subirla entera o las
+   guías saldrán con el hueco de la imagen vacío.
+2. Sube todo a GitHub. Netlify despliega solo.
+
+⚠️ NO BORRES estos tres ficheros, que están en tu repositorio y no en el zip:
+   cookies-psicolinks.js · progreso-psicolinks.js · newsletter-psicolinks.js
+
+LO NUEVO DE ESTA ENTREGA
+------------------------
+LAS GUÍAS, CON DIBUJO
+  Las 232 guías llevan ahora una ilustración de cabecera, justo debajo de la
+  entradilla: lo primero que se ve al abrirlas ya no es un muro de texto.
+  Son catorce escenas, una por tema, dibujadas con el mismo ratón y el mismo
+  fondo que las animaciones de los sesgos, para que todo sea de la misma
+  familia:
+     ansiedad ....... el despertador sonando
+     ánimo .......... la nube de lluvia con el sol detrás
+     pareja ......... dos bocadillos de diálogo
+     autoestima ..... el espejo de mano
+     sueño .......... la cama y la luna
+     trabajo ........ el escritorio y la taza
+     familia ........ la casa
+     miedos ......... la escalera que sube
+     concentración .. el reloj con el tramo marcado
+     calma .......... las ondas y la hoja
+     duelo .......... la vela encendida
+     memoria ........ la balanza
+     cuerpo ......... la mancuerna
+     tests .......... el portapapeles con las casillas
+  Cada dibujo va en el color del tema, el mismo que ya teñía el sello y los
+  números de esa guía.
+
+  Detalles que no se ven pero cuentan:
+  · Se guardan al doble de tamaño (1360×460) para que no se vean borrosas en
+    pantallas finas, pero pesan 30 KB cada una: 440 KB las catorce, y el
+    navegador se las guarda un año (regla nueva en netlify.toml).
+  · Van con loading="lazy": no frenan la carga de la página.
+  · Cada una lleva su texto alternativo, para quien navega con lector.
+  · Al imprimir la guía el dibujo sale pequeño, de sello, para no gastar
+    media página de tinta.
+  · La ilustración entra también en la ficha de Google de cada guía (el
+    JSON-LD), que hasta ahora iba sin imagen. Eso ayuda en resultados.
+
+TEMAS.HTML TAMBIÉN
+  Al desplegar un tema en la página de guías sale su ilustración arriba. Como
+  el desplegable está cerrado, la imagen no se descarga hasta que lo abres.
+
+PENDIENTE / PARA LA PRÓXIMA
+---------------------------
+· El registro de pensamientos sigue teniendo siete campos. Lo suyo es
+  partirlo en dos: la captura rápida (situación, pensamiento literal, qué
+  pasó después y la barra) y el trabajo de darle la vuelta, que ya tiene su
+  propia hoja. Dímelo y lo parto.
+· Si me pasas el personaje suelto (PNG o SVG del ratón), le puedo hacer
+  gestos y poses distintas: en la ilustración de sueño bostezando, en la de
+  duelo serio, en la de trabajo con el café. Ahora sale el mismo en las
+  catorce.
+· buscador.json va con las 401 páginas. Hay que regenerarlo cada vez que se
+  añadan páginas fijas (las imágenes no cuentan).
+· guia-calma-en-5-minutos.html y guia-dormir-mejor-en-7-pasos.html siguen
+  ahí, redirigidas, y apuntan a unos PDF de /descargas/ que no existen.
+  Dímelo y las quito.

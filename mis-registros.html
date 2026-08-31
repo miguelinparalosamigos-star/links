@@ -58,18 +58,6 @@
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
   .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
 
   .vacio{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.6rem 1.5rem; margin:1.6rem 0 0; text-align:center; }
   .vacio p{ margin:0 0 1rem; font-size:1rem; line-height:1.7; color:var(--ink-soft); }
@@ -103,12 +91,105 @@
     main{ max-width:100%; }
     .anot{ break-inside:avoid; border-color:#bbb; }
   }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .mr-mas{ display:inline-block; margin:0.2rem 0 0; font:inherit; font-size:0.9rem; font-weight:600;
+           background:var(--surface); color:var(--accent); border:1.5px solid var(--border);
+           border-radius:9px; padding:0.5rem 1rem; cursor:pointer; }
+  .mr-mas:hover{ border-color:var(--accent); }
+  .paginacion{ display:flex; justify-content:center; align-items:center; gap:0.9rem; margin-top:1rem; flex-wrap:wrap; }
+  .paginacion button{ padding:0.55rem 1rem; border:1px solid var(--border); background:var(--surface);
+                      color:var(--accent); border-radius:9px; font-weight:600; font-size:0.9rem;
+                      cursor:pointer; font-family:inherit; }
+  .paginacion button:hover:not(:disabled){ border-color:var(--accent); }
+  .paginacion button:disabled{ opacity:0.4; cursor:default; }
+  .paginacion .pag-info{ font-size:0.85rem; color:var(--ink-soft); }
+  @media print{ .mr-mas, .paginacion{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
 </header>
 
 <main>
@@ -145,36 +226,19 @@
   No hay cuenta, no hay correo y no se envía nada a ningún servidor: lo que ves aquí lo guarda tu
   propio dispositivo. Eso también significa que si borras los datos de navegación o cambias de móvil,
   se pierde — cópialo de vez en cuando si llevas semanas apuntando.</div>
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si esto pide algo más que una hoja?</h3>
+    <p>Un registro enseña el patrón; lo que se hace con el patrón ya es el trabajo de terapia. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia. Escríbeme y te cuento cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+    <p class="consulta-nota">Lo que apuntas aquí no lo ve nadie más que tú: se queda en tu dispositivo. Si algún día quieres enseñármelo, me lo traes tú.</p>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/para-psicologos.html">¿Eres psicólogo?</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
@@ -187,7 +251,7 @@
    formato que usa la propia herramienta, para que la hoja siga funcionando
    igual cuando se abra.                                                    */
 (function(){
-  var HERR = [{"k": "pl_rapido", "n": "Registro rápido", "i": "⚡", "u": "registro-rapido", "c": [["q", "Qué pasó"], ["p", "Qué pensé"], ["d", "Qué hice después"], ["m", "Malestar (0-10)"], ["h", "Hora"]]}, {"k": "pl_registro_abc", "n": "Registro A-B-C", "i": "🗒️", "u": "registro-abc", "c": [["fecha", "Fecha"], ["a", "A · qué pasó antes"], ["b", "B · qué hiciste"], ["c", "C · qué pasó después"], ["m", "Malestar (0-10)"]]}, {"k": "pl_jerarquia", "n": "Jerarquía de exposición", "i": "🪜", "u": "jerarquia-de-exposicion", "c": []}, {"k": "pl_plan_recaidas", "n": "Plan de prevención de recaídas", "i": "🧭", "u": "plan-de-prevencion-de-recaidas", "c": [], "unico": true}, {"k": "pl_obsesiones", "n": "Obsesiones y compulsiones", "i": "🔁", "u": "registro-de-obsesiones", "c": [["disparo", "¿Qué lo disparó?"], ["obsesion", "La obsesión, en pocas palabras"], ["ansiedad_inicio", "Ansiedad al aparecer"], ["hizo", "¿Hiciste la compulsión?"], ["demora", "Si la retrasaste, ¿cuánto?"], ["compulsion", "¿Qué hiciste exactamente?"], ["ansiedad_final", "Ansiedad al cabo de un rato"], ["paso", "¿Qué pasó de verdad?"]]}, {"k": "pl_vuelta", "n": "Darle la vuelta a un pensamiento", "i": "🔄", "u": "darle-la-vuelta-a-un-pensamiento", "c": [["situacion", "Paso 0 · ¿Qué pasó?"], ["pensamiento", "Paso 0 · ¿Qué pensaste, con tus palabras?"], ["creo_antes", "¿Cuánto te lo crees ahora?"], ["malestar_antes", "¿Cuánto malestar te da ahora?"], ["hecho", "Paso 1 · Baja de la etiqueta al hecho"], ["paraque", "Paso 2 · ¿Para qué te sirve pensar eso?"], ["afavor", "Paso 3 · ¿Qué lo apoya? Hechos, no impresiones"], ["encontra", "Paso 3 · ¿Qué lo contradice? ¿Ha habido alguna vez que no?"], ["doble", "Paso 3 · La prueba del doble rasero"], ["deberia", "Paso 4 · ¿Hay un «debería» debajo?"], ["otra", "Paso 5 · Otra lectura que encaje IGUAL de bien con los hechos"], ["distinto", "Paso 5 · ¿Qué harías distinto la próxima vez?"], ["creo_despues", "Y ahora, ¿cuánto te crees el pensamiento de arriba?"], ["malestar_despues", "Y ahora, ¿cuánto malestar te da?"]]}, {"k": "pl_problemas", "n": "Resolver un problema", "i": "🧩", "u": "resolver-un-problema", "c": [["problema", "¿Cuál es el problema?"], ["meta", "¿Qué querrías que pasara?"], ["cuanto", "¿Cuánto te está afectando?"], ["opciones", "Todas las salidas que se te ocurran"], ["pesar", "De las que te convencen, qué tienen a favor y en contra"], ["elegida", "¿Cuál vas a probar?"], ["primer_paso", "¿Cuál es el primer paso, y cuándo?"], ["reviso", "¿Cuándo lo vuelves a mirar?"], ["resultado", "Al volver a mirarlo: ¿qué pasó?"]]}, {"k": "pl_exposicion", "n": "Registro de exposición", "i": "🪜", "u": "registro-de-exposicion", "c": [["que", "¿Qué has hecho?"], ["antes", "Ansiedad justo antes"], ["pico", "Lo más alto que llegó"], ["final", "Ansiedad al terminar"], ["minutos", "¿Cuánto aguantaste?"], ["salida", "¿Cómo terminó?"], ["trucos", "¿Hiciste algo para que fuera más llevadero?"]]}, {"k": "pl_actividades", "n": "Actividades y ánimo", "i": "📅", "u": "registro-de-actividades", "c": [["que", "¿Qué has hecho?"], ["tipo", "¿De qué tipo?"], ["antes", "Ánimo justo antes"], ["despues", "Ánimo justo después"], ["esperaba", "¿Fue como esperabas?"], ["nota", "¿Algo que quieras recordar?"]]}, {"k": "pl_sueno", "n": "Diario de sueño", "i": "😴", "u": "diario-de-sueno", "c": [["acostar", "¿A qué hora te acostaste?"], ["tardar", "¿Cuánto tardaste en dormirte?"], ["despertares", "¿Cuántas veces te despertaste?"], ["desvelado", "En total, ¿cuánto estuviste despierto de noche?"], ["levantar", "¿A qué hora te levantaste de la cama?"], ["calidad", "¿Cómo has amanecido?"], ["nota", "Algo del día anterior que pueda tener que ver"]]}, {"k": "pl_pensamientos", "n": "Registro de pensamientos", "i": "💭", "u": "registro-de-pensamientos", "c": [["situacion", "¿Qué estaba pasando?"], ["pensamiento", "¿Qué te pasó por la cabeza?"], ["emocion", "¿Qué sentiste?"], ["intensidad", "¿Cuánto?"], ["pruebas", "¿Qué dice a favor y qué dice en contra?"], ["otra", "¿Qué otra lectura cabe, que también encaje?"], ["despues", "¿Cuánto sientes eso ahora?"]]}, {"k": "pl_sesiones", "n": "Antes y después de la sesión", "i": "🗓️", "u": "antes-de-la-sesion", "c": [["con_quien", "¿Con quién?"], ["hablar", "Lo que quiero contar hoy"], ["semana", "¿Cómo ha ido la semana?"], ["llevo", "Lo que me llevo de la sesión"], ["probar", "Lo que voy a probar hasta la próxima"], ["hecho", "¿Hiciste lo de la vez anterior?"]]}, {"k": "pl_termometro", "n": "Termómetro del día", "i": "🌡️", "u": "termometro-del-dia", "c": [["animo", "¿Cómo ha ido el día?"], ["sueno", "¿Y esta noche?"], ["una", "Una cosa del día, si quieres"]]}, {"k": "pl_gratitud", "n": "Diario de gratitud", "i": "🌱", "u": "diario-de-gratitud", "c": [["una", "Una"], ["dos", "Dos"], ["tres", "Tres"], ["quien", "¿Alguien tuvo algo que ver?"]]}, {"k": "pl_meditacion", "n": "Registro de meditación", "i": "🧘", "u": "registro-de-meditacion", "c": [["minutos", "¿Cuántos minutos?"], ["tipo", "¿De qué tipo?"], ["inquieta", "¿Cómo andaba la cabeza?"], ["nota", "Algo que quieras recordar"]]}, {"k": "pl_cartas", "n": "Carta que no vas a enviar", "i": "✉️", "u": "carta-que-no-vas-a-enviar", "c": [["para", "¿A quién le escribes?"], ["sobre", "¿Qué es lo que quedó pendiente?"], ["carta", "Escribe"], ["antes", "¿Cómo estabas antes de escribir?"], ["despues", "¿Y ahora?"]]}, {"k": "pl_preocupacion", "n": "Tiempo de preocupación", "i": "⏳", "u": "tiempo-de-preocupacion", "c": [["que", "¿Qué te ha venido a la cabeza?"], ["tipo", "¿Puedes hacer algo con esto?"], ["cita", "¿A qué hora la miras?"], ["antes", "Cuánto te agobia AHORA"], ["despues", "Cuánto te agobia EN LA CITA"], ["paso", "Si se podía hacer algo, ¿qué es y cuándo?"]]}, {"k": "pl_experimentos", "n": "Experimento conductual", "i": "🔬", "u": "experimento-conductual", "c": [["prediccion", "¿Qué crees que va a pasar?"], ["antes", "¿Cuánto te lo crees ANTES?"], ["prueba", "¿Qué vas a hacer para comprobarlo?"], ["paso", "¿Qué pasó de verdad?"], ["despues", "¿Cuánto te lo crees DESPUÉS?"], ["aprendido", "¿Qué te llevas?"]]}, {"k": "pl_flecha", "n": "Flecha descendente", "i": "⬇️", "u": "flecha-descendente", "c": [["arriba", "El pensamiento de arriba"], ["paso1", "Y si fuera verdad, ¿qué significaría?"], ["paso2", "¿Y eso qué querría decir?"], ["paso3", "¿Y eso?"], ["fondo", "Lo que queda al final del todo"], ["creencia", "¿Cuánto te crees esa última?"]]}, {"k": "pl_tarjetas", "n": "Tarjeta de afrontamiento", "i": "🃏", "u": "tarjeta-de-afrontamiento", "c": [["cuando", "¿Para qué momento es esta tarjeta?"], ["digo", "Lo que me voy a decir"], ["hago", "Lo que voy a hacer, por orden"], ["prueba", "La prueba de que esto ya lo he pasado"], ["llamo", "A quién puedo llamar"]]}, {"k": "pl_balanza", "n": "La balanza", "i": "⚖️", "u": "la-balanza", "c": [["decision", "¿Qué te estás pensando?"], ["gano_igual", "Qué gano SI SIGO IGUAL"], ["pierdo_igual", "Qué me cuesta SI SIGO IGUAL"], ["gano_cambio", "Qué gano SI CAMBIO"], ["pierdo_cambio", "Qué me cuesta SI CAMBIO"], ["importancia", "¿Cuánto te importa cambiarlo?"], ["confianza", "¿Cuánto confías en poder?"]]}, {"k": "pl_crisis", "n": "Registro de crisis", "i": "⚡", "u": "registro-de-crisis", "c": [["donde", "¿Dónde estabas y con quién?"], ["minutos", "¿Cuánto duró lo peor?"], ["pico", "¿Cuánto llegó a subir?"], ["cuerpo", "¿Qué notaste en el cuerpo?"], ["temi", "¿Qué creíste que iba a pasar?"], ["paso", "¿Qué pasó de verdad?"], ["hice", "¿Qué hiciste?"]]}, {"k": "pl_cuenta", "n": "Cuántas veces al día", "i": "🔢", "u": "cuantas-veces-al-dia", "c": [["que", "¿Qué estás contando?"], ["veces", "¿Cuántas veces hoy?"], ["cuando", "¿Cuándo más?"], ["ganas", "¿Cuántas ganas has tenido?"], ["nota", "¿Algo que quieras recordar?"]]}, {"k": "pl_objetivos", "n": "Mis objetivos de terapia", "i": "🎯", "u": "mis-objetivos-de-terapia", "c": [["objetivo", "¿Qué quieres que cambie?"], ["notaria", "¿En qué se notaría que va bien?"], ["hoy", "¿Dónde estás hoy con esto?"], ["meta", "¿Con cuánto te darías por satisfecho?"], ["estorba", "¿Qué se ha interpuesto hasta ahora?"], ["primer", "¿Cuál sería el primer paso pequeño?"]]}, {"k": "pl_conversaciones", "n": "Preparar una conversación", "i": "🗣️", "u": "preparar-una-conversacion", "c": [["con_quien", "¿Con quién y sobre qué?"], ["quiero", "¿Qué quieres conseguir de verdad?"], ["primera", "Tu primera frase, literal"], ["no_hoy", "¿Qué NO vas a discutir hoy?"], ["si_defensiva", "¿Qué haces si se pone a la defensiva?"], ["si_no", "¿Y si te dice que no?"], ["antes", "¿Cuánto miedo le tienes AHORA?"], ["despues", "¿Y DESPUÉS de tenerla?"]]}, {"k": "pl_brujula", "n": "La brújula", "i": "🧭", "u": "la-brujula", "c": [["area", "¿De qué área hablamos?"], ["importa", "¿Qué te importa de esa área, en concreto?"], ["cuanto", "¿Cuánto te importa?"], ["vives", "¿Cuánto lo estás viviendo estas semanas?"], ["estorba", "¿Qué se está comiendo ese hueco?"], ["paso", "Una cosa pequeña esta semana"]]}];
+  var HERR = [{"k": "pl_rapido", "n": "Registro rápido", "i": "⚡", "u": "registro-rapido", "c": [["q", "Qué pasó"], ["p", "Qué pensé"], ["d", "Qué hice después"], ["m", "Malestar (0-10)"], ["h", "Hora"]]}, {"k": "pl_registro_abc", "n": "Registro A-B-C", "i": "🗒️", "u": "registro-abc", "c": [["fecha", "Fecha"], ["a", "A · qué pasó antes"], ["b", "B · qué hiciste"], ["c", "C · qué pasó después"], ["m", "Malestar (0-10)"]]}, {"k": "pl_jerarquia", "n": "Jerarquía de exposición", "i": "🪜", "u": "jerarquia-de-exposicion", "c": []}, {"k": "pl_plan_recaidas", "n": "Plan de prevención de recaídas", "i": "🧭", "u": "plan-de-prevencion-de-recaidas", "c": [], "unico": true}, {"k": "pl_obsesiones", "n": "Obsesiones y compulsiones", "i": "🔁", "u": "registro-de-obsesiones", "c": [["disparo", "¿Qué lo disparó?"], ["obsesion", "La obsesión, en pocas palabras"], ["ansiedad_inicio", "Ansiedad al aparecer"], ["hizo", "¿Hiciste la compulsión?"], ["demora", "Si la retrasaste, ¿cuánto?"], ["compulsion", "¿Qué hiciste exactamente?"], ["ansiedad_final", "Ansiedad al cabo de un rato"], ["paso", "¿Qué pasó de verdad?"]]}, {"k": "pl_vuelta", "n": "Darle la vuelta a un pensamiento", "i": "🔄", "u": "darle-la-vuelta-a-un-pensamiento", "c": [["situacion", "Paso 0 · ¿Qué pasó?"], ["pensamiento", "Paso 0 · ¿Qué pensaste, con tus palabras?"], ["creo_antes", "¿Cuánto te lo crees ahora?"], ["malestar_antes", "¿Cuánto malestar te da ahora?"], ["hecho", "Paso 1 · Baja de la etiqueta al hecho"], ["paraque", "Paso 2 · ¿Para qué te sirve pensar eso?"], ["afavor", "Paso 3 · ¿Qué lo apoya? Hechos, no impresiones"], ["encontra", "Paso 3 · ¿Qué lo contradice? ¿Ha habido alguna vez que no?"], ["doble", "Paso 3 · La prueba del doble rasero"], ["deberia", "Paso 4 · ¿Hay un «debería» debajo?"], ["otra", "Paso 5 · Otra lectura que encaje IGUAL de bien con los hechos"], ["distinto", "Paso 5 · ¿Qué harías distinto la próxima vez?"], ["creo_despues", "Y ahora, ¿cuánto te crees el pensamiento de arriba?"], ["malestar_despues", "Y ahora, ¿cuánto malestar te da?"]]}, {"k": "pl_problemas", "n": "Resolver un problema", "i": "🧩", "u": "resolver-un-problema", "c": [["problema", "¿Cuál es el problema?"], ["meta", "¿Qué querrías que pasara?"], ["cuanto", "¿Cuánto te está afectando?"], ["opciones", "Todas las salidas que se te ocurran"], ["pesar", "De las que te convencen, qué tienen a favor y en contra"], ["elegida", "¿Cuál vas a probar?"], ["primer_paso", "¿Cuál es el primer paso, y cuándo?"], ["reviso", "¿Cuándo lo vuelves a mirar?"], ["resultado", "Al volver a mirarlo: ¿qué pasó?"]]}, {"k": "pl_exposicion", "n": "Registro de exposición", "i": "🪜", "u": "registro-de-exposicion", "c": [["que", "¿Qué has hecho?"], ["antes", "Ansiedad justo antes"], ["pico", "Lo más alto que llegó"], ["final", "Ansiedad al terminar"], ["minutos", "¿Cuánto aguantaste?"], ["salida", "¿Cómo terminó?"], ["trucos", "¿Hiciste algo para que fuera más llevadero?"]]}, {"k": "pl_actividades", "n": "Actividades y ánimo", "i": "📅", "u": "registro-de-actividades", "c": [["que", "¿Qué has hecho?"], ["tipo", "¿De qué tipo?"], ["antes", "Ánimo justo antes"], ["despues", "Ánimo justo después"], ["esperaba", "¿Fue como esperabas?"], ["nota", "¿Algo que quieras recordar?"]]}, {"k": "pl_sueno", "n": "Diario de sueño", "i": "😴", "u": "diario-de-sueno", "c": [["acostar", "¿A qué hora te acostaste?"], ["tardar", "¿Cuánto tardaste en dormirte?"], ["despertares", "¿Cuántas veces te despertaste?"], ["desvelado", "En total, ¿cuánto estuviste despierto de noche?"], ["levantar", "¿A qué hora te levantaste de la cama?"], ["calidad", "¿Cómo has amanecido?"], ["nota", "Algo del día anterior que pueda tener que ver"]]}, {"k": "pl_pensamientos", "n": "Registro de pensamientos", "i": "💭", "u": "registro-de-pensamientos", "c": [["situacion", "¿Qué estaba pasando?"], ["pensamiento", "¿Qué te pasó por la cabeza?"], ["emocion", "¿Qué sentiste?"], ["intensidad", "¿Cuánto?"], ["pruebas", "¿Qué dice a favor y qué dice en contra?"], ["otra", "¿Qué otra lectura cabe, que también encaje?"], ["despues", "¿Cuánto sientes eso ahora?"]]}, {"k": "pl_sesiones", "n": "Antes y después de la sesión", "i": "🗓️", "u": "antes-de-la-sesion", "c": [["con_quien", "¿Con quién?"], ["hablar", "Lo que quiero contar hoy"], ["semana", "¿Cómo ha ido la semana?"], ["llevo", "Lo que me llevo de la sesión"], ["probar", "Lo que voy a probar hasta la próxima"], ["hecho", "¿Hiciste lo de la vez anterior?"]]}, {"k": "pl_termometro", "n": "Termómetro del día", "i": "🌡️", "u": "termometro-del-dia", "c": [["animo", "¿Cómo ha ido el día?"], ["sueno", "¿Y esta noche?"], ["una", "Una cosa del día, si quieres"]]}, {"k": "pl_gratitud", "n": "Diario de gratitud", "i": "🌱", "u": "diario-de-gratitud", "c": [["una", "Una"], ["dos", "Dos"], ["tres", "Tres"], ["quien", "¿Alguien tuvo algo que ver?"]]}, {"k": "pl_meditacion", "n": "Registro de meditación", "i": "🧘", "u": "registro-de-meditacion", "c": [["minutos", "¿Cuántos minutos?"], ["tipo", "¿De qué tipo?"], ["inquieta", "¿Cómo andaba la cabeza?"], ["nota", "Algo que quieras recordar"]]}, {"k": "pl_cartas", "n": "Carta que no vas a enviar", "i": "✉️", "u": "carta-que-no-vas-a-enviar", "c": [["para", "¿A quién le escribes?"], ["sobre", "¿Qué es lo que quedó pendiente?"], ["carta", "Escribe"], ["antes", "¿Cómo estabas antes de escribir?"], ["despues", "¿Y ahora?"]]}, {"k": "pl_preocupacion", "n": "Tiempo de preocupación", "i": "⏳", "u": "tiempo-de-preocupacion", "c": [["que", "¿Qué te ha venido a la cabeza?"], ["tipo", "¿Puedes hacer algo con esto?"], ["cita", "¿A qué hora la miras?"], ["antes", "Cuánto te agobia AHORA"], ["despues", "Cuánto te agobia EN LA CITA"], ["paso", "Si se podía hacer algo, ¿qué es y cuándo?"]]}, {"k": "pl_experimentos", "n": "Experimento conductual", "i": "🔬", "u": "experimento-conductual", "c": [["prediccion", "¿Qué crees que va a pasar?"], ["antes", "¿Cuánto te lo crees ANTES?"], ["prueba", "¿Qué vas a hacer para comprobarlo?"], ["paso", "¿Qué pasó de verdad?"], ["despues", "¿Cuánto te lo crees DESPUÉS?"], ["aprendido", "¿Qué te llevas?"]]}, {"k": "pl_flecha", "n": "Flecha descendente", "i": "⬇️", "u": "flecha-descendente", "c": [["arriba", "El pensamiento de arriba"], ["paso1", "Y si fuera verdad, ¿qué significaría?"], ["paso2", "¿Y eso qué querría decir?"], ["paso3", "¿Y eso?"], ["fondo", "Lo que queda al final del todo"], ["creencia", "¿Cuánto te crees esa última?"]]}, {"k": "pl_tarjetas", "n": "Tarjeta de afrontamiento", "i": "🃏", "u": "tarjeta-de-afrontamiento", "c": [["cuando", "¿Para qué momento es esta tarjeta?"], ["digo", "Lo que me voy a decir"], ["hago", "Lo que voy a hacer, por orden"], ["prueba", "La prueba de que esto ya lo he pasado"], ["llamo", "A quién puedo llamar"]]}, {"k": "pl_balanza", "n": "La balanza", "i": "⚖️", "u": "la-balanza", "c": [["decision", "¿Qué te estás pensando?"], ["gano_igual", "Qué gano SI SIGO IGUAL"], ["pierdo_igual", "Qué me cuesta SI SIGO IGUAL"], ["gano_cambio", "Qué gano SI CAMBIO"], ["pierdo_cambio", "Qué me cuesta SI CAMBIO"], ["importancia", "¿Cuánto te importa cambiarlo?"], ["confianza", "¿Cuánto confías en poder?"]]}, {"k": "pl_crisis", "n": "Registro de crisis", "i": "⚡", "u": "registro-de-crisis", "c": [["donde", "¿Dónde estabas y con quién?"], ["minutos", "¿Cuánto duró lo peor?"], ["pico", "¿Cuánto llegó a subir?"], ["cuerpo", "¿Qué notaste en el cuerpo?"], ["temi", "¿Qué creíste que iba a pasar?"], ["paso", "¿Qué pasó de verdad?"], ["hice", "¿Qué hiciste?"]]}, {"k": "pl_cuenta", "n": "Cuántas veces al día", "i": "🔢", "u": "cuantas-veces-al-dia", "c": [["que", "¿Qué estás contando?"], ["veces", "¿Cuántas veces hoy?"], ["cuando", "¿Cuándo más?"], ["ganas", "¿Cuántas ganas has tenido?"], ["nota", "¿Algo que quieras recordar?"]]}, {"k": "pl_objetivos", "n": "Mis objetivos de terapia", "i": "🎯", "u": "mis-objetivos-de-terapia", "c": [["objetivo", "¿Qué quieres que cambie?"], ["notaria", "¿En qué se notaría que va bien?"], ["hoy", "¿Dónde estás hoy con esto?"], ["meta", "¿Con cuánto te darías por satisfecho?"], ["estorba", "¿Qué se ha interpuesto hasta ahora?"], ["primer", "¿Cuál sería el primer paso pequeño?"]]}, {"k": "pl_conversaciones", "n": "Preparar una conversación", "i": "🗣️", "u": "preparar-una-conversacion", "c": [["con_quien", "¿Con quién y sobre qué?"], ["quiero", "¿Qué quieres conseguir de verdad?"], ["primera", "Tu primera frase, literal"], ["no_hoy", "¿Qué NO vas a discutir hoy?"], ["si_defensiva", "¿Qué haces si se pone a la defensiva?"], ["si_no", "¿Y si te dice que no?"], ["antes", "¿Cuánto miedo le tienes AHORA?"], ["despues", "¿Y DESPUÉS de tenerla?"]]}, {"k": "pl_brujula", "n": "La brújula", "i": "🧭", "u": "la-brujula", "c": [["area", "¿De qué área hablamos?"], ["importa", "¿Qué te importa de esa área, en concreto?"], ["cuanto", "¿Cuánto te importa?"], ["vives", "¿Cuánto lo estás viviendo estas semanas?"], ["estorba", "¿Qué se está comiendo ese hueco?"], ["paso", "Una cosa pequeña esta semana"]]}, {"k": "pl_dolor", "n": "Diario de dolor", "i": "🩹", "u": "registro-de-dolor", "c": [["dolor", "¿Cuánto duele ahora?"], ["donde", "¿Dónde?"], ["hacia", "¿Qué estabas haciendo?"], ["hice", "¿Qué has hecho para el dolor?"], ["despues", "¿Y cómo ha quedado un rato después?"], ["nota", "Algo que quieras recordar"]]}, {"k": "pl_discusiones", "n": "Registro de discusiones", "i": "💬", "u": "registro-de-discusiones", "c": [["quien", "¿Con quién?"], ["tema", "¿De qué, en dos palabras?"], ["chispa", "¿Qué la encendió?"], ["hice", "¿Qué hiciste tú?"], ["final", "¿Cómo acabó?"], ["intensidad", "¿Cuánto subió?"]]}];
 
   function leer(k){ try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch(e){ return null; } }
   function guardar(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
@@ -209,6 +273,37 @@
     return out;
   }
 
+  // Cuántas anotaciones se ven de golpe cuando el bloque está abierto.
+  var POR_PAGINA = 6;
+  // Qué bloques están abiertos y por qué página van. Se guarda aquí y no en el
+  // navegador: al recargar se vuelve a la vista corta, que es la útil.
+  var estado = {};
+
+  function est(k){
+    if (!estado[k]) estado[k] = { abierto: false, pagina: 1 };
+    return estado[k];
+  }
+
+  function filaHTML(d, e, indiceReal){
+    var campos = (d.h.c || []).map(function(c){
+      var v = e[c[0]];
+      if (v === undefined || v === null || String(v).trim() === '') return '';
+      return '<dt>' + esc(c[1]) + '</dt><dd>' + esc(v) + '</dd>';
+    }).join('');
+    if (!campos) {
+      campos = Object.keys(e).filter(function(k){ return k !== 'f' && k !== 'ts' && k !== 'fecha'; })
+        .map(function(k){
+          var v = e[k];
+          if (v === null || v === undefined || String(v).trim() === '') return '';
+          return '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>';
+        }).join('');
+    }
+    return '<div class="anot"><span class="f">' + esc(fecha(e) || 'sin fecha') + '</span>'
+         + '<dl>' + campos + '</dl>'
+         + '<button type="button" class="quitar" data-k="' + esc(d.h.k) + '" data-i="' + indiceReal + '"'
+         + (d.h.unico ? ' data-unico="1"' : '') + '>Borrar esta</button></div>';
+  }
+
   function pintar(){
     var datos = conDatos();
     var caja = document.getElementById('todo');
@@ -227,32 +322,58 @@
     caja.innerHTML = datos.map(function(d){
       var n = d.es.length;
       var cuantas = n + (n === 1 ? ' anotación' : ' anotaciones');
-      var filas = d.es.map(function(e, i){
-        var campos = (d.h.c || []).map(function(c){
-          var v = e[c[0]];
-          if (v === undefined || v === null || String(v).trim() === '') return '';
-          return '<dt>' + esc(c[1]) + '</dt><dd>' + esc(v) + '</dd>';
-        }).join('');
-        if (!campos) {
-          campos = Object.keys(e).filter(function(k){ return k !== 'f' && k !== 'ts' && k !== 'fecha'; })
-            .map(function(k){
-              var v = e[k];
-              if (v === null || v === undefined || String(v).trim() === '') return '';
-              return '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>';
-            }).join('');
-        }
-        return '<div class="anot"><span class="f">' + esc(fecha(e) || 'sin fecha') + '</span>'
-             + '<dl>' + campos + '</dl>'
-             + '<button type="button" class="quitar" data-k="' + esc(d.h.k) + '" data-i="' + i + '"'
-             + (d.h.unico ? ' data-unico="1"' : '') + '>Borrar esta</button></div>';
+      var e = est(d.h.k);
+      var paginas = Math.max(1, Math.ceil(n / POR_PAGINA));
+      if (e.pagina > paginas) e.pagina = paginas;
+
+      // Cerrado: solo la última. Abierto: de seis en seis.
+      var desde = e.abierto ? (e.pagina - 1) * POR_PAGINA : 0;
+      var hasta = e.abierto ? desde + POR_PAGINA : 1;
+      var filas = d.es.slice(desde, hasta).map(function(x, j){
+        return filaHTML(d, x, desde + j);
       }).join('');
-      return '<section class="bloque-mr"><h2>' + d.h.i + ' ' + esc(d.h.n) + '</h2>'
+
+      var pie = '';
+      if (!e.abierto && n > 1) {
+        pie = '<button type="button" class="mr-mas" data-ver="' + esc(d.h.k) + '">Ver las ' + n + ' →</button>';
+      } else if (e.abierto) {
+        if (paginas > 1) {
+          pie = '<div class="paginacion">'
+              + '<button type="button" data-pag="' + esc(d.h.k) + '" data-dir="-1"' + (e.pagina === 1 ? ' disabled' : '') + '>← Más recientes</button>'
+              + '<span class="pag-info">Página ' + e.pagina + ' de ' + paginas + '</span>'
+              + '<button type="button" data-pag="' + esc(d.h.k) + '" data-dir="1"' + (e.pagina === paginas ? ' disabled' : '') + '>Más antiguas →</button>'
+              + '</div>';
+        }
+        pie += '<button type="button" class="mr-mas" data-ver="' + esc(d.h.k) + '" style="margin-top:0.8rem;">Ver solo la última</button>';
+      }
+
+      return '<section class="bloque-mr" id="mr-' + esc(d.h.k) + '"><h2>' + d.h.i + ' ' + esc(d.h.n) + '</h2>'
            + '<p class="cuantas">' + cuantas + ' · <a href="/' + d.h.u + '.html">abrir la hoja →</a></p>'
-           + filas + '</section>';
+           + filas + pie + '</section>';
     }).join('');
   }
 
   document.getElementById('todo').addEventListener('click', function(ev){
+    var ver = ev.target.closest('[data-ver]');
+    if (ver) {
+      var e1 = est(ver.dataset.ver);
+      e1.abierto = !e1.abierto;
+      e1.pagina = 1;
+      pintar();
+      var s = document.getElementById('mr-' + ver.dataset.ver);
+      if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    var pg = ev.target.closest('[data-pag]');
+    if (pg) {
+      var e2 = est(pg.dataset.pag);
+      e2.pagina += (+pg.dataset.dir);
+      if (e2.pagina < 1) e2.pagina = 1;
+      pintar();
+      var s2 = document.getElementById('mr-' + pg.dataset.pag);
+      if (s2) s2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
     var b = ev.target.closest('.quitar');
     if (!b) return;
     // Doble pulsacion: borrar tres semanas de registro sin confirmar es una
@@ -343,10 +464,11 @@ function enviarRegistro(t, b){
 })();
 </script>
 
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [, {"k": "pl_enfados", "n": "Registro de enfados", "i": "🔥", "u": "registro-de-enfados", "c": [["detonante", "¿Qué lo encendió?"], ["pico", "¿Cuánto llegó a subir?"], ["cuerpo", "¿Dónde lo notaste?"], ["pense", "¿Qué te dijiste por dentro?"], ["hice", "¿Qué hiciste?"], ["despues", "¿Y cómo acabó?"]]}, {"k": "pl_consumo", "n": "Registro de consumo", "i": "🍷", "u": "registro-de-consumo", "c": [["que", "¿Qué?"], ["cantidad", "¿Cuánto?"], ["donde", "¿Dónde y con quién?"], ["ganas", "¿Cuántas ganas tenías antes?"], ["despues", "¿Cómo estabas después?"]]}, {"k": "pl_habitos", "n": "Rastreador de hábitos", "i": "🔁", "u": "rastreador-de-habitos", "c": [["habito", "¿Qué hábito?"], ["hecho", "¿Lo has hecho hoy?"], ["senal", "¿Qué había justo antes?"], ["coste", "¿Cuánto te ha costado?"], ["saque", "¿Qué has sacado?"], ["nota", "Algo que quieras recordar"]]}];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');

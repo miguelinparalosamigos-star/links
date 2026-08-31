@@ -98,34 +98,135 @@
   .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
   .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
   @media print{ .cc-banda{ display:none; } }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+
+  /* El color de este tema: Ansiedad. */
+  :root{ --accent:#1F6F6B; --accent-soft:#E4F0EE; --stamp:#1F6F6B; }
+  .idea{ background:#E4F0EE !important; border-color:#e6ded2 !important;
+         border-left-color:#1F6F6B !important; }
+  .hazlo{ background:#E4F0EE !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#1F6F6B; border-color:#1F6F6B; color:#fff; }
+  .tool-kicker .num{ background:#1F6F6B; }
+  .cierre{ border-left:4px solid #1F6F6B; }
+  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
+              border:1px solid var(--border); border-radius:14px;
+              background:var(--surface); }
+  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
+  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
+  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
 <script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Pensamientos que no quieres tener","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/pensamientos-que-no-quieres-tener.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
+{ "@context":"https://schema.org","@type":"Article","headline":"Pensamientos que no quieres tener","image":"https://psicolinks.com/ilustraciones/ansiedad.jpg","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/pensamientos-que-no-quieres-tener.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Pensamientos que no quieres tener", "item": "https://psicolinks.com/pensamientos-que-no-quieres-tener.html"}]}
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">📎 Guía gratuita · Pensamientos intrusivos</div>
   <h1>Pensamientos que no quieres tener</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis herramientas para llevar mejor esos pensamientos desagradables, absurdos o que te asustan, y que dejen de engancharte. Sencillas, con respaldo, explicadas por un psicólogo.</p>
+  <img class="guia-ilus" src="/ilustraciones/ansiedad.jpg" alt="Ilustración: el ratón de Psicolinks junto a una alarma que suena"
+       width="1360" height="460" loading="lazy" decoding="async">
   <div class="idea"><strong>La idea de fondo.</strong> Todo el mundo tiene pensamientos raros, desagradables o que asustan: imágenes violentas, dudas absurdas, ideas que chocan con lo que uno es. Tener uno no dice nada de ti; son ruido mental normal. El problema aparece cuando te asustas de ese pensamiento, luchas por quitártelo y le das mil vueltas: ahí es cuando se queda pegado. No se trata de no tener nunca esos pensamientos, sino de que dejen de importarte tanto. Estas herramientas van a eso.</div>
 
 
@@ -146,38 +247,50 @@
   </div>
 
   <h2 class="bloque-tit">Seis herramientas</h2>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 1</p>
+  <nav class="ruta" aria-label="Las herramientas de esta guía">
+    <p class="ruta-eti">Las seis, de un vistazo</p>
+    <ol>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Tener un pensamiento no dice nada de ti</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Cuanto más luchas por no pensarlo, más vuelve</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Un pensamiento no es un hecho ni una orden</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">No hagas rituales ni comprobaciones para calmarlo</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Déjalos pasar sin engancharte</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">No decidas quién eres por tu peor pensamiento</span></a></li>
+    </ol>
+  </nav>
+
+<div class="tool" id="h1">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1</p>
   <h3>Tener un pensamiento no dice nada de ti</h3>
   <p>Un pensamiento no es un deseo ni una intención: es ruido mental que le pasa a todo el mundo, incluidas las personas más buenas y equilibradas. Que aparezca algo horrible en tu cabeza no te hace mala persona ni significa que lo vayas a hacer.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> recuérdate que un pensamiento intrusivo es solo eso, un pensamiento suelto, no un plan ni un reflejo de quién eres. Todos los tenemos; la mayoría ni les hace caso.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 2</p>
+<div class="tool" id="h2">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2</p>
   <h3>Cuanto más luchas por no pensarlo, más vuelve</h3>
   <p>La mente hace lo contrario de lo que le ordenas cuando se trata de no pensar en algo. Intenta ahora no pensar en un oso blanco: ahí lo tienes. Pelear por apartar un pensamiento es justo lo que lo mantiene.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> en vez de esforzarte por quitarlo, déjalo estar sin darle importancia. Suena raro, pero rendirte a que aparezca —sin engancharte— es lo que hace que se vaya solo.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 3</p>
+<div class="tool" id="h3">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
   <h3>Un pensamiento no es un hecho ni una orden</h3>
   <p>Que tu mente diga "¿y si...?" o te lance una imagen que te asusta no lo convierte en real, ni en algo que tengas que hacer, ni en una señal de nada. Es una ocurrencia, no la verdad ni un mandato.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> cuando llegue el pensamiento, etiquétalo: "esto es solo un pensamiento". No tienes que responderle, obedecerlo ni comprobar si es cierto. Déjalo pasar.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 4 · La que más cambia las cosas</p>
+<div class="tool" id="h4">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4 · La que más cambia las cosas</p>
   <h3>No hagas rituales ni comprobaciones para calmarlo</h3>
   <p>Comprobar, repetir, evitar, rezar o buscar que te tranquilicen alivia un momento… y agranda el problema, porque le confirma a tu cabeza que el pensamiento era peligroso. Es el motor que lo mantiene girando.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> cuando el pensamiento te empuje a comprobar o a buscar alivio, aguántate las ganas y deja la duda ahí sin "resolverla". Incomoda al principio; después, el pensamiento pierde toda su fuerza.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 5</p>
+<div class="tool" id="h5">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
   <h3>Déjalos pasar sin engancharte</h3>
   <p>Los pensamientos son como coches que pasan por delante: puedes verlos llegar y marcharse sin subirte a ninguno. Cuanto menos reaccionas y menos los persigues, menos vuelven y menos molestan.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> observa el pensamiento sin empujarlo ni perseguirlo, como una nube que cruza el cielo. Sigue con lo que estabas haciendo aunque él siga ahí un rato; se irá difuminando.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 6</p>
+<div class="tool" id="h6">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
   <h3>No decidas quién eres por tu peor pensamiento</h3>
   <p>Tú eres lo que haces y lo que te importa, no la ocurrencia más fea que cruza tu mente. De hecho, que un pensamiento te asuste tanto muestra que va en contra de tus valores, no a favor de ellos.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> cuando un pensamiento te haga dudar de si eres "mala persona", dale la vuelta: si te horroriza, es justo la prueba de que choca con quien eres. No te define.</div>
@@ -187,38 +300,20 @@
 
   <div class="idea"><strong>Pruébalo tú en un minuto.</strong> Esto de que prohibirse un pensamiento lo trae más se puede notar en sesenta segundos: <a href="/experimento-oso-blanco.html">el experimento del oso blanco</a>.</div>
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que cuenta la guía te está pasando de verdad y quieres que alguien mire tu caso, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 
 
 
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -228,6 +323,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Pensamientos que no quieres tener", "url": "https://psicolinks.com/pensamientos-que-no-quieres-tener.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Ansiedad"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Seis herramientas para llevar mejor esos pensamientos desagradables, absurdos o que te asustan, y que dejen de engancharte. Sencillas, con respaldo, explic"}</script>
 </body>

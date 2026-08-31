@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Antes y después de la sesión: qué llevar · Psicolinks</title>
-<meta name="description" content="Lo que quieres contar hoy, lo que te llevas y lo que vas a probar hasta la próxima. Cinco minutos que hacen que la sesión cunda el doble.">
+<title>Agenda semanal de activación: planificar y marcar · Psicolinks</title>
+<meta name="description" content="Planificas la semana por franjas, marcas lo que sale y apuntas cómo te deja. La hoja de activación conductual, sin esperar a tener ganas.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Antes y después de la sesión">
-<meta property="og:description" content="Lo que quieres contar hoy, lo que te llevas y lo que vas a probar hasta la próxima. Cinco minutos que hacen que la sesión cunda el doble.">
-<meta property="og:url" content="https://psicolinks.com/antes-de-la-sesion.html">
+<meta property="og:title" content="Agenda semanal de activación">
+<meta property="og:description" content="Planificas la semana por franjas, marcas lo que sale y apuntas cómo te deja. La hoja de activación conductual, sin esperar a tener ganas.">
+<meta property="og:url" content="https://psicolinks.com/agenda-de-activacion.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/antes-de-la-sesion.html">
+<link rel="canonical" href="https://psicolinks.com/agenda-de-activacion.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,6 +219,49 @@
     .entrada{ break-inside:avoid; border-color:#bbb; }
     main{ max-width:100%; }
   }
+
+  .sem-nav{ display:flex; align-items:center; justify-content:space-between; gap:0.6rem; margin:0 0 1rem; }
+  .sem-nav button{ font:inherit; font-size:0.86rem; background:var(--surface); color:var(--ink);
+                   border:1.5px solid var(--border); border-radius:9px; padding:0.45rem 0.8rem; cursor:pointer; }
+  .sem-nav button:hover{ border-color:var(--accent); color:var(--accent); }
+  .sem-tit{ font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-soft); text-align:center; flex:1; }
+  .sem-tit b{ display:block; font-size:0.92rem; color:var(--ink); }
+  .dia{ background:var(--surface); border:1px solid var(--border); border-radius:12px;
+        padding:0.85rem 1rem 0.95rem; margin:0 0 0.7rem; }
+  .dia.hoy{ border-color:var(--accent); box-shadow:inset 3px 0 0 var(--accent); }
+  .dia h3{ font-family:var(--font-display); font-size:1.05rem; font-weight:600; margin:0 0 0.2rem;
+           display:flex; justify-content:space-between; align-items:baseline; gap:0.6rem; }
+  .dia h3 span{ font-family:var(--font-mono); font-size:0.68rem; font-weight:400; color:var(--ink-soft); }
+  .franja{ border-top:1px solid var(--border); padding:0.6rem 0 0; margin:0.6rem 0 0; }
+  .franja:first-of-type{ border-top:0; padding-top:0.2rem; }
+  .fr-eti{ font-family:var(--font-mono); font-size:0.62rem; font-weight:700; letter-spacing:0.09em;
+           text-transform:uppercase; color:var(--stamp); margin:0 0 0.3rem; }
+  .franja input[type=text]{ width:100%; padding:0.5rem 0.7rem; border:1.5px solid var(--border);
+                            border-radius:8px; font-family:inherit; font-size:0.95rem; color:var(--ink);
+                            background:var(--paper); }
+  .franja input[type=text]:focus{ border-color:var(--accent); outline:none; background:var(--surface); }
+  .fr-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.35rem 0.8rem; margin:0.45rem 0 0; }
+  .fr-ops label{ font-size:0.84rem; color:var(--ink-soft); display:inline-flex; align-items:center; gap:0.3rem; }
+  .fr-ops select{ font:inherit; font-size:0.84rem; padding:0.2rem 0.4rem; border:1.5px solid var(--border);
+                  border-radius:7px; background:var(--surface); color:var(--ink); }
+  .fr-ops input[type=checkbox]{ accent-color:var(--accent); width:1.05rem; height:1.05rem; }
+  .fr-ops .hecho-si{ color:var(--accent); font-weight:600; }
+  .fr-vacia .fr-ops{ display:none; }
+  .ag-datos{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:0 0 1.1rem; }
+  .ag-dato{ flex:1; min-width:130px; background:var(--surface); border:1px solid var(--border);
+            border-radius:11px; padding:0.8rem 1rem; }
+  .ag-dato b{ display:block; font-family:var(--font-mono); font-size:1.5rem; font-weight:700;
+              color:var(--accent); line-height:1.1; }
+  .ag-dato span{ display:block; font-family:var(--font-mono); font-size:0.6rem; font-weight:700;
+                 text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .ag-lectura{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px;
+               padding:1rem 1.2rem; font-size:0.95rem; line-height:1.65; color:#3d3357; margin:0 0 1.2rem; }
+  .ag-lectura strong{ color:var(--accent); }
+  @media print{
+    .sem-nav, .fr-ops select{ display:none !important; }
+    .dia{ break-inside:avoid; }
+    .franja input[type=text]{ border:0; background:none; padding-left:0; }
+  }
   .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
   .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
   .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
@@ -304,75 +347,47 @@
 <main>
   <a href="/herramientas.html" class="back-link">← Volver a herramientas</a>
   <div class="stamp">🗓️ Herramienta gratuita</div>
-  <h1>Antes y después de la sesión</h1>
+  <h1>Agenda semanal de activación</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">Lo que quieres hablar hoy, lo que te llevas y lo que vas a probar hasta la próxima.</p>
+  <p class="lead">Se rellena antes de que empiece la semana, y luego se marca lo que salió y cómo te dejó. En ese orden.</p>
 
-  <div class="idea"><strong>Los diez primeros minutos de una sesión se van casi siempre en lo mismo.</strong> En reconstruir de memoria qué tal ha ido la semana, y la memoria tira de lo de anteayer y se olvida de lo del martes, que a lo mejor era lo importante. Cinco minutos antes de entrar, con esto rellenado, cambian bastante la sesión: se empieza por lo que tú querías y no por lo que te venga a la cabeza al sentarte.<br><br>Y hay una casilla que es la que de verdad marca la diferencia: <strong>lo que vas a probar hasta la próxima</strong>. Es lo que más se olvida al salir —se sale con la cabeza llena y se recuerda a medias—, y es justo la parte donde ocurre el cambio, porque la terapia se hace entre sesiones más que dentro de ellas.</div>
+  <div class="idea"><strong>Primero se hace y luego apetece, no al revés.</strong> Cuando alguien está de bajón, esperar a tener ganas es esperar a algo que no llega: se hace menos, hay menos cosas buenas alrededor, y el ánimo baja otro poco. La forma de salir de esa espiral no es animarse primero; es meter actividad en la agenda y hacerla aunque no apetezca. Esto se llama activación conductual y es de lo poco que en depresión funciona por sí solo.</div>
+
+  <div class="idea"><strong>Que haya de las dos clases.</strong> Las cosas que te <em>gustan</em> (café con alguien, música, andar) suben el ánimo del día; las que te dan <em>sensación de haber podido</em> (una gestión pendiente, la colada, un examen preparado) suben algo distinto y también hace falta. Una semana solo de las primeras se queda corta y una semana solo de las segundas agota. Por eso cada casilla lleva su etiqueta.</div>
+
+  <div class="idea"><strong>Poco y concreto.</strong> «Hacer deporte» no se puede marcar; «andar hasta el parque a las siete» sí. Si al mirar una casilla no sabes exactamente qué hay que hacer y a qué hora, esa casilla está mal puesta. Y planifica por debajo de lo que crees que aguantas: una semana cumplida al 80&nbsp;% enseña mucho más que una preciosa cumplida al 20&nbsp;%.</div>
 
   <div class="idea"><strong>Nada de esto sale de tu navegador.</strong> Lo que escribas se guarda
   <strong>solo en este dispositivo</strong>: no se envía a ningún servidor, no hay cuenta y no hay correo.
   Ni yo ni nadie puede verlo. Lo borras entero cuando quieras, y tienes un botón para copiarlo o
   imprimirlo si quieres llevártelo a tu psicólogo.</div>
 
-  <h2 class="bloque-tit">Añadir una anotación</h2>
-  <form id="reg">
-      <div class="campo">
-        <label for="f-fecha">Fecha</label>
-        <input type="date" id="f-fecha" required>
-      </div>
-      <div class="campo">
-        <label for="f-con_quien">¿Con quién?</label>
-        <span class="ayuda">Opcional. Solo para distinguir si ves a más de un profesional.</span>
-        <input type="text" id="f-con_quien" placeholder="Mi psicóloga" autocomplete="off">
-      </div>
-      <div class="campo">
-        <label for="f-hablar">Lo que quiero contar hoy</label>
-        <span class="ayuda">Escríbelo antes de entrar, aunque sea en la sala de espera. En orden de importancia, que el tiempo se acaba.</span>
-        <textarea id="f-hablar" placeholder="La discusión del jueves · sigo sin dormir · lo del trabajo"></textarea>
-      </div>
-      <div class="campo">
-        <label for="f-semana">¿Cómo ha ido la semana?</label>
-        
-        <div class="rango-fila"><input type="range" id="f-semana" min="0" max="10" step="1" value="5"><span class="rango-val" id="v-semana">5</span></div><p class="rango-pie"><span>0 · muy mal</span><span>10 · muy bien</span></p>
-      </div>
-      <div class="campo">
-        <label for="f-llevo">Lo que me llevo de la sesión</label>
-        <span class="ayuda">Rellénalo al salir, ese mismo día. Una o dos frases: lo que se ha entendido hoy.</span>
-        <textarea id="f-llevo" placeholder=""></textarea>
-      </div>
-      <div class="campo">
-        <label for="f-probar">Lo que voy a probar hasta la próxima</label>
-        <span class="ayuda">Esta es la importante. Concreto y con día: «hacer ejercicio» no se cumple, «andar el lunes, miércoles y viernes a las ocho» sí.</span>
-        <textarea id="f-probar" placeholder="Salir a andar tres mañanas · no contestar los mensajes de mi madre a las once"></textarea>
-      </div>
-      <div class="campo">
-        <label for="f-hecho">¿Hiciste lo de la vez anterior?</label>
-        <span class="ayuda">Sin culpa: que no salga es información, y de las buenas. Muchas veces significa que el paso era demasiado grande.</span>
-        <select id="f-hecho"><option value="">Elige…</option><option>Sí</option><option>A medias</option><option>No</option><option>Es la primera sesión</option></select>
-      </div>
+  <h2 class="bloque-tit">La semana</h2>
+  <div class="sem-nav">
+    <button type="button" id="sem-antes">← Anterior</button>
+    <p class="sem-tit" id="sem-tit"><b></b><span id="sem-sub"></span></p>
+    <button type="button" id="sem-luego">Siguiente →</button>
+  </div>
+  <div id="rejilla"></div>
+  <p class="racha" id="aviso-guardado" style="display:none;">Guardado ✓</p>
 
-      <p class="sin-responder" id="aviso-vacio" style="display:none;"></p>
-      <button type="submit" class="btn">Guardar la anotación</button>
-  </form>
-
-  <h2 class="bloque-tit">Lo que llevas <span id="cuantas" style="font-family:var(--font-mono);font-size:0.78rem;font-weight:400;color:var(--ink-soft);"></span></h2>
-  <p class="racha" id="racha" style="display:none;"></p>
+  <h2 class="bloque-tit">Cómo ha ido</h2>
+  <div class="ag-datos" id="ag-datos"></div>
+  <p class="ag-lectura" id="ag-lectura"></p>
 
   <div id="caja-grafico" class="g-caja" style="display:none;">
-    <div class="g-cab"><p class="g-tit">Cómo ha ido la semana</p><p class="g-rango" id="g-rango"></p></div>
-    <svg class="g-svg" id="grafico" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Evolución"></svg>
+    <div class="g-cab"><p class="g-tit">Ánimo medio de cada día</p><p class="g-rango" id="g-rango"></p></div>
+    <svg class="g-svg" id="grafico" viewBox="0 0 640 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Ánimo medio por día"></svg>
     <p class="g-resumen" id="g-resumen"></p>
   </div>
 
-  <div id="lista"></div>
   <textarea id="copiadero" class="copiadero" aria-hidden="true"></textarea>
 
-  <div class="acciones-h" id="acciones" style="display:none;">
-    <button type="button" class="btn" id="copiar">Copiar todo para llevármelo</button>
+  <div class="acciones-h" id="acciones">
+    <button type="button" class="btn" id="copiar">Copiar la semana</button>
     <button type="button" class="btn btn-sec" id="imprimir">Imprimir o guardar en PDF</button>
     <button type="button" class="btn btn-sec" id="enviar" aria-expanded="false">Enviar</button>
-    <button type="button" class="btn btn-sec" id="borrar">Borrar todo</button>
+    <button type="button" class="btn btn-sec" id="borrar">Borrar esta semana</button>
   </div>
   <div class="envio-ops" id="envio-ops" hidden>
     <span class="envio-eti">Elige por dónde:</span>
@@ -380,13 +395,21 @@
     <a id="env-mail" href="#">Correo</a>
     <span class="envio-largo" id="env-largo" hidden>Es mucho texto para enviarlo así: usa «copiar» y pégalo.</span>
   </div>
-  <p class="nota-wa" id="nota-wa" style="display:none;"><strong>Para mandárselo a tu psicólogo o
-  psicóloga.</strong> «Enviar» abre el menú de compartir de tu móvil o de tu ordenador y eliges tú por
-  dónde. Copiar e imprimir no sacan nada de este dispositivo; enviarlo sí lo envía.</p>
+  <p class="nota-wa"><strong>Para mandársela a tu psicólogo o psicóloga.</strong> «Enviar» abre el menú de
+  compartir de tu móvil o de tu ordenador y eliges tú por dónde. Copiar e imprimir no sacan nada de este
+  dispositivo; enviarlo sí lo envía.</p>
+
+  <div class="siguiente-paso">
+    <span class="sp-eti">El paso siguiente</span>
+    <a href="/registro-de-actividades.html">Registro de actividades y ánimo →</a>
+    <p style="margin:0.35rem 0 0;font-size:0.9rem;color:var(--ink-soft);line-height:1.55;">La agenda planifica
+    hacia delante; el registro apunta hacia atrás, hora a hora. Si no sabes todavía qué poner en las casillas,
+    empieza por ahí una semana y luego vuelve.</p>
+  </div>
 
   <div class="privacidad" style="margin-top:1.8rem;"><strong>Un aviso práctico.</strong> Como esto vive en
   tu navegador, si borras los datos de navegación o cambias de dispositivo, se pierde. Si llevas semanas
-  apuntando y no quieres arriesgarte, cópialo de vez en cuando y guárdalo donde tú quieras.</div>
+  planificando y no quieres arriesgarte, cópialo de vez en cuando y guárdalo donde tú quieras.</div>
 
   <div class="consulta-cta">
     <h3>¿Y si esto pide algo más que una hoja?</h3>
@@ -404,330 +427,270 @@
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Antes y después de la sesión", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "inLanguage": "es-ES", "url": "https://psicolinks.com/antes-de-la-sesion.html", "description": "Lo que quieres contar hoy, lo que te llevas y lo que vas a probar hasta la próxima. Cinco minutos que hacen que la sesión cunda el doble.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://psicolinks.com/herramientas.html"}, {"@type": "ListItem", "position": 3, "name": "Antes y después de la sesión", "item": "https://psicolinks.com/antes-de-la-sesion.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Agenda semanal de activación", "applicationCategory": "HealthApplication", "operatingSystem": "Cualquier navegador", "inLanguage": "es-ES", "url": "https://psicolinks.com/agenda-de-activacion.html", "description": "Planificas la semana por franjas, marcas lo que sale y apuntas cómo te deja. La hoja de activación conductual, sin esperar a tener ganas.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "sameAs": ["https://concienciaconductual.com"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://psicolinks.com/herramientas.html"}, {"@type": "ListItem", "position": 3, "name": "Agenda semanal de activación", "item": "https://psicolinks.com/agenda-de-activacion.html"}]}</script>
 <script>
+/* Agenda semanal de activación ---------------------------------------------
+   Una semana por pantalla, tres franjas por día. Se guarda por semana en el
+   propio navegador; no hay servidor ni cuenta. La clave de cada semana es la
+   fecha del lunes.                                                          */
 (function(){
-  var CAMPOS = [{"id": "con_quien", "tipo": "texto", "etq": "¿Con quién?", "suf": ""}, {"id": "hablar", "tipo": "largo", "etq": "Lo que quiero contar hoy", "suf": ""}, {"id": "semana", "tipo": "escala", "etq": "¿Cómo ha ido la semana?", "suf": ""}, {"id": "llevo", "tipo": "largo", "etq": "Lo que me llevo de la sesión", "suf": ""}, {"id": "probar", "tipo": "largo", "etq": "Lo que voy a probar hasta la próxima", "suf": ""}, {"id": "hecho", "tipo": "opciones", "etq": "¿Hiciste lo de la vez anterior?", "suf": ""}];
-  var CLAVE  = "pl_sesiones";
-  var TITULO = "Antes y después de la sesión";
-  var RESUMEN = "{hablar}";
-  var GRAFICO = {"campo": "semana", "max": 10};
+  'use strict';
+  var CLAVE = 'pl_agenda';
+  var DIAS = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+  var FRANJAS = [['m','Mañana'],['t','Tarde'],['n','Noche']];
+  var TIPOS = { a:'me gusta', d:'me cuesta pero suma' };
 
-  var form = document.getElementById('reg');
-  var lista = document.getElementById('lista');
+  var lunes = inicioSemana(new Date());
 
-  function hoy(){ var d = new Date(); return new Date(d - d.getTimezoneOffset()*60000).toISOString().slice(0,10); }
-  document.getElementById('f-fecha').value = hoy();
-
-  // El valor del deslizador, visible mientras se mueve.
-  CAMPOS.filter(function(c){ return c.tipo === 'escala'; }).forEach(function(c){
-    var i = document.getElementById('f-' + c.id), v = document.getElementById('v-' + c.id);
-    i.addEventListener('input', function(){ v.textContent = i.value; });
-  });
-
-  function leer(){
-    try { var v = JSON.parse(localStorage.getItem(CLAVE) || '[]'); return Array.isArray(v) ? v : []; }
-    catch(e){ return []; }
+  function iso(d){ return new Date(d - d.getTimezoneOffset()*60000).toISOString().slice(0,10); }
+  function inicioSemana(d){
+    var x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    x.setDate(x.getDate() - ((x.getDay() + 6) % 7));      // el lunes de esa semana
+    return x;
   }
-  function guardar(v){ try { localStorage.setItem(CLAVE, JSON.stringify(v)); } catch(e){
-    alert('No se ha podido guardar. Si estás en modo incógnito, el navegador no deja guardar nada.'); } }
+  function masDias(d, n){ var x = new Date(d); x.setDate(x.getDate() + n); return x; }
+  function corto(d){ return ('0'+d.getDate()).slice(-2) + '/' + ('0'+(d.getMonth()+1)).slice(-2); }
   function esc(s){ return String(s == null ? '' : s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-  function unidad(c){
-    if (c.tipo === 'escala') return ' / 10';
-    return c.suf ? ' ' + c.suf : '';
+
+  function todo(){
+    try { var v = JSON.parse(localStorage.getItem(CLAVE) || '{}'); return (v && typeof v === 'object') ? v : {}; }
+    catch(e){ return {}; }
+  }
+  function semana(){ return todo()[iso(lunes)] || {}; }
+  function guardar(s){
+    var v = todo();
+    if (Object.keys(s).length) v[iso(lunes)] = s; else delete v[iso(lunes)];
+    // No se guardan semanas de hace más de un año: esto no es un archivo histórico.
+    var limite = iso(masDias(new Date(), -400));
+    Object.keys(v).forEach(function(k){ if (k < limite) delete v[k]; });
+    try { localStorage.setItem(CLAVE, JSON.stringify(v)); }
+    catch(e){ alert('No se ha podido guardar. Si estás en modo incógnito, el navegador no deja guardar nada.'); }
+    var av = document.getElementById('aviso-guardado');
+    av.style.display = 'block';
+    clearTimeout(guardar._t);
+    guardar._t = setTimeout(function(){ av.style.display = 'none'; }, 1400);
   }
 
-  form.addEventListener('submit', function(ev){
-    ev.preventDefault();
-    var e = { f: document.getElementById('f-fecha').value || hoy(), ts: Date.now() };
-    var algo = false;
-    CAMPOS.forEach(function(c){
-      var el = document.getElementById('f-' + c.id);
-      e[c.id] = el.value;
-      if (c.tipo !== 'escala' && String(el.value).trim() !== '') algo = true;
+  /* ------------------------------------------------------------- la rejilla */
+  function pintarSemana(){
+    var s = semana(), hoyIso = iso(new Date()), html = [];
+    document.querySelector('#sem-tit b').textContent =
+      'Semana del ' + corto(lunes) + ' al ' + corto(masDias(lunes, 6));
+    document.getElementById('sem-sub').textContent =
+      iso(lunes) === iso(inicioSemana(new Date())) ? 'esta semana' : '';
+
+    DIAS.forEach(function(nom, i){
+      var d = masDias(lunes, i);
+      html.push('<section class="dia' + (iso(d) === hoyIso ? ' hoy' : '') + '">' +
+        '<h3>' + nom + ' <span>' + corto(d) + '</span></h3>');
+      FRANJAS.forEach(function(fr){
+        var k = i + '-' + fr[0], c = s[k] || {};
+        var vacia = !(c.t || '').trim();
+        html.push('<div class="franja' + (vacia ? ' fr-vacia' : '') + '" data-k="' + k + '">' +
+          '<p class="fr-eti">' + fr[1] + '</p>' +
+          '<input type="text" data-c="t" value="' + esc(c.t || '') + '" ' +
+            'placeholder="' + (fr[0] === 'm' ? 'Andar hasta el parque' : fr[0] === 't' ? 'Llamar a mi hermana' : 'Ducha larga y a la cama') + '" ' +
+            'aria-label="' + nom + ', ' + fr[1] + '" autocomplete="off">' +
+          '<div class="fr-ops">' +
+            '<select data-c="tipo" aria-label="Tipo de actividad">' +
+              '<option value="a"' + (c.tipo !== 'd' ? ' selected' : '') + '>De las que me gustan</option>' +
+              '<option value="d"' + (c.tipo === 'd' ? ' selected' : '') + '>De las que me cuestan</option>' +
+            '</select>' +
+            '<label><input type="checkbox" data-c="hecho"' + (c.hecho ? ' checked' : '') + '> ' +
+              '<span class="' + (c.hecho ? 'hecho-si' : '') + '">Hecho</span></label>' +
+            (c.hecho ? '<label>Ánimo después <select data-c="animo" aria-label="Ánimo después">' +
+              opciones(c.animo) + '</select></label>' : '') +
+          '</div></div>');
+      });
+      html.push('</section>');
     });
-    if (!algo) {
-      var av = document.getElementById('aviso-vacio');
-      av.textContent = 'Escribe algo antes de guardar, aunque sea una palabra.';
-      av.style.display = 'block';
-      return;
-    }
-    document.getElementById('aviso-vacio').style.display = 'none';
-    var v = leer(); v.unshift(e); guardar(v.slice(0, 400));
-    // Se limpia todo menos la fecha, que casi siempre es la misma sesión.
-    CAMPOS.forEach(function(c){
-      var el = document.getElementById('f-' + c.id);
-      if (c.tipo === 'escala') { el.value = 5; document.getElementById('v-' + c.id).textContent = '5'; }
-      else el.value = '';
-    });
-    pintar();
-    lista.scrollIntoView({ behavior:'smooth', block:'start' });
+    document.getElementById('rejilla').innerHTML = html.join('');
+    resumen();
+  }
+
+  function opciones(v){
+    var o = ['<option value="">—</option>'];
+    for (var n = 0; n <= 10; n++) o.push('<option value="' + n + '"' + (String(v) === String(n) ? ' selected' : '') + '>' + n + '</option>');
+    return o.join('');
+  }
+
+  document.getElementById('rejilla').addEventListener('input', function(ev){
+    var campo = ev.target.dataset.c, caja = ev.target.closest('.franja');
+    if (!campo || !caja) return;
+    var s = semana(), k = caja.dataset.k, c = s[k] || {};
+    if (campo === 'hecho') c.hecho = ev.target.checked;
+    else c[campo] = ev.target.value;
+    if (!(c.t || '').trim() && !c.hecho) delete s[k]; else s[k] = c;
+    guardar(s);
+    if (campo === 'hecho' || campo === 't') {
+      // Cambia lo que se ve (aparece la casilla de ánimo, o las opciones), así
+      // que hay que repintar sin perder el foco de donde estabas escribiendo.
+      var act = document.activeElement, id = caja.dataset.k, cmp = campo;
+      pintarSemana();
+      var nuevo = document.querySelector('.franja[data-k="' + id + '"] [data-c="' + cmp + '"]');
+      if (nuevo && act && act.tagName === 'INPUT' && cmp === 't') { nuevo.focus(); nuevo.setSelectionRange(nuevo.value.length, nuevo.value.length); }
+    } else { resumen(); }
+  });
+  document.getElementById('rejilla').addEventListener('change', function(ev){
+    if (ev.target.dataset.c === 'animo' || ev.target.dataset.c === 'tipo') resumen();
   });
 
-  function resumenDe(e){
-    return RESUMEN.replace(/\{(\w+)\}/g, function(_, k){ return esc(e[k] || '—'); });
-  }
-
-
-  /* --------------------------------------------------------------- gráfico
-     Un dibujo por día, no por anotación: si hay varias en el mismo día se
-     suman (cuando son recuentos) o se promedian (cuando son escalas de 0 a 10).
-     El eje horizontal va por fechas reales, así que los días que no apuntaste
-     salen como hueco y no disimulados. */
-  var G_W = 640, G_H = 200, G_L = 40, G_R = 12, G_T = 14, G_B = 28;
-  var G_PW = G_W - G_L - G_R, G_PH = G_H - G_T - G_B;
-
-  function gNum(f){ var p = String(f).split('-'); return Date.UTC(+p[0], +p[1]-1, +p[2]) / 86400000; }
-  function gDia(f){ return String(f).slice(8,10) + '/' + String(f).slice(5,7); }
-  function gRedondo(x){
-    if (!(x > 0)) return 1;
-    var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10)), r = x / p;
-    var e = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10], i = 0;
-    while (i < e.length - 1 && r > e[i]) i++;
-    return e[i] * p;
-  }
-  function gCifra(x, cuenta){
-    return cuenta ? String(Math.round(x)) : (Math.round(x * 10) / 10).toString().replace('.', ',');
-  }
-
-  function pintarGrafico(v){
-    var caja = document.getElementById('caja-grafico');
-    if (!caja) return;
-    var cuenta = GRAFICO.max > 10;          // minutos, veces… frente a escalas de 0 a 10
-    var porDia = {}, fechas = [];
-    v.forEach(function(e){
-      var x = e[GRAFICO.campo];
-      if (x === '' || x == null || isNaN(+x) || !/^\d{4}-\d{2}-\d{2}$/.test(e.f || '')) return;
-      if (!porDia[e.f]) { porDia[e.f] = { s:0, n:0 }; fechas.push(e.f); }
-      porDia[e.f].s += +x; porDia[e.f].n++;
+  /* --------------------------------------------------------------- resumen */
+  function resumen(){
+    var s = semana(), plan = 0, hechas = 0, animos = [], porTipo = { a:[], d:[] }, porDia = [[],[],[],[],[],[],[]];
+    Object.keys(s).forEach(function(k){
+      var c = s[k];
+      if (!(c.t || '').trim()) return;
+      plan++;
+      if (!c.hecho) return;
+      hechas++;
+      if (c.animo !== '' && c.animo != null) {
+        var n = +c.animo;
+        animos.push(n);
+        porTipo[c.tipo === 'd' ? 'd' : 'a'].push(n);
+        porDia[+k.split('-')[0]].push(n);
+      }
     });
-    fechas.sort();
-    if (fechas.length < 2) { caja.style.display = 'none'; return; }
-    fechas = fechas.slice(-60);
-    var serie = fechas.map(function(f){
-      var d = porDia[f];
-      return { f: f, y: cuenta ? d.s : d.s / d.n, n: d.n };
-    });
+    function media(a){ return a.length ? a.reduce(function(x,y){ return x+y; }, 0) / a.length : null; }
+    function cif(x){ return x == null ? '—' : (Math.round(x*10)/10).toString().replace('.', ','); }
 
-    var vals = serie.map(function(s){ return s.y; });
-    var maxV = Math.max.apply(null, vals), minV = Math.min.apply(null, vals);
-    var media = vals.reduce(function(a,b){ return a+b; }, 0) / vals.length;
-    var tope = cuenta ? gRedondo(maxV * 1.05) : GRAFICO.max;
-    if (!(tope > 0)) tope = 1;
+    document.getElementById('ag-datos').innerHTML =
+      '<div class="ag-dato"><b>' + plan + '</b><span>Planificadas</span></div>' +
+      '<div class="ag-dato"><b>' + hechas + '</b><span>Hechas</span></div>' +
+      '<div class="ag-dato"><b>' + (plan ? Math.round(hechas*100/plan) + '%' : '—') + '</b><span>Cumplidas</span></div>' +
+      '<div class="ag-dato"><b>' + cif(media(animos)) + '</b><span>Ánimo medio</span></div>';
 
-    var d0 = gNum(serie[0].f), d1 = gNum(serie[serie.length-1].f);
-    var span = d1 - d0;
-    var porFecha = span > 0 && span <= 400;   // si no, se reparten a partes iguales
-    function px(i){
-      if (!porFecha) return G_L + (serie.length === 1 ? G_PW/2 : G_PW * i / (serie.length - 1));
-      return G_L + G_PW * (gNum(serie[i].f) - d0) / span;
-    }
-    function py(y){ return G_T + G_PH * (1 - Math.max(0, Math.min(1, y / tope))); }
-
-    var s = [];
-    // Rejilla y escala vertical.
-    [0, 0.5, 1].forEach(function(k){
-      var y = G_T + G_PH * (1 - k);
-      s.push('<line x1="' + G_L + '" y1="' + y.toFixed(1) + '" x2="' + (G_W-G_R) + '" y2="' + y.toFixed(1) +
-             '" stroke="#DDD7CB" stroke-width="1"' + (k ? ' stroke-dasharray="2 4"' : '') + '/>');
-      s.push('<text x="' + (G_L-8) + '" y="' + (y+4).toFixed(1) + '" text-anchor="end" font-size="11" ' +
-             'fill="#625C70" font-family="monospace">' + gCifra(tope * k, cuenta) + '</text>');
-    });
-
-    if (cuenta) {
-      var ancho = porFecha ? Math.max(3, Math.min(26, G_PW / (span + 1) - 1)) : Math.max(3, Math.min(26, G_PW / serie.length - 2));
-      serie.forEach(function(p, i){
-        var x = px(i), y = py(p.y);
-        // Sin salirse del área: la primera y la última barra se meten para dentro.
-        var bx = Math.max(G_L, Math.min(G_W - G_R - ancho, x - ancho/2));
-        s.push('<rect x="' + bx.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + ancho.toFixed(1) +
-               '" height="' + Math.max(2, G_T + G_PH - y).toFixed(1) + '" rx="2" fill="#4A3B78">' +
-               '<title>' + esc(gDia(p.f)) + ': ' + gCifra(p.y, cuenta) + '</title></rect>');
-      });
+    var l = document.getElementById('ag-lectura'), txt;
+    if (!plan) {
+      txt = '<strong>Empieza por poner tres o cuatro cosas en toda la semana.</strong> No hace falta llenar ' +
+            'las veintiuna casillas: una agenda imposible se abandona el martes.';
+    } else if (!hechas) {
+      txt = '<strong>La semana está puesta.</strong> Ve marcando «hecho» según pasen, y el ánimo justo después ' +
+            '—no al final del día, que para entonces ya se ha mezclado todo.';
     } else {
-      var pts = serie.map(function(p, i){ return px(i).toFixed(1) + ',' + py(p.y).toFixed(1); });
-      s.push('<polygon points="' + G_L + ',' + (G_T+G_PH) + ' ' + pts.join(' ') + ' ' +
-             px(serie.length-1).toFixed(1) + ',' + (G_T+G_PH) + '" fill="#4A3B78" opacity="0.12"/>');
-      // Los tramos que saltan por encima de un día sin apuntar van de puntos:
-      // así se ve que ahí no hay dato, en vez de dar por hecha una línea recta.
-      for (var i = 1; i < serie.length; i++) {
-        var hueco = porFecha && (gNum(serie[i].f) - gNum(serie[i-1].f)) > 1;
-        s.push('<line x1="' + px(i-1).toFixed(1) + '" y1="' + py(serie[i-1].y).toFixed(1) +
-               '" x2="' + px(i).toFixed(1) + '" y2="' + py(serie[i].y).toFixed(1) +
-               '" stroke="#4A3B78" stroke-width="2.2" stroke-linecap="round"' +
-               (hueco ? ' stroke-dasharray="3 4" opacity="0.45"' : '') + '/>');
+      var mA = media(porTipo.a), mD = media(porTipo.d);
+      txt = '<strong>Llevas ' + hechas + ' de ' + plan + '.</strong> ';
+      if (mA != null && mD != null) {
+        txt += 'Las que te gustan te dejan en <strong>' + cif(mA) + '</strong> y las que te cuestan en <strong>' +
+               cif(mD) + '</strong>. ' + (Math.abs(mA - mD) < 0.8
+                 ? 'Están muy igualadas, que suele ser buena señal: las de obligación no te están saliendo caras.'
+                 : (mD > mA ? 'Las de obligación te dejan mejor de lo que esperarías: eso es información para la próxima semana.'
+                            : 'Las de agrado tiran más del ánimo, así que conviene que no falten aunque la semana venga cargada.'));
+      } else if (mA != null || mD != null) {
+        txt += 'Las que has marcado te dejan de media en <strong>' + cif(mA != null ? mA : mD) + '</strong>. ' +
+               'Cuando haya alguna de las ' + (mA != null ? 'que te cuestan' : 'que te gustan') +
+               ' con su ánimo puesto, aquí saldrá la comparación entre las dos clases.';
+      } else {
+        txt += 'Ve poniendo el ánimo justo después de cada una: es lo que hace que esto sirva para algo ' +
+               'dentro de tres semanas.';
       }
-      serie.forEach(function(p, i){
-        s.push('<circle cx="' + px(i).toFixed(1) + '" cy="' + py(p.y).toFixed(1) + '" r="3.4" fill="#FFFFFF" ' +
-               'stroke="#4A3B78" stroke-width="2"><title>' + esc(gDia(p.f)) + ': ' + gCifra(p.y, cuenta) +
-               '</title></circle>');
-      });
+      if (hechas < plan) txt += ' Lo que no salió no es un suspenso: mira si esas casillas eran demasiado grandes o estaban a mala hora.';
     }
+    l.innerHTML = txt;
+    grafico(porDia);
+  }
 
-    // La media, para tener una referencia de dónde te mueves normalmente.
-    var ym = py(media);
-    s.push('<line x1="' + G_L + '" y1="' + ym.toFixed(1) + '" x2="' + (G_W-G_R) + '" y2="' + ym.toFixed(1) +
-           '" stroke="#B5541D" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>');
-    s.push('<text x="' + (G_W-G_R) + '" y="' + (ym - 6).toFixed(1) + '" text-anchor="end" font-size="11" ' +
-           'stroke="#FFFFFF" stroke-width="3.5" paint-order="stroke" ' +
-           'fill="#B5541D" font-family="monospace">media ' + gCifra(media, cuenta) + '</text>');
-
-    // Fechas de referencia abajo: la primera, la última y una en medio.
-    var idx = serie.length > 3 ? [0, Math.floor((serie.length-1)/2), serie.length-1] : [0, serie.length-1];
-    idx.forEach(function(i, k){
-      var anc = k === 0 ? 'start' : (k === idx.length-1 ? 'end' : 'middle');
-      s.push('<text x="' + px(i).toFixed(1) + '" y="' + (G_H - 8) + '" text-anchor="' + anc +
-             '" font-size="11" fill="#625C70" font-family="monospace">' + gDia(serie[i].f) + '</text>');
+  /* --------------------------------------------------------------- gráfico */
+  function grafico(porDia){
+    var caja = document.getElementById('caja-grafico');
+    var datos = porDia.map(function(a){
+      return a.length ? a.reduce(function(x,y){ return x+y; }, 0) / a.length : null;
     });
+    if (datos.filter(function(x){ return x != null; }).length < 2) { caja.style.display = 'none'; return; }
 
-    var svg = document.getElementById('grafico');
-    svg.innerHTML = s.join('');
-    svg.setAttribute('aria-label', 'De ' + gDia(serie[0].f) + ' a ' + gDia(serie[serie.length-1].f) +
-      ': media ' + gCifra(media, cuenta) + ', mínimo ' + gCifra(minV, cuenta) + ', máximo ' + gCifra(maxV, cuenta) + '.');
-
-    var rango = document.getElementById('g-rango');
-    if (rango) rango.textContent = serie.length + (serie.length === 1 ? ' día' : ' días') +
-      ' · ' + gDia(serie[0].f) + ' → ' + gDia(serie[serie.length-1].f);
-
-    // Dos mitades comparadas: es lo único que se parece a «voy mejor o peor»,
-    // y aun así se deja en números, sin adjetivos.
-    var res = document.getElementById('g-resumen');
-    if (res) {
-      var partes = ['Media <b>' + gCifra(media, cuenta) + '</b>',
-                    'Mínimo <b>' + gCifra(minV, cuenta) + '</b>',
-                    'Máximo <b>' + gCifra(maxV, cuenta) + '</b>'];
-      if (serie.length >= 6) {
-        var mitad = Math.floor(serie.length / 2);
-        var mA = vals.slice(0, mitad).reduce(function(a,b){ return a+b; }, 0) / mitad;
-        var mB = vals.slice(mitad).reduce(function(a,b){ return a+b; }, 0) / (vals.length - mitad);
-        partes.push('Primera mitad <b>' + gCifra(mA, cuenta) + '</b> → segunda <b>' + gCifra(mB, cuenta) + '</b>');
+    var W = 640, H = 200, L = 40, R = 12, T = 14, B = 28, PW = W-L-R, PH = H-T-B, tope = 10;
+    var py = function(y){ return T + PH * (1 - Math.max(0, Math.min(1, y/tope))); };
+    var s = [];
+    [0, 0.5, 1].forEach(function(k){
+      var y = T + PH * (1 - k);
+      s.push('<line x1="' + L + '" y1="' + y.toFixed(1) + '" x2="' + (W-R) + '" y2="' + y.toFixed(1) +
+             '" stroke="#DDD7CB" stroke-width="1"' + (k ? ' stroke-dasharray="2 4"' : '') + '/>');
+      s.push('<text x="' + (L-8) + '" y="' + (y+4).toFixed(1) + '" text-anchor="end" font-size="11" ' +
+             'fill="#625C70" font-family="monospace">' + (tope*k) + '</text>');
+    });
+    var paso = PW / 7, ancho = Math.min(46, paso - 12);
+    datos.forEach(function(y, i){
+      var cx = L + paso * (i + 0.5);
+      if (y == null) {
+        s.push('<text x="' + cx.toFixed(1) + '" y="' + (T+PH-8) + '" text-anchor="middle" font-size="11" ' +
+               'fill="#B9B2A6" font-family="monospace">·</text>');
+      } else {
+        var yy = py(y);
+        s.push('<rect x="' + (cx - ancho/2).toFixed(1) + '" y="' + yy.toFixed(1) + '" width="' + ancho.toFixed(1) +
+               '" height="' + Math.max(2, T+PH-yy).toFixed(1) + '" rx="3" fill="#4A3B78"><title>' +
+               DIAS[i] + ': ' + (Math.round(y*10)/10) + '</title></rect>');
       }
-      res.innerHTML = partes.map(function(p){ return '<span>' + p + '</span>'; }).join('');
-    }
+      s.push('<text x="' + cx.toFixed(1) + '" y="' + (H-8) + '" text-anchor="middle" font-size="11" ' +
+             'fill="#625C70" font-family="monospace">' + DIAS[i].slice(0,3).toUpperCase() + '</text>');
+    });
+    document.getElementById('grafico').innerHTML = s.join('');
+    document.getElementById('g-rango').textContent = 'Semana del ' + corto(lunes);
+    var con = datos.filter(function(x){ return x != null; });
+    var med = con.reduce(function(x,y){ return x+y; }, 0) / con.length;
+    document.getElementById('g-resumen').innerHTML =
+      '<span>Media <b>' + (Math.round(med*10)/10).toString().replace('.', ',') + '</b></span>' +
+      '<span>Mejor día <b>' + DIAS[datos.indexOf(Math.max.apply(null, con))] + '</b></span>' +
+      '<span>Días con datos <b>' + con.length + '</b></span>';
     caja.style.display = 'block';
   }
 
-  function pintar(){
-    var v = leer();
-    document.getElementById('cuantas').textContent =
-      v.length === 0 ? '' : (v.length === 1 ? '1 anotación' : v.length + ' anotaciones');
-
-    // Racha de días seguidos, contando desde hoy hacia atrás.
-    var caja = document.getElementById('racha');
-    if (v.length > 1) {
-      var dias = {}; v.forEach(function(e){ dias[e.f] = 1; });
-      var n = 0, d = new Date();
-      while (true) {
-        var s = new Date(d - d.getTimezoneOffset()*60000).toISOString().slice(0,10);
-        if (!dias[s]) { if (n > 0 || s !== hoy()) break; } else n++;
-        d.setDate(d.getDate() - 1);
-        if (n === 0 && s !== hoy()) break;
-      }
-      caja.textContent = n > 1 ? n + ' días seguidos' : '';
-      caja.style.display = n > 1 ? 'block' : 'none';
-    } else { caja.style.display = 'none'; }
-
-    if (!v.length) {
-      lista.innerHTML = '<p class="vacio-h">Aquí no hay nada todavía. En cuanto guardes la primera '
-        + 'anotación aparecerá abajo, y podrás copiarla o imprimirla cuando quieras.</p>';
-      document.getElementById('caja-grafico').style.display = 'none';
-      var _nw = document.getElementById('nota-wa'); if (_nw) _nw.style.display = (leer().length ? 'block' : 'none');
-    document.getElementById('acciones').style.display = 'none';
-      return;
-    }
-    var _nw = document.getElementById('nota-wa'); if (_nw) _nw.style.display = (leer().length ? 'block' : 'none');
-    document.getElementById('acciones').style.display = 'flex';
-
-    if (GRAFICO) {
-      pintarGrafico(v);
-    }
-
-    lista.innerHTML = v.map(function(e, i){
-      var filas = CAMPOS.map(function(c){
-        if (e[c.id] === '' || e[c.id] == null) return '';
-        return '<dt>' + esc(c.etq) + '</dt><dd>' + esc(e[c.id]) + unidad(c) + '</dd>';
-      }).join('');
-      return '<div class="entrada"><p class="fecha">' + esc(e.f) + '</p>'
-        + '<p class="resumen">' + resumenDe(e) + '</p>'
-        + '<dl>' + filas + '</dl>'
-        + '<button type="button" class="quitar" data-i="' + i + '">Quitar esta</button></div>';
-    }).join('');
-  }
-
-  lista.addEventListener('click', function(ev){
-    var b = ev.target.closest('.quitar');
-    if (!b) return;
-    var v = leer(); v.splice(+b.dataset.i, 1); guardar(v); pintar();
-  });
+  /* -------------------------------------------------------------- acciones */
+  document.getElementById('sem-antes').addEventListener('click', function(){ lunes = masDias(lunes, -7); pintarSemana(); });
+  document.getElementById('sem-luego').addEventListener('click', function(){ lunes = masDias(lunes, 7); pintarSemana(); });
 
   function comoTexto(){
-    var v = leer();
-    return TITULO + ' — ' + v.length + (v.length === 1 ? ' anotación' : ' anotaciones') + '\n' +
-      '(Psicolinks · psicolinks.com)\n\n' +
-      v.map(function(e){
-        return e.f + '\n' + CAMPOS.map(function(c){
-          if (e[c.id] === '' || e[c.id] == null) return null;
-          return '  ' + c.etq + ': ' + e[c.id] + unidad(c);
-        }).filter(Boolean).join('\n');
-      }).join('\n\n');
+    var s = semana(), out = ['Agenda semanal de activación — semana del ' + corto(lunes) + ' al ' + corto(masDias(lunes,6)),
+                             '(Psicolinks · psicolinks.com)', ''];
+    DIAS.forEach(function(nom, i){
+      var lineas = [];
+      FRANJAS.forEach(function(fr){
+        var c = s[i + '-' + fr[0]];
+        if (!c || !(c.t || '').trim()) return;
+        lineas.push('  ' + fr[1] + ': ' + c.t + ' [' + (TIPOS[c.tipo] || TIPOS.a) + ']' +
+          (c.hecho ? ' — hecho' + (c.animo !== '' && c.animo != null ? ', ánimo ' + c.animo + '/10' : '') : ' — sin hacer'));
+      });
+      if (lineas.length) out.push(nom + ' ' + corto(masDias(lunes, i)), lineas.join('\n'), '');
+    });
+    if (out.length === 3) out.push('(semana vacía)');
+    return out.join('\n');
   }
 
   document.getElementById('copiar').addEventListener('click', function(){
     var t = comoTexto(), b = this;
-    function ok(){ b.textContent = 'Copiado ✓'; setTimeout(function(){ b.textContent = 'Copiar todo para llevármelo'; }, 2200); }
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(t).then(ok, manual);
-    } else { manual(); }
+    function ok(){ b.textContent = 'Copiado ✓'; setTimeout(function(){ b.textContent = 'Copiar la semana'; }, 2200); }
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(t).then(ok, manual); }
+    else { manual(); }
     function manual(){
-      // Sin portapapeles (http, navegador antiguo): se selecciona para copiar a mano.
       var a = document.getElementById('copiadero');
       a.value = t; a.classList.remove('copiadero'); a.style.cssText = 'width:100%;height:9rem;margin-top:0.7rem;';
       a.select();
-      try { document.execCommand('copy'); ok(); }
-      catch(e){ b.textContent = 'Selecciónalo y cópialo tú'; }
+      try { document.execCommand('copy'); ok(); } catch(e){ b.textContent = 'Selecciónalo y cópialo tú'; }
     }
   });
-
   document.getElementById('imprimir').addEventListener('click', function(){ window.print(); });
-  function enviarRegistro(t, b){
-    // 1) El menu de compartir del sistema, que es lo que la gente conoce del
-    //    movil. Si existe, se acabo: no hace falta enseñar nada mas.
-    if (navigator.share) {
-      navigator.share({ title: 'Mis registros · Psicolinks', text: t }).catch(function(){});
-      return;
-    }
-    // 2) Plan B para Chrome y Firefox de escritorio, que no lo traen.
-    var ops = document.getElementById('envio-ops');
-    if (!ops) return;
-    var wa = document.getElementById('env-wa'),
-        mail = document.getElementById('env-mail'),
+  document.getElementById('enviar').addEventListener('click', function(){
+    var t = comoTexto();
+    if (navigator.share) { navigator.share({ title: 'Mi semana · Psicolinks', text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('envio-ops'),
+        wa = document.getElementById('env-wa'), mail = document.getElementById('env-mail'),
         largo = document.getElementById('env-largo');
-    // Aqui si hay tope: wa.me y mailto meten el texto en la direccion.
-    if (encodeURIComponent(t).length > 1800) {
-      wa.hidden = true; mail.hidden = true; largo.hidden = false;
-    } else {
+    if (encodeURIComponent(t).length > 1800) { wa.hidden = true; mail.hidden = true; largo.hidden = false; }
+    else {
       wa.hidden = false; mail.hidden = false; largo.hidden = true;
       wa.href = 'https://wa.me/?text=' + encodeURIComponent(t);
-      mail.href = 'mailto:?subject=' + encodeURIComponent('Mis registros · Psicolinks') +
-                  '&body=' + encodeURIComponent(t);
+      mail.href = 'mailto:?subject=' + encodeURIComponent('Mi semana · Psicolinks') + '&body=' + encodeURIComponent(t);
     }
     ops.hidden = false;
-    b.setAttribute('aria-expanded', 'true');
-  }
-
-  document.getElementById('enviar').addEventListener('click', function(){
-    enviarRegistro(comoTexto(), this);
+    this.setAttribute('aria-expanded', 'true');
   });
-
-
   document.getElementById('borrar').addEventListener('click', function(){
-    if (this.dataset.seguro) { localStorage.removeItem(CLAVE); pintar(); this.textContent = 'Borrar todo'; delete this.dataset.seguro; }
-    else { this.dataset.seguro = '1'; this.textContent = 'Pulsa otra vez para borrarlo de verdad'; }
+    if (this.dataset.seguro) { guardar({}); pintarSemana(); this.textContent = 'Borrar esta semana'; delete this.dataset.seguro; }
+    else { this.dataset.seguro = '1'; this.textContent = 'Pulsa otra vez para borrarla de verdad'; }
   });
 
-  pintar();
+  pintarSemana();
 })();
 </script>
 <script src="/buscador-psicolinks.js" defer></script>

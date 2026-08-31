@@ -61,6 +61,18 @@
 
   <div id="stats-content" hidden></div>
 
+  <div id="copia" hidden>
+    <p class="seccion-titulo">Copia de seguridad</p>
+    <div class="tabla-card">
+      <p style="margin:0 0 0.8rem;font-size:0.9rem;line-height:1.6;">Los artículos, los suscriptores,
+      las consultas y las estadísticas <strong>no están en GitHub</strong>: viven solo en el almacén de
+      Netlify. Esto se lo baja todo en un archivo. Guárdalo donde guardarías una copia de tu agenda:
+      lleva correos y el texto de las consultas.</p>
+      <button type="button" id="btn-copia">Descargar copia de seguridad</button>
+      <p id="copia-estado" style="font-size:0.85rem;margin:0.7rem 0 0;"></p>
+    </div>
+  </div>
+
 </main>
 
 <script>
@@ -82,6 +94,8 @@
       }
       var data = await res.json();
       document.getElementById('gate').hidden = true;
+      window.__clave = pass;
+      document.getElementById('copia').hidden = false;
       var content = document.getElementById('stats-content');
       content.hidden = false;
 
@@ -114,6 +128,32 @@
       errorEl.textContent = 'No se pudo conectar. Inténtalo de nuevo.';
     }
   }
+</script>
+
+<script>
+  // Copia de seguridad: pide el JSON con la clave y lo guarda como fichero.
+  document.getElementById('btn-copia').addEventListener('click', async function(){
+    var b = this, est = document.getElementById('copia-estado');
+    b.disabled = true; est.style.color = ''; est.textContent = 'Preparándola…';
+    try {
+      var res = await fetch('/.netlify/functions/copia-seguridad', {
+        headers: { 'X-Admin-Passphrase': window.__clave || '' }
+      });
+      if (!res.ok) throw new Error('El servidor ha respondido ' + res.status);
+      var blob = await res.blob();
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'psicolinks-copia-' + new Date().toISOString().slice(0, 10) + '.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+      est.style.color = '#2f6b4f';
+      est.textContent = 'Descargada (' + Math.round(blob.size / 1024) + ' KB). Guárdala fuera del ordenador de siempre.';
+    } catch (err) {
+      est.style.color = '#C0392B';
+      est.textContent = 'No se ha podido: ' + err.message;
+    }
+    b.disabled = false;
+  });
 </script>
 </body>
 </html>

@@ -49,13 +49,91 @@
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
   .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Esta página no existe", "item": "https://psicolinks.com/404.html"}]}
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <div class="stamp">📎 Error 404</div>
   <h1>Esta página no existe</h1>
@@ -64,27 +142,37 @@
   <div class="idea"><strong>Si has llegado buscando ayuda.</strong> Tienes los teléfonos y servicios de España en <a href="/donde-pedir-ayuda.html">Dónde pedir ayuda</a>. Y si estás en peligro ahora mismo, el <strong>112</strong> y el <strong>024</strong> funcionan las veinticuatro horas.</div>
 
   <h2 class="bloque-tit">Por dónde seguir</h2>
+  <nav class="ruta" aria-label="Las herramientas de esta guía">
+    <p class="ruta-eti">Las cuatro, de un vistazo</p>
+    <ol>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Todas las guías</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Empieza aquí</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Portada y archivo</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Consultorio</span></a></li>
+    </ol>
+  </nav>
 
-<div class="tool">
-  <p class="tool-kicker">Lo más buscado</p>
+
+<div class="tool" id="h1">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Lo más buscado</p>
   <h3><a href="/temas.html">Todas las guías</a></h3>
   <p>Más de cincuenta guías prácticas sobre sueño, ansiedad, hábitos, pareja, estudio y trabajo. Hay un buscador arriba del todo para encontrar la tuya.</p>
 </div>
 
-<div class="tool">
-  <p class="tool-kicker">Si no sabes por dónde empezar</p>
+<div class="tool" id="h2">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Si no sabes por dónde empezar</p>
   <h3><a href="/empieza-aqui.html">Empieza aquí</a></h3>
   <p>Eliges qué te ronda ahora mismo y te lleva directo a lo que puede ayudarte.</p>
 </div>
 
-<div class="tool">
-  <p class="tool-kicker">El estudio del día</p>
+<div class="tool" id="h3">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>El estudio del día</p>
   <h3><a href="/">Portada</a> y <a href="/archivo.html">archivo</a></h3>
   <p>Cada día laborable, tres estudios de psicología recientes explicados en lenguaje claro y con la fuente original delante. En el archivo están todos los publicados.</p>
 </div>
 
-<div class="tool">
-  <p class="tool-kicker">Si tienes una duda concreta</p>
+<div class="tool" id="h4">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Si tienes una duda concreta</p>
   <h3><a href="/consultorio.html">Consultorio</a></h3>
   <p>Mándala y respondo algunas en abierto y de forma anónima. Es divulgación, no consulta clínica.</p>
 </div>
@@ -95,9 +183,11 @@
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

@@ -99,67 +99,180 @@
   .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
   .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
   @media print{ .cc-banda{ display:none; } }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
 
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+
+  /* El color de este tema: Autoestima. */
+  :root{ --accent:#7A4FA3; --accent-soft:#F0EAF8; --stamp:#7A4FA3; }
+  .idea{ background:#F0EAF8 !important; border-color:#e6ded2 !important;
+         border-left-color:#7A4FA3 !important; }
+  .hazlo{ background:#F0EAF8 !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#7A4FA3; border-color:#7A4FA3; color:#fff; }
+  .tool-kicker .num{ background:#7A4FA3; }
+  .cierre{ border-left:4px solid #7A4FA3; }
+  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
+              border:1px solid var(--border); border-radius:14px;
+              background:var(--surface); }
+  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
+  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
+  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
 <script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Autoexigencia","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/autoexigencia.html","inLanguage":"es-ES"}
+{ "@context":"https://schema.org","@type":"Article","headline":"Autoexigencia","image":"https://psicolinks.com/ilustraciones/autoestima.jpg","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/autoexigencia.html","inLanguage":"es-ES"}
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">📎 Guía gratuita · Trabajo</div>
   <h1>Autoexigencia</h1>
   <p class="autor">Por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis herramientas para el «no me lo puedo permitir» que no se apaga ni el domingo.</p>
+  <img class="guia-ilus" src="/ilustraciones/autoestima.jpg" alt="Ilustración: el ratón de Psicolinks junto a un espejo de mano"
+       width="1360" height="460" loading="lazy" decoding="async">
   <div class="idea"><strong>La idea de fondo.</strong> La autoexigencia no va de que las cosas salgan perfectas —eso es otra cosa— sino de <strong>no poder bajar el ritmo</strong>. Se reconoce en el lenguaje: «tengo que», «debería», «no me lo puedo permitir». Y hay un detalle técnico que cambia el tratamiento entero: <strong>esas frases no se discuten con pruebas</strong>, porque no afirman nada sobre el mundo. Puedes demostrarte que nadie te está pidiendo eso y seguir sintiendo exactamente igual. Lo que sí las mueve es convertirlas en preferencias — de «tengo que llegar a todo» a «me gustaría, y no siempre voy a poder» —, decidir <strong>antes</strong> qué va a contar como suficiente, y dejar de tratar el descanso como un premio que hay que ganarse: si hay que merecerlo, nunca toca.</div>
 
   <h2 class="bloque-tit">Seis herramientas</h2>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 1 · La que dice de qué estamos hablando</p>
+  <nav class="ruta" aria-label="Las herramientas de esta guía">
+    <p class="ruta-eti">Las seis, de un vistazo</p>
+    <ol>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Mira si es perfeccionismo o es no poder parar</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Caza los «tengo que» y los «debería»</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Sube el listón de lo que cuenta como «suficiente», por escrito</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Descansar no es un premio que se gana</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Mira de dónde viene, aunque sea un momento</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Empieza por bajar el listón en algo que no importe</span></a></li>
+    </ol>
+  </nav>
+
+<div class="tool" id="h1">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1 · La que dice de qué estamos hablando</p>
   <h3>Mira si es perfeccionismo o es no poder parar</h3>
   <p>Se confunden y no son lo mismo. El perfeccionismo va de que las cosas salgan impecables; la autoexigencia va de <strong>no poder bajar el ritmo</strong>, aunque lo que estés haciendo dé igual. Uno revisa el correo catorce veces; el otro contesta a las once de la noche porque «no me lo puedo permitir».</p>
   <div class="hazlo"><strong>Hazlo así:</strong> la pregunta que los separa: ¿el problema es cómo queda, o que has parado? Si es lo segundo, la guía es esta; si es lo primero, <a href="/menos-perfeccionismo.html">menos perfeccionismo</a>.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 2</p>
+<div class="tool" id="h2">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2</p>
   <h3>Caza los «tengo que» y los «debería»</h3>
   <p>Es la marca de fábrica y está en el lenguaje. «Tengo que», «debería», «no me puedo permitir», «no me queda otra». Y aquí hay algo importante: <strong>esas frases no se discuten con pruebas</strong>, porque no afirman nada sobre el mundo. Puedes demostrarte que nadie te lo pide y seguir sintiendo que sí.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> lo que sí las mueve es cambiarlas por preferencias: de «tengo que llegar a todo» a «me gustaría llegar a todo, y no siempre voy a poder». Suena a poco y es lo que baja el malestar. La hoja para hacerlo entero está en <a href="/darle-la-vuelta-a-un-pensamiento.html">darle la vuelta a un pensamiento</a>.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 3</p>
+<div class="tool" id="h3">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
   <h3>Sube el listón de lo que cuenta como «suficiente», por escrito</h3>
   <p>La autoexigencia mueve la portería: llegas a donde querías y en dos días ya no cuenta. Por eso nunca hay descanso, aunque objetivamente las cosas salgan bien.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> antes de empezar algo, escribe qué sería <strong>suficiente</strong> — no excelente — y en qué momento paras. Decidirlo antes es lo que impide que la portería se mueva después. <a href="/mis-objetivos-de-terapia.html">Mis objetivos</a> sirve para dejarlo escrito.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 4</p>
+<div class="tool" id="h4">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
   <h3>Descansar no es un premio que se gana</h3>
   <p>Ese es el nudo. Si el descanso hay que merecerlo, nunca toca, porque siempre queda algo. Y encima el rato de descanso se pasa con culpa, así que ni descansa. Trabajar catorce horas y estar de mal humor el domingo no es esfuerzo: es no haber parado.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> ponlo en la agenda como una cita, no como un hueco: si está apuntado, deja de tener que ganarse. Empieza por dos ratos a la semana y trátalos como si fueran de otra persona.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 5</p>
+<div class="tool" id="h5">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
   <h3>Mira de dónde viene, aunque sea un momento</h3>
   <p>La autoexigencia rara vez es un rasgo suelto: casi siempre se aprendió en un sitio donde el cariño o la tranquilidad dependían del rendimiento. Y entonces bajar el ritmo no se siente como descansar, se siente como arriesgarse.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> la pregunta que abre esto: si dejaras de rendir tanto, <strong>¿qué crees que pasaría?</strong> La respuesta suele ser mucho más antigua que tu trabajo. La <a href="/flecha-descendente.html">flecha descendente</a> es la hoja que baja hasta el fondo.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 6</p>
+<div class="tool" id="h6">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
   <h3>Empieza por bajar el listón en algo que no importe</h3>
   <p>Nadie empieza a soltar por lo que más miedo da. Se empieza donde el coste real es cero: mandar un correo sin releerlo tres veces, dejar una cama sin hacer, entregar algo que está bien y no perfecto.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> elige una cosa pequeña esta semana y hazla peor a propósito. Y apunta qué pasó de verdad, que casi siempre es nada — pero eso no se cree, se comprueba: <a href="/experimento-conductual.html">experimento conductual</a>.</div>
@@ -168,35 +281,17 @@
   <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si ya no descansas ni durmiendo, si el cuerpo ha empezado a avisar —cabeza, estómago, espalda—, si has dejado de ver a tu gente por trabajo o si te bebes las noches para poder parar, eso ya no es exigirse: es un problema instalado y se trata bien. Tienes <a href="/el-burnout.html">el burnout</a>, <a href="/el-estres-que-no-para.html">el estrés que no para</a> y <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>.</div>
 
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que cuenta la guía te está pasando de verdad y quieres que alguien mire tu caso, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="https://concienciaconductual.com" target="_blank" rel="noopener">Consulta de psicología</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -206,6 +301,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ansiedad de separación en niños: qué hacer · Psicolinks</title>
-<meta name="description" content="Lloros en la puerta del cole y dolor de tripa los domingos. Por qué la despedida corta funciona, qué decir exactamente y qué hace que vaya a peor.">
-<meta property="og:type" content="article">
+<title>Cuando a tu hijo le hacen bullying: qué hacer · Psicolinks</title>
+<meta name="description" content="Seis pasos para cuando sospechas que a tu hijo le están acosando en el colegio: cómo escucharle, cómo documentarlo y cómo mover al centro.">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Ansiedad de separación en niños: qué hacer">
-<meta property="og:description" content="Lloros en la puerta del cole y dolor de tripa los domingos. Por qué la despedida corta funciona, qué decir exactamente y qué hace que vaya a peor.">
-<meta property="og:url" content="https://psicolinks.com/ansiedad-de-separacion.html">
+<meta property="og:title" content="Cuando a tu hijo le hacen bullying">
+<meta property="og:description" content="Qué hacer cuando a tu hijo le están haciendo bullying, por orden y sin los dos consejos que empeoran la cosa.">
+<meta property="og:url" content="https://psicolinks.com/acoso-escolar.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/ansiedad-de-separacion.html">
+<link rel="canonical" href="https://psicolinks.com/acoso-escolar.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,8 @@
   .consulta-cta .consulta-btn:hover { background: #75303d; }
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+  .desambigua { font-size:0.9rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:0.7rem 0.95rem; margin:0 0 1.4rem; line-height:1.55; }
+  .desambigua a { color:var(--accent); font-weight:600; }
   .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
@@ -73,8 +75,10 @@
   .siguiente-paso .sp-eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.4rem; }
   .siguiente-paso a{ font-size:1.02rem; font-weight:600; color:var(--ink); text-decoration:none; line-height:1.4; }
   .siguiente-paso a:hover{ text-decoration:underline; }
-
-  .desambigua { margin:0.9rem 0 1.4rem; padding:0.7rem 0.95rem; font-size:0.92rem; line-height:1.6; color:var(--ink-soft); background:var(--surface); border-left:3px solid var(--border); border-radius:0 8px 8px 0; }
+  .firma-consulta{ margin:2rem 0 0; padding:1rem 1.15rem; background:var(--surface); border:1px solid var(--border); border-left:4px solid #8C3B4A; border-radius:11px; }
+  .firma-consulta p{ margin:0; font-size:0.93rem; line-height:1.65; color:var(--ink-soft); }
+  .firma-consulta p strong a{ color:var(--ink); }
+  .firma-consulta .fc-otras{ margin:0.5rem 0 0; font-size:0.86rem; opacity:0.9; }
   @media print {
     .site-header, .site-footer, .back-link, .descarga, .firma-consulta,
     .consulta-cta, .pl-nl, #cookie-banner, [class*=cookie], nav,
@@ -84,6 +88,19 @@
     .tool, .idea, .cierre, .hazlo{ break-inside:avoid; }
     a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
   }
+  .cc-banda{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
+  .cc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
+  .cc-rejilla{ display:grid; gap:0.7rem; }
+  @media (min-width:600px){ .cc-rejilla{ grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); } }
+  .cc-tarjeta{ display:flex; align-items:center; gap:0.85rem; text-decoration:none; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1rem 1.15rem; color:var(--ink); }
+  .cc-tarjeta:hover{ border-color:#8C3B4A; }
+  .cc-marca{ flex-shrink:0; width:2.6rem; height:1.1rem; color:#8C3B4A; }
+  .cc-txt{ display:flex; flex-direction:column; gap:0.1rem; min-width:0; }
+  .cc-nom{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; line-height:1.25; }
+  .cc-quien{ font-size:0.88rem; color:var(--ink-soft); line-height:1.35; }
+  .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
+  .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
+  @media print{ .cc-banda{ display:none; } }
   .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
   .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
   .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
@@ -137,60 +154,24 @@
   .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
   @media print{ .pl-buscador{ display:none !important; } }
 
-  /* El índice visual de las herramientas. */
-  .ruta{ margin:1.5rem 0 2rem; }
-  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
-             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
-  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
-  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
-  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
-           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
-  .ruta a:hover{ background:var(--surface,#fff); }
-  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
-            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
-            border:1.5px solid #d8d0ec; display:grid; place-items:center;
-            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
-  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
-  .tool{ scroll-margin-top:1rem; }
-  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
-                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
-                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
-  @media print{ .ruta{ display:none !important; } }
-
-  /* La caja de la consulta va marcada como lo que es: un anuncio de una
-     consulta particular, que no forma parte de los recursos gratuitos. */
-  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+  /* La caja de la consulta, en versión discreta y marcada como anuncio. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px;
+                 background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
                  border-left:3px solid #8C3B4A !important; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
   .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
                  display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
                  letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
                  opacity:0.85; margin:0 0 0.55rem; }
   .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
   @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
-
-  /* El color de este tema: Hijos y familia. */
-  :root{ --accent:#8A5A2B; --accent-soft:#F5EBDF; --stamp:#8A5A2B; }
-  .idea{ background:#F5EBDF !important; border-color:#e6ded2 !important;
-         border-left-color:#8A5A2B !important; }
-  .hazlo{ background:#F5EBDF !important; border-color:#e6ded2 !important; }
-  .ruta .n{ background:#8A5A2B; border-color:#8A5A2B; color:#fff; }
-  .tool-kicker .num{ background:#8A5A2B; }
-  .cierre{ border-left:4px solid #8A5A2B; }
-  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
-              border:1px solid var(--border); border-radius:14px;
-              background:var(--surface); }
-  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
-  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
-  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
-<script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Ansiedad de separación en niños","image":"https://psicolinks.com/ilustraciones/familia.jpg","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/ansiedad-de-separacion.html","inLanguage":"es-ES"}
-</script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Ansiedad de separación en niños", "item": "https://psicolinks.com/ansiedad-de-separacion.html"}]}
-</script>
 </head>
 <body>
+
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
   <div class="pl-buscador" id="pl-buscador">
@@ -205,84 +186,62 @@
     <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
   </div>
 </header>
+
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
-  <div class="stamp">📎 Guía gratuita · Familia</div>
-  <h1>Ansiedad de separación en niños</h1>
-  <p class="autor">Por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">Seis herramientas para los lloros en la puerta, el dolor de tripa de los domingos y el «no quiero ir» de cada mañana.</p>
-  <img class="guia-ilus" src="/ilustraciones/familia.jpg" alt="Ilustración: el ratón de Psicolinks junto a una casa con la ventana encendida"
-       width="1360" height="460" loading="lazy" decoding="async">
-  <p class="desambigua">Si quien no quiere ir es un niño mayor o un adolescente, y lleva semanas faltando, la guía que buscas es <a href="/no-quiere-ir-al-colegio.html">no quiere ir al colegio</a>.</p>
-  <div class="idea"><strong>La idea de fondo.</strong> Que a un niño le cueste separarse es normal a ciertas edades: aparece hacia los ocho meses y vuelve con fuerza en cada cambio —guardería, colegio, mudanza—. Lo que hace que se quede y crezca no es el miedo, sino <strong>lo que hacemos los adultos para quitárselo</strong>: alargar la despedida, volver a asomarnos, dejarle en casa «hoy solo». Cada una de esas cosas alivia el momento y le confirma que había motivo para preocuparse. Todas las herramientas de aquí abajo van de lo mismo: despedidas cortas, cumplir lo que dices y practicar separaciones pequeñas cuando no hay presión.</div>
+  <div class="stamp">📎 Guía gratuita · Acoso escolar</div>
+  <h1>Cuando a tu hijo le hacen bullying</h1>
+  <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
+  <p class="lead">Seis cosas que sí puedes hacer cuando sospechas que a tu hijo le están haciendo la vida imposible en clase. Ordenadas, y sin las dos que casi siempre empeoran la cosa.</p>
 
-
-
-
-
-
-
-
-
-
-
+  <div class="idea"><strong>La idea de fondo.</strong> El acoso no es un conflicto entre dos: es algo repetido, con desequilibrio de poder y con público. Por eso «que lo arreglen entre ellos» no funciona, y por eso tampoco lo arregla que tu hijo aprenda a defenderse mejor. Lo que lo corta es que los adultos de ese sitio lo vean y actúen. Tu trabajo tiene dos partes: sostenerle a él y mover al colegio.</div>
 
   <div class="descarga">
     <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
     <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
   </div>
 
-  <h2 class="bloque-tit">Seis herramientas</h2>
-  <nav class="ruta" aria-label="Las herramientas de esta guía">
-    <p class="ruta-eti">Las seis, de un vistazo</p>
-    <ol>
-      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">La despedida corta es lo que funciona, y es lo que más cuesta</span></a></li>
-      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Dile cuándo vuelves con algo que él pueda entender</span></a></li>
-      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Practica separaciones pequeñas cuando no pasa nada</span></a></li>
-      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">No le prometas que no va a pasar nada malo</span></a></li>
-      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">El dolor de tripa es real: trátalo como real y no cedas</span></a></li>
-      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Mírate a ti también, porque se contagia</span></a></li>
-    </ol>
-  </nav>
-
-<div class="tool" id="h1">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1</p>
-  <h3>La despedida corta es lo que funciona, y es lo que más cuesta</h3>
-  <p>Alargarla parece más cariñoso y hace justo lo contrario: cada minuto de más le confirma al niño que hay algo de lo que preocuparse, porque si no, no estarías ahí dándole vueltas. Los estudios de guardería van todos en la misma dirección: los niños con despedidas cortas se calman antes.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> un abrazo, una frase fija y te vas. Treinta segundos. La frase siempre la misma: «te quiero, vengo a buscarte después de comer». Y no vuelvas a asomarte.</div>
+  <h2 class="bloque-tit">6 herramientas</h2>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 1</p>
+  <h3>Escucha entero antes de reaccionar</h3>
+  <p>Contarlo cuesta muchísimo, casi siempre por vergüenza y por miedo a que vayas al colegio y sea peor. Si al primer dato saltas indignado, tu hijo aprende que contarte cosas activa un terremoto, y la próxima vez no te cuenta.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> baja el tono y pregunta con calma: qué pasa, desde cuándo, quién está delante, qué pasa después. Toma notas cuando él no esté. Y dile lo único que necesita oír primero: que le crees y que no es culpa suya.</div>
 </div>
-<div class="tool" id="h2">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2 · La que quita la incertidumbre</p>
-  <h3>Dile cuándo vuelves con algo que él pueda entender</h3>
-  <p>«Luego» y «dentro de tres horas» no significan nada a los cuatro años. Un niño maneja mucho mejor las referencias de la rutina que las del reloj, y saber el punto exacto del día en que apareces le quita la incertidumbre, que es lo que de verdad duele.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> usa un momento del día, no una hora: «después de comer», «cuando acabéis el patio». Y cúmplelo con precisión: la primera vez que llegas tarde, el sistema se cae.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 2</p>
+  <h3>Quítale la culpa de encima, explícitamente</h3>
+  <p>Casi todos los niños acosados creen que algo tienen que ver: por ser raros, por callarse, por no responder. Es la parte que más daño hace a largo plazo, más que los propios episodios.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> dilo con todas las letras: «esto lo hacen ellos, no lo provocas tú, y no depende de que tú cambies». Repítelo más veces de las que te parezcan necesarias, porque el mensaje contrario se lo repiten cada día en el patio.</div>
 </div>
-<div class="tool" id="h3">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
-  <h3>Practica separaciones pequeñas cuando no pasa nada</h3>
-  <p>Si la única separación de la semana es la peor de todas —la puerta del cole un lunes—, no hay forma de que aprenda. Como cualquier miedo, este baja con exposición graduada: ratos cortos, en sitios seguros, sin drama.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> empieza por diez minutos en casa de los abuelos, luego media hora, luego una tarde. Siempre avisando de que te vas y volviendo cuando dijiste.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 3</p>
+  <h3>Apunta los hechos, con fechas</h3>
+  <p>Cuando vayas al colegio, la diferencia entre «mi hijo lo está pasando mal» y un registro de siete episodios con fecha, lugar y testigos es enorme. Lo primero abre una conversación; lo segundo abre un protocolo.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> una libreta o una nota en el móvil: fecha, qué pasó, dónde, quién estaba, qué hizo tu hijo, qué hizo el adulto que había cerca. Guarda capturas si hay móvil de por medio, sin borrarlas.</div>
 </div>
-<div class="tool" id="h4">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
-  <h3>No le prometas que no va a pasar nada malo</h3>
-  <p>Es la tentación de todo padre y le hace un flaco favor: le enseña que la tranquilidad viene de que alguien le garantice el futuro. Y como nadie puede, la próxima vez pedirá la garantía otra vez, y más fuerte. Es el mecanismo por el que la ansiedad crece.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> cambia la garantía por confianza en él: en vez de «no va a pasar nada», «sé que lo vas a llevar bien, y si te cuesta se lo dices a tu profe».</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 4</p>
+  <h3>Ve al colegio por escrito, y por orden</h3>
+  <p>La vía informal —hablar cinco minutos en la puerta— se pierde. En España los centros tienen protocolo de acoso y obligación de activarlo, pero se activa cuando hay constancia escrita.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> pide cita con el tutor y, después de la reunión, manda un correo resumiendo lo hablado y lo acordado. Si en dos semanas no hay cambios, sube un escalón: jefatura de estudios o dirección, otra vez por escrito. Si tampoco, inspección educativa.</div>
 </div>
-<div class="tool" id="h5">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
-  <h3>El dolor de tripa es real: trátalo como real y no cedas</h3>
-  <p>La ansiedad duele de verdad, en la tripa y en la cabeza. Que el dolor sea real no significa que quedarse en casa sea la respuesta: quedarse alivia hoy y hace que mañana duela más, porque confirma que el cole era peligroso.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> valida y sostén a la vez: «te duele de verdad, ya lo sé; es lo que hace el nervio. Vamos igual, y si sigue doliendo a media mañana que me llamen».</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 5</p>
+  <h3>No le pidas que se enfrente ni que lo ignore</h3>
+  <p>Los dos consejos clásicos fallan por el mismo motivo: dejan el problema en manos del que menos poder tiene. Responder suele acabar con el acosado castigado, e ignorar no funciona cuando el público lo alimenta.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> trabaja con él lo que sí controla: a quién avisar en el momento, dónde ponerse en los ratos de patio, con quién ir a la salida. Salir del sitio y avisar a un adulto no es rendirse, es la respuesta correcta.</div>
 </div>
-<div class="tool" id="h6">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
-  <h3>Mírate a ti también, porque se contagia</h3>
-  <p>Los niños leen la cara del adulto antes que la situación. Si tú vas a la puerta del cole con angustia, él aprende que la puerta del cole es un sitio para estar angustiado, aunque le digas lo contrario.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> si sabes que se te va a poner mal cuerpo, que le lleve la otra persona unos días. No es rendirse: es no darle la señal equivocada mientras tú lo trabajas.</div>
+<div class="tool">
+  <p class="tool-kicker">Herramienta 6</p>
+  <h3>Reconstruye lo de fuera del colegio</h3>
+  <p>El acoso se lleva la autoestima por una vía muy concreta: le va cerrando los sitios donde es alguien normal. Un rato a la semana en un sitio donde no esté ninguno de esos niños vale por muchas conversaciones.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> busca una actividad fuera del centro, aunque sea pequeña y aunque al principio no le apetezca: un deporte, un grupo, un primo. No es distracción; es reconstruir la prueba de que el patio no es el mundo.</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si lleva más de un mes, si le impide hacer vida normal —no duerme fuera, no va a cumpleaños, no se queda con nadie— o si ha aparecido de golpe después de algo concreto, eso ya se mira con un profesional de infantil, y cuanto antes menos cuesta. Si además hay lloros por la noche, tienes <a href="/miedos-nocturnos-en-ninos.html">miedos nocturnos en niños</a>, y para las mañanas complicadas, <a href="/cosas-para-la-vuelta-al-cole.html">qué ayuda en la vuelta al cole</a>.</div>
+  <div class="cierre"><strong>Y si te supera.</strong> Si tu hijo ha dejado de comer o de dormir, no quiere ir al colegio de ninguna manera, se ha hecho daño o ha dicho que no quiere seguir viviendo, esto ya no es cuestión de estrategias: pide ayuda profesional ya, y díselo al colegio por escrito el mismo día.</div>
+
+  <p class="nota-hermana" style="font-size:0.93rem;line-height:1.6;color:var(--ink-soft);margin:1.6rem 0 0;">Si lo que le pasa es que no quiere ir al colegio, mira también <a href="/no-quiere-ir-al-colegio.html">no quiere ir al colegio</a>. Y si sospechas que el que hace daño es el tuyo, está <a href="/mi-hijo-hace-bullying.html">cuando el que hace daño es tu hijo</a>.</p>
 
   <div class="consulta-cta">
     <h3>¿Y si quieres trabajarlo con alguien?</h3>
@@ -290,14 +249,20 @@
     <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
   </div>
 
-
 </main>
+
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
   <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
   <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cuando a tu hijo le hacen bullying", "inLanguage": "es-ES", "url": "https://psicolinks.com/acoso-escolar.html", "description": "Seis pasos para cuando sospechas que a tu hijo le están acosando en el colegio: cómo escucharle, cómo documentarlo y cómo mover al centro.", "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649"}, "isAccessibleForFree": true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Cuando a tu hijo le hacen bullying", "item": "https://psicolinks.com/acoso-escolar.html"}]}</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
   window.dataLayer = window.dataLayer || [];
@@ -305,7 +270,5 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
-<script src="/buscador-psicolinks.js" defer></script>
-<script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

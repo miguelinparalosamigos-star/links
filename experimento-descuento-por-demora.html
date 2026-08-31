@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El descuento por demora: lo de ahora vale más · Psicolinks</title>
+<meta name="description" content="Ocho preguntas sobre dinero que no existe y un dibujo al final: cuánto se te encoge el valor de algo solo por tener que esperarlo.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El descuento por demora">
+<meta property="og:description" content="Ocho elecciones y un dibujo: cuánto vale para ti lo de después, visto desde ahora.">
+<meta property="og:url" content="https://psicolinks.com/experimento-descuento-por-demora.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-descuento-por-demora.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+
+  .dd-marca{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.09em; text-transform:uppercase;
+             color:var(--ink-soft); text-align:center; margin:0; }
+  .dd-via{ height:0.4rem; border-radius:99px; background:var(--border); overflow:hidden; margin:0.75rem 0 1.2rem; }
+  .dd-via i{ display:block; height:100%; background:var(--accent); width:0; transition:width 0.2s linear; }
+  .dd-ops{ display:grid; gap:0.7rem; margin:1.1rem 0 0; }
+  @media (min-width:34rem){ .dd-ops{ grid-template-columns:1fr 1fr; } }
+  .dd-op{ font-family:inherit; font-weight:700; font-size:1.06rem; line-height:1.4; padding:1.35rem 0.9rem;
+          border-radius:12px; border:2px solid var(--border); background:var(--surface); color:var(--ink);
+          cursor:pointer; text-align:center; }
+  .dd-op:hover{ border-color:var(--accent); color:var(--accent); }
+  .dd-grafico{ background:var(--surface); border:1px solid var(--border); border-radius:12px;
+               padding:0.9rem 0.5rem 0.5rem; margin:1.2rem 0 0.7rem; }
+  .dd-grafico svg{ width:100%; height:auto; display:block; }
+  .dd-pie{ font-size:0.84rem; line-height:1.55; color:var(--ink-soft); margin:0 0 1.3rem; }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Tres minutos</div>
+  <h1>El descuento por demora</h1>
+  <p class="lead">Ocho preguntas sobre dinero que no existe. Al final sale un dibujo con una cosa que
+  normalmente solo se nota: cuánto se te encoge algo por tener que esperarlo.</p>
+
+  <!-- ─────────────────────────────── 1. instrucciones ─────────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Elegir entre dinero de ahora y dinero de después.</p>
+      <p class="lab-sub">Te vamos a poner seis veces la misma disyuntiva con cantidades distintas:
+      una cantidad hoy o <strong>60&nbsp;€ dentro de un mes</strong>. Y luego dos preguntas más.</p>
+      <p class="lab-sub" style="margin-bottom:0;">No hay respuesta buena ni mala y no se corrige
+      nada. Contesta lo que harías de verdad, sin calcular. No se guarda nada: si cierras la
+      pestaña, esto desaparece.</p>
+      <button type="button" class="lab-btn" id="dd-empezar">Empezar →</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. seis elecciones ───────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="dd-marca" id="dd-a-marca" role="status" aria-live="off">1 de 6</p>
+      <div class="dd-via"><i id="dd-a-via"></i></div>
+      <p class="lab-pregunta">¿Qué prefieres?</p>
+      <p class="lab-sub" style="margin-bottom:0;">Lo primero que te salga.</p>
+      <div class="dd-ops">
+        <button type="button" class="dd-op" id="dd-a-hoy">30&nbsp;€ hoy</button>
+        <button type="button" class="dd-op" id="dd-a-esperar">60&nbsp;€ dentro de un mes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 3. las dos de después ────────────── -->
+  <section class="lab-paso" id="lab-3">
+    <div class="lab-caja">
+      <p class="dd-marca" id="dd-b-marca" role="status" aria-live="off">1 de 2</p>
+      <div class="dd-via"><i id="dd-b-via"></i></div>
+      <p class="lab-pregunta" id="dd-b-txt">¿50&nbsp;€ hoy o 60&nbsp;€ dentro de un mes?</p>
+      <p class="lab-sub" style="margin-bottom:0;">Igual que antes: lo que harías, no lo que quedaría
+      bien.</p>
+      <div class="dd-ops">
+        <button type="button" class="dd-op" id="dd-b-1">50&nbsp;€ hoy</button>
+        <button type="button" class="dd-op" id="dd-b-2">60&nbsp;€ dentro de un mes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 4. el resultado ──────────────────── -->
+  <section class="lab-paso" id="lab-4">
+    <div class="lab-caja">
+      <p class="lab-veredicto" id="dd-r-punto"></p>
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="dd-r-euros">0&nbsp;€</b><span>lo que valen hoy para ti esos 60&nbsp;€</span></div>
+        <div class="lab-dato"><b id="dd-r-coste">0&nbsp;€</b><span>lo que te cuesta esperar un mes</span></div>
+      </div>
+      <div class="dd-grafico" id="dd-grafico"></div>
+      <p class="dd-pie" id="dd-pie"></p>
+      <div class="idea" id="dd-inv" data-caso=""></div>
+      <button type="button" class="lab-btn sec" id="dd-otra">Otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Lo que acabas de medir es cuánto se te encoge el valor de algo por el simple hecho de tener
+    que esperarlo. Los 60&nbsp;€ son los mismos el primer día y el último; lo que cambia es lo que
+    valen <em>vistos desde hoy</em>. Todo el mundo los descuenta un poco. Lo interesante no es
+    cuánto, sino de qué forma.</p>
+
+    <p>Y ahí está lo raro: <strong>esa caída no es una recta</strong>. Si lo fuera, cada mes de
+    espera te quitaría lo mismo y no habría nada que contar. Lo que sale, mires a quien mires, es la
+    curva del dibujo: se desploma en las primeras semanas y luego casi se queda plana. Entre hoy y
+    dentro de un mes hay un abismo. Entre el mes doce y el mes trece, prácticamente nada.</p>
+
+    <div class="idea"><strong>De ahí sale la inversión de preferencia.</strong> Es la misma espera
+    de un mes en los dos casos, pero cae en un tramo distinto de la curva: en el precipicio o en la
+    llanura. Por eso puedes decidir con toda tu buena fe que el lunes empiezas —desde el jueves,
+    donde el lunes está lejos y todo es llano— y el lunes por la mañana estar en el precipicio y
+    querer otra cosa. No es que te engañes: es que estás mirando desde otro punto.</div>
+
+    <h2 class="bloque-tit">Por qué esto importa</h2>
+    <p>Esta curva es el motivo por el que cuesta ahorrar cuando el dinero está en la mano, por el que
+    cuesta dejar de fumar cuando el cigarro está encendido, por el que a las once de la noche
+    apagar el móvil e irte a dormir a tu hora es una decisión sorprendentemente difícil. En todos
+    esos casos hay un premio de después —dinero, salud, dormir bien mañana— y un premio de ahora. Y
+    el de después, visto desde ahora, vale menos. No un poco menos: bastante menos.</p>
+
+    <p>Conviene decirlo claro porque casi siempre se cuenta al revés: <strong>eso no es falta de
+    carácter ni de fuerza de voluntad</strong>. En los estudios a esto a veces lo llaman
+    impulsividad, que aquí solo significa una cosa —que lo cercano pesa más que lo lejano— y no es
+    ninguna etiqueta ni describe a nadie entero. La diferencia entre las personas es de grado, y
+    además la misma persona tiene una k distinta según el día, el cansancio y lo que haya en juego.
+    Lo que no cambia es la forma de la curva.</p>
+
+    <div class="idea"><strong>Dónde se nota de verdad.</strong> No cuando planificas: cuando
+    decides. Sentado el domingo, con el móvil lejos, cualquiera elige lo de después. La curva no
+    entra en juego hasta que las dos opciones están delante y una de ellas es <em>ya</em>. Por eso
+    los planes que dependen de aguantar ese momento fallan tanto.</div>
+
+    <h2 class="bloque-tit">Qué se hace con esto</h2>
+    <p>Poco se puede hacer con la curva —es así—, pero sí con dónde te pilla. Tres cosas que
+    funcionan, y ninguna consiste en tener más voluntad:</p>
+
+    <p><strong>Uno: decidir antes, cuando la tentación aún está lejos.</strong> Elige el domingo lo
+    que vas a comer el jueves, deja la transferencia al ahorro programada el día de la nómina, saca
+    la ropa de deporte la noche anterior. Estás usando tu propia llanura a favor: decides desde el
+    tramo plano de la curva, donde lo de después todavía vale lo que vale.</p>
+
+    <p><strong>Dos: partir el premio lejano en premios cercanos.</strong> «Aprobar en junio» está a
+    seis meses y desde aquí no vale casi nada. «Dos horas hoy y tacharlo» está a dos horas. No es un
+    truco de motivación: es meter el premio dentro del tramo donde todavía pesa.</p>
+
+    <p><strong>Y tres: que lo que quieres hacer sea lo fácil de hacer.</strong> Si el móvil está en
+    otra habitación y el libro está en la mesilla, no hace falta ganar el pulso — no llega a haber
+    pulso. Cambiar el entorno cuesta cinco minutos una vez; resistirse cuesta cada noche.</p>
+
+    <div class="idea"><strong>Esto tiene continuación.</strong> Lo de decidir antes y quitar la
+    opción de en medio, aplicado al trabajo y al estudio, está en
+    <a href="/concentrarte-y-dejar-de-procrastinar.html">concentrarte y dejar de procrastinar</a>.
+    Y lo de hacer que lo bueno sea lo fácil, que es la parte que más rinde a largo plazo, en
+    <a href="/crear-habitos-que-duren.html">crear hábitos que duren</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> La idea de que el valor
+    de un premio cae con la espera siguiendo una curva hiperbólica —y no exponencial— es de Ainslie,
+    G. (1975). <em>Specious reward: a behavioral theory of impulsiveness and impulse control</em>.
+    Psychological Bulletin, 82(4), 463–496; ahí está también la explicación de por qué esa forma
+    concreta produce inversiones de preferencia. El formato de ir eligiendo entre dinero de ahora y
+    dinero de después para estimar la k viene de Kirby, K. N. y Maraković, N. N. (1996).
+    <em>Delay-discounting probabilistic rewards: rates decrease as amounts increase</em>.
+    Psychonomic Bulletin &amp; Review, 3(1), 100–104. Tres avisos. Aquí el dinero es hipotético:
+    con dinero real se obtienen resultados parecidos, pero no idénticos, así que tu número es
+    orientativo. Seis elecciones son muy pocas —los cuestionarios de verdad usan decenas de
+    preguntas y varias cantidades y demoras—, o sea que esto no mide nada con precisión. Y sobre
+    todo: <strong>esto no puntúa ni diagnostica a nadie</strong>. Una k alta no es un defecto, no
+    predice tu vida y no aparece en ningún manual de trastornos.</p>
+  </section>
+  <div class="idea"><strong>La ficha, con calma.</strong> Dónde aparece esto fuera del experimento y qué se puede hacer con ello: <a href="/descuento-por-demora.html">el descuento por demora</a>, en la biblioteca de sesgos.</div>
+
+  <div class="consulta-cta">
+    <h3>Esto era un experimento de dos minutos.</h3>
+    <p>Ver cómo funciona la cabeza está bien; cambiar algo de lo que te pasa se hace mejor con alguien delante. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El descuento por demora · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-descuento-por-demora.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Ocho elecciones entre dinero de ahora y dinero de después, y un dibujo al final: cuánto se te encoge el valor de algo por tener que esperarlo."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "El descuento por demora", "item": "https://psicolinks.com/experimento-descuento-por-demora.html"}]}</script>
+<script>
+/* El descuento por demora --------------------------------------------------
+   Bloque A: seis elecciones por bisección entre «X € hoy» y «60 € dentro de
+   un mes». El tramo empieza en 0–59 y la oferta de hoy es siempre su punto
+   medio redondeado: si coge el dinero de hoy, el techo baja; si espera, sube
+   el suelo. Seis pasos dejan el punto de indiferencia con resolución de 1 €.
+
+   Bloque B: las dos preguntas de Ainslie. Misma espera de un mes, colocada
+   cerca o lejos.
+
+   Bloque C: k = A/V − 1 y la curva V = A / (1 + k·D), dibujada a mano en un
+   SVG. Si el punto sale pegado a un extremo, la k del dibujo se acota para
+   que la curva siga viéndose, y se avisa debajo.
+
+   No guarda nada: ni servidor, ni localStorage, ni nada que compartir.      */
+(function(){
+  'use strict';
+
+  var A_TOTAL = 6, DEMORADO = 60;
+  var K_MIN = 0.05, K_MAX = 8;
+
+  var lo, hi, ronda, oferta, bIdx, respB;
+
+  var PREGUNTAS_B = [
+    { txt:'¿50&nbsp;€ hoy o 60&nbsp;€ dentro de un mes?',
+      a:'50&nbsp;€ hoy', b:'60&nbsp;€ dentro de un mes' },
+    { txt:'¿50&nbsp;€ dentro de doce meses o 60&nbsp;€ dentro de trece?',
+      a:'50&nbsp;€ dentro de doce meses', b:'60&nbsp;€ dentro de trece meses' }
+  ];
+
+  function ver(id){
+    ['lab-1','lab-2','lab-3','lab-4'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function $(id){ return document.getElementById(id); }
+  function f(n){ return Math.round(n * 10) / 10; }
+
+  /* ------------------------------------------------------- A. bisección */
+  function reinicia(){
+    lo = 0; hi = 59; ronda = 0; bIdx = 0; respB = [null, null];
+  }
+
+  function pintaA(){
+    oferta = Math.round((lo + hi) / 2);
+    $('dd-a-marca').textContent = (ronda + 1) + ' de ' + A_TOTAL;
+    $('dd-a-via').style.width = (ronda / A_TOTAL * 100) + '%';
+    $('dd-a-hoy').innerHTML = oferta + '&nbsp;€ hoy';
+    $('dd-a-esperar').innerHTML = DEMORADO + '&nbsp;€ dentro de un mes';
+  }
+
+  function eligeA(ahora){
+    if (ronda >= A_TOTAL) return;
+    if (ahora) { hi = oferta; } else { lo = oferta; }   /* baja o sube el tramo */
+    ronda++;
+    if (ronda >= A_TOTAL) { bIdx = 0; pintaB(); ver('lab-3'); }
+    else { pintaA(); }
+  }
+
+  $('dd-a-hoy').addEventListener('click', function(){ eligeA(true); });
+  $('dd-a-esperar').addEventListener('click', function(){ eligeA(false); });
+
+  /* --------------------------------------------------- B. las dos de más */
+  function pintaB(){
+    var p = PREGUNTAS_B[bIdx];
+    $('dd-b-marca').textContent = (bIdx + 1) + ' de 2';
+    $('dd-b-via').style.width = (bIdx / 2 * 100) + '%';
+    $('dd-b-txt').innerHTML = p.txt;
+    $('dd-b-1').innerHTML = p.a;
+    $('dd-b-2').innerHTML = p.b;
+  }
+
+  function eligeB(cual){
+    if (bIdx > 1) return;
+    respB[bIdx] = cual;              /* 'antes' = la cantidad menor y más cercana */
+    bIdx++;
+    if (bIdx >= 2) { resultado(); ver('lab-4'); }
+    else { pintaB(); }
+  }
+
+  $('dd-b-1').addEventListener('click', function(){ eligeB('antes'); });
+  $('dd-b-2').addEventListener('click', function(){ eligeB('despues'); });
+
+  /* --------------------------------------------------------- C. el dibujo */
+  function grafico(kd, V, extremo){
+    var X = function(d){ return 70 + 45 * d; };
+    var Y = function(v){ return 175 - v * (155 / 60); };
+    var vMes = DEMORADO / (1 + kd), yMes = Y(vMes), xMes = X(1);
+    var s = '<svg id="dd-svg" viewBox="0 0 640 220" role="img" ' +
+            'aria-label="Curva del valor de 60 euros según los meses que haya que esperar">' +
+            '<title>Lo que valen para ti 60 euros según cuánto haya que esperar</title>';
+
+    [0, 6, 12].forEach(function(d){
+      s += '<line x1="' + X(d) + '" y1="20" x2="' + X(d) + '" y2="175" ' +
+           'stroke="#DDD7CB" stroke-width="1"/>';
+    });
+    [0, 20, 40, 60].forEach(function(v){
+      s += '<line x1="70" y1="' + f(Y(v)) + '" x2="610" y2="' + f(Y(v)) + '" ' +
+           'stroke="#DDD7CB" stroke-width="1"/>';
+      s += '<text x="60" y="' + f(Y(v) + 4) + '" text-anchor="end" font-family="monospace" ' +
+           'font-size="11" fill="#625C70">' + v + ' €</text>';
+    });
+
+    var p = '';
+    for (var i = 0; i <= 120; i++){
+      var d = i / 10;
+      p += (i ? 'L' : 'M') + f(X(d)) + ' ' + f(Y(DEMORADO / (1 + kd * d)));
+    }
+    s += '<path d="' + p + '" fill="none" stroke="#4A3B78" stroke-width="2.5" ' +
+         'stroke-linecap="round" stroke-linejoin="round"/>';
+
+    s += '<line x1="70" y1="' + f(yMes) + '" x2="' + xMes + '" y2="' + f(yMes) + '" ' +
+         'stroke="#B5541D" stroke-width="1.5" stroke-dasharray="3 4"/>';
+    s += '<line x1="' + xMes + '" y1="' + f(yMes) + '" x2="' + xMes + '" y2="175" ' +
+         'stroke="#B5541D" stroke-width="1.5" stroke-dasharray="3 4"/>';
+    s += '<circle cx="' + xMes + '" cy="' + f(yMes) + '" r="5" fill="#B5541D"/>';
+    s += '<text x="' + (xMes + 11) + '" y="' + f(yMes - 10) + '" font-family="monospace" ' +
+         'font-size="13" font-weight="700" fill="#B5541D">' +
+         (extremo ? 'tu punto · un mes' : V + ' € · un mes') + '</text>';
+
+    s += '<text x="70" y="196" text-anchor="start" font-family="monospace" font-size="11" ' +
+         'fill="#625C70">hoy</text>';
+    s += '<text x="340" y="196" text-anchor="middle" font-family="monospace" font-size="11" ' +
+         'fill="#625C70">6 meses</text>';
+    s += '<text x="610" y="196" text-anchor="end" font-family="monospace" font-size="11" ' +
+         'fill="#625C70">12 meses</text>';
+    s += '</svg>';
+    return s;
+  }
+
+  /* ------------------------------------------------------ C. el resultado */
+  function resultado(){
+    var V = Math.min(59, Math.max(1, Math.round((lo + hi) / 2)));
+    var k = DEMORADO / V - 1;
+    var extremo = (k < K_MIN || k > K_MAX);
+    var kd = Math.min(K_MAX, Math.max(K_MIN, k));
+
+    $('dd-r-punto').innerHTML =
+      'Para ti, <strong>60&nbsp;€ dentro de un mes</strong> valen ahora mismo unos <strong>' +
+      V + '&nbsp;€</strong>. Dicho de otra forma: por debajo de esa cantidad prefieres esperar, y ' +
+      'por encima prefieres cobrar hoy — ese mes de espera te cuesta ' + (DEMORADO - V) + '&nbsp;€.';
+
+    $('dd-r-euros').innerHTML = V + '&nbsp;€';
+    $('dd-r-coste').innerHTML = (DEMORADO - V) + '&nbsp;€';
+
+    $('dd-grafico').innerHTML = grafico(kd, V, extremo);
+    $('dd-pie').innerHTML = 'Lo que valen para ti esos 60&nbsp;€ según los meses que haya que ' +
+      'esperar, con tu propio número. El punto naranja es el mes que acabas de contestar.' +
+      (extremo ? ' <strong>Ojo:</strong> tus respuestas se han ido al extremo de la escala, así que ' +
+                 'la curva del dibujo está suavizada para que se vea la forma; el número de arriba ' +
+                 'sí es el tuyo.' : '');
+
+    var caso, txt;
+    if (respB[0] === 'antes' && respB[1] === 'despues') {
+      caso = 'reversion';
+      txt = '<strong>Y ahora las dos últimas.</strong> En la primera cogiste los 50&nbsp;€ de hoy: ' +
+        'no te compensaba esperar un mes por 10&nbsp;€ más. En la segunda sí esperaste ese mes por ' +
+        'esos mismos 10&nbsp;€. La espera es idéntica —treinta días— y la diferencia también. Lo ' +
+        'único que ha cambiado es lo lejos que estaba todo. Has cambiado de opinión sobre la misma ' +
+        'espera solo por mirarla desde más lejos. Eso es una inversión de preferencia, y es lo que ' +
+        'le pasa a casi todo el mundo.';
+    } else if (respB[0] === 'despues' && respB[1] === 'antes') {
+      caso = 'inversa';
+      txt = '<strong>Y ahora las dos últimas.</strong> Has hecho justo lo contrario de lo habitual: ' +
+        'esperaste el mes cuando estaba cerca y no lo esperaste cuando estaba lejos. La espera era ' +
+        'la misma en las dos, treinta días por 10&nbsp;€. Tampoco pasa nada: con dos preguntas ' +
+        'sueltas la respuesta depende mucho de cómo te haya sonado cada una.';
+    } else {
+      caso = 'consistente';
+      txt = '<strong>Y ahora las dos últimas.</strong> Has contestado igual en las dos: ' +
+        (respB[0] === 'antes'
+          ? 'te quedaste con los 50&nbsp;€ las dos veces, estuvieran cerca o lejos. '
+          : 'esperaste el mes las dos veces, estuviera cerca o lejos. ') +
+        'La espera era la misma —treinta días por 10&nbsp;€—, así que contestar lo mismo es lo ' +
+        'coherente. Aquí lo habitual es cambiar de respuesta según lo lejos que quede, pero no ' +
+        'todo el mundo lo hace y con dos preguntas no se puede decir nada más.';
+    }
+    var caja = $('dd-inv');
+    caja.setAttribute('data-caso', caso);
+    caja.innerHTML = txt;
+  }
+
+  /* -------------------------------------------------------------- arranque */
+  $('dd-empezar').addEventListener('click', function(){
+    reinicia(); pintaA(); ver('lab-2');
+  });
+  $('dd-otra').addEventListener('click', function(){
+    reinicia(); pintaA(); ver('lab-1');
+  });
+
+  reinicia();
+  pintaA();
+})();
+</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lo que se cuenta y lo que pasa · Psicolinks</title>
+<meta name="description" content="Cuatro preguntas de «cuál es más frecuente» donde la respuesta rápida falla siempre hacia el mismo lado. El atajo se llama heurística de disponibilidad.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="Lo que se cuenta y lo que pasa">
+<meta property="og:description" content="Cuatro preguntas donde la respuesta que viene sola falla siempre hacia lo que más se cuenta.">
+<meta property="og:url" content="https://psicolinks.com/experimento-disponibilidad.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-disponibilidad.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-escala{ display:flex; align-items:center; gap:0.8rem; }
+  .lab-escala input[type=range]{ flex:1; accent-color:#8C3B4A; }
+  .lab-escala output{ font-family:var(--font-mono); font-weight:700; font-size:1.6rem; min-width:3.5ch; text-align:right; }
+  .lab-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .lab-barras{ display:grid; gap:0.55rem; margin:0.4rem 0 1.2rem; }
+  .lab-b{ display:grid; grid-template-columns:7.5rem 1fr auto; align-items:center; gap:0.6rem; font-size:0.9rem; }
+  .lab-b .via{ height:0.72rem; border-radius:99px; background:var(--border); overflow:hidden; }
+  .lab-b .via i{ display:block; height:100%; background:#8C3B4A; }
+  .lab-b .via.otro i{ background:var(--accent); }
+  .lab-b .num{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .oculto{ position:absolute; left:-9999px; }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  .en-ops{ display:grid; gap:0.6rem; }
+  .en-op{ display:block; width:100%; text-align:left; font-family:inherit; font-size:0.98rem;
+          line-height:1.55; padding:1rem 1.15rem; border-radius:12px; border:2px solid var(--border);
+          background:var(--surface); color:var(--ink); cursor:pointer; }
+  .en-op:hover{ border-color:var(--accent); }
+  .dp-cuenta{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.08em;
+              text-transform:uppercase; color:var(--ink-soft); margin:0 0 0.5rem; }
+  .dp-res{ display:grid; gap:0.7rem; margin:1.2rem 0 0; }
+  .dp-fila{ background:var(--paper); border:1px solid var(--border); border-radius:12px;
+            padding:0.9rem 1.05rem; font-size:0.93rem; line-height:1.55; }
+  .dp-fila .eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em;
+                 text-transform:uppercase; margin:0 0 0.3rem; }
+  .dp-fila.bien{ border-left:4px solid #2F6B4F; }
+  .dp-fila.bien .eti{ color:#2F6B4F; }
+  .dp-fila.mal{ border-left:4px solid #8C3B4A; }
+  .dp-fila.mal .eti{ color:#8C3B4A; }
+  .dp-fila .cifra{ display:block; margin:0.35rem 0 0; color:var(--ink-soft); font-size:0.88rem; }
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Dos minutos</div>
+  <h1>Lo que se cuenta y lo que pasa</h1>
+  <p class="lead">Cuatro preguntas de «cuál es más frecuente». No hace falta que aciertes: lo
+  interesante es hacia qué lado se te va la respuesta rápida, y por qué siempre se va al mismo.</p>
+
+  <div class="lab-amigo" id="lab-amigo-intro" hidden></div>
+
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="dp-cuenta" id="dp-cuenta">Pregunta 1 de 4</p>
+      <p class="lab-pregunta" id="dp-pregunta"></p>
+      <p class="lab-sub" id="dp-sub"></p>
+      <div class="en-ops" id="dp-ops"></div>
+    </div>
+  </section>
+
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="dp-aciertos">0</b><span>de 4 acertadas</span></div>
+        <div class="lab-dato"><b id="dp-patron">—</b><span>fallos hacia lo que más se cuenta</span></div>
+      </div>
+      <p class="lab-veredicto" id="dp-veredicto"></p>
+      <div class="dp-res" id="dp-res"></div>
+      <div class="lab-amigo" id="lab-amigo-final" hidden></div>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+      <button type="button" class="lab-btn sec" id="lab-otra">Probar otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Para saber si algo es frecuente no contamos: le preguntamos a la memoria a ver si se le ocurre un
+    ejemplo. Si viene rápido, damos por hecho que es común. El atajo se llama
+    <strong>heurística de disponibilidad</strong> y funcionaría bien si recordar fuese proporcional a
+    ocurrir — pero recordamos mejor lo reciente, lo aparatoso, lo que da miedo y, sobre todo, lo que sale
+    en pantalla.</p>
+
+    <div class="idea"><strong>Fíjate en la forma de los fallos.</strong> Casi nunca se falla al azar: se
+    falla hacia lo que más se cuenta. Un accidente de avión ocupa telediarios enteros; las 684.000
+    personas que mueren al año por caídas no salen en ninguno. Ninguna de las dos cifras la has visto
+    nunca — pero una de las dos categorías la tienes en la cabeza y la otra no.</div>
+
+    <p>Esto no es solo trivia. Cuando alguien está bajo de ánimo, lo que le viene disponible son los
+    ejemplos malos; entonces «¿me sale algo bien alguna vez?» se contesta con ese material y se contesta
+    que no. La respuesta no describe su vida: describe qué tenía a mano. Por eso un registro escrito de
+    la semana compite con la memoria, y una discusión con uno mismo no.</p>
+
+    <div class="idea"><strong>Y entonces, ¿qué se hace?</strong> Buscar el número en vez de buscar el
+    ejemplo, y para lo de dentro, apuntar. La ficha entera está en
+    <a href="/heuristica-de-disponibilidad.html">la heurística de disponibilidad</a>. Si esto se te junta
+    con la preocupación por la salud, está en
+    <a href="/buscar-sintomas-en-internet.html">buscar síntomas en internet</a>; y si lo que te desgasta
+    es el goteo de noticias, en <a href="/redes-sociales-y-animo.html">redes sociales y ánimo</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Tversky, A. y Kahneman, D.
+    (1973). <em>Availability: a heuristic for judging frequency and probability</em>. Cognitive
+    Psychology, 5(2), 207–232. Las cifras de aquí arriba son de fuentes públicas —INE (Defunciones según
+    la causa de muerte, 2024), OMS (nota descriptiva sobre caídas), IATA (informe anual de seguridad
+    2024), CNMC y Consejo General de Colegios Farmacéuticos (2025)— y la comparación de palabras está
+    contada sobre una lista abierta de 636.000 palabras en español. Esto <strong>no es el estudio
+    original</strong>: allí había muchos participantes y una sola pregunta cada vez. Sirve para notar el
+    atajo, no para medirte: no puntúa nada y no dice nada de ti.</p>
+  </section>
+
+  <div class="idea"><strong>La ficha, con calma.</strong> Qué es, dónde aparece y qué se puede hacer, en
+  <a href="/heuristica-de-disponibilidad.html">la heurística de disponibilidad</a>. Y en el laboratorio
+  hay más: <a href="/experimento-anclaje.html">el anclaje</a> y
+  <a href="/experimento-efecto-foco.html">el efecto foco</a>.</div>
+
+  <div class="consulta-cta">
+    <h3>Esto era un experimento de dos minutos.</h3>
+    <p>Ver cómo funciona la cabeza está bien; cambiar algo de lo que te pasa se hace mejor con alguien delante. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Lo que se cuenta y lo que pasa · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-disponibilidad.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Un experimento de dos minutos sobre la heurística de disponibilidad: cuatro preguntas de frecuencia donde la respuesta intuitiva falla hacia lo que más se cuenta."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "Lo que se cuenta y lo que pasa", "item": "https://psicolinks.com/experimento-disponibilidad.html"}]}</script>
+<script>
+/* Lo que se cuenta y lo que pasa ------------------------------------------
+   Cuatro pares de opciones. La respuesta intuitiva suele ser la más
+   "contada", no la más frecuente. La explicación va al final, después de
+   responder, para no contaminar las respuestas.
+
+   No guarda nada, ni en el navegador. Al compartir, el resultado viaja
+   detrás de la # del enlace, que es la parte que no llega al servidor.   */
+(function(){
+  'use strict';
+
+  var PREGUNTAS = [
+    {
+      p: 'En España, ¿de qué murió más gente en 2024?',
+      sub: 'De causas externas, es decir, sin contar enfermedades.',
+      ops: ['En accidente de tráfico', 'Por una caída'],
+      buena: 1,
+      dice: 'Caídas accidentales: 4.407 personas. Accidentes de tráfico: 1.810. Las caídas son la primera causa de muerte externa en España por segundo año seguido.',
+      fuente: 'INE, Defunciones según la causa de muerte, 2024 (provisional).'
+    },
+    {
+      p: 'En el mundo, ¿qué se lleva más vidas cada año?',
+      sub: 'Aviación comercial frente a caerse.',
+      ops: ['Los accidentes de aviación', 'Las caídas'],
+      buena: 1,
+      dice: 'Caídas mortales: unas 684.000 al año en todo el mundo. Aviación comercial en 2024: 244 fallecidos en 40,6 millones de vuelos. La diferencia es de casi tres mil veces.',
+      fuente: 'OMS, nota descriptiva sobre caídas; IATA, informe anual de seguridad 2024.'
+    },
+    {
+      p: 'En español, ¿qué hay más?',
+      sub: 'Piénsalo un momento antes de contestar: intenta que se te ocurran de las dos clases.',
+      ops: ['Palabras que empiezan por R', 'Palabras con R en tercera letra'],
+      buena: 1,
+      dice: 'Con R en tercera posición hay bastantes más: 64.107 frente a 45.032. Cuesta creerlo porque por la primera letra se busca fácil, y por la tercera no se busca de ninguna manera.',
+      fuente: 'Contado sobre una lista abierta de 636.000 palabras en español (palabras de cuatro letras o más).'
+    },
+    {
+      p: 'En España, ¿de qué hay más abiertas?',
+      sub: 'A ojo, por todo el país.',
+      ops: ['Farmacias', 'Gasolineras'],
+      buena: 0,
+      dice: 'Farmacias: 22.273. Gasolineras: 12.685. Casi el doble de farmacias, aunque las gasolineras se vean más porque están donde uno mira.',
+      fuente: 'Consejo General de Colegios Farmacéuticos y CNMC, 2025.'
+    }
+  ];
+
+  var i = 0, respuestas = [];
+
+  function ver(id){
+    ['lab-1','lab-2'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* ------------------------------------------------- ¿viene de un amigo? */
+  function leerEnlace(){
+    var m = /^r=([0-4])$/.exec((location.hash || '').replace(/^#/, ''));
+    return m ? +m[1] : null;
+  }
+  var amigo = leerEnlace();
+  if (amigo !== null) {
+    var caja = document.getElementById('lab-amigo-intro');
+    caja.innerHTML = 'Alguien lo ha hecho antes que tú y acertó <strong>' + amigo +
+      ' de 4</strong>. A ver qué te sale.';
+    caja.hidden = false;
+  }
+
+  /* ------------------------------------------------------ las preguntas */
+  function pintarPregunta(){
+    var q = PREGUNTAS[i];
+    document.getElementById('dp-cuenta').textContent = 'Pregunta ' + (i + 1) + ' de ' + PREGUNTAS.length;
+    document.getElementById('dp-pregunta').textContent = q.p;
+    document.getElementById('dp-sub').textContent = q.sub;
+    var cont = document.getElementById('dp-ops');
+    cont.innerHTML = '';
+    q.ops.forEach(function(t, n){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'en-op';
+      b.textContent = t;
+      b.addEventListener('click', function(){ responder(n); });
+      cont.appendChild(b);
+    });
+  }
+
+  function responder(n){
+    respuestas.push(n);
+    i++;
+    if (i < PREGUNTAS.length) { pintarPregunta(); document.getElementById('lab-1').scrollIntoView({behavior:'smooth', block:'start'}); }
+    else { pintarResultado(); ver('lab-2'); }
+  }
+
+  function pintarResultado(){
+    var aciertos = 0;
+    var html = '';
+    PREGUNTAS.forEach(function(q, n){
+      var bien = respuestas[n] === q.buena;
+      if (bien) aciertos++;
+      html += '<div class="dp-fila ' + (bien ? 'bien' : 'mal') + '">' +
+        '<span class="eti">' + (bien ? '✔ Acertada' : '✘ Fallada') + '</span>' +
+        '<strong>' + esc(q.p) + '</strong> Tú dijiste: ' + esc(q.ops[respuestas[n]]) + '. ' +
+        esc(q.dice) + '<span class="cifra">' + esc(q.fuente) + '</span></div>';
+    });
+    document.getElementById('dp-res').innerHTML = html;
+    document.getElementById('dp-aciertos').textContent = aciertos;
+    var fallos = PREGUNTAS.length - aciertos;
+    document.getElementById('dp-patron').textContent = fallos + ' de ' + fallos;
+
+    var v;
+    if (fallos === 0) {
+      v = 'Las cuatro. O ya conocías estas cifras, o has desconfiado de la respuesta que venía sola, ' +
+          'que es exactamente el gesto que hay que hacer. Mira de todas formas la explicación de abajo: ' +
+          'el atajo sigue funcionando aunque esta vez lo hayas parado.';
+    } else if (fallos === 1) {
+      v = 'Una fallada de cuatro. Fíjate en cuál: no es una equivocación cualquiera, es la que iba hacia ' +
+          'lo que más se cuenta por ahí.';
+    } else {
+      v = 'Has fallado ' + fallos + ' de 4 — y aquí lo llamativo no es el número, sino la dirección. ' +
+          'Los cuatro fallos posibles van todos hacia el mismo lado: lo que más se cuenta, no lo que más ocurre.';
+    }
+    document.getElementById('dp-veredicto').innerHTML = v;
+
+    if (amigo !== null) {
+      var f = document.getElementById('lab-amigo-final');
+      f.innerHTML = 'Quien te lo mandó acertó <strong>' + amigo + ' de 4</strong>. Tú, <strong>' +
+        aciertos + ' de 4</strong>.';
+      f.hidden = false;
+    }
+    window.__aciertos = aciertos;
+  }
+
+  /* ----------------------------------------------------------- compartir */
+  function texto(){
+    return 'Acabo de hacer el experimento de la disponibilidad de Psicolinks: ' + window.__aciertos +
+      ' de 4. Las respuestas que parecen obvias no lo son. Pruébalo: ' +
+      'https://psicolinks.com/experimento-disponibilidad.html#r=' + window.__aciertos;
+  }
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = texto();
+    if (navigator.share) { navigator.share({ text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('El experimento de la disponibilidad') + '&body=' + encodeURIComponent(t);
+  });
+
+  document.getElementById('lab-otra').addEventListener('click', function(){
+    if (location.hash) { history.replaceState(null, '', location.pathname); amigo = null;
+      document.getElementById('lab-amigo-intro').hidden = true;
+      document.getElementById('lab-amigo-final').hidden = true; }
+    i = 0; respuestas = [];
+    pintarPregunta();
+    ver('lab-1');
+  });
+
+  pintarPregunta();
+})();
+</script>
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

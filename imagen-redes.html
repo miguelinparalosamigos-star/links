@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Imagen para redes · Psicolinks</title>
+<title>Imágenes para redes · Psicolinks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -28,56 +28,151 @@
   .btn{ border:none; border-radius:9px; background:var(--accent); color:#fff; font-family:inherit; font-weight:600; font-size:0.95rem; padding:0.7rem 1.3rem; cursor:pointer; }
   .btn:hover{ background:#3a2e63; }
   .btn.sec{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); }
+  .btn:disabled{ opacity:0.45; cursor:default; }
   .previa{ margin-top:1.8rem; }
   canvas{ width:100%; height:auto; border:1px solid var(--border); border-radius:12px; display:block; background:#fff; }
   .pista{ font-size:0.85rem; color:var(--ink-soft); margin:0.6rem 0 0; line-height:1.5; }
   .site-footer{ border-top:1px solid var(--border); padding:1.6rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+
+  .formatos{ display:flex; flex-wrap:wrap; gap:0.5rem; margin:0.4rem 0 0; }
+  .formatos button{ font:inherit; font-size:0.88rem; padding:0.5rem 0.9rem; border-radius:99px;
+                    border:1.5px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer; }
+  .formatos button[aria-pressed="true"]{ background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+  .laminas{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:0.9rem; margin:1.4rem 0 0; }
+  .lamina{ border:1px solid var(--border); border-radius:10px; background:var(--surface); padding:0.55rem; }
+  .lamina canvas{ border:0; border-radius:6px; }
+  .lamina p{ font-family:var(--font-mono); font-size:0.66rem; color:var(--ink-soft); margin:0.45rem 0 0; text-align:center; }
+  .lamina textarea{ font-size:0.8rem; margin:0.4rem 0 0; padding:0.4rem 0.5rem; }
+  .estado{ font-size:0.88rem; color:#2f6b4f; margin:0.8rem 0 0; min-height:1.2em; }
+
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
 </style>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
-  <h1>Imagen para redes</h1>
-  <p class="lead">Genera la imagen de 1200×630 para acompañar el post, con el estilo de Psicolinks. Elige un artículo, retoca el texto si quieres y descárgala.</p>
+  <h1>Imágenes para redes</h1>
+  <p class="lead">Coge el estudio del día y lo convierte en un carrusel de Instagram con su desglose:
+  la pregunta, cómo se hizo, qué salió y por qué pasa. Lo revisas, lo descargas y lo subes.</p>
 
   <div class="aviso">
-    <strong>Para qué sirve.</strong> Un post con imagen se ve mucho más que uno con solo texto, y una imagen con el titular hace que la gente entienda de qué va antes de decidir si pincha. Esta la puedes subir a Facebook, LinkedIn, Instagram o Threads junto al texto que te da <a href="/redes.html">la página de posts</a>. Esta página no la indexa Google.
+    <strong>Cómo se usa.</strong> Eliges el artículo, miras que el texto de cada lámina quepa bien
+    —se puede editar—, y le das a descargar: salen los PNG numerados en el orden del carrusel. El texto
+    para el pie de foto lo tienes en <a href="/post.html">la página de posts</a>. Esta página no la
+    indexa Google.
   </div>
 
   <label for="sel">Artículo</label>
   <select id="sel"><option>Cargando artículos…</option></select>
 
-  <label for="tit">Titular (edítalo si es muy largo)</label>
-  <textarea id="tit" rows="3"></textarea>
-
-  <label for="pie">Línea de abajo</label>
-  <input type="text" id="pie" value="psicolinks.com · psicología con el estudio delante">
+  <label>Formato</label>
+  <div class="formatos" id="formatos">
+    <button type="button" data-f="carrusel" aria-pressed="true">Carrusel · 1080×1350</button>
+    <button type="button" data-f="story" aria-pressed="false">Stories · 1080×1920</button>
+    <button type="button" data-f="enlace" aria-pressed="false">Enlace · 1200×630</button>
+  </div>
+  <p class="pista" id="pista-formato"></p>
 
   <div class="fila">
-    <button class="btn" id="gen">Actualizar imagen</button>
-    <button class="btn sec" id="desc">Descargar PNG</button>
+    <button class="btn" id="descargar">Descargar todas</button>
+    <button class="btn sec" id="rehacer">Volver al texto original</button>
   </div>
+  <p class="estado" id="estado"></p>
 
-  <div class="previa">
-    <canvas id="lienzo" width="1200" height="630"></canvas>
-    <p class="pista">Se descarga en 1200×630, la medida que usan Facebook y LinkedIn para la imagen de un enlace. En Instagram funciona igual, aunque ahí se ve recortada por los lados.</p>
-  </div>
+  <div class="laminas" id="laminas"></div>
 
-  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/redes.html">← Ir a los textos para redes</a> · <a href="/">Portada</a></p>
+  <p style="margin-top:2rem;font-size:0.95rem;"><a href="/post.html">← Ir a los textos para redes</a> · <a href="/">Portada</a></p>
 </main>
 <footer class="site-footer"><p>© 2026 Psicolinks · Página interna</p></footer>
 
 <script>
-  const C = { paper:'#EEEDE6', surface:'#FFFFFF', ink:'#211F2E', inkSoft:'#625C70', border:'#DDD7CB', accent:'#4A3B78', stamp:'#B5541D' };
-  const lienzo = document.getElementById('lienzo');
-  const ctx = lienzo.getContext('2d');
+/* Generador de imágenes para redes -----------------------------------------
+   Dibuja en canvas, sin librerías y sin salir del navegador. El material sale
+   del propio artículo: el desglose de cuatro partes que ya genera
+   fetch-studies.js para cada estudio.                                       */
+(function(){
+  'use strict';
 
-  function lineas(texto, maxAncho, fuente){
-    ctx.font = fuente;
-    const palabras = texto.split(/\s+/);
-    const res = []; let actual = '';
+  var C = { paper:'#EEEDE6', surface:'#FFFFFF', ink:'#211F2E', inkSoft:'#625C70',
+            border:'#DDD7CB', accent:'#4A3B78', stamp:'#B5541D' };
+
+  var FORMATOS = {
+    carrusel: { W:1080, H:1350, nombre:'carrusel',
+      pista:'1080×1350, el formato vertical del feed de Instagram: es el que más pantalla ocupa. Se sube el conjunto como carrusel, en orden.' },
+    story:    { W:1080, H:1920, nombre:'story',
+      pista:'1080×1920 para stories. Deja aire arriba y abajo para que no te lo tapen los botones de Instagram.' },
+    enlace:   { W:1200, H:630,  nombre:'enlace',
+      pista:'1200×630 apaisada, la de la vista previa de un enlace en Facebook, LinkedIn o WhatsApp. Aquí solo sale la portada.' }
+  };
+
+  var FIRMA_1 = 'psicolinks.com';
+  var FIRMA_2 = 'Miguel Martínez, psicólogo · col. CV17649';
+  var FIRMA_3 = 'Consulta online para toda España y presencial en Valencia';
+
+  var formato = 'carrusel';
+  var posts = [];
+  var laminas = [];          // [{ eti, texto, tipo }]
+  var originales = [];
+
+  /* ------------------------------------------------------------- dibujo */
+  function partir(ctx, texto, maxAncho){
+    var palabras = String(texto).split(/\s+/), res = [], actual = '';
     palabras.forEach(function(p){
-      const prueba = actual ? actual + ' ' + p : p;
+      var prueba = actual ? actual + ' ' + p : p;
       if (ctx.measureText(prueba).width > maxAncho && actual) { res.push(actual); actual = p; }
       else { actual = prueba; }
     });
@@ -85,95 +180,236 @@
     return res;
   }
 
-  function dibuja(){
-    const titulo = document.getElementById('tit').value.trim() || 'Psicolinks';
-    const pie = document.getElementById('pie').value.trim();
-    const W = 1200, H = 630, M = 80;
+  // Baja el cuerpo hasta que el texto quepa en el alto disponible.
+  function ajustar(ctx, texto, maxAncho, maxAlto, fuente, cuerpoIni, cuerpoMin){
+    var cuerpo = cuerpoIni, ls;
+    while (cuerpo > cuerpoMin) {
+      ctx.font = fuente.replace('{c}', cuerpo);
+      ls = partir(ctx, texto, maxAncho);
+      if (ls.length * cuerpo * 1.22 <= maxAlto) break;
+      cuerpo -= 2;
+    }
+    ctx.font = fuente.replace('{c}', cuerpo);
+    return { lineas: partir(ctx, texto, maxAncho), cuerpo: cuerpo };
+  }
 
-    ctx.fillStyle = C.paper; ctx.fillRect(0,0,W,H);
-    // banda de acento a la izquierda
-    ctx.fillStyle = C.accent; ctx.fillRect(0,0,14,H);
-    // tarjeta
-    ctx.fillStyle = C.surface;
-    ctx.strokeStyle = C.border; ctx.lineWidth = 2;
-    const x = M-24, y = M-24, w = W-2*(M-24), h = H-2*(M-24), r = 22;
+  function tarjeta(ctx, x, y, w, h, r){
     ctx.beginPath();
     ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
     ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
     ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
     ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
-    ctx.fill(); ctx.stroke();
-    // franja superior de la tarjeta
-    ctx.fillStyle = C.accent; ctx.fillRect(x+2, y+2, w-4, 8);
+  }
 
-    // sello
-    ctx.font = '700 22px "Space Mono", monospace';
+  function logo(ctx, x, y, cuerpo){
+    ctx.font = '700 ' + cuerpo + 'px Lora, Georgia, serif';
+    var a = ctx.measureText('psico').width;
+    ctx.fillStyle = C.ink;    ctx.fillText('psico', x, y);
+    ctx.fillStyle = C.accent; ctx.fillText('links', x + a, y);
+    return a + ctx.measureText('links').width;
+  }
+
+  function dibujar(lienzo, lamina, indice, total){
+    var f = FORMATOS[formato], W = f.W, H = f.H;
+    lienzo.width = W; lienzo.height = H;
+    var ctx = lienzo.getContext('2d');
+    var M = Math.round(W * 0.075);
+    var esCierre = lamina.tipo === 'cierre';
+
+    ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = C.accent; ctx.fillRect(0, 0, Math.round(W*0.013), H);
+
+    var x = M - 20, y = M - 20, w = W - 2*(M-20), h = H - 2*(M-20);
+    ctx.fillStyle = C.surface; ctx.strokeStyle = C.border; ctx.lineWidth = 2;
+    tarjeta(ctx, x, y, w, h, 26); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = C.accent; ctx.fillRect(x+2, y+2, w-4, 9);
+
+    var izq = M + 14, anchoTexto = w - 68;
+    var arribaTexto = M + Math.round(H*0.10);
+    var abajoTexto  = H - M - Math.round(H*0.11);
+
+    // Etiqueta de arriba y numeración.
+    ctx.font = '700 ' + Math.round(W*0.021) + 'px "Space Mono", monospace';
     ctx.fillStyle = C.stamp;
-    ctx.fillText('ESTUDIO DEL DÍA', M+12, M+52);
+    ctx.fillText(lamina.eti, izq, M + Math.round(H*0.035));
 
-    // titular: ajusta el cuerpo hasta que quepa en 5 líneas
-    let cuerpo = 62, ls;
-    do {
-      ls = lineas(titulo, w - 96, '700 ' + cuerpo + 'px Lora, Georgia, serif');
-      if (ls.length <= 5) break;
-      cuerpo -= 3;
-    } while (cuerpo > 30);
+    if (esCierre) {
+      ctx.textAlign = 'center';
+      var cx = W / 2;
+      var anchoLogo = 0;
+      ctx.font = '700 ' + Math.round(W*0.085) + 'px Lora, Georgia, serif';
+      anchoLogo = ctx.measureText('psicolinks').width;
+      ctx.textAlign = 'left';
+      logo(ctx, cx - anchoLogo/2, H*0.42, Math.round(W*0.085));
+
+      ctx.textAlign = 'center';
+      var a1 = ajustar(ctx, lamina.texto, anchoTexto, H*0.18,
+                       '500 {c}px "Work Sans", system-ui, sans-serif', Math.round(W*0.038), 18);
+      ctx.fillStyle = C.ink;
+      var yy = H*0.52;
+      a1.lineas.forEach(function(l){ ctx.fillText(l, cx, yy); yy += a1.cuerpo*1.32; });
+
+      ctx.font = '700 ' + Math.round(W*0.036) + 'px "Space Mono", monospace';
+      ctx.fillStyle = C.accent;
+      ctx.fillText(FIRMA_1, cx, H*0.70);
+      ctx.font = '600 ' + Math.round(W*0.026) + 'px "Work Sans", system-ui, sans-serif';
+      ctx.fillStyle = C.ink;
+      ctx.fillText(FIRMA_2, cx, H*0.75);
+      ctx.font = '400 ' + Math.round(W*0.024) + 'px "Work Sans", system-ui, sans-serif';
+      ctx.fillStyle = C.inkSoft;
+      partir(ctx, FIRMA_3, anchoTexto).forEach(function(l, i){ ctx.fillText(l, cx, H*0.79 + i*Math.round(W*0.033)); });
+      ctx.textAlign = 'left';
+      return;
+    }
+
+    // Texto principal: el titular en serif, el desglose en la tipografía de texto.
+    var esPortada = lamina.tipo === 'portada';
+    var fuente = esPortada ? '700 {c}px Lora, Georgia, serif'
+                           : '600 {c}px "Work Sans", system-ui, sans-serif';
+    var maxCuerpo = Math.round(W * (esPortada ? 0.075 : 0.062));
+    var a = ajustar(ctx, lamina.texto, anchoTexto, abajoTexto - arribaTexto, fuente, maxCuerpo, 22);
 
     ctx.fillStyle = C.ink;
-    ctx.font = '700 ' + cuerpo + 'px Lora, Georgia, serif';
-    // bloque de titular centrado verticalmente entre el sello y el pie
-    const arriba = M + 100, abajo = H - M - 70;
-    const alto = ls.length * cuerpo * 1.22;
-    let yy = arriba + (abajo - arriba - alto) / 2 + cuerpo;
-    ls.forEach(function(l){ ctx.fillText(l, M+12, yy); yy += cuerpo * 1.22; });
+    var alto = a.lineas.length * a.cuerpo * 1.24;
+    var yTexto = arribaTexto + (abajoTexto - arribaTexto - alto)/2 + a.cuerpo;
+    a.lineas.forEach(function(l){ ctx.fillText(l, izq, yTexto); yTexto += a.cuerpo*1.24; });
 
-    // pie
-    ctx.font = '500 26px "Work Sans", system-ui, sans-serif';
+    if (lamina.fuente) {
+      ctx.font = '400 ' + Math.round(W*0.024) + 'px "Work Sans", system-ui, sans-serif';
+      ctx.fillStyle = C.inkSoft;
+      ctx.fillText(lamina.fuente, izq, abajoTexto + Math.round(H*0.035));
+    }
+
+    // Pie: la firma en todas las láminas.
+    ctx.font = '700 ' + Math.round(W*0.024) + 'px "Space Mono", monospace';
+    ctx.fillStyle = C.accent;
+    ctx.fillText(FIRMA_1, izq, H - M - Math.round(H*0.028));
+    ctx.font = '400 ' + Math.round(W*0.021) + 'px "Work Sans", system-ui, sans-serif';
     ctx.fillStyle = C.inkSoft;
-    ctx.fillText(pie, M+12, H - M - 18);
+    ctx.fillText(FIRMA_2, izq, H - M - Math.round(H*0.008));
 
-    // logo
-    ctx.font = '700 34px Lora, Georgia, serif';
-    const t1 = 'psico', t2 = 'links';
-    const anchoTotal = ctx.measureText(t1 + t2).width;
-    ctx.fillStyle = C.ink; ctx.fillText(t1, W - M - anchoTotal - 12, M + 52);
-    ctx.fillStyle = C.accent; ctx.fillText(t2, W - M - anchoTotal - 12 + ctx.measureText(t1).width, M + 52);
+    var anchoLogo2 = logo(ctx, 0, -1000, Math.round(W*0.032));   // medir sin pintar
+    logo(ctx, W - M - 14 - anchoLogo2, M + Math.round(H*0.035), Math.round(W*0.032));
+
+    // La numeración, abajo a la derecha: arriba pisaría el logo.
+    if (total > 1) {
+      ctx.font = '700 ' + Math.round(W*0.024) + 'px "Space Mono", monospace';
+      ctx.fillStyle = C.inkSoft;
+      var num = (indice + 1) + '/' + total;
+      ctx.fillText(num, W - M - 14 - ctx.measureText(num).width, H - M - Math.round(H*0.028));
+    }
   }
 
-  document.getElementById('gen').addEventListener('click', dibuja);
-  document.getElementById('tit').addEventListener('input', dibuja);
-  document.getElementById('pie').addEventListener('input', dibuja);
-
-  document.getElementById('desc').addEventListener('click', function(){
-    const a = document.createElement('a');
-    a.download = 'psicolinks-redes.png';
-    a.href = lienzo.toDataURL('image/png');
-    a.click();
-  });
-
-  const sel = document.getElementById('sel');
-  sel.addEventListener('change', function(){
-    document.getElementById('tit').value = sel.value;
-    dibuja();
-  });
-
-  function arranca(){
-    document.getElementById('tit').value = document.getElementById('tit').value || 'Psicolinks';
-    dibuja();
+  /* --------------------------------------------------------- las láminas */
+  function construir(post){
+    var d = (post && post.desglose) || {};
+    var l = [{ tipo:'portada', eti:'ESTUDIO DEL DÍA', texto: post.titulo || 'Psicolinks',
+               fuente: post.fuente || '' }];
+    if (formato !== 'enlace') {
+      if (d.pregunta) l.push({ tipo:'parte', eti:'LA PREGUNTA',  texto:d.pregunta });
+      if (d.metodo)   l.push({ tipo:'parte', eti:'CÓMO SE HIZO', texto:d.metodo });
+      if (d.hallazgo) l.push({ tipo:'parte', eti:'QUÉ SALIÓ',    texto:d.hallazgo });
+      if (d.porQue)   l.push({ tipo:'parte', eti:'POR QUÉ PASA', texto:d.porQue });
+      l.push({ tipo:'cierre', eti:'PSICOLINKS',
+               texto:'Un estudio nuevo cada día laborable, contado en dos minutos y con la fuente delante.' });
+    }
+    return l;
   }
 
-  fetch('/.netlify/functions/list-posts?limit=10')
+  function pintarTodo(){
+    var cont = document.getElementById('laminas');
+    cont.innerHTML = '';
+    laminas.forEach(function(lam, i){
+      var caja = document.createElement('div');
+      caja.className = 'lamina';
+      var lienzo = document.createElement('canvas');
+      caja.appendChild(lienzo);
+      var pie = document.createElement('p');
+      pie.textContent = (i+1) + ' · ' + lam.eti;
+      caja.appendChild(pie);
+      if (lam.tipo !== 'cierre') {
+        var ta = document.createElement('textarea');
+        ta.rows = 3; ta.value = lam.texto;
+        ta.setAttribute('aria-label', 'Texto de la lámina ' + (i+1));
+        ta.addEventListener('input', function(){
+          laminas[i].texto = ta.value;
+          dibujar(lienzo, laminas[i], i, laminas.length);
+        });
+        caja.appendChild(ta);
+      }
+      cont.appendChild(caja);
+      dibujar(lienzo, lam, i, laminas.length);
+    });
+    document.getElementById('pista-formato').textContent = FORMATOS[formato].pista;
+  }
+
+  function cargarPost(){
+    var post = posts[document.getElementById('sel').selectedIndex] || {};
+    laminas = construir(post);
+    originales = laminas.map(function(l){ return l.texto; });
+    pintarTodo();
+  }
+
+  /* ------------------------------------------------------------ descarga */
+  function descargar(){
+    var b = document.getElementById('descargar');
+    var estado = document.getElementById('estado');
+    b.disabled = true;
+    var lienzos = document.querySelectorAll('.lamina canvas');
+    var i = 0;
+    (function siguiente(){
+      if (i >= lienzos.length) {
+        b.disabled = false;
+        estado.textContent = lienzos.length + ' imágenes descargadas. Súbelas en ese orden.';
+        return;
+      }
+      var a = document.createElement('a');
+      a.download = 'psicolinks-' + FORMATOS[formato].nombre + '-' + (i+1) + '.png';
+      a.href = lienzos[i].toDataURL('image/png');
+      a.click();
+      i++;
+      estado.textContent = 'Descargando ' + i + ' de ' + lienzos.length + '…';
+      // Los navegadores no dejan disparar varias descargas seguidas sin respirar.
+      setTimeout(siguiente, 450);
+    })();
+  }
+
+  /* -------------------------------------------------------------- arranque */
+  document.getElementById('formatos').addEventListener('click', function(ev){
+    var b = ev.target.closest('button[data-f]');
+    if (!b) return;
+    formato = b.dataset.f;
+    [].forEach.call(this.querySelectorAll('button'), function(x){
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+    cargarPost();
+  });
+  document.getElementById('sel').addEventListener('change', cargarPost);
+  document.getElementById('rehacer').addEventListener('click', cargarPost);
+  document.getElementById('descargar').addEventListener('click', descargar);
+
+  function sinDatos(msg){
+    document.getElementById('sel').innerHTML = '<option>' + msg + '</option>';
+    posts = [{ titulo: 'Psicolinks', fuente: '', desglose: {} }];
+    cargarPost();
+  }
+
+  fetch('/.netlify/functions/list-posts?limit=15')
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(data){
-      if (!data || !data.posts || !data.posts.length) { sel.innerHTML = '<option>No hay artículos todavía</option>'; return arranca(); }
-      sel.innerHTML = data.posts.map(function(p){
-        return '<option value="' + p.titulo.replace(/"/g,'&quot;') + '">' + p.titulo + '</option>';
+      if (!data || !data.posts || !data.posts.length) return sinDatos('No hay artículos todavía');
+      posts = data.posts;
+      document.getElementById('sel').innerHTML = posts.map(function(p){
+        var f = (p.fechaPublicacion || p.fecha || '').slice(0, 10);
+        return '<option>' + f + ' · ' + String(p.titulo).replace(/</g, '&lt;') + '</option>';
       }).join('');
-      document.getElementById('tit').value = data.posts[0].titulo;
-      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(dibuja); }
-      dibuja();
+      var pintar = function(){ cargarPost(); };
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(pintar);
+      else pintar();
     })
-    .catch(function(){ sel.innerHTML = '<option>No se han podido cargar</option>'; arranca(); });
+    .catch(function(){ sinDatos('No se han podido cargar'); });
+})();
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 </body>
 </html>

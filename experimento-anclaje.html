@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El anclaje: el número que te dejan puesto · Psicolinks</title>
+<meta name="description" content="Te hago una pregunta con un número dentro. Luego te pido una cifra. Y después te enseño de dónde salía ese número: de ningún sitio.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El anclaje: el número que te dejan puesto">
+<meta property="og:description" content="Contesta y mándaselo a alguien: a esa persona le sale la misma pregunta con otro número delante.">
+<meta property="og:url" content="https://psicolinks.com/experimento-anclaje.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-anclaje.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+
+  .en-enunciado{ background:var(--paper); border:1px solid var(--border); border-radius:12px;
+                 padding:1rem 1.2rem; font-size:1rem; line-height:1.7; margin:0 0 1.1rem; }
+  .en-ops{ display:grid; gap:0.6rem; }
+  .en-op{ display:block; width:100%; text-align:left; font-family:inherit; font-size:0.98rem;
+          line-height:1.55; padding:1rem 1.15rem; border-radius:12px; border:2px solid var(--border);
+          background:var(--surface); color:var(--ink); cursor:pointer; }
+  .en-op:hover{ border-color:var(--accent); }
+  .en-op b{ display:block; font-size:0.72rem; font-family:var(--font-mono); letter-spacing:0.08em;
+            text-transform:uppercase; color:var(--stamp); margin:0 0 0.25rem; }
+  .en-caras{ display:grid; gap:0.7rem; margin:0 0 1.2rem; }
+  @media (min-width:46rem){ .en-caras{ grid-template-columns:1fr 1fr; } }
+  .en-cara{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; }
+  .en-cara.tuya{ border-color:#8C3B4A; border-width:2px; }
+  .en-cara .eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em;
+                 text-transform:uppercase; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .en-cara p{ margin:0 0 0.4rem; font-size:0.93rem; line-height:1.6; }
+  .en-cara p:last-child{ margin-bottom:0; }
+  .en-cifra{ font-family:var(--font-mono); font-weight:700; color:#8C3B4A; }
+
+  /* ── El anclaje ───────────────────────────────────────────────────────── */
+  .an-enunciado{ background:var(--paper); border:1px solid var(--border); border-radius:12px;
+                 padding:1rem 1.2rem; font-size:1.06rem; line-height:1.7; margin:0 0 1.1rem; }
+  .an-enunciado .an-num{ font-family:var(--font-mono); font-weight:700; }
+  .an-ops{ display:grid; gap:0.6rem; }
+  @media (min-width:34rem){ .an-ops{ grid-template-columns:1fr 1fr; } }
+  .an-op{ display:block; width:100%; text-align:center; font-family:inherit; font-weight:600;
+          font-size:1.02rem; line-height:1.4; padding:1rem 1.15rem; border-radius:12px;
+          border:2px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer; }
+  .an-op:hover{ border-color:var(--accent); }
+  .an-form{ display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; margin:0; }
+  .an-campo{ display:flex; align-items:center; gap:0.5rem; flex:1 1 12rem; background:var(--surface);
+             border:2px solid var(--border); border-radius:12px; padding:0.35rem 0.9rem; }
+  .an-campo input{ flex:1 1 auto; width:100%; min-width:0; border:0; background:transparent;
+                   font-family:var(--font-mono); font-size:1.35rem; font-weight:700; color:var(--ink);
+                   padding:0.5rem 0; -moz-appearance:textfield; }
+  .an-campo input:focus{ outline:none; }
+  .an-campo input::-webkit-outer-spin-button,
+  .an-campo input::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+  .an-campo:focus-within{ border-color:var(--accent); }
+  .an-uni{ font-family:var(--font-mono); font-size:0.95rem; color:var(--ink-soft); flex:0 0 auto; }
+  .an-enviar{ flex:0 0 auto; background:var(--accent); color:#fff; border:0; font-family:inherit;
+              font-weight:600; font-size:1rem; padding:0.9rem 1.4rem; border-radius:10px; cursor:pointer; }
+  .an-enviar:hover{ background:#3a2e63; }
+  .an-error{ font-size:0.9rem; line-height:1.5; color:#8C3B4A; margin:0.7rem 0 0; }
+  .an-caras{ display:grid; gap:0.7rem; margin:0 0 1.2rem; }
+  @media (min-width:46rem){ .an-caras{ grid-template-columns:1fr 1fr; } }
+  .an-cara{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; }
+  .an-cara.tuya{ border-color:#8C3B4A; border-width:2px; }
+  .an-cara .eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em;
+                 text-transform:uppercase; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .an-cara .an-titu{ font-family:var(--font-mono); font-size:1.5rem; font-weight:700; line-height:1;
+                     margin:0 0 0.5rem; color:var(--ink); }
+  .an-cara p{ margin:0 0 0.4rem; font-size:0.93rem; line-height:1.6; }
+  .an-cara p:last-child{ margin-bottom:0; }
+  .an-cifra{ font-family:var(--font-mono); font-weight:700; color:#8C3B4A; }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Dos minutos</div>
+  <h1>El anclaje</h1>
+  <p class="lead">Este también necesita dos personas. Contesta tú primero y luego mándaselo a alguien:
+  le va a salir la misma pregunta con otro número delante.</p>
+
+  <div class="lab-amigo" id="lab-amigo-intro" hidden></div>
+
+  <!-- ─────────────────────────────── 1. el aparador ───────────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Una pregunta rápida.</p>
+      <p class="an-enunciado" id="an-enunciado"></p>
+      <div class="an-ops" id="an-ops">
+        <button type="button" class="an-op" data-o="mas">Más</button>
+        <button type="button" class="an-op" data-o="menos">Menos</button>
+      </div>
+      <p class="lab-sub" style="margin:1rem 0 0;">No lo busques y no lo pienses mucho: contesta con lo
+      primero que te salga.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. la cifra ──────────────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Vale. ¿Y cuánto dirías que mide exactamente?</p>
+      <p class="lab-sub">Una cifra, la que te salga. Aunque no tengas ni idea.</p>
+      <form class="an-form" id="an-form" novalidate>
+        <label class="an-campo" for="an-cifra">
+          <input type="number" id="an-cifra" name="an-cifra" min="1" max="5000" step="1"
+                 inputmode="numeric" autocomplete="off" placeholder="000">
+          <span class="an-uni">metros</span>
+        </label>
+        <button type="submit" class="an-enviar">Ya está</button>
+      </form>
+      <p class="an-error" id="an-error" hidden></p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 3. el veredicto ──────────────────── -->
+  <section class="lab-paso" id="lab-3">
+    <div class="lab-caja">
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="an-tuya">—</b><span>lo que has dicho tú</span></div>
+        <div class="lab-dato"><b>330</b><span>lo que mide de verdad</span></div>
+      </div>
+      <p class="lab-veredicto" id="lab-veredicto"></p>
+      <div class="an-caras" id="an-caras"></div>
+      <p class="lab-sub" style="margin:0;">No se guarda ni se cuenta nada de lo que respondes aquí: tu
+      cifra no sale de esta pantalla.</p>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien (le sale el otro número)</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>La primera pregunta no servía para nada. Era el aparador. Lo único que hacía era dejarte un
+    número delante —120 o 600, según a quién le tocara— antes de pedirte el tuyo. Ese número no salía
+    de ningún sitio: lo elegí yo, al azar, y tú lo sabías. Aun así, cuando has tenido que dar una
+    cifra, la has dado desde ahí.</p>
+
+    <p>A eso se le llama <strong>anclaje</strong>. Un número que aparece antes —aunque no venga a
+    cuento, aunque te digan que es arbitrario— se queda de punto de partida, y la respuesta se acerca
+    a él más de lo que debería. No es que te dejes convencer. Es que ya no partes de cero.</p>
+
+    <h2 class="bloque-tit">Por qué pasa</h2>
+    <p>Cuando sabes la respuesta, esto no ocurre: la dices y ya. El anclaje aparece justo donde no
+    sabes. Y en esos huecos la cabeza no se pone a calcular desde el principio —eso cuesta mucho—,
+    sino que coge lo primero que tiene a mano y lo va moviendo. «600 me parece demasiado… bajo un
+    poco… 450, algo así». «120 se me hace poco… subo un poco… 180».</p>
+
+    <div class="idea"><strong>Lo importante no es que ajustes, es que ajustas poco.</strong> Te mueves
+    desde el ancla hasta que el número deja de parecerte raro, y ahí paras. Pero «deja de parecerme
+    raro» depende de dónde hayas salido. Dos personas con la misma ignorancia y dos anclas distintas
+    acaban en dos sitios distintos, y las dos se quedan igual de tranquilas.</div>
+    <h2 class="bloque-tit">Dónde aparece cuando cierras esta página</h2>
+    <p>En las rebajas, el precio tachado. Nadie espera que te creas que esa camiseta valía 89&nbsp;€:
+    el tachón está ahí para que los 39&nbsp;€ se midan contra 89 y no contra lo que vale una camiseta.
+    El «antes 89&nbsp;€» hace su trabajo aunque no te lo creas.</p>
+
+    <p>En una negociación de sueldo, quien dice la primera cifra pone la mesa. Todo lo que venga
+    después será «subir desde ahí» o «bajar desde ahí», y casi nunca «empezar de nuevo». Lo mismo con
+    el precio de salida de un coche de segunda mano, con la primera oferta por un piso, con el
+    presupuesto que te pasa el primer profesional al que llamas.</p>
+
+    <p>Y también pasa por dentro, sin números. La primera impresión que te llevas de alguien funciona
+    igual: luego llegan datos nuevos, ajustas —y ajustas poco. La conversación de los diez primeros
+    minutos de una entrevista. El comentario de un profesor sobre lo que se te da bien, hecho a los
+    doce años y todavía puesto. La idea que tienes de ti mismo tampoco se construye desde cero cada
+    mañana: se ajusta desde donde estaba ayer.</p>
+
+    <div class="idea"><strong>Y aquí es donde esto deja de ser un juego.</strong> Si notas que una
+    idea sobre ti lleva años sin moverse del sitio donde la dejaron, el trabajo no es convencerte de
+    lo contrario: es ver desde dónde estás midiendo. Eso se hace por escrito, en
+    <a href="/darle-la-vuelta-a-un-pensamiento.html">darle la vuelta a un pensamiento</a>. Y cuando lo
+    que hay encima de la mesa es una decisión con una primera cifra ya puesta —un sueldo, un piso, un
+    plazo—, en <a href="/tomar-decisiones-dificiles.html">tomar decisiones difíciles</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Tversky, A. y Kahneman, D.
+    (1974). <em>Judgment under uncertainty: heuristics and biases</em>. Science, 185(4157), 1124–1131.
+    En el experimento original no había torres: se hacía girar una ruleta delante de la persona y se
+    le preguntaba qué porcentaje de países de la ONU eran africanos. A quienes les salió el 10
+    estimaron de media un 25&nbsp;%; a quienes les salió el 65, un 45&nbsp;%. La ruleta estaba trucada
+    y se giraba a la vista de todos, y aun así el número movía la respuesta. Aquí se ha cambiado la
+    pregunta por una de altura, que se entiende sin saber geografía; la mecánica es la misma. Esto
+    <strong>no mide nada de ti</strong>: no hay acierto ni fallo, y clavar los 330&nbsp;metros solo
+    significa que ya sabías cuánto mide la torre.</p>
+  </section>
+  <div class="idea"><strong>La ficha, con calma.</strong> Dónde aparece esto fuera del experimento y qué se puede hacer con ello: <a href="/sesgo-de-anclaje.html">el sesgo de anclaje</a>, en la biblioteca de sesgos.</div>
+
+  <div class="consulta-cta">
+    <h3>Esto era un experimento de dos minutos.</h3>
+    <p>Ver cómo funciona la cabeza está bien; cambiar algo de lo que te pasa se hace mejor con alguien delante. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El anclaje · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-anclaje.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Una pregunta con un número dentro, una cifra tuya después y el número arbitrario que se te había quedado puesto sin darte cuenta."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "El anclaje", "item": "https://psicolinks.com/experimento-anclaje.html"}]}</script>
+<script>
+/* El anclaje ---------------------------------------------------------------
+   Con una persona sola no se demuestra: si le enseñas las dos anclas
+   seguidas, ya ha visto el truco. Así que se reparte entre dos — a ti te
+   toca un ancla al azar y el enlace que mandas lleva LA OTRA. Sin servidor:
+   el ancla viaja detrás de la # del enlace.
+
+   No guarda nada: ni localStorage, ni cookies, ni red.                      */
+(function(){
+  'use strict';
+
+  var REAL = 330;                    /* hasta la punta de la antena */
+  var ANCLAS = {
+    baja: { n:120, eti:'Ancla baja' },
+    alta: { n:600, eti:'Ancla alta' }
+  };
+  var CARAS = {
+    baja: 'Se sale de 120 y se sube. Pero se sube poco: las respuestas se quedan pegadas por abajo, ' +
+          'más cerca de los 120 que de la torre.',
+    alta: 'Se sale de 600 y se baja. Pero se baja poco: las respuestas se quedan altas, ' +
+          'más cerca de los 600 que de la torre.'
+  };
+
+  var ancla, cifra = null;
+
+  function ver(id){
+    ['lab-1','lab-2','lab-3'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function otra(a){ return a === 'alta' ? 'baja' : 'alta'; }
+
+  /* ¿me lo ha mandado alguien, y con qué ancla? */
+  var m = /^a=(alta|baja)$/.exec((location.hash || '').replace(/^#/, ''));
+  var deAmigo = !!m;
+  ancla = m ? m[1] : (Math.random() < 0.5 ? 'alta' : 'baja');
+
+  if (deAmigo) {
+    var caja = document.getElementById('lab-amigo-intro');
+    caja.innerHTML = 'Te lo ha mandado alguien que ya lo ha hecho. <strong>A ti te va a salir la ' +
+      'versión que esa persona no vio</strong> — contesta sin preguntarle qué le puso a ella, que si ' +
+      'no no vale.';
+    caja.hidden = false;
+  }
+
+  /* ------------------------------------------------------ 1. el aparador */
+  document.getElementById('an-enunciado').innerHTML =
+    '¿La Torre Eiffel mide más o menos de <span class="an-num">' + ANCLAS[ancla].n +
+    '&nbsp;metros</span>?';
+
+  document.getElementById('an-ops').addEventListener('click', function(ev){
+    var b = ev.target.closest ? ev.target.closest('.an-op') : null;
+    if (!b) return;
+    ver('lab-2');
+    var i = document.getElementById('an-cifra');
+    if (i) { try { i.focus({ preventScroll:true }); } catch(e){ i.focus(); } }
+  });
+
+  /* --------------------------------------------------------- 2. la cifra */
+  var form = document.getElementById('an-form');
+  var err  = document.getElementById('an-error');
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var bruto = (document.getElementById('an-cifra').value || '').trim();
+    var n = Number(bruto);
+    if (!bruto || !isFinite(n) || Math.floor(n) !== n || n < 1 || n > 5000) {
+      err.textContent = 'Escribe un número entero de metros, entre 1 y 5000. Aunque sea a ojo.';
+      err.hidden = false;
+      document.getElementById('an-cifra').focus();
+      return;
+    }
+    err.hidden = true;
+    cifra = n;
+    pintar();
+    ver('lab-3');
+  });
+
+  /* ----------------------------------------------------- 3. el veredicto */
+  function cara(a, tuya){
+    return '<div class="an-cara' + (tuya ? ' tuya' : '') + '">' +
+      '<span class="eti">' + esc(ANCLAS[a].eti) + (tuya ? ' · la tuya' : ' · la que no viste') + '</span>' +
+      '<p class="an-titu">' + ANCLAS[a].n + '&nbsp;m</p>' +
+      '<p>«¿Mide más o menos de <span class="an-cifra">' + ANCLAS[a].n + '&nbsp;m</span>?»</p>' +
+      '<p>' + esc(CARAS[a]) + '</p>' +
+      '</div>';
+  }
+
+  function pintar(){
+    document.getElementById('an-tuya').textContent = String(cifra);
+    document.getElementById('an-caras').innerHTML = cara(ancla, true) + cara(otra(ancla), false);
+
+    var dif = cifra - REAL;
+    var cerca;
+    if (Math.abs(dif) <= 15)      cerca = 'Le has dado bastante cerca. ';
+    else if (dif > 0)             cerca = 'Te has pasado en ' + Math.abs(dif) + '&nbsp;metros. ';
+    else                          cerca = 'Te has quedado corto en ' + Math.abs(dif) + '&nbsp;metros. ';
+
+    var v = 'Has dicho <strong>' + cifra + '&nbsp;metros</strong>. La Torre Eiffel mide ' +
+      '<strong>330&nbsp;metros</strong> hasta la punta de la antena —300 la estructura sin ella—. ' +
+      cerca +
+      'Pero lo interesante no es eso: es el número de la primera pregunta. ' +
+      'A ti te puse <strong>' + ANCLAS[ancla].n + '&nbsp;metros</strong> y a la mitad de la gente que ' +
+      'entra aquí le pongo <strong>' + ANCLAS[otra(ancla)].n + '</strong>. Se decide con un sorteo al ' +
+      'cargar la página. <strong>No significaba nada</strong>: ni era una pista, ni estaba cerca, ni ' +
+      'lo había calculado nadie. Estaba ahí para ver desde dónde ibas a salir.';
+    document.getElementById('lab-veredicto').innerHTML = v;
+  }
+
+  /* ----------------------------------------------------------- compartir */
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = 'Contéstame a esto sin buscarlo y no me digas nada hasta que lo hayas hecho — a ti te va ' +
+      'a salir un número distinto del mío: https://psicolinks.com/experimento-anclaje.html#a=' + otra(ancla);
+    if (navigator.share) { navigator.share({ text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('Contéstame a esto sin buscarlo') + '&body=' + encodeURIComponent(t);
+  });
+})();
+</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

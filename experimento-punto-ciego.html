@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El punto ciego: un experimento de dos minutos · Psicolinks</title>
+<meta name="description" content="Seis sesgos y una pregunta para cada uno: ¿te afectan más a ti o a la media de la gente? Casi todo el mundo contesta lo mismo, y no puede ser.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El punto ciego">
+<meta property="og:description" content="¿Los sesgos te afectan más a ti o a la media de la gente? Casi todo el mundo contesta lo mismo, y estadísticamente no puede ser.">
+<meta property="og:url" content="https://psicolinks.com/experimento-punto-ciego.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-punto-ciego.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-escala{ display:flex; align-items:center; gap:0.8rem; }
+  .lab-escala input[type=range]{ flex:1; accent-color:#8C3B4A; }
+  .lab-escala output{ font-family:var(--font-mono); font-weight:700; font-size:1.6rem; min-width:3.5ch; text-align:right; }
+  .lab-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .lab-barras{ display:grid; gap:0.55rem; margin:0.4rem 0 1.2rem; }
+  .lab-b{ display:grid; grid-template-columns:7.5rem 1fr auto; align-items:center; gap:0.6rem; font-size:0.9rem; }
+  .lab-b .via{ height:0.72rem; border-radius:99px; background:var(--border); overflow:hidden; }
+  .lab-b .via i{ display:block; height:100%; background:#8C3B4A; }
+  .lab-b .via.otro i{ background:var(--accent); }
+  .lab-b .num{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .oculto{ position:absolute; left:-9999px; }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  .pc-item{ background:var(--paper); border:1px solid var(--border); border-radius:14px;
+            padding:1rem 1.15rem; margin:0 0 0.8rem; }
+  .pc-item .nom{ display:block; font-weight:600; font-size:1rem; margin:0 0 0.2rem; }
+  .pc-item .que{ display:block; font-size:0.89rem; color:var(--ink-soft); line-height:1.55; margin:0 0 0.7rem; }
+  .pc-item input[type="range"]{ width:100%; }
+  .pc-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono);
+                font-size:0.66rem; letter-spacing:0.04em; text-transform:uppercase;
+                color:var(--ink-soft); margin:0.15rem 0 0; }
+  .pc-valor{ display:block; text-align:center; font-size:0.85rem; color:var(--ink); margin:0.35rem 0 0;
+             min-height:1.3em; }
+  .pc-res{ display:grid; gap:0.55rem; margin:1.2rem 0 0; }
+  .pc-fila{ display:flex; align-items:center; gap:0.7rem; font-size:0.88rem; }
+  .pc-fila .eti{ flex:0 0 9.5rem; color:var(--ink-soft); line-height:1.35; }
+  .pc-eje{ position:relative; flex:1 1 auto; height:1.15rem; background:var(--surface);
+           border:1px solid var(--border); border-radius:999px; }
+  .pc-eje .centro{ position:absolute; left:50%; top:-2px; bottom:-2px; width:1px; background:var(--border); }
+  .pc-eje i{ position:absolute; top:0.2rem; height:0.55rem; border-radius:999px; background:#8C3B4A; }
+  .pc-eje i.menos{ background:var(--accent); }
+  .pc-fila .num{ flex:0 0 2.6rem; text-align:right; font-family:var(--font-mono); font-size:0.82rem; }
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Dos minutos</div>
+  <h1>El punto ciego</h1>
+  <p class="lead">Seis sesgos, y una sola pregunta para cada uno: ¿a quién le afecta más, a ti o a la
+  media de la gente? Contesta a ojo y sin pensarlo mucho.</p>
+
+  <div class="lab-amigo" id="lab-amigo-intro" hidden></div>
+
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Mueve cada barra hacia donde te parezca.</p>
+      <p class="lab-sub">El centro significa «a mí me afecta igual que a la media de la gente». A la
+      izquierda, que a ti te afecta menos; a la derecha, que a ti te afecta más. Si alguno no lo conoces,
+      déjalo en el centro.</p>
+
+      <div id="pc-lista"></div>
+
+      <button type="button" class="lab-btn" id="pc-ver">Ver el resultado →</button>
+    </div>
+  </section>
+
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="pc-media">0</b><span>tu media (negativo = «a mí menos»)</span></div>
+        <div class="lab-dato"><b id="pc-cuantos">0</b><span>de 6 puestos por debajo de la media</span></div>
+      </div>
+      <p class="lab-veredicto" id="pc-veredicto"></p>
+      <div class="pc-res" id="pc-res"></div>
+      <div class="lab-amigo" id="lab-amigo-final" hidden></div>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+      <button type="button" class="lab-btn sec" id="lab-otra">Probar otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>En 2002, Emily Pronin y su equipo hicieron algo parecido con ocho sesgos y varios centenares de
+    personas. <strong>El resultado fue que casi todo el mundo se colocaba por debajo de la media en casi
+    todos</strong> — y eso, siendo una media, no puede ser. A eso se le llama <strong>punto ciego</strong>:
+    reconocemos los sesgos en los demás con facilidad y en nosotros casi nunca.</p>
+
+    <div class="idea"><strong>Y el motivo no es orgullo.</strong> Es que buscamos en el sitio equivocado.
+    Al juzgar a otro miramos lo que <em>hace</em>. Al juzgarnos a nosotros miramos lo que <em>sentimos por
+    dentro</em> — y por dentro un sesgo no se siente como nada. No hay una vocecita avisando; el sesgo se
+    nota en el resultado, no en la sensación. Por eso mirar hacia dentro, que parece el camino natural, es
+    justo la herramienta que aquí no sirve.</div>
+
+    <p>Esto tiene consecuencias que no son teóricas. Es la razón por la que dos personas discutiendo se
+    consideran las dos la parte objetiva; por la que un tribunal cree que su criterio es puramente
+    técnico; y por la que «yo te lo digo sin manía» abre la mitad de los conflictos de casa. Y también es
+    la razón por la que leerse la biblioteca de sesgos entera puede no cambiar nada: es fácil terminarla
+    con una lista de gente a la que le vendría bien.</p>
+
+    <div class="idea"><strong>Y entonces, ¿qué se hace?</strong> Mirar decisiones, no intenciones. A quién
+    contrataste, a quién le diste la razón, cuánto tardaste en contestar a cada uno. El sesgo deja rastro
+    en los resultados y no deja ninguno en la sensación, así que la única forma de pillarlo en uno mismo
+    es tratarse como se trata a los demás: por lo que hizo. La ficha está en
+    <a href="/punto-ciego.html">el punto ciego</a>, y los seis de arriba, uno por uno, en
+    <a href="/sesgos.html">la biblioteca de sesgos</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Pronin, E., Lin, D. Y. y Ross,
+    L. (2002). <em>The bias blind spot: perceptions of bias in self versus others</em>. Personality and
+    Social Psychology Bulletin, 28(3), 369–381. Aquí solo estás tú y seis barras: el efecto es de grupo, y
+    una persona sola puede salir en cualquier sitio. Colocarte por debajo de la media no demuestra nada
+    sobre ti, y colocarte por encima tampoco. No puntúa nada.</p>
+  </section>
+
+  <div class="idea"><strong>Y ahora, en orden.</strong> Los sesgos de arriba tienen cada uno su ficha en
+  <a href="/sesgos.html">la biblioteca</a>, y varios tienen su propio experimento:
+  <a href="/experimento-anclaje.html">el anclaje</a>,
+  <a href="/experimento-2-4-6.html">el 2-4-6</a> y
+  <a href="/experimento-coste-hundido.html">el coste hundido</a>.</div>
+
+  <div class="consulta-cta">
+    <h3>Esto era un experimento de dos minutos.</h3>
+    <p>Ver cómo funciona la cabeza está bien; cambiar algo de lo que te pasa se hace mejor con alguien delante. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El punto ciego · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-punto-ciego.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Un experimento de dos minutos sobre el punto ciego de los sesgos: puntuar cuánto te afecta cada sesgo a ti y cuánto a la media de la gente."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "El punto ciego", "item": "https://psicolinks.com/experimento-punto-ciego.html"}]}</script>
+<script>
+/* El punto ciego -----------------------------------------------------------
+   Seis sesgos, una barra cada uno de -5 (a mí menos que a la media) a +5
+   (a mí más). La media suele salir negativa (Pronin, Lin y Ross, 2002).
+   La explicación va al final para no contaminar las respuestas.
+
+   No guarda nada, ni en el navegador. Al compartir, solo viaja la media
+   detrás de la # del enlace, que es la parte que no llega al servidor.  */
+(function(){
+  'use strict';
+
+  var SESGOS = [
+    { n: 'El sesgo de negatividad',        q: 'Que una crítica pese más que nueve elogios.' },
+    { n: 'El sesgo de confirmación',       q: 'Buscar sobre todo lo que encaja con lo que uno ya piensa.' },
+    { n: 'El sesgo de anclaje',            q: 'Que el primer número que ves te arrastre la respuesta.' },
+    { n: 'El efecto foco',                 q: 'Creer que la gente se fija en ti más de lo que se fija.' },
+    { n: 'La falacia del coste hundido',   q: 'Seguir con algo porque ya llevas mucho invertido.' },
+    { n: 'El error de atribución',         q: 'Explicar lo que hacen los demás por cómo son, y lo tuyo por la situación.' }
+  ];
+
+  var ETIQUETA = {
+    '-5': 'a mí mucho menos que a la media', '-4': 'a mí bastante menos que a la media',
+    '-3': 'a mí menos que a la media', '-2': 'a mí algo menos que a la media',
+    '-1': 'a mí un poco menos que a la media', '0': 'a mí igual que a la media',
+    '1': 'a mí un poco más que a la media', '2': 'a mí algo más que a la media',
+    '3': 'a mí más que a la media', '4': 'a mí bastante más que a la media',
+    '5': 'a mí mucho más que a la media'
+  };
+
+  function ver(id){
+    ['lab-1','lab-2'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* ------------------------------------------------- ¿viene de un amigo? */
+  var amigo = (function(){
+    var m = /^r=(-?\d(?:,\d)?)$/.exec((location.hash || '').replace(/^#/, ''));
+    if (!m) return null;
+    var v = parseFloat(m[1].replace(',', '.'));
+    return (v >= -5 && v <= 5) ? v : null;
+  })();
+  if (amigo !== null) {
+    var caja = document.getElementById('lab-amigo-intro');
+    caja.innerHTML = 'Alguien lo ha hecho antes que tú y le salió una media de <strong>' +
+      amigo.toFixed(1).replace('.', ',') + '</strong>. A ver la tuya.';
+    caja.hidden = false;
+  }
+
+  /* --------------------------------------------------------- las barras */
+  var cont = document.getElementById('pc-lista');
+  SESGOS.forEach(function(s, i){
+    var d = document.createElement('div');
+    d.className = 'pc-item';
+    d.innerHTML =
+      '<span class="nom">' + esc(s.n) + '</span>' +
+      '<span class="que">' + esc(s.q) + '</span>' +
+      '<input type="range" id="pc-' + i + '" min="-5" max="5" step="1" value="0" ' +
+        'aria-label="' + esc(s.n) + ': a quién afecta más">' +
+      '<p class="pc-extremos"><span>a mí menos</span><span>igual</span><span>a mí más</span></p>' +
+      '<span class="pc-valor" id="pc-v-' + i + '">a mí igual que a la media</span>';
+    cont.appendChild(d);
+    var r = document.getElementById('pc-' + i);
+    r.addEventListener('input', function(){
+      document.getElementById('pc-v-' + i).textContent = ETIQUETA[this.value];
+    });
+  });
+
+  /* -------------------------------------------------------- el resultado */
+  document.getElementById('pc-ver').addEventListener('click', function(){
+    var vals = SESGOS.map(function(s, i){ return +document.getElementById('pc-' + i).value; });
+    var suma = vals.reduce(function(a, b){ return a + b; }, 0);
+    var media = suma / vals.length;
+    var pordebajo = vals.filter(function(v){ return v < 0; }).length;
+
+    document.getElementById('pc-media').textContent = media.toFixed(1).replace('.', ',');
+    document.getElementById('pc-cuantos').textContent = pordebajo;
+
+    document.getElementById('pc-res').innerHTML = SESGOS.map(function(s, i){
+      var v = vals[i];
+      var ancho = Math.abs(v) / 5 * 50;           /* la mitad del eje como máximo */
+      var izq = v < 0 ? (50 - ancho) : 50;
+      return '<div class="pc-fila"><span class="eti">' + esc(s.n) + '</span>' +
+        '<span class="pc-eje"><span class="centro"></span>' +
+        (v === 0 ? '' : '<i class="' + (v < 0 ? 'menos' : 'mas') + '" style="left:' + izq +
+          '%;width:' + Math.max(1.5, ancho) + '%"></i>') +
+        '</span><span class="num">' + (v > 0 ? '+' : '') + v + '</span></div>';
+    }).join('');
+
+    var v;
+    if (media < -0.5) {
+      v = 'Tu media sale en <strong>' + media.toFixed(1).replace('.', ',') + '</strong>: te has colocado ' +
+          'por debajo de la media en ' + pordebajo + ' de los 6. Es la respuesta más común que hay, y a la ' +
+          'vez es la que no puede ser cierta para todos — porque «la media» es justo la gente que contesta ' +
+          'esto mismo.';
+    } else if (media <= 0.5) {
+      v = 'Tu media sale en <strong>' + media.toFixed(1).replace('.', ',') + '</strong>, prácticamente en ' +
+          'el centro. Es una respuesta poco frecuente y bastante sensata: estadísticamente, la mayoría de ' +
+          'la gente tiene que estar cerca de la media en casi todo.';
+    } else {
+      v = 'Tu media sale en <strong>+' + media.toFixed(1).replace('.', ',') + '</strong>: te has puesto por ' +
+          'encima de la media en varios. Es lo contrario de lo que suele salir. Merece la pena mirar si es ' +
+          'buen conocimiento de uno mismo o si es el hábito de cargar contra ti, que a veces se disfraza ' +
+          'de honestidad.';
+    }
+    document.getElementById('pc-veredicto').innerHTML = v;
+
+    if (amigo !== null) {
+      var f = document.getElementById('lab-amigo-final');
+      f.innerHTML = 'Quien te lo mandó: <strong>' + amigo.toFixed(1).replace('.', ',') +
+        '</strong>. Tú: <strong>' + media.toFixed(1).replace('.', ',') + '</strong>.';
+      f.hidden = false;
+    }
+    window.__media = media;
+    ver('lab-2');
+  });
+
+  /* ----------------------------------------------------------- compartir */
+  function texto(){
+    var m = window.__media.toFixed(1).replace('.', ',');
+    return 'Acabo de hacer el experimento del punto ciego de Psicolinks: me he puesto en ' + m +
+      ' respecto a la media de la gente. Casi todo el mundo se cree menos sesgado que la media, y eso no ' +
+      'puede ser. Pruébalo: https://psicolinks.com/experimento-punto-ciego.html#r=' + m;
+  }
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = texto();
+    if (navigator.share) { navigator.share({ text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('El experimento del punto ciego') + '&body=' + encodeURIComponent(t);
+  });
+
+  document.getElementById('lab-otra').addEventListener('click', function(){
+    if (location.hash) { history.replaceState(null, '', location.pathname); amigo = null;
+      document.getElementById('lab-amigo-intro').hidden = true;
+      document.getElementById('lab-amigo-final').hidden = true; }
+    SESGOS.forEach(function(s, i){
+      document.getElementById('pc-' + i).value = 0;
+      document.getElementById('pc-v-' + i).textContent = ETIQUETA['0'];
+    });
+    ver('lab-1');
+  });
+})();
+</script>
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

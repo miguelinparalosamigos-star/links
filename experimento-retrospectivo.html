@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El «se veía venir»: un experimento de tres minutos · Psicolinks</title>
+<meta name="description" content="Estimas tres cosas, te damos las respuestas y luego te pedimos que recuerdes qué habías puesto. Tu memoria se habrá movido sola.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="El «se veía venir»">
+<meta property="og:description" content="Estimas, te damos la respuesta, y luego intentas recordar qué habías estimado. Ahí está el sesgo retrospectivo.">
+<meta property="og:url" content="https://psicolinks.com/experimento-retrospectivo.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-retrospectivo.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-escala{ display:flex; align-items:center; gap:0.8rem; }
+  .lab-escala input[type=range]{ flex:1; accent-color:#8C3B4A; }
+  .lab-escala output{ font-family:var(--font-mono); font-weight:700; font-size:1.6rem; min-width:3.5ch; text-align:right; }
+  .lab-extremos{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .lab-barras{ display:grid; gap:0.55rem; margin:0.4rem 0 1.2rem; }
+  .lab-b{ display:grid; grid-template-columns:7.5rem 1fr auto; align-items:center; gap:0.6rem; font-size:0.9rem; }
+  .lab-b .via{ height:0.72rem; border-radius:99px; background:var(--border); overflow:hidden; }
+  .lab-b .via i{ display:block; height:100%; background:#8C3B4A; }
+  .lab-b .via.otro i{ background:var(--accent); }
+  .lab-b .num{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  .oculto{ position:absolute; left:-9999px; }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  .rt-preg{ background:var(--paper); border:1px solid var(--border); border-radius:12px;
+            padding:0.9rem 1.05rem; margin:0 0 0.7rem; }
+  .rt-preg label{ display:block; font-size:0.97rem; line-height:1.5; margin:0 0 0.55rem; }
+  .rt-preg input[type="number"]{ width:100%; max-width:14rem; padding:0.6rem 0.75rem; font-family:var(--font-mono);
+    font-size:1rem; border:1.5px solid var(--border); border-radius:9px; background:var(--surface); color:var(--ink); }
+  .rt-preg input[type="number"]:focus{ border-color:var(--accent); outline:none; }
+  .rt-preg .uni{ font-size:0.82rem; color:var(--ink-soft); margin-left:0.4rem; }
+  .rt-sol{ background:var(--paper); border:1px solid var(--border); border-left:4px solid var(--accent);
+           border-radius:12px; padding:0.9rem 1.05rem; margin:0 0 0.7rem; font-size:0.94rem; line-height:1.55; }
+  .rt-sol b{ font-family:var(--font-mono); color:var(--accent); }
+  .rt-tabla{ display:grid; gap:0.7rem; margin:1.2rem 0 0; }
+  .rt-fila{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem 1.05rem; }
+  .rt-fila.movida{ border-left:4px solid #8C3B4A; }
+  .rt-fila.quieta{ border-left:4px solid #2F6B4F; }
+  .rt-fila .tit{ display:block; font-size:0.93rem; line-height:1.5; margin:0 0 0.5rem; }
+  .rt-nums{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .rt-num{ flex:1 1 6rem; background:var(--surface); border:1px solid var(--border); border-radius:9px;
+           padding:0.5rem 0.6rem; text-align:center; }
+  .rt-num b{ display:block; font-family:var(--font-mono); font-size:1.05rem; color:var(--ink); }
+  .rt-num span{ display:block; font-size:0.72rem; color:var(--ink-soft); line-height:1.35; margin-top:0.15rem; }
+  .rt-num.real b{ color:var(--accent); }
+  .rt-nota{ margin:0.55rem 0 0; font-size:0.86rem; color:var(--ink-soft); line-height:1.5; }
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Tres minutos</div>
+  <h1>El «se veía venir»</h1>
+  <p class="lead">Vas a estimar tres cosas, te vamos a dar las respuestas, y después te vamos a pedir que
+  recuerdes qué habías puesto tú. Ahí está el experimento.</p>
+
+  <div class="lab-amigo" id="lab-amigo-intro" hidden></div>
+
+  <!-- 1. las estimaciones -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Tres preguntas que casi nadie sabe de memoria.</p>
+      <p class="lab-sub">No busques nada: pon el número que te salga, aunque sea a ojo. Da igual acertar,
+      de verdad — el experimento no va de eso. Los tres huecos tienen que estar llenos.</p>
+
+      <div class="rt-preg">
+        <label for="rt-0">¿En qué año se publicó <em>El origen de las especies</em>, de Darwin?</label>
+        <input type="number" id="rt-0" inputmode="numeric" placeholder="año" min="1500" max="2000">
+      </div>
+      <div class="rt-preg">
+        <label for="rt-1">¿Cuántos huesos tiene el esqueleto de una persona adulta?</label>
+        <input type="number" id="rt-1" inputmode="numeric" placeholder="número de huesos" min="1" max="2000">
+      </div>
+      <div class="rt-preg">
+        <label for="rt-2">¿A qué distancia media está la Luna de la Tierra?<span class="uni">en kilómetros</span></label>
+        <input type="number" id="rt-2" inputmode="numeric" placeholder="kilómetros" min="1" max="100000000">
+      </div>
+
+      <p class="lab-sub" id="rt-aviso" role="status"></p>
+      <button type="button" class="lab-btn" id="rt-ver">Ver las respuestas →</button>
+    </div>
+  </section>
+
+  <!-- 2. las soluciones -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Las respuestas.</p>
+      <div class="rt-sol"><b>1859.</b> Darwin publicó <em>On the Origin of Species</em> el 24 de noviembre
+      de 1859. La primera tirada se agotó el mismo día.</div>
+      <div class="rt-sol"><b>206 huesos.</b> Al nacer son bastantes más, cerca de 270; van fusionándose
+      durante el crecimiento hasta quedar en 206.</div>
+      <div class="rt-sol"><b>384.400 km.</b> Es la distancia media: la órbita no es un círculo, así que va
+      de unos 363.000 a unos 405.000 kilómetros.</div>
+      <p class="lab-sub">Léelas con calma. Cuando las tengas, sigue.</p>
+      <button type="button" class="lab-btn" id="rt-seguir">Seguir →</button>
+    </div>
+  </section>
+
+  <!-- 3. el recuerdo -->
+  <section class="lab-paso" id="lab-3">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Ahora lo importante: ¿qué habías puesto tú?</p>
+      <p class="lab-sub">Sin subir a mirar y sin pensarlo mucho. No es un examen de memoria: pon el número
+      que recuerdes haber escrito hace un minuto.</p>
+
+      <div class="rt-preg">
+        <label for="rt-r0">El año de <em>El origen de las especies</em>: yo puse…</label>
+        <input type="number" id="rt-r0" inputmode="numeric" placeholder="año" min="1500" max="2000">
+      </div>
+      <div class="rt-preg">
+        <label for="rt-r1">Los huesos del adulto: yo puse…</label>
+        <input type="number" id="rt-r1" inputmode="numeric" placeholder="número de huesos" min="1" max="2000">
+      </div>
+      <div class="rt-preg">
+        <label for="rt-r2">La distancia a la Luna: yo puse…</label>
+        <input type="number" id="rt-r2" inputmode="numeric" placeholder="kilómetros" min="1" max="100000000">
+      </div>
+
+      <p class="lab-sub" id="rt-aviso2" role="status"></p>
+      <button type="button" class="lab-btn" id="rt-resultado">Comparar →</button>
+    </div>
+  </section>
+
+  <!-- 4. el resultado -->
+  <section class="lab-paso" id="lab-4">
+    <div class="lab-caja">
+      <div class="lab-marcador">
+        <div class="lab-dato"><b id="rt-movidas">0</b><span>de 3 se movieron hacia la respuesta</span></div>
+        <div class="lab-dato"><b id="rt-pct">0%</b><span>de acercamiento medio</span></div>
+      </div>
+      <p class="lab-veredicto" id="rt-veredicto"></p>
+      <div class="rt-tabla" id="rt-tabla"></div>
+      <div class="lab-amigo" id="lab-amigo-final" hidden></div>
+      <button type="button" class="lab-btn" id="lab-compartir" aria-expanded="false">Mandárselo a alguien</button>
+      <div class="envio-ops" id="lab-ops" hidden>
+        <span class="envio-eti">Elige por dónde:</span>
+        <a id="lab-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="lab-mail" href="#">Correo</a>
+      </div>
+      <button type="button" class="lab-btn sec" id="lab-otra">Probar otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Esto se llama <strong>sesgo retrospectivo</strong>, y lo midió Baruch Fischhoff en 1975 con este
+    mismo truco. En cuanto conoces el resultado, tu recuerdo de lo que creías antes se actualiza solo, sin
+    que tú hagas nada y sin que te des cuenta. No es mala memoria: es que ya no queda ninguna copia
+    limpia de lo que pensabas <em>antes</em> de saberlo.</p>
+
+    <div class="idea"><strong>Y esto explica una frase muy cara.</strong> «Tendría que haberme dado
+    cuenta.» Cuando la dices, la estás comparando con un tú del pasado que ya no existe: uno que, en tu
+    recuerdo, sospechaba algo. El que estaba allí no sospechaba nada, igual que tú hace tres minutos no
+    sabías cuántos huesos tiene un adulto. La culpa se apoya casi siempre en esta reescritura.</div>
+
+    <p>Pasa igual con los demás. Juzgamos la decisión de otro con la información que tenemos ahora, no con
+    la que él tenía entonces — y por eso los errores ajenos siempre parecen más evitables de lo que eran.
+    Un buen resultado no demuestra que la decisión fuera buena, y un mal resultado no demuestra lo
+    contrario.</p>
+
+    <div class="idea"><strong>Y entonces, ¿qué se hace?</strong> Dejar rastro antes de saber el final: una
+    línea con fecha en el móvil, qué esperas y con qué seguridad. La ficha entera está en
+    <a href="/sesgo-retrospectivo.html">el sesgo retrospectivo</a>. Si el que se lleva la peor parte de
+    esto eres tú, están <a href="/perdonarse-a-uno-mismo.html">perdonarse a uno mismo</a> y
+    <a href="/la-culpa.html">la culpa</a>.</div>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Fischhoff, B. (1975).
+    <em>Hindsight ≠ foresight: the effect of outcome knowledge on judgment under uncertainty</em>. Journal
+    of Experimental Psychology: Human Perception and Performance, 1(3), 288–299. Aquí hay tres preguntas y
+    un minuto; allí había grupos, control y muchos participantes. El efecto es de grupo y en una sola
+    persona puede no salir: si tus tres recuerdos han sido exactos, no significa nada malo ni bueno de ti.
+    No puntúa nada.</p>
+  </section>
+
+  <div class="idea"><strong>La ficha, con calma.</strong> Qué es y dónde aparece, en
+  <a href="/sesgo-retrospectivo.html">el sesgo retrospectivo</a>. Y si quieres seguir con la memoria, en
+  el laboratorio está <a href="/experimento-falso-recuerdo.html">el falso recuerdo</a>.</div>
+
+  <div class="consulta-cta">
+    <h3>Esto era un experimento de dos minutos.</h3>
+    <p>Ver cómo funciona la cabeza está bien; cambiar algo de lo que te pasa se hace mejor con alguien delante. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "El «se veía venir» · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-retrospectivo.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Un experimento de tres minutos sobre el sesgo retrospectivo: estimar, conocer la respuesta y luego intentar recordar la propia estimación."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "El «se veía venir»", "item": "https://psicolinks.com/experimento-retrospectivo.html"}]}</script>
+<script>
+/* El «se veía venir» -------------------------------------------------------
+   Estimas tres cosas, se te dan las respuestas y luego se te pide que
+   recuerdes tus propias estimaciones. El recuerdo suele haberse movido
+   hacia la respuesta correcta (Fischhoff, 1975).
+
+   No guarda nada, ni en el navegador. Al compartir, solo viaja el número
+   de estimaciones que se movieron, detrás de la # del enlace.          */
+(function(){
+  'use strict';
+
+  var REALES = [1859, 206, 384400];
+  var ETIQUETAS = ['El origen de las especies', 'Huesos del adulto', 'Distancia a la Luna'];
+  var UNIDAD = ['', '', ' km'];
+
+  var puestos = [null, null, null];
+  var recordados = [null, null, null];
+
+  function ver(id){
+    ['lab-1','lab-2','lab-3','lab-4'].forEach(function(x){
+      var e = document.getElementById(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = document.getElementById(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function num(n){ return Number(n).toLocaleString('es-ES'); }
+
+  /* ------------------------------------------------- ¿viene de un amigo? */
+  var amigo = (function(){
+    var m = /^r=([0-3])$/.exec((location.hash || '').replace(/^#/, ''));
+    return m ? +m[1] : null;
+  })();
+  if (amigo !== null) {
+    var caja = document.getElementById('lab-amigo-intro');
+    caja.innerHTML = 'Alguien lo ha hecho antes que tú: <strong>' + amigo + ' de sus 3</strong> ' +
+      'estimaciones se le habían movido hacia la respuesta. A ver las tuyas.';
+    caja.hidden = false;
+  }
+
+  /* ----------------------------------------------------- 1. estimaciones */
+  document.getElementById('rt-ver').addEventListener('click', function(){
+    var falta = false;
+    for (var k = 0; k < 3; k++) {
+      var v = document.getElementById('rt-' + k).value;
+      if (v === '' || isNaN(+v)) { falta = true; break; }
+      puestos[k] = +v;
+    }
+    if (falta) {
+      document.getElementById('rt-aviso').textContent =
+        'Falta algún número. Pon los tres aunque sean a ojo — sin ellos no hay experimento.';
+      return;
+    }
+    document.getElementById('rt-aviso').textContent = '';
+    ver('lab-2');
+  });
+
+  document.getElementById('rt-seguir').addEventListener('click', function(){ ver('lab-3'); });
+
+  /* --------------------------------------------------------- 3. recuerdo */
+  document.getElementById('rt-resultado').addEventListener('click', function(){
+    var falta = false;
+    for (var k = 0; k < 3; k++) {
+      var v = document.getElementById('rt-r' + k).value;
+      if (v === '' || isNaN(+v)) { falta = true; break; }
+      recordados[k] = +v;
+    }
+    if (falta) {
+      document.getElementById('rt-aviso2').textContent =
+        'Falta algún número. Aunque no estés seguro, pon lo que te venga: eso es justo lo que se mide.';
+      return;
+    }
+    document.getElementById('rt-aviso2').textContent = '';
+    pintar();
+    ver('lab-4');
+  });
+
+  /* -------------------------------------------------------- 4. resultado */
+  function pintar(){
+    var movidas = 0, sumaPct = 0, cuentaPct = 0, html = '';
+
+    for (var k = 0; k < 3; k++) {
+      var real = REALES[k], puse = puestos[k], recu = recordados[k];
+      var errAntes = Math.abs(puse - real), errAhora = Math.abs(recu - real);
+      var igual = (puse === recu);
+      var acerca = (!igual && errAhora < errAntes);
+      if (acerca) movidas++;
+      if (!igual && errAntes > 0) {
+        sumaPct += ((errAntes - errAhora) / errAntes) * 100;
+        cuentaPct++;
+      }
+
+      var nota;
+      if (igual) {
+        nota = 'Lo has recordado exacto. Aquí no se ha movido nada.';
+      } else if (acerca) {
+        nota = 'Tu recuerdo está <strong>más cerca de la respuesta</strong> de lo que estaba tu ' +
+               'estimación real. Nadie te ha dicho que la cambiaras: se ha movido sola.';
+      } else {
+        nota = 'Tu recuerdo se ha alejado de la respuesta. Pasa: aquí solo hay tres preguntas y una ' +
+               'sola persona.';
+      }
+
+      html += '<div class="rt-fila ' + (acerca ? 'movida' : 'quieta') + '">' +
+        '<span class="tit"><strong>' + esc(ETIQUETAS[k]) + '</strong></span>' +
+        '<div class="rt-nums">' +
+          '<div class="rt-num"><b>' + num(puse) + esc(UNIDAD[k]) + '</b><span>pusiste</span></div>' +
+          '<div class="rt-num"><b>' + num(recu) + esc(UNIDAD[k]) + '</b><span>recordabas</span></div>' +
+          '<div class="rt-num real"><b>' + num(real) + esc(UNIDAD[k]) + '</b><span>respuesta</span></div>' +
+        '</div>' +
+        '<p class="rt-nota">' + nota + '</p></div>';
+    }
+
+    var pct = cuentaPct ? Math.round(sumaPct / cuentaPct) : 0;
+    document.getElementById('rt-tabla').innerHTML = html;
+    document.getElementById('rt-movidas').textContent = movidas;
+    document.getElementById('rt-pct').textContent = (pct > 0 ? pct : 0) + '%';
+
+    var v;
+    if (movidas === 0) {
+      v = 'Tus tres recuerdos no se han acercado a la respuesta. O tienes buena memoria para números, ' +
+          'o has hecho el esfuerzo consciente de recordar lo que pusiste — que es exactamente lo que ' +
+          'cuesta hacer cuando lo que está en juego no son huesos, sino una decisión tuya.';
+    } else if (movidas === 3) {
+      v = 'Las tres. Sin darte cuenta, tu memoria ha empujado tus tres estimaciones hacia el número que ' +
+          'acabas de aprender. Eso es todo el sesgo retrospectivo, en tres minutos y sin nada en juego.';
+    } else {
+      v = movidas + ' de tus 3 estimaciones se han movido hacia la respuesta correcta. No las has ' +
+          'cambiado a propósito: te las ha devuelto la memoria ya corregidas.';
+    }
+    if (pct > 0) {
+      v += ' De media, tu recuerdo está un <strong>' + pct + ' %</strong> más cerca de la respuesta que ' +
+           'lo que escribiste de verdad.';
+    }
+    document.getElementById('rt-veredicto').innerHTML = v;
+
+    if (amigo !== null) {
+      var f = document.getElementById('lab-amigo-final');
+      f.innerHTML = 'Quien te lo mandó: <strong>' + amigo + ' de 3</strong>. Tú: <strong>' +
+        movidas + ' de 3</strong>.';
+      f.hidden = false;
+    }
+    window.__movidas = movidas;
+  }
+
+  /* ----------------------------------------------------------- compartir */
+  function texto(){
+    return 'Acabo de hacer el experimento del «se veía venir» de Psicolinks: ' + window.__movidas +
+      ' de mis 3 respuestas se me habían movido en la memoria hacia la solución, sin darme cuenta. ' +
+      'Pruébalo: https://psicolinks.com/experimento-retrospectivo.html#r=' + window.__movidas;
+  }
+  var bc = document.getElementById('lab-compartir');
+  bc.addEventListener('click', function(){
+    var t = texto();
+    if (navigator.share) { navigator.share({ text: t }).catch(function(){}); return; }
+    var ops = document.getElementById('lab-ops');
+    var abierto = ops.hidden;
+    ops.hidden = !abierto;
+    bc.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    document.getElementById('lab-wa').href = 'https://wa.me/?text=' + encodeURIComponent(t);
+    document.getElementById('lab-mail').href = 'mailto:?subject=' +
+      encodeURIComponent('El experimento del «se veía venir»') + '&body=' + encodeURIComponent(t);
+  });
+
+  document.getElementById('lab-otra').addEventListener('click', function(){
+    if (location.hash) { history.replaceState(null, '', location.pathname); amigo = null;
+      document.getElementById('lab-amigo-intro').hidden = true;
+      document.getElementById('lab-amigo-final').hidden = true; }
+    for (var k = 0; k < 3; k++) {
+      document.getElementById('rt-' + k).value = '';
+      document.getElementById('rt-r' + k).value = '';
+    }
+    puestos = [null, null, null]; recordados = [null, null, null];
+    ver('lab-1');
+  });
+})();
+</script>
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

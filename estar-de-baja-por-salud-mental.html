@@ -100,34 +100,135 @@
   .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
   .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
   @media print{ .cc-banda{ display:none; } }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+
+  /* El color de este tema: Trabajo. */
+  :root{ --accent:#2F6B4F; --accent-soft:#E5F1EA; --stamp:#2F6B4F; }
+  .idea{ background:#E5F1EA !important; border-color:#e6ded2 !important;
+         border-left-color:#2F6B4F !important; }
+  .hazlo{ background:#E5F1EA !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#2F6B4F; border-color:#2F6B4F; color:#fff; }
+  .tool-kicker .num{ background:#2F6B4F; }
+  .cierre{ border-left:4px solid #2F6B4F; }
+  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
+              border:1px solid var(--border); border-radius:14px;
+              background:var(--surface); }
+  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
+  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
+  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
 <script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Estar de baja por salud mental","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/estar-de-baja-por-salud-mental.html","inLanguage":"es-ES"}
+{ "@context":"https://schema.org","@type":"Article","headline":"Estar de baja por salud mental","image":"https://psicolinks.com/ilustraciones/trabajo.jpg","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/estar-de-baja-por-salud-mental.html","inLanguage":"es-ES"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Estar de baja por salud mental", "item": "https://psicolinks.com/estar-de-baja-por-salud-mental.html"}]}
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">📎 Guía gratuita · Trabajo</div>
   <h1>Estar de baja por salud mental</h1>
   <p class="autor">Por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis herramientas para las semanas de baja, que es de lo que no habla nadie: todo el mundo explica cómo pedirla y nadie qué hacer con ella.</p>
+  <img class="guia-ilus" src="/ilustraciones/trabajo.jpg" alt="Ilustración: el ratón de Psicolinks junto a un escritorio con un ordenador y una taza"
+       width="1360" height="460" loading="lazy" decoding="async">
   <div class="idea"><strong>La idea de fondo.</strong> Estar de baja por salud mental <strong>no es estar de reposo</strong>, y confundir las dos cosas es lo que hace que haya gente que sale de la baja peor que entró. La baja te quita lo que te estaba quemando —y eso hacía falta—, pero de paso te quita el horario, el contacto con gente y la sensación de servir para algo, que son tres de los pilares del ánimo. Si no se pone nada en su sitio, a las dos semanas la casa pesa tanto como pesaba el trabajo. Nada de esto va de aguantar más: va de que estas semanas sirvan para tratarte, no solo para desaparecer.</div>
 
 
@@ -142,38 +243,50 @@
   </div>
 
   <h2 class="bloque-tit">Seis herramientas</h2>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 1 · La que explica por qué hay quien empeora estando de baja</p>
+  <nav class="ruta" aria-label="Las herramientas de esta guía">
+    <p class="ruta-eti">Las seis, de un vistazo</p>
+    <ol>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">La baja quita el estresor, pero también quita la estructura</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">No esperes a tener ganas para hacer cosas</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Los trámites, en el sitio que toca</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Decide qué cuentas y a quién</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Usa el tiempo para tratarte, no solo para descansar</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Prepara la vuelta antes de que llegue</span></a></li>
+    </ol>
+  </nav>
+
+<div class="tool" id="h1">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1 · La que explica por qué hay quien empeora estando de baja</p>
   <h3>La baja quita el estresor, pero también quita la estructura</h3>
   <p>Esto es lo que casi nadie te cuenta el primer día. Dejar de ir a trabajar te quita lo que te estaba quemando, y eso es necesario. Pero de paso te quita tres cosas que sostienen el ánimo sin que uno se dé cuenta: una hora de levantarse, ver gente y la sensación de servir para algo. Si no se pone nada en su sitio, a las dos semanas la baja empieza a pesar tanto como pesaba el trabajo.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> ponte una hora de levantarte y una de acostarte, y sostenlas aunque no tengas nada que hacer. Es la medida que más se nota y la que más se salta.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 2</p>
+<div class="tool" id="h2">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2</p>
   <h3>No esperes a tener ganas para hacer cosas</h3>
   <p>El error más repetido: quedarse en casa esperando a estar mejor para volver a la vida. El ánimo no funciona así. Las ganas <em>llegan después</em> de hacer las cosas, no antes, y cada día que pasa sin hacer nada hace el siguiente más cuesta arriba. Estar de baja por salud mental no es estar de reposo: no hay nada que se cure estando quieto.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> dos cosas al día con hora puesta: una que te obligue a salir de casa y otra que tenga que ver con alguien. Con el <a href="/registro-de-actividades.html">registro de actividades y ánimo</a> se ve negro sobre blanco que el ánimo sube después de hacerlas.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 3</p>
+<div class="tool" id="h3">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
   <h3>Los trámites, en el sitio que toca</h3>
   <p>Cuánto dura, cuánto se cobra, quién revisa y cómo va el alta depende de tu mutua, de tu régimen y de tu comunidad, y cambia. Cualquiera que te dé una cifra por internet se la está inventando, y preocuparte con datos falsos es lo último que necesitas ahora.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> lo que dependa de papeles se pregunta a tu médico de familia, a tu mutua o al sindicato si estás afiliado. Apunta las dudas en una lista y hazlas todas de una vez, en vez de darle vueltas cada noche a una distinta.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 4</p>
+<div class="tool" id="h4">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
   <h3>Decide qué cuentas y a quién</h3>
   <p>La baja por salud mental sigue teniendo estigma, y eso genera una duda que da muchas vueltas: qué digo en el trabajo. Conviene saberlo: <strong>tú no tienes que decirle a tu empresa el diagnóstico</strong>. El parte que entregas no lo lleva. Con quién lo compartes es decisión tuya y de nadie más.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> decide de antemano una frase para quien pregunte —«estoy de baja, ya os contaré»— y no la improvises en caliente. Y elige a dos o tres personas con las que sí quieras hablarlo de verdad, porque aislarse del todo es la otra mitad del problema.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 5</p>
+<div class="tool" id="h5">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
   <h3>Usa el tiempo para tratarte, no solo para descansar</h3>
   <p>Una baja larga sin tratamiento suele acabar en volver igual que te fuiste, y entonces la recaída está cantada. El descanso quita la presión; lo que cambia las cosas es trabajar lo que hay debajo, y estas semanas son la mejor oportunidad que vas a tener en años para hacerlo.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> si aún no lo estás, pide cita: en la pública por tu médico de familia, y tienes las otras vías en <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>. Y lleva escrito qué quieres que cambie, con <a href="/mis-objetivos-de-terapia.html">mis objetivos de terapia</a>.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 6 · La que evita repetir la baja dentro de seis meses</p>
+<div class="tool" id="h6">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6 · La que evita repetir la baja dentro de seis meses</p>
   <h3>Prepara la vuelta antes de que llegue</h3>
   <p>La vuelta da miedo y ese miedo aparece semanas antes, sobre todo si lo que te quemó sigue igual. Volver de golpe al mismo puesto, con la misma carga y con las mismas personas, sin haber cambiado nada, es la forma más segura de recaer.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> la última parte de la baja se prepara: qué va a ser distinto, qué vas a decir el primer día, qué haces si a la semana estás igual. Está entero en <a href="/volver-al-trabajo-tras-una-baja.html">volver al trabajo tras una baja</a>, y si lo que te quemó es el sitio, en <a href="/el-burnout.html">el burnout</a>.</div>
@@ -182,35 +295,17 @@
   <div class="cierre"><strong>Un apunte importante.</strong> En esta guía no vas a encontrar cuánto dura una baja, cuánto se cobra ni cómo va el alta, y es a propósito: depende de tu mutua, de tu régimen y de tu comunidad, y cambia. Eso se pregunta a tu médico de familia, a tu mutua o a tu sindicato, no a internet. Y si en algún momento aparece la idea de que no merece la pena seguir, eso no espera a la próxima cita: el <strong>024</strong> atiende las 24 horas, es gratuito, no deja rastro en la factura y al otro lado hay una persona. Tienes también <a href="/cuando-no-tienes-ganas-de-nada.html">cuando no tienes ganas de nada</a> y <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>.</div>
 
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que cuenta la guía te está pasando de verdad y quieres que alguien mire tu caso, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -220,6 +315,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

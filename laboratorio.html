@@ -58,18 +58,6 @@
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
   .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
 
   .lab-lista{ display:grid; grid-template-columns:1fr; gap:0.8rem; margin:1.6rem 0 0; }
   @media (min-width:46rem){ .lab-lista{ grid-template-columns:1fr 1fr; } }
@@ -84,12 +72,93 @@
                   text-transform:uppercase; color:var(--stamp); }
   .lab-pronto{ opacity:0.62; }
   .lab-pronto .dur{ color:var(--ink-soft); }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
 </header>
 
 <main>
@@ -147,7 +216,63 @@
         <span class="que">Un problema con dos programas y una decisión. Al final se lo mandas a alguien y a esa persona le sale el mismo problema contado del revés.</span>
         <span class="dur">🧪 Dos minutos</span>
       </a>
+      <a class="lab-card" href="/experimento-anclaje.html">
+        <span class="ico" aria-hidden="true">⚓</span>
+        <span class="nom">El anclaje</span>
+        <span class="que">Te preguntan una tontería con un número dentro y luego te piden que estimes algo. El número no era inocente, y se te queda pegado.</span>
+        <span class="dur">🧪 Dos minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-coste-hundido.html">
+        <span class="ico" aria-hidden="true">🎟️</span>
+        <span class="nom">El coste hundido</span>
+        <span class="que">Una entrada, un catarro y un sábado de lluvia. A quien se lo mandes le sale el mismo caso con una diferencia: la entrada era regalada.</span>
+        <span class="dur">🧪 Dos minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-descuento-por-demora.html">
+        <span class="ico" aria-hidden="true">⏳</span>
+        <span class="nom">El descuento por demora</span>
+        <span class="que">Seis elecciones entre dinero hoy y algo más dentro de un mes. Sale tu curva, y con ella el motivo de que cueste tanto esperar.</span>
+        <span class="dur">🧪 Tres minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-2-4-6.html">
+        <span class="ico" aria-hidden="true">🔢</span>
+        <span class="nom">La tarea 2-4-6</span>
+        <span class="que">Hay una regla escondida y puedes probar los tríos que quieras. El problema no será acertar: será qué pruebas se te ocurre hacer.</span>
+        <span class="dur">🧪 Tres minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-resurgencia.html">
+        <span class="ico" aria-hidden="true">🔁</span>
+        <span class="nom">La resurgencia</span>
+        <span class="que">Una máquina de cuatro botones que deja de pagar. Lo que vuelves a pulsar cuando lo nuevo falla es el mecanismo de las recaídas.</span>
+        <span class="dur">🧪 Tres minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-retrospectivo.html">
+        <span class="ico" aria-hidden="true">⏪</span>
+        <span class="nom">El «se veía venir»</span>
+        <span class="que">Estimas tres cosas, te damos las respuestas y luego intentas recordar qué habías puesto tú. Tu memoria se habrá movido sola.</span>
+        <span class="dur">🧪 Tres minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-disponibilidad.html">
+        <span class="ico" aria-hidden="true">📰</span>
+        <span class="nom">Lo que se cuenta y lo que pasa</span>
+        <span class="que">Cuatro preguntas de «cuál es más frecuente». Los fallos no salen al azar: van todos hacia el mismo lado.</span>
+        <span class="dur">🧪 Dos minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-aversion-a-la-perdida.html">
+        <span class="ico" aria-hidden="true">⚖️</span>
+        <span class="nom">La balanza torcida</span>
+        <span class="que">Seis apuestas a cara o cruz hasta dar con tu número: cuánto te tienen que ofrecer para arriesgar cien euros.</span>
+        <span class="dur">🧪 Dos minutos</span>
+      </a>
+      <a class="lab-card" href="/experimento-punto-ciego.html">
+        <span class="ico" aria-hidden="true">🕶️</span>
+        <span class="nom">El punto ciego</span>
+        <span class="que">Seis sesgos y una pregunta para cada uno: ¿a quién le afectan más, a ti o a la media de la gente?</span>
+        <span class="dur">🧪 Dos minutos</span>
+      </a>
   </div>
+
+  <div class="idea"><strong>Y si prefieres leerlo antes de jugarlo.</strong> Cada uno de estos experimentos tiene su ficha en <a href="/sesgos.html">la biblioteca de sesgos</a>: qué es, dónde aparece en el día a día y qué se puede hacer con ello.</div>
 
   <h2 class="bloque-tit">Qué son y qué no son</h2>
   <p>Son <strong>versiones caseras</strong> de estudios publicados: un minuto y un botón en lugar de
@@ -169,42 +294,25 @@
   «si voy solo, se me va a notar»: eso es una predicción, y las predicciones se pueden comprobar. La
   hoja para hacerlo está en <a href="/experimento-conductual.html">experimento conductual</a> — se
   rellena en dos minutos y no sale de tu navegador.</div>
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="consulta-cta">
+    <h3>Del laboratorio a lo de fuera.</h3>
+    <p>Estos experimentos son de otros y con la respuesta ya sabida. El que cambia algo es el que haces con lo tuyo, y ese suele ir mejor acompañado. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Laboratorio de psicología · Psicolinks", "inLanguage": "es-ES", "url": "https://psicolinks.com/laboratorio.html", "description": "Experimentos de psicología clásicos, en versión corta, para hacerlos tú y notar el efecto en tu propia cabeza."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}]}</script>
 
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La tarea 2-4-6: la prueba que no haces · Psicolinks</title>
+<meta name="description" content="Tengo una regla en la cabeza y este trío la cumple: 2, 4, 6. Averigua cuál es probando los tríos que quieras. Lo interesante no es la regla: es cuáles pruebas.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Psicolinks">
+<meta property="og:title" content="La tarea 2-4-6: la prueba que no haces">
+<meta property="og:description" content="2, 4, 6 cumple mi regla. Prueba tríos y averigua cuál es. Casi nadie prueba el que le quitaría la razón.">
+<meta property="og:url" content="https://psicolinks.com/experimento-2-4-6.html">
+<meta property="og:image" content="https://psicolinks.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://psicolinks.com/experimento-2-4-6.html">
+<meta name="theme-color" content="#EEEDE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{ --paper:#EEEDE6; --surface:#FFFFFF; --ink:#211F2E; --ink-soft:#625C70; --border:#DDD7CB; --accent:#4A3B78; --accent-soft:#ECE8F5; --stamp:#B5541D; --font-display:'Lora',Georgia,serif; --font-body:'Work Sans',system-ui,sans-serif; --font-mono:'Space Mono',monospace; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); }
+  :focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+  .site-header{ border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
+  .logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.6rem,4vw,2.15rem); color:var(--ink); text-decoration:none; }
+  .logo em{ color:var(--accent); font-style:normal; }
+  main{ max-width:680px; margin:0 auto; padding:2.4rem 1.5rem 4rem; }
+  .back-link{ font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.4rem; }
+  .back-link:hover{ text-decoration:underline; }
+  .stamp{ display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--stamp); border:1.3px dashed var(--stamp); border-radius:999px; padding:0.25rem 0.7rem; transform:rotate(-1.2deg); margin-bottom:1rem; }
+  h1{ font-family:var(--font-display); font-size:2rem; line-height:1.22; margin:0 0 0.5rem; }
+  .autor{ font-size:0.86rem; color:var(--ink-soft); margin:0 0 1.5rem; }
+  .autor strong{ color:var(--ink); }
+  .lead{ color:var(--ink-soft); font-size:1.05rem; line-height:1.65; margin:0 0 1.5rem; }
+  .idea{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:1rem 1.3rem; font-size:0.96rem; line-height:1.6; margin:0 0 1.5rem; }
+  .idea strong{ color:var(--accent); }
+  .descarga{ display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem; background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:12px; padding:1rem 1.3rem; margin:0 0 2rem; }
+  .descarga p{ margin:0; font-size:0.92rem; color:#3d3357; flex:1 1 220px; line-height:1.5; }
+  .btn-pdf{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; padding:0.65rem 1.2rem; border-radius:9px; }
+  .btn-pdf:hover{ background:#3a2e63; }
+  h2.bloque-tit{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin:2rem 0 1rem; }
+  .tool{ margin:0 0 1.4rem; }
+  .tool-kicker{ font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp); margin:0 0 0.2rem; }
+  .tool h3{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin:0 0 0.4rem; color:var(--ink); }
+  .tool p{ font-size:1rem; line-height:1.7; color:var(--ink); margin:0 0 0.6rem; }
+  .hazlo{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:10px; padding:0.8rem 1.1rem; font-size:0.95rem; line-height:1.55; color:#3d3357; }
+  .hazlo strong{ color:var(--accent); }
+  .cierre{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; margin:1.6rem 0 0; font-size:0.96rem; line-height:1.6; }
+  .cierre strong{ color:var(--accent); }
+  .site-footer{ border-top:1px solid var(--border); padding:1.75rem 1.5rem 2.5rem; text-align:center; color:var(--ink-soft); font-size:0.82rem; }
+  .site-footer a{ color:var(--ink-soft); }
+
+  .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
+  .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
+  .site-footer .pie-nav a:hover{ text-decoration:underline; }
+  .site-footer .pie-legal{ font-size:0.76rem; opacity:0.8; margin:0.9rem 0 0; }
+
+  .lab-paso{ display:none; }
+  .lab-paso.on{ display:block; }
+  .lab-caja{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; margin:1.5rem 0 0; }
+  .lab-pregunta{ font-family:var(--font-display); font-size:1.16rem; font-weight:600; margin:0 0 0.2rem; }
+  .lab-sub{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 1rem; }
+  .lab-btn{ display:inline-block; width:100%; box-sizing:border-box; text-align:center; background:var(--accent); color:#fff; border:0; font-family:inherit; font-weight:600; font-size:1rem; padding:0.85rem 1.2rem; border-radius:10px; cursor:pointer; text-decoration:none; margin:1.1rem 0 0; }
+  .lab-btn.sec{ background:var(--paper); color:var(--ink); border:1px solid var(--border); }
+  .lab-marcador{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:0 0 1.1rem; }
+  .lab-dato{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.9rem; text-align:center; }
+  .lab-dato b{ display:block; font-family:var(--font-mono); font-size:2rem; line-height:1; }
+  .lab-dato span{ display:block; font-size:0.8rem; color:var(--ink-soft); margin:0.25rem 0 0; }
+  .lab-veredicto{ font-size:1.02rem; line-height:1.7; margin:0 0 0.5rem; }
+  .lab-amigo{ background:var(--paper); border:1px dashed var(--border); border-radius:12px; padding:0.9rem 1.1rem; margin:0 0 1.2rem; font-size:0.95rem; line-height:1.6; }
+  .lab-fuente{ font-size:0.87rem; line-height:1.65; color:var(--ink-soft); }
+  .envio-ops{ display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 0.9rem; margin:0.7rem 0 0; font-size:0.92rem; }
+  .envio-eti{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-soft); }
+  .envio-ops a{ font-weight:600; color:var(--accent); }
+  @media print{ .lab-paso, .lab-btn{ display:none !important; } }
+
+  .en-enunciado{ background:var(--paper); border:1px solid var(--border); border-radius:12px;
+                 padding:1rem 1.2rem; font-size:1rem; line-height:1.7; margin:0 0 1.1rem; }
+  .en-ops{ display:grid; gap:0.6rem; }
+  .en-op{ display:block; width:100%; text-align:left; font-family:inherit; font-size:0.98rem;
+          line-height:1.55; padding:1rem 1.15rem; border-radius:12px; border:2px solid var(--border);
+          background:var(--surface); color:var(--ink); cursor:pointer; }
+  .en-op:hover{ border-color:var(--accent); }
+  .en-op b{ display:block; font-size:0.72rem; font-family:var(--font-mono); letter-spacing:0.08em;
+            text-transform:uppercase; color:var(--stamp); margin:0 0 0.25rem; }
+  .en-caras{ display:grid; gap:0.7rem; margin:0 0 1.2rem; }
+  @media (min-width:46rem){ .en-caras{ grid-template-columns:1fr 1fr; } }
+  .en-cara{ background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; }
+  .en-cara.tuya{ border-color:#8C3B4A; border-width:2px; }
+  .en-cara .eti{ display:block; font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em;
+                 text-transform:uppercase; color:var(--ink-soft); margin:0 0 0.4rem; }
+  .en-cara p{ margin:0 0 0.4rem; font-size:0.93rem; line-height:1.6; }
+  .en-cara p:last-child{ margin-bottom:0; }
+  .en-cifra{ font-family:var(--font-mono); font-weight:700; color:#8C3B4A; }
+
+  /* ── la tarea 2-4-6 ─────────────────────────────────────────────────── */
+  .wa-form{ display:grid; gap:0.7rem; margin:0 0 0.3rem; }
+  .wa-campos{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.6rem; }
+  .wa-campos input{ width:100%; font-family:var(--font-mono); font-weight:700; font-size:1.35rem;
+                    text-align:center; padding:0.7rem 0.4rem; border:2px solid var(--border);
+                    border-radius:10px; background:var(--paper); color:var(--ink); }
+  .wa-campos input:focus{ border-color:var(--accent); }
+  .wa-probar{ margin:0; }
+  .wa-error{ color:#8C3B4A; font-size:0.9rem; line-height:1.5; margin:0 0 0.6rem; min-height:1.35rem; }
+  .wa-vacia{ font-size:0.92rem; color:var(--ink-soft); line-height:1.6; margin:0 0 0.7rem; }
+  .wa-lista{ list-style:none; margin:0 0 0.7rem; padding:0; display:grid; gap:0.4rem;
+             max-height:17rem; overflow-y:auto; }
+  .wa-hist{ list-style:none; margin:0 0 0.9rem; padding:0; display:grid; gap:0.4rem; }
+  .wa-item{ display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem 0.7rem; background:var(--paper);
+            border:1px solid var(--border); border-left-width:4px; border-radius:10px;
+            padding:0.55rem 0.8rem; font-size:0.95rem; }
+  .wa-nums{ font-family:var(--font-mono); font-weight:700; letter-spacing:0.03em; }
+  .wa-ver{ margin-left:auto; font-family:var(--font-mono); font-size:0.74rem; letter-spacing:0.06em;
+           text-transform:uppercase; font-weight:700; }
+  .wa-si{ border-left-color:#2f6b4f; }
+  .wa-si .wa-ver{ color:#2f6b4f; }
+  .wa-no{ border-left-color:var(--stamp); }
+  .wa-no .wa-ver{ color:var(--stamp); }
+  .wa-marca{ font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.07em; text-transform:uppercase;
+             color:var(--accent); border:1px dashed var(--accent); border-radius:99px; padding:0.12rem 0.5rem; }
+  .wa-contador{ font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.05em;
+                color:var(--ink-soft); margin:0; }
+  .wa-anuncio{ margin:1.1rem 0 0; }
+  .wa-anuncio textarea{ width:100%; font-family:inherit; font-size:1rem; line-height:1.55;
+                        padding:0.75rem 0.9rem; border:2px solid var(--border); border-radius:10px;
+                        background:var(--paper); color:var(--ink); resize:vertical; min-height:5.5rem; }
+  .wa-anuncio textarea:focus{ border-color:var(--accent); }
+  .wa-regla{ background:var(--accent-soft); border:1px solid #d8d0ec; border-radius:14px;
+             padding:1.1rem 1.3rem; margin:0 0 1.1rem; }
+  .wa-regla .eti{ display:block; font-family:var(--font-mono); font-size:0.66rem; letter-spacing:0.09em;
+                  text-transform:uppercase; color:var(--accent); }
+  .wa-regla p{ margin:0.4rem 0 0; font-size:1.06rem; line-height:1.55; color:#3d3357; }
+  .wa-regla b{ font-family:var(--font-mono); }
+  .wa-honesto{ display:grid; gap:0.7rem; margin:0.9rem 0 0; }
+  @media (min-width:30rem){ .wa-honesto{ grid-template-columns:1fr 1fr; } }
+  .wa-honesto .lab-btn{ margin:0; }
+  .wa-honesto .lab-btn:disabled{ opacity:0.45; cursor:default; }
+  .wa-cifra{ font-family:var(--font-mono); font-weight:700; color:#8C3B4A; }
+  @media print{ .wa-form, .wa-honesto, .wa-anuncio{ display:none !important; } }
+  .consulta-cta{ margin:2.4rem 0 0; padding:1.3rem 1.4rem; background:var(--surface); border:1px solid var(--border); border-left:5px solid #8C3B4A; border-radius:12px; }
+  .consulta-cta h3{ font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 0.5rem; }
+  .consulta-cta p{ margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.93rem; line-height:1.6; }
+  .consulta-cta .consulta-btn{ display:inline-block; text-decoration:none; font-weight:600; font-size:0.93rem; padding:0.65rem 1.15rem; border-radius:9px; background:#8C3B4A; color:#fff; }
+  .consulta-cta .consulta-btn:hover{ background:#75303d; }
+  .consulta-cta .consulta-nota{ margin:0.7rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  @media print{ .consulta-cta{ display:none !important; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+
+<main>
+  <a href="/laboratorio.html" class="back-link">← Volver al laboratorio</a>
+  <div class="stamp">🧪 Experimento · Tres minutos</div>
+  <h1>La tarea 2-4-6</h1>
+  <p class="lead">Tengo una regla en la cabeza y este trío la cumple: 2, 4, 6. Averigua cuál es. Lo
+  interesante no va a ser la regla — va a ser qué tríos se te ocurre probar.</p>
+
+  <!-- ─────────────────────────────── 1. las pruebas ───────────────────── -->
+  <section class="lab-paso on" id="lab-1">
+    <div class="lab-caja">
+      <p class="lab-pregunta">Tengo una regla en la cabeza.</p>
+      <p class="lab-sub">Algunos grupos de tres números la cumplen y otros no. <strong>Este los
+      cumple: 2, 4, 6.</strong> Tu trabajo es averiguar cuál es la regla. Puedes probar todos los
+      tríos que quieras: yo te digo si cumplen o no. Números enteros del −999 al 999; valen los
+      negativos y el cero.</p>
+
+      <form class="wa-form" id="wa-form" novalidate>
+        <div class="wa-campos">
+          <input type="number" id="wa-a" step="1" min="-999" max="999" inputmode="numeric" aria-label="Primer número" placeholder="—">
+          <input type="number" id="wa-b" step="1" min="-999" max="999" inputmode="numeric" aria-label="Segundo número" placeholder="—">
+          <input type="number" id="wa-c" step="1" min="-999" max="999" inputmode="numeric" aria-label="Tercer número" placeholder="—">
+        </div>
+        <button type="submit" class="lab-btn wa-probar" id="wa-probar">Probar</button>
+      </form>
+      <p class="wa-error" id="wa-error" role="alert"></p>
+
+      <p class="wa-vacia" id="wa-vacia">Aquí van saliendo tus pruebas. Prueba los tríos que quieras,
+      no hay límite ni prisa.</p>
+      <ul class="wa-lista" id="wa-lista" aria-label="Tus pruebas"></ul>
+      <p class="wa-contador" id="wa-contador" data-n="0" data-m="0" role="status">0 pruebas · 0 que cumplen</p>
+
+      <button type="button" class="lab-btn sec" id="wa-ya" aria-expanded="false">Ya sé la regla</button>
+
+      <div class="wa-anuncio" id="wa-anuncio" hidden>
+        <p class="lab-sub" style="margin:1.1rem 0 0.6rem;">Escríbela con tus palabras, como se la
+        dirías a alguien.</p>
+        <textarea id="wa-texto" aria-label="Tu regla" placeholder="La regla es…"></textarea>
+        <p class="wa-error" id="wa-error2" role="alert"></p>
+        <button type="button" class="lab-btn" id="wa-enviar">Enviar y ver la regla</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── 2. la regla ──────────────────────── -->
+  <section class="lab-paso" id="lab-2">
+    <div class="lab-caja">
+      <div class="wa-regla">
+        <span class="eti">La regla era esta</span>
+        <p><b>Tres números en orden creciente.</b> Nada más: el primero menor que el segundo y el
+        segundo menor que el tercero. Ni pares, ni de dos en dos, ni nada.</p>
+      </div>
+      <p class="lab-sub">Tu regla la has escrito tú y <strong>esta página no la puede leer</strong>:
+      aquí no hay nadie corrigiendo nada ni se envía tu texto a ningún sitio. Compárala tú con la de
+      arriba y dime qué tal.</p>
+      <div class="wa-honesto">
+        <button type="button" class="lab-btn" id="wa-era">Era eso</button>
+        <button type="button" class="lab-btn sec" id="wa-no-era">No era eso</button>
+      </div>
+      <p class="lab-veredicto" id="wa-auto" style="margin:1rem 0 0;" hidden></p>
+    </div>
+
+    <div class="lab-caja">
+      <p class="lab-pregunta">Tus pruebas, otra vez</p>
+      <p class="lab-sub" id="wa-resumen" style="margin:0 0 0.9rem;"></p>
+      <ul class="wa-hist" id="wa-historial" aria-label="Historial de tus pruebas"></ul>
+      <p class="lab-sub" style="margin:0;">Va marcada como <strong>prueba de descarte</strong> la que
+      no encajaba con la hipótesis de siempre —de dos en dos, o pares crecientes—; es decir, la que
+      podía salirte «no cumple». Las demás iban buscando un sí.</p>
+      <button type="button" class="lab-btn sec" id="wa-otra">Empezar otra vez</button>
+    </div>
+
+    <h2 class="bloque-tit">Qué acaba de pasar</h2>
+    <p>Casi todo el mundo se hace una hipótesis en los primeros treinta segundos: «van de dos en dos»,
+    «son pares». Y a partir de ahí prueba tríos que la cumplen. 8, 10, 12. 20, 22, 24. 100, 102, 104.
+    Cada uno vuelve con un «cumple» y cada «cumple» deja la idea un poco más firme.</p>
+
+    <p>El problema es que ninguno de esos tríos podía salir «no cumple». Todos encajaban con la
+    hipótesis y todos encajaban también con la regla de verdad, que es mucho más amplia. Así que no
+    estaban comprobando nada: estaban repitiendo lo mismo con números distintos. Eso es el
+    <strong>sesgo de confirmación</strong> — buscar lo que encaja con lo que ya piensas y no lo que
+    lo pondría en duda.</p>
+
+    <div class="idea"><strong>Lo importante es esto.</strong> Una prueba que confirma tu idea casi no
+    informa; la que informa es la que podría dejarte sin ella. La pregunta útil no es «¿qué encajaría
+    si tengo razón?», sino <strong>«¿qué tendría que pasar para que estuviera equivocado?»</strong>.
+    Si no se te ocurre nada que pudiera dejarte sin la idea, es que no la estás poniendo a prueba.</div>
+
+    <h2 class="bloque-tit">Dónde aparece esto fuera del ejercicio</h2>
+    <p>En cuanto sales de aquí está por todas partes. Buscas los síntomas en internet escribiendo
+    justo lo que ya temes, y encuentras justo lo que ya temías. Miras el móvil de tu pareja solo
+    cuando ya sospechas, y cada mensaje raro cuenta y los otros doscientos no. Recuerdas las tres
+    veces que hablar salió mal y no las quince que salió bien. Lees y escuchas a quien piensa como
+    tú, y sales pensando que casi todo el mundo piensa así.</p>
+
+    <p>Y en terapia aparece a diario. «Le caigo mal a todo el mundo» se sostiene sola mientras solo
+    se miren los datos que encajan: el que no te saludó, la que tardó en contestar. Los otros —la
+    llamada del jueves, la conversación de veinte minutos en el pasillo— no es que se nieguen, es que
+    ni siquiera se miran. La idea no es que sea mentira: es que nunca se ha puesto a prueba.</p>
+
+    <h2 class="bloque-tit">Cómo se pone a prueba una idea</h2>
+    <p>Igual que aquí: buscando el trío que podría dejarte sin ella. Se coge la idea, se escribe qué
+    tendría que pasar para que fuera falsa, y se va a mirar. La hoja para hacerlo está en el
+    <a href="/experimento-conductual.html">experimento conductual</a>, que es exactamente eso pero
+    con lo tuyo en vez de con números. Y el trabajo más de andar por casa —pillar el pensamiento,
+    escribir qué lo apoya y qué no— está en
+    <a href="/registro-de-pensamientos.html">el registro de pensamientos</a>.</p>
+
+    <p class="lab-fuente"><strong>De dónde sale esto y qué no es.</strong> Wason, P. C. (1960).
+    <em>On the failure to eliminate hypotheses in a conceptual task</em>. Quarterly Journal of
+    Experimental Psychology, 12(3), 129–140. Wason se lo puso a 29 estudiantes con este mismo trío de
+    partida y esta misma regla amplia. Solo unos pocos dieron con ella en su primer anuncio: la
+    mayoría anunció reglas demasiado estrechas, y varios lo hicieron dos y tres veces seguidas,
+    cambiando de regla equivocada sin llegar a probar nada que pudiera quitársela. Esto
+    <strong>no mide nada de ti</strong>: no hay puntuación, ni percentil, ni nada que diagnosticar. Y
+    dar con la regla suele significar sobre todo que ya conocías el problema.</p>
+  </section>
+  <div class="idea"><strong>La ficha, con calma.</strong> Dónde aparece esto fuera del experimento y qué se puede hacer con ello: <a href="/sesgo-de-confirmacion.html">el sesgo de confirmación</a>, en la biblioteca de sesgos.</div>
+
+  <div class="consulta-cta">
+    <h3>Esto era un experimento de dos minutos.</h3>
+    <p>Ver cómo funciona la cabeza está bien; cambiar algo de lo que te pasa se hace mejor con alguien delante. Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649: trabajo online para toda España y presencial en Valencia.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
+  <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
+</footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "La tarea 2-4-6 · Psicolinks", "inLanguage": "es-ES", "applicationCategory": "EducationalApplication", "operatingSystem": "Cualquier navegador", "url": "https://psicolinks.com/experimento-2-4-6.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Hay una regla que cumple el trío 2, 4, 6. Prueba los tríos que quieras y averigua cuál es. Casi nadie prueba el que le quitaría la razón."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://psicolinks.com/laboratorio.html"}, {"@type": "ListItem", "position": 3, "name": "La tarea 2-4-6", "item": "https://psicolinks.com/experimento-2-4-6.html"}]}</script>
+<script>
+/* La tarea 2-4-6 (Wason, 1960) --------------------------------------------
+   La regla es «tres números en orden creciente»: a < b < c. Punto.
+   El trío de partida —2, 4, 6— la cumple, pero también sugiere otras dos
+   hipótesis mucho más estrechas: «de dos en dos» y «pares crecientes».
+
+   Mientras prueba, se va anotando en silencio si cada trío encajaba con esa
+   hipótesis obvia (prueba de confirmación: no podía salir que no) o no
+   (prueba de descarte: podía salir que no). Al final se le enseña la cuenta.
+
+   No se corrige el texto de su regla: no se puede sin un modelo de lenguaje,
+   así que se le enseña la regla real y se corrige él.
+
+   No guarda nada: ni localStorage, ni servidor, ni nada.                    */
+(function(){
+  'use strict';
+  var MIN = -999, MAX = 999;
+  var pruebas = [];            /* {a, b, c, cumple, descarte} */
+
+  /* ------------------------------------------------------------ la regla */
+  function cumpleRegla(a, b, c){ return a < b && b < c; }
+
+  /* La hipótesis obvia que sugiere el 2-4-6: de dos en dos, o pares
+     crecientes. Si el trío encaja con ella, la prueba iba buscando un sí. */
+  function esConfirmacion(a, b, c){
+    var dosEnDos = (b - a === 2) && (c - b === 2);
+    var pares = (a % 2 === 0) && (b % 2 === 0) && (c % 2 === 0) && a < b && b < c;
+    return dosEnDos || pares;
+  }
+
+  /* ----------------------------------------------------------- utilidades */
+  function $(id){ return document.getElementById(id); }
+  function ver(id){
+    ['lab-1','lab-2'].forEach(function(x){
+      var e = $(x);
+      if (e) e.classList.toggle('on', x === id);
+    });
+    var d = $(id);
+    if (d) d.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+  function plural(n, uno, varios){ return n + ' ' + (n === 1 ? uno : varios); }
+
+  function fila(p, conMarca){
+    return '<li class="wa-item ' + (p.cumple ? 'wa-si' : 'wa-no') + '"' +
+      ' data-cumple="' + (p.cumple ? 'si' : 'no') + '"' +
+      ' data-tipo="' + (p.descarte ? 'descarte' : 'confirmacion') + '">' +
+      '<span class="wa-nums">' + p.a + ', ' + p.b + ', ' + p.c + '</span>' +
+      (conMarca && p.descarte ? '<span class="wa-marca">prueba de descarte</span>' : '') +
+      '<span class="wa-ver">' + (p.cumple ? 'cumple' : 'no cumple') + '</span></li>';
+  }
+
+  /* --------------------------------------------------------- 1. probar */
+  function valores(){
+    var ids = ['wa-a','wa-b','wa-c'], out = [];
+    for (var i = 0; i < 3; i++){
+      var bruto = $(ids[i]).value.trim();
+      if (bruto === '') return { error:'Rellena los tres huecos antes de probar.' };
+      var n = Number(bruto);
+      if (!isFinite(n) || !Number.isInteger(n)) return { error:'Solo valen números enteros.' };
+      if (n < MIN || n > MAX) return { error:'Los tres números tienen que estar entre −999 y 999.' };
+      out.push(n);
+    }
+    return { nums: out };
+  }
+
+  function contador(){
+    var n = pruebas.length, m = 0;
+    for (var i = 0; i < n; i++) if (pruebas[i].cumple) m++;
+    var c = $('wa-contador');
+    c.dataset.n = n;
+    c.dataset.m = m;
+    c.textContent = plural(n, 'prueba', 'pruebas') + ' · ' + plural(m, 'que cumple', 'que cumplen');
+    $('wa-vacia').hidden = n > 0;
+  }
+
+  $('wa-form').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var v = valores();
+    if (v.error){ $('wa-error').textContent = v.error; return; }
+    $('wa-error').textContent = '';
+
+    var a = v.nums[0], b = v.nums[1], c = v.nums[2];
+    var p = { a:a, b:b, c:c, cumple:cumpleRegla(a, b, c), descarte:!esConfirmacion(a, b, c) };
+    pruebas.push(p);
+
+    var lista = $('wa-lista');
+    lista.insertAdjacentHTML('beforeend', fila(p, false));
+    lista.scrollTop = lista.scrollHeight;
+    contador();
+    $('wa-a').focus();
+  });
+
+  /* ------------------------------------------------------ 2. el anuncio */
+  $('wa-ya').addEventListener('click', function(){
+    var caja = $('wa-anuncio');
+    caja.hidden = false;
+    this.hidden = true;
+    this.setAttribute('aria-expanded', 'true');
+    $('wa-texto').focus();
+  });
+
+  $('wa-enviar').addEventListener('click', function(){
+    if ($('wa-texto').value.trim() === ''){
+      $('wa-error2').textContent = 'Escríbela primero, aunque sea en una línea. Es media parte del ejercicio.';
+      return;
+    }
+    $('wa-error2').textContent = '';
+    revelar();
+  });
+
+  function revelar(){
+    var n = pruebas.length, d = 0, i;
+    for (i = 0; i < n; i++) if (pruebas[i].descarte) d++;
+
+    var html = '';
+    for (i = 0; i < n; i++) html += fila(pruebas[i], true);
+    $('wa-historial').innerHTML = html;
+
+    var r;
+    if (n === 0){
+      r = 'No has llegado a probar ningún trío, así que aquí no hay nada que mirar.';
+    } else if (d === 0){
+      r = 'De tus <span class="wa-cifra">' + n + '</span> pruebas, ' +
+          '<span class="wa-cifra">0</span> iban buscando un «no». Todas podían salir que sí.';
+    } else {
+      r = 'De tus <span class="wa-cifra">' + n + '</span> pruebas, ' +
+          '<span class="wa-cifra">' + d + '</span> iban buscando un «no»: eran las únicas que podían ' +
+          'quitarte la idea de la cabeza.';
+    }
+    $('wa-resumen').innerHTML = r;
+    ver('lab-2');
+  }
+
+  /* ------------------------------------------- 3. se corrige él, no yo */
+  function autocorregir(acerto){
+    var t = acerto
+      ? 'Diste con ella. Suele pasar cuando ya conocías el problema, o cuando en algún momento ' +
+        'probaste un trío que no encajaba con tu primera idea y te devolvió un «no». Mira abajo cuáles fueron.'
+      : 'Es lo más habitual, y no dice nada de ti. Casi todo el mundo anuncia una regla más estrecha ' +
+        'que la de verdad: una que también cumplen los tríos crecientes, pero que deja fuera un montón de ellos.';
+    var p = $('wa-auto');
+    p.innerHTML = t;
+    p.hidden = false;
+    $('wa-era').disabled = true;
+    $('wa-no-era').disabled = true;
+  }
+  $('wa-era').addEventListener('click', function(){ autocorregir(true); });
+  $('wa-no-era').addEventListener('click', function(){ autocorregir(false); });
+
+  /* ------------------------------------------------------ 4. otra vez */
+  $('wa-otra').addEventListener('click', function(){
+    pruebas = [];
+    ['wa-a','wa-b','wa-c'].forEach(function(id){ $(id).value = ''; });
+    $('wa-texto').value = '';
+    $('wa-lista').innerHTML = '';
+    $('wa-historial').innerHTML = '';
+    $('wa-resumen').innerHTML = '';
+    $('wa-error').textContent = '';
+    $('wa-error2').textContent = '';
+    $('wa-anuncio').hidden = true;
+    $('wa-ya').hidden = false;
+    $('wa-ya').setAttribute('aria-expanded', 'false');
+    $('wa-auto').hidden = true;
+    $('wa-auto').innerHTML = '';
+    $('wa-era').disabled = false;
+    $('wa-no-era').disabled = false;
+    contador();
+    ver('lab-1');
+  });
+
+  contador();
+})();
+</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
+<script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
+<script type="text/plain" data-categoria="analiticas">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KY8MR3L9Y');
+</script>
+</body>
+</html>

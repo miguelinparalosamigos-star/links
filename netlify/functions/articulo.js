@@ -50,32 +50,32 @@ function dividirEnParrafos(texto) {
 // ---------------------------------------------------------------------
 const CATALOGO_LIBROS = [
   { id: 'superregla', titulo: 'La superregla', emoji: '📖', url: 'https://amzn.to/3TLnBZL', general: true, temas: ['ansiedad', 'estres-trauma', 'estado-animo', 'bienestar'], palabrasClave: ['ansiedad', 'ansioso', 'ansiosa', 'miedo', 'miedos', 'evitación', 'evitar', 'pánico', 'panico', 'fobia', 'fobias', 'estrés', 'estres', 'preocupación', 'preocupa', 'preocupaciones', 'emoción', 'emociones', 'emocional', 'malestar', 'psicofármaco', 'angustia', 'nervios', 'nerviosismo', 'rumia', 'rumiación', 'obsesión', 'obsesivo'] },
-  { id: 'esqueyosoyasi', titulo: 'Es que yo soy así', emoji: '📖', url: 'https://www.amazon.es/dp/B0GSJYQNHD?tag=conciencia07-21', general: true, temas: ['personalidad', 'bienestar'], palabrasClave: ['personalidad', 'identidad', 'carácter', 'caracter', 'patrón', 'patrones', 'costumbre', 'rutina', 'autoconcepto', 'creencia', 'creencias', 'diagnóstico', 'etiqueta', 'autoestima', 'inseguridad', 'autocrítica', 'autocritica', 'autocompasión', 'perfeccionismo', 'vergüenza', 'verguenza'] },
-  { id: 'habitos-sueno', titulo: 'Los hábitos del sueño', emoji: '📖', url: 'https://www.amazon.es/dp/8410467216?tag=conciencia07-21', temas: ['sueno'], palabrasClave: ['sueño', 'sueno', 'dormir', 'insomnio', 'descanso', 'siesta', 'despertar', 'dormido', 'duerme', 'duermen', 'rem', 'circadiano', 'melatonina', 'pesadilla'] },
-  { id: 'ciencia-memoria', titulo: 'La ciencia de la memoria', emoji: '📖', url: 'https://www.amazon.es/dp/8413612276?tag=conciencia07-21', temas: ['memoria', 'atencion'], palabrasClave: ['memoria', 'recordar', 'recuerdo', 'recuerdos', 'olvido', 'olvidar', 'aprendizaje', 'aprender', 'aprende', 'cognición', 'cognitivo', 'cognitiva', 'atención', 'atencion', 'concentración', 'concentracion'] },
-  { id: 'amar-o-depender', titulo: '¿Amar o depender?', emoji: '📖', url: 'https://www.amazon.es/dp/8408126245?tag=conciencia07-21', temas: ['pareja', 'social'], palabrasClave: ['pareja', 'relación', 'relaciones', 'apego', 'dependencia emocional', 'amor', 'vínculo', 'vínculos', 'vinculo', 'vinculos', 'ruptura', 'celos', 'matrimonio', 'divorcio', 'soledad', 'amistad', 'amigos'] },
-  { id: 'pensar-rapido-despacio', titulo: 'Pensar rápido, pensar despacio', emoji: '📖', url: 'https://www.amazon.es/dp/8483068613?tag=conciencia07-21', temas: ['decisiones'], palabrasClave: ['decisión', 'decisiones', 'sesgo', 'sesgos', 'intuición', 'intuitivo', 'racional', 'elegir', 'elección', 'juicio', 'heurística', 'razonamiento'] },
-  { id: 'solucion-procrastinacion', titulo: 'La solución a la procrastinación', emoji: '📖', url: 'https://www.amazon.es/dp/8416720452?tag=conciencia07-21', temas: ['habitos', 'trabajo'], palabrasClave: ['procrastinación', 'procrastinar', 'posponer', 'aplazar', 'postergar', 'fuerza de voluntad', 'productividad', 'hábito', 'hábitos', 'habito', 'habitos', 'motivación', 'motivacion', 'autocontrol', 'disciplina'] },
-  { id: 'aprender-de-la-perdida', titulo: 'Aprender de la pérdida', emoji: '📖', url: 'https://www.amazon.es/dp/8408215051?tag=conciencia07-21', temas: ['duelo'], palabrasClave: ['duelo', 'pérdida', 'perdida', 'luto', 'pérdidas', 'perdidas', 'muerte', 'fallecimiento', 'morir', 'suicidio'] },
-  { id: 'cerebro-y-ejercicio', titulo: 'Cerebro y ejercicio', emoji: '📖', url: 'https://www.amazon.es/dp/841352041X?tag=conciencia07-21', temas: ['ejercicio', 'alimentacion'], palabrasClave: ['ejercicio', 'actividad física', 'deporte', 'correr', 'entrenamiento', 'sedentarismo', 'ejercicio físico', 'deportistas', 'físico', 'alimentación', 'alimentacion', 'dieta', 'nutrición', 'nutricion'] },
-  { id: 'habitos-atomicos', titulo: 'Hábitos atómicos', emoji: '📖', url: 'https://www.amazon.es/dp/8418118032?tag=conciencia07-21', temas: ['habitos', 'trabajo'], palabrasClave: ['hábito', 'hábitos', 'habito', 'habitos', 'rutina', 'rutinas', 'costumbre', 'cambiar', 'cambio', 'disciplina', 'constancia', 'motivación', 'productividad', 'procrastinación', 'comportamiento', 'conducta'] },
-  { id: 'sentirse-bien', titulo: 'Sentirse bien', emoji: '📖', url: 'https://www.amazon.es/dp/8449323991?tag=conciencia07-21', temas: ['estado-animo', 'ansiedad'], palabrasClave: ['depresión', 'depresion', 'tristeza', 'ánimo', 'animo', 'desánimo', 'desanimo', 'autoestima', 'pensamientos negativos', 'autocrítica', 'autocritica', 'culpa', 'rumiación', 'rumiacion', 'desesperanza', 'melancolía'] },
-  { id: 'cuerpo-lleva-cuenta', titulo: 'El cuerpo lleva la cuenta', emoji: '📖', url: 'https://www.amazon.es/dp/8412503600?tag=conciencia07-21', temas: ['estres-trauma'], palabrasClave: ['trauma', 'traumático', 'traumatico', 'tept', 'estrés postraumático', 'estres postraumatico', 'abuso', 'maltrato', 'violencia', 'duelo', 'disociación', 'disociacion', 'trauma psicológico', 'guerra', 'conflicto'] },
-  { id: 'cosas-buenas', titulo: 'Cómo hacer que te pasen cosas buenas', emoji: '📖', url: 'https://www.amazon.es/dp/8467053305?tag=conciencia07-21', temas: ['bienestar', 'ansiedad', 'estres-trauma'], palabrasClave: ['cortisol', 'estrés', 'estres', 'ansiedad', 'preocupación', 'preocupacion', 'emociones', 'emocional', 'bienestar', 'felicidad', 'cerebro', 'optimismo', 'miedo'] },
-  { id: 'no-amargarse', titulo: 'El arte de no amargarse la vida', emoji: '📖', url: 'https://www.amazon.es/dp/8425355869?tag=conciencia07-21', temas: ['bienestar', 'ansiedad'], palabrasClave: ['ansiedad', 'preocupación', 'preocupacion', 'felicidad', 'pensamientos', 'autoexigencia', 'perfeccionismo', 'malestar', 'exigencia', 'catastrofismo', 'fortaleza'] },
-  { id: 'se-amable', titulo: 'Sé amable contigo mismo', emoji: '📖', url: 'https://www.amazon.es/dp/8449331986?tag=conciencia07-21', temas: ['personalidad', 'bienestar'], palabrasClave: ['autocompasión', 'autocompasion', 'autocrítica', 'autocritica', 'autoestima', 'vergüenza', 'verguenza', 'culpa', 'perfeccionismo', 'amabilidad', 'compasión', 'autoexigencia'] },
-  { id: 'por-que-dormimos', titulo: 'Por qué dormimos', emoji: '📖', url: 'https://www.amazon.es/dp/8412064526?tag=conciencia07-21', temas: ['sueno'], palabrasClave: ['sueño', 'sueno', 'dormir', 'insomnio', 'descanso', 'rem', 'circadiano', 'siesta', 'melatonina', 'despertar', 'soñar', 'pesadilla'] },
-  { id: 'cinco-lenguajes-amor', titulo: 'Los cinco lenguajes del amor', emoji: '📖', url: 'https://www.amazon.es/dp/0789918358?tag=conciencia07-21', temas: ['pareja', 'social'], palabrasClave: ['pareja', 'amor', 'relación', 'relaciones', 'matrimonio', 'afecto', 'comunicación', 'comunicacion', 'convivencia', 'cariño', 'carino'] },
-  { id: 'centrate-deep-work', titulo: 'Céntrate (Deep Work)', emoji: '📖', url: 'https://www.amazon.es/dp/8411000516?tag=conciencia07-21', temas: ['atencion', 'trabajo'], palabrasClave: ['concentración', 'concentracion', 'atención', 'atencion', 'foco', 'distracción', 'distraccion', 'productividad', 'procrastinación', 'móvil', 'movil', 'multitarea', 'rendimiento'] },
-  { id: 'inteligencia-emocional', titulo: 'Inteligencia emocional', emoji: '📖', url: 'https://www.amazon.es/dp/8472453715?tag=conciencia07-21', general: true, temas: ['bienestar', 'estado-animo', 'social'], palabrasClave: ['emoción', 'emociones', 'emocional', 'inteligencia emocional', 'autocontrol', 'empatía', 'empatia', 'autoconocimiento', 'gestión emocional', 'gestionar', 'relaciones', 'sentimientos'] },
-  { id: 'hombre-busca-sentido', titulo: 'El hombre en busca de sentido', emoji: '📖', url: 'https://www.amazon.es/dp/8425432022?tag=conciencia07-21', temas: ['duelo', 'estres-trauma', 'bienestar'], palabrasClave: ['sentido', 'propósito', 'proposito', 'sufrimiento', 'adversidad', 'resiliencia', 'esperanza', 'duelo', 'pérdida', 'perdida', 'muerte', 'trauma', 'superación', 'superacion'] },
-  { id: 'ganar-amigos', titulo: 'Cómo ganar amigos e influir sobre las personas', emoji: '📖', url: 'https://www.amazon.es/dp/8412299728?tag=conciencia07-21', temas: ['social', 'trabajo'], palabrasClave: ['social', 'relaciones', 'amistad', 'amigos', 'comunicación', 'comunicacion', 'habilidades sociales', 'trato', 'empatía', 'empatia', 'persuasión', 'persuasion', 'influencia', 'conflicto', 'timidez'] },
-  { id: 'poder-habitos', titulo: 'El poder de los hábitos', emoji: '📖', url: 'https://www.amazon.es/dp/8417664130?tag=conciencia07-21', temas: ['habitos', 'trabajo'], palabrasClave: ['hábito', 'hábitos', 'habito', 'habitos', 'rutina', 'rutinas', 'cambio', 'cambiar', 'motivación', 'motivacion', 'conducta', 'comportamiento', 'productividad', 'adicción', 'adiccion'] },
-  { id: 'tus-zonas-erroneas', titulo: 'Tus zonas erróneas', emoji: '📖', url: 'https://www.amazon.es/dp/8425352835?tag=conciencia07-21', general: true, temas: ['bienestar', 'personalidad', 'estado-animo'], palabrasClave: ['autoestima', 'culpa', 'preocupación', 'preocupacion', 'autoexigencia', 'inseguridad', 'felicidad', 'aprobación', 'aprobacion', 'dependencia', 'infelicidad', 'pensamiento negativo'] },
-  { id: 'trampa-felicidad', titulo: 'La trampa de la felicidad', emoji: '📖', url: 'https://www.amazon.es/dp/8408261908?tag=conciencia07-21', general: true, temas: ['ansiedad', 'bienestar', 'estres-trauma'], palabrasClave: ['ansiedad', 'ansioso', 'ansiosa', 'aceptación', 'aceptacion', 'aceptar', 'evitación', 'evitacion', 'evitar', 'malestar', 'emociones', 'emocional', 'pensamientos', 'preocupación', 'preocupacion', 'mindfulness', 'atención plena', 'valores', 'sufrimiento', 'incertidumbre'] },
-  { id: 'fin-ansiedad', titulo: 'El fin de la ansiedad', emoji: '📖', url: 'https://www.amazon.es/dp/8417664335?tag=conciencia07-21', temas: ['ansiedad', 'estres-trauma'], palabrasClave: ['ansiedad', 'ansioso', 'ansiosa', 'angustia', 'pánico', 'panico', 'ataque de pánico', 'miedo', 'miedos', 'fobia', 'fobias', 'nervios', 'nerviosismo', 'preocupación', 'preocupacion', 'hipocondría', 'hipocondria'] },
-  { id: 'persona-vitamina', titulo: 'Encuentra tu persona vitamina', emoji: '📖', url: 'https://www.amazon.es/dp/846706269X?tag=conciencia07-21', temas: ['pareja', 'social', 'bienestar'], palabrasClave: ['pareja', 'relación', 'relaciones', 'vínculo', 'vínculos', 'vinculo', 'vinculos', 'apego', 'amor', 'amistad', 'amigos', 'familia', 'social', 'confianza', 'dependencia', 'oxitocina', 'cortisol'] },
-  { id: 'comunicacion-no-violenta', titulo: 'Comunicación no violenta', emoji: '📖', url: 'https://www.amazon.es/dp/8415053665?tag=conciencia07-21', temas: ['social', 'pareja', 'trabajo'], palabrasClave: ['comunicación', 'comunicacion', 'conflicto', 'conflictos', 'discusión', 'discusiones', 'discutir', 'pareja', 'relaciones', 'límites', 'limites', 'asertividad', 'empatía', 'empatia', 'escucha', 'diálogo', 'dialogo', 'necesidades'] },
+  { id: 'esqueyosoyasi', titulo: 'Es que yo soy así', emoji: '📖', url: 'https://www.amazon.es/dp/B0GSJYQNHD', general: true, temas: ['personalidad', 'bienestar'], palabrasClave: ['personalidad', 'identidad', 'carácter', 'caracter', 'patrón', 'patrones', 'costumbre', 'rutina', 'autoconcepto', 'creencia', 'creencias', 'diagnóstico', 'etiqueta', 'autoestima', 'inseguridad', 'autocrítica', 'autocritica', 'autocompasión', 'perfeccionismo', 'vergüenza', 'verguenza'] },
+  { id: 'habitos-sueno', titulo: 'Los hábitos del sueño', emoji: '📖', url: 'https://www.amazon.es/dp/8410467216', temas: ['sueno'], palabrasClave: ['sueño', 'sueno', 'dormir', 'insomnio', 'descanso', 'siesta', 'despertar', 'dormido', 'duerme', 'duermen', 'rem', 'circadiano', 'melatonina', 'pesadilla'] },
+  { id: 'ciencia-memoria', titulo: 'La ciencia de la memoria', emoji: '📖', url: 'https://www.amazon.es/dp/8413612276', temas: ['memoria', 'atencion'], palabrasClave: ['memoria', 'recordar', 'recuerdo', 'recuerdos', 'olvido', 'olvidar', 'aprendizaje', 'aprender', 'aprende', 'cognición', 'cognitivo', 'cognitiva', 'atención', 'atencion', 'concentración', 'concentracion'] },
+  { id: 'amar-o-depender', titulo: '¿Amar o depender?', emoji: '📖', url: 'https://www.amazon.es/dp/8408126245', temas: ['pareja', 'social'], palabrasClave: ['pareja', 'relación', 'relaciones', 'apego', 'dependencia emocional', 'amor', 'vínculo', 'vínculos', 'vinculo', 'vinculos', 'ruptura', 'celos', 'matrimonio', 'divorcio', 'soledad', 'amistad', 'amigos'] },
+  { id: 'pensar-rapido-despacio', titulo: 'Pensar rápido, pensar despacio', emoji: '📖', url: 'https://www.amazon.es/dp/8483068613', temas: ['decisiones'], palabrasClave: ['decisión', 'decisiones', 'sesgo', 'sesgos', 'intuición', 'intuitivo', 'racional', 'elegir', 'elección', 'juicio', 'heurística', 'razonamiento'] },
+  { id: 'solucion-procrastinacion', titulo: 'La solución a la procrastinación', emoji: '📖', url: 'https://www.amazon.es/dp/8416720452', temas: ['habitos', 'trabajo'], palabrasClave: ['procrastinación', 'procrastinar', 'posponer', 'aplazar', 'postergar', 'fuerza de voluntad', 'productividad', 'hábito', 'hábitos', 'habito', 'habitos', 'motivación', 'motivacion', 'autocontrol', 'disciplina'] },
+  { id: 'aprender-de-la-perdida', titulo: 'Aprender de la pérdida', emoji: '📖', url: 'https://www.amazon.es/dp/8408215051', temas: ['duelo'], palabrasClave: ['duelo', 'pérdida', 'perdida', 'luto', 'pérdidas', 'perdidas', 'muerte', 'fallecimiento', 'morir', 'suicidio'] },
+  { id: 'cerebro-y-ejercicio', titulo: 'Cerebro y ejercicio', emoji: '📖', url: 'https://www.amazon.es/dp/841352041X', temas: ['ejercicio', 'alimentacion'], palabrasClave: ['ejercicio', 'actividad física', 'deporte', 'correr', 'entrenamiento', 'sedentarismo', 'ejercicio físico', 'deportistas', 'físico', 'alimentación', 'alimentacion', 'dieta', 'nutrición', 'nutricion'] },
+  { id: 'habitos-atomicos', titulo: 'Hábitos atómicos', emoji: '📖', url: 'https://www.amazon.es/dp/8418118032', temas: ['habitos', 'trabajo'], palabrasClave: ['hábito', 'hábitos', 'habito', 'habitos', 'rutina', 'rutinas', 'costumbre', 'cambiar', 'cambio', 'disciplina', 'constancia', 'motivación', 'productividad', 'procrastinación', 'comportamiento', 'conducta'] },
+  { id: 'sentirse-bien', titulo: 'Sentirse bien', emoji: '📖', url: 'https://www.amazon.es/dp/8449323991', temas: ['estado-animo', 'ansiedad'], palabrasClave: ['depresión', 'depresion', 'tristeza', 'ánimo', 'animo', 'desánimo', 'desanimo', 'autoestima', 'pensamientos negativos', 'autocrítica', 'autocritica', 'culpa', 'rumiación', 'rumiacion', 'desesperanza', 'melancolía'] },
+  { id: 'cuerpo-lleva-cuenta', titulo: 'El cuerpo lleva la cuenta', emoji: '📖', url: 'https://www.amazon.es/dp/8412503600', temas: ['estres-trauma'], palabrasClave: ['trauma', 'traumático', 'traumatico', 'tept', 'estrés postraumático', 'estres postraumatico', 'abuso', 'maltrato', 'violencia', 'duelo', 'disociación', 'disociacion', 'trauma psicológico', 'guerra', 'conflicto'] },
+  { id: 'cosas-buenas', titulo: 'Cómo hacer que te pasen cosas buenas', emoji: '📖', url: 'https://www.amazon.es/dp/8467053305', temas: ['bienestar', 'ansiedad', 'estres-trauma'], palabrasClave: ['cortisol', 'estrés', 'estres', 'ansiedad', 'preocupación', 'preocupacion', 'emociones', 'emocional', 'bienestar', 'felicidad', 'cerebro', 'optimismo', 'miedo'] },
+  { id: 'no-amargarse', titulo: 'El arte de no amargarse la vida', emoji: '📖', url: 'https://www.amazon.es/dp/8425355869', temas: ['bienestar', 'ansiedad'], palabrasClave: ['ansiedad', 'preocupación', 'preocupacion', 'felicidad', 'pensamientos', 'autoexigencia', 'perfeccionismo', 'malestar', 'exigencia', 'catastrofismo', 'fortaleza'] },
+  { id: 'se-amable', titulo: 'Sé amable contigo mismo', emoji: '📖', url: 'https://www.amazon.es/dp/8449331986', temas: ['personalidad', 'bienestar'], palabrasClave: ['autocompasión', 'autocompasion', 'autocrítica', 'autocritica', 'autoestima', 'vergüenza', 'verguenza', 'culpa', 'perfeccionismo', 'amabilidad', 'compasión', 'autoexigencia'] },
+  { id: 'por-que-dormimos', titulo: 'Por qué dormimos', emoji: '📖', url: 'https://www.amazon.es/dp/8412064526', temas: ['sueno'], palabrasClave: ['sueño', 'sueno', 'dormir', 'insomnio', 'descanso', 'rem', 'circadiano', 'siesta', 'melatonina', 'despertar', 'soñar', 'pesadilla'] },
+  { id: 'cinco-lenguajes-amor', titulo: 'Los cinco lenguajes del amor', emoji: '📖', url: 'https://www.amazon.es/dp/0789918358', temas: ['pareja', 'social'], palabrasClave: ['pareja', 'amor', 'relación', 'relaciones', 'matrimonio', 'afecto', 'comunicación', 'comunicacion', 'convivencia', 'cariño', 'carino'] },
+  { id: 'centrate-deep-work', titulo: 'Céntrate (Deep Work)', emoji: '📖', url: 'https://www.amazon.es/dp/8411000516', temas: ['atencion', 'trabajo'], palabrasClave: ['concentración', 'concentracion', 'atención', 'atencion', 'foco', 'distracción', 'distraccion', 'productividad', 'procrastinación', 'móvil', 'movil', 'multitarea', 'rendimiento'] },
+  { id: 'inteligencia-emocional', titulo: 'Inteligencia emocional', emoji: '📖', url: 'https://www.amazon.es/dp/8472453715', general: true, temas: ['bienestar', 'estado-animo', 'social'], palabrasClave: ['emoción', 'emociones', 'emocional', 'inteligencia emocional', 'autocontrol', 'empatía', 'empatia', 'autoconocimiento', 'gestión emocional', 'gestionar', 'relaciones', 'sentimientos'] },
+  { id: 'hombre-busca-sentido', titulo: 'El hombre en busca de sentido', emoji: '📖', url: 'https://www.amazon.es/dp/8425432022', temas: ['duelo', 'estres-trauma', 'bienestar'], palabrasClave: ['sentido', 'propósito', 'proposito', 'sufrimiento', 'adversidad', 'resiliencia', 'esperanza', 'duelo', 'pérdida', 'perdida', 'muerte', 'trauma', 'superación', 'superacion'] },
+  { id: 'ganar-amigos', titulo: 'Cómo ganar amigos e influir sobre las personas', emoji: '📖', url: 'https://www.amazon.es/dp/8412299728', temas: ['social', 'trabajo'], palabrasClave: ['social', 'relaciones', 'amistad', 'amigos', 'comunicación', 'comunicacion', 'habilidades sociales', 'trato', 'empatía', 'empatia', 'persuasión', 'persuasion', 'influencia', 'conflicto', 'timidez'] },
+  { id: 'poder-habitos', titulo: 'El poder de los hábitos', emoji: '📖', url: 'https://www.amazon.es/dp/8417664130', temas: ['habitos', 'trabajo'], palabrasClave: ['hábito', 'hábitos', 'habito', 'habitos', 'rutina', 'rutinas', 'cambio', 'cambiar', 'motivación', 'motivacion', 'conducta', 'comportamiento', 'productividad', 'adicción', 'adiccion'] },
+  { id: 'tus-zonas-erroneas', titulo: 'Tus zonas erróneas', emoji: '📖', url: 'https://www.amazon.es/dp/8425352835', general: true, temas: ['bienestar', 'personalidad', 'estado-animo'], palabrasClave: ['autoestima', 'culpa', 'preocupación', 'preocupacion', 'autoexigencia', 'inseguridad', 'felicidad', 'aprobación', 'aprobacion', 'dependencia', 'infelicidad', 'pensamiento negativo'] },
+  { id: 'trampa-felicidad', titulo: 'La trampa de la felicidad', emoji: '📖', url: 'https://www.amazon.es/dp/8408261908', general: true, temas: ['ansiedad', 'bienestar', 'estres-trauma'], palabrasClave: ['ansiedad', 'ansioso', 'ansiosa', 'aceptación', 'aceptacion', 'aceptar', 'evitación', 'evitacion', 'evitar', 'malestar', 'emociones', 'emocional', 'pensamientos', 'preocupación', 'preocupacion', 'mindfulness', 'atención plena', 'valores', 'sufrimiento', 'incertidumbre'] },
+  { id: 'fin-ansiedad', titulo: 'El fin de la ansiedad', emoji: '📖', url: 'https://www.amazon.es/dp/8417664335', temas: ['ansiedad', 'estres-trauma'], palabrasClave: ['ansiedad', 'ansioso', 'ansiosa', 'angustia', 'pánico', 'panico', 'ataque de pánico', 'miedo', 'miedos', 'fobia', 'fobias', 'nervios', 'nerviosismo', 'preocupación', 'preocupacion', 'hipocondría', 'hipocondria'] },
+  { id: 'persona-vitamina', titulo: 'Encuentra tu persona vitamina', emoji: '📖', url: 'https://www.amazon.es/dp/846706269X', temas: ['pareja', 'social', 'bienestar'], palabrasClave: ['pareja', 'relación', 'relaciones', 'vínculo', 'vínculos', 'vinculo', 'vinculos', 'apego', 'amor', 'amistad', 'amigos', 'familia', 'social', 'confianza', 'dependencia', 'oxitocina', 'cortisol'] },
+  { id: 'comunicacion-no-violenta', titulo: 'Comunicación no violenta', emoji: '📖', url: 'https://www.amazon.es/dp/8415053665', temas: ['social', 'pareja', 'trabajo'], palabrasClave: ['comunicación', 'comunicacion', 'conflicto', 'conflictos', 'discusión', 'discusiones', 'discutir', 'pareja', 'relaciones', 'límites', 'limites', 'asertividad', 'empatía', 'empatia', 'escucha', 'diálogo', 'dialogo', 'necesidades'] },
 ];
 
 function barajar(lista) {
@@ -115,6 +115,53 @@ const ESTILO = `
   .site-header { border-bottom:1px solid var(--border); padding:2rem 1.5rem 1.5rem; text-align:center; }
   .logo { font-family:var(--font-display); font-weight:700; font-size:1.7rem; color:var(--ink); text-decoration:none; }
   .logo em { color:var(--accent); font-style:normal; }
+  .consulta-cta{ background:var(--paper) !important; border:1px dashed var(--border) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before{ content:"Publicidad · consulta externa a Psicolinks"; display:block;
+                 font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.14em;
+                 text-transform:uppercase; color:var(--ink-soft); opacity:0.85; margin:0 0 0.55rem; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
   main { max-width:640px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem; }
   .back-link { font-size:0.9rem; color:var(--ink-soft); text-decoration:none; display:inline-block; margin-bottom:1.5rem; }
   .back-link:hover { text-decoration:underline; }
@@ -467,7 +514,20 @@ function paginaHtml({ base, urlCanonica, post }) {
 <script type="application/ld+json">${breadcrumbLd}</script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/archivo.html" class="back-link">← Todos los estudios</a>
   <div class="articulo-card">
@@ -509,7 +569,7 @@ function paginaHtml({ base, urlCanonica, post }) {
   <div class="libros-box">
     <p>Y si quieres leer más sobre el tema por tu cuenta, estos dos libros lo desarrollan:</p>
     <div class="libros-lista">${librosHtml}</div>
-    <p class="libros-disclosure">Publicidad. En calidad de Afiliado de Amazon</p>
+    <p class="libros-disclosure">Enlaces a Amazon, sin comisión</p>
   </div>
   <div id="relacionados-container"></div>
   <p class="mas-guias" style="text-align:center;margin:2.2rem 0 0;font-size:0.95rem;line-height:1.7;">
@@ -575,8 +635,21 @@ function paginaHtml({ base, urlCanonica, post }) {
 
 function paginaError(base, mensaje) {
   return `<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Psicolinks</title><meta name="robots" content="noindex"><style>${ESTILO}</style></head>
-<body><header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
-<main><p class="status-msg">${escapeHtml(mensaje)}</p><p style="text-align:center;"><a href="/" class="btn-source">← Volver a la portada</a></p></main></body></html>`;
+<body><header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
+<main><p class="status-msg">${escapeHtml(mensaje)}</p><p style="text-align:center;"><a href="/" class="btn-source">← Volver a la portada</a></p></main><script src="/buscador-psicolinks.js" defer></script></body></html>`;
 }
 
 export default async (req) => {

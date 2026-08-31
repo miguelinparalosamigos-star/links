@@ -12,7 +12,7 @@ import { getStore } from '@netlify/blobs';
 
 const NCBI_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const ANTHROPIC_MODEL = 'claude-haiku-4-5-20251001'; // rápido y barato, de sobra para resumir
-const MAX_PUBLICACIONES_POR_EJECUCION = 3;
+const MAX_PUBLICACIONES_POR_EJECUCION = 5;
 
 // Remitente del boletín. La dirección tiene que ser de un dominio verificado
 // en Resend (ver README: "Boletín de novedades por email") — si el dominio
@@ -50,7 +50,7 @@ async function buscarPMIDsRecientes() {
     sort: 'date',
     datetype: 'pdat',
     reldate: '14', // últimos 14 días: da margen de sobra sobre la semana (el control de duplicados evita repetir)
-    retmax: '20',
+    retmax: '40', // con cinco publicaciones al día hacen falta más de veinte: si no, en pocos días todos los recientes ya están publicados y hay que tirar de OpenAlex
   });
   if (process.env.NCBI_API_KEY) params.set('api_key', process.env.NCBI_API_KEY);
 
@@ -419,7 +419,10 @@ export default async () => {
     const idsRecientes = await buscarPMIDsRecientes();
     // Cogemos más candidatos de los que vamos a publicar para poder quedarnos
     // con los MÁS interesantes (no los primeros que salgan).
-    const CANDIDATOS_A_EVALUAR = 6;
+    // Doce candidatos para publicar cinco: se sigue descartando más de la
+    // mitad. Si se bajara este número, el filtro se quedaría en nada y saldría
+    // publicado casi todo lo que devuelva PubMed, incluido lo muy técnico.
+    const CANDIDATOS_A_EVALUAR = 12;
     const idsNuevos = idsRecientes.filter((id) => !pmidsExistentes.has(id)).slice(0, CANDIDATOS_A_EVALUAR);
     const candidatos = await obtenerArticulos(idsNuevos);
 

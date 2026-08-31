@@ -100,34 +100,135 @@
   .cc-det{ font-size:0.78rem; color:var(--ink-soft); opacity:0.85; line-height:1.35; }
   .cc-pie{ font-size:0.85rem; color:var(--ink-soft); text-align:center; margin:0.9rem 0 0; }
   @media print{ .cc-banda{ display:none; } }
-  .menu-cuadros{ margin:2.4rem 0 0; padding:1.4rem 0 0; border-top:1px solid var(--border); }
-  .mc-eti{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin:0 0 0.9rem; }
-  .mc-rejilla{ display:grid; gap:0.7rem; }
-  @media (min-width:560px){ .mc-rejilla{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ display:flex; gap:0.85rem; align-items:flex-start; text-decoration:none; border:1px solid var(--border); border-radius:12px; padding:0.95rem 1.1rem; background:var(--surface); }
-  .mc-card:hover{ border-color:var(--accent); }
-  .mc-ico{ font-size:1.4rem; line-height:1.2; flex:0 0 auto; }
-  .mc-txt{ min-width:0; }
-  .mc-nom{ display:block; font-weight:600; font-size:1.02rem; color:var(--ink); margin:0 0 0.15rem; }
-  .mc-que{ display:block; font-size:0.88rem; color:var(--ink-soft); line-height:1.5; }
-  .mc-card:hover .mc-nom{ color:var(--accent); }
-  @media print{ .menu-cuadros{ display:none; } }
+  .site-footer .pie-consulta{ font-size:0.84rem; margin:0.55rem 0 0; }
+  .site-footer .pie-consulta a{ color:#8C3B4A; text-decoration:none; border-bottom:1px solid rgba(140,59,74,0.35); }
+  .site-footer .pie-consulta a:hover{ border-bottom-color:#8C3B4A; }
+
+
+  /* La caja de la consulta, en versión discreta. */
+  .consulta-cta{ padding:1.1rem 1.3rem; border-left-width:3px; }
+  .consulta-cta h2, .consulta-cta h3, .consulta-cta .consulta-tit{ font-size:1rem; }
+  .consulta-cta p{ font-size:0.9rem; margin-bottom:0.55rem; }
+  .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
+  .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
+
+  /* El buscador de la cabecera (sustituye al menú). */
+  .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
+  .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
+             border:1.5px solid var(--border,#DDD7CB); border-radius:999px; padding:0.5rem 0.95rem; }
+  .pl-buscador.abierto .plb-caja{ border-color:var(--accent,#4A3B78); }
+  .plb-lupa{ font-size:0.95rem; line-height:1; opacity:0.7; }
+  .plb-caja input{ flex:1; min-width:0; border:0; background:none; font-family:inherit;
+                   font-size:0.95rem; color:var(--ink,#211F2E); outline:none; }
+  .plb-caja input::-webkit-search-cancel-button{ cursor:pointer; }
+  .plb-caja input::placeholder{ color:var(--ink-soft,#625C70); opacity:0.95; }
+  .plb-panel{ position:absolute; left:0; right:0; top:calc(100% + 0.45rem); z-index:40;
+              background:var(--surface,#fff); border:1px solid var(--border,#DDD7CB);
+              border-radius:14px; box-shadow:0 12px 32px rgba(33,31,46,0.14);
+              padding:0.7rem; max-height:min(70vh,27rem); overflow:auto; }
+  .plb-eti{ font-family:var(--font-mono,monospace); font-size:0.63rem; letter-spacing:0.12em;
+            text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0.3rem 0 0.5rem 0.35rem; }
+  .plb-secciones{ display:grid; gap:0.25rem; }
+  @media (min-width:30rem){ .plb-secciones{ grid-template-columns:1fr 1fr; } }
+  .plb-sec{ display:flex; gap:0.6rem; align-items:flex-start; text-decoration:none;
+            padding:0.5rem 0.6rem; border-radius:10px; color:var(--ink,#211F2E); }
+  .plb-sec:hover{ background:var(--paper,#EEEDE6); }
+  .plb-sec .ico{ font-size:1.05rem; line-height:1.35; }
+  .plb-sec .txt{ display:flex; flex-direction:column; min-width:0; }
+  .plb-sec b{ font-size:0.93rem; font-weight:600; }
+  .plb-sec i{ font-style:normal; font-size:0.78rem; color:var(--ink-soft,#625C70); line-height:1.4; }
+  .plb-chips{ display:flex; flex-wrap:wrap; gap:0.35rem; padding:0 0.35rem 0.2rem; }
+  .plb-chip{ font:inherit; font-size:0.82rem; padding:0.3rem 0.7rem; border-radius:999px;
+             border:1px solid var(--border,#DDD7CB); background:var(--paper,#EEEDE6);
+             color:var(--ink-soft,#625C70); cursor:pointer; }
+  .plb-chip:hover{ border-color:var(--accent,#4A3B78); color:var(--accent,#4A3B78); }
+  .plb-lista{ list-style:none; margin:0; padding:0; }
+  .plb-lista a{ display:flex; justify-content:space-between; align-items:baseline; gap:0.8rem;
+                text-decoration:none; color:var(--ink,#211F2E); padding:0.5rem 0.6rem; border-radius:10px; }
+  .plb-lista li.on a, .plb-lista a:hover{ background:var(--paper,#EEEDE6); }
+  .plb-t{ font-size:0.93rem; line-height:1.4; }
+  .plb-s{ flex:0 0 auto; font-family:var(--font-mono,monospace); font-size:0.61rem;
+          letter-spacing:0.06em; text-transform:uppercase; color:var(--stamp,#B5541D); }
+  .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
+  .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
+  @media print{ .pl-buscador{ display:none !important; } }
+
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+
+  /* El color de este tema: Sueño. */
+  :root{ --accent:#33518F; --accent-soft:#E6EBF6; --stamp:#33518F; }
+  .idea{ background:#E6EBF6 !important; border-color:#e6ded2 !important;
+         border-left-color:#33518F !important; }
+  .hazlo{ background:#E6EBF6 !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#33518F; border-color:#33518F; color:#fff; }
+  .tool-kicker .num{ background:#33518F; }
+  .cierre{ border-left:4px solid #33518F; }
+  .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
+              border:1px solid var(--border); border-radius:14px;
+              background:var(--surface); }
+  @media (max-width:520px){ .guia-ilus{ border-radius:10px; margin-bottom:1.4rem; } }
+  /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
+  @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
 <script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Trabajar a turnos o de noche","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/trabajar-a-turnos.html","inLanguage":"es-ES"}
+{ "@context":"https://schema.org","@type":"Article","headline":"Trabajar a turnos o de noche","image":"https://psicolinks.com/ilustraciones/sueno.jpg","author":{"@type":"Person","name":"Miguel Martínez"},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/trabajar-a-turnos.html","inLanguage":"es-ES"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Trabajar a turnos o de noche", "item": "https://psicolinks.com/trabajar-a-turnos.html"}]}
 </script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="logo">psico<em>links</em></a></header>
+<header class="site-header">
+  <a href="/" class="logo">psico<em>links</em></a>
+  <div class="pl-buscador" id="pl-buscador">
+    <form class="plb-caja" role="search" onsubmit="return false;">
+      <span class="plb-lupa" aria-hidden="true">🔍</span>
+      <input type="search" id="plb-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="plb-panel"
+             aria-autocomplete="list" aria-label="Buscar en Psicolinks"
+             placeholder="Busca: ansiedad, dormir, un sesgo…">
+    </form>
+    <div class="plb-panel" id="plb-panel" hidden></div>
+    <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
+  </div>
+</header>
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
   <div class="stamp">📎 Guía gratuita · Sueño</div>
   <h1>Trabajar a turnos o de noche</h1>
   <p class="autor">Por <strong>Miguel Martínez</strong>, psicólogo · Colegiado nº CV17649</p>
   <p class="lead">Seis herramientas para quien trabaja cuando los demás duermen, empezando por descartar los consejos de sueño que no te sirven.</p>
+  <img class="guia-ilus" src="/ilustraciones/sueno.jpg" alt="Ilustración: el ratón de Psicolinks junto a una cama con la luna asomando"
+       width="1360" height="460" loading="lazy" decoding="async">
   <div class="idea"><strong>La idea de fondo.</strong> Casi todo lo que vas a leer sobre dormir bien está escrito para quien trabaja de día, y a ti no te sirve: «acuéstate siempre a la misma hora» es inaplicable cuando el cuadrante te lo cambia cada semana. Lo primero, entonces, es <strong>dejar de sentirte mal por no cumplir un consejo que no va contigo</strong>. Lo segundo es que aquí lo que más rinde no son las técnicas de relajación: es la <strong>luz</strong> —cuánta te da y cuándo— y el entorno en el que intentas dormir de día. Las dos cosas se pueden cambiar, y bastante barato.</div>
 
 
@@ -144,38 +245,50 @@
   </div>
 
   <h2 class="bloque-tit">Seis herramientas</h2>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 1 · La que quita de en medio un consejo que no te vale</p>
+  <nav class="ruta" aria-label="Las herramientas de esta guía">
+    <p class="ruta-eti">Las seis, de un vistazo</p>
+    <ol>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Deja de intentar «tener un horario normal»</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Ponte gafas de sol para volver a casa</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">La siesta, corta y a su hora</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">La cafeína, en la primera mitad del turno</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Dormir de día es un problema de luz y de ruido, no de fuerza de voluntad</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Vigila lo que se está llevando por delante</span></a></li>
+    </ol>
+  </nav>
+
+<div class="tool" id="h1">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1 · La que quita de en medio un consejo que no te vale</p>
   <h3>Deja de intentar «tener un horario normal»</h3>
   <p>El consejo de acostarse siempre a la misma hora está escrito para quien trabaja de día, y a ti no te sirve: tu horario cambia cada semana por contrato. Intentar cumplirlo y no poder es una fuente de culpa añadida que no arregla nada. Lo que sí se puede es tener un ritual de acostarse igual aunque la hora cambie: la misma secuencia de cosas, en el mismo orden, dure lo que dure.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> elige tres cosas —ducha, persiana, cinco páginas de algo— y hazlas siempre en ese orden antes de dormir, sean las ocho de la mañana o las once de la noche. Lo que le da la señal al cuerpo es la secuencia, no el reloj.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 2</p>
+<div class="tool" id="h2">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2</p>
   <h3>Ponte gafas de sol para volver a casa</h3>
   <p>Esta es la medida que menos gente conoce y de las que más hacen. Al salir del turno de noche te da de lleno la luz de la mañana, y esa luz le dice a tu reloj interno que empieza el día justo cuando tú vas a acostarte. Con eso, dormir tres horas después es pelear cuesta arriba.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> gafas de sol oscuras desde que sales hasta que entras en casa, y persiana bajada nada más llegar. Lo recoge la American Academy of Sleep Medicine en su hoja sobre turnos, y no cuesta nada.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 3</p>
+<div class="tool" id="h3">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
   <h3>La siesta, corta y a su hora</h3>
   <p>Dormir un rato antes del turno o durante él mejora de verdad el estado de alerta, pero pasarse la empeora: por encima de media hora entras en sueño profundo y te levantas más atontado que antes. Las horas en las que el cuerpo más pide dormir son entre las dos y las cinco de la madrugada y entre las dos y las cinco de la tarde.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> treinta minutos como máximo y con alarma. Si tu turno lo permite, la siesta operativa en mitad de la noche es la que más rinde; si no, una antes de entrar.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 4</p>
+<div class="tool" id="h4">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
   <h3>La cafeína, en la primera mitad del turno</h3>
   <p>No hace falta quitarla —es de las pocas ayudas legales que tienes— pero sí ordenarla. Tomada en la segunda mitad de la noche sigue en el cuerpo cuando llegas a casa y te destroza el sueño de la mañana, que es el que ya tienes tocado.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> café en las primeras horas del turno y nada a partir de la mitad. Y ojo con las bebidas energéticas de madrugada, que llevan mucha más de la que parece.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 5 · La que más se nota y la que menos se hace</p>
+<div class="tool" id="h5">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5 · La que más se nota y la que menos se hace</p>
   <h3>Dormir de día es un problema de luz y de ruido, no de fuerza de voluntad</h3>
   <p>La habitación en la que duermes de día tiene enfrente al sol y a un vecindario entero despierto. No es que duermas mal por nervios: es que tienes luz y ruido, y eso lo aguanta mal cualquiera. Aquí sí que arreglar el entorno vale más que cualquier técnica.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> oscuridad total —persiana, cortina o antifaz—, ruido tapado con un sonido constante o tapones, móvil apagado de verdad y un cartel en la puerta. Y avisar en casa, que es la parte que más se olvida y la que más despertares evita.</div>
 </div>
-<div class="tool">
-  <p class="tool-kicker">Herramienta 6</p>
+<div class="tool" id="h6">
+  <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
   <h3>Vigila lo que se está llevando por delante</h3>
   <p>El trabajo a turnos pasa factura más allá del sueño: se asocia a más problemas digestivos, a más riesgo cardiovascular y a más bajón anímico, y desordena la vida social, que es una parte del asunto de la que casi nadie habla. Que te cueste sostener amistades trabajando de noche no es cosa tuya: es que quedas cuando los demás duermen.</p>
   <div class="hazlo"><strong>Hazlo así:</strong> apunta dos semanas cómo duermes y cómo estás con el <a href="/diario-de-sueno.html">diario de sueño</a> y el <a href="/termometro-del-dia.html">termómetro del día</a>. Si el ánimo lleva meses bajo, eso ya no es cansancio y toca mirarlo.</div>
@@ -184,35 +297,19 @@
   <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si llevas meses durmiendo mal aunque tengas la habitación a oscuras, si te duermes conduciendo de vuelta a casa —eso es urgente— o si el ánimo lleva tiempo por los suelos y no levanta en las vacaciones, esto ya no se arregla con higiene del sueño. Existe un diagnóstico para esto, el trastorno del sueño por turnos, y se trata. Y sobre la <strong>melatonina</strong>, que es la pregunta de siempre: puede tener sentido, pero la dosis y sobre todo <em>la hora</em> son las que deciden si ayuda o si te lo desordena más, así que eso se habla con tu médico y no se decide por lo que ponga una caja. Tienes <a href="/insomnio.html">insomnio</a>, <a href="/diario-de-sueno.html">el diario de sueño</a> y <a href="/donde-pedir-ayuda.html">dónde pedir ayuda</a>.</div>
 
 
-  <nav class="menu-cuadros" aria-label="Secciones de Psicolinks">
-    <p class="mc-eti">Seguir por aquí</p>
-    <div class="mc-rejilla">
-      <a class="mc-card" href="/empieza-aqui.html">
-        <span class="mc-ico" aria-hidden="true">🧭</span>
-        <span class="mc-txt"><span class="mc-nom">Empieza aquí</span><span class="mc-que">Si has llegado sin saber muy bien por dónde tirar.</span></span>
-      </a>
-      <a class="mc-card" href="/temas.html">
-        <span class="mc-ico" aria-hidden="true">📎</span>
-        <span class="mc-txt"><span class="mc-nom">Todas las guías</span><span class="mc-que">Doscientas y pico, ordenadas por tema.</span></span>
-      </a>
-      <a class="mc-card" href="/herramientas.html">
-        <span class="mc-ico" aria-hidden="true">🗒️</span>
-        <span class="mc-txt"><span class="mc-nom">Herramientas</span><span class="mc-que">Veinticinco registros para llevar entre sesiones.</span></span>
-      </a>
-      <a class="mc-card" href="/tests.html">
-        <span class="mc-ico" aria-hidden="true">📝</span>
-        <span class="mc-txt"><span class="mc-nom">Tests</span><span class="mc-que">Quince cuestionarios, con la fuente a la vista.</span></span>
-      </a>
-      <a class="mc-card" href="/laboratorio.html">
-        <span class="mc-ico" aria-hidden="true">🧪</span>
-        <span class="mc-txt"><span class="mc-nom">Laboratorio</span><span class="mc-que">Experimentos de un minuto para notarlo en tu cabeza.</span></span>
-      </a>
-    </div>
-  </nav>
+  <div class="idea"><strong>Guía de compra.</strong> Sobre los despertadores de luz —qué prometen, qué hacen de verdad y cuál coger— lo tengo aparte en <a href="/guia-despertador-de-luz.html">despertador de luz: cuál elegir</a>.</div>
+
+  <div class="consulta-cta">
+    <h3>¿Y si quieres trabajarlo con alguien?</h3>
+    <p>Soy <strong>Miguel Martínez</strong>, psicólogo colegiado nº&nbsp;CV17649. Paso consulta <strong>online para toda España</strong> y <strong>presencial en Valencia</strong>. Si esto que cuenta la guía te está pasando de verdad y quieres que alguien mire tu caso, escríbeme y te digo cómo trabajo, sin compromiso.</p>
+    <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
+  </div>
+
 </main>
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
-  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/consultas.html">Consultas</a></p>
+  <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
+  <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
@@ -222,6 +319,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
+<script src="/buscador-psicolinks.js" defer></script>
 <script src="cookies-psicolinks.js" defer></script>
 </body>
 </html>

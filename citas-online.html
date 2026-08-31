@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compararte en redes: por qué duele y qué hacer · Psicolinks</title>
-<meta name="description" content="Comparas tu detrás con el escaparate de otro. Por qué el problema no es el tiempo sino cinco cuentas concretas, y qué cambiar esta semana.">
-<meta property="og:type" content="article">
+<title>Ligar por aplicaciones sin quemarte · Psicolinks</title>
+<meta name="description" content="Seis herramientas para que las apps de citas no te dejen peor: límites de tiempo, pasar a la cita pronto y qué hacer con el ghosting.">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Psicolinks">
-<meta property="og:title" content="Compararte en redes: por qué duele y qué hacer">
-<meta property="og:description" content="Comparas tu detrás con el escaparate de otro. Por qué el problema no es el tiempo sino cinco cuentas concretas, y qué cambiar esta semana.">
-<meta property="og:url" content="https://psicolinks.com/compararte-en-redes-sociales.html">
+<meta property="og:title" content="Ligar por aplicaciones sin quemarte">
+<meta property="og:description" content="Las apps no están hechas para que encuentres a alguien: están hechas para que sigas abriéndolas.">
+<meta property="og:url" content="https://psicolinks.com/citas-online.html">
 <meta property="og:image" content="https://psicolinks.com/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://psicolinks.com/compararte-en-redes-sociales.html">
+<link rel="canonical" href="https://psicolinks.com/citas-online.html">
 <meta name="theme-color" content="#EEEDE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,8 @@
   .consulta-cta .consulta-btn:hover { background: #75303d; }
   .consulta-cta .consulta-otros { margin: 0.9rem 0 0; font-size: 0.87rem; }
   .consulta-cta .consulta-nota { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
-
+  .desambigua { font-size:0.9rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:0.7rem 0.95rem; margin:0 0 1.4rem; line-height:1.55; }
+  .desambigua a { color:var(--accent); font-weight:600; }
   .site-footer .pie-nav{ font-size:0.95rem; margin:0.9rem 0 0; }
   .site-footer .pie-nav a{ color:var(--ink); text-decoration:none; padding:0 0.15rem; }
   .site-footer .pie-nav a:hover{ text-decoration:underline; }
@@ -112,6 +113,46 @@
   .consulta-cta .consulta-btn{ padding:0; border-radius:0; background:none; color:#8C3B4A; font-size:0.92rem; }
   .consulta-cta .consulta-btn:hover{ background:none; text-decoration:underline; }
 
+  /* El índice visual de las herramientas. */
+  .ruta{ margin:1.5rem 0 2rem; }
+  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
+             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
+  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
+  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
+  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
+           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
+  .ruta a:hover{ background:var(--surface,#fff); }
+  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
+            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
+            border:1.5px solid #d8d0ec; display:grid; place-items:center;
+            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
+  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
+  .tool{ scroll-margin-top:1rem; }
+  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
+                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
+                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
+  @media print{ .ruta{ display:none !important; } }
+
+  /* La caja de la consulta va marcada como lo que es: un anuncio de una
+     consulta particular, que no forma parte de los recursos gratuitos. */
+  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
+                 border-left:3px solid #8C3B4A !important; }
+  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
+                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
+                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
+                 opacity:0.85; margin:0 0 0.55rem; }
+  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
+  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
+
+  /* El color de este tema: Pareja y relaciones. */
+  :root{ --accent:#9B3D5E; --accent-soft:#F8E7EC; --stamp:#9B3D5E; }
+  .idea{ background:#F8E7EC !important; border-color:#e6ded2 !important;
+         border-left-color:#9B3D5E !important; }
+  .hazlo{ background:#F8E7EC !important; border-color:#e6ded2 !important; }
+  .ruta .n{ background:#9B3D5E; border-color:#9B3D5E; color:#fff; }
+  .tool-kicker .num{ background:#9B3D5E; }
+  .cierre{ border-left:4px solid #9B3D5E; }
+
   /* El buscador de la cabecera (sustituye al menú). */
   .pl-buscador{ position:relative; max-width:470px; margin:1rem auto 0; text-align:left; }
   .plb-caja{ display:flex; align-items:center; gap:0.5rem; background:var(--surface,#fff);
@@ -152,46 +193,6 @@
   .plb-nada{ font-size:0.9rem; line-height:1.6; color:var(--ink-soft,#625C70); margin:0.4rem 0.4rem 0.2rem; }
   .plb-sinjs{ font-size:0.9rem; margin:0.6rem 0 0; }
   @media print{ .pl-buscador{ display:none !important; } }
-
-  /* El índice visual de las herramientas. */
-  .ruta{ margin:1.5rem 0 2rem; }
-  .ruta-eti{ font-family:var(--font-mono,monospace); font-size:0.64rem; letter-spacing:0.12em;
-             text-transform:uppercase; color:var(--ink-soft,#625C70); margin:0 0 0.7rem 0.5rem; }
-  .ruta ol{ list-style:none; margin:0; padding:0; display:grid; gap:0.1rem; }
-  @media (min-width:44rem){ .ruta ol{ grid-template-columns:1fr 1fr; column-gap:1.2rem; } }
-  .ruta a{ display:flex; align-items:flex-start; gap:0.7rem; text-decoration:none;
-           color:var(--ink,#211F2E); padding:0.45rem 0.5rem; border-radius:10px; }
-  .ruta a:hover{ background:var(--surface,#fff); }
-  .ruta .n{ flex:0 0 auto; width:1.6rem; height:1.6rem; border-radius:999px;
-            background:var(--accent-soft,#ECE8F5); color:var(--accent,#4A3B78);
-            border:1.5px solid #d8d0ec; display:grid; place-items:center;
-            font-family:var(--font-mono,monospace); font-size:0.76rem; font-weight:700; }
-  .ruta .t{ font-size:0.94rem; line-height:1.45; padding-top:0.2rem; }
-  .tool{ scroll-margin-top:1rem; }
-  .tool-kicker .num{ display:inline-grid; place-items:center; width:1.35rem; height:1.35rem;
-                     border-radius:999px; background:var(--accent,#4A3B78); color:#fff;
-                     font-size:0.72rem; margin-right:0.45rem; vertical-align:-0.32rem; }
-  @media print{ .ruta{ display:none !important; } }
-
-  /* La caja de la consulta va marcada como lo que es: un anuncio de una
-     consulta particular, que no forma parte de los recursos gratuitos. */
-  .consulta-cta{ background:var(--paper,#EEEDE6) !important; border:1px dashed var(--border,#DDD7CB) !important;
-                 border-left:3px solid #8C3B4A !important; }
-  .consulta-cta::before, .cita-suave::before{ content:"Publicidad · consulta externa a Psicolinks";
-                 display:block; font-family:var(--font-mono,monospace); font-size:0.6rem;
-                 letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft,#625C70);
-                 opacity:0.85; margin:0 0 0.55rem; }
-  .cita-suave{ background:var(--paper,#EEEDE6); border-style:dashed; }
-  @media print{ .consulta-cta::before, .cita-suave::before{ display:none; } }
-
-  /* El color de este tema: Concentración y hábitos. */
-  :root{ --accent:#1F5E8C; --accent-soft:#E4EEF6; --stamp:#1F5E8C; }
-  .idea{ background:#E4EEF6 !important; border-color:#e6ded2 !important;
-         border-left-color:#1F5E8C !important; }
-  .hazlo{ background:#E4EEF6 !important; border-color:#e6ded2 !important; }
-  .ruta .n{ background:#1F5E8C; border-color:#1F5E8C; color:#fff; }
-  .tool-kicker .num{ background:#1F5E8C; }
-  .cierre{ border-left:4px solid #1F5E8C; }
   .guia-ilus{ display:block; width:100%; height:auto; margin:0.4rem 0 1.8rem;
               border:1px solid var(--border); border-radius:14px;
               background:var(--surface); }
@@ -199,14 +200,9 @@
   /* Al imprimir la guía, el dibujo se queda de sello: pequeño y arriba. */
   @media print{ .guia-ilus{ max-width:330px; margin:0.2rem 0 1rem; border:none; } }
 </style>
-<script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"Compararte en redes sociales","image":"https://psicolinks.com/ilustraciones/concentracion.jpg","author":{"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649", "knowsAbout": ["Psicología clínica", "Terapia cognitivo-conductual", "Análisis de la conducta", "Ansiedad", "Insomnio", "Estado de ánimo"], "sameAs": ["https://concienciaconductual.com"]},"publisher":{"@type":"Organization","name":"Psicolinks"},"mainEntityOfPage":"https://psicolinks.com/compararte-en-redes-sociales.html","datePublished":"2026-08-23","dateModified":"2026-08-23","inLanguage":"es-ES"}
-</script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Compararte en redes sociales", "item": "https://psicolinks.com/compararte-en-redes-sociales.html"}]}
-</script>
 </head>
 <body>
+
 <header class="site-header">
   <a href="/" class="logo">psico<em>links</em></a>
   <div class="pl-buscador" id="pl-buscador">
@@ -221,85 +217,76 @@
     <noscript><p class="plb-sinjs"><a href="/empieza-aqui.html">Empieza aquí</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/tests.html">Tests</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p></noscript>
   </div>
 </header>
+
 <main>
   <a href="/temas.html" class="back-link">← Todas las guías</a>
-  <div class="stamp">📎 Guía gratuita · Autoestima</div>
-  <h1>Compararte en redes sociales</h1>
+  <div class="stamp">📎 Guía gratuita · Relaciones</div>
+  <h1>Ligar por aplicaciones sin quemarte</h1>
   <p class="autor">Por <strong><a href="/sobre-mi.html">Miguel Martínez</a></strong>, psicólogo · Colegiado nº CV17649</p>
-  <p class="lead">Seis herramientas para cuando abres el móvil un momento y lo cierras con la sensación de que todo el mundo lo lleva mejor que tú.</p>
-  <img class="guia-ilus" src="/ilustraciones/concentracion.jpg" alt="Ilustración: el ratón de Psicolinks junto a un reloj con un tramo marcado"
+  <p class="lead">Seis herramientas para que las apps no te dejen peor de lo que estabas: menos horas, menos rechazo acumulado y más citas de verdad.</p>
+  <img class="guia-ilus" src="/ilustraciones/pareja.jpg" alt="Ilustración: el ratón de Psicolinks junto a dos bocadillos de diálogo enfrentados"
        width="1360" height="460" loading="lazy" decoding="async">
-  <div class="idea"><strong>La idea de fondo.</strong> La comparación en redes no es injusta: es que no es una comparación. Tú te conoces el detrás —las dudas, los días malos, lo que no cuentas— y de los demás ves lo que han elegido enseñar de entre lo mejor que les ha pasado. Y hay un error muy extendido al intentar arreglarlo: atacar el tiempo total de pantalla. El problema casi nunca es el tiempo; son cinco o seis cuentas concretas que te dejan peor cada vez. Silenciar esas cinco cambia más que bajar una hora el móvil.</div>
 
-
-
-
-
-
-
-
-
-
-
+  <div class="idea"><strong>La idea de fondo.</strong> Las aplicaciones no están hechas para que encuentres a alguien: están hechas para que sigas abriéndolas. Eso no es una teoría de la conspiración, es su modelo de negocio. Casi todo el desgaste viene de jugar con las reglas de la casa —deslizar mucho, hablar meses, medirte por las respuestas— en vez de con las tuyas.</div>
 
   <div class="descarga">
     <p>¿Prefieres guardarla o imprimirla? Descárgala en PDF para tenerla a mano.</p>
     <button type="button" class="btn-pdf" onclick="window.print()">⬇ Descargar en PDF</button>
   </div>
 
-  <h2 class="bloque-tit">Seis herramientas</h2>
+  <h2 class="bloque-tit">6 herramientas</h2>
   <nav class="ruta" aria-label="Las herramientas de esta guía">
     <p class="ruta-eti">Las seis, de un vistazo</p>
     <ol>
-      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Comparas tu detrás con el escaparate de otro</span></a></li>
-      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Cuenta las cuentas, no las horas</span></a></li>
-      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">Silencia, que no es lo mismo que dejar de seguir</span></a></li>
-      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Cambia mirar por hacer</span></a></li>
-      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Cuidado con el bucle de publicar y mirar</span></a></li>
-      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Fuera de la cama y fuera de la primera hora</span></a></li>
+      <li><a href="#h1"><span class="n" aria-hidden="true">1</span><span class="t">Pon un tope de tiempo, no de perfiles</span></a></li>
+      <li><a href="#h2"><span class="n" aria-hidden="true">2</span><span class="t">Pasa a una cita en menos de una semana</span></a></li>
+      <li><a href="#h3"><span class="n" aria-hidden="true">3</span><span class="t">No te midas por las respuestas</span></a></li>
+      <li><a href="#h4"><span class="n" aria-hidden="true">4</span><span class="t">Que el perfil filtre, no que guste a todos</span></a></li>
+      <li><a href="#h5"><span class="n" aria-hidden="true">5</span><span class="t">Ten un plan para el ghosting</span></a></li>
+      <li><a href="#h6"><span class="n" aria-hidden="true">6</span><span class="t">Deja huecos donde conocer gente sin app</span></a></li>
     </ol>
   </nav>
 
 <div class="tool" id="h1">
   <p class="tool-kicker"><span class="num" aria-hidden="true">1</span>Herramienta 1</p>
-  <h3>Comparas tu detrás con el escaparate de otro</h3>
-  <p>Tú te conoces los días malos, las dudas y lo que no cuentas. De los demás ves lo que han elegido enseñar, de entre lo mejor que les ha pasado. No es una comparación injusta: es que directamente no es una comparación.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> cuando te pilles comparando, pregúntate qué no estás viendo de esa persona. No para consolarte: para recordar que estás mirando media foto.</div>
+  <h3>Pon un tope de tiempo, no de perfiles</h3>
+  <p>El deslizar no tiene final: está diseñado igual que una tragaperras, con recompensa impredecible. Sin un límite externo, la sesión la termina el cansancio.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> veinte minutos, dos veces por semana, con alarma. Cuando suena, se cierra aunque estés a mitad. Es más fácil de sostener que «voy a usarla menos».</div>
 </div>
 <div class="tool" id="h2">
-  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2 · La que de verdad funciona</p>
-  <h3>Cuenta las cuentas, no las horas</h3>
-  <p>Se suele atacar el tiempo total de pantalla y el problema casi nunca es el tiempo: son cinco o seis cuentas concretas que te dejan peor cada vez. Bajar el tiempo sin tocar esas cuentas no cambia nada.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> durante tres días, cada vez que cierres la aplicación anota si sales peor o igual. Al tercer día tendrás la lista de las que te hacen daño, y suele ser cortita.</div>
+  <p class="tool-kicker"><span class="num" aria-hidden="true">2</span>Herramienta 2</p>
+  <h3>Pasa a una cita en menos de una semana</h3>
+  <p>La conversación larga por chat crea a una persona que no existe: la rellenas tú con lo que te falta. Después la cita real compite con esa versión y pierde siempre.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> después de unos cuantos mensajes, propón un café corto. Corto de verdad: una hora. Sabrás más en esa hora que en tres semanas escribiendo.</div>
 </div>
 <div class="tool" id="h3">
   <p class="tool-kicker"><span class="num" aria-hidden="true">3</span>Herramienta 3</p>
-  <h3>Silencia, que no es lo mismo que dejar de seguir</h3>
-  <p>Mucha gente no quita a nadie por no montar un lío o por no quedar mal. Silenciar resuelve eso: dejas de verlo, sigues siendo seguidor y nadie se entera.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> silencia hoy las cuentas de tu lista, durante dos semanas. No lo anuncies. A las dos semanas decides si las recuperas, y muchas veces ni te acuerdas.</div>
+  <h3>No te midas por las respuestas</h3>
+  <p>La tasa de respuesta depende de la hora, del algoritmo, de cuánta gente hay conectada y de si la otra persona abrió la app ese día. Leerlo como una nota sobre ti es leer ruido.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> cuando te descubras contando, cambia la pregunta: en vez de «cuántos me contestan», mira «cuántas conversaciones me han apetecido». Es el único número que dice algo.</div>
 </div>
 <div class="tool" id="h4">
   <p class="tool-kicker"><span class="num" aria-hidden="true">4</span>Herramienta 4</p>
-  <h3>Cambia mirar por hacer</h3>
-  <p>El daño no está en las redes: está en pasar el rato mirando vidas en vez de teniendo la tuya. Media hora de consumo pasivo deja peor que media hora de cualquier cosa que hagas tú, aunque sea una tontería.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> ponle una alternativa concreta al momento en que sueles caer: al llegar a casa, en la cama, en el sofá después de comer. Sin alternativa concreta, la mano vuelve sola al móvil.</div>
+  <h3>Que el perfil filtre, no que guste a todos</h3>
+  <p>Un perfil hecho para no desagradar a nadie atrae a gente con la que no tienes nada que ver, y esas son las citas que agotan.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> pon dos o tres cosas concretas y raras tuyas —lo que haces los domingos, con qué te ríes—. Vas a gustar a menos gente y a la que te interesa.</div>
 </div>
 <div class="tool" id="h5">
   <p class="tool-kicker"><span class="num" aria-hidden="true">5</span>Herramienta 5</p>
-  <h3>Cuidado con el bucle de publicar y mirar</h3>
-  <p>Publicar algo y volver cada diez minutos a ver cuánto ha subido es el mismo mecanismo que una máquina tragaperras: recompensa impredecible. Y deja el ánimo colgando de un número.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> si te pasa, quita las notificaciones de «me gusta» y ponte una sola revisión al día. Y fíjate si publicas para contar algo o para que te digan que estás bien.</div>
+  <h3>Ten un plan para el ghosting</h3>
+  <p>Que alguien desaparezca sin decir nada duele por dos motivos: por la persona y por la ausencia de explicación, que la cabeza rellena contigo de protagonista.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> una regla decidida de antemano: un mensaje, y si no hay respuesta en unos días, se archiva sin más. Sin segunda ronda y sin explicación inventada. El motivo casi nunca eres tú, y casi nunca lo vas a saber.</div>
 </div>
 <div class="tool" id="h6">
   <p class="tool-kicker"><span class="num" aria-hidden="true">6</span>Herramienta 6</p>
-  <h3>Fuera de la cama y fuera de la primera hora</h3>
-  <p>Los dos momentos que más pesan son el último de la noche y el primero de la mañana, porque son los que tiñen el sueño y el día entero. Y son los más fáciles de cambiar.</p>
-  <div class="hazlo"><strong>Hazlo así:</strong> carga el móvil fuera de la habitación y compra un despertador de diez euros. Es el cambio más pequeño de esta lista y el que más gente nota a la semana.</div>
+  <h3>Deja huecos donde conocer gente sin app</h3>
+  <p>Cuando todo el contacto pasa por la aplicación, cada notificación pesa demasiado. La app se vuelve la única puerta, y una única puerta angustia.</p>
+  <div class="hazlo"><strong>Hazlo así:</strong> una actividad al mes con gente y sin pantalla: un curso, un grupo, un plan de amigos con desconocidos. No es una estrategia para ligar; es para que la app deje de ser lo único.</div>
 </div>
 
-  <div class="cierre"><strong>Cuándo pedir ayuda.</strong> Si esto va con no salir por no sentirte a la altura, con revisar tu cuerpo continuamente o con un ánimo que lleva meses bajo, ya no es una cuestión de redes: es autoestima o estado de ánimo, y las dos cosas se trabajan bien. Puedes situarte con los <a href="/tests.html">tests</a> y empezar por <a href="/mejorar-tu-autoestima.html">mejorar tu autoestima</a>.</div>
+  <div class="cierre"><strong>Y si te supera.</strong> Si después de cada sesión te quedas peor, si estás comparándote todo el rato o si esto se ha convertido en la medida de cuánto vales, ahí ya no es un problema de aplicaciones. Se trabaja, y bastante bien.</div>
 
-  <div class="idea"><strong>Guía de compra.</strong> Lo de reducir pantallas sin depender de la fuerza de voluntad —lo que ayuda a tenerlo más difícil— está en <a href="/guia-movil-y-pantallas.html">móvil y pantallas: cómo usarlo menos</a>.</div>
+  <p class="nota-hermana" style="font-size:0.93rem;line-height:1.6;color:var(--ink-soft);margin:1.6rem 0 0;">Si vienes de una ruptura, está <a href="/superar-una-ruptura.html">superar una ruptura</a>. Y si lo que pesa es compararte, <a href="/compararte-en-redes-sociales.html">compararte en redes sociales</a> y <a href="/deja-de-compararte.html">deja de compararte</a>.</p>
 
   <div class="consulta-cta">
     <h3>¿Y si quieres trabajarlo con alguien?</h3>
@@ -307,14 +294,20 @@
     <a class="consulta-btn" href="/terapia-online.html">Cómo trabajo y cómo pedir cita →</a>
   </div>
 
-
 </main>
+
 <footer class="site-footer">
   <p>Psicolinks es divulgación y psicoeducación; no sustituye una consulta profesional.</p>
   <p class="pie-nav"><a href="/">Portada</a> · <a href="/temas.html">Guías</a> · <a href="/herramientas.html">Herramientas</a> · <a href="/laboratorio.html">Laboratorio</a> · <a href="/sesgos.html">Sesgos</a></p>
   <p class="pie-consulta"><a href="https://concienciaconductual.com">Consulta de psicología · Miguel Martínez, psicólogo col. CV17649</a></p>
   <p class="pie-legal">© 2026 Psicolinks · <a href="/contacto.html">Contacto</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="#" onclick="PL_configurarCookies(); return false;">Cookies</a></p>
 </footer>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Ligar por aplicaciones sin quemarte", "image": "https://psicolinks.com/ilustraciones/pareja.jpg", "inLanguage": "es-ES", "url": "https://psicolinks.com/citas-online.html", "description": "Seis herramientas para que las apps de citas no te dejen peor: límites de tiempo, pasar a la cita pronto y qué hacer con el ghosting.", "author": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "url": "https://psicolinks.com/sobre-mi.html", "identifier": "Colegiado nº CV17649"}, "isAccessibleForFree": true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Psicolinks", "item": "https://psicolinks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://psicolinks.com/temas.html"}, {"@type": "ListItem", "position": 3, "name": "Ligar por aplicaciones sin quemarte", "item": "https://psicolinks.com/citas-online.html"}]}</script>
+
+<script src="/buscador-psicolinks.js" defer></script>
+<script src="cookies-psicolinks.js" defer></script>
 <script type="text/plain" data-categoria="analiticas" src="https://www.googletagmanager.com/gtag/js?id=G-8KY8MR3L9Y"></script>
 <script type="text/plain" data-categoria="analiticas">
   window.dataLayer = window.dataLayer || [];
@@ -322,8 +315,5 @@
   gtag('js', new Date());
   gtag('config', 'G-8KY8MR3L9Y');
 </script>
-<script src="/buscador-psicolinks.js" defer></script>
-<script src="cookies-psicolinks.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Compararte en redes: por qué duele y qué hacer", "url": "https://psicolinks.com/compararte-en-redes-sociales.html", "inLanguage": "es", "about": {"@type": "MedicalCondition", "name": "Depresión"}, "audience": {"@type": "Patient"}, "reviewedBy": {"@type": "Person", "name": "Miguel Martínez", "jobTitle": "Psicólogo", "identifier": "Colegiado nº CV17649", "url": "https://psicolinks.com/sobre-mi.html", "sameAs": ["https://concienciaconductual.com"]}, "lastReviewed": "2026-08-24", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Psicolinks", "url": "https://psicolinks.com/"}, "description": "Comparas tu detrás con el escaparate de otro. Por qué el problema no es el tiempo sino cinco cuentas concretas, y qué cambiar esta semana."}</script>
 </body>
 </html>
